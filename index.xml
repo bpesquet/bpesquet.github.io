@@ -1,7 +1,1599 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Front page on 👨‍💻 Baptiste Pesquet</title><link>/</link><description>👨‍💻 Baptiste Pesquet (Front page)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Teaching resources</title><link>/teaching/current/</link><pubDate>Tue, 13 Oct 2020 16:55:31 +0200</pubDate><guid>/teaching/current/</guid><description>&lt;p>The following resources are currently being used in my courses. As such, they are more or less actively maintained and hopefully up-to-date.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Front page on 👨‍💻 Baptiste Pesquet</title><link>https://bpesquet.github.io/</link><description>👨‍💻 Baptiste Pesquet (Front page)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://bpesquet.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Le langage JavaScript</title><link>https://bpesquet.github.io/slides/mobile/javascript/</link><pubDate>Mon, 16 Dec 2019 21:50:46 +0100</pubDate><guid>https://bpesquet.github.io/slides/mobile/javascript/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;ul>
+&lt;li>Pourquoi JavaScript ?&lt;/li>
+&lt;li>Syntaxe du langage&lt;/li>
+&lt;li>Environnement de travail&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="pourquoi-javascript-">Pourquoi JavaScript ?&lt;/h2>
+&lt;hr>
+&lt;h2 id="javascript-is-eating-the-world">JavaScript is eating the world&lt;/h2>
+&lt;p>&lt;img src="images/thus-javascript-is-eating-the-world.jpg" alt="JS is eating the world">&lt;/p>
+&lt;hr>
+&lt;h2 id="un-pré-requis-essentiel">Un pré-requis essentiel&lt;/h2>
+&lt;p>La majorité des solutions mobiles multi-plateformes est basée sur JavaScript.&lt;/p>
+&lt;p>&lt;img src="images/mobile_logos.png" alt="Frameworks multi-plateformes">&lt;/p>
+&lt;hr>
+&lt;h2 id="un-langage-modernisé">Un langage modernisé&lt;/h2>
+&lt;p>JavaScript est normalisé sous le nom &lt;strong>ECMAScript&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="images/js_history.png" alt="ECMAScript releases">&lt;/p>
+&lt;p>La norme &lt;strong>ES2015&lt;/strong> (ou ES6) a apporté de très nombreuses améliorations au langage.&lt;/p>
+&lt;hr>
+&lt;h2 id="la-syntaxe-du-langage">La syntaxe du langage&lt;/h2>
+&lt;hr>
+&lt;h2 id="déclaration-de-variables">Déclaration de variables&lt;/h2>
+&lt;p>JavaScript est un langage à typage &lt;strong>dynamique&lt;/strong>.&lt;/p>
+&lt;p>&lt;code>let&lt;/code> et &lt;code>const&lt;/code> remplacent avantageusement &lt;code>var&lt;/code> pour la déclaration des variables.&lt;/p>
+&lt;p>La valeur d&amp;rsquo;une variable déclarée avec &lt;code>const&lt;/code> ne peut plus être modifiée.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">a&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">3.14&lt;/span>;
+&lt;span style="color:#a6e22e">a&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">6.28&lt;/span>; &lt;span style="color:#75715e">// OK
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">b&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">3.14&lt;/span>;
+&lt;span style="color:#a6e22e">b&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">6.28&lt;/span>; &lt;span style="color:#75715e">// Erreur!
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="chaînes-de-caractères">Chaînes de caractères&lt;/h2>
+&lt;p>Créées avec des guillemets simples (&lt;code>'...'&lt;/code>) ou doubles (&lt;code>&amp;quot;...&amp;quot;&lt;/code>).&lt;/p>
+&lt;p>&lt;strong>Litéraux de modèle&lt;/strong>: chaînes créées entre &lt;em>backticks&lt;/em> (`) et permettant d&amp;rsquo;intégrer des expressions.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">country&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;France&amp;#34;&lt;/span>; &lt;span style="color:#75715e">// or &amp;#39;France&amp;#39;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">`I live in &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">country&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;I live in France&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="déclaration-de-fonctions">Déclaration de fonctions&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">sayHello&lt;/span>(&lt;span style="color:#a6e22e">name&lt;/span>) {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">message&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">`Hello, &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">!`&lt;/span>;
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">message&lt;/span>;
+}
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">sayHello&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Richard&amp;#34;&lt;/span>)); &lt;span style="color:#75715e">// &amp;#34;Hello, Richard!&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="expressions-fonction">Expressions fonction&lt;/h2>
+&lt;p>Permettent de créer des fonctions anonymes.&lt;/p>
+&lt;p>La valeur d&amp;rsquo;une variable JavaScript peut être une fonction.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">hello&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span>(&lt;span style="color:#a6e22e">name&lt;/span>) {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">message&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">`Hello, &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">!`&lt;/span>;
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">message&lt;/span>;
+};
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">hello&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Richard&amp;#34;&lt;/span>)); &lt;span style="color:#75715e">// &amp;#34;Hello, Richard!&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="fonctions-fléchées">Fonctions fléchées&lt;/h2>
+&lt;p>&amp;ldquo;&lt;em>Fat arrow functions&lt;/em>&amp;rdquo;.&lt;/p>
+&lt;p>Syntaxe plus concise pour créer des fonctions anonymes.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">hello&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span> =&amp;gt; {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">message&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">`Hello, &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">!`&lt;/span>;
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">message&lt;/span>;
+};
+&lt;span style="color:#75715e">// Syntaxe alternative encore plus concise
+&lt;/span>&lt;span style="color:#75715e">// const hello = name =&amp;gt; `Hello, ${name}!`;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">hello&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Richard&amp;#34;&lt;/span>)); &lt;span style="color:#75715e">// &amp;#34;Hello, Richard!&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="tableaux">Tableaux&lt;/h2>
+&lt;p>Plusieurs syntaxes existent pour les parcourir.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">movies&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;The Wolf of Wall Street&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Zootopia&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Babysitting&amp;#34;&lt;/span>];
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">movies&lt;/span>.&lt;span style="color:#a6e22e">length&lt;/span>); &lt;span style="color:#75715e">// 3
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#a6e22e">movies&lt;/span>.&lt;span style="color:#a6e22e">length&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span>&lt;span style="color:#f92672">++&lt;/span>) {
+&lt;span style="color:#75715e">// Use movies[i] to access each array element one by one
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;span style="color:#a6e22e">movies&lt;/span>.&lt;span style="color:#a6e22e">forEach&lt;/span>(&lt;span style="color:#a6e22e">movie&lt;/span> =&amp;gt; {
+&lt;span style="color:#75715e">// Use movie to access each array element one by one
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>});
+&lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">movie&lt;/span> &lt;span style="color:#66d9ef">of&lt;/span> &lt;span style="color:#a6e22e">movies&lt;/span>) {
+&lt;span style="color:#75715e">// Use movie to access each array element one by one
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="objets">Objets&lt;/h2>
+&lt;p>Un objet JavaScript regroupe un ensemble de &lt;strong>propriétés&lt;/strong> (paire clé/valeur).&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#75715e">// Création d&amp;#39;un objet litéral
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">pen&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {
+&lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;ballpoint&amp;#34;&lt;/span>,
+&lt;span style="color:#a6e22e">color&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;blue&amp;#34;&lt;/span>,
+&lt;span style="color:#a6e22e">brand&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Bic&amp;#34;&lt;/span>
+};
+&lt;span style="color:#75715e">// Modifcation de la valeur d&amp;#39;une propriété
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">pen&lt;/span>.&lt;span style="color:#a6e22e">color&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;red&amp;#34;&lt;/span>;
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">pen&lt;/span>.&lt;span style="color:#a6e22e">type&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;ballpoint&amp;#34;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">pen&lt;/span>.&lt;span style="color:#a6e22e">color&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;red&amp;#34;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">pen&lt;/span>.&lt;span style="color:#a6e22e">brand&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;Bic&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="création-dobjets-à-partir-de-variables">Création d&amp;rsquo;objets à partir de variables&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">firstName&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Baptiste&amp;#34;&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">lastName&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Pesquet&amp;#34;&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">twitterHandle&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;@bpesquet&amp;#34;&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">teacher&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#a6e22e">firstName&lt;/span>, &lt;span style="color:#a6e22e">lastName&lt;/span>, &lt;span style="color:#a6e22e">twitterHandle&lt;/span>};
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">teacher&lt;/span>.&lt;span style="color:#a6e22e">firstName&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;Baptiste&amp;#34;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">teacher&lt;/span>.&lt;span style="color:#a6e22e">lastName&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;Pesquet&amp;#34;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">teacher&lt;/span>.&lt;span style="color:#a6e22e">twitterHandle&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;@bpesquet&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="déstructuration-dobjets">Déstructuration d&amp;rsquo;objets&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">pen&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {
+&lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;ballpoint&amp;#34;&lt;/span>,
+&lt;span style="color:#a6e22e">color&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;blue&amp;#34;&lt;/span>,
+&lt;span style="color:#a6e22e">brand&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Bic&amp;#34;&lt;/span>
+};
+&lt;span style="color:#75715e">// Accès à 2 des propriétés de l&amp;#39;objet
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">color&lt;/span>, &lt;span style="color:#a6e22e">brand&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">pen&lt;/span>;
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">color&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;blue&amp;#34;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">brand&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;Bic&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="déstructuration-de-tableaux">Déstructuration de tableaux&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">primaryColors&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;red&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;green&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;blue&amp;#34;&lt;/span>];
+&lt;span style="color:#66d9ef">const&lt;/span> [&lt;span style="color:#a6e22e">red&lt;/span>, &lt;span style="color:#a6e22e">green&lt;/span>, &lt;span style="color:#a6e22e">blue&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">primaryColors&lt;/span>;
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">red&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;red&amp;#34;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">green&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;red&amp;#34;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">blue&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;blue&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="opérateur-de-décomposition-spread">Opérateur de décomposition (&amp;quot;&lt;em>spread&lt;/em>&amp;quot;)&lt;/h2>
+&lt;p>Permet de développer une valeur itérable (chaîne, tableau&amp;hellip;).&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">chaine&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;foo bar&amp;#34;&lt;/span>;
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">chaine&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;foo bar&amp;#34;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>([...&lt;span style="color:#a6e22e">chaine&lt;/span>]); &lt;span style="color:#75715e">// [&amp;#34;f&amp;#34;, &amp;#34;o&amp;#34;, &amp;#34;o&amp;#34;, &amp;#34; &amp;#34;, &amp;#34;b&amp;#34;, &amp;#34;a&amp;#34;, &amp;#34;r&amp;#34;]
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">numbers&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;one&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;two&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;three&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;four&amp;#34;&lt;/span>];
+&lt;span style="color:#66d9ef">const&lt;/span> [&lt;span style="color:#a6e22e">one&lt;/span>, &lt;span style="color:#a6e22e">two&lt;/span>, ...&lt;span style="color:#a6e22e">rest&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">numbers&lt;/span>;
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">one&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;one&amp;#34;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">two&lt;/span>); &lt;span style="color:#75715e">// &amp;#34;two&amp;#34;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">rest&lt;/span>); &lt;span style="color:#75715e">// [&amp;#34;three&amp;#34;, &amp;#34;four&amp;#34;]
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="notion-de-méthode">Notion de méthode&lt;/h2>
+&lt;p>La valeur d&amp;rsquo;une propriété peut être une donnée ou une fonction. Dans le second cas, la propriété est une &lt;strong>méthode&lt;/strong>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">aurora&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {
+&lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Aurora&amp;#34;&lt;/span>,
+&lt;span style="color:#a6e22e">health&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">150&lt;/span>,
+&lt;span style="color:#a6e22e">strength&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">25&lt;/span>,
+&lt;span style="color:#75715e">// Renvoie la description du personnage
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">describe&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">`&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> has &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">health&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> health points
+&lt;/span>&lt;span style="color:#e6db74"> and &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">strength&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> as strength`&lt;/span>;
+}
+};
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="classes">Classes&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Character&lt;/span> {
+&lt;span style="color:#a6e22e">constructor&lt;/span>(&lt;span style="color:#a6e22e">name&lt;/span>, &lt;span style="color:#a6e22e">health&lt;/span>, &lt;span style="color:#a6e22e">strength&lt;/span>) {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">name&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>;
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">health&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">health&lt;/span>;
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">strength&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">strength&lt;/span>;
+}
+&lt;span style="color:#a6e22e">describe&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">`&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> has &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">health&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> health points
+&lt;/span>&lt;span style="color:#e6db74"> and &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">strength&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> as strength`&lt;/span>;
+}
+}
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">aurora&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Character&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Aurora&amp;#34;&lt;/span>, &lt;span style="color:#ae81ff">150&lt;/span>, &lt;span style="color:#ae81ff">25&lt;/span>);
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">aurora&lt;/span>.&lt;span style="color:#a6e22e">describe&lt;/span>());
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="modules-et-imports">Modules et imports&lt;/h2>
+&lt;p>JavaScript supporte la notion de &lt;strong>module&lt;/strong> pour factoriser des éléments réutilisables.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#75715e">// Importe l&amp;#39;élément exporté par défaut par le module
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;react-native&amp;#34;&lt;/span>;
+&lt;span style="color:#75715e">// Importe d&amp;#39;autres éléments exportés grâce à leur nom
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">View&lt;/span>, &lt;span style="color:#a6e22e">Text&lt;/span>, &lt;span style="color:#a6e22e">Image&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;react-native&amp;#34;&lt;/span>;
+&lt;span style="color:#75715e">// Importe à la fois l&amp;#39;élément par défaut et d&amp;#39;autres éléments
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>, { &lt;span style="color:#a6e22e">View&lt;/span>, &lt;span style="color:#a6e22e">Text&lt;/span>, &lt;span style="color:#a6e22e">Image&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;react-native&amp;#34;&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="plus-de-détails-sur-javascript">Plus de détails sur JavaScript&lt;/h2>
+&lt;p>&lt;a href="https://developer.mozilla.org/fr/docs/Web/JavaScript">https://developer.mozilla.org/fr/docs/Web/JavaScript&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/thejsway/thejsway/">https://github.com/thejsway/thejsway/&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/getify/You-Dont-Know-JS">https://github.com/getify/You-Dont-Know-JS&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="environnement-de-travail">Environnement de travail&lt;/h2>
+&lt;hr>
+&lt;p>&lt;img src="images/node-logo.png" alt="Node logo">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Plate-forme JavaScript basée sur le moteur d&amp;rsquo;exécution V8 de Chrome.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Permet de créer des applications JS hors du navigateur (serveur, mobile, etc).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Supporte un riche écosystème de librairies en tout genre installables sous forme de &lt;strong>packages&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="gestion-des-dépendances">Gestion des dépendances&lt;/h2>
+&lt;p>Le standard historique est &lt;a href="https://www.npmjs.com/">npm&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">npm init &lt;span style="color:#75715e"># Create a minimal package.json file&lt;/span>
+npm install &amp;lt;package name&amp;gt; &lt;span style="color:#75715e"># Install &amp;lt;package name&amp;gt; locally&lt;/span>
+npm install -g &amp;lt;package name&amp;gt; &lt;span style="color:#75715e"># Install &amp;lt;package name&amp;gt; globally&lt;/span>
+npm install &lt;span style="color:#75715e"># Install all packages listed in package.json&lt;/span>
+npm update &lt;span style="color:#75715e"># Update local packages to latest version&lt;/span>
+npm update -g &lt;span style="color:#75715e"># Update global packages to latest version&lt;/span>
+npm list &lt;span style="color:#75715e"># List locally installed packages&lt;/span>
+npm list -g &lt;span style="color:#75715e"># List globally installed packages&lt;/span>
+&lt;span style="color:#75715e"># Search the package index for &amp;lt;package name&amp;gt;&lt;/span>
+npm search &amp;lt;package name&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Autre possibilité : &lt;a href="https://yarnpkg.com/lang/en/">yarn&lt;/a> (plus récent).&lt;/p>
+&lt;hr>
+&lt;h2 id="le-fichier-packagejson">Le fichier package.json&lt;/h2>
+&lt;p>Associé à un fichier verrou &lt;code>package-lock.json&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#f92672">&amp;#34;main&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;node_modules/expo/AppEntry.js&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;scripts&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;start&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;expo start&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;android&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;expo start --android&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;ios&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;expo start --ios&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;eject&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;expo eject&amp;#34;&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;react-native&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;expo&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;~35.0.0&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;react&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;16.8.3&amp;#34;&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;devDependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;babel-preset-expo&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;~8.0.0&amp;#34;&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;private&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="versionnage-des-dépendances">Versionnage des dépendances&lt;/h2>
+&lt;p>Versionnage sémantique &lt;strong>X.Y.Z&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>X = version majeure (changements potentiellement non rétrocompatibles).&lt;/li>
+&lt;li>Y = version mineure.&lt;/li>
+&lt;li>Z = patch.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>^1.1.1&lt;/strong> équivaut à $\geq$ 1.1.1 et $&amp;lt;$ 2.0.0&lt;/p>
+&lt;p>&lt;strong>~1.1.1&lt;/strong> équivaut à $\geq$ 1.1.1 et $&amp;lt;$ 1.2.0&lt;/p>
+&lt;p>&lt;strong>1.1.1&lt;/strong> cible une version exacte.&lt;/p>
+&lt;hr>
+&lt;h2 id="formatage-automatique-du-code">Formatage automatique du code&lt;/h2>
+&lt;p>&lt;a href="https://prettier.io/">Prettier&lt;/a> est un outil indispensable.&lt;/p>
+&lt;p>&lt;a href="https://prettier.io/">&lt;img src="images/prettier-logo-light.png" alt="Prettier logo">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="analyse-du-code">Analyse du code&lt;/h2>
+&lt;p>&lt;a href="https://eslint.org/">ESLint&lt;/a> est l&amp;rsquo;outil le plus utilisé. Sa configuration se fait via un fichier &lt;code>.eslintrc.json&lt;/code>.&lt;/p>
+&lt;pre>&lt;code>{
+&amp;quot;extends&amp;quot;: [&amp;quot;airbnb&amp;quot;, &amp;quot;prettier&amp;quot;],
+&amp;quot;env&amp;quot;: {
+&amp;quot;browser&amp;quot;: true
+},
+&amp;quot;plugins&amp;quot;: [&amp;quot;prettier&amp;quot;],
+&amp;quot;rules&amp;quot;: {
+&amp;quot;no-console&amp;quot;: &amp;quot;off&amp;quot;,
+&amp;quot;no-alert&amp;quot;: &amp;quot;off&amp;quot;,
+&amp;quot;no-plusplus&amp;quot;: &amp;quot;off&amp;quot;,
+&amp;quot;default-case&amp;quot;: &amp;quot;off&amp;quot;,
+&amp;quot;no-param-reassign&amp;quot;: [
+&amp;quot;error&amp;quot;,
+{
+&amp;quot;props&amp;quot;: false
+}
+],
+&amp;quot;arrow-body-style&amp;quot;: [
+&amp;quot;error&amp;quot;,
+&amp;quot;as-needed&amp;quot;,
+{ &amp;quot;requireReturnForObjectLiteral&amp;quot;: true }
+]
+}
+}
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h2 id="transpilation-du-code">Transpilation du code&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://babeljs.io/">Babel&lt;/a> transforme le code JavaScript ES2015+ en code ES5 compatible avec tous les environnements d&amp;rsquo;exécution JS.&lt;/li>
+&lt;li>Il permet d&amp;rsquo;utiliser sereinement les dernières évolutions du langage.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://babeljs.io/">&lt;img src="images/Babel-Javascript-compiler.png" alt="Babel logo">&lt;/a>&lt;/p></description></item><item><title>Deconstructing AI</title><link>https://bpesquet.github.io/slides/ai/deconstructing-ai/</link><pubDate>Mon, 09 Dec 2019 10:47:12 +0100</pubDate><guid>https://bpesquet.github.io/slides/ai/deconstructing-ai/</guid><description>&lt;h2 id="summary">Summary&lt;/h2>
+&lt;ul>
+&lt;li>What Is AI, Actually?&lt;/li>
+&lt;li>How Do Machines Learn?&lt;/li>
+&lt;li>Should We Be Scared Of AI?&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="what-is-ai-actually">What Is AI, Actually?&lt;/h2>
+&lt;hr>
+&lt;h2 id="the-original-ambition-of-ai">The original ambition of AI&lt;/h2>
+&lt;blockquote>
+&lt;p>&amp;ldquo;AI is the science and engineering of making intelligent machines.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)">John McCarthy&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Dartmouth_workshop">Dartmouth Workshop&lt;/a>, 1956)&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;ldquo;AI is the science of making machines do things that would require intelligence if done by men.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Marvin_Minsky">Marvin Minsky&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="a-technical-definition-of-ai">A technical definition of AI&lt;/h2>
+&lt;blockquote>
+&lt;p>&amp;ldquo;AI refers to systems that &lt;strong>display&lt;/strong> intelligent behavior by analysing their &lt;strong>environment&lt;/strong> and taking &lt;strong>actions&lt;/strong> - with some degree of &lt;strong>autonomy&lt;/strong> - to achieve specific &lt;strong>goals&lt;/strong>.&amp;rdquo; (&lt;a href="https://ec.europa.eu/newsroom/dae/document.cfm?doc_id=51625">EC, 2018&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;p>AI systems can be either:&lt;/p>
+&lt;ul>
+&lt;li>Purely &lt;strong>software&lt;/strong>-based (e.g. voice assistants, search engines, face recognition systems).&lt;/li>
+&lt;li>Embedded in &lt;strong>hardware&lt;/strong> devices (e.g. robots, autonomous cars, drones).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="main-areas-of-research">Main areas of research&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Problem solving&lt;/strong> (e.g. search algorithms, constraint solving).&lt;/li>
+&lt;li>&lt;strong>Reasoning&lt;/strong> and &lt;strong>decision making&lt;/strong> (e.g. logic, knowledge representation).&lt;/li>
+&lt;li>&lt;strong>Machine Learning&lt;/strong>.&lt;/li>
+&lt;li>&lt;strong>Real-world interactions&lt;/strong> (e.g. computer vision, natural language understanding, robotics).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="ai-is-a-moving-target">AI is a moving target&lt;/h2>
+&lt;p>As soon as AI successfully solves a problem, the problem is no longer considered a part of AI.&lt;/p>
+&lt;blockquote>
+&lt;p>&amp;ldquo;&lt;a href="https://en.wikipedia.org/wiki/AI_effect">AI is whatever hasn&amp;rsquo;t been done yet&lt;/a>.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="the-tumultuous-history-of-ai">The tumultuous history of AI&lt;/h2>
+&lt;p>&lt;a href="https://www.slideshare.net/dlavenda/ai-and-productivity">&lt;img src="images/ai_timeline.png" alt="The AI timeline">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="ai-is-a-highly-interdisciplinary-field">AI is a highly interdisciplinary field&lt;/h2>
+&lt;p>&lt;img src="images/ai_fields.png" alt="AI fields">&lt;/p>
+&lt;hr>
+&lt;h2 id="ai-is-a-social-science">AI is a social science&lt;/h2>
+&lt;p>AI has many social and societal implications:&lt;/p>
+&lt;ul>
+&lt;li>Job market transformation.&lt;/li>
+&lt;li>Human/machine interactions.&lt;/li>
+&lt;li>Trust and acceptability.&lt;/li>
+&lt;li>Legal aspects and regulation.&lt;/li>
+&lt;li>Fairness.&lt;/li>
+&lt;li>Ethical use.&lt;/li>
+&lt;li>Personal data.&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="ai-comes-in-different-flavours">AI comes in different flavours&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Substitutive intelligence&lt;/strong>: replacement of men by machines.&lt;/li>
+&lt;li>&lt;strong>Augmented intelligence&lt;/strong>: human-centered AI for performance augmentation &amp;amp; autonomy enhancement.&lt;/li>
+&lt;li>&lt;strong>Hybrid intelligence&lt;/strong>: human-machine collaboration on complex tasks.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="a-broader-definition-of-ai">A broader definition of AI&lt;/h2>
+&lt;blockquote>
+&lt;p>&amp;ldquo;AI is an &lt;strong>interdisciplinary&lt;/strong> field aiming at &lt;strong>understanding&lt;/strong> and &lt;strong>imitating&lt;/strong> the mechanisms of &lt;strong>cognition&lt;/strong> and &lt;strong>reasoning&lt;/strong>, in order to &lt;strong>assist&lt;/strong> or &lt;strong>substitute&lt;/strong> humans in their activities.&amp;rdquo; (&lt;a href="https://fr.wikipedia.org/wiki/Commission_d%27enrichissement_de_la_langue_fran%C3%A7aise">Commission d&amp;rsquo;enrichissement de la langue française&lt;/a>, 2018)&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="how-do-machines-learn">How Do Machines Learn?&lt;/h2>
+&lt;hr>
+&lt;h2 id="machine-learning-in-a-nutshell">Machine Learning in a nutshell&lt;/h2>
+&lt;p>Set of techniques for giving machines the ability to find &lt;strong>patterns&lt;/strong> and extract &lt;strong>rules&lt;/strong> from data, in order to:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Identify&lt;/strong> or &lt;strong>classify&lt;/strong> elements.&lt;/li>
+&lt;li>Detect &lt;strong>tendencies&lt;/strong>.&lt;/li>
+&lt;li>Make &lt;strong>predictions&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;p>As more data is fed into the system, results get better: performance improves with experience.&lt;/p>
+&lt;p>a.k.a. &lt;strong>Statistical Learning&lt;/strong>.&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/ai_ml_dl.png" alt="AI/ML/DL Venn diagram">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/machine_learning_tree.png" alt="ML category tree">&lt;/p>
+&lt;hr>
+&lt;h2 id="a-new-paradigm">A new paradigm&lt;/h2>
+&lt;p>&lt;img src="images/programming_paradigm.png" alt="Programming paradigm">&lt;/p>
+&lt;p>&lt;img src="images/training_paradigm.png" alt="Training paradigm">&lt;/p>
+&lt;hr>
+&lt;h2 id="the-machine-learning-workflow">The Machine Learning workflow&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Frame&lt;/strong> the problem.&lt;/li>
+&lt;li>Collect, analyze and prepare &lt;strong>data&lt;/strong>.&lt;/li>
+&lt;li>Select and train several &lt;strong>models&lt;/strong> on data.&lt;/li>
+&lt;li>&lt;strong>Tune&lt;/strong> the most promising model.&lt;/li>
+&lt;li>&lt;strong>Deploy&lt;/strong> the model to production.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="ml-is-not-a-silver-bullet">ML is not a silver bullet!&lt;/h2>
+&lt;ul>
+&lt;li>Some use cases are a better fit for ML than others:
+&lt;ul>
+&lt;li>Difficulty to express the actions as rules.&lt;/li>
+&lt;li>Data too complex for traditional analytical methods.&lt;/li>
+&lt;li>Performance &amp;gt; interpretability.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Data quality is paramount.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="algorithm-1-k-nearest-neighbors">Algorithm #1: K-Nearest Neighbors&lt;/h2>
+&lt;p>Prediction is based on the &lt;code>k&lt;/code> nearest neighbors of a data sample.&lt;/p>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">&lt;img src="images/knn.png" alt="K-NN">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="algorithm-2-decision-trees">Algorithm #2: Decision Trees&lt;/h2>
+&lt;p>Build a tree-like structure based on a series of discovered questions on the data.&lt;/p>
+&lt;p>&lt;img src="images/dt_iris.png" alt="Decision Tree for Iris dataset">&lt;/p>
+&lt;hr>
+&lt;h2 id="algorithm-3-neural-networks">Algorithm #3: Neural Networks&lt;/h2>
+&lt;ul>
+&lt;li>Layers of loosely neuron-inpired computation units.&lt;/li>
+&lt;li>Can approximate any continuous function.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/neuron_output.png" alt="Neuron output">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/neural_net.gif" alt="Dog or Cat?">&lt;/p>
+&lt;hr>
+&lt;h2 id="training-a-network">Training a network&lt;/h2>
+&lt;p>&lt;img src="images/training_inference1.png" alt="Training and inference">&lt;/p>
+&lt;hr>
+&lt;h2 id="the-deep-learning-tsunami">The Deep Learning tsunami&lt;/h2>
+&lt;ul>
+&lt;li>Multilayered neural networks trained on (generally) vast amounts of data.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">&lt;img src="images/alexnet.png" alt="AlexNet'12 (simplified)">&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Since 2010, outperformed previous state-of-the-art techniques in many fields (language translation, image and scene recognition&amp;hellip;).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/big_data_universe.png" alt="Big data universe">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/infographic2-intel-past-present.gif" alt="Computer power sheet">&lt;/p>
+&lt;hr>
+&lt;h2 id="from-labs-to-everyday-life">From labs to everyday life&lt;/h2>
+&lt;p>&lt;a href="http://yann.lecun.com/exdb/lenet/">&lt;img src="images/lecun_lenet.gif" alt="LeCun - LeNet">&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://twitter.com/mbrennanchina/status/1203687857849716736">&lt;img src="images/china_school_facial_reco.gif" alt="Facial recognition in Chinese elementary school">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="should-we-be-scared-of-ai">Should We Be Scared Of AI?&lt;/h2>
+&lt;hr>
+&lt;h2 id="ai-is-altering-the-job-market">AI is altering the job market&amp;hellip;&lt;/h2>
+&lt;ul>
+&lt;li>Machines outperform humans in a growing list of cognitive tasks.&lt;/li>
+&lt;li>Repetitive tasks are most exposed (even complex ones, like medical diagnosis or financial analysis).&lt;/li>
+&lt;li>Entire industries are on the verge of disruption (example: truck-based transportation, first employer in the U.S.).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-for-better-or-worse">&amp;hellip; For better or worse&lt;/h2>
+&lt;ul>
+&lt;li>Net impact of AI on job quantity is unknown.&lt;/li>
+&lt;li>Most jobs will be &lt;strong>transformed&lt;/strong>, not replaced by AI.
+&lt;ul>
+&lt;li>Boring and repetitive stuff will be automated.&lt;/li>
+&lt;li>AI will add new insight to help human decision.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Human/machine interactions will multiply.&lt;/li>
+&lt;li>Their quality will be a key factor of performance for organizations.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="real-or-fake">Real or fake?&lt;/h2>
+&lt;p>&lt;a href="https://twitter.com/goodfellow_ian/status/1084973596236144640">&lt;img src="images/gan_2014_2018.jpg" alt="GAN progress from 2014 to 2018">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="agi-is-very-far-away">AGI is very far away&lt;/h2>
+&lt;ul>
+&lt;li>Current AI systems are &lt;strong>weak&lt;/strong>: highly tuned to perform well in one task.&lt;/li>
+&lt;li>&lt;strong>Artificial General Intelligence&lt;/strong> a.k.a. &lt;strong>strong AI&lt;/strong>, the ability to perform any task as well as a human, is out of reach.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://twitter.com/ylecun/status/1204013978210320384">&lt;img src="images/ylecun_tweet_agi.png" alt="Y. LeCun tweet on AGI, Déc. 2019">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="the-intelligence-debate">The intelligence debate&lt;/h2>
+&lt;ul>
+&lt;li>Despite their complexity, ML and DL algorithms can be viewed as merely &lt;a href="https://diginomica.com/ai-curve-fitting-not-intelligence">curve fitting&lt;/a>.&lt;/li>
+&lt;li>On the contrary, some AI researchers envision DL as a new form of &lt;strong>algorithmic reasoning&lt;/strong>, somehow mimicking the human brain.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="the-human-brain-is-a-masterpiece">The human brain is a masterpiece&lt;/h2>
+&lt;ul>
+&lt;li>Approx. 86 billions neurons in 1.4 kg.&lt;/li>
+&lt;li>Typical energy consumption: 20 W (!)&lt;/li>
+&lt;li>So much of it is still unknown.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/human_brain.jpg" alt="The human brain">&lt;/p>
+&lt;hr>
+&lt;h2 id="babies-are-outstanding-learners">Babies are outstanding learners&lt;/h2>
+&lt;p>&lt;a href="http://www.lscp.net/persons/dupoux/">&lt;img src="images/conceptual_acquisition_infants.png" alt="Conceptuals acquisitions by babies">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="any-questions">Any questions?&lt;/h2>
+&lt;p>&lt;img src="images/cutest_baby_ever.png" alt="The cutest baby ever">&lt;/p></description></item><item><title>Introduction à React Native</title><link>https://bpesquet.github.io/slides/mobile/react-native-intro/</link><pubDate>Wed, 23 May 2018 23:34:24 +0200</pubDate><guid>https://bpesquet.github.io/slides/mobile/react-native-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;ul>
+&lt;li>L&amp;rsquo;écosystème mobile&lt;/li>
+&lt;li>Premiers pas avec React Native&lt;/li>
+&lt;li>Anatomie d&amp;rsquo;une application React Native&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="lécosystème-mobile">L&amp;rsquo;écosystème mobile&lt;/h2>
+&lt;hr>
+&lt;p>&lt;img src="images/smartphone_market_share_2016.jpg" alt="Smartphone platform market share">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/market-share-2015_2019.png" alt="Market share evolution 2015-2019">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/os-fragmentation_2018.jpg" alt="Mobile OS Fragmentation">&lt;/p>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="développement-natif">Développement natif&lt;/h2>
+&lt;p>Création d&amp;rsquo;applications en utilisant la technologie prévue par le concepteur de l&amp;rsquo;OS.&lt;/p>
+&lt;ul>
+&lt;li>Android : Java&lt;/li>
+&lt;li>IOS : Objective-C ou Swift&lt;/li>
+&lt;/ul>
+&lt;p class='fragment '
+>
+Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
+&lt;/p>
+&lt;hr>
+&lt;h2 id="avantages">Avantages&lt;/h2>
+&lt;ul>
+&lt;li>Accès à l&amp;rsquo;intégralité des fonctionnalités matérielles et logicielles du terminal mobile.&lt;/li>
+&lt;li>Performances optimales.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="inconvénient-majeur-">Inconvénient (majeur !)&lt;/h2>
+&lt;p>Nécessité de créer puis de faire évoluer une application pour chaque environnement.&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="solutions-hybrides">Solutions hybrides&lt;/h2>
+&lt;p>Création d&amp;rsquo;applications mobiles compatibles avec plusieurs OS mobiles grâce à un framework dédié.&lt;/p>
+&lt;p>Une application hybride est une application web qui s&amp;rsquo;exécute à l&amp;rsquo;intérieur d&amp;rsquo;un navigateur.&lt;/p>
+&lt;p>Exemples : &lt;a href="https://cordova.apache.org">Apache Cordova&lt;/a>, &lt;a href="https://ionicframework.com">Ionic&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="avantages">Avantages&lt;/h2>
+&lt;ul>
+&lt;li>Fonctionnalités et performances proches de celles d&amp;rsquo;une application native.&lt;/li>
+&lt;li>Economies de ressources pour créer l&amp;rsquo;application.&lt;/li>
+&lt;li>Une seule base de code : maintenance et évolution facilitées.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="inconvénients">Inconvénients&lt;/h2>
+&lt;ul>
+&lt;li>Impossible d&amp;rsquo;accéder à certaines fonctionnalités matérielles ou logicielles spécifiques.&lt;/li>
+&lt;li>&lt;em>Look&amp;rsquo;n&amp;rsquo;feel&lt;/em> non natif.&lt;/li>
+&lt;li>Mauvaises performances dans certains scenarii.&lt;/li>
+&lt;/ul>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="développement-natif-multi-plateformes">Développement natif multi-plateformes&lt;/h2>
+&lt;p>Création d&amp;rsquo;applications mobiles compatibles avec plusieurs OS mobiles grâce à un framework dédié.&lt;/p>
+&lt;p>Le framework encapsule les véritables composants natifs de l&amp;rsquo;OS.&lt;/p>
+&lt;p>Exemples : &lt;a href="https://facebook.github.io/react-native/">React Native&lt;/a>, &lt;a href="https://weex.apache.org/">Weex&lt;/a>, &lt;a href="https://www.visualstudio.com/fr/xamarin/">Xamarin&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="le-meilleur-des-deux-mondes-">Le meilleur des deux mondes ?&lt;/h2>
+&lt;p>Combine les avantages du natif (&lt;em>look&amp;rsquo;n&amp;rsquo;feel&lt;/em>, performances) et de l&amp;rsquo;hybride (une seule base de code).&lt;/p>
+&lt;p>Limite potentielle : le support de l&amp;rsquo;OS dépend entièrement du framework.&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="premiers-pas-avec-react-native">Premiers pas avec React Native&lt;/h2>
+&lt;hr>
+&lt;h2 id="react-native">React Native&lt;/h2>
+&lt;p>Framework créé par Facebook, open source depuis 2015.&lt;/p>
+&lt;p>Déclinaison mobile du framework JavaScript &lt;a href="https://reactjs.org/">React&lt;/a>.&lt;/p>
+&lt;p>&lt;img src="images/reactjs.png" alt="React logo">&lt;/p>
+&lt;hr>
+&lt;h2 id="expo">Expo&lt;/h2>
+&lt;p>Framework pour faciliter la création et le déploiement d&amp;rsquo;applications React Native.&lt;/p>
+&lt;p>&lt;img src="images/expo_logo.png" alt="Expo logo">&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/expo/expo-cli">Expo CLI&lt;/a> : outil en ligne de commande pour le développement local.&lt;/li>
+&lt;li>&lt;a href="https://expo.io">Expo client&lt;/a> : application mobile à installer sur le terminal cible pour le déploiement.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="création-dune-application">Création d&amp;rsquo;une application&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e"># Install expo-cli globally&lt;/span>
+&lt;span style="color:#75715e"># (Node.js and Git are prerequisites)&lt;/span>
+npm install -g expo-cli
+&lt;span style="color:#75715e"># Create a new app in the my-new-project subfolder&lt;/span>
+expo init my-new-project
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>
+&lt;p>Workflow &lt;strong>managé&lt;/strong> : projet entièrement géré par Expo (plus simple).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Workflow &lt;strong>bare&lt;/strong> : plus proche d&amp;rsquo;un projet React Native pur.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="contenu-du-répertoire-créé">Contenu du répertoire créé&lt;/h2>
+&lt;p>&lt;img src="images/rn-app-structure.png" alt="Arborescence React Native">&lt;/p>
+&lt;hr>
+&lt;h2 id="déploiement-de-lapplication">Déploiement de l&amp;rsquo;application&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cd my-new-project &lt;span style="color:#75715e"># move into project directory&lt;/span>
+npm start &lt;span style="color:#75715e"># Or &amp;#39;expo start&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ensuite, scan du QR Code depuis l&amp;rsquo;application Expo (Android) ou l&amp;rsquo;appareil photo du smartphone (iOS).&lt;/p>
+&lt;p>&lt;img src="images/expo_qrcode.png" alt="Expo QR Code">&lt;/p>
+&lt;hr>
+&lt;h2 id="détails-sur-le-déploiement">Détails sur le déploiement&lt;/h2>
+&lt;ul>
+&lt;li>L&amp;rsquo;application est hébergée sur un serveur web local.&lt;/li>
+&lt;li>Expo s&amp;rsquo;y connecte pour la récupérer puis la lancer.&lt;/li>
+&lt;li>Une interface de gestion s&amp;rsquo;affiche dans le navigateur.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/expo_management.png" alt="Expo Management">&lt;/p>
+&lt;hr>
+&lt;h2 id="connexion-au-serveur-expo">Connexion au serveur Expo&lt;/h2>
+&lt;p>L&amp;rsquo;application Expo client doit accéder au serveur web de la machine de développement pour pouvoir lancer l&amp;rsquo;application RN.&lt;/p>
+&lt;p>Il existe plusieurs modes de connexion :&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>LAN&lt;/strong> : utilisation du réseau Wifi local. Peut poser problème dans certains environnements.&lt;/li>
+&lt;li>&lt;strong>Tunnel&lt;/strong> : création d&amp;rsquo;un tunnel avec &lt;a href="https://ngrok.com/">ngrok&lt;/a> pour accéder au serveur local via le web. Nécessite que le terminal mobile dispose d&amp;rsquo;un accès internet.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="rechargement-dynamique">Rechargement dynamique&lt;/h2>
+&lt;p>&lt;a href="https://openclassrooms.com/fr/courses/4902061-developpez-une-application-mobile-react-native/">&lt;img src="images/expo_reload.jpeg" alt="Live Reload">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="anatomie-dune-application-react-native">Anatomie d&amp;rsquo;une application React Native&lt;/h2>
+&lt;hr>
+&lt;h2 id="le-fichier-de-configuration-appjson">Le fichier de configuration app.json&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#f92672">&amp;#34;expo&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;My New Project&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;slug&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;my-new-project&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;privacy&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;public&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;sdkVersion&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;36.0.0&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;platforms&amp;#34;&lt;/span>: [
+&lt;span style="color:#e6db74">&amp;#34;ios&amp;#34;&lt;/span>,
+&lt;span style="color:#e6db74">&amp;#34;android&amp;#34;&lt;/span>,
+&lt;span style="color:#e6db74">&amp;#34;web&amp;#34;&lt;/span>
+],
+&lt;span style="color:#f92672">&amp;#34;version&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;1.0.0&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;orientation&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;portrait&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;icon&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;./assets/icon.png&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;splash&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;image&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;./assets/splash.png&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;resizeMode&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;contain&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;backgroundColor&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#ffffff&amp;#34;&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;updates&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;fallbackToCacheTimeout&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">0&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;assetBundlePatterns&amp;#34;&lt;/span>: [
+&lt;span style="color:#e6db74">&amp;#34;**/*&amp;#34;&lt;/span>
+],
+&lt;span style="color:#f92672">&amp;#34;ios&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;supportsTablet&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+}
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="le-fichier-packagejson">Le fichier package.json&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#f92672">&amp;#34;main&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;node_modules/expo/AppEntry.js&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;scripts&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;start&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;expo start&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;android&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;expo start --android&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;ios&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;expo start --ios&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;web&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;expo start --web&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;eject&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;expo eject&amp;#34;&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;expo&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;~36.0.0&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;react&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;~16.9.0&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;react-dom&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;~16.9.0&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;react-native&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;react-native-web&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;~0.11.7&amp;#34;&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;devDependencies&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;babel-preset-expo&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;~8.0.0&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;@babel/core&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;^7.0.0&amp;#34;&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;private&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="le-fichier-principal-appjs">Le fichier principal App.js&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">StyleSheet&lt;/span>, &lt;span style="color:#a6e22e">Text&lt;/span>, &lt;span style="color:#a6e22e">View&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react-native&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">container&lt;/span>}&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">Open&lt;/span> &lt;span style="color:#a6e22e">up&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span>.&lt;span style="color:#a6e22e">js&lt;/span> &lt;span style="color:#a6e22e">to&lt;/span> &lt;span style="color:#a6e22e">start&lt;/span> &lt;span style="color:#a6e22e">working&lt;/span> &lt;span style="color:#a6e22e">on&lt;/span> &lt;span style="color:#a6e22e">your&lt;/span> &lt;span style="color:#a6e22e">app&lt;/span>&lt;span style="color:#f92672">!&lt;/span>&amp;lt;/&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">View&lt;/span>&amp;gt;
+);
+}
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">styles&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">StyleSheet&lt;/span>.&lt;span style="color:#a6e22e">create&lt;/span>({
+&lt;span style="color:#a6e22e">container&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;span style="color:#a6e22e">flex&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>,
+&lt;span style="color:#a6e22e">backgroundColor&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;#fff&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">alignItems&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;center&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">justifyContent&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;center&amp;#39;&lt;/span>,
+},
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="jsx">JSX&lt;/h2>
+&lt;p>Syntaxe introduite pour le framework web &lt;a href="https://reactjs.org/">React&lt;/a> permettant de décrire une UI en intégrant balisage et logique applicative.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#75715e">// JSX for React (web)
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;Clarisse Agbegnenou&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &amp;lt;&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">Hello&lt;/span>, {&lt;span style="color:#a6e22e">name&lt;/span>}&amp;lt;/&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;;
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#75715e">// JSX for React Native (mobile)
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">a&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &amp;lt;&lt;span style="color:#f92672">View&lt;/span> /&amp;gt;
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">b&lt;/span> &lt;span style="color:#f92672">=&lt;/span> (
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span>
+&lt;span style="color:#a6e22e">foo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;hello&amp;#39;&lt;/span>
+&lt;span style="color:#a6e22e">bar&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">baz&lt;/span>}&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;&lt;span style="color:#ae81ff">42&lt;/span>&amp;lt;/&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">View&lt;/span>&amp;gt;
+)
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="la-notion-de-composant">La notion de composant&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Les &lt;strong>composants&lt;/strong> sont les blocs de base d&amp;rsquo;une application React (Native).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ils permettent de créer une UI sous forme &lt;strong>déclarative&lt;/strong> par assemblage de composants.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ils doivent disposer d&amp;rsquo;une méthode &lt;code>render()&lt;/code> qui définit leur rendu visuel.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="propriétés-props-dun-composant">Propriétés (props) d&amp;rsquo;un composant&lt;/h2>
+&lt;p>Caractéristiques définies au moment de la création. Modifiables uniquement par le composant parent. &lt;a href="https://snack.expo.io/@bpesquet/greeting">Démo&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>, { &lt;span style="color:#a6e22e">Component&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">Text&lt;/span>, &lt;span style="color:#a6e22e">View&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react-native&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Greeting&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> &amp;lt;&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">Hello&lt;/span> {&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">name&lt;/span>}&lt;span style="color:#f92672">!&lt;/span>&amp;lt;/&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;;
+}
+}
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">LotsOfGreetings&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{{ &lt;span style="color:#a6e22e">alignItems&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;center&amp;#34;&lt;/span> }}&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Greeting&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;John&amp;#34;&lt;/span> /&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Greeting&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Paul&amp;#34;&lt;/span> /&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Greeting&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Jones&amp;#34;&lt;/span> /&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">View&lt;/span>&amp;gt;
+);
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="etat-dun-composant">Etat d&amp;rsquo;un composant&lt;/h2>
+&lt;p>Etat interne (données) d&amp;rsquo;un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via &lt;code>setState()&lt;/code>. &lt;a href="https://snack.expo.io/@bpesquet/counter">Démo&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>, { &lt;span style="color:#a6e22e">Component&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">StyleSheet&lt;/span>, &lt;span style="color:#a6e22e">Text&lt;/span>, &lt;span style="color:#a6e22e">View&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react-native&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Counter&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">constructor&lt;/span>(&lt;span style="color:#a6e22e">props&lt;/span>) {
+&lt;span style="color:#66d9ef">super&lt;/span>(&lt;span style="color:#a6e22e">props&lt;/span>);
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">state&lt;/span> &lt;span style="color:#f92672">=&lt;/span> { &lt;span style="color:#a6e22e">count&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> };
+&lt;span style="color:#a6e22e">setInterval&lt;/span>(() =&amp;gt; {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">setState&lt;/span>({ &lt;span style="color:#a6e22e">count&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">state&lt;/span>.&lt;span style="color:#a6e22e">count&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> });
+}, &lt;span style="color:#ae81ff">1000&lt;/span>);
+}
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">count&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">state&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">color&lt;/span>, &lt;span style="color:#a6e22e">size&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>;
+&lt;span style="color:#66d9ef">return&lt;/span> &amp;lt;&lt;span style="color:#f92672">Text&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{{ &lt;span style="color:#a6e22e">color&lt;/span>, &lt;span style="color:#a6e22e">fontSize&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">size&lt;/span> }}&amp;gt;{&lt;span style="color:#a6e22e">count&lt;/span>}&amp;lt;/&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;;
+}
+}
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">CounterApp&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">container&lt;/span>}&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Counter&lt;/span> &lt;span style="color:#a6e22e">color&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#e6db74">&amp;#34;red&amp;#34;&lt;/span>} &lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#ae81ff">30&lt;/span>} /&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">View&lt;/span>&amp;gt;
+);
+}
+}
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">styles&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">StyleSheet&lt;/span>.&lt;span style="color:#a6e22e">create&lt;/span>({
+&lt;span style="color:#a6e22e">container&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;span style="color:#a6e22e">flex&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>,
+&lt;span style="color:#a6e22e">backgroundColor&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;#fff&amp;#34;&lt;/span>,
+&lt;span style="color:#a6e22e">alignItems&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;center&amp;#34;&lt;/span>,
+&lt;span style="color:#a6e22e">justifyContent&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;center&amp;#34;&lt;/span>
+}
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="composants-de-base">Composants de base&lt;/h2>
+&lt;p>&lt;img src="images/basic_components.png" alt="React Native core components">&lt;/p>
+&lt;hr>
+&lt;h2 id="composants-dinterface-utilisateur">Composants d&amp;rsquo;interface utilisateur&lt;/h2>
+&lt;p>&lt;img src="images/ui_components.png" alt="React native UI components">&lt;/p></description></item><item><title>React Native : gestion de l'UI</title><link>https://bpesquet.github.io/slides/mobile/react-native-ui/</link><pubDate>Tue, 07 Jan 2020 23:06:33 +0100</pubDate><guid>https://bpesquet.github.io/slides/mobile/react-native-ui/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;ul>
+&lt;li>Cycle de vie d&amp;rsquo;un composant&lt;/li>
+&lt;li>Style et positionnement&lt;/li>
+&lt;li>Gestion de la navigation&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="cycle-de-vie-dun-composant">Cycle de vie d&amp;rsquo;un composant&lt;/h2>
+&lt;hr>
+&lt;h2 id="notion-de-cycle-de-vie">Notion de cycle de vie&lt;/h2>
+&lt;p>Les composants RN suivent un cycle de vie bien défini composé d&amp;rsquo;étapes : &lt;strong>montage&lt;/strong>, &lt;strong>rendu&lt;/strong>, &lt;strong>mise à jour&lt;/strong>, &lt;strong>démontage&lt;/strong> et &lt;strong>suppression&lt;/strong>.&lt;/p>
+&lt;p>&lt;a href="http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/">&lt;img src="images/react-lifecycle.png" alt="React lifecycle">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="méthodes-liées-au-cycle-de-vie">Méthodes liées au cycle de vie&lt;/h2>
+&lt;p>Les redéfinir permet d&amp;rsquo;exécuter du code spécifique.&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>constructor(props)&lt;/code> : initialisation des propriétés et de l&amp;rsquo;état.&lt;/li>
+&lt;li>&lt;code>render()&lt;/code> : renvoi d&amp;rsquo;un élément React Native.&lt;/li>
+&lt;li>&lt;code>componentDidMount()&lt;/code> : appels asynchrones.&lt;/li>
+&lt;li>&lt;code>shouldComponentUpdate(nextProps, nextState)&lt;/code> : renvoi d&amp;rsquo;un booléen pour annuler la mise à jour.&lt;/li>
+&lt;li>&lt;code>componentDidUpdate(prevProps, prevState)&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="style-et-positionnement">Style et positionnement&lt;/h2>
+&lt;hr>
+&lt;h2 id="gestion-du-style">Gestion du style&lt;/h2>
+&lt;p>Propriété &lt;code>style&lt;/code> pour les composants de base.&lt;/p>
+&lt;p>Semblable à CSS avec nommage &lt;em>camelCase&lt;/em>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>, { &lt;span style="color:#a6e22e">Component&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">StyleSheet&lt;/span>, &lt;span style="color:#a6e22e">Text&lt;/span>, &lt;span style="color:#a6e22e">View&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react-native&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">styles&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">StyleSheet&lt;/span>.&lt;span style="color:#a6e22e">create&lt;/span>({
+&lt;span style="color:#a6e22e">bigblue&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;span style="color:#a6e22e">color&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;blue&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">fontWeight&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;bold&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">fontSize&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">30&lt;/span>,
+},
+&lt;span style="color:#a6e22e">red&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;span style="color:#a6e22e">color&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;red&amp;#39;&lt;/span>,
+},
+});
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">LotsOfStyles&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Text&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">red&lt;/span>}&amp;gt;&lt;span style="color:#a6e22e">just&lt;/span> &lt;span style="color:#a6e22e">red&lt;/span>&amp;lt;/&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Text&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">bigblue&lt;/span>}&amp;gt;&lt;span style="color:#a6e22e">just&lt;/span> &lt;span style="color:#a6e22e">bigblue&lt;/span>&amp;lt;/&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Text&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{[&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">bigblue&lt;/span>, &lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">red&lt;/span>]}&amp;gt;&lt;span style="color:#a6e22e">bigblue&lt;/span>, &lt;span style="color:#a6e22e">then&lt;/span> &lt;span style="color:#a6e22e">red&lt;/span>&amp;lt;/&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Text&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{[&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">red&lt;/span>, &lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">bigblue&lt;/span>]}&amp;gt;&lt;span style="color:#a6e22e">red&lt;/span>, &lt;span style="color:#a6e22e">then&lt;/span> &lt;span style="color:#a6e22e">bigblue&lt;/span>&amp;lt;/&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">View&lt;/span>&amp;gt;
+);
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="gestion-des-dimensions">Gestion des dimensions&lt;/h2>
+&lt;p>Deux possibilités :&lt;/p>
+&lt;ul>
+&lt;li>Dimensions fixes&lt;/li>
+&lt;li>Dimensions flexibles&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="dimensions-fixes">Dimensions fixes&lt;/h2>
+&lt;p>Utile pour les composants qui doivent toujours être affichés à la même taille.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>, { &lt;span style="color:#a6e22e">Component&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">View&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react-native&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">FixedDimensionsBasics&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{{&lt;span style="color:#a6e22e">width&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">50&lt;/span>, &lt;span style="color:#a6e22e">height&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">50&lt;/span>, &lt;span style="color:#a6e22e">backgroundColor&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;powderblue&amp;#39;&lt;/span>}} /&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{{&lt;span style="color:#a6e22e">width&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">100&lt;/span>, &lt;span style="color:#a6e22e">height&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">100&lt;/span>, &lt;span style="color:#a6e22e">backgroundColor&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;skyblue&amp;#39;&lt;/span>}} /&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{{&lt;span style="color:#a6e22e">width&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">150&lt;/span>, &lt;span style="color:#a6e22e">height&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">150&lt;/span>, &lt;span style="color:#a6e22e">backgroundColor&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;steelblue&amp;#39;&lt;/span>}} /&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">View&lt;/span>&amp;gt;
+);
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="dimensions-flexibles">Dimensions flexibles&lt;/h2>
+&lt;p>Les dimensions s&amp;rsquo;adaptent à l&amp;rsquo;espace disponible.&lt;/p>
+&lt;p>&lt;code>flex:1&lt;/code> =&amp;gt; espace partagé équitablement entre tous les composants d&amp;rsquo;un même parent. &lt;a href="https://snack.expo.io/@bpesquet/dimensions">Démo&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>, { &lt;span style="color:#a6e22e">Component&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">View&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;react-native&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">FlexDimensionsBasics&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;span style="color:#75715e">// Try removing the `flex: 1` on the parent View.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// The parent will not have dimensions, so the children can&amp;#39;t expand.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// What if you add `height: 300` instead of `flex: 1`?
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &amp;lt;&lt;span style="color:#f92672">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{{&lt;span style="color:#a6e22e">flex&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>}}&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{{&lt;span style="color:#a6e22e">flex&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#a6e22e">backgroundColor&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;powderblue&amp;#39;&lt;/span>}} /&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{{&lt;span style="color:#a6e22e">flex&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#a6e22e">backgroundColor&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;skyblue&amp;#39;&lt;/span>}} /&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{{&lt;span style="color:#a6e22e">flex&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>, &lt;span style="color:#a6e22e">backgroundColor&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;steelblue&amp;#39;&lt;/span>}} /&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">View&lt;/span>&amp;gt;
+);
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="flexbox">Flexbox&lt;/h2>
+&lt;ul>
+&lt;li>Mode de mise en page pour les éléments situés à l&amp;rsquo;intérieur d&amp;rsquo;un conteneur.&lt;/li>
+&lt;li>Objectif : répartir au mieux l&amp;rsquo;espace disponible.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/flexbox_terminology.png" alt="Flexbox terminology">&lt;/p>
+&lt;hr>
+&lt;h2 id="flexdirection--flux-des-éléments">&lt;code>flexDirection&lt;/code> : flux des éléments&lt;/h2>
+&lt;p>&lt;code>column&lt;/code> (par défaut), &lt;code>row&lt;/code>, &lt;code>column-reverse&lt;/code>, &lt;code>row-reverse&lt;/code>.&lt;/p>
+&lt;p>&lt;a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">&lt;img src="images/flexbox_flex_direction.png" alt="Flex direction">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="justifycontent--axe-principal">&lt;code>justifyContent&lt;/code> : axe principal&lt;/h2>
+&lt;p>&lt;a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">&lt;img src="images/flexbox_justify_content.png" alt="Flexbox: justify content">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="alignitems--axe-secondaire">&lt;code>alignItems&lt;/code> : axe secondaire&lt;/h2>
+&lt;p>&lt;a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">&lt;img src="images/flexbox_align_items.png" alt="Flexbox: align Items">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="gestion-de-la-navigation">Gestion de la navigation&lt;/h2>
+&lt;hr>
+&lt;h2 id="react-navigation">React Navigation&lt;/h2>
+&lt;ul>
+&lt;li>Composant issu de la communauté des développeurs RN.&lt;/li>
+&lt;li>Devenu le standard pour les applications multi-vues&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://reactnavigation.org">&lt;img src="images/react_navigation_logo.png" alt="React Navigation logo">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="installation-de-react-navigation">Installation de react-navigation&lt;/h2>
+&lt;p>Utiliser &lt;code>expo install&lt;/code> au lieu de &lt;code>npm install&lt;/code> assure l&amp;rsquo;installation de versions compatibles avec celle d&amp;rsquo;Expo.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e"># Core components and dependencies&lt;/span>
+expo install react-navigation react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context
+&lt;span style="color:#75715e"># StackNavigator dependencies&lt;/span>
+expo install react-navigation-stack @react-native-community/masked-view
+&lt;span style="color:#75715e"># BottomTabNavigator dependencies&lt;/span>
+expo install react-navigation-tabs
+&lt;span style="color:#75715e"># DrawerNavigator dependencies&lt;/span>
+expo install react-navigation-drawer
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="stacknavigator">&lt;code>StackNavigator&lt;/code>&lt;/h2>
+&lt;p>Principe similaire au web : gestion d&amp;rsquo;une pile de vues.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">AppNavigator&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">createStackNavigator&lt;/span>(
+{
+&lt;span style="color:#a6e22e">Home&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">HomeScreen&lt;/span>,
+&lt;span style="color:#a6e22e">Details&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">DetailsScreen&lt;/span>,
+},
+{
+&lt;span style="color:#a6e22e">initialRouteName&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;Home&amp;#39;&lt;/span>,
+}
+);
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">AppContainer&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">createAppContainer&lt;/span>(&lt;span style="color:#a6e22e">AppNavigator&lt;/span>);
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> &amp;lt;&lt;span style="color:#f92672">AppContainer&lt;/span> /&amp;gt;;
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="navigation-entre-vues">Navigation entre vues&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>this.props.navigation.navigate('RouteName')&lt;/code>.&lt;/li>
+&lt;li>&lt;code>this.props.navigation.push('RouteName')&lt;/code> : permet d&amp;rsquo;aller plusieurs fois vers la même vue.&lt;/li>
+&lt;li>&lt;code>this.props.navigation.goBack()&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="exemple">Exemple&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">DetailsScreen&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{{ &lt;span style="color:#a6e22e">flex&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#a6e22e">alignItems&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;center&amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">justifyContent&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;center&amp;#39;&lt;/span> }}&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">Details&lt;/span> &lt;span style="color:#a6e22e">Screen&lt;/span>&amp;lt;/&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Button&lt;/span>
+&lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Go to Details... again&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">onPress&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() =&amp;gt; &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">navigation&lt;/span>.&lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;Details&amp;#39;&lt;/span>)}
+/&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Button&lt;/span>
+&lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Go to Home&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">onPress&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() =&amp;gt; &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">navigation&lt;/span>.&lt;span style="color:#a6e22e">navigate&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;Home&amp;#39;&lt;/span>)}
+/&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Button&lt;/span>
+&lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Go back&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">onPress&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() =&amp;gt; &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">navigation&lt;/span>.&lt;span style="color:#a6e22e">goBack&lt;/span>()}
+/&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">View&lt;/span>&amp;gt;
+);
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="passage-de-paramètres-entre-vues">Passage de paramètres entre vues&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>this.props.navigation.navigate('RouteName', {/* params */})&lt;/code>.&lt;/li>
+&lt;li>&lt;code>this.props.navigation.getParam(paramName, defaultValue)&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="exemple">Exemple&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#75715e">// Home Screen
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&amp;lt;&lt;span style="color:#f92672">Button&lt;/span>
+&lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Go to Details&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">onPress&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() =&amp;gt; {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">navigation&lt;/span>.&lt;span style="color:#a6e22e">navigate&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;Details&amp;#39;&lt;/span>, {
+&lt;span style="color:#a6e22e">itemId&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">86&lt;/span>,
+&lt;span style="color:#a6e22e">otherParam&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;anything you want here&amp;#39;&lt;/span>,
+});
+}}
+/&amp;gt;
+&lt;p>&lt;span style="color:#75715e">// Details Screen
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&amp;lt;&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;
+&lt;span style="color:#a6e22e">itemId&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {&lt;span style="color:#a6e22e">JSON&lt;/span>.&lt;span style="color:#a6e22e">stringify&lt;/span>(&lt;span style="color:#a6e22e">navigation&lt;/span>.&lt;span style="color:#a6e22e">getParam&lt;/span>(&lt;span style="color:#e6db74">'itemId'&lt;/span>, &lt;span style="color:#e6db74">'NO-ID'&lt;/span>))}
+&amp;lt;/&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="en-tête-des-vues">En-tête des vues&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">HomeScreen&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#a6e22e">navigationOptions&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {
+&lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;Home&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">headerStyle&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;span style="color:#a6e22e">backgroundColor&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;#f4511e&amp;#39;&lt;/span>,
+},
+&lt;span style="color:#a6e22e">headerTintColor&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;#fff&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">headerTitleStyle&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;span style="color:#a6e22e">fontWeight&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;bold&amp;#39;&lt;/span>,
+},
+};
+&lt;span style="color:#75715e">/* render function, etc */&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="fenêtre-modale">Fenêtre modale&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">RootStack&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">createStackNavigator&lt;/span>(
+{
+&lt;span style="color:#a6e22e">Main&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;span style="color:#a6e22e">screen&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">MainStack&lt;/span>,
+},
+&lt;span style="color:#a6e22e">MyModal&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;span style="color:#a6e22e">screen&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">ModalScreen&lt;/span>,
+},
+},
+{
+&lt;span style="color:#a6e22e">mode&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;modal&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">headerMode&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;none&amp;#39;&lt;/span>,
+}
+);
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="exemple-récapitulatif">Exemple récapitulatif&lt;/h2>
+&lt;p>&lt;a href="https://github.com/ensc-mobi/StackNavigatorDemo">https://github.com/ensc-mobi/StackNavigatorDemo&lt;/a>&lt;/p>
+&lt;p>&lt;img src="images/stack-navigator-demo.png" alt="StackNavigator demo">&lt;/p>
+&lt;hr>
+&lt;h2 id="bottomtabnavigator">&lt;code>BottomTabNavigator&lt;/code>&lt;/h2>
+&lt;p>Affichage d&amp;rsquo;onglets en bas de l&amp;rsquo;écran.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">TabNavigator&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">createBottomTabNavigator&lt;/span>({
+&lt;span style="color:#a6e22e">Home&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">HomeScreen&lt;/span>,
+&lt;span style="color:#a6e22e">Settings&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">SettingsScreen&lt;/span>,
+});
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">AppContainer&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">createAppContainer&lt;/span>(&lt;span style="color:#a6e22e">TabNavigator&lt;/span>);
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> &amp;lt;&lt;span style="color:#f92672">AppContainer&lt;/span> /&amp;gt;;
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="navigation-entre-onglets">Navigation entre onglets&lt;/h2>
+&lt;p>&lt;code>this.props.navigation.navigate('TabName')&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&amp;lt;&lt;span style="color:#f92672">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{{ &lt;span style="color:#a6e22e">flex&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#a6e22e">justifyContent&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;center&amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">alignItems&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;center&amp;#39;&lt;/span> }}&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">Home&lt;/span>&lt;span style="color:#f92672">!&lt;/span>&amp;lt;/&lt;span style="color:#f92672">Text&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Button&lt;/span>
+&lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Go to Settings&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">onPress&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() =&amp;gt; &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">navigation&lt;/span>.&lt;span style="color:#a6e22e">navigate&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;Settings&amp;#39;&lt;/span>)}
+/&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">View&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="affichage-de-piles-dans-les-onglets">Affichage de piles dans les onglets&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">HomeStack&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">createStackNavigator&lt;/span>({
+&lt;span style="color:#a6e22e">Home&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">HomeScreen&lt;/span>,
+&lt;span style="color:#a6e22e">Details&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">DetailsScreen&lt;/span>,
+});
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">SettingsStack&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">createStackNavigator&lt;/span>({
+&lt;span style="color:#a6e22e">Settings&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">SettingsScreen&lt;/span>,
+&lt;span style="color:#a6e22e">Details&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">DetailsScreen&lt;/span>,
+});
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#a6e22e">createAppContainer&lt;/span>(
+&lt;span style="color:#a6e22e">createBottomTabNavigator&lt;/span>(
+{
+&lt;span style="color:#a6e22e">Home&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">HomeStack&lt;/span>,
+&lt;span style="color:#a6e22e">Settings&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">SettingsStack&lt;/span>,
+}
+)
+);
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="exemple-récapitulatif-1">Exemple récapitulatif&lt;/h2>
+&lt;p>&lt;a href="https://github.com/ensc-mobi/TabNavigatorDemo">https://github.com/ensc-mobi/TabNavigatorDemo&lt;/a>&lt;/p>
+&lt;p>&lt;img src="images/tab-navigator-demo.png" alt="BottomTabNavigator demo">&lt;/p>
+&lt;hr>
+&lt;h2 id="autres-possibilités-de-react-navigation">Autres possibilités de react-navigation&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://reactnavigation.org/docs/en/drawer-based-navigation.html">Navigation par menu accordéon ou &amp;ldquo;hamburger'&lt;/a> (&lt;a href="https://snack.expo.io/@react-navigation/9b2a43">exemple&lt;/a>).&lt;/li>
+&lt;li>&lt;a href="https://reactnavigation.org/docs/en/auth-flow.html">Gestion de l&amp;rsquo;authentification&lt;/a>.&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul></description></item><item><title>React Native : gestion de l'état</title><link>https://bpesquet.github.io/slides/mobile/react-native-state/</link><pubDate>Sun, 12 Jan 2020 21:50:06 +0100</pubDate><guid>https://bpesquet.github.io/slides/mobile/react-native-state/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;ul>
+&lt;li>Partage de l&amp;rsquo;état entre composants&lt;/li>
+&lt;li>Centralisation de l&amp;rsquo;état&lt;/li>
+&lt;li>Gestion de l&amp;rsquo;état avec MobX&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="partage-de-létat-entre-composants">Partage de l&amp;rsquo;état entre composants&lt;/h2>
+&lt;hr>
+&lt;h2 id="rappels-sur-les-propriétés">Rappels sur les propriétés&lt;/h2>
+&lt;p>&lt;strong>Propriétés (&lt;em>props&lt;/em>)&lt;/strong> = caractéristiques définies au moment de la création du composant.&lt;/p>
+&lt;p>Les propriétés sont modifiables uniquement par le composant parent.&lt;/p>
+&lt;hr>
+&lt;h2 id="rappels-sur-létat">Rappels sur l&amp;rsquo;état&lt;/h2>
+&lt;p>&lt;strong>Etat (&lt;em>state&lt;/em>)&lt;/strong> = ensemble des données susceptibles d&amp;rsquo;être modifiées pendant l&amp;rsquo;exécution de l&amp;rsquo;application.&lt;/p>
+&lt;p>Chaque composant React Native possède un état interne, géré avec &lt;code>this.state&lt;/code> et &lt;code>this.setState()&lt;/code>.&lt;/p>
+&lt;p>Toute modification de l&amp;rsquo;état déclenche un nouveau rendu du composant.&lt;/p>
+&lt;hr>
+&lt;h2 id="problématique">Problématique&lt;/h2>
+&lt;p>La gestion locale de l&amp;rsquo;état devient insuffisante lorsqu&amp;rsquo;un composant doit &lt;strong>accéder à&lt;/strong> ou &lt;strong>modifier&lt;/strong> l&amp;rsquo;état d&amp;rsquo;un autre composant.&lt;/p>
+&lt;p>Nécessité de partager un état commun entre certains composants.&lt;/p>
+&lt;hr>
+&lt;h2 id="solution--_lifting-state-up_">Solution : &lt;em>&amp;ldquo;lifting state up&amp;rdquo;&lt;/em>&lt;/h2>
+&lt;ul>
+&lt;li>Remonter l&amp;rsquo;état au niveau du plus proche composant parent commun.&lt;/li>
+&lt;li>Définir les actions de modification dans ce composant parent.&lt;/li>
+&lt;li>Dans les composants enfants :
+&lt;ul>
+&lt;li>Remplacer l&amp;rsquo;état local par des propriétés définies par le parent.&lt;/li>
+&lt;li>Remplacer les actions locales par des appels aux actions définies dans le parent.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://reactjs.org/docs/lifting-state-up.html">Lifting State Up (React)&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="application">Application&lt;/h2>
+&lt;p>&lt;a href="https://github.com/ensc-mobi/TempConverter">https://github.com/ensc-mobi/TempConverter&lt;/a>&lt;/p>
+&lt;p>&lt;img src="images/temp-converter.png" alt="TempConverter demo">&lt;/p>
+&lt;hr>
+&lt;h2 id="utilisation-de-props-dans-les-composants-enfants">Utilisation de props dans les composants enfants&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">TemperatureInput&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">_onChangeText&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">text&lt;/span> =&amp;gt; {
+&lt;span style="color:#75715e">// Callback passed as component prop is called
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">onTemperatureChange&lt;/span>(&lt;span style="color:#a6e22e">text&lt;/span>);
+};
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">temperature&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">temperature&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">scale&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">scale&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">placeholder&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">`Enter temperature in &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">scaleNames&lt;/span>[&lt;span style="color:#a6e22e">scale&lt;/span>]&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>;
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&amp;lt;&lt;span style="color:#f92672">TextInput&lt;/span>
+&lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">text&lt;/span>}
+&lt;span style="color:#a6e22e">placeholder&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">placeholder&lt;/span>}
+&lt;span style="color:#a6e22e">value&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">temperature&lt;/span>}
+&lt;span style="color:#a6e22e">onChangeText&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">_onChangeText&lt;/span>}
+/&amp;gt;
+);
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="remontée-de-létat-dans-le-composant-parent">Remontée de l&amp;rsquo;état dans le composant parent&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Calculator&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">constructor&lt;/span>(&lt;span style="color:#a6e22e">props&lt;/span>) {
+&lt;span style="color:#66d9ef">super&lt;/span>(&lt;span style="color:#a6e22e">props&lt;/span>);
+&lt;span style="color:#75715e">// Common state is lifted in closest parent of TemperatureInput components
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// Temperature can be set either in Celsius or in Fahrenheit
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">state&lt;/span> &lt;span style="color:#f92672">=&lt;/span> { &lt;span style="color:#a6e22e">temperature&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">scale&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;c&amp;#34;&lt;/span> };
+}
+&lt;span style="color:#a6e22e">_onCelsiusChange&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">temperature&lt;/span> =&amp;gt; {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">setState&lt;/span>({ &lt;span style="color:#a6e22e">scale&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;c&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">temperature&lt;/span> });
+};
+&lt;span style="color:#a6e22e">_onFahrenheitChange&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">temperature&lt;/span> =&amp;gt; {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">setState&lt;/span>({ &lt;span style="color:#a6e22e">scale&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;f&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">temperature&lt;/span> });
+};
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="appel-aux-actions-définies-dans-le-parent">Appel aux actions définies dans le parent&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx"> &lt;span style="color:#75715e">// ...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">scale&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">state&lt;/span>.&lt;span style="color:#a6e22e">scale&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">temperature&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">state&lt;/span>.&lt;span style="color:#a6e22e">temperature&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">tempCelsius&lt;/span> &lt;span style="color:#f92672">=&lt;/span>
+&lt;span style="color:#a6e22e">scale&lt;/span> &lt;span style="color:#f92672">===&lt;/span> &lt;span style="color:#e6db74">&amp;#34;f&amp;#34;&lt;/span> &lt;span style="color:#f92672">?&lt;/span> &lt;span style="color:#a6e22e">tryConvert&lt;/span>(&lt;span style="color:#a6e22e">temperature&lt;/span>, &lt;span style="color:#a6e22e">toCelsius&lt;/span>) &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">temperature&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">tempFahrenheit&lt;/span> &lt;span style="color:#f92672">=&lt;/span>
+&lt;span style="color:#a6e22e">scale&lt;/span> &lt;span style="color:#f92672">===&lt;/span> &lt;span style="color:#e6db74">&amp;#34;c&amp;#34;&lt;/span> &lt;span style="color:#f92672">?&lt;/span> &lt;span style="color:#a6e22e">tryConvert&lt;/span>(&lt;span style="color:#a6e22e">temperature&lt;/span>, &lt;span style="color:#a6e22e">toFahrenheit&lt;/span>) &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">temperature&lt;/span>;
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">TemperatureInput&lt;/span>
+&lt;span style="color:#a6e22e">scale&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;c&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">temperature&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">tempCelsius&lt;/span>}
+&lt;span style="color:#a6e22e">onTemperatureChange&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">_onCelsiusChange&lt;/span>}
+/&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">TemperatureInput&lt;/span>
+&lt;span style="color:#a6e22e">scale&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;f&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">temperature&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">tempFahrenheit&lt;/span>}
+&lt;span style="color:#a6e22e">onTemperatureChange&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">_onFahrenheitChange&lt;/span>}
+/&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">BoilingResult&lt;/span> &lt;span style="color:#a6e22e">tempCelsius&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{parseFloat(&lt;span style="color:#a6e22e">tempCelsius&lt;/span>)} /&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">View&lt;/span>&amp;gt;
+);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="centralisation-de-létat">Centralisation de l&amp;rsquo;état&lt;/h2>
+&lt;hr>
+&lt;h2 id="problématique-1">Problématique&lt;/h2>
+&lt;p>Les composants parents rassemblent trop de choses :&lt;/p>
+&lt;ul>
+&lt;li>Etat commun&lt;/li>
+&lt;li>Actions de modification&lt;/li>
+&lt;li>Hiérarchie des composants enfants&lt;/li>
+&lt;/ul>
+&lt;p>Non-respect du principe de séparation des responsabilités.&lt;/p>
+&lt;hr>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;ul>
+&lt;li>Centraliser l&amp;rsquo;état et les actions de modifications dans des objets dédiés, souvent appelés &lt;strong>stores&lt;/strong>.&lt;/li>
+&lt;li>Donner accès à ces objets aux composants via des propriétés.&lt;/li>
+&lt;li>Prévoir un mécanisme d'&lt;strong>abonnement&lt;/strong> des composants aux mutations de l&amp;rsquo;état effectués uniquement dans les stores.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="application-1">Application&lt;/h2>
+&lt;p>&lt;a href="https://github.com/ensc-mobi/TodoNative">https://github.com/ensc-mobi/TodoNative&lt;/a>&lt;/p>
+&lt;p>&lt;img src="images/todonative.png" alt="TodoNative demo">&lt;/p>
+&lt;hr>
+&lt;h2 id="définition-dun-store">Définition d&amp;rsquo;un store&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">TodoStore&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">Store&lt;/span> {
+&lt;span style="color:#a6e22e">constructor&lt;/span>() {
+&lt;span style="color:#75715e">// Call to parent constructor is needed to init observation
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">super&lt;/span>();
+&lt;span style="color:#75715e">// The TODO task is used as key (unique identifier)
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// Therefore, each TODO must have a different task
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">todos&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [];
+}
+&lt;span style="color:#a6e22e">addTodo&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">task&lt;/span> =&amp;gt; {
+&lt;span style="color:#75715e">// Add new TODO at beginning of array
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">todos&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [{ &lt;span style="color:#a6e22e">task&lt;/span>, &lt;span style="color:#a6e22e">completed&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span> }, ...&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">todos&lt;/span>];
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">notifyObservers&lt;/span>();
+};
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">// Used in parent class when notifying observers
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">getState&lt;/span>() {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">todos&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">todos&lt;/span>;
+&lt;span style="color:#66d9ef">return&lt;/span> { &lt;span style="color:#a6e22e">todos&lt;/span> };
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="notification-des-changements-détat">Notification des changements d&amp;rsquo;état&lt;/h2>
+&lt;p>Basée sur le Design Pattern &lt;a href="https://fr.wikipedia.org/wiki/Observateur_%28patron_de_conception%29">Observateur&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Store&lt;/span> {
+&lt;span style="color:#a6e22e">constructor&lt;/span>() {
+&lt;span style="color:#75715e">// Define an empty observer list
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">observers&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [];
+}
+&lt;span style="color:#75715e">// Add new observer to list
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">addObserver&lt;/span>(&lt;span style="color:#a6e22e">observer&lt;/span>) {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">observers&lt;/span>.&lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#a6e22e">observer&lt;/span>);
+}
+&lt;span style="color:#75715e">// Notify all observers of a state change in the store
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">notifyObservers&lt;/span>() {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">observers&lt;/span>.&lt;span style="color:#a6e22e">forEach&lt;/span>(&lt;span style="color:#a6e22e">observer&lt;/span> =&amp;gt; &lt;span style="color:#a6e22e">observer&lt;/span>.&lt;span style="color:#a6e22e">setState&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">getState&lt;/span>()));
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="lien-entre-store-et-composant-principal">Lien entre store et composant principal&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span> &lt;span style="color:#f92672">=&lt;/span> () =&amp;gt; {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">todoStore&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">TodoStore&lt;/span>();
+&lt;span style="color:#66d9ef">return&lt;/span> &amp;lt;&lt;span style="color:#f92672">MainView&lt;/span> &lt;span style="color:#a6e22e">todoStore&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">todoStore&lt;/span>} /&amp;gt;;
+};
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="abonnement-dun-composant">Abonnement d&amp;rsquo;un composant&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MainView&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">constructor&lt;/span>(&lt;span style="color:#a6e22e">props&lt;/span>) {
+&lt;span style="color:#66d9ef">super&lt;/span>(&lt;span style="color:#a6e22e">props&lt;/span>);
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">state&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">todoStore&lt;/span>.&lt;span style="color:#a6e22e">getState&lt;/span>();
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">todoStore&lt;/span>.&lt;span style="color:#a6e22e">addObserver&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>);
+}
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&amp;lt;&lt;span style="color:#f92672">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">container&lt;/span>}&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Header&lt;/span> &lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;TodoNative&amp;#34;&lt;/span> /&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">Input&lt;/span>
+&lt;span style="color:#a6e22e">placeholder&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Saisissez une nouvelle tâche&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">onSubmitEditing&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">todoStore&lt;/span>.&lt;span style="color:#a6e22e">addTodo&lt;/span>}
+/&amp;gt;
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="gestion-de-létat-avec-mobx">Gestion de l&amp;rsquo;état avec MobX&lt;/h2>
+&lt;hr>
+&lt;h2 id="problématique-2">Problématique&lt;/h2>
+&lt;ul>
+&lt;li>Le nombre croissant de composants complique les évolutions de l&amp;rsquo;état.&lt;/li>
+&lt;li>Les mutations de l&amp;rsquo;état peuvent déclencher un (trop) grand nombre de rendus des composants.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="solution-1">Solution&lt;/h2>
+&lt;ul>
+&lt;li>Utiliser une librairie dédiée à la gestion de l&amp;rsquo;état.&lt;/li>
+&lt;li>&lt;a href="https://www.robinwieruch.de/redux-mobx-confusion/">Bon choix&lt;/a> pour la plupart des projets de taille intermédiaire : &lt;a href="https://mobx.js.org">MobX&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/mobx-logo.png" alt="MobX logo">&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e"># Add MobX to a React Native project&lt;/span>
+expo install mobx mobx-react
+expo install --save-dev babel-preset-mobx
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;p>&lt;img src="images/mobx-overview.png" alt="MobX overview">&lt;/p>
+&lt;hr>
+&lt;h2 id="application-2">Application&lt;/h2>
+&lt;p>&lt;a href="https://github.com/ensc-mobi/TodoNative-MobX">https://github.com/ensc-mobi/TodoNative-MobX&lt;/a>&lt;/p>
+&lt;p>&lt;img src="images/todonative.png" alt="TodoNative-MobX demo">&lt;/p>
+&lt;hr>
+&lt;h2 id="définition-dune-classe-métier">Définition d&amp;rsquo;une classe métier&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">observable&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;mobx&amp;#34;&lt;/span>;
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Todo&lt;/span> {
+&lt;span style="color:#960050;background-color:#1e0010">@&lt;/span>&lt;span style="color:#a6e22e">observable&lt;/span> &lt;span style="color:#a6e22e">task&lt;/span>;
+&lt;span style="color:#960050;background-color:#1e0010">@&lt;/span>&lt;span style="color:#a6e22e">observable&lt;/span> &lt;span style="color:#a6e22e">completed&lt;/span>;
+&lt;span style="color:#a6e22e">constructor&lt;/span>(&lt;span style="color:#a6e22e">task&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">completed&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>) {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">task&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">task&lt;/span>;
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">completed&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">completed&lt;/span>;
+}
+&lt;span style="color:#a6e22e">toggle&lt;/span>() {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">completed&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">completed&lt;/span>;
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="définition-dun-store-1">Définition d&amp;rsquo;un store&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">observable&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;mobx&amp;#34;&lt;/span>;
+&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">Todo&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;../domain/Todo&amp;#34;&lt;/span>;
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">TodoStore&lt;/span> {
+&lt;span style="color:#960050;background-color:#1e0010">@&lt;/span>&lt;span style="color:#a6e22e">observable&lt;/span> &lt;span style="color:#a6e22e">todos&lt;/span>;
+&lt;span style="color:#960050;background-color:#1e0010">@&lt;/span>&lt;span style="color:#a6e22e">observable&lt;/span> &lt;span style="color:#a6e22e">isLoading&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;span style="color:#a6e22e">constructor&lt;/span>() {
+&lt;span style="color:#75715e">// The TODO task is used as key (unique identifier)
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// Therefore, each TODO must have a different task
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">todos&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [];
+}
+&lt;span style="color:#a6e22e">addTodo&lt;/span>(&lt;span style="color:#a6e22e">task&lt;/span>) {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">todo&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Todo&lt;/span>(&lt;span style="color:#a6e22e">task&lt;/span>);
+&lt;span style="color:#75715e">// Add new TODO at beginning of array
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">todos&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#a6e22e">todo&lt;/span>, ...&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">todos&lt;/span>];
+}
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="lien-entre-store-et-composant-principal-1">Lien entre store et composant principal&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span> &lt;span style="color:#f92672">=&lt;/span> () =&amp;gt; {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">todoStore&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">TodoStore&lt;/span>();
+&lt;span style="color:#66d9ef">return&lt;/span> &amp;lt;&lt;span style="color:#f92672">MainView&lt;/span> &lt;span style="color:#a6e22e">todoStore&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">todoStore&lt;/span>} /&amp;gt;;
+};
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="abonnement-dun-composant-1">Abonnement d&amp;rsquo;un composant&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">observer&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;mobx-react&amp;#34;&lt;/span>;
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#960050;background-color:#1e0010">@&lt;/span>&lt;span style="color:#a6e22e">observer&lt;/span>
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MainView&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">onAddTodo&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">task&lt;/span> =&amp;gt; {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">todoStore&lt;/span>.&lt;span style="color:#a6e22e">addTodo&lt;/span>(&lt;span style="color:#a6e22e">task&lt;/span>);
+};
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">container&lt;/span>}&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">Header&lt;/span> &lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;TodoNative&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">Input&lt;/span>
+&lt;span style="color:#a6e22e">placeholder&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Saisissez une nouvelle tâche&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">onSubmitEditing&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">onAddTodo&lt;/span>}
+&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">FlatList&lt;/span>
+&lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">todoContainer&lt;/span>}
+&lt;span style="color:#a6e22e">data&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>.&lt;span style="color:#a6e22e">todoStore&lt;/span>.&lt;span style="color:#a6e22e">todos&lt;/span>}
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="pourquoi-pas-redux-">Pourquoi pas Redux ?&lt;/h2>
+&lt;p>&lt;img src="images/redux-all.jpeg" alt="Redux all!">&lt;/p>
+&lt;ul>
+&lt;li>Librairie créée pour adresser des problématiques à l&amp;rsquo;échelle de Facebook&lt;/li>
+&lt;li>Complexe et &lt;em>overkill&lt;/em> pour les projets &amp;ldquo;normaux&amp;rdquo;&lt;/li>
+&lt;li>&lt;a href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">&amp;ldquo;You might not need Redux&amp;rdquo;&lt;/a> (écrit par son créateur)&lt;/li>
+&lt;/ul></description></item><item><title>React Native : utilisation d'API web</title><link>https://bpesquet.github.io/slides/mobile/react-native-api/</link><pubDate>Tue, 14 Jan 2020 10:14:10 +0100</pubDate><guid>https://bpesquet.github.io/slides/mobile/react-native-api/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;ul>
+&lt;li>Introduction aux API web&lt;/li>
+&lt;li>Appels réseau avec JavaScript&lt;/li>
+&lt;li>Interactions avec un SGBDR via une API&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="introduction-aux-api-web">Introduction aux API web&lt;/h2>
+&lt;hr>
+&lt;h2 id="la-notion-dapi">La notion d&amp;rsquo;API&lt;/h2>
+&lt;p>Une &lt;strong>API&lt;/strong> (&lt;em>Application Programming Interface&lt;/em>) est un point d&amp;rsquo;entrée programmatique dans un système.&lt;/p>
+&lt;p>Elle fournit un moyen d&amp;rsquo;interagir avec ce système.&lt;/p>
+&lt;p>Les API permettent aux développeurs d&amp;rsquo;intégrer des services externes dans leurs applications.&lt;/p>
+&lt;hr>
+&lt;h2 id="spécificités-des-api-web">Spécificités des API web&lt;/h2>
+&lt;p>Une &lt;strong>API web&lt;/strong> (appelée parfois service web) est une API accessible via les technologies du web : HTTP ou HTTPS.&lt;/p>
+&lt;p>Elles utilisent le plus souvent le format de donnée &lt;strong>JSON&lt;/strong>.&lt;/p>
+&lt;p>Certaines sont librement utilisables, d&amp;rsquo;autres nécessitent une authentification du client.&lt;/p>
+&lt;hr>
+&lt;h2 id="exemples-dapi-web">Exemples d&amp;rsquo;API web&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://pokeapi.co/">PokéAPI&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://swapi.co/">Star Wars API&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://en.wikipedia.org/w/api.php?">Wikipedia&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://developer.spotify.com/documentation/web-api/">Spotify&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.omdbapi.com/">OMDb API&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>(&lt;a href="https://shkspr.mobi/blog/2016/05/easy-apis-without-authentication/">Source&lt;/a>)&lt;/p>
+&lt;hr>
+&lt;h2 id="outils-pour-la-gestion-des-api-web">Outils pour la gestion des API web&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.getpostman.com/">Postman&lt;/a>.&lt;/li>
+&lt;li>Extension &lt;a href="https://addons.mozilla.org/fr/firefox/addon/restclient/">RESTClient&lt;/a> pour Firefox.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="appels-réseau-avec-javascript">Appels réseau avec JavaScript&lt;/h2>
+&lt;hr>
+&lt;h2 id="appels-asynchrones">Appels asynchrones&lt;/h2>
+&lt;p>Une &lt;strong>promesse&lt;/strong> (&lt;em>promise&lt;/em>) est un objet qui encapsule une opération dont le résultat n&amp;rsquo;est pas encore connu.&lt;/p>
+&lt;p>La fonction JavaScript &lt;code>fetch()&lt;/code> est importée du web.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#75715e">// Envoie une requête HTTP asynchrone vers l&amp;#39;URL spécifiée
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#a6e22e">url&lt;/span>)
+.&lt;span style="color:#a6e22e">then&lt;/span>(() =&amp;gt; {
+&lt;span style="color:#75715e">// Code appelé ultérieurement si la requête réussit
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> })
+.&lt;span style="color:#66d9ef">catch&lt;/span>(() =&amp;gt; {
+&lt;span style="color:#75715e">// Code appelé ultérieurement si la requête échoue
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> });
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="accès-à-une-ressource-distante">Accès à une ressource distante&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#75715e">// Envoi d&amp;#39;une requête HTTP asynchrone vers l&amp;#39;URL spécifiée
+&lt;/span>&lt;span style="color:#75715e">// La réponse est reçue ici sous forme de données JSON
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;http://my-api-url&amp;#34;&lt;/span>)
+&lt;span style="color:#75715e">// Accès au contenu JSON de la réponse
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> .&lt;span style="color:#a6e22e">then&lt;/span>(&lt;span style="color:#a6e22e">response&lt;/span> =&amp;gt; &lt;span style="color:#a6e22e">response&lt;/span>.&lt;span style="color:#a6e22e">json&lt;/span>())
+&lt;span style="color:#75715e">// Utilisation du contenu de la réponse
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// `content` est un objet ou un tableau JavaScript
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> .&lt;span style="color:#a6e22e">then&lt;/span>(&lt;span style="color:#a6e22e">content&lt;/span> =&amp;gt; {
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> })
+.&lt;span style="color:#66d9ef">catch&lt;/span>(&lt;span style="color:#a6e22e">error&lt;/span> =&amp;gt; {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">error&lt;/span>(&lt;span style="color:#a6e22e">errpr&lt;/span>);
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="mise-à-jour-dune-ressource-distante">Mise à jour d&amp;rsquo;une ressource distante&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;https://mywebsite.com/endpoint/&amp;#39;&lt;/span>, {
+&lt;span style="color:#a6e22e">method&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;POST&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">headers&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;span style="color:#a6e22e">Accept&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;application/json&amp;#39;&lt;/span>,
+&lt;span style="color:#e6db74">&amp;#39;Content-Type&amp;#39;&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;application/json&amp;#39;&lt;/span>,
+},
+&lt;span style="color:#a6e22e">body&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">JSON&lt;/span>.&lt;span style="color:#a6e22e">stringify&lt;/span>({
+&lt;span style="color:#a6e22e">firstParam&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;yourValue&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">secondParam&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;yourOtherValue&amp;#39;&lt;/span>,
+}),
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="application">Application&lt;/h2>
+&lt;p>&lt;a href="https://github.com/ensc-mobi/RandomBeer">https://github.com/ensc-mobi/RandomBeer&lt;/a>&lt;/p>
+&lt;p>&lt;img src="images/random_beer.png" alt="Random Beer app">&lt;/p>
+&lt;hr>
+&lt;h2 id="consommation-dune-api-web">Consommation d&amp;rsquo;une API web&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">headers&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {
+&lt;span style="color:#e6db74">&amp;#34;Content-Type&amp;#34;&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;application/json&amp;#34;&lt;/span>,
+&lt;span style="color:#a6e22e">Accept&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;application/json&amp;#34;&lt;/span>
+};
+&lt;span style="color:#75715e">// Retourne une recette de bière au hasard
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">getRandomBrewdog&lt;/span> &lt;span style="color:#f92672">=&lt;/span> () =&amp;gt;
+&lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#e6db74">`&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">rootEndpoint&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/beers/random`&lt;/span>, { &lt;span style="color:#a6e22e">headers&lt;/span> })
+.&lt;span style="color:#a6e22e">then&lt;/span>(&lt;span style="color:#a6e22e">response&lt;/span> =&amp;gt; &lt;span style="color:#a6e22e">response&lt;/span>.&lt;span style="color:#a6e22e">json&lt;/span>())
+&lt;span style="color:#75715e">// Access first element of returned array
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> .&lt;span style="color:#a6e22e">then&lt;/span>(&lt;span style="color:#a6e22e">beers&lt;/span> =&amp;gt; &lt;span style="color:#a6e22e">beers&lt;/span>[&lt;span style="color:#ae81ff">0&lt;/span>])
+.&lt;span style="color:#66d9ef">catch&lt;/span>(&lt;span style="color:#a6e22e">error&lt;/span> =&amp;gt; {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">error&lt;/span>(&lt;span style="color:#a6e22e">error&lt;/span>);
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="mise-à-jour-de-lapplication">Mise à jour de l&amp;rsquo;application&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx"> &lt;span style="color:#75715e">// ...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">_getRandomBrewdogWithFeedback&lt;/span> &lt;span style="color:#f92672">=&lt;/span> () =&amp;gt; {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">setState&lt;/span>({ &lt;span style="color:#a6e22e">isLoading&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span> });
+&lt;span style="color:#a6e22e">getRandomBrewdog&lt;/span>().&lt;span style="color:#a6e22e">then&lt;/span>(&lt;span style="color:#a6e22e">beer&lt;/span> =&amp;gt;
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">setState&lt;/span>({
+&lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">beer&lt;/span>.&lt;span style="color:#a6e22e">name&lt;/span>,
+&lt;span style="color:#a6e22e">description&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">beer&lt;/span>.&lt;span style="color:#a6e22e">description&lt;/span>,
+&lt;span style="color:#a6e22e">isLoading&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span> &lt;span style="color:#75715e">// la requête est terminée
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> })
+);
+};
+&lt;span style="color:#a6e22e">componentDidMount&lt;/span>() {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">_getRandomBrewdogWithFeedback&lt;/span>();
+}
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="interactions-avec-un-sgbdr-via-une-api">Interactions avec un SGBDR via une API&lt;/h2>
+&lt;hr>
+&lt;h2 id="php-crud-api">PHP-CRUD-API&lt;/h2>
+&lt;p>&lt;a href="https://github.com/mevdschee/php-crud-api">https://github.com/mevdschee/php-crud-api&lt;/a>&lt;/p>
+&lt;p>Fichier &lt;code>api.php&lt;/code> à publier sur un serveur web PHP. Fournit une API web pour accéder aux données d&amp;rsquo;un SGBDR.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#75715e">// Update to reflect your local settings
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>$config &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Config&lt;/span>([
+&lt;span style="color:#e6db74">&amp;#39;username&amp;#39;&lt;/span> &lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#e6db74">&amp;#39;xxx&amp;#39;&lt;/span>,
+&lt;span style="color:#e6db74">&amp;#39;password&amp;#39;&lt;/span> &lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#e6db74">&amp;#39;xxx&amp;#39;&lt;/span>,
+&lt;span style="color:#e6db74">&amp;#39;database&amp;#39;&lt;/span> &lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#e6db74">&amp;#39;xxx&amp;#39;&lt;/span>,
+]);
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="utilisation-de-php-crud-api">Utilisation de PHP-CRUD-API&lt;/h2>
+&lt;p>URL &lt;code>http://my-server-url/api.php/records/...&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>GET my-table&lt;/code> : renvoie la liste des enregistrements de la table &lt;code>my-table&lt;/code>.&lt;/li>
+&lt;li>&lt;code>GET my-table/id&lt;/code> : renvoie l&amp;rsquo;enregistrement identifié par &lt;code>id&lt;/code>.&lt;/li>
+&lt;li>&lt;code>POST my-table&lt;/code> : création d&amp;rsquo;un nouvel enregistrement avec les données contenues dans le corps de la requête.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="application-1">Application&lt;/h2>
+&lt;p>&lt;a href="https://github.com/ensc-mobi/MyMoviesNative">https://github.com/ensc-mobi/MyMoviesNative&lt;/a>&lt;/p>
+&lt;p>&lt;img src="images/mymoviesnative.png" alt="MyMoviesNative demo">&lt;/p>
+&lt;hr>
+&lt;h2 id="classe-métier-film">Classe métier film&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Movie&lt;/span> {
+&lt;span style="color:#960050;background-color:#1e0010">@&lt;/span>&lt;span style="color:#a6e22e">observable&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>;
+&lt;span style="color:#960050;background-color:#1e0010">@&lt;/span>&lt;span style="color:#a6e22e">observable&lt;/span> &lt;span style="color:#a6e22e">title&lt;/span>;
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">@&lt;/span>&lt;span style="color:#a6e22e">observable&lt;/span> &lt;span style="color:#a6e22e">image&lt;/span>;
+&lt;span style="color:#a6e22e">constructor&lt;/span>(
+&lt;span style="color:#a6e22e">id&lt;/span>,
+&lt;span style="color:#a6e22e">title&lt;/span>,
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">image&lt;/span>
+) {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">id&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>;
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">title&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">title&lt;/span>;
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">image&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">image&lt;/span>;
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="accès-au-sgbdr">Accès au SGBDR&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">rootEndpoint&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;http://localhost/mymovies/api.php/records&amp;#34;&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">headers&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {
+&lt;span style="color:#e6db74">&amp;#34;Content-Type&amp;#34;&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;application/json&amp;#34;&lt;/span>,
+&lt;span style="color:#a6e22e">Accept&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;application/json&amp;#34;&lt;/span>
+};
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">getAllMovies&lt;/span> &lt;span style="color:#f92672">=&lt;/span> () =&amp;gt;
+&lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#e6db74">`&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">rootEndpoint&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/movie/`&lt;/span>, { &lt;span style="color:#a6e22e">headers&lt;/span> })
+.&lt;span style="color:#a6e22e">then&lt;/span>(&lt;span style="color:#a6e22e">response&lt;/span> =&amp;gt; &lt;span style="color:#a6e22e">response&lt;/span>.&lt;span style="color:#a6e22e">json&lt;/span>())
+.&lt;span style="color:#a6e22e">then&lt;/span>(&lt;span style="color:#a6e22e">jsonResponse&lt;/span> =&amp;gt; &lt;span style="color:#a6e22e">jsonResponse&lt;/span>.&lt;span style="color:#a6e22e">records&lt;/span>)
+.&lt;span style="color:#66d9ef">catch&lt;/span>(&lt;span style="color:#a6e22e">error&lt;/span> =&amp;gt; {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">error&lt;/span>);
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="récupération-de-la-liste-des-films">Récupération de la liste des films&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MovieStore&lt;/span> {
+&lt;span style="color:#960050;background-color:#1e0010">@&lt;/span>&lt;span style="color:#a6e22e">observable&lt;/span> &lt;span style="color:#a6e22e">movies&lt;/span>;
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#a6e22e">fetchAll&lt;/span>() {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">movies&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [];
+&lt;span style="color:#a6e22e">getAllMovies&lt;/span>().&lt;span style="color:#a6e22e">then&lt;/span>(&lt;span style="color:#a6e22e">movies&lt;/span> =&amp;gt; {
+&lt;span style="color:#75715e">//console.log(movies);
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">movies&lt;/span>.&lt;span style="color:#a6e22e">forEach&lt;/span>(&lt;span style="color:#a6e22e">movieData&lt;/span> =&amp;gt; {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">movie&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Movie&lt;/span>(
+&lt;span style="color:#a6e22e">movieData&lt;/span>.&lt;span style="color:#a6e22e">mov_id&lt;/span>,
+&lt;span style="color:#a6e22e">movieData&lt;/span>.&lt;span style="color:#a6e22e">mov_title&lt;/span>,
+&lt;span style="color:#75715e">// ...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">movieData&lt;/span>.&lt;span style="color:#a6e22e">mov_image&lt;/span>
+);
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">movies&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#a6e22e">movie&lt;/span>, ...&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">movies&lt;/span>];
+});
+});
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="vue-principale">Vue principale&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">HomeScreen&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">movieStore&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">MovieStore&lt;/span>();
+&lt;span style="color:#75715e">// All React Navigation screens receive this object as prop
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">navigation&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>;
+&lt;span style="color:#75715e">// Navigation object is passed down to children components
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">return&lt;/span> &amp;lt;&lt;span style="color:#f92672">MainView&lt;/span> &lt;span style="color:#a6e22e">movieStore&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">movieStore&lt;/span>} &lt;span style="color:#a6e22e">navigation&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">navigation&lt;/span>} /&amp;gt;;
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="affichage-dun-film-dans-la-liste">Affichage d&amp;rsquo;un film dans la liste&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#960050;background-color:#1e0010">@&lt;/span>&lt;span style="color:#a6e22e">observer&lt;/span>
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MovieItem&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">movie&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">navigation&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>;
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">container&lt;/span>}&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">TouchableOpacity&lt;/span>
+&lt;span style="color:#a6e22e">onPress&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() =&amp;gt; {
+&lt;span style="color:#a6e22e">navigation&lt;/span>.&lt;span style="color:#a6e22e">navigate&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Details&amp;#34;&lt;/span>, {
+&lt;span style="color:#a6e22e">movie&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">movie&lt;/span>
+});
+}}
+&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">Text&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">text&lt;/span>}&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+{&lt;span style="color:#a6e22e">movie&lt;/span>.&lt;span style="color:#a6e22e">title&lt;/span>} ({&lt;span style="color:#a6e22e">movie&lt;/span>.&lt;span style="color:#a6e22e">year&lt;/span>})
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/Text&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/TouchableOpacity&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/View&amp;gt;&lt;/span>
+);
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="détails-sur-un-film">Détails sur un film&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">DetailsScreen&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">React&lt;/span>.&lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">navigation&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">props&lt;/span>;
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">movie&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">navigation&lt;/span>.&lt;span style="color:#a6e22e">getParam&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;movie&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">imageUrl&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">imagesEndpoint&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">movie&lt;/span>.&lt;span style="color:#a6e22e">image&lt;/span>;
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">View&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">container&lt;/span>}&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">Text&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">title&lt;/span>}&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+{&lt;span style="color:#a6e22e">movie&lt;/span>.&lt;span style="color:#a6e22e">title&lt;/span>} ({&lt;span style="color:#a6e22e">movie&lt;/span>.&lt;span style="color:#a6e22e">year&lt;/span>})
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/Text&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">Text&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">director&lt;/span>}&lt;span style="color:#f92672">&amp;gt;&lt;/span>&lt;span style="color:#a6e22e">Réalisateur&lt;/span>(&lt;span style="color:#a6e22e">s&lt;/span>) &lt;span style="color:#f92672">:&lt;/span> {&lt;span style="color:#a6e22e">movie&lt;/span>.&lt;span style="color:#a6e22e">director&lt;/span>}&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/Text&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">Text&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">description&lt;/span>}&lt;span style="color:#f92672">&amp;gt;&lt;/span>{&lt;span style="color:#a6e22e">movie&lt;/span>.&lt;span style="color:#a6e22e">shortDescription&lt;/span>}&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/Text&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">Image&lt;/span> &lt;span style="color:#a6e22e">style&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">styles&lt;/span>.&lt;span style="color:#a6e22e">image&lt;/span>} &lt;span style="color:#a6e22e">source&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{{ &lt;span style="color:#a6e22e">uri&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">imageUrl&lt;/span> }}&lt;span style="color:#f92672">&amp;gt;&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/Image&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/View&amp;gt;&lt;/span>
+);
+}
+}
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Teaching resources</title><link>https://bpesquet.github.io/teaching/current/</link><pubDate>Tue, 13 Oct 2020 16:55:31 +0200</pubDate><guid>https://bpesquet.github.io/teaching/current/</guid><description>&lt;p>The following resources are currently being used in my courses.&lt;/p>
 &lt;h2 id="artificial-intelligence">Artificial intelligence&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="">Deconstructing AI&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.github.io/slides/ai/deconstructing-ai/" title="Deconstructing AI">Deconstructing AI&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://bpesquet.github.io/mlhandbook/">Machine Learning Handbook&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://bpesquet.github.io/mlkatas/">Machine Learning Katas&lt;/a>&lt;/li>
 &lt;/ul>
@@ -9,13 +1601,13 @@
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/thejsway/thejsway">The JavaScript Way&lt;/a> | &lt;a href="https://github.com/thejsway/thejsway_fr">La voie du JavaScript&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h2 id="mobile-developement">Mobile developement&lt;/h2>
+&lt;h2 id="mobile-development">Mobile development&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="">Le langage JavaScript&lt;/a>&lt;/li>
-&lt;li>&lt;a href="">Introduction à React Native&lt;/a>&lt;/li>
-&lt;li>&lt;a href="">React Native : gestion de l&amp;rsquo;UI&lt;/a>&lt;/li>
-&lt;li>&lt;a href="">React Native : gestion de l&amp;rsquo;état&lt;/a>&lt;/li>
-&lt;li>&lt;a href="">React Native : utilisation d&amp;rsquo;API web&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.github.io/slides/mobile/javascript/" title="Le langage JavaScript">Le langage JavaScript&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.github.io/slides/mobile/react-native-intro/" title="Introduction à React Native">Introduction à React Native&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.github.io/slides/mobile/react-native-ui/" title="React Native : gestion de l'UI">React Native : gestion de l&amp;rsquo;UI&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.github.io/slides/mobile/react-native-state/" title="React Native : gestion de l'état">React Native : gestion de l&amp;rsquo;état&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.github.io/slides/mobile/react-native-api/" title="React Native : utilisation d'API web">React Native : utilisation d&amp;rsquo;API web&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="software-engineering">Software engineering&lt;/h2>
 &lt;ul>
@@ -25,7 +1617,7 @@
 &lt;ul>
 &lt;li>&lt;a href="https://ensc.gitbook.io/programmation-objet-csharp/">Programmation orientée objet en C#&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://ensc.gitbook.io/programmation-evenementielle-winforms/">Programmation évènementielle avec les WinForms&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Outdated resources</title><link>/teaching/past/</link><pubDate>Tue, 13 Oct 2020 16:45:57 +0200</pubDate><guid>/teaching/past/</guid><description>&lt;p>AI and computer science are fastly evolving fields. The following resources, authored earlier in my career, are not maintained anymore. They still might be useful to some people.&lt;/p>
+&lt;/ul></description></item><item><title>Outdated resources</title><link>https://bpesquet.github.io/teaching/past/</link><pubDate>Tue, 13 Oct 2020 16:45:57 +0200</pubDate><guid>https://bpesquet.github.io/teaching/past/</guid><description>&lt;p>AI and computer science are fastly evolving fields. The following resources, authored earlier in my career, are not maintained anymore. They still might be useful to some people.&lt;/p>
 &lt;h2 id="programming">Programming&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="">Introduction à Unity&lt;/a>&lt;/li>
@@ -40,10 +1632,10 @@
 &lt;/ul>
 &lt;h2 id="database-management">Database management&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="">Le langage SQL&lt;/a> (PDF archive)&lt;/li>
-&lt;li>&lt;a href="">Les bases de données&lt;/a> (PDF archive)&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.github.io/pub/cours_sql.zip">Le langage SQL&lt;/a> (PDF archive)&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.github.io/pub/cours_sgbd.zip">Les bases de données&lt;/a> (PDF archive)&lt;/li>
 &lt;/ul>
 &lt;h2 id="networking">Networking&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="">Les réseaux&lt;/a> (PDF archive)&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.github.io/pub/cours_reseaux.zip">Les réseaux&lt;/a> (PDF archive)&lt;/li>
 &lt;/ul></description></item></channel></rss>
