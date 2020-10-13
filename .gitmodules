@@ -1,3 +1,6 @@
 [submodule "themes/anubis"]
 	path = themes/anubis
 	url = https://github.com/mitrichius/hugo-theme-anubis.git
+[submodule "static/reveal.js"]
+	path = static/reveal.js
+	url = https://github.com/hakimel/reveal.js
