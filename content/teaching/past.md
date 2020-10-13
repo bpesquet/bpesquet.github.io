@@ -20,9 +20,9 @@ AI and computer science are fastly evolving fields. The following resources, aut
 
 ## Database management
 
-- [Le langage SQL]() (PDF archive)
-- [Les bases de données]() (PDF archive)
+- [Le langage SQL](/pub/cours_sql.zip) (PDF archive)
+- [Les bases de données](/pub/cours_sgbd.zip) (PDF archive)
 
 ## Networking
 
-- [Les réseaux]() (PDF archive)
+- [Les réseaux](/pub/cours_reseaux.zip) (PDF archive)
