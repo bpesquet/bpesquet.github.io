@@ -12,7 +12,7 @@ menu:
   - identifier: cv
     name: CV
     title: CV
-    url: /posts/
+    url: http://cv.bpesquet.fr/CV_BaptistePesquet.pdf
     weight: 1
   - identifier: teaching
     name: Teaching
