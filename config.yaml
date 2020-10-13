@@ -1,5 +1,5 @@
 languageCode: "en-us"
-baseUrl: ""
+baseUrl: "https://bpesquet.github.io"
 title: "👨‍💻 Baptiste Pesquet"
 theme: "anubis"
 paginate: 10
@@ -10,7 +10,7 @@ enableRobotsTXT: true
 menu:
   main:
   - identifier: cv
-    name: 🇫🇷 CV
+    name: CV
     title: CV
     url: /posts/
     weight: 1
