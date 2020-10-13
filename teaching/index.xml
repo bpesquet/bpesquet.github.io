@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Teachings on 👨‍💻 Baptiste Pesquet</title><link>/teaching/</link><description>👨‍💻 Baptiste Pesquet (Teachings)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 13 Oct 2020 16:55:31 +0200</lastBuildDate><atom:link href="/teaching/index.xml" rel="self" type="application/rss+xml"/><item><title>Teaching resources</title><link>/teaching/current/</link><pubDate>Tue, 13 Oct 2020 16:55:31 +0200</pubDate><guid>/teaching/current/</guid><description>&lt;p>The following resources are currently being used in my courses. As such, they are more or less actively maintained and hopefully up-to-date.&lt;/p>
+&lt;h2 id="artificial-intelligence">Artificial intelligence&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="">Deconstructing AI&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.github.io/mlhandbook/">Machine Learning Handbook&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.github.io/mlkatas/">Machine Learning Katas&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="web-development">Web development&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/thejsway/thejsway">The JavaScript Way&lt;/a> | &lt;a href="https://github.com/thejsway/thejsway_fr">La voie du JavaScript&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="mobile-developement">Mobile developement&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="">Le langage JavaScript&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">Introduction à React Native&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">React Native : gestion de l&amp;rsquo;UI&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">React Native : gestion de l&amp;rsquo;état&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">React Native : utilisation d&amp;rsquo;API web&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="software-engineering">Software engineering&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://ensc.gitbook.io/genie-logiciel/">Génie logiciel&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="programming">Programming&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://ensc.gitbook.io/programmation-objet-csharp/">Programmation orientée objet en C#&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ensc.gitbook.io/programmation-evenementielle-winforms/">Programmation évènementielle avec les WinForms&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Outdated resources</title><link>/teaching/past/</link><pubDate>Tue, 13 Oct 2020 16:45:57 +0200</pubDate><guid>/teaching/past/</guid><description>&lt;p>AI and computer science are fastly evolving fields. The following resources, authored earlier in my career, are not maintained anymore. They still might be useful to some people.&lt;/p>
+&lt;h2 id="programming">Programming&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="">Introduction à Unity&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="web-development">Web development&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript">Apprenez à coder avec JavaScript&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://openclassrooms.com/fr/courses/3306901-creez-des-pages-web-interactives-avec-javascript">Créez des pages web interactives avec JavaScript&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.gitbooks.io/guide-developpeur-php/">Guide du développeur PHP&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://openclassrooms.com/fr/courses/2560666-evoluez-vers-une-architecture-php-professionnelle-avec-silex">Evoluez vers une architecture PHP professionnelle&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.developpez.com/tutoriels/php/evoluer-architecture-mvc/">Evoluez vers une architecture MVC en PHP&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="database-management">Database management&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="">Le langage SQL&lt;/a> (PDF archive)&lt;/li>
+&lt;li>&lt;a href="">Les bases de données&lt;/a> (PDF archive)&lt;/li>
+&lt;/ul>
+&lt;h2 id="networking">Networking&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="">Les réseaux&lt;/a> (PDF archive)&lt;/li>
+&lt;/ul></description></item></channel></rss>
