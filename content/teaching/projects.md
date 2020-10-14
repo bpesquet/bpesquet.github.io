@@ -4,7 +4,7 @@ date: 2020-10-14T09:50:04+02:00
 draft: false
 ---
 
-The following projects are being used in some of my courses:
+The following projects are being used in some of my courses.
 
 - [pyfit](https://github.com/bpesquet/pyfit) is a minimalist neural networks library built on a tiny autodifferention engine.
 
