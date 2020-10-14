@@ -6,6 +6,6 @@ draft: false
 
 The following projects are being used in some of my courses.
 
-- [pyfit](https://github.com/bpesquet/pyfit) is a minimalist neural networks library built on a tiny autodifferention engine.
+- [pyfit](https://github.com/bpesquet/pyfit) is a minimalist neural networks library built on a tiny autodifferentiation engine.
 
 - [WinForms architecture patterns](https://github.com/bpesquet/winforms-architecture-patterns) demonstrates several architectural patterns for building desktop applications.
