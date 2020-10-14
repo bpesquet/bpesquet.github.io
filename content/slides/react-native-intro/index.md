@@ -1,5 +1,5 @@
 ---
-title: "Introduction à React Native"
+title: "React Native : introduction"
 date: 2018-05-23T23:34:24+02:00
 draft: false
 weight: 1

@@ -1,14 +1,10 @@
 ---
-title: "Outdated resources"
+title: "Outdated material"
 date: 2020-10-13T16:45:57+02:00
 draft: false
 ---
 
-AI and computer science are fastly evolving fields. The following resources, authored earlier in my career, are not maintained anymore. They still might be useful to some people.
-
-## Programming
-
-- [Introduction à Unity]()
+AI and computer science are fastly evolving fields. The following resources, authored for courses I no longer teach, are not maintained anymore. They still might be useful to some people.
 
 ## Web development
 

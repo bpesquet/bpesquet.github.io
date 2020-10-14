@@ -17,8 +17,13 @@ menu:
   - identifier: teaching
     name: Teaching
     title: Teaching
-    url: /teaching/current
-    weight: 2
+    url: /teaching
+    weight: 3
+  - identifier: freelancing
+    name: Freelancing
+    title: Freelancing
+    url: /freelancing
+    weight: 4
 
 params:
   author: "Baptiste Pesquet"

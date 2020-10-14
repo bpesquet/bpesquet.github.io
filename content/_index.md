@@ -8,6 +8,4 @@ draft: false
 
 🏫 I mainly work at the [Ecole Nationale Supérieure de Cognitique](https://ensc.bordeaux-inp.fr) where I teach computer science and artificial intelligence to graduate students and professionals.
 
-📚 I try my best to create, publish and maintain free educational resources.
-
 🤝 I sometimes do freelancing in my areas of knowledge. Let's get in touch!
