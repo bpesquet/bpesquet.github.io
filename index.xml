@@ -1540,7 +1540,7 @@ expo install --save-dev babel-preset-mobx
 );
 }
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Projects</title><link>https://bpesquet.github.io/teaching/projects/</link><pubDate>Wed, 14 Oct 2020 09:50:04 +0200</pubDate><guid>https://bpesquet.github.io/teaching/projects/</guid><description>&lt;p>The following projects are being used in some of my courses:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Projects</title><link>https://bpesquet.github.io/teaching/projects/</link><pubDate>Wed, 14 Oct 2020 09:50:04 +0200</pubDate><guid>https://bpesquet.github.io/teaching/projects/</guid><description>&lt;p>The following projects are being used in some of my courses.&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://github.com/bpesquet/pyfit">pyfit&lt;/a> is a minimalist neural networks library built on a tiny autodifferention engine.&lt;/p>
@@ -1803,13 +1803,48 @@ expo install --save-dev babel-preset-mobx
 &lt;p>&lt;a href="http://www.lscp.net/persons/dupoux/">&lt;img src="images/conceptual_acquisition_infants.png" alt="Conceptuals acquisitions by babies">&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h2 id="any-questions">Any questions?&lt;/h2>
-&lt;p>&lt;img src="images/cutest_baby_ever.png" alt="The cutest baby ever">&lt;/p></description></item><item><title>Freelancing</title><link>https://bpesquet.github.io/freelancing/</link><pubDate>Thu, 04 Oct 2018 19:02:15 +0200</pubDate><guid>https://bpesquet.github.io/freelancing/</guid><description>&lt;p>Depending on my work schedule, I may be available to work as freelance with external partners. This could include:&lt;/p>
+&lt;p>&lt;img src="images/cutest_baby_ever.png" alt="The cutest baby ever">&lt;/p></description></item><item><title>Mon premier Kahoot</title><link>https://bpesquet.github.io/posts/mon-premier-kahoot/</link><pubDate>Thu, 29 Nov 2018 23:26:45 +0100</pubDate><guid>https://bpesquet.github.io/posts/mon-premier-kahoot/</guid><description>&lt;p>La &lt;em>gamification&lt;/em> de l&amp;rsquo;enseignement est dans l&amp;rsquo;air du temps, et il existe maintenant de nombreux outils permettant d&amp;rsquo;engager les apprenants de manière ludique et interactive. Cela faisait un petit moment que j&amp;rsquo;avais envie d&amp;rsquo;expérimenter un service de quiz interactif pendant un cours magistral. Le dernier CM de l&amp;rsquo;un de mes modules de cours m&amp;rsquo;en a récemment fourni l&amp;rsquo;occasion. Avant la séance, j&amp;rsquo;ai demandé aux étudiants de revoir l&amp;rsquo;ensemble des notions vues depuis le début du module, en leur annonçant un test de révision. Restait à trouver l&amp;rsquo;outil adéquat.&lt;/p>
+&lt;p>&lt;a href="https://socrative.com/">&lt;img src="images/socrative-logo.png#center" alt="Socrative logo">&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://socrative.com/">Socrative&lt;/a> est un service de quiz en ligne simple et efficace. Son éditeur de questions se révèle très complet et agréable à utiliser. Il y a quelques années, j&amp;rsquo;avais testé son mode &lt;a href="http://help.socrative.com/launch/space-race/deliver-a-space-race">space race&lt;/a>, dans lequel les bonnes réponses font avancer une fusée à l&amp;rsquo;écran : ambiance garantie !&lt;/p>
+&lt;p>&lt;img src="images/Space-Race-Live-Results.png#center" alt="Space race">&lt;/p>
+&lt;p>Socrative est un excellent outil qui peut convenir à de nombreux cas d&amp;rsquo;usage. Cependant, plusieurs limites m&amp;rsquo;ont conduit à rechercher une alternative pour satisfaire mes besoins particuliers :&lt;/p>
 &lt;ul>
+&lt;li>Le mode &lt;em>space race&lt;/em> est limité à 16 participants ou équipes, et je souhaitais que mes 75 étudiants jouent individuellement.&lt;/li>
+&lt;li>La version gratuite fixe le nombre maximal de participants à 50 par activité.&lt;/li>
+&lt;li>Avec le mode quiz classique de Socrative, les étudiants sont scotchés sur leur écran pendant toute la durée de l&amp;rsquo;activité, ce qui ne favorise pas l&amp;rsquo;interactivité.&lt;/li>
+&lt;/ul>
+&lt;p>Mon choix s&amp;rsquo;est porté sur un autre outil de plus en plus connu pour gamifier l&amp;rsquo;enseignement : Kahoot.&lt;/p>
+&lt;p>&lt;a href="https://kahoot.com/">&lt;img src="images/logo-kahoot.png#center" alt="Kahoot logo">&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://kahoot.com/">Kahoot&lt;/a> est également un service de quiz interactif. Plutôt destiné au départ à l&amp;rsquo;enseignement élémentaire, il peut être utilisé dans beaucoup d&amp;rsquo;autres contextes, y compris non scolaires (workshops en entreprise, réunions de famille, etc). Ce service permet de définir des quiz, appelés des &amp;ldquo;kahoots&amp;rdquo;, constitués de questions à choix unique (4 réponses dont 1 seule bonne). Le design et l&amp;rsquo;interface utilisateur sont volontairement très ludiques pour faire oublier aux élèves et au prof qu&amp;rsquo;il s&amp;rsquo;agit avant tout d&amp;rsquo;un outil d&amp;rsquo;évaluation formative.&lt;/p>
+&lt;p>Son fonctionnement est ultra-simple. Après avoir créé en amont les questions (ce qui, ne nous en cachons pas, peut prendre un certain temps), on démarre l&amp;rsquo;activité en mode individuel ou par équipe. Les participants accèdent au quiz via un code PIN à 6 chiffres, puis saisissent leur pseudo. Quand tout le monde est inscrit, l&amp;rsquo;enseignant lance le jeu, et c&amp;rsquo;est parti ! Chaque question s&amp;rsquo;affiche sur l&amp;rsquo;écran vidéoprojeté du prof, et les participants ont un temps limité (paramétrable) pour choisir l&amp;rsquo;une des 4 réponses sur leur écran. Une fois ce temps écoulé, un histogrammes des réponses obtenues s&amp;rsquo;affiche, puis un leaderboard des 5 meilleurs scores depuis le début du quiz, et on passe à la question suivante. Autant dire que le jeu n&amp;rsquo;engendre pas la monotonie et qu&amp;rsquo;il faut s&amp;rsquo;attendre à entendre monter les décibels dans la classe ou l&amp;rsquo;amphi.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/lGLy9jyGjkU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;p>Pour terminer, voici quelques conseils pratiques pour que votre premier quiz se déroule au mieux.&lt;/p>
+&lt;ul>
+&lt;li>Afin de pouvoir utiliser Kahoot en classe, il faut évidemment que chaque participant puisse se connecter au service en ligne. Une application mobile est disponible, mais un simple navigateur ayant accès à Internet suffit pour jouer. Plusieurs configurations sont possibles :
+&lt;ul>
+&lt;li>Wifi + tablettes ;&lt;/li>
+&lt;li>Wifi + smartphones personnels des étudiants ;&lt;/li>
+&lt;li>Wifi + ordinateurs portables ;&lt;/li>
+&lt;li>Réseau filaire + postes fixes.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dans tous les cas, pensez à valider ces aspects techniques avant la séance pour ne pas que tout tombe à l&amp;rsquo;eau en cas de problème bloquant.&lt;/li>
+&lt;li>Attention aux pseudos fantaisistes (voire pires) choisis par certains élèves au moment de l&amp;rsquo;inscription. Même avec des étudiants ingénieurs, j&amp;rsquo;ai dû m&amp;rsquo;y reprendre à deux fois en les menaçant de leur faire un &amp;ldquo;vrai&amp;rdquo; cours magistral s&amp;rsquo;ils persistaient à mettre n&amp;rsquo;importe quoi ;)&lt;/li>
+&lt;li>Une vingtaine de questions par quiz constitue à mon avis un maximum. Au-delà, on peut aboutir à une certaine lassitude en fin de jeu et on court le risque de problèmes techniques (déconnexion, batterie) qui enlèveraient beaucoup d&amp;rsquo;intérêt à la séance.&lt;/li>
+&lt;li>Le délai par défaut de 20 secondes par question est trop court. A l&amp;rsquo;avenir, je laisserai au minimum 30 secondes, voire plus pour les questions complexes.&lt;/li>
+&lt;li>On peut illustrer chaque question avec une image. Si celles-ci sont trop riches, leur lisibilité au videoprojecteur peut laisser à désirer.&lt;/li>
+&lt;/ul>
+&lt;p>J&amp;rsquo;espère que cet article vous aura donné envie de tester Kahoot, Socrative ou un autre outil de gamification. Si la technique suit, vous ne risquez pas grand-chose, à part rendre vos élèves accros à ce type de séance :)&lt;/p>
+&lt;p>Pour ma part, l&amp;rsquo;expérience fut très concluante et je la renouvellerai dès que possible. Bons quiz !&lt;/p></description></item><item><title>Freelancing</title><link>https://bpesquet.github.io/freelancing/</link><pubDate>Thu, 04 Oct 2018 19:02:15 +0200</pubDate><guid>https://bpesquet.github.io/freelancing/</guid><description>&lt;p>Depending on my work schedule, I may be available to work with external partners. This could include:&lt;/p>
+&lt;ul>
+&lt;li>Consulting in one of my areas of knowledge.&lt;/li>
 &lt;li>Creation of custom training material: courses, textbooks or assessments.&lt;/li>
 &lt;li>Animation of courses or corporate worshops.&lt;/li>
 &lt;li>Conference talks.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;a href="mailto:bpesquet%20%5Bat%5D%20gmail%20%5Bdot%5D%20com">Reach out to me&lt;/a> for more details.&lt;/p></description></item><item><title>Introduction à Unity</title><link>https://bpesquet.github.io/slides/unity-intro/</link><pubDate>Sat, 25 Aug 2018 16:13:52 +0200</pubDate><guid>https://bpesquet.github.io/slides/unity-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;p>Feel free to &lt;a href="mailto:bpesquet%20%5Bat%5D%20gmail%20%5Bdot%5D%20com">reach out to me&lt;/a> for more details.&lt;/p></description></item><item><title>Introduction à Unity</title><link>https://bpesquet.github.io/slides/unity-intro/</link><pubDate>Sat, 25 Aug 2018 16:13:52 +0200</pubDate><guid>https://bpesquet.github.io/slides/unity-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Unity en bref&lt;/li>
 &lt;li>Concepts-clés&lt;/li>
@@ -2104,4 +2139,87 @@ expo install --save-dev babel-preset-mobx
 &lt;li>Authentification GitHub, LFS, etc.&lt;/li>
 &lt;li>Version 1.0 : encore instable.&lt;/li>
 &lt;/ul>
-&lt;/section></description></item></channel></rss>
+&lt;/section></description></item><item><title>PAISS 2018 : le debrief</title><link>https://bpesquet.github.io/posts/paiss-2018-debrief/</link><pubDate>Mon, 09 Jul 2018 08:48:56 +0200</pubDate><guid>https://bpesquet.github.io/posts/paiss-2018-debrief/</guid><description>&lt;p>La session 2018 de la &lt;em>summer school&lt;/em> de l&amp;rsquo;INRIA consacrée à l&amp;rsquo;IA, nommée &lt;a href="https://project.inria.fr/paiss/">PAISS&lt;/a>, s&amp;rsquo;est déroulée à Grenoble du 2 au 6 juillet 2018. Voici un petit compte-rendu de ce qui s&amp;rsquo;y est dit et fait.&lt;/p>
+&lt;p>&lt;img src="https://project.inria.fr/paiss/files/2018/04/te%CC%82tie%CC%80re-3.jpg" alt="Logo PAISS">&lt;/p>
+&lt;p>Le P de PAISS correspond à l&amp;rsquo;institut &lt;a href="https://inria.fr/actualite/actualites-inria/creation-de-l-institut-prairie">PRAIRIE&lt;/a>, le centre français d&amp;rsquo;excellence en IA dont la création a été annoncée lors du sommet &lt;a href="https://www.aiforhumanity.fr/">AI for Humanity&lt;/a> en mars 2018.&lt;/p>
+&lt;h2 id="quelques-chiffres">Quelques chiffres&lt;/h2>
+&lt;p>L&amp;rsquo;école d&amp;rsquo;été 2018 a rassemblé environ 200 participants sélectionnés parmi plus de 700 candidatures. 44 nationalités étaient représentées. La composition du public était la suivante :&lt;/p>
+&lt;ul>
+&lt;li>60% d&amp;rsquo;étudiants, presque tous thésards ou post-doctorants ;&lt;/li>
+&lt;li>15% d&amp;rsquo;académiques (dont votre serviteur) ;&lt;/li>
+&lt;li>25% de professionnels.&lt;/li>
+&lt;/ul>
+&lt;p>De quoi prendre un petit coup de vieux au milieu de nombreux visages juvéniles&amp;hellip;&lt;/p>
+&lt;p>En dépit des efforts des organisateurs, il n&amp;rsquo;y avait &amp;ldquo;que&amp;rdquo; 25% de femmes parmi les participants. Elles ont pourtant toute leur place en IA comme dans les autres secteurs scientifiques. Allez les filles !&lt;/p>
+&lt;p>L&amp;rsquo;agenda de l&amp;rsquo;école d&amp;rsquo;été fut très dense, avec au total 15 conférences et 3 sessions pratiques réparties sur cinq jours. Le peu de temps restant fut occupé par une soirée de bienvenue sur les hauteurs de Grenoble, une session &amp;ldquo;posters&amp;rdquo; et une réception dans les somptueux locaux de &lt;a href="http://www.europe.naverlabs.com/">Naver Labs&lt;/a>, l&amp;rsquo;ancien laboratoire de recherche en IA de Xerox.&lt;/p>
+&lt;figure>
+&lt;img src="images/Grenoble_Bastille.jpg"
+alt="Vue de Grenoble depuis la Bastille"/> &lt;figcaption>
+&lt;p>Vue de Grenoble depuis la Bastille&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;h2 id="le-contenu">Le contenu&lt;/h2>
+&lt;p>Le casting des intervenants a rassemblé de nombreuses pointures de la recherche en IA, dont une véritable &lt;em>dream team&lt;/em> francophone composée de Yann LeCun (patron de l&amp;rsquo;IA chez Facebook), Rémi Munos (responsable du laboratoire DeepMind à Paris), Hugo Larochelle (Google Brain) et bien d&amp;rsquo;autres.&lt;/p>
+&lt;figure>
+&lt;img src="images/paiss_selfie.jpg"
+alt="Je sais, on avait dit pas de selfie avec Yann LeCun&amp;amp;hellip;"/> &lt;figcaption>
+&lt;p>Je sais, on avait dit pas de selfie avec Yann LeCun&amp;hellip;&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Les sujets présentés correspondent aux grands axes actuels de la recherche en IA : apprentissages semi-supervisé et non supervisé, apprentissage profond par renforcement, meta-learning (apprendre à apprendre), etc. Les principaux thèmes d&amp;rsquo;application étaient la vision par ordinateur, le traitement du langage naturel (NLP), et dans une moindre mesure la robotique.&lt;/p>
+&lt;p>Le niveau général des interventions, toutes en anglais, était très élevé. Après une contextualisation plus ou moins brève, la grande majorité des intervenants a présenté ses résultats de recherche les plus récents. Sans surprise, le Deep Learning occupe actuellement une position quasiment hégémonique. Les réseaux profonds convolutifs (CNN) sont mis à toutes les sauces dans de nombreux domaines, comme par exemple le NLP. Cela n&amp;rsquo;est pas sans créer quelques petites tensions avec les tenants de techniques plus traditionnelles et les défenseurs d&amp;rsquo;approches scientifiques alternatives.&lt;/p>
+&lt;p>Voici quelques liens pour accéder au contenu présenté :&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://project.inria.fr/paiss/program/">Diaporamas&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/almazan/paiss">Session pratique sur la recherche visuelle&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/criteo-research/paiss_deeprl">Session pratique sur l&amp;rsquo;apprentissage profond par renforcement&lt;/a>&lt;/li>
+&lt;li>La session pratique sur PyTorch correspond aux &lt;a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html">tutoriels&lt;/a> du site officiel.&lt;/li>
+&lt;/ul>
+&lt;h2 id="bilan-personnel">Bilan personnel&lt;/h2>
+&lt;p>Cette école d&amp;rsquo;été m&amp;rsquo;a permis de mesurer l&amp;rsquo;écart entre mes connaissances actuelles et l&amp;rsquo;état de l&amp;rsquo;art. J&amp;rsquo;ai bien l&amp;rsquo;intention de continuer à travailler pour réduire cet écart, même si mes objectifs en matière d&amp;rsquo;IA sont avant tout d&amp;rsquo;ordre pédagogique (pour le moment).&lt;/p>
+&lt;p>La recherche en IA semble plutôt une affaire de mathématiciens que d&amp;rsquo;informaticiens. Toutes les présentations se sont basées sur un formalisme mathématique important, avec dans certains cas la mobilisation de concepts qui m&amp;rsquo;ont ramené tout droit à mes lointaines années de prépa.&lt;/p>
+&lt;figure>
+&lt;img src="images/paiss_bottou.jpg"
+alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissage non supervisé"/> &lt;figcaption>
+&lt;p>Extrait de la présentation de Léon Bottou sur l&amp;rsquo;apprentissage non supervisé&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Une expérience parfois douloureuse : pas facile de redevenir étudiant et de se sentir largué par le prof. Je tâcherai de m&amp;rsquo;en souvenir pour mes prochains cours :)&lt;/p>
+&lt;p>Malgré une variété des thèmes et un niveau des interventions très stimulantes intellectuellement, cette école d&amp;rsquo;été a parfois ressemblé à un &lt;em>workshop&lt;/em> de recherche. L&amp;rsquo;enseignant que je suis a regretté que les aspects didactiques et pédagogiques aient été, à mon sens, trop négligés par certains intervenants. Avec un meilleur niveau théorique, mon impression aurait probablement été différente.&lt;/p>
+&lt;p>Je reste cependant très content d&amp;rsquo;avoir participé à cette école d&amp;rsquo;été qui a été l&amp;rsquo;occasion de cogitations intenses et de rencontres variées et enrichissantes.&lt;/p>
+&lt;p>D&amp;rsquo;après mes discussions avec les organisateurs, la prochaine session devrait avoir lieu à Paris en 2019. Avis aux amateurs !&lt;/p></description></item><item><title>Artistes et spécifieurs, un jeu pour découvrir l'agilité</title><link>https://bpesquet.github.io/posts/artistes-et-specifieurs/</link><pubDate>Thu, 24 May 2018 15:57:43 +0200</pubDate><guid>https://bpesquet.github.io/posts/artistes-et-specifieurs/</guid><description>&lt;p>Dans le cadre du module de cours Gestion de projet, j&amp;rsquo;ai testé avec succès un atelier ludique et efficace pour s&amp;rsquo;initier aux valeurs de l&amp;rsquo;agilité : le jeu &lt;strong>artistes et spécifieurs&lt;/strong>. Imaginé par &lt;a href="http://alistair.cockburn.us/">Alistair Cockburn&lt;/a>, l&amp;rsquo;un des signataires du &lt;a href="http://agilemanifesto.org/">manifeste agile&lt;/a>, ce jeu est souvent utilisé par les coachs agiles en entreprise.&lt;/p>
+&lt;p>Par rapport à d&amp;rsquo;autres ateliers similiaires comme &lt;a href="https://www.lego4scrum.com/">lego4scrum&lt;/a>, il a l&amp;rsquo;avantage de ne nécessiter presque aucun matériel. En 1h30 environ, il offre une première approche de certains principes agiles dans un cadre propice à la bonne humeur.&lt;/p>
+&lt;h2 id="principe-du-jeu">Principe du jeu&lt;/h2>
+&lt;p>Pour commencer, on forme des équipes de 4 à 6 personnes selon le nombre total de participants à l&amp;rsquo;atelier. Chaque équipe se scinde en deux : les spécifieurs d&amp;rsquo;une part et les artistes de l&amp;rsquo;autre.&lt;/p>
+&lt;p>L&amp;rsquo;objectif est pour les artistes de reproduire aussi fidèlement que possible un dessin à partir des spécifications fournies par les spécifieurs de l&amp;rsquo;équipe.&lt;/p>
+&lt;p>Les contraintes sont les suivantes :&lt;/p>
+&lt;ul>
+&lt;li>Les spécifieurs sont les seuls à avoir accès au dessin.&lt;/li>
+&lt;li>La communication entre spécifieurs et artistes est uniquement écrite.&lt;/li>
+&lt;li>Les spécifieurs ne peuvent pas dessiner.&lt;/li>
+&lt;li>Les artistes ne peuvent pas se déplacer.&lt;/li>
+&lt;/ul>
+&lt;p>Le reste de l&amp;rsquo;organisation spécifieurs/artistes est libre : nombre d&amp;rsquo;allers-retours, format de communication écrite, attente d&amp;rsquo;un spécifieur aux côtés des artistes, etc.&lt;/p>
+&lt;h2 id="matériel-nécessaire">Matériel nécessaire&lt;/h2>
+&lt;ul>
+&lt;li>Trois dessins de complexité croissante, imprimés en autant d&amp;rsquo;exemplaires qu&amp;rsquo;il y aura d&amp;rsquo;équipes. Afin de conserver l&amp;rsquo;effet de surprise pour mes étudiants, je ne mets pas en ligne ceux que j&amp;rsquo;utilise. Contactez-moi si vous souhaitez les obtenir.&lt;/li>
+&lt;li>Des feuilles A3 ou A4 vierges et des marqueurs pour dessiner dessus.&lt;/li>
+&lt;li>Des feuilles de brouillon pour écrire les spécifications.&lt;/li>
+&lt;/ul>
+&lt;p>Ce jeu peut être gourmand en papier. Je donne à mes étudiants des consignes d&amp;rsquo;économie pour éviter le gaspillage.&lt;/p>
+&lt;h2 id="déroulement">Déroulement&lt;/h2>
+&lt;p>Une fois les consignes de jeu données à tous les participants, on sépare physiquement le groupe des spécifieurs et celui des artistes. Il est possible de les placer dans deux salles limitrophes, ou de les éloigner au maximum dans une même salle. La partie peut commencer !&lt;/p>
+&lt;p>Chaque phase de jeu dure 10 minutes. L&amp;rsquo;idéal pour rythmer la session et instiller une petite dose de stress est de vidéoprojeter un &lt;a href="https://www.online-stopwatch.com/full-screen-stopwatch/">compte à rebours&lt;/a> aux spécifieurs. Une fois le temps écoulé, on récupère les dessins de chaque équipe et tous les participants sont regroupés pour un debriefing collectif souvent très drôle.&lt;/p>
+&lt;p>On laisse ensuite quelques minutes à chaque équipe pour trouver des axes d&amp;rsquo;amélioration avant la prochaine phase. Les participants peuvent décider de changer de rôle d&amp;rsquo;une phase à l&amp;rsquo;autre.&lt;/p>
+&lt;h2 id="conclusion">Conclusion&lt;/h2>
+&lt;p>Au bout de trois phases de jeu, on observe l&amp;rsquo;adoption naturelle de plusieurs des grands principes agiles :&lt;/p>
+&lt;ul>
+&lt;li>Fonctionnement en boucle courte.&lt;/li>
+&lt;li>Echanges réguliers entre les parties prenantes.&lt;/li>
+&lt;li>Travail incrémental avec priorisation.&lt;/li>
+&lt;li>Amélioration par auto-organisation.&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;p>Dès la seconde phase, on constate également une nette amélioration de la qualité des productions.&lt;/p>
+&lt;p>La séance se termine par un debriefing global qui est le bon moment pour formaliser les liens avec les principes de l&amp;rsquo;agilité.&lt;/p>
+&lt;p>Vous trouverez plus de détails sur ce jeu dans &lt;a href="http://www.agilex.fr/2013/01/mon-jeu-agile-prefere/">cet article&lt;/a>.&lt;/p></description></item></channel></rss>
