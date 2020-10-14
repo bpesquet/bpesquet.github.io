@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 👨‍💻 Baptiste Pesquet</title><link>https://bpesquet.github.io/slides/</link><description>👨‍💻 Baptiste Pesquet (Slides)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 14 Jan 2020 10:14:10 +0100</lastBuildDate><atom:link href="https://bpesquet.github.io/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>Le langage JavaScript</title><link>https://bpesquet.github.io/slides/javascript/</link><pubDate>Mon, 16 Dec 2019 21:50:46 +0100</pubDate><guid>https://bpesquet.github.io/slides/javascript/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/slides/</link><description>👨‍💻 Baptiste Pesquet (Slides)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 14 Jan 2020 10:14:10 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>Le langage JavaScript</title><link>https://www.bpesquet.fr/slides/javascript/</link><pubDate>Mon, 16 Dec 2019 21:50:46 +0100</pubDate><guid>https://www.bpesquet.fr/slides/javascript/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Pourquoi JavaScript ?&lt;/li>
 &lt;li>Syntaxe du langage&lt;/li>
@@ -272,7 +272,7 @@ npm search &amp;lt;package name&amp;gt;
 &lt;li>&lt;a href="https://babeljs.io/">Babel&lt;/a> transforme le code JavaScript ES2015+ en code ES5 compatible avec tous les environnements d&amp;rsquo;exécution JS.&lt;/li>
 &lt;li>Il permet d&amp;rsquo;utiliser sereinement les dernières évolutions du langage.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;a href="https://babeljs.io/">&lt;img src="images/Babel-Javascript-compiler.png" alt="Babel logo">&lt;/a>&lt;/p></description></item><item><title>React Native : introduction</title><link>https://bpesquet.github.io/slides/react-native-intro/</link><pubDate>Wed, 23 May 2018 23:34:24 +0200</pubDate><guid>https://bpesquet.github.io/slides/react-native-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;p>&lt;a href="https://babeljs.io/">&lt;img src="images/Babel-Javascript-compiler.png" alt="Babel logo">&lt;/a>&lt;/p></description></item><item><title>React Native : introduction</title><link>https://www.bpesquet.fr/slides/react-native-intro/</link><pubDate>Wed, 23 May 2018 23:34:24 +0200</pubDate><guid>https://www.bpesquet.fr/slides/react-native-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>L&amp;rsquo;écosystème mobile&lt;/li>
 &lt;li>Premiers pas avec React Native&lt;/li>
@@ -565,7 +565,7 @@ npm start &lt;span style="color:#75715e"># Or &amp;#39;expo start&amp;#39;&lt;/s
 &lt;p>&lt;img src="images/basic_components.png" alt="React Native core components">&lt;/p>
 &lt;hr>
 &lt;h2 id="composants-dinterface-utilisateur">Composants d&amp;rsquo;interface utilisateur&lt;/h2>
-&lt;p>&lt;img src="images/ui_components.png" alt="React native UI components">&lt;/p></description></item><item><title>React Native : gestion de l'UI</title><link>https://bpesquet.github.io/slides/react-native-ui/</link><pubDate>Tue, 07 Jan 2020 23:06:33 +0100</pubDate><guid>https://bpesquet.github.io/slides/react-native-ui/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;p>&lt;img src="images/ui_components.png" alt="React native UI components">&lt;/p></description></item><item><title>React Native : gestion de l'UI</title><link>https://www.bpesquet.fr/slides/react-native-ui/</link><pubDate>Tue, 07 Jan 2020 23:06:33 +0100</pubDate><guid>https://www.bpesquet.fr/slides/react-native-ui/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Cycle de vie d&amp;rsquo;un composant&lt;/li>
 &lt;li>Style et positionnement&lt;/li>
@@ -859,7 +859,7 @@ expo install react-navigation-drawer
 &lt;li>&lt;a href="https://reactnavigation.org/docs/en/drawer-based-navigation.html">Navigation par menu accordéon ou &amp;ldquo;hamburger'&lt;/a> (&lt;a href="https://snack.expo.io/@react-navigation/9b2a43">exemple&lt;/a>).&lt;/li>
 &lt;li>&lt;a href="https://reactnavigation.org/docs/en/auth-flow.html">Gestion de l&amp;rsquo;authentification&lt;/a>.&lt;/li>
 &lt;li>&amp;hellip;&lt;/li>
-&lt;/ul></description></item><item><title>Python for Data Science</title><link>https://bpesquet.github.io/slides/python-data-science/</link><pubDate>Sat, 28 Sep 2019 21:59:13 +0200</pubDate><guid>https://bpesquet.github.io/slides/python-data-science/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;/ul></description></item><item><title>Python for Data Science</title><link>https://www.bpesquet.fr/slides/python-data-science/</link><pubDate>Sat, 28 Sep 2019 21:59:13 +0200</pubDate><guid>https://www.bpesquet.fr/slides/python-data-science/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Introduction to Data Science&lt;/li>
 &lt;li>Why Python?&lt;/li>
@@ -1012,7 +1012,7 @@ sns&lt;span style="color:#f92672">.&lt;/span>set()
 &lt;/section>
 &lt;hr>
 &lt;h2 id="demo-time-3">Demo time&lt;/h2>
-&lt;p>&lt;a href="http://nbviewer.jupyter.org/github/bpesquet/machine-learning-handbook/blob/master/tools/Matplotlib.ipynb">Plotting with Matplotlib and Seaborn&lt;/a>&lt;/p></description></item><item><title>React Native : gestion de l'état</title><link>https://bpesquet.github.io/slides/react-native-state/</link><pubDate>Sun, 12 Jan 2020 21:50:06 +0100</pubDate><guid>https://bpesquet.github.io/slides/react-native-state/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;p>&lt;a href="http://nbviewer.jupyter.org/github/bpesquet/machine-learning-handbook/blob/master/tools/Matplotlib.ipynb">Plotting with Matplotlib and Seaborn&lt;/a>&lt;/p></description></item><item><title>React Native : gestion de l'état</title><link>https://www.bpesquet.fr/slides/react-native-state/</link><pubDate>Sun, 12 Jan 2020 21:50:06 +0100</pubDate><guid>https://www.bpesquet.fr/slides/react-native-state/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Partage de l&amp;rsquo;état entre composants&lt;/li>
 &lt;li>Centralisation de l&amp;rsquo;état&lt;/li>
@@ -1295,7 +1295,7 @@ expo install --save-dev babel-preset-mobx
 &lt;li>Librairie créée pour adresser des problématiques à l&amp;rsquo;échelle de Facebook&lt;/li>
 &lt;li>Complexe et &lt;em>overkill&lt;/em> pour les projets &amp;ldquo;normaux&amp;rdquo;&lt;/li>
 &lt;li>&lt;a href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">&amp;ldquo;You might not need Redux&amp;rdquo;&lt;/a> (écrit par son créateur)&lt;/li>
-&lt;/ul></description></item><item><title>React Native : utilisation d'API web</title><link>https://bpesquet.github.io/slides/react-native-api/</link><pubDate>Tue, 14 Jan 2020 10:14:10 +0100</pubDate><guid>https://bpesquet.github.io/slides/react-native-api/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;/ul></description></item><item><title>React Native : utilisation d'API web</title><link>https://www.bpesquet.fr/slides/react-native-api/</link><pubDate>Tue, 14 Jan 2020 10:14:10 +0100</pubDate><guid>https://www.bpesquet.fr/slides/react-native-api/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Introduction aux API web&lt;/li>
 &lt;li>Appels réseau avec JavaScript&lt;/li>
@@ -1540,7 +1540,7 @@ expo install --save-dev babel-preset-mobx
 );
 }
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Deconstructing AI</title><link>https://bpesquet.github.io/slides/deconstructing-ai/</link><pubDate>Mon, 09 Dec 2019 10:47:12 +0100</pubDate><guid>https://bpesquet.github.io/slides/deconstructing-ai/</guid><description>&lt;h2 id="summary">Summary&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Deconstructing AI</title><link>https://www.bpesquet.fr/slides/deconstructing-ai/</link><pubDate>Mon, 09 Dec 2019 10:47:12 +0100</pubDate><guid>https://www.bpesquet.fr/slides/deconstructing-ai/</guid><description>&lt;h2 id="summary">Summary&lt;/h2>
 &lt;ul>
 &lt;li>What Is AI, Actually?&lt;/li>
 &lt;li>How Do Machines Learn?&lt;/li>
@@ -1743,7 +1743,7 @@ expo install --save-dev babel-preset-mobx
 &lt;p>&lt;a href="http://www.lscp.net/persons/dupoux/">&lt;img src="images/conceptual_acquisition_infants.png" alt="Conceptuals acquisitions by babies">&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h2 id="any-questions">Any questions?&lt;/h2>
-&lt;p>&lt;img src="images/cutest_baby_ever.png" alt="The cutest baby ever">&lt;/p></description></item><item><title>Introduction à Unity</title><link>https://bpesquet.github.io/slides/unity-intro/</link><pubDate>Sat, 25 Aug 2018 16:13:52 +0200</pubDate><guid>https://bpesquet.github.io/slides/unity-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;p>&lt;img src="images/cutest_baby_ever.png" alt="The cutest baby ever">&lt;/p></description></item><item><title>Introduction à Unity</title><link>https://www.bpesquet.fr/slides/unity-intro/</link><pubDate>Sat, 25 Aug 2018 16:13:52 +0200</pubDate><guid>https://www.bpesquet.fr/slides/unity-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Unity en bref&lt;/li>
 &lt;li>Concepts-clés&lt;/li>

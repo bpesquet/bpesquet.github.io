@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Teaching on 👨‍💻 Baptiste Pesquet</title><link>https://bpesquet.github.io/teaching/</link><description>👨‍💻 Baptiste Pesquet (Teaching)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 14 Oct 2020 08:55:27 +0200</lastBuildDate><atom:link href="https://bpesquet.github.io/teaching/index.xml" rel="self" type="application/rss+xml"/><item><title>Projects</title><link>https://bpesquet.github.io/teaching/projects/</link><pubDate>Wed, 14 Oct 2020 09:50:04 +0200</pubDate><guid>https://bpesquet.github.io/teaching/projects/</guid><description>&lt;p>The following projects are being used in some of my courses.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Teaching on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/teaching/</link><description>👨‍💻 Baptiste Pesquet (Teaching)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 14 Oct 2020 08:55:27 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/teaching/index.xml" rel="self" type="application/rss+xml"/><item><title>Projects</title><link>https://www.bpesquet.fr/teaching/projects/</link><pubDate>Wed, 14 Oct 2020 09:50:04 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/projects/</guid><description>&lt;p>The following projects are being used in some of my courses.&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://github.com/bpesquet/pyfit">pyfit&lt;/a> is a minimalist neural networks library built on a tiny autodifferentiation engine.&lt;/p>
@@ -6,24 +6,24 @@
 &lt;li>
 &lt;p>&lt;a href="https://github.com/bpesquet/winforms-architecture-patterns">WinForms architecture patterns&lt;/a> demonstrates several architectural patterns for building desktop applications.&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Slides</title><link>https://bpesquet.github.io/teaching/slides/</link><pubDate>Wed, 14 Oct 2020 09:04:17 +0200</pubDate><guid>https://bpesquet.github.io/teaching/slides/</guid><description>&lt;p>All these presentations are built with &lt;a href="revealjs.com/">reveal.js&lt;/a>.&lt;/p>
+&lt;/ul></description></item><item><title>Slides</title><link>https://www.bpesquet.fr/teaching/slides/</link><pubDate>Wed, 14 Oct 2020 09:04:17 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/slides/</guid><description>&lt;p>All these presentations are built with &lt;a href="revealjs.com/">reveal.js&lt;/a>.&lt;/p>
 &lt;h2 id="artificial-intelligence">Artificial intelligence&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/deconstructing-ai/" title="Deconstructing AI">Deconstructing AI&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/python-data-science/" title="Python for Data Science">Python for Data Science&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/deconstructing-ai/" title="Deconstructing AI">Deconstructing AI&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/python-data-science/" title="Python for Data Science">Python for Data Science&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="mobile-development">Mobile development&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/javascript/" title="Le langage JavaScript">Le langage JavaScript&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/react-native-intro/" title="Introduction à React Native">React Native: introduction&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/react-native-ui/" title="React Native : gestion de l'UI">React Native : gestion de l&amp;rsquo;UI&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/react-native-state/" title="React Native : gestion de l'état">React Native : gestion de l&amp;rsquo;état&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/react-native-api/" title="React Native : utilisation d'API web">React Native : utilisation d&amp;rsquo;API web&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/javascript/" title="Le langage JavaScript">Le langage JavaScript&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/react-native-intro/" title="Introduction à React Native">React Native: introduction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/react-native-ui/" title="React Native : gestion de l'UI">React Native : gestion de l&amp;rsquo;UI&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/react-native-state/" title="React Native : gestion de l'état">React Native : gestion de l&amp;rsquo;état&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/react-native-api/" title="React Native : utilisation d'API web">React Native : utilisation d&amp;rsquo;API web&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="virtual-worlds">Virtual worlds&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/unity-intro/" title="Introduction à Unity">Introduction à Unity&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Textbooks</title><link>https://bpesquet.github.io/teaching/textbooks/</link><pubDate>Tue, 13 Oct 2020 16:55:31 +0200</pubDate><guid>https://bpesquet.github.io/teaching/textbooks/</guid><description>&lt;p>All these resources are open-sourced on &lt;a href="https://github.com/bpesquet?tab=repositories">GitHub&lt;/a>.&lt;/p>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/unity-intro/" title="Introduction à Unity">Introduction à Unity&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Textbooks</title><link>https://www.bpesquet.fr/teaching/textbooks/</link><pubDate>Tue, 13 Oct 2020 16:55:31 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/textbooks/</guid><description>&lt;p>All these resources are open-sourced on &lt;a href="https://github.com/bpesquet?tab=repositories">GitHub&lt;/a>.&lt;/p>
 &lt;h2 id="machine-learning--deep-learning">Machine Learning &amp;amp; Deep Learning&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://bpesquet.github.io/mlhandbook/">Machine Learning Handbook&lt;/a>&lt;/li>
@@ -41,7 +41,7 @@
 &lt;ul>
 &lt;li>&lt;a href="https://ensc.gitbook.io/programmation-objet-csharp/">Programmation orientée objet en C#&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://ensc.gitbook.io/programmation-evenementielle-winforms/">Programmation évènementielle avec les WinForms&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Outdated material</title><link>https://bpesquet.github.io/teaching/outdated/</link><pubDate>Tue, 13 Oct 2020 16:45:57 +0200</pubDate><guid>https://bpesquet.github.io/teaching/outdated/</guid><description>&lt;p>AI and computer science are rapidly evolving fields. The following resources, authored several years ago for courses I no longer teach, are not maintained anymore. They still might be useful to some people.&lt;/p>
+&lt;/ul></description></item><item><title>Outdated material</title><link>https://www.bpesquet.fr/teaching/outdated/</link><pubDate>Tue, 13 Oct 2020 16:45:57 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/outdated/</guid><description>&lt;p>AI and computer science are rapidly evolving fields. The following resources, authored several years ago for courses I no longer teach, are not maintained anymore. They still might be useful to some people.&lt;/p>
 &lt;h2 id="web-development">Web development&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript">Apprenez à coder avec JavaScript&lt;/a>&lt;/li>
@@ -52,10 +52,10 @@
 &lt;/ul>
 &lt;h2 id="database-management">Database management&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://bpesquet.github.io/pub/cours_sql.zip">Le langage SQL&lt;/a> (PDF archive)&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/pub/cours_sgbd.zip">Les bases de données&lt;/a> (PDF archive)&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_sql.zip">Le langage SQL&lt;/a> (PDF archive)&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_sgbd.zip">Les bases de données&lt;/a> (PDF archive)&lt;/li>
 &lt;/ul>
 &lt;h2 id="networking">Networking&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://bpesquet.github.io/pub/cours_reseaux.zip">Les réseaux&lt;/a> (PDF archive)&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_reseaux.zip">Les réseaux&lt;/a> (PDF archive)&lt;/li>
 &lt;/ul></description></item></channel></rss>

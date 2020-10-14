@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Front page on 👨‍💻 Baptiste Pesquet</title><link>https://bpesquet.github.io/</link><description>👨‍💻 Baptiste Pesquet (Front page)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://bpesquet.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Le langage JavaScript</title><link>https://bpesquet.github.io/slides/javascript/</link><pubDate>Mon, 16 Dec 2019 21:50:46 +0100</pubDate><guid>https://bpesquet.github.io/slides/javascript/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Front page on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/</link><description>👨‍💻 Baptiste Pesquet (Front page)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>Le langage JavaScript</title><link>https://www.bpesquet.fr/slides/javascript/</link><pubDate>Mon, 16 Dec 2019 21:50:46 +0100</pubDate><guid>https://www.bpesquet.fr/slides/javascript/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Pourquoi JavaScript ?&lt;/li>
 &lt;li>Syntaxe du langage&lt;/li>
@@ -272,7 +272,7 @@ npm search &amp;lt;package name&amp;gt;
 &lt;li>&lt;a href="https://babeljs.io/">Babel&lt;/a> transforme le code JavaScript ES2015+ en code ES5 compatible avec tous les environnements d&amp;rsquo;exécution JS.&lt;/li>
 &lt;li>Il permet d&amp;rsquo;utiliser sereinement les dernières évolutions du langage.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;a href="https://babeljs.io/">&lt;img src="images/Babel-Javascript-compiler.png" alt="Babel logo">&lt;/a>&lt;/p></description></item><item><title>React Native : introduction</title><link>https://bpesquet.github.io/slides/react-native-intro/</link><pubDate>Wed, 23 May 2018 23:34:24 +0200</pubDate><guid>https://bpesquet.github.io/slides/react-native-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;p>&lt;a href="https://babeljs.io/">&lt;img src="images/Babel-Javascript-compiler.png" alt="Babel logo">&lt;/a>&lt;/p></description></item><item><title>React Native : introduction</title><link>https://www.bpesquet.fr/slides/react-native-intro/</link><pubDate>Wed, 23 May 2018 23:34:24 +0200</pubDate><guid>https://www.bpesquet.fr/slides/react-native-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>L&amp;rsquo;écosystème mobile&lt;/li>
 &lt;li>Premiers pas avec React Native&lt;/li>
@@ -565,7 +565,7 @@ npm start &lt;span style="color:#75715e"># Or &amp;#39;expo start&amp;#39;&lt;/s
 &lt;p>&lt;img src="images/basic_components.png" alt="React Native core components">&lt;/p>
 &lt;hr>
 &lt;h2 id="composants-dinterface-utilisateur">Composants d&amp;rsquo;interface utilisateur&lt;/h2>
-&lt;p>&lt;img src="images/ui_components.png" alt="React native UI components">&lt;/p></description></item><item><title>React Native : gestion de l'UI</title><link>https://bpesquet.github.io/slides/react-native-ui/</link><pubDate>Tue, 07 Jan 2020 23:06:33 +0100</pubDate><guid>https://bpesquet.github.io/slides/react-native-ui/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;p>&lt;img src="images/ui_components.png" alt="React native UI components">&lt;/p></description></item><item><title>React Native : gestion de l'UI</title><link>https://www.bpesquet.fr/slides/react-native-ui/</link><pubDate>Tue, 07 Jan 2020 23:06:33 +0100</pubDate><guid>https://www.bpesquet.fr/slides/react-native-ui/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Cycle de vie d&amp;rsquo;un composant&lt;/li>
 &lt;li>Style et positionnement&lt;/li>
@@ -859,7 +859,7 @@ expo install react-navigation-drawer
 &lt;li>&lt;a href="https://reactnavigation.org/docs/en/drawer-based-navigation.html">Navigation par menu accordéon ou &amp;ldquo;hamburger'&lt;/a> (&lt;a href="https://snack.expo.io/@react-navigation/9b2a43">exemple&lt;/a>).&lt;/li>
 &lt;li>&lt;a href="https://reactnavigation.org/docs/en/auth-flow.html">Gestion de l&amp;rsquo;authentification&lt;/a>.&lt;/li>
 &lt;li>&amp;hellip;&lt;/li>
-&lt;/ul></description></item><item><title>Python for Data Science</title><link>https://bpesquet.github.io/slides/python-data-science/</link><pubDate>Sat, 28 Sep 2019 21:59:13 +0200</pubDate><guid>https://bpesquet.github.io/slides/python-data-science/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;/ul></description></item><item><title>Python for Data Science</title><link>https://www.bpesquet.fr/slides/python-data-science/</link><pubDate>Sat, 28 Sep 2019 21:59:13 +0200</pubDate><guid>https://www.bpesquet.fr/slides/python-data-science/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Introduction to Data Science&lt;/li>
 &lt;li>Why Python?&lt;/li>
@@ -1012,7 +1012,7 @@ sns&lt;span style="color:#f92672">.&lt;/span>set()
 &lt;/section>
 &lt;hr>
 &lt;h2 id="demo-time-3">Demo time&lt;/h2>
-&lt;p>&lt;a href="http://nbviewer.jupyter.org/github/bpesquet/machine-learning-handbook/blob/master/tools/Matplotlib.ipynb">Plotting with Matplotlib and Seaborn&lt;/a>&lt;/p></description></item><item><title>React Native : gestion de l'état</title><link>https://bpesquet.github.io/slides/react-native-state/</link><pubDate>Sun, 12 Jan 2020 21:50:06 +0100</pubDate><guid>https://bpesquet.github.io/slides/react-native-state/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;p>&lt;a href="http://nbviewer.jupyter.org/github/bpesquet/machine-learning-handbook/blob/master/tools/Matplotlib.ipynb">Plotting with Matplotlib and Seaborn&lt;/a>&lt;/p></description></item><item><title>React Native : gestion de l'état</title><link>https://www.bpesquet.fr/slides/react-native-state/</link><pubDate>Sun, 12 Jan 2020 21:50:06 +0100</pubDate><guid>https://www.bpesquet.fr/slides/react-native-state/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Partage de l&amp;rsquo;état entre composants&lt;/li>
 &lt;li>Centralisation de l&amp;rsquo;état&lt;/li>
@@ -1295,7 +1295,7 @@ expo install --save-dev babel-preset-mobx
 &lt;li>Librairie créée pour adresser des problématiques à l&amp;rsquo;échelle de Facebook&lt;/li>
 &lt;li>Complexe et &lt;em>overkill&lt;/em> pour les projets &amp;ldquo;normaux&amp;rdquo;&lt;/li>
 &lt;li>&lt;a href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">&amp;ldquo;You might not need Redux&amp;rdquo;&lt;/a> (écrit par son créateur)&lt;/li>
-&lt;/ul></description></item><item><title>React Native : utilisation d'API web</title><link>https://bpesquet.github.io/slides/react-native-api/</link><pubDate>Tue, 14 Jan 2020 10:14:10 +0100</pubDate><guid>https://bpesquet.github.io/slides/react-native-api/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;/ul></description></item><item><title>React Native : utilisation d'API web</title><link>https://www.bpesquet.fr/slides/react-native-api/</link><pubDate>Tue, 14 Jan 2020 10:14:10 +0100</pubDate><guid>https://www.bpesquet.fr/slides/react-native-api/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Introduction aux API web&lt;/li>
 &lt;li>Appels réseau avec JavaScript&lt;/li>
@@ -1540,7 +1540,7 @@ expo install --save-dev babel-preset-mobx
 );
 }
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Projects</title><link>https://bpesquet.github.io/teaching/projects/</link><pubDate>Wed, 14 Oct 2020 09:50:04 +0200</pubDate><guid>https://bpesquet.github.io/teaching/projects/</guid><description>&lt;p>The following projects are being used in some of my courses.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Projects</title><link>https://www.bpesquet.fr/teaching/projects/</link><pubDate>Wed, 14 Oct 2020 09:50:04 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/projects/</guid><description>&lt;p>The following projects are being used in some of my courses.&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://github.com/bpesquet/pyfit">pyfit&lt;/a> is a minimalist neural networks library built on a tiny autodifferentiation engine.&lt;/p>
@@ -1548,24 +1548,24 @@ expo install --save-dev babel-preset-mobx
 &lt;li>
 &lt;p>&lt;a href="https://github.com/bpesquet/winforms-architecture-patterns">WinForms architecture patterns&lt;/a> demonstrates several architectural patterns for building desktop applications.&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Slides</title><link>https://bpesquet.github.io/teaching/slides/</link><pubDate>Wed, 14 Oct 2020 09:04:17 +0200</pubDate><guid>https://bpesquet.github.io/teaching/slides/</guid><description>&lt;p>All these presentations are built with &lt;a href="revealjs.com/">reveal.js&lt;/a>.&lt;/p>
+&lt;/ul></description></item><item><title>Slides</title><link>https://www.bpesquet.fr/teaching/slides/</link><pubDate>Wed, 14 Oct 2020 09:04:17 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/slides/</guid><description>&lt;p>All these presentations are built with &lt;a href="revealjs.com/">reveal.js&lt;/a>.&lt;/p>
 &lt;h2 id="artificial-intelligence">Artificial intelligence&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/deconstructing-ai/" title="Deconstructing AI">Deconstructing AI&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/python-data-science/" title="Python for Data Science">Python for Data Science&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/deconstructing-ai/" title="Deconstructing AI">Deconstructing AI&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/python-data-science/" title="Python for Data Science">Python for Data Science&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="mobile-development">Mobile development&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/javascript/" title="Le langage JavaScript">Le langage JavaScript&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/react-native-intro/" title="Introduction à React Native">React Native: introduction&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/react-native-ui/" title="React Native : gestion de l'UI">React Native : gestion de l&amp;rsquo;UI&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/react-native-state/" title="React Native : gestion de l'état">React Native : gestion de l&amp;rsquo;état&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/react-native-api/" title="React Native : utilisation d'API web">React Native : utilisation d&amp;rsquo;API web&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/javascript/" title="Le langage JavaScript">Le langage JavaScript&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/react-native-intro/" title="Introduction à React Native">React Native: introduction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/react-native-ui/" title="React Native : gestion de l'UI">React Native : gestion de l&amp;rsquo;UI&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/react-native-state/" title="React Native : gestion de l'état">React Native : gestion de l&amp;rsquo;état&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/react-native-api/" title="React Native : utilisation d'API web">React Native : utilisation d&amp;rsquo;API web&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="virtual-worlds">Virtual worlds&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://bpesquet.github.io/slides/unity-intro/" title="Introduction à Unity">Introduction à Unity&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Textbooks</title><link>https://bpesquet.github.io/teaching/textbooks/</link><pubDate>Tue, 13 Oct 2020 16:55:31 +0200</pubDate><guid>https://bpesquet.github.io/teaching/textbooks/</guid><description>&lt;p>All these resources are open-sourced on &lt;a href="https://github.com/bpesquet?tab=repositories">GitHub&lt;/a>.&lt;/p>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/unity-intro/" title="Introduction à Unity">Introduction à Unity&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Textbooks</title><link>https://www.bpesquet.fr/teaching/textbooks/</link><pubDate>Tue, 13 Oct 2020 16:55:31 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/textbooks/</guid><description>&lt;p>All these resources are open-sourced on &lt;a href="https://github.com/bpesquet?tab=repositories">GitHub&lt;/a>.&lt;/p>
 &lt;h2 id="machine-learning--deep-learning">Machine Learning &amp;amp; Deep Learning&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://bpesquet.github.io/mlhandbook/">Machine Learning Handbook&lt;/a>&lt;/li>
@@ -1583,7 +1583,7 @@ expo install --save-dev babel-preset-mobx
 &lt;ul>
 &lt;li>&lt;a href="https://ensc.gitbook.io/programmation-objet-csharp/">Programmation orientée objet en C#&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://ensc.gitbook.io/programmation-evenementielle-winforms/">Programmation évènementielle avec les WinForms&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Outdated material</title><link>https://bpesquet.github.io/teaching/outdated/</link><pubDate>Tue, 13 Oct 2020 16:45:57 +0200</pubDate><guid>https://bpesquet.github.io/teaching/outdated/</guid><description>&lt;p>AI and computer science are rapidly evolving fields. The following resources, authored several years ago for courses I no longer teach, are not maintained anymore. They still might be useful to some people.&lt;/p>
+&lt;/ul></description></item><item><title>Outdated material</title><link>https://www.bpesquet.fr/teaching/outdated/</link><pubDate>Tue, 13 Oct 2020 16:45:57 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/outdated/</guid><description>&lt;p>AI and computer science are rapidly evolving fields. The following resources, authored several years ago for courses I no longer teach, are not maintained anymore. They still might be useful to some people.&lt;/p>
 &lt;h2 id="web-development">Web development&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript">Apprenez à coder avec JavaScript&lt;/a>&lt;/li>
@@ -1594,13 +1594,13 @@ expo install --save-dev babel-preset-mobx
 &lt;/ul>
 &lt;h2 id="database-management">Database management&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://bpesquet.github.io/pub/cours_sql.zip">Le langage SQL&lt;/a> (PDF archive)&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/pub/cours_sgbd.zip">Les bases de données&lt;/a> (PDF archive)&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_sql.zip">Le langage SQL&lt;/a> (PDF archive)&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_sgbd.zip">Les bases de données&lt;/a> (PDF archive)&lt;/li>
 &lt;/ul>
 &lt;h2 id="networking">Networking&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://bpesquet.github.io/pub/cours_reseaux.zip">Les réseaux&lt;/a> (PDF archive)&lt;/li>
-&lt;/ul></description></item><item><title>Deconstructing AI</title><link>https://bpesquet.github.io/slides/deconstructing-ai/</link><pubDate>Mon, 09 Dec 2019 10:47:12 +0100</pubDate><guid>https://bpesquet.github.io/slides/deconstructing-ai/</guid><description>&lt;h2 id="summary">Summary&lt;/h2>
+&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_reseaux.zip">Les réseaux&lt;/a> (PDF archive)&lt;/li>
+&lt;/ul></description></item><item><title>Deconstructing AI</title><link>https://www.bpesquet.fr/slides/deconstructing-ai/</link><pubDate>Mon, 09 Dec 2019 10:47:12 +0100</pubDate><guid>https://www.bpesquet.fr/slides/deconstructing-ai/</guid><description>&lt;h2 id="summary">Summary&lt;/h2>
 &lt;ul>
 &lt;li>What Is AI, Actually?&lt;/li>
 &lt;li>How Do Machines Learn?&lt;/li>
@@ -1803,7 +1803,7 @@ expo install --save-dev babel-preset-mobx
 &lt;p>&lt;a href="http://www.lscp.net/persons/dupoux/">&lt;img src="images/conceptual_acquisition_infants.png" alt="Conceptuals acquisitions by babies">&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h2 id="any-questions">Any questions?&lt;/h2>
-&lt;p>&lt;img src="images/cutest_baby_ever.png" alt="The cutest baby ever">&lt;/p></description></item><item><title>Mon premier Kahoot</title><link>https://bpesquet.github.io/posts/mon-premier-kahoot/</link><pubDate>Thu, 29 Nov 2018 23:26:45 +0100</pubDate><guid>https://bpesquet.github.io/posts/mon-premier-kahoot/</guid><description>&lt;p>La &lt;em>gamification&lt;/em> de l&amp;rsquo;enseignement est dans l&amp;rsquo;air du temps, et il existe maintenant de nombreux outils permettant d&amp;rsquo;engager les apprenants de manière ludique et interactive. Cela faisait un petit moment que j&amp;rsquo;avais envie d&amp;rsquo;expérimenter un service de quiz interactif pendant un cours magistral. Le dernier CM de l&amp;rsquo;un de mes modules de cours m&amp;rsquo;en a récemment fourni l&amp;rsquo;occasion. Avant la séance, j&amp;rsquo;ai demandé aux étudiants de revoir l&amp;rsquo;ensemble des notions vues depuis le début du module, en leur annonçant un test de révision. Restait à trouver l&amp;rsquo;outil adéquat.&lt;/p>
+&lt;p>&lt;img src="images/cutest_baby_ever.png" alt="The cutest baby ever">&lt;/p></description></item><item><title>Mon premier Kahoot</title><link>https://www.bpesquet.fr/posts/mon-premier-kahoot/</link><pubDate>Thu, 29 Nov 2018 23:26:45 +0100</pubDate><guid>https://www.bpesquet.fr/posts/mon-premier-kahoot/</guid><description>&lt;p>La &lt;em>gamification&lt;/em> de l&amp;rsquo;enseignement est dans l&amp;rsquo;air du temps, et il existe maintenant de nombreux outils permettant d&amp;rsquo;engager les apprenants de manière ludique et interactive. Cela faisait un petit moment que j&amp;rsquo;avais envie d&amp;rsquo;expérimenter un service de quiz interactif pendant un cours magistral. Le dernier CM de l&amp;rsquo;un de mes modules de cours m&amp;rsquo;en a récemment fourni l&amp;rsquo;occasion. Avant la séance, j&amp;rsquo;ai demandé aux étudiants de revoir l&amp;rsquo;ensemble des notions vues depuis le début du module, en leur annonçant un test de révision. Restait à trouver l&amp;rsquo;outil adéquat.&lt;/p>
 &lt;p>&lt;a href="https://socrative.com/">&lt;img src="images/socrative-logo.png#center" alt="Socrative logo">&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://socrative.com/">Socrative&lt;/a> est un service de quiz en ligne simple et efficace. Son éditeur de questions se révèle très complet et agréable à utiliser. Il y a quelques années, j&amp;rsquo;avais testé son mode &lt;a href="http://help.socrative.com/launch/space-race/deliver-a-space-race">space race&lt;/a>, dans lequel les bonnes réponses font avancer une fusée à l&amp;rsquo;écran : ambiance garantie !&lt;/p>
 &lt;p>&lt;img src="images/Space-Race-Live-Results.png#center" alt="Space race">&lt;/p>
@@ -1837,14 +1837,14 @@ expo install --save-dev babel-preset-mobx
 &lt;li>On peut illustrer chaque question avec une image. Si celles-ci sont trop riches, leur lisibilité au videoprojecteur peut laisser à désirer.&lt;/li>
 &lt;/ul>
 &lt;p>J&amp;rsquo;espère que cet article vous aura donné envie de tester Kahoot, Socrative ou un autre outil de gamification. Si la technique suit, vous ne risquez pas grand-chose, à part rendre vos élèves accros à ce type de séance :)&lt;/p>
-&lt;p>Pour ma part, l&amp;rsquo;expérience fut très concluante et je la renouvellerai dès que possible. Bons quiz !&lt;/p></description></item><item><title>Freelancing</title><link>https://bpesquet.github.io/freelancing/</link><pubDate>Thu, 04 Oct 2018 19:02:15 +0200</pubDate><guid>https://bpesquet.github.io/freelancing/</guid><description>&lt;p>Depending on my work schedule, I may be available for working with external partners. This could include:&lt;/p>
+&lt;p>Pour ma part, l&amp;rsquo;expérience fut très concluante et je la renouvellerai dès que possible. Bons quiz !&lt;/p></description></item><item><title>Freelancing</title><link>https://www.bpesquet.fr/freelancing/</link><pubDate>Thu, 04 Oct 2018 19:02:15 +0200</pubDate><guid>https://www.bpesquet.fr/freelancing/</guid><description>&lt;p>Depending on my work schedule, I may be available for working with external partners. This could include:&lt;/p>
 &lt;ul>
 &lt;li>Consulting in one of my areas of knowledge.&lt;/li>
 &lt;li>Creation of custom training material: courses, textbooks or assessments.&lt;/li>
 &lt;li>Animation of courses or corporate workshops.&lt;/li>
 &lt;li>Conference talks.&lt;/li>
 &lt;/ul>
-&lt;p>Feel free to &lt;a href="mailto:bpesquet%20%5Bat%5D%20gmail%20%5Bdot%5D%20com">reach out to me&lt;/a> for more details.&lt;/p></description></item><item><title>Introduction à Unity</title><link>https://bpesquet.github.io/slides/unity-intro/</link><pubDate>Sat, 25 Aug 2018 16:13:52 +0200</pubDate><guid>https://bpesquet.github.io/slides/unity-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;p>Feel free to &lt;a href="mailto:bpesquet%20%5Bat%5D%20gmail%20%5Bdot%5D%20com">reach out to me&lt;/a> for more details.&lt;/p></description></item><item><title>Introduction à Unity</title><link>https://www.bpesquet.fr/slides/unity-intro/</link><pubDate>Sat, 25 Aug 2018 16:13:52 +0200</pubDate><guid>https://www.bpesquet.fr/slides/unity-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Unity en bref&lt;/li>
 &lt;li>Concepts-clés&lt;/li>
@@ -2139,7 +2139,7 @@ expo install --save-dev babel-preset-mobx
 &lt;li>Authentification GitHub, LFS, etc.&lt;/li>
 &lt;li>Version 1.0 : encore instable.&lt;/li>
 &lt;/ul>
-&lt;/section></description></item><item><title>PAISS 2018 : le debrief</title><link>https://bpesquet.github.io/posts/paiss-2018-debrief/</link><pubDate>Mon, 09 Jul 2018 08:48:56 +0200</pubDate><guid>https://bpesquet.github.io/posts/paiss-2018-debrief/</guid><description>&lt;p>La session 2018 de la &lt;em>summer school&lt;/em> de l&amp;rsquo;INRIA consacrée à l&amp;rsquo;IA, nommée &lt;a href="https://project.inria.fr/paiss/">PAISS&lt;/a>, s&amp;rsquo;est déroulée à Grenoble du 2 au 6 juillet 2018. Voici un petit compte-rendu de ce qui s&amp;rsquo;y est dit et fait.&lt;/p>
+&lt;/section></description></item><item><title>PAISS 2018 : le debrief</title><link>https://www.bpesquet.fr/posts/paiss-2018-debrief/</link><pubDate>Mon, 09 Jul 2018 08:48:56 +0200</pubDate><guid>https://www.bpesquet.fr/posts/paiss-2018-debrief/</guid><description>&lt;p>La session 2018 de la &lt;em>summer school&lt;/em> de l&amp;rsquo;INRIA consacrée à l&amp;rsquo;IA, nommée &lt;a href="https://project.inria.fr/paiss/">PAISS&lt;/a>, s&amp;rsquo;est déroulée à Grenoble du 2 au 6 juillet 2018. Voici un petit compte-rendu de ce qui s&amp;rsquo;y est dit et fait.&lt;/p>
 &lt;p>&lt;img src="https://project.inria.fr/paiss/files/2018/04/te%CC%82tie%CC%80re-3.jpg" alt="Logo PAISS">&lt;/p>
 &lt;p>Le P de PAISS correspond à l&amp;rsquo;institut &lt;a href="https://inria.fr/actualite/actualites-inria/creation-de-l-institut-prairie">PRAIRIE&lt;/a>, le centre français d&amp;rsquo;excellence en IA dont la création a été annoncée lors du sommet &lt;a href="https://www.aiforhumanity.fr/">AI for Humanity&lt;/a> en mars 2018.&lt;/p>
 &lt;h2 id="quelques-chiffres">Quelques chiffres&lt;/h2>
@@ -2187,7 +2187,7 @@ alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissa
 &lt;p>Une expérience parfois douloureuse : pas facile de redevenir étudiant et de se sentir largué par le prof. Je tâcherai de m&amp;rsquo;en souvenir pour mes prochains cours :)&lt;/p>
 &lt;p>Malgré une variété des thèmes et un niveau des interventions très stimulantes intellectuellement, cette école d&amp;rsquo;été a parfois ressemblé à un &lt;em>workshop&lt;/em> de recherche. L&amp;rsquo;enseignant que je suis a regretté que les aspects didactiques et pédagogiques aient été, à mon sens, trop négligés par certains intervenants. Avec un meilleur niveau théorique, mon impression aurait probablement été différente.&lt;/p>
 &lt;p>Je reste cependant très content d&amp;rsquo;avoir participé à cette école d&amp;rsquo;été qui a été l&amp;rsquo;occasion de cogitations intenses et de rencontres variées et enrichissantes.&lt;/p>
-&lt;p>D&amp;rsquo;après mes discussions avec les organisateurs, la prochaine session devrait avoir lieu à Paris en 2019. Avis aux amateurs !&lt;/p></description></item><item><title>Artistes et spécifieurs, un jeu pour découvrir l'agilité</title><link>https://bpesquet.github.io/posts/artistes-et-specifieurs/</link><pubDate>Thu, 24 May 2018 15:57:43 +0200</pubDate><guid>https://bpesquet.github.io/posts/artistes-et-specifieurs/</guid><description>&lt;p>Dans le cadre du module de cours Gestion de projet, j&amp;rsquo;ai testé avec succès un atelier ludique et efficace pour s&amp;rsquo;initier aux valeurs de l&amp;rsquo;agilité : le jeu &lt;strong>artistes et spécifieurs&lt;/strong>. Imaginé par &lt;a href="http://alistair.cockburn.us/">Alistair Cockburn&lt;/a>, l&amp;rsquo;un des signataires du &lt;a href="http://agilemanifesto.org/">manifeste agile&lt;/a>, ce jeu est souvent utilisé par les coachs agiles en entreprise.&lt;/p>
+&lt;p>D&amp;rsquo;après mes discussions avec les organisateurs, la prochaine session devrait avoir lieu à Paris en 2019. Avis aux amateurs !&lt;/p></description></item><item><title>Artistes et spécifieurs, un jeu pour découvrir l'agilité</title><link>https://www.bpesquet.fr/posts/artistes-et-specifieurs/</link><pubDate>Thu, 24 May 2018 15:57:43 +0200</pubDate><guid>https://www.bpesquet.fr/posts/artistes-et-specifieurs/</guid><description>&lt;p>Dans le cadre du module de cours Gestion de projet, j&amp;rsquo;ai testé avec succès un atelier ludique et efficace pour s&amp;rsquo;initier aux valeurs de l&amp;rsquo;agilité : le jeu &lt;strong>artistes et spécifieurs&lt;/strong>. Imaginé par &lt;a href="http://alistair.cockburn.us/">Alistair Cockburn&lt;/a>, l&amp;rsquo;un des signataires du &lt;a href="http://agilemanifesto.org/">manifeste agile&lt;/a>, ce jeu est souvent utilisé par les coachs agiles en entreprise.&lt;/p>
 &lt;p>Par rapport à d&amp;rsquo;autres ateliers similiaires comme &lt;a href="https://www.lego4scrum.com/">lego4scrum&lt;/a>, il a l&amp;rsquo;avantage de ne nécessiter presque aucun matériel. En 1h30 environ, il offre une première approche de certains principes agiles dans un cadre propice à la bonne humeur.&lt;/p>
 &lt;h2 id="principe-du-jeu">Principe du jeu&lt;/h2>
 &lt;p>Pour commencer, on forme des équipes de 4 à 6 personnes selon le nombre total de participants à l&amp;rsquo;atelier. Chaque équipe se scinde en deux : les spécifieurs d&amp;rsquo;une part et les artistes de l&amp;rsquo;autre.&lt;/p>
