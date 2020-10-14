@@ -6,6 +6,6 @@ draft: false
 
 👋 Hi there! I'm a software engineer, teacher and instructor currently living near Bordeaux, France.
 
-🏫 I mainly work at the [Ecole Nationale Supérieure de Cognitique](https://ensc.bordeaux-inp.fr) where I teach computer science and artificial intelligence to graduate students and professionals.
+🏫 I mainly work at the [Ecole Nationale Supérieure de Cognitique](https://ensc.bordeaux-inp.fr) where I [teach]({{< ref "teaching" >}} "Teaching") computer science and artificial intelligence to graduate students and professionals.
 
-🤝 I sometimes do freelancing in my areas of knowledge. Let's get in touch!
+🤝 I sometimes do [freelancing]({{< ref "freelancing" >}} "Freelancing") in my areas of knowledge. Let's get in touch!

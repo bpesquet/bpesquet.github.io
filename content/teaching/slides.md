@@ -9,6 +9,7 @@ All these presentations are built with [reveal.js](revealjs.com/).
 ## Artificial intelligence
 
 - [Deconstructing AI]({{< ref "slides/deconstructing-ai" >}} "Deconstructing AI")
+- [Python for Data Science]({{< ref "slides/python-data-science" >}} "Python for Data Science")
 
 ## Mobile development
 

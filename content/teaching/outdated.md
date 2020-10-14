@@ -4,7 +4,7 @@ date: 2020-10-13T16:45:57+02:00
 draft: false
 ---
 
-AI and computer science are fastly evolving fields. The following resources, authored for courses I no longer teach, are not maintained anymore. They still might be useful to some people.
+AI and computer science are rapidly evolving fields. The following resources, authored several years ago for courses I no longer teach, are not maintained anymore. They still might be useful to some people.
 
 ## Web development
 

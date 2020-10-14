@@ -4,7 +4,7 @@ date: 2020-10-13T16:55:31+02:00
 draft: false
 ---
 
-All these resources are open-sourced on [GitHub](https://github.com/bpesquet).
+All these resources are open-sourced on [GitHub](https://github.com/bpesquet?tab=repositories).
 
 ## Machine Learning & Deep Learning
 
