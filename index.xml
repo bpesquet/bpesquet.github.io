@@ -1543,7 +1543,7 @@ expo install --save-dev babel-preset-mobx
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Projects</title><link>https://bpesquet.github.io/teaching/projects/</link><pubDate>Wed, 14 Oct 2020 09:50:04 +0200</pubDate><guid>https://bpesquet.github.io/teaching/projects/</guid><description>&lt;p>The following projects are being used in some of my courses.&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;a href="https://github.com/bpesquet/pyfit">pyfit&lt;/a> is a minimalist neural networks library built on a tiny autodifferention engine.&lt;/p>
+&lt;p>&lt;a href="https://github.com/bpesquet/pyfit">pyfit&lt;/a> is a minimalist neural networks library built on a tiny autodifferentiation engine.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;a href="https://github.com/bpesquet/winforms-architecture-patterns">WinForms architecture patterns&lt;/a> demonstrates several architectural patterns for building desktop applications.&lt;/p>
