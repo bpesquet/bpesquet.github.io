@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 👨‍💻 Baptiste Pesquet</title><link>https://bpesquet.github.io/slides/</link><description>👨‍💻 Baptiste Pesquet (Slides)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 14 Jan 2020 10:14:10 +0100</lastBuildDate><atom:link href="https://bpesquet.github.io/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>Le langage JavaScript</title><link>https://bpesquet.github.io/slides/mobile/javascript/</link><pubDate>Mon, 16 Dec 2019 21:50:46 +0100</pubDate><guid>https://bpesquet.github.io/slides/mobile/javascript/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 👨‍💻 Baptiste Pesquet</title><link>https://bpesquet.github.io/slides/</link><description>👨‍💻 Baptiste Pesquet (Slides)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 14 Jan 2020 10:14:10 +0100</lastBuildDate><atom:link href="https://bpesquet.github.io/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>Le langage JavaScript</title><link>https://bpesquet.github.io/slides/javascript/</link><pubDate>Mon, 16 Dec 2019 21:50:46 +0100</pubDate><guid>https://bpesquet.github.io/slides/javascript/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Pourquoi JavaScript ?&lt;/li>
 &lt;li>Syntaxe du langage&lt;/li>
@@ -272,210 +272,7 @@ npm search &amp;lt;package name&amp;gt;
 &lt;li>&lt;a href="https://babeljs.io/">Babel&lt;/a> transforme le code JavaScript ES2015+ en code ES5 compatible avec tous les environnements d&amp;rsquo;exécution JS.&lt;/li>
 &lt;li>Il permet d&amp;rsquo;utiliser sereinement les dernières évolutions du langage.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;a href="https://babeljs.io/">&lt;img src="images/Babel-Javascript-compiler.png" alt="Babel logo">&lt;/a>&lt;/p></description></item><item><title>Deconstructing AI</title><link>https://bpesquet.github.io/slides/ai/deconstructing-ai/</link><pubDate>Mon, 09 Dec 2019 10:47:12 +0100</pubDate><guid>https://bpesquet.github.io/slides/ai/deconstructing-ai/</guid><description>&lt;h2 id="summary">Summary&lt;/h2>
-&lt;ul>
-&lt;li>What Is AI, Actually?&lt;/li>
-&lt;li>How Do Machines Learn?&lt;/li>
-&lt;li>Should We Be Scared Of AI?&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="what-is-ai-actually">What Is AI, Actually?&lt;/h2>
-&lt;hr>
-&lt;h2 id="the-original-ambition-of-ai">The original ambition of AI&lt;/h2>
-&lt;blockquote>
-&lt;p>&amp;ldquo;AI is the science and engineering of making intelligent machines.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)">John McCarthy&lt;/a>)&lt;/p>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;p>&amp;ldquo;Every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Dartmouth_workshop">Dartmouth Workshop&lt;/a>, 1956)&lt;/p>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;p>&amp;ldquo;AI is the science of making machines do things that would require intelligence if done by men.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Marvin_Minsky">Marvin Minsky&lt;/a>)&lt;/p>
-&lt;/blockquote>
-&lt;hr>
-&lt;h2 id="a-technical-definition-of-ai">A technical definition of AI&lt;/h2>
-&lt;blockquote>
-&lt;p>&amp;ldquo;AI refers to systems that &lt;strong>display&lt;/strong> intelligent behavior by analysing their &lt;strong>environment&lt;/strong> and taking &lt;strong>actions&lt;/strong> - with some degree of &lt;strong>autonomy&lt;/strong> - to achieve specific &lt;strong>goals&lt;/strong>.&amp;rdquo; (&lt;a href="https://ec.europa.eu/newsroom/dae/document.cfm?doc_id=51625">EC, 2018&lt;/a>)&lt;/p>
-&lt;/blockquote>
-&lt;p>AI systems can be either:&lt;/p>
-&lt;ul>
-&lt;li>Purely &lt;strong>software&lt;/strong>-based (e.g. voice assistants, search engines, face recognition systems).&lt;/li>
-&lt;li>Embedded in &lt;strong>hardware&lt;/strong> devices (e.g. robots, autonomous cars, drones).&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="main-areas-of-research">Main areas of research&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Problem solving&lt;/strong> (e.g. search algorithms, constraint solving).&lt;/li>
-&lt;li>&lt;strong>Reasoning&lt;/strong> and &lt;strong>decision making&lt;/strong> (e.g. logic, knowledge representation).&lt;/li>
-&lt;li>&lt;strong>Machine Learning&lt;/strong>.&lt;/li>
-&lt;li>&lt;strong>Real-world interactions&lt;/strong> (e.g. computer vision, natural language understanding, robotics).&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="ai-is-a-moving-target">AI is a moving target&lt;/h2>
-&lt;p>As soon as AI successfully solves a problem, the problem is no longer considered a part of AI.&lt;/p>
-&lt;blockquote>
-&lt;p>&amp;ldquo;&lt;a href="https://en.wikipedia.org/wiki/AI_effect">AI is whatever hasn&amp;rsquo;t been done yet&lt;/a>.&amp;rdquo;&lt;/p>
-&lt;/blockquote>
-&lt;hr>
-&lt;h2 id="the-tumultuous-history-of-ai">The tumultuous history of AI&lt;/h2>
-&lt;p>&lt;a href="https://www.slideshare.net/dlavenda/ai-and-productivity">&lt;img src="images/ai_timeline.png" alt="The AI timeline">&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h2 id="ai-is-a-highly-interdisciplinary-field">AI is a highly interdisciplinary field&lt;/h2>
-&lt;p>&lt;img src="images/ai_fields.png" alt="AI fields">&lt;/p>
-&lt;hr>
-&lt;h2 id="ai-is-a-social-science">AI is a social science&lt;/h2>
-&lt;p>AI has many social and societal implications:&lt;/p>
-&lt;ul>
-&lt;li>Job market transformation.&lt;/li>
-&lt;li>Human/machine interactions.&lt;/li>
-&lt;li>Trust and acceptability.&lt;/li>
-&lt;li>Legal aspects and regulation.&lt;/li>
-&lt;li>Fairness.&lt;/li>
-&lt;li>Ethical use.&lt;/li>
-&lt;li>Personal data.&lt;/li>
-&lt;li>&amp;hellip;&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="ai-comes-in-different-flavours">AI comes in different flavours&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Substitutive intelligence&lt;/strong>: replacement of men by machines.&lt;/li>
-&lt;li>&lt;strong>Augmented intelligence&lt;/strong>: human-centered AI for performance augmentation &amp;amp; autonomy enhancement.&lt;/li>
-&lt;li>&lt;strong>Hybrid intelligence&lt;/strong>: human-machine collaboration on complex tasks.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="a-broader-definition-of-ai">A broader definition of AI&lt;/h2>
-&lt;blockquote>
-&lt;p>&amp;ldquo;AI is an &lt;strong>interdisciplinary&lt;/strong> field aiming at &lt;strong>understanding&lt;/strong> and &lt;strong>imitating&lt;/strong> the mechanisms of &lt;strong>cognition&lt;/strong> and &lt;strong>reasoning&lt;/strong>, in order to &lt;strong>assist&lt;/strong> or &lt;strong>substitute&lt;/strong> humans in their activities.&amp;rdquo; (&lt;a href="https://fr.wikipedia.org/wiki/Commission_d%27enrichissement_de_la_langue_fran%C3%A7aise">Commission d&amp;rsquo;enrichissement de la langue française&lt;/a>, 2018)&lt;/p>
-&lt;/blockquote>
-&lt;hr>
-&lt;h2 id="how-do-machines-learn">How Do Machines Learn?&lt;/h2>
-&lt;hr>
-&lt;h2 id="machine-learning-in-a-nutshell">Machine Learning in a nutshell&lt;/h2>
-&lt;p>Set of techniques for giving machines the ability to find &lt;strong>patterns&lt;/strong> and extract &lt;strong>rules&lt;/strong> from data, in order to:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Identify&lt;/strong> or &lt;strong>classify&lt;/strong> elements.&lt;/li>
-&lt;li>Detect &lt;strong>tendencies&lt;/strong>.&lt;/li>
-&lt;li>Make &lt;strong>predictions&lt;/strong>.&lt;/li>
-&lt;/ul>
-&lt;p>As more data is fed into the system, results get better: performance improves with experience.&lt;/p>
-&lt;p>a.k.a. &lt;strong>Statistical Learning&lt;/strong>.&lt;/p>
-&lt;hr>
-&lt;p>&lt;img src="images/ai_ml_dl.png" alt="AI/ML/DL Venn diagram">&lt;/p>
-&lt;hr>
-&lt;p>&lt;img src="images/machine_learning_tree.png" alt="ML category tree">&lt;/p>
-&lt;hr>
-&lt;h2 id="a-new-paradigm">A new paradigm&lt;/h2>
-&lt;p>&lt;img src="images/programming_paradigm.png" alt="Programming paradigm">&lt;/p>
-&lt;p>&lt;img src="images/training_paradigm.png" alt="Training paradigm">&lt;/p>
-&lt;hr>
-&lt;h2 id="the-machine-learning-workflow">The Machine Learning workflow&lt;/h2>
-&lt;ol>
-&lt;li>&lt;strong>Frame&lt;/strong> the problem.&lt;/li>
-&lt;li>Collect, analyze and prepare &lt;strong>data&lt;/strong>.&lt;/li>
-&lt;li>Select and train several &lt;strong>models&lt;/strong> on data.&lt;/li>
-&lt;li>&lt;strong>Tune&lt;/strong> the most promising model.&lt;/li>
-&lt;li>&lt;strong>Deploy&lt;/strong> the model to production.&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h2 id="ml-is-not-a-silver-bullet">ML is not a silver bullet!&lt;/h2>
-&lt;ul>
-&lt;li>Some use cases are a better fit for ML than others:
-&lt;ul>
-&lt;li>Difficulty to express the actions as rules.&lt;/li>
-&lt;li>Data too complex for traditional analytical methods.&lt;/li>
-&lt;li>Performance &amp;gt; interpretability.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Data quality is paramount.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="algorithm-1-k-nearest-neighbors">Algorithm #1: K-Nearest Neighbors&lt;/h2>
-&lt;p>Prediction is based on the &lt;code>k&lt;/code> nearest neighbors of a data sample.&lt;/p>
-&lt;p>&lt;a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">&lt;img src="images/knn.png" alt="K-NN">&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h2 id="algorithm-2-decision-trees">Algorithm #2: Decision Trees&lt;/h2>
-&lt;p>Build a tree-like structure based on a series of discovered questions on the data.&lt;/p>
-&lt;p>&lt;img src="images/dt_iris.png" alt="Decision Tree for Iris dataset">&lt;/p>
-&lt;hr>
-&lt;h2 id="algorithm-3-neural-networks">Algorithm #3: Neural Networks&lt;/h2>
-&lt;ul>
-&lt;li>Layers of loosely neuron-inpired computation units.&lt;/li>
-&lt;li>Can approximate any continuous function.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="images/neuron_output.png" alt="Neuron output">&lt;/p>
-&lt;hr>
-&lt;p>&lt;img src="images/neural_net.gif" alt="Dog or Cat?">&lt;/p>
-&lt;hr>
-&lt;h2 id="training-a-network">Training a network&lt;/h2>
-&lt;p>&lt;img src="images/training_inference1.png" alt="Training and inference">&lt;/p>
-&lt;hr>
-&lt;h2 id="the-deep-learning-tsunami">The Deep Learning tsunami&lt;/h2>
-&lt;ul>
-&lt;li>Multilayered neural networks trained on (generally) vast amounts of data.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">&lt;img src="images/alexnet.png" alt="AlexNet'12 (simplified)">&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>Since 2010, outperformed previous state-of-the-art techniques in many fields (language translation, image and scene recognition&amp;hellip;).&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;img src="images/big_data_universe.png" alt="Big data universe">&lt;/p>
-&lt;hr>
-&lt;p>&lt;img src="images/infographic2-intel-past-present.gif" alt="Computer power sheet">&lt;/p>
-&lt;hr>
-&lt;h2 id="from-labs-to-everyday-life">From labs to everyday life&lt;/h2>
-&lt;p>&lt;a href="http://yann.lecun.com/exdb/lenet/">&lt;img src="images/lecun_lenet.gif" alt="LeCun - LeNet">&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://twitter.com/mbrennanchina/status/1203687857849716736">&lt;img src="images/china_school_facial_reco.gif" alt="Facial recognition in Chinese elementary school">&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h2 id="should-we-be-scared-of-ai">Should We Be Scared Of AI?&lt;/h2>
-&lt;hr>
-&lt;h2 id="ai-is-altering-the-job-market">AI is altering the job market&amp;hellip;&lt;/h2>
-&lt;ul>
-&lt;li>Machines outperform humans in a growing list of cognitive tasks.&lt;/li>
-&lt;li>Repetitive tasks are most exposed (even complex ones, like medical diagnosis or financial analysis).&lt;/li>
-&lt;li>Entire industries are on the verge of disruption (example: truck-based transportation, first employer in the U.S.).&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="-for-better-or-worse">&amp;hellip; For better or worse&lt;/h2>
-&lt;ul>
-&lt;li>Net impact of AI on job quantity is unknown.&lt;/li>
-&lt;li>Most jobs will be &lt;strong>transformed&lt;/strong>, not replaced by AI.
-&lt;ul>
-&lt;li>Boring and repetitive stuff will be automated.&lt;/li>
-&lt;li>AI will add new insight to help human decision.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Human/machine interactions will multiply.&lt;/li>
-&lt;li>Their quality will be a key factor of performance for organizations.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="real-or-fake">Real or fake?&lt;/h2>
-&lt;p>&lt;a href="https://twitter.com/goodfellow_ian/status/1084973596236144640">&lt;img src="images/gan_2014_2018.jpg" alt="GAN progress from 2014 to 2018">&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h2 id="agi-is-very-far-away">AGI is very far away&lt;/h2>
-&lt;ul>
-&lt;li>Current AI systems are &lt;strong>weak&lt;/strong>: highly tuned to perform well in one task.&lt;/li>
-&lt;li>&lt;strong>Artificial General Intelligence&lt;/strong> a.k.a. &lt;strong>strong AI&lt;/strong>, the ability to perform any task as well as a human, is out of reach.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;a href="https://twitter.com/ylecun/status/1204013978210320384">&lt;img src="images/ylecun_tweet_agi.png" alt="Y. LeCun tweet on AGI, Déc. 2019">&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h2 id="the-intelligence-debate">The intelligence debate&lt;/h2>
-&lt;ul>
-&lt;li>Despite their complexity, ML and DL algorithms can be viewed as merely &lt;a href="https://diginomica.com/ai-curve-fitting-not-intelligence">curve fitting&lt;/a>.&lt;/li>
-&lt;li>On the contrary, some AI researchers envision DL as a new form of &lt;strong>algorithmic reasoning&lt;/strong>, somehow mimicking the human brain.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="the-human-brain-is-a-masterpiece">The human brain is a masterpiece&lt;/h2>
-&lt;ul>
-&lt;li>Approx. 86 billions neurons in 1.4 kg.&lt;/li>
-&lt;li>Typical energy consumption: 20 W (!)&lt;/li>
-&lt;li>So much of it is still unknown.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="images/human_brain.jpg" alt="The human brain">&lt;/p>
-&lt;hr>
-&lt;h2 id="babies-are-outstanding-learners">Babies are outstanding learners&lt;/h2>
-&lt;p>&lt;a href="http://www.lscp.net/persons/dupoux/">&lt;img src="images/conceptual_acquisition_infants.png" alt="Conceptuals acquisitions by babies">&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h2 id="any-questions">Any questions?&lt;/h2>
-&lt;p>&lt;img src="images/cutest_baby_ever.png" alt="The cutest baby ever">&lt;/p></description></item><item><title>Introduction à React Native</title><link>https://bpesquet.github.io/slides/mobile/react-native-intro/</link><pubDate>Wed, 23 May 2018 23:34:24 +0200</pubDate><guid>https://bpesquet.github.io/slides/mobile/react-native-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;p>&lt;a href="https://babeljs.io/">&lt;img src="images/Babel-Javascript-compiler.png" alt="Babel logo">&lt;/a>&lt;/p></description></item><item><title>React Native : introduction</title><link>https://bpesquet.github.io/slides/react-native-intro/</link><pubDate>Wed, 23 May 2018 23:34:24 +0200</pubDate><guid>https://bpesquet.github.io/slides/react-native-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>L&amp;rsquo;écosystème mobile&lt;/li>
 &lt;li>Premiers pas avec React Native&lt;/li>
@@ -768,7 +565,7 @@ npm start &lt;span style="color:#75715e"># Or &amp;#39;expo start&amp;#39;&lt;/s
 &lt;p>&lt;img src="images/basic_components.png" alt="React Native core components">&lt;/p>
 &lt;hr>
 &lt;h2 id="composants-dinterface-utilisateur">Composants d&amp;rsquo;interface utilisateur&lt;/h2>
-&lt;p>&lt;img src="images/ui_components.png" alt="React native UI components">&lt;/p></description></item><item><title>React Native : gestion de l'UI</title><link>https://bpesquet.github.io/slides/mobile/react-native-ui/</link><pubDate>Tue, 07 Jan 2020 23:06:33 +0100</pubDate><guid>https://bpesquet.github.io/slides/mobile/react-native-ui/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;p>&lt;img src="images/ui_components.png" alt="React native UI components">&lt;/p></description></item><item><title>React Native : gestion de l'UI</title><link>https://bpesquet.github.io/slides/react-native-ui/</link><pubDate>Tue, 07 Jan 2020 23:06:33 +0100</pubDate><guid>https://bpesquet.github.io/slides/react-native-ui/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Cycle de vie d&amp;rsquo;un composant&lt;/li>
 &lt;li>Style et positionnement&lt;/li>
@@ -1062,7 +859,160 @@ expo install react-navigation-drawer
 &lt;li>&lt;a href="https://reactnavigation.org/docs/en/drawer-based-navigation.html">Navigation par menu accordéon ou &amp;ldquo;hamburger'&lt;/a> (&lt;a href="https://snack.expo.io/@react-navigation/9b2a43">exemple&lt;/a>).&lt;/li>
 &lt;li>&lt;a href="https://reactnavigation.org/docs/en/auth-flow.html">Gestion de l&amp;rsquo;authentification&lt;/a>.&lt;/li>
 &lt;li>&amp;hellip;&lt;/li>
-&lt;/ul></description></item><item><title>React Native : gestion de l'état</title><link>https://bpesquet.github.io/slides/mobile/react-native-state/</link><pubDate>Sun, 12 Jan 2020 21:50:06 +0100</pubDate><guid>https://bpesquet.github.io/slides/mobile/react-native-state/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;/ul></description></item><item><title>Python for Data Science</title><link>https://bpesquet.github.io/slides/python-data-science/</link><pubDate>Sat, 28 Sep 2019 21:59:13 +0200</pubDate><guid>https://bpesquet.github.io/slides/python-data-science/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;ul>
+&lt;li>Introduction to Data Science&lt;/li>
+&lt;li>Why Python?&lt;/li>
+&lt;li>Python tools for data science
+&lt;ul>
+&lt;li>Simplified installation with Anaconda&lt;/li>
+&lt;li>Code and result sharing with Jupyter Notebook&lt;/li>
+&lt;li>Numerical computing with NumPy&lt;/li>
+&lt;li>Data analysis with Pandas&lt;/li>
+&lt;li>Plotting with Matplotlib and Seaborn&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="introduction-to-data-science">Introduction to Data Science&lt;/h2>
+&lt;hr>
+&lt;h2 id="what-is-data-science">What is Data Science?&lt;/h2>
+&lt;ul>
+&lt;li>Main objective: extract insight from data.&lt;/li>
+&lt;li>Expression born in 1997 in the statistician community.&lt;/li>
+&lt;li>&amp;ldquo;A Data Scientist is a statistician that lives in San Francisco&amp;rdquo;.&lt;/li>
+&lt;li>2012 : &amp;ldquo;Sexiest job of the 21st century&amp;rdquo; (Harvard Business Review).&lt;/li>
+&lt;li>&lt;a href="https://en.wikipedia.org/wiki/Data_science#Relationship_to_statistics">Controversy&lt;/a> on the expression&amp;rsquo;s real usefulness.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="data-science-fields">Data Science fields&lt;/h2>
+&lt;figure>
+&lt;img src="images/DataScienceDisciplines.png"/> &lt;figcaption>
+&lt;p>
+&lt;a href="https://en.wikipedia.org/wiki/Data_science">Source: Wikipedia&lt;/a>&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;hr>
+&lt;figure>
+&lt;img src="images/Data_Science_VD_conway.png"/> &lt;figcaption>
+&lt;p>
+&lt;a href="http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram">Data Science Venn Diagram by D. Conway (2013)&lt;/a>&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;hr>
+&lt;figure>
+&lt;img src="images/DS_VD_Kolassa.png"/> &lt;figcaption>
+&lt;p>
+&lt;a href="http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram">Data Scientist Venn Diagram by S. Kolassa (2015)&lt;/a>&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="why-python">Why Python?&lt;/h2>
+&lt;hr>
+&lt;h2 id="the-python-language">The Python language&lt;/h2>
+&lt;p>Programming language created in 1989 by &lt;a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido van Rossum&lt;/a> and developed under a open source license.&lt;/p>
+&lt;p>&lt;img src="images/Python_logo.png" alt="Python logo">&lt;/p>
+&lt;ul>
+&lt;li>Multi-paradigms (procedural, fonctional, object-oriented)&lt;/li>
+&lt;li>Dynamic types&lt;/li>
+&lt;li>Automatic memory management&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="the-python-syntax">The Python syntax&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">hello&lt;/span>(name):
+&lt;span style="color:#66d9ef">print&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello &amp;#34;&lt;/span>, name)
+friends &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;Lou&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;David&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Iggy&amp;#34;&lt;/span>]
+&lt;span style="color:#66d9ef">for&lt;/span> friend &lt;span style="color:#f92672">in&lt;/span> friends:
+hello(friend)
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="demo-time">Demo time&lt;/h2>
+&lt;p>&lt;a href="http://nbviewer.jupyter.org/github/bpesquet/machine-learning-handbook/blob/master/tools/Python.ipynb">Python Cheatsheet&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="python-a-standard-for-data-science">Python, a standard for Data Science&lt;/h2>
+&lt;ul>
+&lt;li>Language qualities (ease of use, simplicity, versatility).&lt;/li>
+&lt;li>Involvement of the scientific and academical communities.&lt;/li>
+&lt;li>Ecosystem of dedicated open source libraries.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="python-tools-for-data-science">Python tools for Data Science&lt;/h2>
+&lt;hr>
+&lt;h2 id="anacondahttpswwwanacondacomdistribution">&lt;a href="https://www.anaconda.com/distribution/">Anaconda&lt;/a>&lt;/h2>
+&lt;p>Scientific distribution including Python and many (1500+) specialized packages.&lt;/p>
+&lt;p>&lt;img src="images/anaconda_distro.png" alt="Anaconda content">&lt;/p>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="jupyter-notebook">Jupyter Notebook&lt;/h2>
+&lt;p>&lt;a href="https://jupyter.org/">&lt;img src="images/ipython.png" alt="IPython">&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Web interface for using &lt;a href="https://ipython.org/">IPython&lt;/a> in a browser.&lt;/li>
+&lt;li>Centralizes text, (interactive) code and images in a single notebook (file with &lt;em>.ipynb&lt;/em> extension).&lt;/li>
+&lt;li>New standard for sharing research results.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="google-colaboratory">Google Colaboratory&lt;/h2>
+&lt;p>Cloud environment for executing Jupyter notebooks through CPU, GPU or TPU.&lt;/p>
+&lt;p>&lt;a href="https://colab.research.google.com">&lt;img src="images/Google-Colaboratory.png" alt="Google Colaboratory">&lt;/a>&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;p>&lt;a href="http://www.numpy.org/">&lt;img src="images/numpy.png" alt="NumPy logo">&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Python library for numerical computing&lt;/li>
+&lt;li>Efficiently handles multidimensional arrays&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#f92672">import&lt;/span> numpy &lt;span style="color:#f92672">as&lt;/span> np
+&lt;p>x &lt;span style="color:#f92672">=&lt;/span> np&lt;span style="color:#f92672">.&lt;/span>array([&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">4&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">5&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>])
+&lt;span style="color:#66d9ef">print&lt;/span>(x[:&lt;span style="color:#ae81ff">2&lt;/span>]) &lt;span style="color:#75715e"># [1 4]&lt;/span>
+&lt;span style="color:#66d9ef">print&lt;/span>(x[&lt;span style="color:#ae81ff">2&lt;/span>:]) &lt;span style="color:#75715e"># [2 5 3]&lt;/span>
+&lt;span style="color:#66d9ef">print&lt;/span>(np&lt;span style="color:#f92672">.&lt;/span>sort(x)) &lt;span style="color:#75715e"># [1, 2, 3, 4, 5]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>&lt;/p>
+&lt;h2 id="numpy-and-tensors">NumPy and tensors&lt;/h2>
+&lt;p>In the context of Data Science, a &lt;strong>tensor&lt;/strong> is a set of values stored in a multidimensional array.&lt;/p>
+&lt;ul>
+&lt;li>Vector = 1D tensor&lt;/li>
+&lt;li>Matrix = 2D tensor&lt;/li>
+&lt;/ul>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="demo-time-1">Demo time&lt;/h2>
+&lt;p>&lt;a href="http://nbviewer.jupyter.org/github/bpesquet/machine-learning-handbook/blob/master/tools/NumPy.ipynb">Tensor Management with NumPy&lt;/a>&lt;/p>
+&lt;hr>
+&lt;p>&lt;a href="https://pandas.pydata.org/">&lt;img src="images/pandas_logo.png" alt="Pandas logo">&lt;/a>&lt;/p>
+&lt;p>Python library for data analysis which gracefully handles heterogeneous data&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#f92672">import&lt;/span> pandas &lt;span style="color:#f92672">as&lt;/span> pd
+pop &lt;span style="color:#f92672">=&lt;/span> pd&lt;span style="color:#f92672">.&lt;/span>Series({&lt;span style="color:#e6db74">&amp;#39;CAL&amp;#39;&lt;/span>:&lt;span style="color:#ae81ff">38332521&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;TEX&amp;#39;&lt;/span>:&lt;span style="color:#ae81ff">26448193&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;NY&amp;#39;&lt;/span>:&lt;span style="color:#ae81ff">19651127&lt;/span>})
+area &lt;span style="color:#f92672">=&lt;/span> pd&lt;span style="color:#f92672">.&lt;/span>Series({&lt;span style="color:#e6db74">&amp;#39;CAL&amp;#39;&lt;/span>:&lt;span style="color:#ae81ff">423967&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;TEX&amp;#39;&lt;/span>:&lt;span style="color:#ae81ff">695662&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;NY&amp;#39;&lt;/span>:&lt;span style="color:#ae81ff">141297&lt;/span>})
+states &lt;span style="color:#f92672">=&lt;/span> pd&lt;span style="color:#f92672">.&lt;/span>DataFrame({&lt;span style="color:#e6db74">&amp;#39;population&amp;#39;&lt;/span>:pop, &lt;span style="color:#e6db74">&amp;#39;area&amp;#39;&lt;/span>:area})
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="images/pandas_result.png" alt="Code result">&lt;/p>
+&lt;hr>
+&lt;h2 id="demo-time-2">Demo time&lt;/h2>
+&lt;p>&lt;a href="http://nbviewer.jupyter.org/github/bpesquet/machine-learning-handbook/blob/master/tools/Pandas.ipynb">Data Analysis with Pandas&lt;/a>&lt;/p>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;p>&lt;a href="https://matplotlib.org/">&lt;img src="images/matplotlib_logo.png" alt="Matplotlib logo">&lt;/a>&lt;/p>
+&lt;p>Python library for 2D plotting&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#f92672">import&lt;/span> numpy &lt;span style="color:#f92672">as&lt;/span> np
+&lt;span style="color:#f92672">import&lt;/span> matplotlib.pyplot &lt;span style="color:#f92672">as&lt;/span> plt
+&lt;p>x &lt;span style="color:#f92672">=&lt;/span> np&lt;span style="color:#f92672">.&lt;/span>linspace(&lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">100&lt;/span>)
+plt&lt;span style="color:#f92672">.&lt;/span>plot(x, np&lt;span style="color:#f92672">.&lt;/span>cos(x))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="images/mpl_result.png" alt="Code result">&lt;/p>&lt;/p>
+&lt;hr>
+&lt;h2 id="seabornhttpsseabornpydataorg">&lt;a href="https://seaborn.pydata.org/">Seaborn&lt;/a>&lt;/h2>
+&lt;ul>
+&lt;li>Python library for data visualization&lt;/li>
+&lt;li>Improves presentation of matplotib-generated graphics&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#f92672">import&lt;/span> seaborn &lt;span style="color:#f92672">as&lt;/span> sns
+sns&lt;span style="color:#f92672">.&lt;/span>set()
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="images/seaborn_result.png" alt="Code result">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="demo-time-3">Demo time&lt;/h2>
+&lt;p>&lt;a href="http://nbviewer.jupyter.org/github/bpesquet/machine-learning-handbook/blob/master/tools/Matplotlib.ipynb">Plotting with Matplotlib and Seaborn&lt;/a>&lt;/p></description></item><item><title>React Native : gestion de l'état</title><link>https://bpesquet.github.io/slides/react-native-state/</link><pubDate>Sun, 12 Jan 2020 21:50:06 +0100</pubDate><guid>https://bpesquet.github.io/slides/react-native-state/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Partage de l&amp;rsquo;état entre composants&lt;/li>
 &lt;li>Centralisation de l&amp;rsquo;état&lt;/li>
@@ -1345,7 +1295,7 @@ expo install --save-dev babel-preset-mobx
 &lt;li>Librairie créée pour adresser des problématiques à l&amp;rsquo;échelle de Facebook&lt;/li>
 &lt;li>Complexe et &lt;em>overkill&lt;/em> pour les projets &amp;ldquo;normaux&amp;rdquo;&lt;/li>
 &lt;li>&lt;a href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">&amp;ldquo;You might not need Redux&amp;rdquo;&lt;/a> (écrit par son créateur)&lt;/li>
-&lt;/ul></description></item><item><title>React Native : utilisation d'API web</title><link>https://bpesquet.github.io/slides/mobile/react-native-api/</link><pubDate>Tue, 14 Jan 2020 10:14:10 +0100</pubDate><guid>https://bpesquet.github.io/slides/mobile/react-native-api/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;/ul></description></item><item><title>React Native : utilisation d'API web</title><link>https://bpesquet.github.io/slides/react-native-api/</link><pubDate>Tue, 14 Jan 2020 10:14:10 +0100</pubDate><guid>https://bpesquet.github.io/slides/react-native-api/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Introduction aux API web&lt;/li>
 &lt;li>Appels réseau avec JavaScript&lt;/li>
@@ -1590,4 +1540,502 @@ expo install --save-dev babel-preset-mobx
 );
 }
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Deconstructing AI</title><link>https://bpesquet.github.io/slides/deconstructing-ai/</link><pubDate>Mon, 09 Dec 2019 10:47:12 +0100</pubDate><guid>https://bpesquet.github.io/slides/deconstructing-ai/</guid><description>&lt;h2 id="summary">Summary&lt;/h2>
+&lt;ul>
+&lt;li>What Is AI, Actually?&lt;/li>
+&lt;li>How Do Machines Learn?&lt;/li>
+&lt;li>Should We Be Scared Of AI?&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="what-is-ai-actually">What Is AI, Actually?&lt;/h2>
+&lt;hr>
+&lt;h2 id="the-original-ambition-of-ai">The original ambition of AI&lt;/h2>
+&lt;blockquote>
+&lt;p>&amp;ldquo;AI is the science and engineering of making intelligent machines.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)">John McCarthy&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Dartmouth_workshop">Dartmouth Workshop&lt;/a>, 1956)&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;ldquo;AI is the science of making machines do things that would require intelligence if done by men.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Marvin_Minsky">Marvin Minsky&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="a-technical-definition-of-ai">A technical definition of AI&lt;/h2>
+&lt;blockquote>
+&lt;p>&amp;ldquo;AI refers to systems that &lt;strong>display&lt;/strong> intelligent behavior by analysing their &lt;strong>environment&lt;/strong> and taking &lt;strong>actions&lt;/strong> - with some degree of &lt;strong>autonomy&lt;/strong> - to achieve specific &lt;strong>goals&lt;/strong>.&amp;rdquo; (&lt;a href="https://ec.europa.eu/newsroom/dae/document.cfm?doc_id=51625">EC, 2018&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;p>AI systems can be either:&lt;/p>
+&lt;ul>
+&lt;li>Purely &lt;strong>software&lt;/strong>-based (e.g. voice assistants, search engines, face recognition systems).&lt;/li>
+&lt;li>Embedded in &lt;strong>hardware&lt;/strong> devices (e.g. robots, autonomous cars, drones).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="main-areas-of-research">Main areas of research&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Problem solving&lt;/strong> (e.g. search algorithms, constraint solving).&lt;/li>
+&lt;li>&lt;strong>Reasoning&lt;/strong> and &lt;strong>decision making&lt;/strong> (e.g. logic, knowledge representation).&lt;/li>
+&lt;li>&lt;strong>Machine Learning&lt;/strong>.&lt;/li>
+&lt;li>&lt;strong>Real-world interactions&lt;/strong> (e.g. computer vision, natural language understanding, robotics).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="ai-is-a-moving-target">AI is a moving target&lt;/h2>
+&lt;p>As soon as AI successfully solves a problem, the problem is no longer considered a part of AI.&lt;/p>
+&lt;blockquote>
+&lt;p>&amp;ldquo;&lt;a href="https://en.wikipedia.org/wiki/AI_effect">AI is whatever hasn&amp;rsquo;t been done yet&lt;/a>.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="the-tumultuous-history-of-ai">The tumultuous history of AI&lt;/h2>
+&lt;p>&lt;a href="https://www.slideshare.net/dlavenda/ai-and-productivity">&lt;img src="images/ai_timeline.png" alt="The AI timeline">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="ai-is-a-highly-interdisciplinary-field">AI is a highly interdisciplinary field&lt;/h2>
+&lt;p>&lt;img src="images/ai_fields.png" alt="AI fields">&lt;/p>
+&lt;hr>
+&lt;h2 id="ai-is-a-social-science">AI is a social science&lt;/h2>
+&lt;p>AI has many social and societal implications:&lt;/p>
+&lt;ul>
+&lt;li>Job market transformation.&lt;/li>
+&lt;li>Human/machine interactions.&lt;/li>
+&lt;li>Trust and acceptability.&lt;/li>
+&lt;li>Legal aspects and regulation.&lt;/li>
+&lt;li>Fairness.&lt;/li>
+&lt;li>Ethical use.&lt;/li>
+&lt;li>Personal data.&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="ai-comes-in-different-flavours">AI comes in different flavours&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Substitutive intelligence&lt;/strong>: replacement of men by machines.&lt;/li>
+&lt;li>&lt;strong>Augmented intelligence&lt;/strong>: human-centered AI for performance augmentation &amp;amp; autonomy enhancement.&lt;/li>
+&lt;li>&lt;strong>Hybrid intelligence&lt;/strong>: human-machine collaboration on complex tasks.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="a-broader-definition-of-ai">A broader definition of AI&lt;/h2>
+&lt;blockquote>
+&lt;p>&amp;ldquo;AI is an &lt;strong>interdisciplinary&lt;/strong> field aiming at &lt;strong>understanding&lt;/strong> and &lt;strong>imitating&lt;/strong> the mechanisms of &lt;strong>cognition&lt;/strong> and &lt;strong>reasoning&lt;/strong>, in order to &lt;strong>assist&lt;/strong> or &lt;strong>substitute&lt;/strong> humans in their activities.&amp;rdquo; (&lt;a href="https://fr.wikipedia.org/wiki/Commission_d%27enrichissement_de_la_langue_fran%C3%A7aise">Commission d&amp;rsquo;enrichissement de la langue française&lt;/a>, 2018)&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="how-do-machines-learn">How Do Machines Learn?&lt;/h2>
+&lt;hr>
+&lt;h2 id="machine-learning-in-a-nutshell">Machine Learning in a nutshell&lt;/h2>
+&lt;p>Set of techniques for giving machines the ability to find &lt;strong>patterns&lt;/strong> and extract &lt;strong>rules&lt;/strong> from data, in order to:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Identify&lt;/strong> or &lt;strong>classify&lt;/strong> elements.&lt;/li>
+&lt;li>Detect &lt;strong>tendencies&lt;/strong>.&lt;/li>
+&lt;li>Make &lt;strong>predictions&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;p>As more data is fed into the system, results get better: performance improves with experience.&lt;/p>
+&lt;p>a.k.a. &lt;strong>Statistical Learning&lt;/strong>.&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/ai_ml_dl.png" alt="AI/ML/DL Venn diagram">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/machine_learning_tree.png" alt="ML category tree">&lt;/p>
+&lt;hr>
+&lt;h2 id="a-new-paradigm">A new paradigm&lt;/h2>
+&lt;p>&lt;img src="images/programming_paradigm.png" alt="Programming paradigm">&lt;/p>
+&lt;p>&lt;img src="images/training_paradigm.png" alt="Training paradigm">&lt;/p>
+&lt;hr>
+&lt;h2 id="the-machine-learning-workflow">The Machine Learning workflow&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Frame&lt;/strong> the problem.&lt;/li>
+&lt;li>Collect, analyze and prepare &lt;strong>data&lt;/strong>.&lt;/li>
+&lt;li>Select and train several &lt;strong>models&lt;/strong> on data.&lt;/li>
+&lt;li>&lt;strong>Tune&lt;/strong> the most promising model.&lt;/li>
+&lt;li>&lt;strong>Deploy&lt;/strong> the model to production.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="ml-is-not-a-silver-bullet">ML is not a silver bullet!&lt;/h2>
+&lt;ul>
+&lt;li>Some use cases are a better fit for ML than others:
+&lt;ul>
+&lt;li>Difficulty to express the actions as rules.&lt;/li>
+&lt;li>Data too complex for traditional analytical methods.&lt;/li>
+&lt;li>Performance &amp;gt; interpretability.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Data quality is paramount.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="algorithm-1-k-nearest-neighbors">Algorithm #1: K-Nearest Neighbors&lt;/h2>
+&lt;p>Prediction is based on the &lt;code>k&lt;/code> nearest neighbors of a data sample.&lt;/p>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">&lt;img src="images/knn.png" alt="K-NN">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="algorithm-2-decision-trees">Algorithm #2: Decision Trees&lt;/h2>
+&lt;p>Build a tree-like structure based on a series of discovered questions on the data.&lt;/p>
+&lt;p>&lt;img src="images/dt_iris.png" alt="Decision Tree for Iris dataset">&lt;/p>
+&lt;hr>
+&lt;h2 id="algorithm-3-neural-networks">Algorithm #3: Neural Networks&lt;/h2>
+&lt;ul>
+&lt;li>Layers of loosely neuron-inpired computation units.&lt;/li>
+&lt;li>Can approximate any continuous function.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/neuron_output.png" alt="Neuron output">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/neural_net.gif" alt="Dog or Cat?">&lt;/p>
+&lt;hr>
+&lt;h2 id="training-a-network">Training a network&lt;/h2>
+&lt;p>&lt;img src="images/training_inference1.png" alt="Training and inference">&lt;/p>
+&lt;hr>
+&lt;h2 id="the-deep-learning-tsunami">The Deep Learning tsunami&lt;/h2>
+&lt;ul>
+&lt;li>Multilayered neural networks trained on (generally) vast amounts of data.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">&lt;img src="images/alexnet.png" alt="AlexNet'12 (simplified)">&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Since 2010, outperformed previous state-of-the-art techniques in many fields (language translation, image and scene recognition&amp;hellip;).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/big_data_universe.png" alt="Big data universe">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/infographic2-intel-past-present.gif" alt="Computer power sheet">&lt;/p>
+&lt;hr>
+&lt;h2 id="from-labs-to-everyday-life">From labs to everyday life&lt;/h2>
+&lt;p>&lt;a href="http://yann.lecun.com/exdb/lenet/">&lt;img src="images/lecun_lenet.gif" alt="LeCun - LeNet">&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://twitter.com/mbrennanchina/status/1203687857849716736">&lt;img src="images/china_school_facial_reco.gif" alt="Facial recognition in Chinese elementary school">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="should-we-be-scared-of-ai">Should We Be Scared Of AI?&lt;/h2>
+&lt;hr>
+&lt;h2 id="ai-is-altering-the-job-market">AI is altering the job market&amp;hellip;&lt;/h2>
+&lt;ul>
+&lt;li>Machines outperform humans in a growing list of cognitive tasks.&lt;/li>
+&lt;li>Repetitive tasks are most exposed (even complex ones, like medical diagnosis or financial analysis).&lt;/li>
+&lt;li>Entire industries are on the verge of disruption (example: truck-based transportation, first employer in the U.S.).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-for-better-or-worse">&amp;hellip; For better or worse&lt;/h2>
+&lt;ul>
+&lt;li>Net impact of AI on job quantity is unknown.&lt;/li>
+&lt;li>Most jobs will be &lt;strong>transformed&lt;/strong>, not replaced by AI.
+&lt;ul>
+&lt;li>Boring and repetitive stuff will be automated.&lt;/li>
+&lt;li>AI will add new insight to help human decision.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Human/machine interactions will multiply.&lt;/li>
+&lt;li>Their quality will be a key factor of performance for organizations.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="real-or-fake">Real or fake?&lt;/h2>
+&lt;p>&lt;a href="https://twitter.com/goodfellow_ian/status/1084973596236144640">&lt;img src="images/gan_2014_2018.jpg" alt="GAN progress from 2014 to 2018">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="agi-is-very-far-away">AGI is very far away&lt;/h2>
+&lt;ul>
+&lt;li>Current AI systems are &lt;strong>weak&lt;/strong>: highly tuned to perform well in one task.&lt;/li>
+&lt;li>&lt;strong>Artificial General Intelligence&lt;/strong> a.k.a. &lt;strong>strong AI&lt;/strong>, the ability to perform any task as well as a human, is out of reach.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://twitter.com/ylecun/status/1204013978210320384">&lt;img src="images/ylecun_tweet_agi.png" alt="Y. LeCun tweet on AGI, Déc. 2019">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="the-intelligence-debate">The intelligence debate&lt;/h2>
+&lt;ul>
+&lt;li>Despite their complexity, ML and DL algorithms can be viewed as merely &lt;a href="https://diginomica.com/ai-curve-fitting-not-intelligence">curve fitting&lt;/a>.&lt;/li>
+&lt;li>On the contrary, some AI researchers envision DL as a new form of &lt;strong>algorithmic reasoning&lt;/strong>, somehow mimicking the human brain.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="the-human-brain-is-a-masterpiece">The human brain is a masterpiece&lt;/h2>
+&lt;ul>
+&lt;li>Approx. 86 billions neurons in 1.4 kg.&lt;/li>
+&lt;li>Typical energy consumption: 20 W (!)&lt;/li>
+&lt;li>So much of it is still unknown.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/human_brain.jpg" alt="The human brain">&lt;/p>
+&lt;hr>
+&lt;h2 id="babies-are-outstanding-learners">Babies are outstanding learners&lt;/h2>
+&lt;p>&lt;a href="http://www.lscp.net/persons/dupoux/">&lt;img src="images/conceptual_acquisition_infants.png" alt="Conceptuals acquisitions by babies">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="any-questions">Any questions?&lt;/h2>
+&lt;p>&lt;img src="images/cutest_baby_ever.png" alt="The cutest baby ever">&lt;/p></description></item><item><title>Introduction à Unity</title><link>https://bpesquet.github.io/slides/unity-intro/</link><pubDate>Sat, 25 Aug 2018 16:13:52 +0200</pubDate><guid>https://bpesquet.github.io/slides/unity-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;ul>
+&lt;li>Unity en bref&lt;/li>
+&lt;li>Concepts-clés&lt;/li>
+&lt;li>Versionnage d&amp;rsquo;un projet&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="unity-en-bref">Unity en bref&lt;/h2>
+&lt;hr>
+&lt;p>&lt;img src="images/Unity_Technologies_Logo.svg.png" alt="Logo Unity">&lt;/p>
+&lt;ul>
+&lt;li>Moteur de jeu développé par &lt;a href="https://en.wikipedia.org/wiki/Unity_Technologies">Unity Technologies&lt;/a> depuis 2004.&lt;/li>
+&lt;li>Multiplateformes : PC, Mac, consoles, smartphones, web.&lt;/li>
+&lt;li>&lt;a href="https://store.unity.com/fr/products/unity-personal">Licence personnelle&lt;/a> gratuite.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="made-with-unity">Made with Unity&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/ctNF6QlLBWo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;hr>
+&lt;p>&lt;img src="images/Editor-Breakdown.jpg" alt="Unity editor 1">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/unity-editor.png" alt="Unity editor 2">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/keep-calm-it-is-demo-time.png" alt="Demo time">&lt;/p>
+&lt;hr>
+&lt;h2 id="concepts-clés">Concepts-clés&lt;/h2>
+&lt;hr>
+&lt;h2 id="project">Project&lt;/h2>
+&lt;ul>
+&lt;li>Rassemble tous les éléments constituant le jeu.&lt;/li>
+&lt;li>Peut être de type 2D ou 3D.&lt;/li>
+&lt;li>Correspond physiquement à un répertoire stocké localement ou dans le &lt;em>cloud&lt;/em>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/AssetWorkflowFolderAndProjectWindow.png" alt="Fenêtre Project">&lt;/p>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="asset">Asset&lt;/h2>
+&lt;ul>
+&lt;li>Ressource utilisable dans un projet.&lt;/li>
+&lt;li>Nombreux types possibles : image, modèle 3D, texture, fichier audio, script, etc.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/AssetWorkflowImportingFiles.png" alt="Import d&amp;rsquo;un Asset">&lt;/p>
+&lt;hr>
+&lt;h2 id="packages">Packages&lt;/h2>
+&lt;ul>
+&lt;li>Plusieurs Assets peuvent être regroupés dans un &lt;strong>package&lt;/strong>.&lt;/li>
+&lt;li>Unity est livré avec une collections d'&lt;strong>Assets standards&lt;/strong> : formes de base, gestion de la caméra, des entrées utilisateur, etc.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="asset-store">Asset Store&lt;/h2>
+&lt;ul>
+&lt;li>Magasin en ligne proposant de nombreux Assets gratuits ou payants.&lt;/li>
+&lt;li>Permet d&amp;rsquo;importer des packages dans un projet.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/AssetStore-download.png" alt="Asset Store">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="scene">Scene&lt;/h2>
+&lt;ul>
+&lt;li>Correspond à une partie du jeu (un niveau).&lt;/li>
+&lt;li>Sauvegardées parmi les Assets.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/NewEmptyScene.png" alt="Nouvelle scène">&lt;/p>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="gameobject">GameObject&lt;/h2>
+&lt;ul>
+&lt;li>Objet qui représente un élément d&amp;rsquo;une scène.&lt;/li>
+&lt;li>Constitué d&amp;rsquo;un ensemble de &lt;strong>composants&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/GameObjectsExamples.png" alt="Exemples de GameObjects">&lt;/p>
+&lt;hr>
+&lt;h3 id="hiérarchie-des-gameobjects">Hiérarchie des GameObjects&lt;/h3>
+&lt;ul>
+&lt;li>Création de hiérarchies parent/enfants à plusieurs niveaux en regroupant des GameObjects.&lt;/li>
+&lt;li>Permet de refléter des relations de &lt;strong>dépendance&lt;/strong> ou de &lt;strong>composition&lt;/strong> entre objets.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/HierarchyParenting1.png" alt="Hiérarchie des GO">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="composant">Composant&lt;/h2>
+&lt;p>Ajoute un comportement à un GameObject.&lt;/p>
+&lt;p>&lt;img src="images/RigidBodyGO.png" alt="Exemples de composants">&lt;/p>
+&lt;hr>
+&lt;h2 id="le-composant-transform">Le composant Transform&lt;/h2>
+&lt;p>Définit la position, la rotation et l&amp;rsquo;échelle d&amp;rsquo;un GameObject.&lt;/p>
+&lt;p>&lt;img src="images/TransformExample2.png" alt="Transform 1">&lt;/p>
+&lt;hr>
+&lt;h2 id="transform-et-hiérarchie">Transform et hiérarchie&lt;/h2>
+&lt;ul>
+&lt;li>Position, rotation et échelle d&amp;rsquo;un GameObject sont relatives à son parent dans la hiérarchie.&lt;/li>
+&lt;li>Les valeurs de Transform sont relatives à celles du GameObject parent (&lt;strong>coordonnées locales&lt;/strong>) ou absolues en l&amp;rsquo;absence de parent (&lt;strong>coordonnées globales&lt;/strong>).&lt;/li>
+&lt;/ul>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="mesh">Mesh&lt;/h2>
+&lt;p>Maillage géométrique d&amp;rsquo;une forme 3D.&lt;/p>
+&lt;p>&lt;img src="images/mesh.png" alt="Mesh">&lt;/p>
+&lt;hr>
+&lt;h2 id="mesh-renderer">Mesh renderer&lt;/h2>
+&lt;p>Composant assurant le rendu d&amp;rsquo;un Mesh à la position définie par le composant Transform du GameObject.&lt;/p>
+&lt;p>&lt;img src="images/class-MeshRenderer-0.png" alt="Mesh renderer">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="rigidbody">RigidBody&lt;/h2>
+&lt;p>Composant permettant à un GameObject de réagir selon les lois de la physique :&lt;/p>
+&lt;ul>
+&lt;li>Gestion de la masse, de la gravité, etc.&lt;/li>
+&lt;li>Application de forces.&lt;/li>
+&lt;li>Réaction aux collisions.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/Inspector-Rigidbody.png" alt="RigidBody">&lt;/p>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="collider">Collider&lt;/h2>
+&lt;p>Composant définissant la forme d&amp;rsquo;un GameObject pour la gestion des collisions :&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Primitive Collider&lt;/strong> : formes géométriques de base (cube, sphère, cylindre, etc).&lt;/li>
+&lt;li>&lt;strong>Mesh Collider&lt;/strong> : forme spécifique définie par un Mesh. Plus coûteux en temps de calcul.&lt;/li>
+&lt;/ul>
+&lt;p>Par défaut, des GameObjects possédant un Collider ne peuvent pas se chevaucher.&lt;/p>
+&lt;hr>
+&lt;h2 id="rigidbody-collider">RigidBody Collider&lt;/h2>
+&lt;p>GameObject possédant un Collider et un RigidBody.&lt;/p>
+&lt;ul>
+&lt;li>Soumis aux lois de la physique.&lt;/li>
+&lt;li>Déclenche des collisions avec les autres (non-Trigger) Colliders.&lt;/li>
+&lt;li>Doit être déplacé en lui appliquand des forces.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="static-collider">Static Collider&lt;/h2>
+&lt;p>GameObject possédant un Collider mais pas de RigidBody.&lt;/p>
+&lt;ul>
+&lt;li>Déclenche des collisions avec les RigidBody Colliders, mais ne bouge pas.&lt;/li>
+&lt;li>Ne doit pas être déplacé.&lt;/li>
+&lt;li>Destiné aux éléments immobiles de la scène (murs, obstacles, etc).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="kinematic-rigidbody-collider">Kinematic RigidBody Collider&lt;/h2>
+&lt;p>GameObject possédant un Collider et un RigidBody défini comme Kinematic.&lt;/p>
+&lt;ul>
+&lt;li>N&amp;rsquo;est pas soumis aux lois de la physique.&lt;/li>
+&lt;li>Déclenche des collisions avec les RigidBody Colliders, mais ne bouge pas.&lt;/li>
+&lt;li>Peut être déplacé en modifiant son Transform.&lt;/li>
+&lt;li>Destiné aux éléments animés du décor (portes, objets à récupérer, etc).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="trigger-collider">Trigger Collider&lt;/h2>
+&lt;p>GameObject dont le Collider est défini comme Trigger.&lt;/p>
+&lt;p>&lt;img src="images/is-trigger-check-box.jpg" alt="IsTrigger">&lt;/p>
+&lt;ul>
+&lt;li>Autorise le chevauchement sans déclencher de collision.&lt;/li>
+&lt;li>Permet de définir une &lt;strong>zone&lt;/strong> et de réagir lorsque des RigidBody Colliders y pénètrent.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;a href="https://docs.unity3d.com/Manual/CollidersOverview.html">&lt;img src="images/UnityCollisionMatrix.png" alt="Collision Matrix">&lt;/a>&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="prefab">Prefab&lt;/h2>
+&lt;ul>
+&lt;li>Type d&amp;rsquo;Asset permettant d&amp;rsquo;instancier des GameObjects à partir d&amp;rsquo;un modèle commun.&lt;/li>
+&lt;li>Changements d&amp;rsquo;un Prefab appliqués à toutes ses instances.&lt;/li>
+&lt;li>Une instance de Prefab peut aussi être modifiée individuellement.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/PrefabWithOverride.png" alt="Prefab">&lt;/p>
+&lt;hr>
+&lt;h2 id="light">Light&lt;/h2>
+&lt;p>Type de GameObject permettant d&amp;rsquo;ajouter une source de lumière à la scène.&lt;/p>
+&lt;p>&lt;img src="images/Light-Spot.png" alt="Lights">&lt;/p>
+&lt;hr>
+&lt;h2 id="camera">Camera&lt;/h2>
+&lt;p>Type de GameObject qui calcule la vue de la scène affichée au joueur.&lt;/p>
+&lt;p>&lt;img src="images/CameraPerspectiveAndOrtho.jpg" alt="Différentes caméras">&lt;/p>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="script">Script&lt;/h2>
+&lt;ul>
+&lt;li>Type d&amp;rsquo;Asset permettant de coder le comportement d&amp;rsquo;un GameObject en langage C# ou UnityScript.&lt;/li>
+&lt;li>Doit faire partie des composants du GameObject.&lt;/li>
+&lt;li>Peut accéder aux propriétés du GameObject définies par ses autres composants.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="anatomie-dun-script">Anatomie d&amp;rsquo;un script&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#75715e">// ... (directives using)
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">// MonoBehaviour : superclasse de tous les scripts Unity
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MainPlayer&lt;/span> : MonoBehaviour {
+&lt;span style="color:#75715e">// Appelée juste avant le rendu de la première image
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> Start() { ... }
+&lt;pre>&lt;code>&amp;lt;span style=&amp;quot;color:#75715e&amp;quot;&amp;gt;// Appelée à chaque nouvelle image
+&lt;/code>&lt;/pre>
+&lt;p>&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// L'intervalle de temps entre deux appels peut varier
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> Update() { &amp;hellip; }&lt;/p>
+&lt;pre>&lt;code>&amp;lt;span style=&amp;quot;color:#75715e&amp;quot;&amp;gt;// Appelée à intervalles réguliers (0.02s par défaut)
+&lt;/code>&lt;/pre>
+&lt;p>&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> FixedUpdate() { &amp;hellip; }
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>&lt;/p>
+&lt;h2 id="déplacements-scriptés">Déplacements scriptés&lt;/h2>
+&lt;p>&lt;a href="https://unity3d.com/fr/learn/tutorials/topics/scripting/delta-time">&lt;img src="images/time.deltatime.gif" alt="Time.deltaTtime">&lt;/a>&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="versionnage-dun-projet">Versionnage d&amp;rsquo;un projet&lt;/h2>
+&lt;hr>
+&lt;h2 id="le-problème">Le problème&lt;/h2>
+&lt;ul>
+&lt;li>Taille de certains Assets.&lt;/li>
+&lt;li>Nombreux fichiers binaires dans un projet : modèles 3D, images, sons, etc.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="les-solutions">Les solutions&lt;/h2>
+&lt;ul>
+&lt;li>Partage manuel (disque commun, Drive, etc).&lt;/li>
+&lt;li>Dépôt Git standard.&lt;/li>
+&lt;li>Git LFS.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="git-large-file-system">Git Large File System&lt;/h2>
+&lt;p>&lt;a href="https://git-lfs.github.com">&lt;img src="images/git-lfs.gif" alt="Git LFS">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="fichier-gitattributes">Fichier .gitattributes&lt;/h2>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">* text&lt;span style="color:#f92672">=&lt;/span>auto
+&lt;p>&lt;span style="color:#75715e"># Unity files&lt;/span>
+*.meta -text -merge&lt;span style="color:#f92672">=&lt;/span>unityamlmerge
+*.unity -text -merge&lt;span style="color:#f92672">=&lt;/span>unityamlmerge
+*.asset -text -merge&lt;span style="color:#f92672">=&lt;/span>unityamlmerge
+*.prefab -text -merge&lt;span style="color:#f92672">=&lt;/span>unityamlmerge&lt;/p>
+&lt;p>&lt;span style="color:#75715e"># Image formats&lt;/span>
+*.psd filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.jpg filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.png filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.gif filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.bmp filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.tga filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.tiff filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.iff filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.pict filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.dds filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.xcf filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text&lt;/p>
+&lt;p>&lt;span style="color:#75715e"># Audio formats&lt;/span>
+*.mp3 filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.ogg filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.wav filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.aiff filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.aif filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.mod filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.it filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.s3m filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.xm filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text&lt;/p>
+&lt;p>&lt;span style="color:#75715e"># Video formats&lt;/span>
+*.mov filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.avi filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.asf filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.mpg filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.mpeg filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.mp4 filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text&lt;/p>
+&lt;p>&lt;span style="color:#75715e"># 3D formats&lt;/span>
+*.fbx filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.obj filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.max filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.blend filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.dae filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.mb filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.ma filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.3ds filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.dfx filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.c4d filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.lwo filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.lwo2 filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.abc filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.3dm filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text&lt;/p>
+&lt;p>&lt;span style="color:#75715e"># Build&lt;/span>
+*.dll filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.pdb filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.mdb filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text&lt;/p>
+&lt;p>&lt;span style="color:#75715e"># Packaging&lt;/span>
+*.zip filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.7z filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.gz filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.rar filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text
+*.tar filter&lt;span style="color:#f92672">=&lt;/span>lfs diff&lt;span style="color:#f92672">=&lt;/span>lfs merge&lt;span style="color:#f92672">=&lt;/span>lfs -text&lt;/p>
+&lt;p>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://gist.github.com/bpesquet/4e28b431b673addef1774d497b614b33">Source&lt;/a>&lt;/p>&lt;/p>
+&lt;hr>
+&lt;h2 id="github-for-unity">GitHub For Unity&lt;/h2>
+&lt;p>&lt;a href="https://unity.github.com/">https://unity.github.com/&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Extension qui intègre Git et GitHub dans Unity.&lt;/li>
+&lt;li>Authentification GitHub, LFS, etc.&lt;/li>
+&lt;li>Version 1.0 : encore instable.&lt;/li>
+&lt;/ul>
+&lt;/section></description></item></channel></rss>
