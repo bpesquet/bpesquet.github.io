@@ -4,7 +4,7 @@ date: 2020-10-14T09:04:17+02:00
 draft: false
 ---
 
-All these presentations are built with [reveal.js](revealjs.com/).
+All these presentations are built with [reveal.js](https://revealjs.com/).
 
 ## Artificial intelligence
 
