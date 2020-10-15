@@ -1548,7 +1548,7 @@ expo install --save-dev babel-preset-mobx
 &lt;li>
 &lt;p>&lt;a href="https://github.com/bpesquet/winforms-architecture-patterns">WinForms architecture patterns&lt;/a> demonstrates several architectural patterns for building desktop applications.&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Slides</title><link>https://www.bpesquet.fr/teaching/slides/</link><pubDate>Wed, 14 Oct 2020 09:04:17 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/slides/</guid><description>&lt;p>All these presentations are built with &lt;a href="revealjs.com/">reveal.js&lt;/a>.&lt;/p>
+&lt;/ul></description></item><item><title>Slides</title><link>https://www.bpesquet.fr/teaching/slides/</link><pubDate>Wed, 14 Oct 2020 09:04:17 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/slides/</guid><description>&lt;p>All these presentations are built with &lt;a href="https://revealjs.com/">reveal.js&lt;/a>.&lt;/p>
 &lt;h2 id="artificial-intelligence">Artificial intelligence&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://www.bpesquet.fr/slides/deconstructing-ai/" title="Deconstructing AI">Deconstructing AI&lt;/a>&lt;/li>
