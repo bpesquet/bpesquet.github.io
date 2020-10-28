@@ -15,5 +15,7 @@ draft: true
 <https://github.com/joelgrus/autograd>
 
 <https://pytorch.org/docs/stable/autograd.html#>
+<https://github.com/pytorch/pytorch/tree/v0.1.1/torch/autograd>
+<https://github.com/pytorch/pytorch/tree/v0.4.0/torch/autograd>
 
 <https://www.cs.toronto.edu/~rgrosse/courses/csc321_2018/slides/lec10.pdf>
