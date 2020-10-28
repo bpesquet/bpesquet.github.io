@@ -48,3 +48,8 @@ markup:
   goldmark:
     renderer:
       unsafe: true # enable raw HTML in Markdown
+
+  highlight:
+    lineNos: false
+    style: github # https://xyproto.github.io/splash/docs/all.html
+    tabWidth: 4
