@@ -43,6 +43,10 @@ params:
   paginationSinglePost: true
   style: light-without-switcher
   readMore: false
+  style: "auto"
+
+taxonomies: 
+  tag: "tags"
 
 markup:
   goldmark:
@@ -51,5 +55,5 @@ markup:
 
   highlight:
     lineNos: false
-    style: github # https://xyproto.github.io/splash/docs/all.html
+    style: fruity # https://xyproto.github.io/splash/docs/all.html
     tabWidth: 4

@@ -3,7 +3,12 @@ title: "Walk This (JavaScript) Way"
 date: 2017-02-27T23:15:37.922Z
 lastmod: 2020-10-14T22:38:48+02:00
 draft: false
+tags:
+- javascript
+- authoring
 ---
+
+<!--more-->
 
 ![Run DMC and Aerosmith](images/1.jpeg)
 

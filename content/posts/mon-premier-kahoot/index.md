@@ -2,7 +2,11 @@
 title: "Mon premier Kahoot"
 date: 2018-11-29T23:26:45+01:00
 draft: false
+tags:
+- teaching
 ---
+
+<!--more-->
 
 La _gamification_ de l'enseignement est dans l'air du temps, et il existe maintenant de nombreux outils permettant d'engager les apprenants de manière ludique et interactive. Cela faisait un petit moment que j'avais envie d'expérimenter un service de quiz interactif pendant un cours magistral. Le dernier CM de l'un de mes modules de cours m'en a récemment fourni l'occasion. Avant la séance, j'ai demandé aux étudiants de revoir l'ensemble des notions vues depuis le début du module, en leur annonçant un test de révision. Restait à trouver l'outil adéquat.
 

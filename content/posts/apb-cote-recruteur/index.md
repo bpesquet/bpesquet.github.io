@@ -3,7 +3,11 @@ title: "Admission Post-Bac côté recruteur"
 date: 2016-06-09T20:56:38.045Z
 lastmod: 2020-10-14T22:38:46+02:00
 draft: false
+tags:
+- teaching
 ---
+
+<!--more-->
 
 L’orientation scolaire des jeunes bacheliers français est un sujet sensible. Le fonctionnement du portail [Admission Post-Bac](http://www.admission-postbac.fr/) (APB), pierre angulaire du dispositif d’orientation, est source [d’interrogations](http://www.studyrama.com/revision-examen/bac/admission-postbac-fr/apb-vos-questions-nos-reponses-sur-les-phases-d-84327) et [d’angoisses](http://www.francetvinfo.fr/bac/demoralises-decourages-les-lyceens-face-a-la-galere-des-admissions-post-bac_1489753.html) pour de nombreux élèves et leurs familles.
 

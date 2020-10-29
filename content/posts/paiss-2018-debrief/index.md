@@ -2,7 +2,11 @@
 title: "PAISS 2018 : le debrief"
 date: 2018-07-09T08:48:56+02:00
 draft: false
+tags:
+- ai
 ---
+
+<!--more-->
 
 La session 2018 de la _summer school_ de l'INRIA consacrée à l'IA, nommée [PAISS](https://project.inria.fr/paiss/), s'est déroulée à Grenoble du 2 au 6 juillet 2018. Voici un petit compte-rendu de ce qui s'y est dit et fait.
 

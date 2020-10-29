@@ -2,7 +2,11 @@
 title: "Artistes et spécifieurs, un jeu pour découvrir l'agilité"
 date: 2018-05-24T15:57:43+02:00
 draft: false
+tags:
+- teaching
 ---
+
+<!--more-->
 
 Dans le cadre du module de cours Gestion de projet, j'ai testé avec succès un atelier ludique et efficace pour s'initier aux valeurs de l'agilité : le jeu **artistes et spécifieurs**. Imaginé par [Alistair Cockburn](http://alistair.cockburn.us/), l'un des signataires du [manifeste agile](http://agilemanifesto.org/), ce jeu est souvent utilisé par les coachs agiles en entreprise.
 
