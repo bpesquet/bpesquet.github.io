@@ -1,160 +1,160 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Le langage JavaScript</title><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/reveal.css><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/theme/white.css></head><body><div class=reveal><div class=slides><section><h1>Le langage JavaScript</h1><p><a href=https://ensc.bordeaux-inp.fr>Ecole Nationale Supérieure de Cognitique</a></p><p><a href=https://www.bpesquet.fr>Baptiste Pesquet</a></p></section><section><h2 id=sommaire>Sommaire</h2><ul><li>Pourquoi JavaScript ?</li><li>Syntaxe du langage</li><li>Environnement de travail</li></ul></section><section><h2 id=pourquoi-javascript->Pourquoi JavaScript ?</h2></section><section><h2 id=javascript-is-eating-the-world>JavaScript is eating the world</h2><p><img src=images/thus-javascript-is-eating-the-world.jpg alt="JS is eating the world"></p></section><section><h2 id=un-pré-requis-essentiel>Un pré-requis essentiel</h2><p>La majorité des solutions mobiles multi-plateformes est basée sur JavaScript.</p><p><img src=images/mobile_logos.png alt="Frameworks multi-plateformes"></p></section><section><h2 id=un-langage-modernisé>Un langage modernisé</h2><p>JavaScript est normalisé sous le nom <strong>ECMAScript</strong>.</p><p><img src=images/js_history.png alt="ECMAScript releases"></p><p>La norme <strong>ES2015</strong> (ou ES6) a apporté de très nombreuses améliorations au langage.</p></section><section><h2 id=la-syntaxe-du-langage>La syntaxe du langage</h2></section><section><h2 id=déclaration-de-variables>Déclaration de variables</h2><p>JavaScript est un langage à typage <strong>dynamique</strong>.</p><p><code>let</code> et <code>const</code> remplacent avantageusement <code>var</code> pour la déclaration des variables.</p><p>La valeur d&rsquo;une variable déclarée avec <code>const</code> ne peut plus être modifiée.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>3.14</span>;
-<span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>6.28</span>; <span style=color:#75715e>// OK
-</span><span style=color:#75715e></span>
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>b</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>3.14</span>;
-<span style=color:#a6e22e>b</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>6.28</span>; <span style=color:#75715e>// Erreur!
-</span></code></pre></div></section><section><h2 id=chaînes-de-caractères>Chaînes de caractères</h2><p>Créées avec des guillemets simples (<code>'...'</code>) ou doubles (<code>"..."</code>).</p><p><strong>Litéraux de modèle</strong>: chaînes créées entre <em>backticks</em> (`) et permettant d&rsquo;intégrer des expressions.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>country</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;France&#34;</span>; <span style=color:#75715e>// or &#39;France&#39;
-</span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>`I live in </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>country</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>); <span style=color:#75715e>// &#34;I live in France&#34;
-</span></code></pre></div></section><section><h2 id=déclaration-de-fonctions>Déclaration de fonctions</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>sayHello</span>(<span style=color:#a6e22e>name</span>) {
-  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>message</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`Hello, </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>name</span><span style=color:#e6db74>}</span><span style=color:#e6db74>!`</span>;
-  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>message</span>;
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Le langage JavaScript</title><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/reveal.css><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/theme/white.css></head><body><div class=reveal><div class=slides><section><h1>Le langage JavaScript</h1><p><a href=https://ensc.bordeaux-inp.fr>Ecole Nationale Supérieure de Cognitique</a></p><p><a href=https://www.bpesquet.fr>Baptiste Pesquet</a></p></section><section><h2 id=sommaire>Sommaire</h2><ul><li>Pourquoi JavaScript ?</li><li>Syntaxe du langage</li><li>Environnement de travail</li></ul></section><section><h2 id=pourquoi-javascript->Pourquoi JavaScript ?</h2></section><section><h2 id=javascript-is-eating-the-world>JavaScript is eating the world</h2><p><img src=images/thus-javascript-is-eating-the-world.jpg alt="JS is eating the world"></p></section><section><h2 id=un-pré-requis-essentiel>Un pré-requis essentiel</h2><p>La majorité des solutions mobiles multi-plateformes est basée sur JavaScript.</p><p><img src=images/mobile_logos.png alt="Frameworks multi-plateformes"></p></section><section><h2 id=un-langage-modernisé>Un langage modernisé</h2><p>JavaScript est normalisé sous le nom <strong>ECMAScript</strong>.</p><p><img src=images/js_history.png alt="ECMAScript releases"></p><p>La norme <strong>ES2015</strong> (ou ES6) a apporté de très nombreuses améliorations au langage.</p></section><section><h2 id=la-syntaxe-du-langage>La syntaxe du langage</h2></section><section><h2 id=déclaration-de-variables>Déclaration de variables</h2><p>JavaScript est un langage à typage <strong>dynamique</strong>.</p><p><code>let</code> et <code>const</code> remplacent avantageusement <code>var</code> pour la déclaration des variables.</p><p>La valeur d&rsquo;une variable déclarée avec <code>const</code> ne peut plus être modifiée.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>let</span> a = <span style=color:#0086f7;font-weight:700>3.14</span>;
+a = <span style=color:#0086f7;font-weight:700>6.28</span>; <span style=color:#080;background-color:#0f140f;font-style:italic>// OK
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>
+<span style=color:#fb660a;font-weight:700>const</span> b = <span style=color:#0086f7;font-weight:700>3.14</span>;
+b = <span style=color:#0086f7;font-weight:700>6.28</span>; <span style=color:#080;background-color:#0f140f;font-style:italic>// Erreur!
+</span></code></pre></div></section><section><h2 id=chaînes-de-caractères>Chaînes de caractères</h2><p>Créées avec des guillemets simples (<code>'...'</code>) ou doubles (<code>"..."</code>).</p><p><strong>Litéraux de modèle</strong>: chaînes créées entre <em>backticks</em> (`) et permettant d&rsquo;intégrer des expressions.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> country = <span style=color:#0086d2>&#34;France&#34;</span>; <span style=color:#080;background-color:#0f140f;font-style:italic>// or &#39;France&#39;
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>console.log(<span style=color:#0086d2>`I live in </span><span style=color:#0086d2>${</span>country<span style=color:#0086d2>}</span><span style=color:#0086d2>`</span>); <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;I live in France&#34;
+</span></code></pre></div></section><section><h2 id=déclaration-de-fonctions>Déclaration de fonctions</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>function</span> sayHello(name) {
+  <span style=color:#fb660a;font-weight:700>const</span> message = <span style=color:#0086d2>`Hello, </span><span style=color:#0086d2>${</span>name<span style=color:#0086d2>}</span><span style=color:#0086d2>!`</span>;
+  <span style=color:#fb660a;font-weight:700>return</span> message;
 }
 
-<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>sayHello</span>(<span style=color:#e6db74>&#34;Richard&#34;</span>)); <span style=color:#75715e>// &#34;Hello, Richard!&#34;
-</span></code></pre></div></section><section><h2 id=expressions-fonction>Expressions fonction</h2><p>Permettent de créer des fonctions anonymes.</p><p>La valeur d&rsquo;une variable JavaScript peut être une fonction.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>hello</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>name</span>) {
-  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>message</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`Hello, </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>name</span><span style=color:#e6db74>}</span><span style=color:#e6db74>!`</span>;
-  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>message</span>;
+console.log(sayHello(<span style=color:#0086d2>&#34;Richard&#34;</span>)); <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;Hello, Richard!&#34;
+</span></code></pre></div></section><section><h2 id=expressions-fonction>Expressions fonction</h2><p>Permettent de créer des fonctions anonymes.</p><p>La valeur d&rsquo;une variable JavaScript peut être une fonction.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> hello = <span style=color:#fb660a;font-weight:700>function</span>(name) {
+  <span style=color:#fb660a;font-weight:700>const</span> message = <span style=color:#0086d2>`Hello, </span><span style=color:#0086d2>${</span>name<span style=color:#0086d2>}</span><span style=color:#0086d2>!`</span>;
+  <span style=color:#fb660a;font-weight:700>return</span> message;
 };
 
-<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>hello</span>(<span style=color:#e6db74>&#34;Richard&#34;</span>)); <span style=color:#75715e>// &#34;Hello, Richard!&#34;
-</span></code></pre></div></section><section><h2 id=fonctions-fléchées>Fonctions fléchées</h2><p>&ldquo;<em>Fat arrow functions</em>&rdquo;.</p><p>Syntaxe plus concise pour créer des fonctions anonymes.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>hello</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>name</span> =&gt; {
-  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>message</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`Hello, </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>name</span><span style=color:#e6db74>}</span><span style=color:#e6db74>!`</span>;
-  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>message</span>;
+console.log(hello(<span style=color:#0086d2>&#34;Richard&#34;</span>)); <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;Hello, Richard!&#34;
+</span></code></pre></div></section><section><h2 id=fonctions-fléchées>Fonctions fléchées</h2><p>&ldquo;<em>Fat arrow functions</em>&rdquo;.</p><p>Syntaxe plus concise pour créer des fonctions anonymes.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> hello = name =&gt; {
+  <span style=color:#fb660a;font-weight:700>const</span> message = <span style=color:#0086d2>`Hello, </span><span style=color:#0086d2>${</span>name<span style=color:#0086d2>}</span><span style=color:#0086d2>!`</span>;
+  <span style=color:#fb660a;font-weight:700>return</span> message;
 };
 
-<span style=color:#75715e>// Syntaxe alternative encore plus concise
-</span><span style=color:#75715e>// const hello = name =&gt; `Hello, ${name}!`;
-</span><span style=color:#75715e></span>
-<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>hello</span>(<span style=color:#e6db74>&#34;Richard&#34;</span>)); <span style=color:#75715e>// &#34;Hello, Richard!&#34;
-</span></code></pre></div></section><section><h2 id=tableaux>Tableaux</h2><p>Plusieurs syntaxes existent pour les parcourir.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>movies</span> <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;The Wolf of Wall Street&#34;</span>, <span style=color:#e6db74>&#34;Zootopia&#34;</span>, <span style=color:#e6db74>&#34;Babysitting&#34;</span>];
-<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>movies</span>.<span style=color:#a6e22e>length</span>); <span style=color:#75715e>// 3
-</span><span style=color:#75715e></span>
-<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>movies</span>.<span style=color:#a6e22e>length</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
-  <span style=color:#75715e>// Use movies[i] to access each array element one by one
-</span><span style=color:#75715e></span>}
+<span style=color:#080;background-color:#0f140f;font-style:italic>// Syntaxe alternative encore plus concise
+</span><span style=color:#080;background-color:#0f140f;font-style:italic>// const hello = name =&gt; `Hello, ${name}!`;
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>
+console.log(hello(<span style=color:#0086d2>&#34;Richard&#34;</span>)); <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;Hello, Richard!&#34;
+</span></code></pre></div></section><section><h2 id=tableaux>Tableaux</h2><p>Plusieurs syntaxes existent pour les parcourir.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> movies = [<span style=color:#0086d2>&#34;The Wolf of Wall Street&#34;</span>, <span style=color:#0086d2>&#34;Zootopia&#34;</span>, <span style=color:#0086d2>&#34;Babysitting&#34;</span>];
+console.log(movies.length); <span style=color:#080;background-color:#0f140f;font-style:italic>// 3
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>
+<span style=color:#fb660a;font-weight:700>for</span> (<span style=color:#fb660a;font-weight:700>let</span> i = <span style=color:#0086f7;font-weight:700>0</span>; i &lt; movies.length; i++) {
+  <span style=color:#080;background-color:#0f140f;font-style:italic>// Use movies[i] to access each array element one by one
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>}
 
-<span style=color:#a6e22e>movies</span>.<span style=color:#a6e22e>forEach</span>(<span style=color:#a6e22e>movie</span> =&gt; {
-  <span style=color:#75715e>// Use movie to access each array element one by one
-</span><span style=color:#75715e></span>});
+movies.forEach(movie =&gt; {
+  <span style=color:#080;background-color:#0f140f;font-style:italic>// Use movie to access each array element one by one
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>});
 
-<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>movie</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>movies</span>) {
-  <span style=color:#75715e>// Use movie to access each array element one by one
-</span><span style=color:#75715e></span>}
-</code></pre></div></section><section><h2 id=objets>Objets</h2><p>Un objet JavaScript regroupe un ensemble de <strong>propriétés</strong> (paire clé/valeur).</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#75715e>// Création d&#39;un objet litéral
-</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>pen</span> <span style=color:#f92672>=</span> {
-  <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;ballpoint&#34;</span>,
-  <span style=color:#a6e22e>color</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;blue&#34;</span>,
-  <span style=color:#a6e22e>brand</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;Bic&#34;</span>
+<span style=color:#fb660a;font-weight:700>for</span> (<span style=color:#fb660a;font-weight:700>const</span> movie <span style=color:#fb660a;font-weight:700>of</span> movies) {
+  <span style=color:#080;background-color:#0f140f;font-style:italic>// Use movie to access each array element one by one
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>}
+</code></pre></div></section><section><h2 id=objets>Objets</h2><p>Un objet JavaScript regroupe un ensemble de <strong>propriétés</strong> (paire clé/valeur).</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#080;background-color:#0f140f;font-style:italic>// Création d&#39;un objet litéral
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>const</span> pen = {
+  type: <span style=color:#0086d2>&#34;ballpoint&#34;</span>,
+  color: <span style=color:#0086d2>&#34;blue&#34;</span>,
+  brand: <span style=color:#0086d2>&#34;Bic&#34;</span>
 };
 
-<span style=color:#75715e>// Modifcation de la valeur d&#39;une propriété
-</span><span style=color:#75715e></span><span style=color:#a6e22e>pen</span>.<span style=color:#a6e22e>color</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;red&#34;</span>;
+<span style=color:#080;background-color:#0f140f;font-style:italic>// Modifcation de la valeur d&#39;une propriété
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>pen.color = <span style=color:#0086d2>&#34;red&#34;</span>;
 
-<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>pen</span>.<span style=color:#a6e22e>type</span>);  <span style=color:#75715e>// &#34;ballpoint&#34;
-</span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>pen</span>.<span style=color:#a6e22e>color</span>); <span style=color:#75715e>// &#34;red&#34;
-</span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>pen</span>.<span style=color:#a6e22e>brand</span>); <span style=color:#75715e>// &#34;Bic&#34;
-</span></code></pre></div></section><section><h2 id=création-dobjets-à-partir-de-variables>Création d&rsquo;objets à partir de variables</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>firstName</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Baptiste&#34;</span>;
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>lastName</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Pesquet&#34;</span>;
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>twitterHandle</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;@bpesquet&#34;</span>;
+console.log(pen.type);  <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;ballpoint&#34;
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>console.log(pen.color); <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;red&#34;
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>console.log(pen.brand); <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;Bic&#34;
+</span></code></pre></div></section><section><h2 id=création-dobjets-à-partir-de-variables>Création d&rsquo;objets à partir de variables</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> firstName = <span style=color:#0086d2>&#34;Baptiste&#34;</span>;
+<span style=color:#fb660a;font-weight:700>const</span> lastName = <span style=color:#0086d2>&#34;Pesquet&#34;</span>;
+<span style=color:#fb660a;font-weight:700>const</span> twitterHandle = <span style=color:#0086d2>&#34;@bpesquet&#34;</span>;
 
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>teacher</span> <span style=color:#f92672>=</span> {<span style=color:#a6e22e>firstName</span>, <span style=color:#a6e22e>lastName</span>, <span style=color:#a6e22e>twitterHandle</span>};
+<span style=color:#fb660a;font-weight:700>const</span> teacher = {firstName, lastName, twitterHandle};
 
-<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>teacher</span>.<span style=color:#a6e22e>firstName</span>); <span style=color:#75715e>// &#34;Baptiste&#34;
-</span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>teacher</span>.<span style=color:#a6e22e>lastName</span>); <span style=color:#75715e>// &#34;Pesquet&#34;
-</span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>teacher</span>.<span style=color:#a6e22e>twitterHandle</span>); <span style=color:#75715e>// &#34;@bpesquet&#34;
-</span></code></pre></div></section><section><h2 id=déstructuration-dobjets>Déstructuration d&rsquo;objets</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>pen</span> <span style=color:#f92672>=</span> {
-  <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;ballpoint&#34;</span>,
-  <span style=color:#a6e22e>color</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;blue&#34;</span>,
-  <span style=color:#a6e22e>brand</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;Bic&#34;</span>
+console.log(teacher.firstName); <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;Baptiste&#34;
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>console.log(teacher.lastName); <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;Pesquet&#34;
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>console.log(teacher.twitterHandle); <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;@bpesquet&#34;
+</span></code></pre></div></section><section><h2 id=déstructuration-dobjets>Déstructuration d&rsquo;objets</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> pen = {
+  type: <span style=color:#0086d2>&#34;ballpoint&#34;</span>,
+  color: <span style=color:#0086d2>&#34;blue&#34;</span>,
+  brand: <span style=color:#0086d2>&#34;Bic&#34;</span>
 };
 
-<span style=color:#75715e>// Accès à 2 des propriétés de l&#39;objet
-</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>color</span>, <span style=color:#a6e22e>brand</span> } <span style=color:#f92672>=</span> <span style=color:#a6e22e>pen</span>;
+<span style=color:#080;background-color:#0f140f;font-style:italic>// Accès à 2 des propriétés de l&#39;objet
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>const</span> { color, brand } = pen;
 
-<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>color</span>); <span style=color:#75715e>// &#34;blue&#34;
-</span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>brand</span>); <span style=color:#75715e>// &#34;Bic&#34;
-</span></code></pre></div></section><section><h2 id=déstructuration-de-tableaux>Déstructuration de tableaux</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>primaryColors</span> <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;red&#34;</span>, <span style=color:#e6db74>&#34;green&#34;</span>, <span style=color:#e6db74>&#34;blue&#34;</span>];
+console.log(color); <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;blue&#34;
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>console.log(brand); <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;Bic&#34;
+</span></code></pre></div></section><section><h2 id=déstructuration-de-tableaux>Déstructuration de tableaux</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> primaryColors = [<span style=color:#0086d2>&#34;red&#34;</span>, <span style=color:#0086d2>&#34;green&#34;</span>, <span style=color:#0086d2>&#34;blue&#34;</span>];
 
-<span style=color:#66d9ef>const</span> [<span style=color:#a6e22e>red</span>, <span style=color:#a6e22e>green</span>, <span style=color:#a6e22e>blue</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>primaryColors</span>;
+<span style=color:#fb660a;font-weight:700>const</span> [red, green, blue] = primaryColors;
 
-<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>red</span>);   <span style=color:#75715e>// &#34;red&#34;
-</span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>green</span>); <span style=color:#75715e>// &#34;red&#34;
-</span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>blue</span>);  <span style=color:#75715e>// &#34;blue&#34;
-</span></code></pre></div></section><section><h2 id=opérateur-de-décomposition-spread>Opérateur de décomposition ("<em>spread</em>")</h2><p>Permet de développer une valeur itérable (chaîne, tableau&mldr;).</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>chaine</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;foo bar&#34;</span>;
-<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>chaine</span>);      <span style=color:#75715e>// &#34;foo bar&#34;
-</span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>([...<span style=color:#a6e22e>chaine</span>]); <span style=color:#75715e>// [&#34;f&#34;, &#34;o&#34;, &#34;o&#34;, &#34; &#34;, &#34;b&#34;, &#34;a&#34;, &#34;r&#34;]
-</span><span style=color:#75715e></span>
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>numbers</span> <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;one&#34;</span>, <span style=color:#e6db74>&#34;two&#34;</span>, <span style=color:#e6db74>&#34;three&#34;</span>, <span style=color:#e6db74>&#34;four&#34;</span>];
+console.log(red);   <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;red&#34;
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>console.log(green); <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;red&#34;
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>console.log(blue);  <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;blue&#34;
+</span></code></pre></div></section><section><h2 id=opérateur-de-décomposition-spread>Opérateur de décomposition ("<em>spread</em>")</h2><p>Permet de développer une valeur itérable (chaîne, tableau&mldr;).</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> chaine = <span style=color:#0086d2>&#34;foo bar&#34;</span>;
+console.log(chaine);      <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;foo bar&#34;
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>console.log([...chaine]); <span style=color:#080;background-color:#0f140f;font-style:italic>// [&#34;f&#34;, &#34;o&#34;, &#34;o&#34;, &#34; &#34;, &#34;b&#34;, &#34;a&#34;, &#34;r&#34;]
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>
+<span style=color:#fb660a;font-weight:700>const</span> numbers = [<span style=color:#0086d2>&#34;one&#34;</span>, <span style=color:#0086d2>&#34;two&#34;</span>, <span style=color:#0086d2>&#34;three&#34;</span>, <span style=color:#0086d2>&#34;four&#34;</span>];
 
-<span style=color:#66d9ef>const</span> [<span style=color:#a6e22e>one</span>, <span style=color:#a6e22e>two</span>, ...<span style=color:#a6e22e>rest</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>numbers</span>;
+<span style=color:#fb660a;font-weight:700>const</span> [one, two, ...rest] = numbers;
 
-<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>one</span>);  <span style=color:#75715e>// &#34;one&#34;
-</span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>two</span>);  <span style=color:#75715e>// &#34;two&#34;
-</span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>rest</span>); <span style=color:#75715e>// [&#34;three&#34;, &#34;four&#34;]
-</span></code></pre></div></section><section><h2 id=notion-de-méthode>Notion de méthode</h2><p>La valeur d&rsquo;une propriété peut être une donnée ou une fonction. Dans le second cas, la propriété est une <strong>méthode</strong>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>aurora</span> <span style=color:#f92672>=</span> {
-  <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;Aurora&#34;</span>,
-  <span style=color:#a6e22e>health</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>150</span>,
-  <span style=color:#a6e22e>strength</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>25</span>,
+console.log(one);  <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;one&#34;
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>console.log(two);  <span style=color:#080;background-color:#0f140f;font-style:italic>// &#34;two&#34;
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>console.log(rest); <span style=color:#080;background-color:#0f140f;font-style:italic>// [&#34;three&#34;, &#34;four&#34;]
+</span></code></pre></div></section><section><h2 id=notion-de-méthode>Notion de méthode</h2><p>La valeur d&rsquo;une propriété peut être une donnée ou une fonction. Dans le second cas, la propriété est une <strong>méthode</strong>.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> aurora = {
+  name: <span style=color:#0086d2>&#34;Aurora&#34;</span>,
+  health: <span style=color:#0086f7;font-weight:700>150</span>,
+  strength: <span style=color:#0086f7;font-weight:700>25</span>,
 
-  <span style=color:#75715e>// Renvoie la description du personnage
-</span><span style=color:#75715e></span>  <span style=color:#a6e22e>describe</span>() {
-    <span style=color:#66d9ef>return</span> <span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>name</span><span style=color:#e6db74>}</span><span style=color:#e6db74> has </span><span style=color:#e6db74>${</span><span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>health</span><span style=color:#e6db74>}</span><span style=color:#e6db74> health points
-</span><span style=color:#e6db74>      and </span><span style=color:#e6db74>${</span><span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>strength</span><span style=color:#e6db74>}</span><span style=color:#e6db74> as strength`</span>;
+  <span style=color:#080;background-color:#0f140f;font-style:italic>// Renvoie la description du personnage
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  describe() {
+    <span style=color:#fb660a;font-weight:700>return</span> <span style=color:#0086d2>`</span><span style=color:#0086d2>${</span><span style=color:#fb660a;font-weight:700>this</span>.name<span style=color:#0086d2>}</span><span style=color:#0086d2> has </span><span style=color:#0086d2>${</span><span style=color:#fb660a;font-weight:700>this</span>.health<span style=color:#0086d2>}</span><span style=color:#0086d2> health points
+</span><span style=color:#0086d2>      and </span><span style=color:#0086d2>${</span><span style=color:#fb660a;font-weight:700>this</span>.strength<span style=color:#0086d2>}</span><span style=color:#0086d2> as strength`</span>;
   }
 };
-</code></pre></div></section><section><h2 id=classes>Classes</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Character</span> {
-  <span style=color:#a6e22e>constructor</span>(<span style=color:#a6e22e>name</span>, <span style=color:#a6e22e>health</span>, <span style=color:#a6e22e>strength</span>) {
-    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>name</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>name</span>;
-    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>health</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>health</span>;
-    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>strength</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>strength</span>;
+</code></pre></div></section><section><h2 id=classes>Classes</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>class</span> Character {
+  constructor(name, health, strength) {
+    <span style=color:#fb660a;font-weight:700>this</span>.name = name;
+    <span style=color:#fb660a;font-weight:700>this</span>.health = health;
+    <span style=color:#fb660a;font-weight:700>this</span>.strength = strength;
   }
-  <span style=color:#a6e22e>describe</span>() {
-    <span style=color:#66d9ef>return</span> <span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>name</span><span style=color:#e6db74>}</span><span style=color:#e6db74> has </span><span style=color:#e6db74>${</span><span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>health</span><span style=color:#e6db74>}</span><span style=color:#e6db74> health points
-</span><span style=color:#e6db74>      and </span><span style=color:#e6db74>${</span><span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>strength</span><span style=color:#e6db74>}</span><span style=color:#e6db74> as strength`</span>;
+  describe() {
+    <span style=color:#fb660a;font-weight:700>return</span> <span style=color:#0086d2>`</span><span style=color:#0086d2>${</span><span style=color:#fb660a;font-weight:700>this</span>.name<span style=color:#0086d2>}</span><span style=color:#0086d2> has </span><span style=color:#0086d2>${</span><span style=color:#fb660a;font-weight:700>this</span>.health<span style=color:#0086d2>}</span><span style=color:#0086d2> health points
+</span><span style=color:#0086d2>      and </span><span style=color:#0086d2>${</span><span style=color:#fb660a;font-weight:700>this</span>.strength<span style=color:#0086d2>}</span><span style=color:#0086d2> as strength`</span>;
   }
 }
 
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>aurora</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Character</span>(<span style=color:#e6db74>&#34;Aurora&#34;</span>, <span style=color:#ae81ff>150</span>, <span style=color:#ae81ff>25</span>);
-<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>aurora</span>.<span style=color:#a6e22e>describe</span>());
-</code></pre></div></section><section><h2 id=modules-et-imports>Modules et imports</h2><p>JavaScript supporte la notion de <strong>module</strong> pour factoriser des éléments réutilisables.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#75715e>// Importe l&#39;élément exporté par défaut par le module
-</span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>React</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;react-native&#34;</span>;
+<span style=color:#fb660a;font-weight:700>const</span> aurora = <span style=color:#fb660a;font-weight:700>new</span> Character(<span style=color:#0086d2>&#34;Aurora&#34;</span>, <span style=color:#0086f7;font-weight:700>150</span>, <span style=color:#0086f7;font-weight:700>25</span>);
+console.log(aurora.describe());
+</code></pre></div></section><section><h2 id=modules-et-imports>Modules et imports</h2><p>JavaScript supporte la notion de <strong>module</strong> pour factoriser des éléments réutilisables.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#080;background-color:#0f140f;font-style:italic>// Importe l&#39;élément exporté par défaut par le module
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>import</span> React from <span style=color:#0086d2>&#34;react-native&#34;</span>;
 
-<span style=color:#75715e>// Importe d&#39;autres éléments exportés grâce à leur nom
-</span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>View</span>, <span style=color:#a6e22e>Text</span>, <span style=color:#a6e22e>Image</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;react-native&#34;</span>;
+<span style=color:#080;background-color:#0f140f;font-style:italic>// Importe d&#39;autres éléments exportés grâce à leur nom
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>import</span> { View, Text, Image } from <span style=color:#0086d2>&#34;react-native&#34;</span>;
 
-<span style=color:#75715e>// Importe à la fois l&#39;élément par défaut et d&#39;autres éléments
-</span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>React</span>, { <span style=color:#a6e22e>View</span>, <span style=color:#a6e22e>Text</span>, <span style=color:#a6e22e>Image</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;react-native&#34;</span>;
-</code></pre></div></section><section><h2 id=plus-de-détails-sur-javascript>Plus de détails sur JavaScript</h2><p><a href=https://developer.mozilla.org/fr/docs/Web/JavaScript>https://developer.mozilla.org/fr/docs/Web/JavaScript</a></p><p><a href=https://github.com/thejsway/thejsway/>https://github.com/thejsway/thejsway/</a></p><p><a href=https://github.com/getify/You-Dont-Know-JS>https://github.com/getify/You-Dont-Know-JS</a></p></section><section><h2 id=environnement-de-travail>Environnement de travail</h2></section><section><p><img src=images/node-logo.png alt="Node logo"></p><ul><li><p>Plate-forme JavaScript basée sur le moteur d&rsquo;exécution V8 de Chrome.</p></li><li><p>Permet de créer des applications JS hors du navigateur (serveur, mobile, etc).</p></li><li><p>Supporte un riche écosystème de librairies en tout genre installables sous forme de <strong>packages</strong>.</p></li></ul></section><section><h2 id=gestion-des-dépendances>Gestion des dépendances</h2><p>Le standard historique est <a href=https://www.npmjs.com/>npm</a>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>npm init <span style=color:#75715e># Create a minimal package.json file</span>
+<span style=color:#080;background-color:#0f140f;font-style:italic>// Importe à la fois l&#39;élément par défaut et d&#39;autres éléments
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>import</span> React, { View, Text, Image } from <span style=color:#0086d2>&#34;react-native&#34;</span>;
+</code></pre></div></section><section><h2 id=plus-de-détails-sur-javascript>Plus de détails sur JavaScript</h2><p><a href=https://developer.mozilla.org/fr/docs/Web/JavaScript>https://developer.mozilla.org/fr/docs/Web/JavaScript</a></p><p><a href=https://github.com/thejsway/thejsway/>https://github.com/thejsway/thejsway/</a></p><p><a href=https://github.com/getify/You-Dont-Know-JS>https://github.com/getify/You-Dont-Know-JS</a></p></section><section><h2 id=environnement-de-travail>Environnement de travail</h2></section><section><p><img src=images/node-logo.png alt="Node logo"></p><ul><li><p>Plate-forme JavaScript basée sur le moteur d&rsquo;exécution V8 de Chrome.</p></li><li><p>Permet de créer des applications JS hors du navigateur (serveur, mobile, etc).</p></li><li><p>Supporte un riche écosystème de librairies en tout genre installables sous forme de <strong>packages</strong>.</p></li></ul></section><section><h2 id=gestion-des-dépendances>Gestion des dépendances</h2><p>Le standard historique est <a href=https://www.npmjs.com/>npm</a>.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>npm init <span style=color:#080;background-color:#0f140f;font-style:italic># Create a minimal package.json file</span>
 
-npm install &lt;package name&gt; <span style=color:#75715e># Install &lt;package name&gt; locally</span>
-npm install -g &lt;package name&gt; <span style=color:#75715e># Install &lt;package name&gt; globally</span>
-npm install <span style=color:#75715e># Install all packages listed in package.json</span>
+npm install &lt;package name&gt; <span style=color:#080;background-color:#0f140f;font-style:italic># Install &lt;package name&gt; locally</span>
+npm install -g &lt;package name&gt; <span style=color:#080;background-color:#0f140f;font-style:italic># Install &lt;package name&gt; globally</span>
+npm install <span style=color:#080;background-color:#0f140f;font-style:italic># Install all packages listed in package.json</span>
 
-npm update    <span style=color:#75715e># Update local packages to latest version</span>
-npm update -g <span style=color:#75715e># Update global packages to latest version</span>
+npm update    <span style=color:#080;background-color:#0f140f;font-style:italic># Update local packages to latest version</span>
+npm update -g <span style=color:#080;background-color:#0f140f;font-style:italic># Update global packages to latest version</span>
 
-npm list    <span style=color:#75715e># List locally installed packages</span>
-npm list -g <span style=color:#75715e># List globally installed packages</span>
+npm list    <span style=color:#080;background-color:#0f140f;font-style:italic># List locally installed packages</span>
+npm list -g <span style=color:#080;background-color:#0f140f;font-style:italic># List globally installed packages</span>
 
-<span style=color:#75715e># Search the package index for &lt;package name&gt;</span>
+<span style=color:#080;background-color:#0f140f;font-style:italic># Search the package index for &lt;package name&gt;</span>
 npm search &lt;package name&gt;
-</code></pre></div><p>Autre possibilité : <a href=https://yarnpkg.com/lang/en/>yarn</a> (plus récent).</p></section><section><h2 id=le-fichier-packagejson>Le fichier package.json</h2><p>Associé à un fichier verrou <code>package-lock.json</code>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;main&#34;</span>: <span style=color:#e6db74>&#34;node_modules/expo/AppEntry.js&#34;</span>,
-  <span style=color:#f92672>&#34;scripts&#34;</span>: {
-    <span style=color:#f92672>&#34;start&#34;</span>: <span style=color:#e6db74>&#34;expo start&#34;</span>,
-    <span style=color:#f92672>&#34;android&#34;</span>: <span style=color:#e6db74>&#34;expo start --android&#34;</span>,
-    <span style=color:#f92672>&#34;ios&#34;</span>: <span style=color:#e6db74>&#34;expo start --ios&#34;</span>,
-    <span style=color:#f92672>&#34;eject&#34;</span>: <span style=color:#e6db74>&#34;expo eject&#34;</span>
+</code></pre></div><p>Autre possibilité : <a href=https://yarnpkg.com/lang/en/>yarn</a> (plus récent).</p></section><section><h2 id=le-fichier-packagejson>Le fichier package.json</h2><p>Associé à un fichier verrou <code>package-lock.json</code>.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#fb660a;font-weight:700>&#34;main&#34;</span>: <span style=color:#0086d2>&#34;node_modules/expo/AppEntry.js&#34;</span>,
+  <span style=color:#fb660a;font-weight:700>&#34;scripts&#34;</span>: {
+    <span style=color:#fb660a;font-weight:700>&#34;start&#34;</span>: <span style=color:#0086d2>&#34;expo start&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;android&#34;</span>: <span style=color:#0086d2>&#34;expo start --android&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;ios&#34;</span>: <span style=color:#0086d2>&#34;expo start --ios&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;eject&#34;</span>: <span style=color:#0086d2>&#34;expo eject&#34;</span>
   },
-  <span style=color:#f92672>&#34;dependencies&#34;</span>: {
-    <span style=color:#f92672>&#34;react-native&#34;</span>: <span style=color:#e6db74>&#34;https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz&#34;</span>,
-    <span style=color:#f92672>&#34;expo&#34;</span>: <span style=color:#e6db74>&#34;~35.0.0&#34;</span>,
-    <span style=color:#f92672>&#34;react&#34;</span>: <span style=color:#e6db74>&#34;16.8.3&#34;</span>
+  <span style=color:#fb660a;font-weight:700>&#34;dependencies&#34;</span>: {
+    <span style=color:#fb660a;font-weight:700>&#34;react-native&#34;</span>: <span style=color:#0086d2>&#34;https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;expo&#34;</span>: <span style=color:#0086d2>&#34;~35.0.0&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;react&#34;</span>: <span style=color:#0086d2>&#34;16.8.3&#34;</span>
   },
-  <span style=color:#f92672>&#34;devDependencies&#34;</span>: {
-    <span style=color:#f92672>&#34;babel-preset-expo&#34;</span>: <span style=color:#e6db74>&#34;~8.0.0&#34;</span>
+  <span style=color:#fb660a;font-weight:700>&#34;devDependencies&#34;</span>: {
+    <span style=color:#fb660a;font-weight:700>&#34;babel-preset-expo&#34;</span>: <span style=color:#0086d2>&#34;~8.0.0&#34;</span>
   },
-  <span style=color:#f92672>&#34;private&#34;</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#fb660a;font-weight:700>&#34;private&#34;</span>: <span style=color:#fb660a;font-weight:700>true</span>
 }
 </code></pre></div></section><section><h2 id=versionnage-des-dépendances>Versionnage des dépendances</h2><p>Versionnage sémantique <strong>X.Y.Z</strong></p><ul><li>X = version majeure (changements potentiellement non rétrocompatibles).</li><li>Y = version mineure.</li><li>Z = patch.</li></ul><p><strong>^1.1.1</strong> équivaut à $\geq$ 1.1.1 et $&lt;$ 2.0.0</p><p><strong>~1.1.1</strong> équivaut à $\geq$ 1.1.1 et $&lt;$ 1.2.0</p><p><strong>1.1.1</strong> cible une version exacte.</p></section><section><h2 id=formatage-automatique-du-code>Formatage automatique du code</h2><p><a href=https://prettier.io/>Prettier</a> est un outil indispensable.</p><p><a href=https://prettier.io/><img src=images/prettier-logo-light.png alt="Prettier logo"></a></p></section><section><h2 id=analyse-du-code>Analyse du code</h2><p><a href=https://eslint.org/>ESLint</a> est l&rsquo;outil le plus utilisé. Sa configuration se fait via un fichier <code>.eslintrc.json</code>.</p><pre><code>{
   &quot;extends&quot;: [&quot;airbnb&quot;, &quot;prettier&quot;],

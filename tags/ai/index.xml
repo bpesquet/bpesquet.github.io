@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ai on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/tags/ai/</link><description>👨‍💻 Baptiste Pesquet (ai)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 09 Jul 2018 08:48:56 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>PAISS 2018 : le debrief</title><link>https://www.bpesquet.fr/posts/paiss-2018-debrief/</link><pubDate>Mon, 09 Jul 2018 08:48:56 +0200</pubDate><guid>https://www.bpesquet.fr/posts/paiss-2018-debrief/</guid><description>&lt;p>La session 2018 de la &lt;em>summer school&lt;/em> de l&amp;rsquo;INRIA consacrée à l&amp;rsquo;IA, nommée &lt;a href="https://project.inria.fr/paiss/">PAISS&lt;/a>, s&amp;rsquo;est déroulée à Grenoble du 2 au 6 juillet 2018. Voici un petit compte-rendu de ce qui s&amp;rsquo;y est dit et fait.&lt;/p>
+&lt;p>&lt;img src="https://project.inria.fr/paiss/files/2018/04/te%CC%82tie%CC%80re-3.jpg" alt="Logo PAISS">&lt;/p>
+&lt;p>Le P de PAISS correspond à l&amp;rsquo;institut &lt;a href="https://inria.fr/actualite/actualites-inria/creation-de-l-institut-prairie">PRAIRIE&lt;/a>, le centre français d&amp;rsquo;excellence en IA dont la création a été annoncée lors du sommet &lt;a href="https://www.aiforhumanity.fr/">AI for Humanity&lt;/a> en mars 2018.&lt;/p>
+&lt;h2 id="quelques-chiffres">Quelques chiffres&lt;/h2>
+&lt;p>L&amp;rsquo;école d&amp;rsquo;été 2018 a rassemblé environ 200 participants sélectionnés parmi plus de 700 candidatures. 44 nationalités étaient représentées. La composition du public était la suivante :&lt;/p>
+&lt;ul>
+&lt;li>60% d&amp;rsquo;étudiants, presque tous thésards ou post-doctorants ;&lt;/li>
+&lt;li>15% d&amp;rsquo;académiques (dont votre serviteur) ;&lt;/li>
+&lt;li>25% de professionnels.&lt;/li>
+&lt;/ul>
+&lt;p>De quoi prendre un petit coup de vieux au milieu de nombreux visages juvéniles&amp;hellip;&lt;/p>
+&lt;p>En dépit des efforts des organisateurs, il n&amp;rsquo;y avait &amp;ldquo;que&amp;rdquo; 25% de femmes parmi les participants. Elles ont pourtant toute leur place en IA comme dans les autres secteurs scientifiques. Allez les filles !&lt;/p>
+&lt;p>L&amp;rsquo;agenda de l&amp;rsquo;école d&amp;rsquo;été fut très dense, avec au total 15 conférences et 3 sessions pratiques réparties sur cinq jours. Le peu de temps restant fut occupé par une soirée de bienvenue sur les hauteurs de Grenoble, une session &amp;ldquo;posters&amp;rdquo; et une réception dans les somptueux locaux de &lt;a href="http://www.europe.naverlabs.com/">Naver Labs&lt;/a>, l&amp;rsquo;ancien laboratoire de recherche en IA de Xerox.&lt;/p>
+&lt;figure>
+&lt;img src="images/Grenoble_Bastille.jpg"
+alt="Vue de Grenoble depuis la Bastille"/> &lt;figcaption>
+&lt;p>Vue de Grenoble depuis la Bastille&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;h2 id="le-contenu">Le contenu&lt;/h2>
+&lt;p>Le casting des intervenants a rassemblé de nombreuses pointures de la recherche en IA, dont une véritable &lt;em>dream team&lt;/em> francophone composée de Yann LeCun (patron de l&amp;rsquo;IA chez Facebook), Rémi Munos (responsable du laboratoire DeepMind à Paris), Hugo Larochelle (Google Brain) et bien d&amp;rsquo;autres.&lt;/p>
+&lt;figure>
+&lt;img src="images/paiss_selfie.jpg"
+alt="Je sais, on avait dit pas de selfie avec Yann LeCun&amp;amp;hellip;"/> &lt;figcaption>
+&lt;p>Je sais, on avait dit pas de selfie avec Yann LeCun&amp;hellip;&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Les sujets présentés correspondent aux grands axes actuels de la recherche en IA : apprentissages semi-supervisé et non supervisé, apprentissage profond par renforcement, meta-learning (apprendre à apprendre), etc. Les principaux thèmes d&amp;rsquo;application étaient la vision par ordinateur, le traitement du langage naturel (NLP), et dans une moindre mesure la robotique.&lt;/p>
+&lt;p>Le niveau général des interventions, toutes en anglais, était très élevé. Après une contextualisation plus ou moins brève, la grande majorité des intervenants a présenté ses résultats de recherche les plus récents. Sans surprise, le Deep Learning occupe actuellement une position quasiment hégémonique. Les réseaux profonds convolutifs (CNN) sont mis à toutes les sauces dans de nombreux domaines, comme par exemple le NLP. Cela n&amp;rsquo;est pas sans créer quelques petites tensions avec les tenants de techniques plus traditionnelles et les défenseurs d&amp;rsquo;approches scientifiques alternatives.&lt;/p>
+&lt;p>Voici quelques liens pour accéder au contenu présenté :&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://project.inria.fr/paiss/program/">Diaporamas&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/almazan/paiss">Session pratique sur la recherche visuelle&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/criteo-research/paiss_deeprl">Session pratique sur l&amp;rsquo;apprentissage profond par renforcement&lt;/a>&lt;/li>
+&lt;li>La session pratique sur PyTorch correspond aux &lt;a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html">tutoriels&lt;/a> du site officiel.&lt;/li>
+&lt;/ul>
+&lt;h2 id="bilan-personnel">Bilan personnel&lt;/h2>
+&lt;p>Cette école d&amp;rsquo;été m&amp;rsquo;a permis de mesurer l&amp;rsquo;écart entre mes connaissances actuelles et l&amp;rsquo;état de l&amp;rsquo;art. J&amp;rsquo;ai bien l&amp;rsquo;intention de continuer à travailler pour réduire cet écart, même si mes objectifs en matière d&amp;rsquo;IA sont avant tout d&amp;rsquo;ordre pédagogique (pour le moment).&lt;/p>
+&lt;p>La recherche en IA semble plutôt une affaire de mathématiciens que d&amp;rsquo;informaticiens. Toutes les présentations se sont basées sur un formalisme mathématique important, avec dans certains cas la mobilisation de concepts qui m&amp;rsquo;ont ramené tout droit à mes lointaines années de prépa.&lt;/p>
+&lt;figure>
+&lt;img src="images/paiss_bottou.jpg"
+alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissage non supervisé"/> &lt;figcaption>
+&lt;p>Extrait de la présentation de Léon Bottou sur l&amp;rsquo;apprentissage non supervisé&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Une expérience parfois douloureuse : pas facile de redevenir étudiant et de se sentir largué par le prof. Je tâcherai de m&amp;rsquo;en souvenir pour mes prochains cours :)&lt;/p>
+&lt;p>Malgré une variété des thèmes et un niveau des interventions très stimulantes intellectuellement, cette école d&amp;rsquo;été a parfois ressemblé à un &lt;em>workshop&lt;/em> de recherche. L&amp;rsquo;enseignant que je suis a regretté que les aspects didactiques et pédagogiques aient été, à mon sens, trop négligés par certains intervenants. Avec un meilleur niveau théorique, mon impression aurait probablement été différente.&lt;/p>
+&lt;p>Je reste cependant très content d&amp;rsquo;avoir participé à cette école d&amp;rsquo;été qui a été l&amp;rsquo;occasion de cogitations intenses et de rencontres variées et enrichissantes.&lt;/p>
+&lt;p>D&amp;rsquo;après mes discussions avec les organisateurs, la prochaine session devrait avoir lieu à Paris en 2019. Avis aux amateurs !&lt;/p></description></item></channel></rss>

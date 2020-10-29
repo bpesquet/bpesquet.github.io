@@ -1,185 +1,185 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>React Native : gestion de l'UI</title><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/reveal.css><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/theme/white.css></head><body><div class=reveal><div class=slides><section><h1>React Native : gestion de l'UI</h1><p><a href=https://ensc.bordeaux-inp.fr>Ecole Nationale Supérieure de Cognitique</a></p><p><a href=https://www.bpesquet.fr>Baptiste Pesquet</a></p></section><section><h2 id=sommaire>Sommaire</h2><ul><li>Cycle de vie d&rsquo;un composant</li><li>Style et positionnement</li><li>Gestion de la navigation</li></ul></section><section><h2 id=cycle-de-vie-dun-composant>Cycle de vie d&rsquo;un composant</h2></section><section><h2 id=notion-de-cycle-de-vie>Notion de cycle de vie</h2><p>Les composants RN suivent un cycle de vie bien défini composé d&rsquo;étapes : <strong>montage</strong>, <strong>rendu</strong>, <strong>mise à jour</strong>, <strong>démontage</strong> et <strong>suppression</strong>.</p><p><a href=http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/><img src=images/react-lifecycle.png alt="React lifecycle"></a></p></section><section><h2 id=méthodes-liées-au-cycle-de-vie>Méthodes liées au cycle de vie</h2><p>Les redéfinir permet d&rsquo;exécuter du code spécifique.</p><ol><li><code>constructor(props)</code> : initialisation des propriétés et de l&rsquo;état.</li><li><code>render()</code> : renvoi d&rsquo;un élément React Native.</li><li><code>componentDidMount()</code> : appels asynchrones.</li><li><code>shouldComponentUpdate(nextProps, nextState)</code> : renvoi d&rsquo;un booléen pour annuler la mise à jour.</li><li><code>componentDidUpdate(prevProps, prevState)</code>.</li></ol></section><section><h2 id=style-et-positionnement>Style et positionnement</h2></section><section><h2 id=gestion-du-style>Gestion du style</h2><p>Propriété <code>style</code> pour les composants de base.</p><p>Semblable à CSS avec nommage <em>camelCase</em>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>React</span>, { <span style=color:#a6e22e>Component</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;react&#39;</span>;
-<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>StyleSheet</span>, <span style=color:#a6e22e>Text</span>, <span style=color:#a6e22e>View</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;react-native&#39;</span>;
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>React Native : gestion de l'UI</title><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/reveal.css><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/theme/white.css></head><body><div class=reveal><div class=slides><section><h1>React Native : gestion de l'UI</h1><p><a href=https://ensc.bordeaux-inp.fr>Ecole Nationale Supérieure de Cognitique</a></p><p><a href=https://www.bpesquet.fr>Baptiste Pesquet</a></p></section><section><h2 id=sommaire>Sommaire</h2><ul><li>Cycle de vie d&rsquo;un composant</li><li>Style et positionnement</li><li>Gestion de la navigation</li></ul></section><section><h2 id=cycle-de-vie-dun-composant>Cycle de vie d&rsquo;un composant</h2></section><section><h2 id=notion-de-cycle-de-vie>Notion de cycle de vie</h2><p>Les composants RN suivent un cycle de vie bien défini composé d&rsquo;étapes : <strong>montage</strong>, <strong>rendu</strong>, <strong>mise à jour</strong>, <strong>démontage</strong> et <strong>suppression</strong>.</p><p><a href=http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/><img src=images/react-lifecycle.png alt="React lifecycle"></a></p></section><section><h2 id=méthodes-liées-au-cycle-de-vie>Méthodes liées au cycle de vie</h2><p>Les redéfinir permet d&rsquo;exécuter du code spécifique.</p><ol><li><code>constructor(props)</code> : initialisation des propriétés et de l&rsquo;état.</li><li><code>render()</code> : renvoi d&rsquo;un élément React Native.</li><li><code>componentDidMount()</code> : appels asynchrones.</li><li><code>shouldComponentUpdate(nextProps, nextState)</code> : renvoi d&rsquo;un booléen pour annuler la mise à jour.</li><li><code>componentDidUpdate(prevProps, prevState)</code>.</li></ol></section><section><h2 id=style-et-positionnement>Style et positionnement</h2></section><section><h2 id=gestion-du-style>Gestion du style</h2><p>Propriété <code>style</code> pour les composants de base.</p><p>Semblable à CSS avec nommage <em>camelCase</em>.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>import</span> React, { Component } from <span style=color:#0086d2>&#39;react&#39;</span>;
+<span style=color:#fb660a;font-weight:700>import</span> { StyleSheet, Text, View } from <span style=color:#0086d2>&#39;react-native&#39;</span>;
 
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>styles</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>StyleSheet</span>.<span style=color:#a6e22e>create</span>({
-  <span style=color:#a6e22e>bigblue</span><span style=color:#f92672>:</span> {
-    <span style=color:#a6e22e>color</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;blue&#39;</span>,
-    <span style=color:#a6e22e>fontWeight</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;bold&#39;</span>,
-    <span style=color:#a6e22e>fontSize</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>30</span>,
+<span style=color:#fb660a;font-weight:700>const</span> styles = StyleSheet.create({
+  bigblue: {
+    color: <span style=color:#0086d2>&#39;blue&#39;</span>,
+    fontWeight: <span style=color:#0086d2>&#39;bold&#39;</span>,
+    fontSize: <span style=color:#0086f7;font-weight:700>30</span>,
   },
-  <span style=color:#a6e22e>red</span><span style=color:#f92672>:</span> {
-    <span style=color:#a6e22e>color</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;red&#39;</span>,
+  red: {
+    color: <span style=color:#0086d2>&#39;red&#39;</span>,
   },
 });
 
-<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>LotsOfStyles</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>Component</span> {
-  <span style=color:#a6e22e>render</span>() {
-    <span style=color:#66d9ef>return</span> (
-      &lt;<span style=color:#f92672>View</span>&gt;
-        &lt;<span style=color:#f92672>Text</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>styles</span>.<span style=color:#a6e22e>red</span>}&gt;<span style=color:#a6e22e>just</span> <span style=color:#a6e22e>red</span>&lt;/<span style=color:#f92672>Text</span>&gt;
-        &lt;<span style=color:#f92672>Text</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>styles</span>.<span style=color:#a6e22e>bigblue</span>}&gt;<span style=color:#a6e22e>just</span> <span style=color:#a6e22e>bigblue</span>&lt;/<span style=color:#f92672>Text</span>&gt;
-        &lt;<span style=color:#f92672>Text</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{[<span style=color:#a6e22e>styles</span>.<span style=color:#a6e22e>bigblue</span>, <span style=color:#a6e22e>styles</span>.<span style=color:#a6e22e>red</span>]}&gt;<span style=color:#a6e22e>bigblue</span>, <span style=color:#a6e22e>then</span> <span style=color:#a6e22e>red</span>&lt;/<span style=color:#f92672>Text</span>&gt;
-        &lt;<span style=color:#f92672>Text</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{[<span style=color:#a6e22e>styles</span>.<span style=color:#a6e22e>red</span>, <span style=color:#a6e22e>styles</span>.<span style=color:#a6e22e>bigblue</span>]}&gt;<span style=color:#a6e22e>red</span>, <span style=color:#a6e22e>then</span> <span style=color:#a6e22e>bigblue</span>&lt;/<span style=color:#f92672>Text</span>&gt;
-      &lt;/<span style=color:#f92672>View</span>&gt;
+<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> LotsOfStyles <span style=color:#fb660a;font-weight:700>extends</span> Component {
+  render() {
+    <span style=color:#fb660a;font-weight:700>return</span> (
+      &lt;<span style=color:#fb660a;font-weight:700>View</span>&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>Text</span> <span style=color:#ff0086;font-weight:700>style</span>={styles.red}&gt;just red&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>Text</span> <span style=color:#ff0086;font-weight:700>style</span>={styles.bigblue}&gt;just bigblue&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>Text</span> <span style=color:#ff0086;font-weight:700>style</span>={[styles.bigblue, styles.red]}&gt;bigblue, then red&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>Text</span> <span style=color:#ff0086;font-weight:700>style</span>={[styles.red, styles.bigblue]}&gt;red, then bigblue&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;
+      &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
     );
   }
 }
-</code></pre></div></section><section><h2 id=gestion-des-dimensions>Gestion des dimensions</h2><p>Deux possibilités :</p><ul><li>Dimensions fixes</li><li>Dimensions flexibles</li></ul></section><section><h2 id=dimensions-fixes>Dimensions fixes</h2><p>Utile pour les composants qui doivent toujours être affichés à la même taille.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>React</span>, { <span style=color:#a6e22e>Component</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;react&#39;</span>;
-<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>View</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;react-native&#39;</span>;
+</code></pre></div></section><section><h2 id=gestion-des-dimensions>Gestion des dimensions</h2><p>Deux possibilités :</p><ul><li>Dimensions fixes</li><li>Dimensions flexibles</li></ul></section><section><h2 id=dimensions-fixes>Dimensions fixes</h2><p>Utile pour les composants qui doivent toujours être affichés à la même taille.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>import</span> React, { Component } from <span style=color:#0086d2>&#39;react&#39;</span>;
+<span style=color:#fb660a;font-weight:700>import</span> { View } from <span style=color:#0086d2>&#39;react-native&#39;</span>;
 
-<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>FixedDimensionsBasics</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>Component</span> {
-  <span style=color:#a6e22e>render</span>() {
-    <span style=color:#66d9ef>return</span> (
-      &lt;<span style=color:#f92672>View</span>&gt;
-        &lt;<span style=color:#f92672>View</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{{<span style=color:#a6e22e>width</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>50</span>, <span style=color:#a6e22e>height</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>50</span>, <span style=color:#a6e22e>backgroundColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;powderblue&#39;</span>}} /&gt;
-        &lt;<span style=color:#f92672>View</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{{<span style=color:#a6e22e>width</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>100</span>, <span style=color:#a6e22e>height</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>100</span>, <span style=color:#a6e22e>backgroundColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;skyblue&#39;</span>}} /&gt;
-        &lt;<span style=color:#f92672>View</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{{<span style=color:#a6e22e>width</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>150</span>, <span style=color:#a6e22e>height</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>150</span>, <span style=color:#a6e22e>backgroundColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;steelblue&#39;</span>}} /&gt;
-      &lt;/<span style=color:#f92672>View</span>&gt;
+<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> FixedDimensionsBasics <span style=color:#fb660a;font-weight:700>extends</span> Component {
+  render() {
+    <span style=color:#fb660a;font-weight:700>return</span> (
+      &lt;<span style=color:#fb660a;font-weight:700>View</span>&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={{width: <span style=color:#0086f7;font-weight:700>50</span>, height: <span style=color:#0086f7;font-weight:700>50</span>, backgroundColor: <span style=color:#0086d2>&#39;powderblue&#39;</span>}} /&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={{width: <span style=color:#0086f7;font-weight:700>100</span>, height: <span style=color:#0086f7;font-weight:700>100</span>, backgroundColor: <span style=color:#0086d2>&#39;skyblue&#39;</span>}} /&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={{width: <span style=color:#0086f7;font-weight:700>150</span>, height: <span style=color:#0086f7;font-weight:700>150</span>, backgroundColor: <span style=color:#0086d2>&#39;steelblue&#39;</span>}} /&gt;
+      &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
     );
   }
 }
-</code></pre></div></section><section><h2 id=dimensions-flexibles>Dimensions flexibles</h2><p>Les dimensions s&rsquo;adaptent à l&rsquo;espace disponible.</p><p><code>flex:1</code> => espace partagé équitablement entre tous les composants d&rsquo;un même parent. <a href=https://snack.expo.io/@bpesquet/dimensions>Démo</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>React</span>, { <span style=color:#a6e22e>Component</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;react&#39;</span>;
-<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>View</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;react-native&#39;</span>;
+</code></pre></div></section><section><h2 id=dimensions-flexibles>Dimensions flexibles</h2><p>Les dimensions s&rsquo;adaptent à l&rsquo;espace disponible.</p><p><code>flex:1</code> => espace partagé équitablement entre tous les composants d&rsquo;un même parent. <a href=https://snack.expo.io/@bpesquet/dimensions>Démo</a></p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>import</span> React, { Component } from <span style=color:#0086d2>&#39;react&#39;</span>;
+<span style=color:#fb660a;font-weight:700>import</span> { View } from <span style=color:#0086d2>&#39;react-native&#39;</span>;
 
-<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>FlexDimensionsBasics</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>Component</span> {
-  <span style=color:#a6e22e>render</span>() {
-    <span style=color:#66d9ef>return</span> (
-      <span style=color:#75715e>// Try removing the `flex: 1` on the parent View.
-</span><span style=color:#75715e></span>      <span style=color:#75715e>// The parent will not have dimensions, so the children can&#39;t expand.
-</span><span style=color:#75715e></span>      <span style=color:#75715e>// What if you add `height: 300` instead of `flex: 1`?
-</span><span style=color:#75715e></span>      &lt;<span style=color:#f92672>View</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{{<span style=color:#a6e22e>flex</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>}}&gt;
-        &lt;<span style=color:#f92672>View</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{{<span style=color:#a6e22e>flex</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>, <span style=color:#a6e22e>backgroundColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;powderblue&#39;</span>}} /&gt;
-        &lt;<span style=color:#f92672>View</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{{<span style=color:#a6e22e>flex</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>2</span>, <span style=color:#a6e22e>backgroundColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;skyblue&#39;</span>}} /&gt;
-        &lt;<span style=color:#f92672>View</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{{<span style=color:#a6e22e>flex</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>3</span>, <span style=color:#a6e22e>backgroundColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;steelblue&#39;</span>}} /&gt;
-      &lt;/<span style=color:#f92672>View</span>&gt;
+<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> FlexDimensionsBasics <span style=color:#fb660a;font-weight:700>extends</span> Component {
+  render() {
+    <span style=color:#fb660a;font-weight:700>return</span> (
+      <span style=color:#080;background-color:#0f140f;font-style:italic>// Try removing the `flex: 1` on the parent View.
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>      <span style=color:#080;background-color:#0f140f;font-style:italic>// The parent will not have dimensions, so the children can&#39;t expand.
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>      <span style=color:#080;background-color:#0f140f;font-style:italic>// What if you add `height: 300` instead of `flex: 1`?
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>      &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={{flex: <span style=color:#0086f7;font-weight:700>1</span>}}&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={{flex: <span style=color:#0086f7;font-weight:700>1</span>, backgroundColor: <span style=color:#0086d2>&#39;powderblue&#39;</span>}} /&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={{flex: <span style=color:#0086f7;font-weight:700>2</span>, backgroundColor: <span style=color:#0086d2>&#39;skyblue&#39;</span>}} /&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={{flex: <span style=color:#0086f7;font-weight:700>3</span>, backgroundColor: <span style=color:#0086d2>&#39;steelblue&#39;</span>}} /&gt;
+      &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
     );
   }
 }
-</code></pre></div></section><section><h2 id=flexbox>Flexbox</h2><ul><li>Mode de mise en page pour les éléments situés à l&rsquo;intérieur d&rsquo;un conteneur.</li><li>Objectif : répartir au mieux l&rsquo;espace disponible.</li></ul><p><img src=images/flexbox_terminology.png alt="Flexbox terminology"></p></section><section><h2 id=flexdirection--flux-des-éléments><code>flexDirection</code> : flux des éléments</h2><p><code>column</code> (par défaut), <code>row</code>, <code>column-reverse</code>, <code>row-reverse</code>.</p><p><a href=https://css-tricks.com/snippets/css/a-guide-to-flexbox/><img src=images/flexbox_flex_direction.png alt="Flex direction"></a></p></section><section><h2 id=justifycontent--axe-principal><code>justifyContent</code> : axe principal</h2><p><a href=https://css-tricks.com/snippets/css/a-guide-to-flexbox/><img src=images/flexbox_justify_content.png alt="Flexbox: justify content"></a></p></section><section><h2 id=alignitems--axe-secondaire><code>alignItems</code> : axe secondaire</h2><p><a href=https://css-tricks.com/snippets/css/a-guide-to-flexbox/><img src=images/flexbox_align_items.png alt="Flexbox: align Items"></a></p></section><section><h2 id=gestion-de-la-navigation>Gestion de la navigation</h2></section><section><h2 id=react-navigation>React Navigation</h2><ul><li>Composant issu de la communauté des développeurs RN.</li><li>Devenu le standard pour les applications multi-vues</li></ul><p><a href=https://reactnavigation.org><img src=images/react_navigation_logo.png alt="React Navigation logo"></a></p></section><section><h2 id=installation-de-react-navigation>Installation de react-navigation</h2><p>Utiliser <code>expo install</code> au lieu de <code>npm install</code> assure l&rsquo;installation de versions compatibles avec celle d&rsquo;Expo.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Core components and dependencies</span>
+</code></pre></div></section><section><h2 id=flexbox>Flexbox</h2><ul><li>Mode de mise en page pour les éléments situés à l&rsquo;intérieur d&rsquo;un conteneur.</li><li>Objectif : répartir au mieux l&rsquo;espace disponible.</li></ul><p><img src=images/flexbox_terminology.png alt="Flexbox terminology"></p></section><section><h2 id=flexdirection--flux-des-éléments><code>flexDirection</code> : flux des éléments</h2><p><code>column</code> (par défaut), <code>row</code>, <code>column-reverse</code>, <code>row-reverse</code>.</p><p><a href=https://css-tricks.com/snippets/css/a-guide-to-flexbox/><img src=images/flexbox_flex_direction.png alt="Flex direction"></a></p></section><section><h2 id=justifycontent--axe-principal><code>justifyContent</code> : axe principal</h2><p><a href=https://css-tricks.com/snippets/css/a-guide-to-flexbox/><img src=images/flexbox_justify_content.png alt="Flexbox: justify content"></a></p></section><section><h2 id=alignitems--axe-secondaire><code>alignItems</code> : axe secondaire</h2><p><a href=https://css-tricks.com/snippets/css/a-guide-to-flexbox/><img src=images/flexbox_align_items.png alt="Flexbox: align Items"></a></p></section><section><h2 id=gestion-de-la-navigation>Gestion de la navigation</h2></section><section><h2 id=react-navigation>React Navigation</h2><ul><li>Composant issu de la communauté des développeurs RN.</li><li>Devenu le standard pour les applications multi-vues</li></ul><p><a href=https://reactnavigation.org><img src=images/react_navigation_logo.png alt="React Navigation logo"></a></p></section><section><h2 id=installation-de-react-navigation>Installation de react-navigation</h2><p>Utiliser <code>expo install</code> au lieu de <code>npm install</code> assure l&rsquo;installation de versions compatibles avec celle d&rsquo;Expo.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#080;background-color:#0f140f;font-style:italic># Core components and dependencies</span>
 expo install react-navigation react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context
 
-<span style=color:#75715e># StackNavigator dependencies</span>
+<span style=color:#080;background-color:#0f140f;font-style:italic># StackNavigator dependencies</span>
 expo install react-navigation-stack @react-native-community/masked-view
 
-<span style=color:#75715e># BottomTabNavigator dependencies</span>
+<span style=color:#080;background-color:#0f140f;font-style:italic># BottomTabNavigator dependencies</span>
 expo install react-navigation-tabs
 
-<span style=color:#75715e># DrawerNavigator dependencies</span>
+<span style=color:#080;background-color:#0f140f;font-style:italic># DrawerNavigator dependencies</span>
 expo install react-navigation-drawer
-</code></pre></div></section><section><h2 id=stacknavigator><code>StackNavigator</code></h2><p>Principe similaire au web : gestion d&rsquo;une pile de vues.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>AppNavigator</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createStackNavigator</span>(
+</code></pre></div></section><section><h2 id=stacknavigator><code>StackNavigator</code></h2><p>Principe similaire au web : gestion d&rsquo;une pile de vues.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>const</span> AppNavigator = createStackNavigator(
   {
-    <span style=color:#a6e22e>Home</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>HomeScreen</span>,
-    <span style=color:#a6e22e>Details</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>DetailsScreen</span>,
+    Home: HomeScreen,
+    Details: DetailsScreen,
   },
   {
-    <span style=color:#a6e22e>initialRouteName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;Home&#39;</span>,
+    initialRouteName: <span style=color:#0086d2>&#39;Home&#39;</span>,
   }
 );
 
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>AppContainer</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createAppContainer</span>(<span style=color:#a6e22e>AppNavigator</span>);
+<span style=color:#fb660a;font-weight:700>const</span> AppContainer = createAppContainer(AppNavigator);
 
-<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>App</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>React</span>.<span style=color:#a6e22e>Component</span> {
-  <span style=color:#a6e22e>render</span>() {
-    <span style=color:#66d9ef>return</span> &lt;<span style=color:#f92672>AppContainer</span> /&gt;;
+<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> App <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
+  render() {
+    <span style=color:#fb660a;font-weight:700>return</span> &lt;<span style=color:#fb660a;font-weight:700>AppContainer</span> /&gt;;
   }
 }
-</code></pre></div></section><section><section data-shortcode-section><h2 id=navigation-entre-vues>Navigation entre vues</h2><ul><li><code>this.props.navigation.navigate('RouteName')</code>.</li><li><code>this.props.navigation.push('RouteName')</code> : permet d&rsquo;aller plusieurs fois vers la même vue.</li><li><code>this.props.navigation.goBack()</code>.</li></ul></section><section><h2 id=exemple>Exemple</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>DetailsScreen</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>React</span>.<span style=color:#a6e22e>Component</span> {
-  <span style=color:#a6e22e>render</span>() {
-    <span style=color:#66d9ef>return</span> (
-      &lt;<span style=color:#f92672>View</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{{ <span style=color:#a6e22e>flex</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>, <span style=color:#a6e22e>alignItems</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;center&#39;</span>, <span style=color:#a6e22e>justifyContent</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;center&#39;</span> }}&gt;
-        &lt;<span style=color:#f92672>Text</span>&gt;<span style=color:#a6e22e>Details</span> <span style=color:#a6e22e>Screen</span>&lt;/<span style=color:#f92672>Text</span>&gt;
-        &lt;<span style=color:#f92672>Button</span>
-          <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Go to Details... again&#34;</span>
-          <span style=color:#a6e22e>onPress</span><span style=color:#f92672>=</span>{() =&gt; <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>navigation</span>.<span style=color:#a6e22e>push</span>(<span style=color:#e6db74>&#39;Details&#39;</span>)}
+</code></pre></div></section><section><section data-shortcode-section><h2 id=navigation-entre-vues>Navigation entre vues</h2><ul><li><code>this.props.navigation.navigate('RouteName')</code>.</li><li><code>this.props.navigation.push('RouteName')</code> : permet d&rsquo;aller plusieurs fois vers la même vue.</li><li><code>this.props.navigation.goBack()</code>.</li></ul></section><section><h2 id=exemple>Exemple</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>class</span> DetailsScreen <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
+  render() {
+    <span style=color:#fb660a;font-weight:700>return</span> (
+      &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={{ flex: <span style=color:#0086f7;font-weight:700>1</span>, alignItems: <span style=color:#0086d2>&#39;center&#39;</span>, justifyContent: <span style=color:#0086d2>&#39;center&#39;</span> }}&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>Text</span>&gt;Details Screen&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>Button</span>
+          <span style=color:#ff0086;font-weight:700>title</span>=<span style=color:#0086d2>&#34;Go to Details... again&#34;</span>
+          <span style=color:#ff0086;font-weight:700>onPress</span>={() =&gt; <span style=color:#fb660a;font-weight:700>this</span>.props.navigation.push(<span style=color:#0086d2>&#39;Details&#39;</span>)}
         /&gt;
-        &lt;<span style=color:#f92672>Button</span>
-          <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Go to Home&#34;</span>
-          <span style=color:#a6e22e>onPress</span><span style=color:#f92672>=</span>{() =&gt; <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>navigation</span>.<span style=color:#a6e22e>navigate</span>(<span style=color:#e6db74>&#39;Home&#39;</span>)}
+        &lt;<span style=color:#fb660a;font-weight:700>Button</span>
+          <span style=color:#ff0086;font-weight:700>title</span>=<span style=color:#0086d2>&#34;Go to Home&#34;</span>
+          <span style=color:#ff0086;font-weight:700>onPress</span>={() =&gt; <span style=color:#fb660a;font-weight:700>this</span>.props.navigation.navigate(<span style=color:#0086d2>&#39;Home&#39;</span>)}
         /&gt;
-        &lt;<span style=color:#f92672>Button</span>
-          <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Go back&#34;</span>
-          <span style=color:#a6e22e>onPress</span><span style=color:#f92672>=</span>{() =&gt; <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>navigation</span>.<span style=color:#a6e22e>goBack</span>()}
+        &lt;<span style=color:#fb660a;font-weight:700>Button</span>
+          <span style=color:#ff0086;font-weight:700>title</span>=<span style=color:#0086d2>&#34;Go back&#34;</span>
+          <span style=color:#ff0086;font-weight:700>onPress</span>={() =&gt; <span style=color:#fb660a;font-weight:700>this</span>.props.navigation.goBack()}
         /&gt;
-      &lt;/<span style=color:#f92672>View</span>&gt;
+      &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
     );
   }
 }
-</code></pre></div></section></section><section><section data-shortcode-section><h2 id=passage-de-paramètres-entre-vues>Passage de paramètres entre vues</h2><ul><li><code>this.props.navigation.navigate('RouteName', {/* params */})</code>.</li><li><code>this.props.navigation.getParam(paramName, defaultValue)</code>.</li></ul></section><section><h2 id=exemple>Exemple</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#75715e>// Home Screen
-</span><span style=color:#75715e></span>&lt;<span style=color:#f92672>Button</span>
-  <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Go to Details&#34;</span>
-  <span style=color:#a6e22e>onPress</span><span style=color:#f92672>=</span>{() =&gt; {
-    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>navigation</span>.<span style=color:#a6e22e>navigate</span>(<span style=color:#e6db74>&#39;Details&#39;</span>, {
-      <span style=color:#a6e22e>itemId</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>86</span>,
-      <span style=color:#a6e22e>otherParam</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;anything you want here&#39;</span>,
+</code></pre></div></section></section><section><section data-shortcode-section><h2 id=passage-de-paramètres-entre-vues>Passage de paramètres entre vues</h2><ul><li><code>this.props.navigation.navigate('RouteName', {/* params */})</code>.</li><li><code>this.props.navigation.getParam(paramName, defaultValue)</code>.</li></ul></section><section><h2 id=exemple>Exemple</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#080;background-color:#0f140f;font-style:italic>// Home Screen
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>&lt;<span style=color:#fb660a;font-weight:700>Button</span>
+  <span style=color:#ff0086;font-weight:700>title</span>=<span style=color:#0086d2>&#34;Go to Details&#34;</span>
+  <span style=color:#ff0086;font-weight:700>onPress</span>={() =&gt; {
+    <span style=color:#fb660a;font-weight:700>this</span>.props.navigation.navigate(<span style=color:#0086d2>&#39;Details&#39;</span>, {
+      itemId: <span style=color:#0086f7;font-weight:700>86</span>,
+      otherParam: <span style=color:#0086d2>&#39;anything you want here&#39;</span>,
     });
   }}
 /&gt;
-<p><span style=color:#75715e>// Details Screen
-</span><span style=color:#75715e></span>&lt;<span style=color:#f92672>Text</span>&gt;
-<span style=color:#a6e22e>itemId</span><span style=color:#f92672>:</span> {<span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>stringify</span>(<span style=color:#a6e22e>navigation</span>.<span style=color:#a6e22e>getParam</span>(<span style=color:#e6db74>'itemId'</span>, <span style=color:#e6db74>'NO-ID'</span>))}
-&lt;/<span style=color:#f92672>Text</span>&gt;
-</code></pre></div></p></section></section><section><h2 id=en-tête-des-vues>En-tête des vues</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>HomeScreen</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>React</span>.<span style=color:#a6e22e>Component</span> {
-  <span style=color:#66d9ef>static</span> <span style=color:#a6e22e>navigationOptions</span> <span style=color:#f92672>=</span> {
-    <span style=color:#a6e22e>title</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;Home&#39;</span>,
-    <span style=color:#a6e22e>headerStyle</span><span style=color:#f92672>:</span> {
-      <span style=color:#a6e22e>backgroundColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;#f4511e&#39;</span>,
+<p><span style=color:#080;background-color:#0f140f;font-style:italic>// Details Screen
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>&lt;<span style=color:#fb660a;font-weight:700>Text</span>&gt;
+itemId: {JSON.stringify(navigation.getParam(<span style=color:#0086d2>'itemId'</span>, <span style=color:#0086d2>'NO-ID'</span>))}
+&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;
+</code></pre></div></p></section></section><section><h2 id=en-tête-des-vues>En-tête des vues</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>class</span> HomeScreen <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
+  <span style=color:#fb660a;font-weight:700>static</span> navigationOptions = {
+    title: <span style=color:#0086d2>&#39;Home&#39;</span>,
+    headerStyle: {
+      backgroundColor: <span style=color:#0086d2>&#39;#f4511e&#39;</span>,
     },
-    <span style=color:#a6e22e>headerTintColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;#fff&#39;</span>,
-    <span style=color:#a6e22e>headerTitleStyle</span><span style=color:#f92672>:</span> {
-      <span style=color:#a6e22e>fontWeight</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;bold&#39;</span>,
+    headerTintColor: <span style=color:#0086d2>&#39;#fff&#39;</span>,
+    headerTitleStyle: {
+      fontWeight: <span style=color:#0086d2>&#39;bold&#39;</span>,
     },
   };
 
-  <span style=color:#75715e>/* render function, etc */</span>
+  <span style=color:#080;background-color:#0f140f;font-style:italic>/* render function, etc */</span>
 }
-</code></pre></div></section><section><h2 id=fenêtre-modale>Fenêtre modale</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>RootStack</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createStackNavigator</span>(
+</code></pre></div></section><section><h2 id=fenêtre-modale>Fenêtre modale</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>const</span> RootStack = createStackNavigator(
   {
-    <span style=color:#a6e22e>Main</span><span style=color:#f92672>:</span> {
-      <span style=color:#a6e22e>screen</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>MainStack</span>,
+    Main: {
+      screen: MainStack,
     },
-    <span style=color:#a6e22e>MyModal</span><span style=color:#f92672>:</span> {
-      <span style=color:#a6e22e>screen</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>ModalScreen</span>,
+    MyModal: {
+      screen: ModalScreen,
     },
   },
   {
-    <span style=color:#a6e22e>mode</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;modal&#39;</span>,
-    <span style=color:#a6e22e>headerMode</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;none&#39;</span>,
+    mode: <span style=color:#0086d2>&#39;modal&#39;</span>,
+    headerMode: <span style=color:#0086d2>&#39;none&#39;</span>,
   }
 );
-</code></pre></div></section><section><h2 id=exemple-récapitulatif>Exemple récapitulatif</h2><p><a href=https://github.com/ensc-mobi/StackNavigatorDemo>https://github.com/ensc-mobi/StackNavigatorDemo</a></p><p><img src=images/stack-navigator-demo.png alt="StackNavigator demo"></p></section><section><h2 id=bottomtabnavigator><code>BottomTabNavigator</code></h2><p>Affichage d&rsquo;onglets en bas de l&rsquo;écran.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>TabNavigator</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createBottomTabNavigator</span>({
-  <span style=color:#a6e22e>Home</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>HomeScreen</span>,
-  <span style=color:#a6e22e>Settings</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>SettingsScreen</span>,
+</code></pre></div></section><section><h2 id=exemple-récapitulatif>Exemple récapitulatif</h2><p><a href=https://github.com/ensc-mobi/StackNavigatorDemo>https://github.com/ensc-mobi/StackNavigatorDemo</a></p><p><img src=images/stack-navigator-demo.png alt="StackNavigator demo"></p></section><section><h2 id=bottomtabnavigator><code>BottomTabNavigator</code></h2><p>Affichage d&rsquo;onglets en bas de l&rsquo;écran.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>const</span> TabNavigator = createBottomTabNavigator({
+  Home: HomeScreen,
+  Settings: SettingsScreen,
 });
 
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>AppContainer</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createAppContainer</span>(<span style=color:#a6e22e>TabNavigator</span>);
+<span style=color:#fb660a;font-weight:700>const</span> AppContainer = createAppContainer(TabNavigator);
 
-<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>App</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>React</span>.<span style=color:#a6e22e>Component</span> {
-  <span style=color:#a6e22e>render</span>() {
-    <span style=color:#66d9ef>return</span> &lt;<span style=color:#f92672>AppContainer</span> /&gt;;
+<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> App <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
+  render() {
+    <span style=color:#fb660a;font-weight:700>return</span> &lt;<span style=color:#fb660a;font-weight:700>AppContainer</span> /&gt;;
   }
 }
-</code></pre></div></section><section><h2 id=navigation-entre-onglets>Navigation entre onglets</h2><p><code>this.props.navigation.navigate('TabName')</code>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx>&lt;<span style=color:#f92672>View</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{{ <span style=color:#a6e22e>flex</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>, <span style=color:#a6e22e>justifyContent</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;center&#39;</span>, <span style=color:#a6e22e>alignItems</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;center&#39;</span> }}&gt;
-  &lt;<span style=color:#f92672>Text</span>&gt;<span style=color:#a6e22e>Home</span><span style=color:#f92672>!</span>&lt;/<span style=color:#f92672>Text</span>&gt;
-  &lt;<span style=color:#f92672>Button</span>
-    <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Go to Settings&#34;</span>
-    <span style=color:#a6e22e>onPress</span><span style=color:#f92672>=</span>{() =&gt; <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>navigation</span>.<span style=color:#a6e22e>navigate</span>(<span style=color:#e6db74>&#39;Settings&#39;</span>)}
+</code></pre></div></section><section><h2 id=navigation-entre-onglets>Navigation entre onglets</h2><p><code>this.props.navigation.navigate('TabName')</code>.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx>&lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={{ flex: <span style=color:#0086f7;font-weight:700>1</span>, justifyContent: <span style=color:#0086d2>&#39;center&#39;</span>, alignItems: <span style=color:#0086d2>&#39;center&#39;</span> }}&gt;
+  &lt;<span style=color:#fb660a;font-weight:700>Text</span>&gt;Home!&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;
+  &lt;<span style=color:#fb660a;font-weight:700>Button</span>
+    <span style=color:#ff0086;font-weight:700>title</span>=<span style=color:#0086d2>&#34;Go to Settings&#34;</span>
+    <span style=color:#ff0086;font-weight:700>onPress</span>={() =&gt; <span style=color:#fb660a;font-weight:700>this</span>.props.navigation.navigate(<span style=color:#0086d2>&#39;Settings&#39;</span>)}
   /&gt;
-&lt;/<span style=color:#f92672>View</span>&gt;
-</code></pre></div></section><section><h2 id=affichage-de-piles-dans-les-onglets>Affichage de piles dans les onglets</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>HomeStack</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createStackNavigator</span>({
-  <span style=color:#a6e22e>Home</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>HomeScreen</span>,
-  <span style=color:#a6e22e>Details</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>DetailsScreen</span>,
+&lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
+</code></pre></div></section><section><h2 id=affichage-de-piles-dans-les-onglets>Affichage de piles dans les onglets</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>const</span> HomeStack = createStackNavigator({
+  Home: HomeScreen,
+  Details: DetailsScreen,
 });
 
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>SettingsStack</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createStackNavigator</span>({
-  <span style=color:#a6e22e>Settings</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>SettingsScreen</span>,
-  <span style=color:#a6e22e>Details</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>DetailsScreen</span>,
+<span style=color:#fb660a;font-weight:700>const</span> SettingsStack = createStackNavigator({
+  Settings: SettingsScreen,
+  Details: DetailsScreen,
 });
 
-<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#a6e22e>createAppContainer</span>(
-  <span style=color:#a6e22e>createBottomTabNavigator</span>(
+<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> createAppContainer(
+  createBottomTabNavigator(
     {
-      <span style=color:#a6e22e>Home</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>HomeStack</span>,
-      <span style=color:#a6e22e>Settings</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>SettingsStack</span>,
+      Home: HomeStack,
+      Settings: SettingsStack,
     }
   )
 );

@@ -1,150 +1,150 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>React Native : introduction</title><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/reveal.css><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/theme/white.css></head><body><div class=reveal><div class=slides><section><h1>React Native : introduction</h1><p><a href=https://ensc.bordeaux-inp.fr>Ecole Nationale Supérieure de Cognitique</a></p><p><a href=https://www.bpesquet.fr>Baptiste Pesquet</a></p></section><section><h2 id=sommaire>Sommaire</h2><ul><li>L&rsquo;écosystème mobile</li><li>Premiers pas avec React Native</li><li>Anatomie d&rsquo;une application React Native</li></ul></section><section><h2 id=lécosystème-mobile>L&rsquo;écosystème mobile</h2></section><section><p><img src=images/smartphone_market_share_2016.jpg alt="Smartphone platform market share"></p></section><section><p><img src=images/market-share-2015_2019.png alt="Market share evolution 2015-2019"></p></section><section><p><img src=images/os-fragmentation_2018.jpg alt="Mobile OS Fragmentation"></p></section><section><section data-shortcode-section><h2 id=développement-natif>Développement natif</h2><p>Création d&rsquo;applications en utilisant la technologie prévue par le concepteur de l&rsquo;OS.</p><ul><li>Android : Java</li><li>IOS : Objective-C ou Swift</li></ul><p class=fragment>Ces technologies sont <strong>incompatibles</strong>.</p></section><section><h2 id=avantages>Avantages</h2><ul><li>Accès à l&rsquo;intégralité des fonctionnalités matérielles et logicielles du terminal mobile.</li><li>Performances optimales.</li></ul></section><section><h2 id=inconvénient-majeur->Inconvénient (majeur !)</h2><p>Nécessité de créer puis de faire évoluer une application pour chaque environnement.</p></section></section><section><section data-shortcode-section><h2 id=solutions-hybrides>Solutions hybrides</h2><p>Création d&rsquo;applications mobiles compatibles avec plusieurs OS mobiles grâce à un framework dédié.</p><p>Une application hybride est une application web qui s&rsquo;exécute à l&rsquo;intérieur d&rsquo;un navigateur.</p><p>Exemples : <a href=https://cordova.apache.org>Apache Cordova</a>, <a href=https://ionicframework.com>Ionic</a></p></section><section><h2 id=avantages>Avantages</h2><ul><li>Fonctionnalités et performances proches de celles d&rsquo;une application native.</li><li>Economies de ressources pour créer l&rsquo;application.</li><li>Une seule base de code : maintenance et évolution facilitées.</li></ul></section><section><h2 id=inconvénients>Inconvénients</h2><ul><li>Impossible d&rsquo;accéder à certaines fonctionnalités matérielles ou logicielles spécifiques.</li><li><em>Look&rsquo;n&rsquo;feel</em> non natif.</li><li>Mauvaises performances dans certains scenarii.</li></ul></section></section><section><section data-shortcode-section><h2 id=développement-natif-multi-plateformes>Développement natif multi-plateformes</h2><p>Création d&rsquo;applications mobiles compatibles avec plusieurs OS mobiles grâce à un framework dédié.</p><p>Le framework encapsule les véritables composants natifs de l&rsquo;OS.</p><p>Exemples : <a href=https://facebook.github.io/react-native/>React Native</a>, <a href=https://weex.apache.org/>Weex</a>, <a href=https://www.visualstudio.com/fr/xamarin/>Xamarin</a></p></section><section><h2 id=le-meilleur-des-deux-mondes->Le meilleur des deux mondes ?</h2><p>Combine les avantages du natif (<em>look&rsquo;n&rsquo;feel</em>, performances) et de l&rsquo;hybride (une seule base de code).</p><p>Limite potentielle : le support de l&rsquo;OS dépend entièrement du framework.</p></section></section><section><h2 id=premiers-pas-avec-react-native>Premiers pas avec React Native</h2></section><section><h2 id=react-native>React Native</h2><p>Framework créé par Facebook, open source depuis 2015.</p><p>Déclinaison mobile du framework JavaScript <a href=https://reactjs.org/>React</a>.</p><p><img src=images/reactjs.png alt="React logo"></p></section><section><h2 id=expo>Expo</h2><p>Framework pour faciliter la création et le déploiement d&rsquo;applications React Native.</p><p><img src=images/expo_logo.png alt="Expo logo"></p><ul><li><a href=https://github.com/expo/expo-cli>Expo CLI</a> : outil en ligne de commande pour le développement local.</li><li><a href=https://expo.io>Expo client</a> : application mobile à installer sur le terminal cible pour le déploiement.</li></ul></section><section><h2 id=création-dune-application>Création d&rsquo;une application</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Install expo-cli globally</span>
-<span style=color:#75715e># (Node.js and Git are prerequisites)</span>
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>React Native : introduction</title><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/reveal.css><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/theme/white.css></head><body><div class=reveal><div class=slides><section><h1>React Native : introduction</h1><p><a href=https://ensc.bordeaux-inp.fr>Ecole Nationale Supérieure de Cognitique</a></p><p><a href=https://www.bpesquet.fr>Baptiste Pesquet</a></p></section><section><h2 id=sommaire>Sommaire</h2><ul><li>L&rsquo;écosystème mobile</li><li>Premiers pas avec React Native</li><li>Anatomie d&rsquo;une application React Native</li></ul></section><section><h2 id=lécosystème-mobile>L&rsquo;écosystème mobile</h2></section><section><p><img src=images/smartphone_market_share_2016.jpg alt="Smartphone platform market share"></p></section><section><p><img src=images/market-share-2015_2019.png alt="Market share evolution 2015-2019"></p></section><section><p><img src=images/os-fragmentation_2018.jpg alt="Mobile OS Fragmentation"></p></section><section><section data-shortcode-section><h2 id=développement-natif>Développement natif</h2><p>Création d&rsquo;applications en utilisant la technologie prévue par le concepteur de l&rsquo;OS.</p><ul><li>Android : Java</li><li>IOS : Objective-C ou Swift</li></ul><p class=fragment>Ces technologies sont <strong>incompatibles</strong>.</p></section><section><h2 id=avantages>Avantages</h2><ul><li>Accès à l&rsquo;intégralité des fonctionnalités matérielles et logicielles du terminal mobile.</li><li>Performances optimales.</li></ul></section><section><h2 id=inconvénient-majeur->Inconvénient (majeur !)</h2><p>Nécessité de créer puis de faire évoluer une application pour chaque environnement.</p></section></section><section><section data-shortcode-section><h2 id=solutions-hybrides>Solutions hybrides</h2><p>Création d&rsquo;applications mobiles compatibles avec plusieurs OS mobiles grâce à un framework dédié.</p><p>Une application hybride est une application web qui s&rsquo;exécute à l&rsquo;intérieur d&rsquo;un navigateur.</p><p>Exemples : <a href=https://cordova.apache.org>Apache Cordova</a>, <a href=https://ionicframework.com>Ionic</a></p></section><section><h2 id=avantages>Avantages</h2><ul><li>Fonctionnalités et performances proches de celles d&rsquo;une application native.</li><li>Economies de ressources pour créer l&rsquo;application.</li><li>Une seule base de code : maintenance et évolution facilitées.</li></ul></section><section><h2 id=inconvénients>Inconvénients</h2><ul><li>Impossible d&rsquo;accéder à certaines fonctionnalités matérielles ou logicielles spécifiques.</li><li><em>Look&rsquo;n&rsquo;feel</em> non natif.</li><li>Mauvaises performances dans certains scenarii.</li></ul></section></section><section><section data-shortcode-section><h2 id=développement-natif-multi-plateformes>Développement natif multi-plateformes</h2><p>Création d&rsquo;applications mobiles compatibles avec plusieurs OS mobiles grâce à un framework dédié.</p><p>Le framework encapsule les véritables composants natifs de l&rsquo;OS.</p><p>Exemples : <a href=https://facebook.github.io/react-native/>React Native</a>, <a href=https://weex.apache.org/>Weex</a>, <a href=https://www.visualstudio.com/fr/xamarin/>Xamarin</a></p></section><section><h2 id=le-meilleur-des-deux-mondes->Le meilleur des deux mondes ?</h2><p>Combine les avantages du natif (<em>look&rsquo;n&rsquo;feel</em>, performances) et de l&rsquo;hybride (une seule base de code).</p><p>Limite potentielle : le support de l&rsquo;OS dépend entièrement du framework.</p></section></section><section><h2 id=premiers-pas-avec-react-native>Premiers pas avec React Native</h2></section><section><h2 id=react-native>React Native</h2><p>Framework créé par Facebook, open source depuis 2015.</p><p>Déclinaison mobile du framework JavaScript <a href=https://reactjs.org/>React</a>.</p><p><img src=images/reactjs.png alt="React logo"></p></section><section><h2 id=expo>Expo</h2><p>Framework pour faciliter la création et le déploiement d&rsquo;applications React Native.</p><p><img src=images/expo_logo.png alt="Expo logo"></p><ul><li><a href=https://github.com/expo/expo-cli>Expo CLI</a> : outil en ligne de commande pour le développement local.</li><li><a href=https://expo.io>Expo client</a> : application mobile à installer sur le terminal cible pour le déploiement.</li></ul></section><section><h2 id=création-dune-application>Création d&rsquo;une application</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#080;background-color:#0f140f;font-style:italic># Install expo-cli globally</span>
+<span style=color:#080;background-color:#0f140f;font-style:italic># (Node.js and Git are prerequisites)</span>
 npm install -g expo-cli
 
-<span style=color:#75715e># Create a new app in the my-new-project subfolder</span>
+<span style=color:#080;background-color:#0f140f;font-style:italic># Create a new app in the my-new-project subfolder</span>
 expo init my-new-project
-</code></pre></div><ul><li><p>Workflow <strong>managé</strong> : projet entièrement géré par Expo (plus simple).</p></li><li><p>Workflow <strong>bare</strong> : plus proche d&rsquo;un projet React Native pur.</p></li></ul></section><section><h2 id=contenu-du-répertoire-créé>Contenu du répertoire créé</h2><p><img src=images/rn-app-structure.png alt="Arborescence React Native"></p></section><section><h2 id=déploiement-de-lapplication>Déploiement de l&rsquo;application</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd my-new-project <span style=color:#75715e># move into project directory</span>
-npm start <span style=color:#75715e># Or &#39;expo start&#39;</span>
-</code></pre></div><p>Ensuite, scan du QR Code depuis l&rsquo;application Expo (Android) ou l&rsquo;appareil photo du smartphone (iOS).</p><p><img src=images/expo_qrcode.png alt="Expo QR Code"></p></section><section><h2 id=détails-sur-le-déploiement>Détails sur le déploiement</h2><ul><li>L&rsquo;application est hébergée sur un serveur web local.</li><li>Expo s&rsquo;y connecte pour la récupérer puis la lancer.</li><li>Une interface de gestion s&rsquo;affiche dans le navigateur.</li></ul><p><img src=images/expo_management.png alt="Expo Management"></p></section><section><h2 id=connexion-au-serveur-expo>Connexion au serveur Expo</h2><p>L&rsquo;application Expo client doit accéder au serveur web de la machine de développement pour pouvoir lancer l&rsquo;application RN.</p><p>Il existe plusieurs modes de connexion :</p><ul><li><strong>LAN</strong> : utilisation du réseau Wifi local. Peut poser problème dans certains environnements.</li><li><strong>Tunnel</strong> : création d&rsquo;un tunnel avec <a href=https://ngrok.com/>ngrok</a> pour accéder au serveur local via le web. Nécessite que le terminal mobile dispose d&rsquo;un accès internet.</li></ul></section><section><h2 id=rechargement-dynamique>Rechargement dynamique</h2><p><a href=https://openclassrooms.com/fr/courses/4902061-developpez-une-application-mobile-react-native/><img src=images/expo_reload.jpeg alt="Live Reload"></a></p></section><section><h2 id=anatomie-dune-application-react-native>Anatomie d&rsquo;une application React Native</h2></section><section><h2 id=le-fichier-de-configuration-appjson>Le fichier de configuration app.json</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;expo&#34;</span>: {
-    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;My New Project&#34;</span>,
-    <span style=color:#f92672>&#34;slug&#34;</span>: <span style=color:#e6db74>&#34;my-new-project&#34;</span>,
-    <span style=color:#f92672>&#34;privacy&#34;</span>: <span style=color:#e6db74>&#34;public&#34;</span>,
-    <span style=color:#f92672>&#34;sdkVersion&#34;</span>: <span style=color:#e6db74>&#34;36.0.0&#34;</span>,
-    <span style=color:#f92672>&#34;platforms&#34;</span>: [
-      <span style=color:#e6db74>&#34;ios&#34;</span>,
-      <span style=color:#e6db74>&#34;android&#34;</span>,
-      <span style=color:#e6db74>&#34;web&#34;</span>
+</code></pre></div><ul><li><p>Workflow <strong>managé</strong> : projet entièrement géré par Expo (plus simple).</p></li><li><p>Workflow <strong>bare</strong> : plus proche d&rsquo;un projet React Native pur.</p></li></ul></section><section><h2 id=contenu-du-répertoire-créé>Contenu du répertoire créé</h2><p><img src=images/rn-app-structure.png alt="Arborescence React Native"></p></section><section><h2 id=déploiement-de-lapplication>Déploiement de l&rsquo;application</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd my-new-project <span style=color:#080;background-color:#0f140f;font-style:italic># move into project directory</span>
+npm start <span style=color:#080;background-color:#0f140f;font-style:italic># Or &#39;expo start&#39;</span>
+</code></pre></div><p>Ensuite, scan du QR Code depuis l&rsquo;application Expo (Android) ou l&rsquo;appareil photo du smartphone (iOS).</p><p><img src=images/expo_qrcode.png alt="Expo QR Code"></p></section><section><h2 id=détails-sur-le-déploiement>Détails sur le déploiement</h2><ul><li>L&rsquo;application est hébergée sur un serveur web local.</li><li>Expo s&rsquo;y connecte pour la récupérer puis la lancer.</li><li>Une interface de gestion s&rsquo;affiche dans le navigateur.</li></ul><p><img src=images/expo_management.png alt="Expo Management"></p></section><section><h2 id=connexion-au-serveur-expo>Connexion au serveur Expo</h2><p>L&rsquo;application Expo client doit accéder au serveur web de la machine de développement pour pouvoir lancer l&rsquo;application RN.</p><p>Il existe plusieurs modes de connexion :</p><ul><li><strong>LAN</strong> : utilisation du réseau Wifi local. Peut poser problème dans certains environnements.</li><li><strong>Tunnel</strong> : création d&rsquo;un tunnel avec <a href=https://ngrok.com/>ngrok</a> pour accéder au serveur local via le web. Nécessite que le terminal mobile dispose d&rsquo;un accès internet.</li></ul></section><section><h2 id=rechargement-dynamique>Rechargement dynamique</h2><p><a href=https://openclassrooms.com/fr/courses/4902061-developpez-une-application-mobile-react-native/><img src=images/expo_reload.jpeg alt="Live Reload"></a></p></section><section><h2 id=anatomie-dune-application-react-native>Anatomie d&rsquo;une application React Native</h2></section><section><h2 id=le-fichier-de-configuration-appjson>Le fichier de configuration app.json</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#fb660a;font-weight:700>&#34;expo&#34;</span>: {
+    <span style=color:#fb660a;font-weight:700>&#34;name&#34;</span>: <span style=color:#0086d2>&#34;My New Project&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;slug&#34;</span>: <span style=color:#0086d2>&#34;my-new-project&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;privacy&#34;</span>: <span style=color:#0086d2>&#34;public&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;sdkVersion&#34;</span>: <span style=color:#0086d2>&#34;36.0.0&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;platforms&#34;</span>: [
+      <span style=color:#0086d2>&#34;ios&#34;</span>,
+      <span style=color:#0086d2>&#34;android&#34;</span>,
+      <span style=color:#0086d2>&#34;web&#34;</span>
     ],
-    <span style=color:#f92672>&#34;version&#34;</span>: <span style=color:#e6db74>&#34;1.0.0&#34;</span>,
-    <span style=color:#f92672>&#34;orientation&#34;</span>: <span style=color:#e6db74>&#34;portrait&#34;</span>,
-    <span style=color:#f92672>&#34;icon&#34;</span>: <span style=color:#e6db74>&#34;./assets/icon.png&#34;</span>,
-    <span style=color:#f92672>&#34;splash&#34;</span>: {
-      <span style=color:#f92672>&#34;image&#34;</span>: <span style=color:#e6db74>&#34;./assets/splash.png&#34;</span>,
-      <span style=color:#f92672>&#34;resizeMode&#34;</span>: <span style=color:#e6db74>&#34;contain&#34;</span>,
-      <span style=color:#f92672>&#34;backgroundColor&#34;</span>: <span style=color:#e6db74>&#34;#ffffff&#34;</span>
+    <span style=color:#fb660a;font-weight:700>&#34;version&#34;</span>: <span style=color:#0086d2>&#34;1.0.0&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;orientation&#34;</span>: <span style=color:#0086d2>&#34;portrait&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;icon&#34;</span>: <span style=color:#0086d2>&#34;./assets/icon.png&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;splash&#34;</span>: {
+      <span style=color:#fb660a;font-weight:700>&#34;image&#34;</span>: <span style=color:#0086d2>&#34;./assets/splash.png&#34;</span>,
+      <span style=color:#fb660a;font-weight:700>&#34;resizeMode&#34;</span>: <span style=color:#0086d2>&#34;contain&#34;</span>,
+      <span style=color:#fb660a;font-weight:700>&#34;backgroundColor&#34;</span>: <span style=color:#0086d2>&#34;#ffffff&#34;</span>
     },
-    <span style=color:#f92672>&#34;updates&#34;</span>: {
-      <span style=color:#f92672>&#34;fallbackToCacheTimeout&#34;</span>: <span style=color:#ae81ff>0</span>
+    <span style=color:#fb660a;font-weight:700>&#34;updates&#34;</span>: {
+      <span style=color:#fb660a;font-weight:700>&#34;fallbackToCacheTimeout&#34;</span>: <span style=color:#0086f7;font-weight:700>0</span>
     },
-    <span style=color:#f92672>&#34;assetBundlePatterns&#34;</span>: [
-      <span style=color:#e6db74>&#34;**/*&#34;</span>
+    <span style=color:#fb660a;font-weight:700>&#34;assetBundlePatterns&#34;</span>: [
+      <span style=color:#0086d2>&#34;**/*&#34;</span>
     ],
-    <span style=color:#f92672>&#34;ios&#34;</span>: {
-      <span style=color:#f92672>&#34;supportsTablet&#34;</span>: <span style=color:#66d9ef>true</span>
+    <span style=color:#fb660a;font-weight:700>&#34;ios&#34;</span>: {
+      <span style=color:#fb660a;font-weight:700>&#34;supportsTablet&#34;</span>: <span style=color:#fb660a;font-weight:700>true</span>
     }
   }
 }
-</code></pre></div></section><section><h2 id=le-fichier-packagejson>Le fichier package.json</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;main&#34;</span>: <span style=color:#e6db74>&#34;node_modules/expo/AppEntry.js&#34;</span>,
-  <span style=color:#f92672>&#34;scripts&#34;</span>: {
-    <span style=color:#f92672>&#34;start&#34;</span>: <span style=color:#e6db74>&#34;expo start&#34;</span>,
-    <span style=color:#f92672>&#34;android&#34;</span>: <span style=color:#e6db74>&#34;expo start --android&#34;</span>,
-    <span style=color:#f92672>&#34;ios&#34;</span>: <span style=color:#e6db74>&#34;expo start --ios&#34;</span>,
-    <span style=color:#f92672>&#34;web&#34;</span>: <span style=color:#e6db74>&#34;expo start --web&#34;</span>,
-    <span style=color:#f92672>&#34;eject&#34;</span>: <span style=color:#e6db74>&#34;expo eject&#34;</span>
+</code></pre></div></section><section><h2 id=le-fichier-packagejson>Le fichier package.json</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#fb660a;font-weight:700>&#34;main&#34;</span>: <span style=color:#0086d2>&#34;node_modules/expo/AppEntry.js&#34;</span>,
+  <span style=color:#fb660a;font-weight:700>&#34;scripts&#34;</span>: {
+    <span style=color:#fb660a;font-weight:700>&#34;start&#34;</span>: <span style=color:#0086d2>&#34;expo start&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;android&#34;</span>: <span style=color:#0086d2>&#34;expo start --android&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;ios&#34;</span>: <span style=color:#0086d2>&#34;expo start --ios&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;web&#34;</span>: <span style=color:#0086d2>&#34;expo start --web&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;eject&#34;</span>: <span style=color:#0086d2>&#34;expo eject&#34;</span>
   },
-  <span style=color:#f92672>&#34;dependencies&#34;</span>: {
-    <span style=color:#f92672>&#34;expo&#34;</span>: <span style=color:#e6db74>&#34;~36.0.0&#34;</span>,
-    <span style=color:#f92672>&#34;react&#34;</span>: <span style=color:#e6db74>&#34;~16.9.0&#34;</span>,
-    <span style=color:#f92672>&#34;react-dom&#34;</span>: <span style=color:#e6db74>&#34;~16.9.0&#34;</span>,
-    <span style=color:#f92672>&#34;react-native&#34;</span>: <span style=color:#e6db74>&#34;https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz&#34;</span>,
-    <span style=color:#f92672>&#34;react-native-web&#34;</span>: <span style=color:#e6db74>&#34;~0.11.7&#34;</span>
+  <span style=color:#fb660a;font-weight:700>&#34;dependencies&#34;</span>: {
+    <span style=color:#fb660a;font-weight:700>&#34;expo&#34;</span>: <span style=color:#0086d2>&#34;~36.0.0&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;react&#34;</span>: <span style=color:#0086d2>&#34;~16.9.0&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;react-dom&#34;</span>: <span style=color:#0086d2>&#34;~16.9.0&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;react-native&#34;</span>: <span style=color:#0086d2>&#34;https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;react-native-web&#34;</span>: <span style=color:#0086d2>&#34;~0.11.7&#34;</span>
   },
-  <span style=color:#f92672>&#34;devDependencies&#34;</span>: {
-    <span style=color:#f92672>&#34;babel-preset-expo&#34;</span>: <span style=color:#e6db74>&#34;~8.0.0&#34;</span>,
-    <span style=color:#f92672>&#34;@babel/core&#34;</span>: <span style=color:#e6db74>&#34;^7.0.0&#34;</span>
+  <span style=color:#fb660a;font-weight:700>&#34;devDependencies&#34;</span>: {
+    <span style=color:#fb660a;font-weight:700>&#34;babel-preset-expo&#34;</span>: <span style=color:#0086d2>&#34;~8.0.0&#34;</span>,
+    <span style=color:#fb660a;font-weight:700>&#34;@babel/core&#34;</span>: <span style=color:#0086d2>&#34;^7.0.0&#34;</span>
   },
-  <span style=color:#f92672>&#34;private&#34;</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#fb660a;font-weight:700>&#34;private&#34;</span>: <span style=color:#fb660a;font-weight:700>true</span>
 }
-</code></pre></div></section><section><h2 id=le-fichier-principal-appjs>Le fichier principal App.js</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>React</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;react&#39;</span>;
-<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>StyleSheet</span>, <span style=color:#a6e22e>Text</span>, <span style=color:#a6e22e>View</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;react-native&#39;</span>;
+</code></pre></div></section><section><h2 id=le-fichier-principal-appjs>Le fichier principal App.js</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>import</span> React from <span style=color:#0086d2>&#39;react&#39;</span>;
+<span style=color:#fb660a;font-weight:700>import</span> { StyleSheet, Text, View } from <span style=color:#0086d2>&#39;react-native&#39;</span>;
 
-<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>App</span>() {
-  <span style=color:#66d9ef>return</span> (
-    &lt;<span style=color:#f92672>View</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>styles</span>.<span style=color:#a6e22e>container</span>}&gt;
-      &lt;<span style=color:#f92672>Text</span>&gt;<span style=color:#a6e22e>Open</span> <span style=color:#a6e22e>up</span> <span style=color:#a6e22e>App</span>.<span style=color:#a6e22e>js</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>start</span> <span style=color:#a6e22e>working</span> <span style=color:#a6e22e>on</span> <span style=color:#a6e22e>your</span> <span style=color:#a6e22e>app</span><span style=color:#f92672>!</span>&lt;/<span style=color:#f92672>Text</span>&gt;
-    &lt;/<span style=color:#f92672>View</span>&gt;
+<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>function</span> App() {
+  <span style=color:#fb660a;font-weight:700>return</span> (
+    &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={styles.container}&gt;
+      &lt;<span style=color:#fb660a;font-weight:700>Text</span>&gt;Open up App.js to start working on your app!&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;
+    &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
   );
 }
 
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>styles</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>StyleSheet</span>.<span style=color:#a6e22e>create</span>({
-  <span style=color:#a6e22e>container</span><span style=color:#f92672>:</span> {
-    <span style=color:#a6e22e>flex</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>,
-    <span style=color:#a6e22e>backgroundColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;#fff&#39;</span>,
-    <span style=color:#a6e22e>alignItems</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;center&#39;</span>,
-    <span style=color:#a6e22e>justifyContent</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;center&#39;</span>,
+<span style=color:#fb660a;font-weight:700>const</span> styles = StyleSheet.create({
+  container: {
+    flex: <span style=color:#0086f7;font-weight:700>1</span>,
+    backgroundColor: <span style=color:#0086d2>&#39;#fff&#39;</span>,
+    alignItems: <span style=color:#0086d2>&#39;center&#39;</span>,
+    justifyContent: <span style=color:#0086d2>&#39;center&#39;</span>,
   },
 });
-</code></pre></div></section><section><h2 id=jsx>JSX</h2><p>Syntaxe introduite pour le framework web <a href=https://reactjs.org/>React</a> permettant de décrire une UI en intégrant balisage et logique applicative.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#75715e>// JSX for React (web)
-</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>name</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;Clarisse Agbegnenou&#39;</span>;
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>element</span> <span style=color:#f92672>=</span> &lt;<span style=color:#f92672>h1</span>&gt;<span style=color:#a6e22e>Hello</span>, {<span style=color:#a6e22e>name</span>}&lt;/<span style=color:#f92672>h1</span>&gt;;
-</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#75715e>// JSX for React Native (mobile)
-</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> &lt;<span style=color:#f92672>View</span> /&gt;
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>b</span> <span style=color:#f92672>=</span> (
-  &lt;<span style=color:#f92672>View</span>
-    <span style=color:#a6e22e>foo</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;hello&#39;</span>
-    <span style=color:#a6e22e>bar</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>baz</span>}&gt;
-    &lt;<span style=color:#f92672>Text</span>&gt;<span style=color:#ae81ff>42</span>&lt;/<span style=color:#f92672>Text</span>&gt;
-  &lt;/<span style=color:#f92672>View</span>&gt;
+</code></pre></div></section><section><h2 id=jsx>JSX</h2><p>Syntaxe introduite pour le framework web <a href=https://reactjs.org/>React</a> permettant de décrire une UI en intégrant balisage et logique applicative.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#080;background-color:#0f140f;font-style:italic>// JSX for React (web)
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>const</span> name = <span style=color:#0086d2>&#39;Clarisse Agbegnenou&#39;</span>;
+<span style=color:#fb660a;font-weight:700>const</span> element = &lt;<span style=color:#fb660a;font-weight:700>h1</span>&gt;Hello, {name}&lt;/<span style=color:#fb660a;font-weight:700>h1</span>&gt;;
+</code></pre></div><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#080;background-color:#0f140f;font-style:italic>// JSX for React Native (mobile)
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>const</span> a = &lt;<span style=color:#fb660a;font-weight:700>View</span> /&gt;
+<span style=color:#fb660a;font-weight:700>const</span> b = (
+  &lt;<span style=color:#fb660a;font-weight:700>View</span>
+    <span style=color:#ff0086;font-weight:700>foo</span>=<span style=color:#0086d2>&#39;hello&#39;</span>
+    <span style=color:#ff0086;font-weight:700>bar</span>={baz}&gt;
+    &lt;<span style=color:#fb660a;font-weight:700>Text</span>&gt;<span style=color:#0086f7;font-weight:700>42</span>&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;
+  &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
 )
-</code></pre></div></section><section><h2 id=la-notion-de-composant>La notion de composant</h2><ul><li><p>Les <strong>composants</strong> sont les blocs de base d&rsquo;une application React (Native).</p></li><li><p>Ils permettent de créer une UI sous forme <strong>déclarative</strong> par assemblage de composants.</p></li><li><p>Ils doivent disposer d&rsquo;une méthode <code>render()</code> qui définit leur rendu visuel.</p></li></ul></section><section><h2 id=propriétés-props-dun-composant>Propriétés (props) d&rsquo;un composant</h2><p>Caractéristiques définies au moment de la création. Modifiables uniquement par le composant parent. <a href=https://snack.expo.io/@bpesquet/greeting>Démo</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>React</span>, { <span style=color:#a6e22e>Component</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;react&#39;</span>;
-<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>Text</span>, <span style=color:#a6e22e>View</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;react-native&#39;</span>;
+</code></pre></div></section><section><h2 id=la-notion-de-composant>La notion de composant</h2><ul><li><p>Les <strong>composants</strong> sont les blocs de base d&rsquo;une application React (Native).</p></li><li><p>Ils permettent de créer une UI sous forme <strong>déclarative</strong> par assemblage de composants.</p></li><li><p>Ils doivent disposer d&rsquo;une méthode <code>render()</code> qui définit leur rendu visuel.</p></li></ul></section><section><h2 id=propriétés-props-dun-composant>Propriétés (props) d&rsquo;un composant</h2><p>Caractéristiques définies au moment de la création. Modifiables uniquement par le composant parent. <a href=https://snack.expo.io/@bpesquet/greeting>Démo</a></p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>import</span> React, { Component } from <span style=color:#0086d2>&#39;react&#39;</span>;
+<span style=color:#fb660a;font-weight:700>import</span> { Text, View } from <span style=color:#0086d2>&#39;react-native&#39;</span>;
 
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Greeting</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>Component</span> {
-  <span style=color:#a6e22e>render</span>() {
-    <span style=color:#66d9ef>return</span> &lt;<span style=color:#f92672>Text</span>&gt;<span style=color:#a6e22e>Hello</span> {<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>name</span>}<span style=color:#f92672>!</span>&lt;/<span style=color:#f92672>Text</span>&gt;;
+<span style=color:#fb660a;font-weight:700>class</span> Greeting <span style=color:#fb660a;font-weight:700>extends</span> Component {
+  render() {
+    <span style=color:#fb660a;font-weight:700>return</span> &lt;<span style=color:#fb660a;font-weight:700>Text</span>&gt;Hello {<span style=color:#fb660a;font-weight:700>this</span>.props.name}!&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;;
   }
 }
 
-<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>LotsOfGreetings</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>Component</span> {
-  <span style=color:#a6e22e>render</span>() {
-    <span style=color:#66d9ef>return</span> (
-      &lt;<span style=color:#f92672>View</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{{ <span style=color:#a6e22e>alignItems</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;center&#34;</span> }}&gt;
-        &lt;<span style=color:#f92672>Greeting</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;John&#34;</span> /&gt;
-        &lt;<span style=color:#f92672>Greeting</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Paul&#34;</span> /&gt;
-        &lt;<span style=color:#f92672>Greeting</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Jones&#34;</span> /&gt;
-      &lt;/<span style=color:#f92672>View</span>&gt;
+<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> LotsOfGreetings <span style=color:#fb660a;font-weight:700>extends</span> Component {
+  render() {
+    <span style=color:#fb660a;font-weight:700>return</span> (
+      &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={{ alignItems: <span style=color:#0086d2>&#34;center&#34;</span> }}&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>Greeting</span> <span style=color:#ff0086;font-weight:700>name</span>=<span style=color:#0086d2>&#34;John&#34;</span> /&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>Greeting</span> <span style=color:#ff0086;font-weight:700>name</span>=<span style=color:#0086d2>&#34;Paul&#34;</span> /&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>Greeting</span> <span style=color:#ff0086;font-weight:700>name</span>=<span style=color:#0086d2>&#34;Jones&#34;</span> /&gt;
+      &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
     );
   }
 }
-</code></pre></div></section><section><h2 id=etat-dun-composant>Etat d&rsquo;un composant</h2><p>Etat interne (données) d&rsquo;un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via <code>setState()</code>. <a href=https://snack.expo.io/@bpesquet/counter>Démo</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>React</span>, { <span style=color:#a6e22e>Component</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;react&#39;</span>;
-<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>StyleSheet</span>, <span style=color:#a6e22e>Text</span>, <span style=color:#a6e22e>View</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;react-native&#39;</span>;
+</code></pre></div></section><section><h2 id=etat-dun-composant>Etat d&rsquo;un composant</h2><p>Etat interne (données) d&rsquo;un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via <code>setState()</code>. <a href=https://snack.expo.io/@bpesquet/counter>Démo</a></p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>import</span> React, { Component } from <span style=color:#0086d2>&#39;react&#39;</span>;
+<span style=color:#fb660a;font-weight:700>import</span> { StyleSheet, Text, View } from <span style=color:#0086d2>&#39;react-native&#39;</span>;
 
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Counter</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>Component</span> {
-  <span style=color:#a6e22e>constructor</span>(<span style=color:#a6e22e>props</span>) {
-    <span style=color:#66d9ef>super</span>(<span style=color:#a6e22e>props</span>);
-    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>state</span> <span style=color:#f92672>=</span> { <span style=color:#a6e22e>count</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>0</span> };
-    <span style=color:#a6e22e>setInterval</span>(() =&gt; {
-      <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>setState</span>({ <span style=color:#a6e22e>count</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>state</span>.<span style=color:#a6e22e>count</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> });
-    }, <span style=color:#ae81ff>1000</span>);
+<span style=color:#fb660a;font-weight:700>class</span> Counter <span style=color:#fb660a;font-weight:700>extends</span> Component {
+  constructor(props) {
+    <span style=color:#fb660a;font-weight:700>super</span>(props);
+    <span style=color:#fb660a;font-weight:700>this</span>.state = { count: <span style=color:#0086f7;font-weight:700>0</span> };
+    setInterval(() =&gt; {
+      <span style=color:#fb660a;font-weight:700>this</span>.setState({ count: <span style=color:#fb660a;font-weight:700>this</span>.state.count + <span style=color:#0086f7;font-weight:700>1</span> });
+    }, <span style=color:#0086f7;font-weight:700>1000</span>);
   }
 
-  <span style=color:#a6e22e>render</span>() {
-    <span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>count</span> } <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>state</span>;
-    <span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>color</span>, <span style=color:#a6e22e>size</span> } <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>props</span>;
+  render() {
+    <span style=color:#fb660a;font-weight:700>const</span> { count } = <span style=color:#fb660a;font-weight:700>this</span>.state;
+    <span style=color:#fb660a;font-weight:700>const</span> { color, size } = <span style=color:#fb660a;font-weight:700>this</span>.props;
 
-    <span style=color:#66d9ef>return</span> &lt;<span style=color:#f92672>Text</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{{ <span style=color:#a6e22e>color</span>, <span style=color:#a6e22e>fontSize</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>size</span> }}&gt;{<span style=color:#a6e22e>count</span>}&lt;/<span style=color:#f92672>Text</span>&gt;;
+    <span style=color:#fb660a;font-weight:700>return</span> &lt;<span style=color:#fb660a;font-weight:700>Text</span> <span style=color:#ff0086;font-weight:700>style</span>={{ color, fontSize: size }}&gt;{count}&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;;
   }
 }
 
-<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>CounterApp</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>Component</span> {
-  <span style=color:#a6e22e>render</span>() {
-    <span style=color:#66d9ef>return</span> (
-      &lt;<span style=color:#f92672>View</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>styles</span>.<span style=color:#a6e22e>container</span>}&gt;
-        &lt;<span style=color:#f92672>Counter</span> <span style=color:#a6e22e>color</span><span style=color:#f92672>=</span>{<span style=color:#e6db74>&#34;red&#34;</span>} <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span>{<span style=color:#ae81ff>30</span>} /&gt;
-      &lt;/<span style=color:#f92672>View</span>&gt;
+<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> CounterApp <span style=color:#fb660a;font-weight:700>extends</span> Component {
+  render() {
+    <span style=color:#fb660a;font-weight:700>return</span> (
+      &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={styles.container}&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>Counter</span> <span style=color:#ff0086;font-weight:700>color</span>={<span style=color:#0086d2>&#34;red&#34;</span>} <span style=color:#ff0086;font-weight:700>size</span>={<span style=color:#0086f7;font-weight:700>30</span>} /&gt;
+      &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
     );
   }
 }
 
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>styles</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>StyleSheet</span>.<span style=color:#a6e22e>create</span>({
-  <span style=color:#a6e22e>container</span><span style=color:#f92672>:</span> {
-    <span style=color:#a6e22e>flex</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>,
-    <span style=color:#a6e22e>backgroundColor</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;#fff&#34;</span>,
-    <span style=color:#a6e22e>alignItems</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;center&#34;</span>,
-    <span style=color:#a6e22e>justifyContent</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;center&#34;</span>
+<span style=color:#fb660a;font-weight:700>const</span> styles = StyleSheet.create({
+  container: {
+    flex: <span style=color:#0086f7;font-weight:700>1</span>,
+    backgroundColor: <span style=color:#0086d2>&#34;#fff&#34;</span>,
+    alignItems: <span style=color:#0086d2>&#34;center&#34;</span>,
+    justifyContent: <span style=color:#0086d2>&#34;center&#34;</span>
   }
 });
 </code></pre></div></section><section><h2 id=composants-de-base>Composants de base</h2><p><img src=images/basic_components.png alt="React Native core components"></p></section><section><h2 id=composants-dinterface-utilisateur>Composants d&rsquo;interface utilisateur</h2><p><img src=images/ui_components.png alt="React native UI components"></p></section></div></div><div><a href=https://ensc.bordeaux-inp.fr><img src=https://www.bpesquet.fr/images/ENSC.jpg style=position:absolute;bottom:10px;left:10px></a></div><script src=https://www.bpesquet.fr/reveal.js/dist/reveal.js></script><script>Reveal.initialize({history:false,slideNumber:true,transition:"convex",math:{mathjax:'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',config:'TeX-MML-AM_HTMLorMML'},dependencies:[{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/markdown\/marked.js'},{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/markdown\/markdown.js'},{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/notes\/notes.js',async:true},{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/zoom-js\/zoom.js',async:true},{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/highlight\/highlight.js',async:true,callback:function(){hljs.initHighlightingOnLoad();}},{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/math\/math.js',async:true}]});</script></body></html>
