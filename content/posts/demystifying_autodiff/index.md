@@ -47,7 +47,7 @@ Training a model through GD requires a hefty amount of gradient computations. Be
 
 Off-the-shelf Machine Learning models like [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression) or [MultiLayer Perceptron](https://en.wikipedia.org/wiki/Multilayer_perceptron) have fairly simple and well-defined ways of computing the loss function gradient. This is not true for more recent, deeper models, which mix a [complex architecture](https://arxiv.org/abs/1512.03385) with [huge amounts of parameters](https://arxiv.org/abs/2005.14165). Computing gradients becomes an algorithmically challenging and resource-hungry task.
 
-This is where autodifferentiation comes to the rescue. Frameworks like PyTorch or TensorFlow provide automatic and efficient computation of gradients for any sequence of operations, including math expressions but also algorithms using branching, loops or recursion. This gives researchers and engineers the freedom to create arbitrary complex models, without bothering with the low-level yet critical task of computing gradients.
+This is where autodifferentiation comes to the rescue. Frameworks like PyTorch or TensorFlow provide automatic and efficient computation of gradients for any sequence of operations, including math expressions but also algorithms using branching, loops or recursion. This gives researchers and engineers the freedom to create arbitrary complex models without bothering with the low-level yet critical task of computing gradients.
 
 Some experts in the field even believe in the advent of a [new paradigm](https://medium.com/@karpathy/software-2-0-a64152b37c35), sometimes called [differentiable programming](https://en.wikipedia.org/wiki/Differentiable_programming), that would create software by assembling dynamic, parameterized modules trained through gradient-based optimization rather than hardcoding rules in an imperative way.
 
@@ -55,7 +55,9 @@ Some experts in the field even believe in the advent of a [new paradigm](https:/
 
 ## Mathematical aspects
 
-Now that the big picture is set, let's try to understand how the magic happens. To do so, we need to dive into the mathematical side of things.
+Now that the big picture is set, let's try to understand how the magic happens. To do so, we need to dive into the mathematical side of things. The paper [Automatic differentiation in machine learning: a survey](https://arxiv.org/abs/1502.05767) (Baydin et al., 2015) provides a nice overview of the subject.
+
+### What autodiff is not
 
 First, autodifferentiation is not to be confused with *numerical* nor *symbolic* differentiation.
 
@@ -67,10 +69,17 @@ $$f'(x) = \lim_{h\rightarrow0} \frac{f(x+h)-f(x)}{h}$$
 
 Both approaches have their pros and cons, but are generally not very well suited to the context of Machine Learning:
 
-- numerical differentiation... ;
-- symbolic differentiation can lead to *expression swell* (exponentially large symbolic expressions).
+- numerical differentiation is subject to rounding errors and suffers from a $O(n)$ complexity for a gradient in $n$ dimensions ;
+- symbolic differentiation can lead to *expression swell* (exponentially large symbolic expressions), like in the following example.
 
-The gradient $\nabla f$ of a function $f$ is a vector of partial derivatives w.r.t. each parameter of $f$.
+$$f(x) = 16x(1-x)(1-2x)^2\\\\
+f'(x) = 16(1−x)(1−2x)^2 −16x(1−2x)^2 − 64x(1 − x)(1 − 2x)$$
+
+### Forward mode autodiff
+
+### Reverse mode autodiff
+
+The gradient $\nabla f$ of a function $f$ is a vector of partial derivatives w.r.t. each variable of $f$.
 
 ## Teardown of existing autodiff engines
 
