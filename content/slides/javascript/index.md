@@ -10,6 +10,7 @@ weight: 1
 - Pourquoi JavaScript ?
 - Syntaxe du langage
 - Environnement de travail
+- TypeScript
 
 ---
 
@@ -17,13 +18,13 @@ weight: 1
 
 ---
 
-## JavaScript is eating the world
+### JavaScript is eating the world
 
 ![JS is eating the world](images/thus-javascript-is-eating-the-world.jpg)
 
 ---
 
-## Un pré-requis essentiel
+### Un pré-requis essentiel
 
 La majorité des solutions mobiles multi-plateformes est basée sur JavaScript.
 
@@ -31,7 +32,7 @@ La majorité des solutions mobiles multi-plateformes est basée sur JavaScript.
 
 ---
 
-## Un langage modernisé
+### Un langage modernisé
 
 JavaScript est normalisé sous le nom **ECMAScript**.
 
@@ -45,7 +46,7 @@ La norme **ES2015** (ou ES6) a apporté de très nombreuses améliorations au la
 
 ---
 
-## Déclaration de variables
+### Déclaration de variables
 
 JavaScript est un langage à typage **dynamique**.
 
@@ -63,7 +64,7 @@ b = 6.28; // Erreur!
 
 ---
 
-## Chaînes de caractères
+### Chaînes de caractères
 
 Créées avec des guillemets simples (`'...'`) ou doubles (`"..."`).
 
@@ -76,7 +77,7 @@ console.log(`I live in ${country}`); // "I live in France"
 
 ---
 
-## Déclaration de fonctions
+### Déclaration de fonctions
 
 ```js
 function sayHello(name) {
@@ -89,14 +90,14 @@ console.log(sayHello("Richard")); // "Hello, Richard!"
 
 ---
 
-## Expressions fonction
+### Expressions fonction
 
 Permettent de créer des fonctions anonymes.
 
 La valeur d'une variable JavaScript peut être une fonction.
 
 ```js
-const hello = function(name) {
+const hello = function (name) {
   const message = `Hello, ${name}!`;
   return message;
 };
@@ -106,14 +107,14 @@ console.log(hello("Richard")); // "Hello, Richard!"
 
 ---
 
-## Fonctions fléchées
+### Fonctions fléchées
 
-"*Fat arrow functions*".
+"_Fat arrow functions_".
 
 Syntaxe plus concise pour créer des fonctions anonymes.
 
 ```js
-const hello = name => {
+const hello = (name) => {
   const message = `Hello, ${name}!`;
   return message;
 };
@@ -126,7 +127,7 @@ console.log(hello("Richard")); // "Hello, Richard!"
 
 ---
 
-## Tableaux
+### Tableaux
 
 Plusieurs syntaxes existent pour les parcourir.
 
@@ -138,7 +139,7 @@ for (let i = 0; i < movies.length; i++) {
   // Use movies[i] to access each array element one by one
 }
 
-movies.forEach(movie => {
+movies.forEach((movie) => {
   // Use movie to access each array element one by one
 });
 
@@ -149,7 +150,7 @@ for (const movie of movies) {
 
 ---
 
-## Objets
+### Objets
 
 Un objet JavaScript regroupe un ensemble de **propriétés** (paire clé/valeur).
 
@@ -158,27 +159,27 @@ Un objet JavaScript regroupe un ensemble de **propriétés** (paire clé/valeur)
 const pen = {
   type: "ballpoint",
   color: "blue",
-  brand: "Bic"
+  brand: "Bic",
 };
 
 // Modifcation de la valeur d'une propriété
 pen.color = "red";
 
-console.log(pen.type);  // "ballpoint"
+console.log(pen.type); // "ballpoint"
 console.log(pen.color); // "red"
 console.log(pen.brand); // "Bic"
 ```
 
 ---
 
-## Création d'objets à partir de variables
+### Création d'objets à partir de variables
 
 ```js
 const firstName = "Baptiste";
 const lastName = "Pesquet";
 const twitterHandle = "@bpesquet";
 
-const teacher = {firstName, lastName, twitterHandle};
+const teacher = { firstName, lastName, twitterHandle };
 
 console.log(teacher.firstName); // "Baptiste"
 console.log(teacher.lastName); // "Pesquet"
@@ -187,13 +188,13 @@ console.log(teacher.twitterHandle); // "@bpesquet"
 
 ---
 
-## Déstructuration d'objets
+### Déstructuration d'objets
 
 ```js
 const pen = {
   type: "ballpoint",
   color: "blue",
-  brand: "Bic"
+  brand: "Bic",
 };
 
 // Accès à 2 des propriétés de l'objet
@@ -205,41 +206,41 @@ console.log(brand); // "Bic"
 
 ---
 
-## Déstructuration de tableaux
+### Déstructuration de tableaux
 
 ```js
 const primaryColors = ["red", "green", "blue"];
 
 const [red, green, blue] = primaryColors;
 
-console.log(red);   // "red"
+console.log(red); // "red"
 console.log(green); // "red"
-console.log(blue);  // "blue"
+console.log(blue); // "blue"
 ```
 
 ---
 
-## Opérateur de décomposition ("*spread*")
+### Opérateur de décomposition ("_spread_")
 
 Permet de développer une valeur itérable (chaîne, tableau...).
 
 ```js
 const chaine = "foo bar";
-console.log(chaine);      // "foo bar"
+console.log(chaine); // "foo bar"
 console.log([...chaine]); // ["f", "o", "o", " ", "b", "a", "r"]
 
 const numbers = ["one", "two", "three", "four"];
 
 const [one, two, ...rest] = numbers;
 
-console.log(one);  // "one"
-console.log(two);  // "two"
+console.log(one); // "one"
+console.log(two); // "two"
 console.log(rest); // ["three", "four"]
 ```
 
 ---
 
-## Notion de méthode
+### Notion de méthode
 
 La valeur d'une propriété peut être une donnée ou une fonction. Dans le second cas, la propriété est une **méthode**.
 
@@ -253,13 +254,13 @@ const aurora = {
   describe() {
     return `${this.name} has ${this.health} health points
       and ${this.strength} as strength`;
-  }
+  },
 };
 ```
 
 ---
 
-## Classes
+### Classes
 
 ```js
 class Character {
@@ -297,7 +298,7 @@ import React, { View, Text, Image } from "react-native";
 
 ---
 
-## Plus de détails sur JavaScript
+### Plus de détails sur JavaScript
 
 <https://developer.mozilla.org/fr/docs/Web/JavaScript>
 
@@ -321,7 +322,7 @@ import React, { View, Text, Image } from "react-native";
 
 ---
 
-## Gestion des dépendances
+### Gestion des dépendances
 
 Le standard historique est [npm](https://www.npmjs.com/).
 
@@ -346,7 +347,7 @@ Autre possibilité : [yarn](https://yarnpkg.com/lang/en/) (plus récent).
 
 ---
 
-## Le fichier package.json
+### Le fichier `package.json`
 
 Associé à un fichier verrou `package-lock.json`.
 
@@ -373,7 +374,7 @@ Associé à un fichier verrou `package-lock.json`.
 
 ---
 
-## Versionnage des dépendances
+### Versionnage des dépendances
 
 Versionnage sémantique **X.Y.Z**
 
@@ -389,7 +390,7 @@ Versionnage sémantique **X.Y.Z**
 
 ---
 
-## Formatage automatique du code
+### Formatage automatique du code
 
 [Prettier](https://prettier.io/) est un outil indispensable.
 
@@ -397,11 +398,11 @@ Versionnage sémantique **X.Y.Z**
 
 ---
 
-## Analyse du code
+### Analyse du code
 
 [ESLint](https://eslint.org/) est l'outil le plus utilisé. Sa configuration se fait via un fichier `.eslintrc.json`.
 
-```
+```json
 {
   "extends": ["airbnb", "prettier"],
   "env": {
@@ -430,9 +431,126 @@ Versionnage sémantique **X.Y.Z**
 
 ---
 
-## Transpilation du code
+### Transpilation du code
 
 - [Babel](https://babeljs.io/) transforme le code JavaScript ES2015+ en code ES5 compatible avec tous les environnements d'exécution JS.
 - Il permet d'utiliser sereinement les dernières évolutions du langage.
 
 [![Babel logo](images/Babel-Javascript-compiler.png)](https://babeljs.io/)
+
+---
+
+## TypeScript
+
+---
+
+### Des types pour JavaScript
+
+[TypeScript](https://www.typescriptlang.org/) est un sur-ensemble syntaxique de JavaScript qui permet un typage statique optionnel du code.
+
+Créé à l'origine par Microsoft, il est libre et open source.
+
+![TypeScript logo](images/ts.png)
+
+---
+
+### Installation et utilisation
+
+TS est supporté par la plupart des éditeurs de code.
+
+```bash
+# Install TypeScript globally
+npm install -g typescript
+```
+
+```bash
+# The TS compiler produces a pure JS version of the TS file
+tsc my_typescript_file.ts
+```
+
+---
+
+### Annotations de type
+
+Elles permettent de préciser les _contrats_ des fonctions ou des méthodes.
+
+```ts
+// This function is meant to receive an input of type string
+function hello(person: string) {
+  return "Hello, " + person;
+}
+
+const user = "Jane Doe";
+// Uncomment to see TS error checking in action
+//const user = [0, 1, 2];
+
+console.log(hello(user)); // "Hello, Jane Doe"
+```
+
+---
+
+### Interfaces
+
+Elles permettent de définir des structures de données complexes.
+
+```ts
+// Describes objects that have a firstName and lastName field
+interface Person {
+  firstName: string;
+  lastName: string;
+}
+
+function hello(person: Person) {
+  return "Hello, " + person.firstName + " " + person.lastName;
+}
+
+// ... (see next slides)
+```
+
+---
+
+### Duck typing
+
+> "If it walks like a duck and quacks like a duck, it must be a duck."
+
+TS se base sur la structure concrète des objets, et non sur l'implémentation explicite d'une interface.
+
+```ts
+// This object is structurally compatible with the Person interface
+const user = { firstName: "Jane", lastName: "Doe" };
+
+console.log(hello(user)); // "Hello, Jane Doe"
+```
+
+---
+
+### Définition de classes
+
+TS supporte les définitions de classes apportées par les versions ES2015+ de JS.
+
+```ts
+class Student {
+  fullName: string;
+
+  // The public argument implicitly creates properties
+  constructor(
+    public firstName: string,
+    public middleInitial: string,
+    public lastName: string
+  ) {
+    this.fullName = firstName + " " + middleInitial + " " + lastName;
+  }
+}
+```
+
+---
+
+### Utilisation de classes
+
+Classes et interfaces TS sont compatibles. Le développeur peut ainsi choisir le bon niveau d'abstraction.
+
+```ts
+const user = new Student("Jane", "M.", "Doe");
+
+console.log(hello(user)); // "Hello, Jane Doe"
+```
