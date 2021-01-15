@@ -3,25 +3,26 @@
 &lt;li>Pourquoi JavaScript ?&lt;/li>
 &lt;li>Syntaxe du langage&lt;/li>
 &lt;li>Environnement de travail&lt;/li>
+&lt;li>TypeScript&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="pourquoi-javascript-">Pourquoi JavaScript ?&lt;/h2>
 &lt;hr>
-&lt;h2 id="javascript-is-eating-the-world">JavaScript is eating the world&lt;/h2>
+&lt;h3 id="javascript-is-eating-the-world">JavaScript is eating the world&lt;/h3>
 &lt;p>&lt;img src="images/thus-javascript-is-eating-the-world.jpg" alt="JS is eating the world">&lt;/p>
 &lt;hr>
-&lt;h2 id="un-pré-requis-essentiel">Un pré-requis essentiel&lt;/h2>
+&lt;h3 id="un-pré-requis-essentiel">Un pré-requis essentiel&lt;/h3>
 &lt;p>La majorité des solutions mobiles multi-plateformes est basée sur JavaScript.&lt;/p>
 &lt;p>&lt;img src="images/mobile_logos.png" alt="Frameworks multi-plateformes">&lt;/p>
 &lt;hr>
-&lt;h2 id="un-langage-modernisé">Un langage modernisé&lt;/h2>
+&lt;h3 id="un-langage-modernisé">Un langage modernisé&lt;/h3>
 &lt;p>JavaScript est normalisé sous le nom &lt;strong>ECMAScript&lt;/strong>.&lt;/p>
 &lt;p>&lt;img src="images/js_history.png" alt="ECMAScript releases">&lt;/p>
 &lt;p>La norme &lt;strong>ES2015&lt;/strong> (ou ES6) a apporté de très nombreuses améliorations au langage.&lt;/p>
 &lt;hr>
 &lt;h2 id="la-syntaxe-du-langage">La syntaxe du langage&lt;/h2>
 &lt;hr>
-&lt;h2 id="déclaration-de-variables">Déclaration de variables&lt;/h2>
+&lt;h3 id="déclaration-de-variables">Déclaration de variables&lt;/h3>
 &lt;p>JavaScript est un langage à typage &lt;strong>dynamique&lt;/strong>.&lt;/p>
 &lt;p>&lt;code>let&lt;/code> et &lt;code>const&lt;/code> remplacent avantageusement &lt;code>var&lt;/code> pour la déclaration des variables.&lt;/p>
 &lt;p>La valeur d&amp;rsquo;une variable déclarée avec &lt;code>const&lt;/code> ne peut plus être modifiée.&lt;/p>
@@ -31,32 +32,32 @@ a = &lt;span style="color:#0086f7;font-weight:bold">6.28&lt;/span>; &lt;span sty
 &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> b = &lt;span style="color:#0086f7;font-weight:bold">3.14&lt;/span>;
 b = &lt;span style="color:#0086f7;font-weight:bold">6.28&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Erreur!
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="chaînes-de-caractères">Chaînes de caractères&lt;/h2>
+&lt;h3 id="chaînes-de-caractères">Chaînes de caractères&lt;/h3>
 &lt;p>Créées avec des guillemets simples (&lt;code>'...'&lt;/code>) ou doubles (&lt;code>&amp;quot;...&amp;quot;&lt;/code>).&lt;/p>
 &lt;p>&lt;strong>Litéraux de modèle&lt;/strong>: chaînes créées entre &lt;em>backticks&lt;/em> (`) et permettant d&amp;rsquo;intégrer des expressions.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> country = &lt;span style="color:#0086d2">&amp;#34;France&amp;#34;&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// or &amp;#39;France&amp;#39;
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(&lt;span style="color:#0086d2">`I live in &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>country&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">`&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;I live in France&amp;#34;
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="déclaration-de-fonctions">Déclaration de fonctions&lt;/h2>
+&lt;h3 id="déclaration-de-fonctions">Déclaration de fonctions&lt;/h3>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> sayHello(name) {
 &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> message = &lt;span style="color:#0086d2">`Hello, &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>name&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">!`&lt;/span>;
 &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message;
 }
 console.log(sayHello(&lt;span style="color:#0086d2">&amp;#34;Richard&amp;#34;&lt;/span>)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello, Richard!&amp;#34;
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="expressions-fonction">Expressions fonction&lt;/h2>
+&lt;h3 id="expressions-fonction">Expressions fonction&lt;/h3>
 &lt;p>Permettent de créer des fonctions anonymes.&lt;/p>
 &lt;p>La valeur d&amp;rsquo;une variable JavaScript peut être une fonction.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> hello = &lt;span style="color:#fb660a;font-weight:bold">function&lt;/span>(name) {
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> hello = &lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> (name) {
 &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> message = &lt;span style="color:#0086d2">`Hello, &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>name&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">!`&lt;/span>;
 &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message;
 };
 console.log(hello(&lt;span style="color:#0086d2">&amp;#34;Richard&amp;#34;&lt;/span>)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello, Richard!&amp;#34;
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="fonctions-fléchées">Fonctions fléchées&lt;/h2>
+&lt;h3 id="fonctions-fléchées">Fonctions fléchées&lt;/h3>
 &lt;p>&amp;ldquo;&lt;em>Fat arrow functions&lt;/em>&amp;rdquo;.&lt;/p>
 &lt;p>Syntaxe plus concise pour créer des fonctions anonymes.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> hello = name =&amp;gt; {
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> hello = (name) =&amp;gt; {
 &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> message = &lt;span style="color:#0086d2">`Hello, &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>name&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">!`&lt;/span>;
 &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message;
 };
@@ -65,7 +66,7 @@ console.log(hello(&lt;span style="color:#0086d2">&amp;#34;Richard&amp;#34;&lt;/s
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
 console.log(hello(&lt;span style="color:#0086d2">&amp;#34;Richard&amp;#34;&lt;/span>)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello, Richard!&amp;#34;
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="tableaux">Tableaux&lt;/h2>
+&lt;h3 id="tableaux">Tableaux&lt;/h3>
 &lt;p>Plusieurs syntaxes existent pour les parcourir.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> movies = [&lt;span style="color:#0086d2">&amp;#34;The Wolf of Wall Street&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;Zootopia&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;Babysitting&amp;#34;&lt;/span>];
 console.log(movies.length); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 3
@@ -73,20 +74,20 @@ console.log(movies.length); &lt;span style="color:#080;background-color:#0f140f;
 &lt;span style="color:#fb660a;font-weight:bold">for&lt;/span> (&lt;span style="color:#fb660a;font-weight:bold">let&lt;/span> i = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>; i &amp;lt; movies.length; i++) {
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Use movies[i] to access each array element one by one
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
-movies.forEach(movie =&amp;gt; {
+movies.forEach((movie) =&amp;gt; {
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Use movie to access each array element one by one
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>});
 &lt;span style="color:#fb660a;font-weight:bold">for&lt;/span> (&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> movie &lt;span style="color:#fb660a;font-weight:bold">of&lt;/span> movies) {
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Use movie to access each array element one by one
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="objets">Objets&lt;/h2>
+&lt;h3 id="objets">Objets&lt;/h3>
 &lt;p>Un objet JavaScript regroupe un ensemble de &lt;strong>propriétés&lt;/strong> (paire clé/valeur).&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Création d&amp;#39;un objet litéral
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> pen = {
 type: &lt;span style="color:#0086d2">&amp;#34;ballpoint&amp;#34;&lt;/span>,
 color: &lt;span style="color:#0086d2">&amp;#34;blue&amp;#34;&lt;/span>,
-brand: &lt;span style="color:#0086d2">&amp;#34;Bic&amp;#34;&lt;/span>
+brand: &lt;span style="color:#0086d2">&amp;#34;Bic&amp;#34;&lt;/span>,
 };
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Modifcation de la valeur d&amp;#39;une propriété
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>pen.color = &lt;span style="color:#0086d2">&amp;#34;red&amp;#34;&lt;/span>;
@@ -94,34 +95,34 @@ console.log(pen.type); &lt;span style="color:#080;background-color:#0f140f;font-
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(pen.color); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;red&amp;#34;
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(pen.brand); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bic&amp;#34;
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="création-dobjets-à-partir-de-variables">Création d&amp;rsquo;objets à partir de variables&lt;/h2>
+&lt;h3 id="création-dobjets-à-partir-de-variables">Création d&amp;rsquo;objets à partir de variables&lt;/h3>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> firstName = &lt;span style="color:#0086d2">&amp;#34;Baptiste&amp;#34;&lt;/span>;
 &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> lastName = &lt;span style="color:#0086d2">&amp;#34;Pesquet&amp;#34;&lt;/span>;
 &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> twitterHandle = &lt;span style="color:#0086d2">&amp;#34;@bpesquet&amp;#34;&lt;/span>;
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> teacher = {firstName, lastName, twitterHandle};
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> teacher = { firstName, lastName, twitterHandle };
 console.log(teacher.firstName); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Baptiste&amp;#34;
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(teacher.lastName); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Pesquet&amp;#34;
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(teacher.twitterHandle); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;@bpesquet&amp;#34;
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="déstructuration-dobjets">Déstructuration d&amp;rsquo;objets&lt;/h2>
+&lt;h3 id="déstructuration-dobjets">Déstructuration d&amp;rsquo;objets&lt;/h3>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> pen = {
 type: &lt;span style="color:#0086d2">&amp;#34;ballpoint&amp;#34;&lt;/span>,
 color: &lt;span style="color:#0086d2">&amp;#34;blue&amp;#34;&lt;/span>,
-brand: &lt;span style="color:#0086d2">&amp;#34;Bic&amp;#34;&lt;/span>
+brand: &lt;span style="color:#0086d2">&amp;#34;Bic&amp;#34;&lt;/span>,
 };
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Accès à 2 des propriétés de l&amp;#39;objet
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> { color, brand } = pen;
 console.log(color); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;blue&amp;#34;
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(brand); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bic&amp;#34;
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="déstructuration-de-tableaux">Déstructuration de tableaux&lt;/h2>
+&lt;h3 id="déstructuration-de-tableaux">Déstructuration de tableaux&lt;/h3>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> primaryColors = [&lt;span style="color:#0086d2">&amp;#34;red&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;green&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;blue&amp;#34;&lt;/span>];
 &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> [red, green, blue] = primaryColors;
 console.log(red); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;red&amp;#34;
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(green); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;red&amp;#34;
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(blue); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;blue&amp;#34;
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="opérateur-de-décomposition-spread">Opérateur de décomposition (&amp;quot;&lt;em>spread&lt;/em>&amp;quot;)&lt;/h2>
+&lt;h3 id="opérateur-de-décomposition-_spread_">Opérateur de décomposition (&amp;quot;&lt;em>spread&lt;/em>&amp;quot;)&lt;/h3>
 &lt;p>Permet de développer une valeur itérable (chaîne, tableau&amp;hellip;).&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> chaine = &lt;span style="color:#0086d2">&amp;#34;foo bar&amp;#34;&lt;/span>;
 console.log(chaine); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;foo bar&amp;#34;
@@ -133,7 +134,7 @@ console.log(one); &lt;span style="color:#080;background-color:#0f140f;font-style
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(two); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;two&amp;#34;
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(rest); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// [&amp;#34;three&amp;#34;, &amp;#34;four&amp;#34;]
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="notion-de-méthode">Notion de méthode&lt;/h2>
+&lt;h3 id="notion-de-méthode">Notion de méthode&lt;/h3>
 &lt;p>La valeur d&amp;rsquo;une propriété peut être une donnée ou une fonction. Dans le second cas, la propriété est une &lt;strong>méthode&lt;/strong>.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> aurora = {
 name: &lt;span style="color:#0086d2">&amp;#34;Aurora&amp;#34;&lt;/span>,
@@ -143,10 +144,10 @@ strength: &lt;span style="color:#0086f7;font-weight:bold">25&lt;/span>,
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> describe() {
 &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086d2">`&lt;/span>&lt;span style="color:#0086d2">${&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.name&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2"> has &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.health&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2"> health points
 &lt;/span>&lt;span style="color:#0086d2"> and &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.strength&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2"> as strength`&lt;/span>;
-}
+},
 };
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="classes">Classes&lt;/h2>
+&lt;h3 id="classes">Classes&lt;/h3>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Character {
 constructor(name, health, strength) {
 &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.name = name;
@@ -170,7 +171,7 @@ console.log(aurora.describe());
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Importe à la fois l&amp;#39;élément par défaut et d&amp;#39;autres éléments
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> React, { View, Text, Image } from &lt;span style="color:#0086d2">&amp;#34;react-native&amp;#34;&lt;/span>;
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="plus-de-détails-sur-javascript">Plus de détails sur JavaScript&lt;/h2>
+&lt;h3 id="plus-de-détails-sur-javascript">Plus de détails sur JavaScript&lt;/h3>
 &lt;p>&lt;a href="https://developer.mozilla.org/fr/docs/Web/JavaScript">https://developer.mozilla.org/fr/docs/Web/JavaScript&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://github.com/thejsway/thejsway/">https://github.com/thejsway/thejsway/&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://github.com/getify/You-Dont-Know-JS">https://github.com/getify/You-Dont-Know-JS&lt;/a>&lt;/p>
@@ -190,7 +191,7 @@ console.log(aurora.describe());
 &lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="gestion-des-dépendances">Gestion des dépendances&lt;/h2>
+&lt;h3 id="gestion-des-dépendances">Gestion des dépendances&lt;/h3>
 &lt;p>Le standard historique est &lt;a href="https://www.npmjs.com/">npm&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">npm init &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Create a minimal package.json file&lt;/span>
 npm install &amp;lt;package name&amp;gt; &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Install &amp;lt;package name&amp;gt; locally&lt;/span>
@@ -204,7 +205,7 @@ npm list -g &lt;span style="color:#080;background-color:#0f140f;font-style:itali
 npm search &amp;lt;package name&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Autre possibilité : &lt;a href="https://yarnpkg.com/lang/en/">yarn&lt;/a> (plus récent).&lt;/p>
 &lt;hr>
-&lt;h2 id="le-fichier-packagejson">Le fichier package.json&lt;/h2>
+&lt;h3 id="le-fichier-packagejson">Le fichier &lt;code>package.json&lt;/code>&lt;/h3>
 &lt;p>Associé à un fichier verrou &lt;code>package-lock.json&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;main&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;node_modules/expo/AppEntry.js&amp;#34;&lt;/span>,
@@ -225,7 +226,7 @@ npm search &amp;lt;package name&amp;gt;
 &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;private&amp;#34;&lt;/span>: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="versionnage-des-dépendances">Versionnage des dépendances&lt;/h2>
+&lt;h3 id="versionnage-des-dépendances">Versionnage des dépendances&lt;/h3>
 &lt;p>Versionnage sémantique &lt;strong>X.Y.Z&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>X = version majeure (changements potentiellement non rétrocompatibles).&lt;/li>
@@ -236,43 +237,110 @@ npm search &amp;lt;package name&amp;gt;
 &lt;p>&lt;strong>~1.1.1&lt;/strong> équivaut à $\geq$ 1.1.1 et $&amp;lt;$ 1.2.0&lt;/p>
 &lt;p>&lt;strong>1.1.1&lt;/strong> cible une version exacte.&lt;/p>
 &lt;hr>
-&lt;h2 id="formatage-automatique-du-code">Formatage automatique du code&lt;/h2>
+&lt;h3 id="formatage-automatique-du-code">Formatage automatique du code&lt;/h3>
 &lt;p>&lt;a href="https://prettier.io/">Prettier&lt;/a> est un outil indispensable.&lt;/p>
 &lt;p>&lt;a href="https://prettier.io/">&lt;img src="images/prettier-logo-light.png" alt="Prettier logo">&lt;/a>&lt;/p>
 &lt;hr>
-&lt;h2 id="analyse-du-code">Analyse du code&lt;/h2>
+&lt;h3 id="analyse-du-code">Analyse du code&lt;/h3>
 &lt;p>&lt;a href="https://eslint.org/">ESLint&lt;/a> est l&amp;rsquo;outil le plus utilisé. Sa configuration se fait via un fichier &lt;code>.eslintrc.json&lt;/code>.&lt;/p>
-&lt;pre>&lt;code>{
-&amp;quot;extends&amp;quot;: [&amp;quot;airbnb&amp;quot;, &amp;quot;prettier&amp;quot;],
-&amp;quot;env&amp;quot;: {
-&amp;quot;browser&amp;quot;: true
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;extends&amp;#34;&lt;/span>: [&lt;span style="color:#0086d2">&amp;#34;airbnb&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;prettier&amp;#34;&lt;/span>],
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;env&amp;#34;&lt;/span>: {
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;browser&amp;#34;&lt;/span>: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>
 },
-&amp;quot;plugins&amp;quot;: [&amp;quot;prettier&amp;quot;],
-&amp;quot;rules&amp;quot;: {
-&amp;quot;no-console&amp;quot;: &amp;quot;off&amp;quot;,
-&amp;quot;no-alert&amp;quot;: &amp;quot;off&amp;quot;,
-&amp;quot;no-plusplus&amp;quot;: &amp;quot;off&amp;quot;,
-&amp;quot;default-case&amp;quot;: &amp;quot;off&amp;quot;,
-&amp;quot;no-param-reassign&amp;quot;: [
-&amp;quot;error&amp;quot;,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;plugins&amp;#34;&lt;/span>: [&lt;span style="color:#0086d2">&amp;#34;prettier&amp;#34;&lt;/span>],
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;rules&amp;#34;&lt;/span>: {
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;no-console&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;off&amp;#34;&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;no-alert&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;off&amp;#34;&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;no-plusplus&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;off&amp;#34;&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;default-case&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;off&amp;#34;&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;no-param-reassign&amp;#34;&lt;/span>: [
+&lt;span style="color:#0086d2">&amp;#34;error&amp;#34;&lt;/span>,
 {
-&amp;quot;props&amp;quot;: false
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;props&amp;#34;&lt;/span>: &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span>
 }
 ],
-&amp;quot;arrow-body-style&amp;quot;: [
-&amp;quot;error&amp;quot;,
-&amp;quot;as-needed&amp;quot;,
-{ &amp;quot;requireReturnForObjectLiteral&amp;quot;: true }
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;arrow-body-style&amp;#34;&lt;/span>: [
+&lt;span style="color:#0086d2">&amp;#34;error&amp;#34;&lt;/span>,
+&lt;span style="color:#0086d2">&amp;#34;as-needed&amp;#34;&lt;/span>,
+{ &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;requireReturnForObjectLiteral&amp;#34;&lt;/span>: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span> }
 ]
 }
 }
-&lt;/code>&lt;/pre>&lt;hr>
-&lt;h2 id="transpilation-du-code">Transpilation du code&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="transpilation-du-code">Transpilation du code&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://babeljs.io/">Babel&lt;/a> transforme le code JavaScript ES2015+ en code ES5 compatible avec tous les environnements d&amp;rsquo;exécution JS.&lt;/li>
 &lt;li>Il permet d&amp;rsquo;utiliser sereinement les dernières évolutions du langage.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;a href="https://babeljs.io/">&lt;img src="images/Babel-Javascript-compiler.png" alt="Babel logo">&lt;/a>&lt;/p></description></item><item><title>React Native : introduction</title><link>https://www.bpesquet.fr/slides/react-native-intro/</link><pubDate>Wed, 23 May 2018 23:34:24 +0200</pubDate><guid>https://www.bpesquet.fr/slides/react-native-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;p>&lt;a href="https://babeljs.io/">&lt;img src="images/Babel-Javascript-compiler.png" alt="Babel logo">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="typescript">TypeScript&lt;/h2>
+&lt;hr>
+&lt;h3 id="des-types-pour-javascript">Des types pour JavaScript&lt;/h3>
+&lt;p>&lt;a href="https://www.typescriptlang.org/">TypeScript&lt;/a> est un sur-ensemble syntaxique de JavaScript qui permet un typage statique optionnel du code.&lt;/p>
+&lt;p>Créé à l&amp;rsquo;origine par Microsoft, il est libre et open source.&lt;/p>
+&lt;p>&lt;img src="images/ts.png" alt="TypeScript logo">&lt;/p>
+&lt;hr>
+&lt;h3 id="installation-et-utilisation">Installation et utilisation&lt;/h3>
+&lt;p>TS est supporté par la plupart des éditeurs de code.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Install TypeScript globally&lt;/span>
+npm install -g typescript
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># The TS compiler produces a pure JS version of the TS file&lt;/span>
+tsc my_typescript_file.ts
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="annotations-de-type">Annotations de type&lt;/h3>
+&lt;p>Elles permettent de préciser les &lt;em>contrats&lt;/em> des fonctions ou des méthodes.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ts" data-lang="ts">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// This function is meant to receive an input of type string
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> hello(person: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>) {
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086d2">&amp;#34;Hello, &amp;#34;&lt;/span> + person;
+}
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> user = &lt;span style="color:#0086d2">&amp;#34;Jane Doe&amp;#34;&lt;/span>;
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Uncomment to see TS error checking in action
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">//const user = [0, 1, 2];
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
+console.log(hello(user)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello, Jane Doe&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="interfaces">Interfaces&lt;/h3>
+&lt;p>Elles permettent de définir des structures de données complexes.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ts" data-lang="ts">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Describes objects that have a firstName and lastName field
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">interface&lt;/span> Person {
+firstName: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>;
+lastName: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>;
+}
+&lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> hello(person: &lt;span style="color:#cdcaa9;font-weight:bold">Person&lt;/span>) {
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086d2">&amp;#34;Hello, &amp;#34;&lt;/span> + person.firstName + &lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span> + person.lastName;
+}
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ... (see next slides)
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="duck-typing">Duck typing&lt;/h3>
+&lt;blockquote>
+&lt;p>&amp;ldquo;If it walks like a duck and quacks like a duck, it must be a duck.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;p>TS se base sur la structure concrète des objets, et non sur l&amp;rsquo;implémentation explicite d&amp;rsquo;une interface.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ts" data-lang="ts">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// This object is structurally compatible with the Person interface
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> user = { firstName: &lt;span style="color:#0086d2">&amp;#34;Jane&amp;#34;&lt;/span>, lastName: &lt;span style="color:#0086d2">&amp;#34;Doe&amp;#34;&lt;/span> };
+console.log(hello(user)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello, Jane Doe&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="définition-de-classes">Définition de classes&lt;/h3>
+&lt;p>TS supporte les définitions de classes apportées par les versions ES2015+ de JS.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ts" data-lang="ts">&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Student {
+fullName: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>;
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// The public argument implicitly creates properties
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">constructor&lt;/span>(
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> firstName: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> middleInitial: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> lastName: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>
+) {
+&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.fullName = firstName + &lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span> + middleInitial + &lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span> + lastName;
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="utilisation-de-classes">Utilisation de classes&lt;/h3>
+&lt;p>Classes et interfaces TS sont compatibles. Le développeur peut ainsi choisir le bon niveau d&amp;rsquo;abstraction.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ts" data-lang="ts">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> user = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Student(&lt;span style="color:#0086d2">&amp;#34;Jane&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;M.&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;Doe&amp;#34;&lt;/span>);
+console.log(hello(user)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello, Jane Doe&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>React Native : introduction</title><link>https://www.bpesquet.fr/slides/react-native-intro/</link><pubDate>Wed, 23 May 2018 23:34:24 +0200</pubDate><guid>https://www.bpesquet.fr/slides/react-native-intro/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>L&amp;rsquo;écosystème mobile&lt;/li>
 &lt;li>Premiers pas avec React Native&lt;/li>
