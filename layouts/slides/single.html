@@ -37,7 +37,7 @@
 	</div>
 
 	<script src="{{ "reveal.js/dist/reveal.js" | absURL}}"></script>
-
+	<script src="{{ "reveal.js/plugin/math/math.js" | absURL}}"></script>
 	<script>
 		// More info about config & dependencies:
 		// - https://github.com/hakimel/reveal.js#configuration
@@ -59,8 +59,8 @@
 				{ src: '{{ "reveal.js/plugin/notes/notes.js" | absURL}}', async: true },
 				{ src: '{{ "reveal.js/plugin/zoom-js/zoom.js" | absURL}}', async: true },
 				{ src: '{{ "reveal.js/plugin/highlight/highlight.js" | absURL}}', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
-				{ src: '{{ "reveal.js/plugin/math/math.js" | absURL}}', async: true }
-			]
+			],
+			plugins: [ RevealMath ]
 		});
 	</script>
 </body>
