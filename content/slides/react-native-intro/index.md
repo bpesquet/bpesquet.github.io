@@ -14,7 +14,7 @@ repo: https://github.com/ensc-mobi
 
 ---
 
-## L'écosystème mobile
+### L'écosystème mobile
 
 ---
 
@@ -32,7 +32,7 @@ repo: https://github.com/ensc-mobi
 
 {{% section %}}
 
-## Développement natif
+### Développement natif
 
 Création d'applications en utilisant la technologie prévue par le concepteur de l'OS.
 
@@ -43,14 +43,14 @@ Création d'applications en utilisant la technologie prévue par le concepteur d
 
 ---
 
-## Avantages
+### Avantages
 
 - Accès à l'intégralité des fonctionnalités matérielles et logicielles du terminal mobile.
 - Performances optimales.
 
 ---
 
-## Inconvénient (majeur !)
+### Inconvénient (majeur !)
 
 Nécessité de créer puis de faire évoluer une application pour chaque environnement.
 
@@ -60,7 +60,7 @@ Nécessité de créer puis de faire évoluer une application pour chaque environ
 
 {{% section %}}
 
-## Solutions hybrides
+### Solutions hybrides
 
 Création d'applications mobiles compatibles avec plusieurs OS mobiles grâce à un framework dédié.
 
@@ -70,7 +70,7 @@ Exemples : [Apache Cordova](https://cordova.apache.org), [Ionic](https://ionicfr
 
 ---
 
-## Avantages
+### Avantages
 
 - Fonctionnalités et performances proches de celles d'une application native.
 - Economies de ressources pour créer l'application.
@@ -78,7 +78,7 @@ Exemples : [Apache Cordova](https://cordova.apache.org), [Ionic](https://ionicfr
 
 ---
 
-## Inconvénients
+### Inconvénients
 
 - Impossible d'accéder à certaines fonctionnalités matérielles ou logicielles spécifiques.
 - _Look'n'feel_ non natif.
@@ -90,7 +90,7 @@ Exemples : [Apache Cordova](https://cordova.apache.org), [Ionic](https://ionicfr
 
 {{% section %}}
 
-## Développement natif multi-plateformes
+### Développement natif multi-plateformes
 
 Création d'applications mobiles compatibles avec plusieurs OS mobiles grâce à un framework dédié.
 
@@ -100,7 +100,7 @@ Exemples : [React Native](https://facebook.github.io/react-native/), [Weex](http
 
 ---
 
-## Le meilleur des deux mondes ?
+### Le meilleur des deux mondes ?
 
 Combine les avantages du natif (_look'n'feel_, performances) et de l'hybride (une seule base de code).
 
@@ -114,7 +114,7 @@ Limite potentielle : le support de l'OS dépend entièrement du framework.
 
 ---
 
-## React Native
+### React Native
 
 Framework créé par Facebook, open source depuis 2015.
 
@@ -124,7 +124,7 @@ Déclinaison mobile du framework JavaScript [React](https://reactjs.org/).
 
 ---
 
-## Expo
+### Expo
 
 Framework pour faciliter la création et le déploiement d'applications React Native.
 
@@ -135,7 +135,7 @@ Framework pour faciliter la création et le déploiement d'applications React Na
 
 ---
 
-## Création d'une application
+### Création d'une application
 
 ```bash
 # Install expo-cli globally
@@ -143,22 +143,23 @@ Framework pour faciliter la création et le déploiement d'applications React Na
 npm install -g expo-cli
 
 # Create a new app in the my-new-project subfolder
-expo init my-new-project
+# Use managed TypeScript template
+expo init my-new-project -t expo-template-blank-typescript
 ```
 
-- Workflow **managé** : projet entièrement géré par Expo (plus simple).
+- Workflow _managé_ : projet entièrement géré par Expo (plus simple).
 
-- Workflow **bare** : plus proche d'un projet React Native pur.
+- Workflow _bare_ : plus proche d'un projet React Native pur.
 
 ---
 
-## Contenu du répertoire créé
+### Contenu du répertoire créé
 
 ![Arborescence React Native](images/rn-app-structure.png)
 
 ---
 
-## Déploiement de l'application
+### Déploiement de l'application
 
 ```bash
 cd my-new-project # move into project directory
@@ -171,51 +172,54 @@ Ensuite, scan du QR Code depuis l'application Expo (Android) ou l'appareil photo
 
 ---
 
-## Détails sur le déploiement
+### Détails sur le déploiement
 
 - L'application est hébergée sur un serveur web local.
 - Expo s'y connecte pour la récupérer puis la lancer.
-- Une interface de gestion s'affiche dans le navigateur.
+- Une interface web de gestion s'affiche.
 
 ![Expo Management](images/expo_management.png)
 
 ---
 
-## Connexion au serveur Expo
-
-L'application Expo client doit accéder au serveur web de la machine de développement pour pouvoir lancer l'application RN.
-
-Il existe plusieurs modes de connexion :
-
-- **LAN** : utilisation du réseau Wifi local. Peut poser problème dans certains environnements.
-- **Tunnel** : création d'un tunnel avec [ngrok](https://ngrok.com/) pour accéder au serveur local via le web. Nécessite que le terminal mobile dispose d'un accès internet.
-
----
-
-## Rechargement dynamique
+### Rechargement dynamique
 
 [![Live Reload](images/expo_reload.jpeg)](https://openclassrooms.com/fr/courses/4902061-developpez-une-application-mobile-react-native/)
 
 ---
 
-## Anatomie d'une application React Native
+### Connexion au serveur Expo
+
+L'application mobile Expo client doit accéder au serveur web de la machine de développement pour pouvoir lancer l'application RN.
+
+Il existe plusieurs modes de connexion :
+
+- **LAN** : utilisation du réseau Wifi local. Peut poser problème dans certains environnements Wifi sécurisés.
+- **Tunnel** : création d'un tunnel avec [ngrok](https://ngrok.com/) pour accéder au serveur local via le web. Nécessite que le terminal mobile dispose d'un accès internet.
 
 ---
 
-## Le fichier de configuration app.json
+### Utilisation d'un émulateur
+
+- Alternative à l'emploi d'un terminal mobile pour tester l'application RN.
+- Nécessite l'installation de [XCode (iOS)](https://developer.apple.com/xcode/) ou [Android Studio](https://developer.android.com/studio) sur le machine de développement.
+- Documentation : [iOS](https://docs.expo.io/workflow/ios-simulator/) | [Android](https://docs.expo.io/workflow/android-studio-emulator/).
+
+![Expo emulator](images/expo-emulator.png)
+
+---
+
+### Anatomie d'une application React Native
+
+---
+
+### Le fichier de configuration app.json
 
 ```json
 {
   "expo": {
     "name": "My New Project",
     "slug": "my-new-project",
-    "privacy": "public",
-    "sdkVersion": "36.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -227,11 +231,18 @@ Il existe plusieurs modes de connexion :
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
     }
   }
 }
@@ -239,7 +250,7 @@ Il existe plusieurs modes de connexion :
 
 ---
 
-## Le fichier package.json
+### Le fichier package.json
 
 ```json
 {
@@ -252,15 +263,19 @@ Il existe plusieurs modes de connexion :
     "eject": "expo eject"
   },
   "dependencies": {
-    "expo": "~36.0.0",
-    "react": "~16.9.0",
-    "react-dom": "~16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
-    "react-native-web": "~0.11.7"
+    "expo": "~40.0.0",
+    "expo-status-bar": "~1.0.3",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
+    "react-native-web": "~0.13.12"
   },
   "devDependencies": {
-    "babel-preset-expo": "~8.0.0",
-    "@babel/core": "^7.0.0"
+    "@babel/core": "~7.9.0",
+    "@types/react": "~16.9.35",
+    "@types/react-dom": "~16.9.8",
+    "@types/react-native": "~0.63.2",
+    "typescript": "~4.0.0"
   },
   "private": true
 }
@@ -268,16 +283,18 @@ Il existe plusieurs modes de connexion :
 
 ---
 
-## Le fichier principal App.js
+### Le fichier principal App.tsx
 
-```jsx
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+```tsx
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Open up App.tsx to start working on your app!</Text>
+      <StatusBar style="auto" />
     </View>
   );
 }
@@ -285,40 +302,45 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 ```
 
 ---
 
-## JSX
+### JSX
 
-Syntaxe introduite pour le framework web [React](https://reactjs.org/) permettant de décrire une UI en intégrant balisage et logique applicative.
+- Syntaxe introduite pour le framework web [React](https://reactjs.org/).
+- Permet de décrire une UI en intégrant balisage et logique applicative.
 
 ```jsx
 // JSX for React (web)
-const name = 'Clarisse Agbegnenou';
+const name = "Clarisse Agbegnenou";
 const element = <h1>Hello, {name}</h1>;
 ```
 
 ```jsx
 // JSX for React Native (mobile)
-const a = <View />
+const a = <View />;
 const b = (
-  <View
-    foo='hello'
-    bar={baz}>
+  <View foo="hello" bar={baz}>
     <Text>42</Text>
   </View>
-)
+);
 ```
 
 ---
 
-## La notion de composant
+### TSX
+
+Equivalent du format JSX avec support de TypeScript.
+
+---
+
+### La notion de composant
 
 - Les **composants** sont les blocs de base d'une application React (Native).
 
@@ -328,13 +350,13 @@ const b = (
 
 ---
 
-## Propriétés (props) d'un composant
+### Propriétés (_props_) d'un composant
 
 Caractéristiques définies au moment de la création. Modifiables uniquement par le composant parent. [Démo](https://snack.expo.io/@bpesquet/greeting)
 
 ```jsx
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import React, { Component } from "react";
+import { Text, View } from "react-native";
 
 class Greeting extends Component {
   render() {
@@ -357,13 +379,13 @@ export default class LotsOfGreetings extends Component {
 
 ---
 
-## Etat d'un composant
+### Etat (_state_) d'un composant
 
 Etat interne (données) d'un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via `setState()`. [Démo](https://snack.expo.io/@bpesquet/counter)
 
 ```jsx
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 class Counter extends Component {
   constructor(props) {
@@ -397,19 +419,19 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center"
-  }
+    justifyContent: "center",
+  },
 });
 ```
 
 ---
 
-## Composants de base
+### Composants de base
 
 ![React Native core components](images/basic_components.png)
 
 ---
 
-## Composants d'interface utilisateur
+### Composants d'interface utilisateur
 
 ![React native UI components](images/ui_components.png)

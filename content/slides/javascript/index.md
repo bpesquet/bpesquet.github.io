@@ -347,7 +347,7 @@ Autre possibilité : [yarn](https://yarnpkg.com/lang/en/) (plus récent).
 
 ---
 
-### Le fichier `package.json`
+### Le fichier package.json
 
 Associé à un fichier verrou `package-lock.json`.
 
@@ -450,7 +450,7 @@ Versionnage sémantique **X.Y.Z**
 
 Créé à l'origine par Microsoft, il est libre et open source.
 
-![TypeScript logo](images/ts.png)
+![TypeScript logo](images/typescript.png)
 
 ---
 
