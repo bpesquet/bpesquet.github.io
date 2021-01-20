@@ -11,10 +11,11 @@ repo: https://github.com/ensc-mobi
 - L'écosystème mobile
 - Premiers pas avec React Native
 - Anatomie d'une application React Native
+- La notion de composant
 
 ---
 
-### L'écosystème mobile
+## L'écosystème mobile
 
 ---
 
@@ -209,7 +210,7 @@ Il existe plusieurs modes de connexion :
 
 ---
 
-### Anatomie d'une application React Native
+## Anatomie d'une application React Native
 
 ---
 
@@ -311,10 +312,11 @@ const styles = StyleSheet.create({
 
 ---
 
-### JSX
+### Les formats JSX et TSX
 
 - Syntaxe introduite pour le framework web [React](https://reactjs.org/).
 - Permet de décrire une UI en intégrant balisage et logique applicative.
+- TSX : équivalent de JSX avec support de TypeScript.
 
 ```jsx
 // JSX for React (web)
@@ -334,31 +336,73 @@ const b = (
 
 ---
 
-### TSX
-
-Equivalent du format JSX avec support de TypeScript.
+## La notion de composant
 
 ---
 
-### La notion de composant
+### Définition
 
 - Les **composants** sont les blocs de base d'une application React (Native).
 
 - Ils permettent de créer une UI sous forme **déclarative** par assemblage de composants.
 
-- Ils doivent disposer d'une méthode `render()` qui définit leur rendu visuel.
+- Ils doivent comporter une fonction qui définit leur rendu visuel.
+
+---
+
+### Composants fonctions
+
+- La valeur de retour de la fonction définit le rendu.
+- Syntaxe la plus concise, pratique pour les composants simples.
+
+```tsx
+import React from "react";
+import { Text } from "react-native";
+
+const Cat = () => {
+  const name = "Maru";
+  return <Text>Hello, I am {name}!</Text>;
+};
+
+export default Cat;
+```
+
+---
+
+### Composants classes
+
+- La méthode `render()` définit le rendu.
+- Syntaxe à privilégier pour les composants complexes.
+
+```tsx
+import React from "react";
+import { Text } from "react-native";
+
+class Cat extends React.Component {
+  render() {
+    const name = "Maru";
+    return <Text>Hello, I am {name}!</Text>;
+  }
+}
+
+export default Cat;
+```
 
 ---
 
 ### Propriétés (_props_) d'un composant
 
-Caractéristiques définies au moment de la création. Modifiables uniquement par le composant parent. [Démo](https://snack.expo.io/@bpesquet/greeting)
+Caractéristiques définies au moment de la création, modifiables uniquement par le composant parent ([démo](https://snack.expo.io/@bpesquet/greeting)).
 
-```jsx
+```tsx
 import React, { Component } from "react";
 import { Text, View } from "react-native";
 
 class Greeting extends Component {
+  // Component has a name property which is of type string
+  constructor(public props: { name: string }) {
+    super(props);
+  }
   render() {
     return <Text>Hello {this.props.name}!</Text>;
   }
@@ -381,14 +425,14 @@ export default class LotsOfGreetings extends Component {
 
 ### Etat (_state_) d'un composant
 
-Etat interne (données) d'un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via `setState()`. [Démo](https://snack.expo.io/@bpesquet/counter)
+Etat interne (données) d'un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via `setState()` ([démo](https://snack.expo.io/@bpesquet/counter)).
 
-```jsx
+```tsx
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 class Counter extends Component {
-  constructor(props) {
+  constructor(public props: { color: string; size: number }) {
     super(props);
     this.state = { count: 0 };
     setInterval(() => {
@@ -408,7 +452,7 @@ export default class CounterApp extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Counter color={"red"} size={30} />
+        <Counter color="red" size={50} />
       </View>
     );
   }
