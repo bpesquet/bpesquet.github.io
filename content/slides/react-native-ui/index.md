@@ -18,7 +18,7 @@ repo: https://github.com/ensc-mobi
 
 ---
 
-## Notion de cycle de vie
+### Notion de cycle de vie
 
 Les composants RN suivent un cycle de vie bien défini composé d'étapes : **montage**, **rendu**, **mise à jour**, **démontage** et **suppression**.
 
@@ -26,15 +26,15 @@ Les composants RN suivent un cycle de vie bien défini composé d'étapes : **mo
 
 ---
 
-## Méthodes liées au cycle de vie
+### Méthodes liées au cycle de vie
 
 Les redéfinir permet d'exécuter du code spécifique.
 
 1. `constructor(props)` : initialisation des propriétés et de l'état.
 1. `render()` : renvoi d'un élément React Native.
 1. `componentDidMount()` : appels asynchrones.
-1. `shouldComponentUpdate(nextProps, nextState)` : renvoi d'un booléen pour annuler la mise à jour.
-1. `componentDidUpdate(prevProps, prevState)`.
+1. `shouldComponentUpdate()` : renvoi d'un booléen pour annuler la mise à jour.
+1. `componentDidUpdate()` : actions après la mise à jour du rendu.
 
 ---
 
@@ -42,24 +42,24 @@ Les redéfinir permet d'exécuter du code spécifique.
 
 ---
 
-## Gestion du style
+### Gestion du style
 
 Propriété `style` pour les composants de base.
 
-Semblable à CSS avec nommage *camelCase*.
+Semblable à CSS avec nommage _camelCase_.
 
 ```jsx
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 const styles = StyleSheet.create({
   bigblue: {
-    color: 'blue',
-    fontWeight: 'bold',
+    color: "blue",
+    fontWeight: "bold",
     fontSize: 30,
   },
   red: {
-    color: 'red',
+    color: "red",
   },
 });
 
@@ -79,7 +79,7 @@ export default class LotsOfStyles extends Component {
 
 ---
 
-## Gestion des dimensions
+### Gestion des dimensions
 
 Deux possibilités :
 
@@ -88,21 +88,25 @@ Deux possibilités :
 
 ---
 
-## Dimensions fixes
+### Dimensions fixes
 
 Utile pour les composants qui doivent toujours être affichés à la même taille.
 
 ```jsx
-import React, { Component } from 'react';
-import { View } from 'react-native';
+import React, { Component } from "react";
+import { View } from "react-native";
 
 export default class FixedDimensionsBasics extends Component {
   render() {
     return (
       <View>
-        <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
-        <View style={{width: 100, height: 100, backgroundColor: 'skyblue'}} />
-        <View style={{width: 150, height: 150, backgroundColor: 'steelblue'}} />
+        <View
+          style={{ width: 50, height: 50, backgroundColor: "powderblue" }}
+        />
+        <View style={{ width: 100, height: 100, backgroundColor: "skyblue" }} />
+        <View
+          style={{ width: 150, height: 150, backgroundColor: "steelblue" }}
+        />
       </View>
     );
   }
@@ -111,15 +115,15 @@ export default class FixedDimensionsBasics extends Component {
 
 ---
 
-## Dimensions flexibles
+### Dimensions flexibles
 
 Les dimensions s'adaptent à l'espace disponible.
 
-`flex:1` => espace partagé équitablement entre tous les composants d'un même parent. [Démo](https://snack.expo.io/@bpesquet/dimensions)
+`flex:1` => espace partagé équitablement entre tous les composants d'un même parent ([démo](https://snack.expo.io/@bpesquet/dimensions)).
 
 ```jsx
-import React, { Component } from 'react';
-import { View } from 'react-native';
+import React, { Component } from "react";
+import { View } from "react-native";
 
 export default class FlexDimensionsBasics extends Component {
   render() {
@@ -127,10 +131,10 @@ export default class FlexDimensionsBasics extends Component {
       // Try removing the `flex: 1` on the parent View.
       // The parent will not have dimensions, so the children can't expand.
       // What if you add `height: 300` instead of `flex: 1`?
-      <View style={{flex: 1}}>
-        <View style={{flex: 1, backgroundColor: 'powderblue'}} />
-        <View style={{flex: 2, backgroundColor: 'skyblue'}} />
-        <View style={{flex: 3, backgroundColor: 'steelblue'}} />
+      <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: "powderblue" }} />
+        <View style={{ flex: 2, backgroundColor: "skyblue" }} />
+        <View style={{ flex: 3, backgroundColor: "steelblue" }} />
       </View>
     );
   }
@@ -139,7 +143,7 @@ export default class FlexDimensionsBasics extends Component {
 
 ---
 
-## Flexbox
+### Flexbox
 
 - Mode de mise en page pour les éléments situés à l'intérieur d'un conteneur.
 - Objectif : répartir au mieux l'espace disponible.
@@ -148,7 +152,7 @@ export default class FlexDimensionsBasics extends Component {
 
 ---
 
-## `flexDirection` : flux des éléments
+### `flexDirection` : flux des éléments
 
 `column` (par défaut), `row`, `column-reverse`, `row-reverse`.
 
@@ -156,13 +160,13 @@ export default class FlexDimensionsBasics extends Component {
 
 ---
 
-## `justifyContent` : axe principal
+### `justifyContent` : axe principal
 
 [![Flexbox: justify content](images/flexbox_justify_content.png)](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ---
 
-## `alignItems` : axe secondaire
+### `alignItems` : axe secondaire
 
 [![Flexbox: align Items](images/flexbox_align_items.png)](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
@@ -172,7 +176,7 @@ export default class FlexDimensionsBasics extends Component {
 
 ---
 
-## React Navigation
+### React Navigation
 
 - Composant issu de la communauté des développeurs RN.
 - Devenu le standard pour les applications multi-vues
@@ -181,13 +185,13 @@ export default class FlexDimensionsBasics extends Component {
 
 ---
 
-## Installation de react-navigation
+### Installation de react-navigation
 
 Utiliser `expo install` au lieu de `npm install` assure l'installation de versions compatibles avec celle d'Expo.
 
 ```bash
 # Core components and dependencies
-expo install react-navigation react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
 
 # StackNavigator dependencies
 expo install react-navigation-stack @react-native-community/masked-view
@@ -201,7 +205,7 @@ expo install react-navigation-drawer
 
 ---
 
-## `StackNavigator`
+### `StackNavigator`
 
 Principe similaire au web : gestion d'une pile de vues.
 
@@ -212,7 +216,7 @@ const AppNavigator = createStackNavigator(
     Details: DetailsScreen,
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: "Home",
   }
 );
 
@@ -229,7 +233,7 @@ export default class App extends React.Component {
 
 {{% section %}}
 
-## Navigation entre vues
+### Navigation entre vues
 
 - `this.props.navigation.navigate('RouteName')`.
 - `this.props.navigation.push('RouteName')` : permet d'aller plusieurs fois vers la même vue.
@@ -237,21 +241,21 @@ export default class App extends React.Component {
 
 ---
 
-## Exemple
+### Exemple
 
 ```jsx
 class DetailsScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Text>Details Screen</Text>
         <Button
           title="Go to Details... again"
-          onPress={() => this.props.navigation.push('Details')}
+          onPress={() => this.props.navigation.push("Details")}
         />
         <Button
           title="Go to Home"
-          onPress={() => this.props.navigation.navigate('Home')}
+          onPress={() => this.props.navigation.navigate("Home")}
         />
         <Button
           title="Go back"
@@ -269,14 +273,14 @@ class DetailsScreen extends React.Component {
 
 {{% section %}}
 
-## Passage de paramètres entre vues
+### Passage de paramètres entre vues
 
 - `this.props.navigation.navigate('RouteName', {/* params */})`.
 - `this.props.navigation.getParam(paramName, defaultValue)`.
 
 ---
 
-## Exemple
+### Exemple
 
 ```jsx
 // Home Screen
@@ -300,18 +304,18 @@ class DetailsScreen extends React.Component {
 
 ---
 
-## En-tête des vues
+### En-tête des vues
 
 ```jsx
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Home',
+    title: "Home",
     headerStyle: {
-      backgroundColor: '#f4511e',
+      backgroundColor: "#f4511e",
     },
-    headerTintColor: '#fff',
+    headerTintColor: "#fff",
     headerTitleStyle: {
-      fontWeight: 'bold',
+      fontWeight: "bold",
     },
   };
 
@@ -321,7 +325,7 @@ class HomeScreen extends React.Component {
 
 ---
 
-## Fenêtre modale
+### Fenêtre modale
 
 ```jsx
 const RootStack = createStackNavigator(
@@ -334,15 +338,15 @@ const RootStack = createStackNavigator(
     },
   },
   {
-    mode: 'modal',
-    headerMode: 'none',
+    mode: "modal",
+    headerMode: "none",
   }
 );
 ```
 
 ---
 
-## Exemple récapitulatif
+### Exemple récapitulatif
 
 <https://github.com/ensc-mobi/StackNavigatorDemo>
 
@@ -350,7 +354,7 @@ const RootStack = createStackNavigator(
 
 ---
 
-## `BottomTabNavigator`
+### `BottomTabNavigator`
 
 Affichage d'onglets en bas de l'écran.
 
@@ -371,23 +375,23 @@ export default class App extends React.Component {
 
 ---
 
-## Navigation entre onglets
+### Navigation entre onglets
 
 `this.props.navigation.navigate('TabName')`.
 
 ```jsx
-<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+<View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
   <Text>Home!</Text>
   <Button
     title="Go to Settings"
-    onPress={() => this.props.navigation.navigate('Settings')}
+    onPress={() => this.props.navigation.navigate("Settings")}
   />
 </View>
 ```
 
 ---
 
-## Affichage de piles dans les onglets
+### Affichage de piles dans les onglets
 
 ```jsx
 const HomeStack = createStackNavigator({
@@ -401,18 +405,16 @@ const SettingsStack = createStackNavigator({
 });
 
 export default createAppContainer(
-  createBottomTabNavigator(
-    {
-      Home: HomeStack,
-      Settings: SettingsStack,
-    }
-  )
+  createBottomTabNavigator({
+    Home: HomeStack,
+    Settings: SettingsStack,
+  })
 );
 ```
 
 ---
 
-## Exemple récapitulatif
+### Exemple récapitulatif
 
 <https://github.com/ensc-mobi/TabNavigatorDemo>
 
@@ -420,8 +422,8 @@ export default createAppContainer(
 
 ---
 
-## Autres possibilités de react-navigation
+### Autres possibilités de react-navigation
 
-- [Navigation par menu accordéon ou "hamburger'](https://reactnavigation.org/docs/en/drawer-based-navigation.html) ([exemple](https://snack.expo.io/@react-navigation/9b2a43)).
-- [Gestion de l'authentification](https://reactnavigation.org/docs/en/auth-flow.html).
+- [Navigation par menu accordéon ou "hamburger'](https://reactnavigation.org/docs/drawer-based-navigation/) ([démo](https://snack.expo.io/@react-navigation/9b2a43)).
+- [Gestion de l'authentification](https://reactnavigation.org/docs/auth-flow/).
 - ...
