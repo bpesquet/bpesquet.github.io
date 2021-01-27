@@ -17,7 +17,7 @@ weight: 3
 
 ---
 
-## Rappels sur les propriétés
+### Rappels sur les propriétés
 
 **Propriétés (_props_)** = caractéristiques définies au moment de la création du composant.
 
@@ -25,7 +25,7 @@ Les propriétés sont modifiables uniquement par le composant parent.
 
 ---
 
-## Rappels sur l'état
+### Rappels sur l'état
 
 **Etat (_state_)** = ensemble des données susceptibles d'être modifiées pendant l'exécution de l'application.
 
@@ -35,7 +35,7 @@ Toute modification de l'état déclenche un nouveau rendu du composant.
 
 ---
 
-## Problématique
+### Problématique
 
 La gestion locale de l'état devient insuffisante lorsqu'un composant doit **accéder à** ou **modifier** l'état d'un autre composant.
 
@@ -43,7 +43,7 @@ Nécessité de partager un état commun entre certains composants.
 
 ---
 
-## Solution : _"lifting state up"_
+### Solution : _"lifting state up"_
 
 - Remonter l'état au niveau du plus proche composant parent commun.
 - Définir les actions de modification dans ce composant parent.
@@ -55,7 +55,7 @@ Nécessité de partager un état commun entre certains composants.
 
 ---
 
-## Application
+### Application
 
 <https://github.com/ensc-mobi/TempConverter>
 
@@ -63,11 +63,11 @@ Nécessité de partager un état commun entre certains composants.
 
 ---
 
-## Utilisation de props dans les composants enfants
+### Utilisation de props dans les composants enfants
 
 ```jsx
 class TemperatureInput extends React.Component {
-  _onChangeText = text => {
+  _onChangeText = (text) => {
     // Callback passed as component prop is called
     this.props.onTemperatureChange(text);
   };
@@ -90,7 +90,7 @@ class TemperatureInput extends React.Component {
 
 ---
 
-## Remontée de l'état dans le composant parent
+### Remontée de l'état dans le composant parent
 
 ```jsx
 class Calculator extends React.Component {
@@ -113,7 +113,7 @@ class Calculator extends React.Component {
 
 ---
 
-## Appel aux actions définies dans le parent
+### Appel aux actions définies dans le parent
 
 ```jsx
   // ...
@@ -149,7 +149,7 @@ class Calculator extends React.Component {
 
 ---
 
-## Problématique
+### Problématique
 
 Les composants parents rassemblent trop de choses :
 
@@ -161,7 +161,7 @@ Non-respect du principe de séparation des responsabilités.
 
 ---
 
-## Solution
+### Solution
 
 - Centraliser l'état et les actions de modifications dans des objets dédiés, souvent appelés **stores**.
 - Donner accès à ces objets aux composants via des propriétés.
@@ -169,7 +169,7 @@ Non-respect du principe de séparation des responsabilités.
 
 ---
 
-## Application
+### Application
 
 <https://github.com/ensc-mobi/TodoNative>
 
@@ -177,7 +177,7 @@ Non-respect du principe de séparation des responsabilités.
 
 ---
 
-## Définition d'un store
+### Définition d'un store
 
 ```js
 export default class TodoStore extends Store {
@@ -190,7 +190,7 @@ export default class TodoStore extends Store {
     this.todos = [];
   }
 
-  addTodo = task => {
+  addTodo = (task) => {
     // Add new TODO at beginning of array
     this.todos = [{ task, completed: false }, ...this.todos];
 
@@ -209,7 +209,7 @@ export default class TodoStore extends Store {
 
 ---
 
-## Notification des changements d'état
+### Notification des changements d'état
 
 Basée sur le Design Pattern [Observateur](https://fr.wikipedia.org/wiki/Observateur_%28patron_de_conception%29).
 
@@ -227,14 +227,14 @@ export default class Store {
 
   // Notify all observers of a state change in the store
   notifyObservers() {
-    this.observers.forEach(observer => observer.setState(this.getState()));
+    this.observers.forEach((observer) => observer.setState(this.getState()));
   }
 }
 ```
 
 ---
 
-## Lien entre store et composant principal
+### Lien entre store et composant principal
 
 ```jsx
 const App = () => {
@@ -248,7 +248,7 @@ export default App;
 
 ---
 
-## Abonnement d'un composant
+### Abonnement d'un composant
 
 ```jsx
 export default class MainView extends React.Component {
@@ -275,14 +275,14 @@ export default class MainView extends React.Component {
 
 ---
 
-## Problématique
+### Problématique
 
 - Le nombre croissant de composants complique les évolutions de l'état.
 - Les mutations de l'état peuvent déclencher un (trop) grand nombre de rendus des composants.
 
 ---
 
-## Solution
+### Solution
 
 - Utiliser une librairie dédiée à la gestion de l'état.
 - [Bon choix](https://www.robinwieruch.de/redux-mobx-confusion/) pour la plupart des projets de taille intermédiaire : [MobX](https://mobx.js.org).
@@ -301,7 +301,7 @@ expo install --save-dev babel-preset-mobx
 
 ---
 
-## Application
+### Application
 
 <https://github.com/ensc-mobi/TodoNative-MobX>
 
@@ -309,7 +309,7 @@ expo install --save-dev babel-preset-mobx
 
 ---
 
-## Définition d'une classe métier
+### Définition d'une classe métier
 
 ```js
 import { observable } from "mobx";
@@ -331,7 +331,7 @@ export default class Todo {
 
 ---
 
-## Définition d'un store
+### Définition d'un store
 
 ```js
 import { observable } from "mobx";
@@ -359,7 +359,7 @@ export default class TodoStore {
 
 ---
 
-## Lien entre store et composant principal
+### Lien entre store et composant principal
 
 ```jsx
 const App = () => {
@@ -373,7 +373,7 @@ export default App;
 
 ---
 
-## Abonnement d'un composant
+### Abonnement d'un composant
 
 ```js
 import { observer } from "mobx-react";
@@ -385,7 +385,7 @@ export default class MainView extends React.Component {
     this.props.todoStore.addTodo(task);
   };
   // ...
-  
+
   render() {
     return (
       <View style={styles.container}>
