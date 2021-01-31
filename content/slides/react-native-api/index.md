@@ -17,9 +17,9 @@ weight: 4
 
 ---
 
-## La notion d'API
+### La notion d'API
 
-Une **API** (*Application Programming Interface*) est un point d'entrée programmatique dans un système.
+Une **API** (_Application Programming Interface_) est un point d'entrée programmatique dans un système.
 
 Elle fournit un moyen d'interagir avec ce système.
 
@@ -27,20 +27,20 @@ Les API permettent aux développeurs d'intégrer des services externes dans leur
 
 ---
 
-## Spécificités des API web
+### Spécificités des API web
 
 Une **API web** (appelée parfois service web) est une API accessible via les technologies du web : HTTP ou HTTPS.
 
-Elles utilisent le plus souvent le format de donnée **JSON**.
+Les API web utilisent le plus souvent le format de donnée **JSON**.
 
 Certaines sont librement utilisables, d'autres nécessitent une authentification du client.
 
 ---
 
-## Exemples d'API web
+### Exemples d'API web
 
 - [PokéAPI](https://pokeapi.co/)
-- [Star Wars API](https://swapi.co/)
+- [Star Wars API](https://swapi.dev/)
 - [Wikipedia](https://en.wikipedia.org/w/api.php?)
 - [Spotify](https://developer.spotify.com/documentation/web-api/)
 - [OMDb API](https://www.omdbapi.com/)
@@ -49,10 +49,10 @@ Certaines sont librement utilisables, d'autres nécessitent une authentification
 
 ---
 
-## Outils pour la gestion des API web
+### Outils pour la gestion des API web
 
-- [Postman](https://www.getpostman.com/).
-- Extension [RESTClient](https://addons.mozilla.org/fr/firefox/addon/restclient/) pour Firefox.
+- [Postman](https://www.getpostman.com/)
+- Extension [RESTClient](https://addons.mozilla.org/fr/firefox/addon/restclient/) pour Firefox
 
 ---
 
@@ -60,11 +60,11 @@ Certaines sont librement utilisables, d'autres nécessitent une authentification
 
 ---
 
-## Appels asynchrones
+### Appels asynchrones
 
-Une **promesse** (_promise_) est un objet qui encapsule une opération dont le résultat n'est pas encore connu.
+Une [promesse](https://web.dev/promises/) (_promise_) est un objet qui encapsule une opération dont le résultat n'est pas encore connu.
 
-La fonction JavaScript `fetch()` est importée du web.
+La fonction JavaScript [fetch()](https://developers.google.com/web/updates/2015/03/introduction-to-fetch) exploite les possibilités des promesses.
 
 ```js
 // Envoie une requête HTTP asynchrone vers l'URL spécifiée
@@ -79,45 +79,44 @@ fetch(url)
 
 ---
 
-## Accès à une ressource distante
+### Accès à une ressource distante
 
 ```js
 // Envoi d'une requête HTTP asynchrone vers l'URL spécifiée
-// La réponse est reçue ici sous forme de données JSON
+// La réponse reçue ici contient des données JSON
 fetch("http://my-api-url")
   // Accès au contenu JSON de la réponse
-  .then(response => response.json())
-  // Utilisation du contenu de la réponse
-  // `content` est un objet ou un tableau JavaScript
-  .then(content => {
-    // ...
+  .then((response) => response.json())
+  .then((content) => {
+    // Utilisation du contenu de la réponse
+    // `content` est un objet ou un tableau JavaScript
   })
-  .catch(error => {
+  .catch((error) => {
     console.error(errpr);
   });
 ```
 
 ---
 
-## Mise à jour d'une ressource distante
+### Mise à jour d'une ressource distante
 
 ```js
-fetch('https://mywebsite.com/endpoint/', {
-  method: 'POST',
+fetch("https://mywebsite.com/endpoint/", {
+  method: "POST",
   headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
+    Accept: "application/json",
+    "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    firstParam: 'yourValue',
-    secondParam: 'yourOtherValue',
+    firstParam: "yourValue",
+    secondParam: "yourOtherValue",
   }),
 });
 ```
 
 ---
 
-## Application
+### Application
 
 <https://github.com/ensc-mobi/RandomBeer>
 
@@ -125,28 +124,28 @@ fetch('https://mywebsite.com/endpoint/', {
 
 ---
 
-## Consommation d'une API web
+### Consommation d'une API web
 
 ```js
 const headers = {
   "Content-Type": "application/json",
-  Accept: "application/json"
+  Accept: "application/json",
 };
 
 // Retourne une recette de bière au hasard
 export const getRandomBrewdog = () =>
   fetch(`${rootEndpoint}/beers/random`, { headers })
-    .then(response => response.json())
+    .then((response) => response.json())
     // Access first element of returned array
-    .then(beers => beers[0])
-    .catch(error => {
+    .then((beers) => beers[0])
+    .catch((error) => {
       console.error(error);
     });
 ```
 
 ---
 
-## Mise à jour de l'application
+### Mise à jour de l'application
 
 ```jsx
   // ...
@@ -174,7 +173,7 @@ export const getRandomBrewdog = () =>
 
 ---
 
-## PHP-CRUD-API
+### PHP-CRUD-API
 
 <https://github.com/mevdschee/php-crud-api>
 
@@ -191,9 +190,9 @@ $config = new Config([
 
 ---
 
-## Utilisation de PHP-CRUD-API
+### Utilisation de PHP-CRUD-API
 
-URL `http://my-server-url/api.php/records/...`
+`http://my-server-url/api.php/records/...`
 
 - `GET my-table` : renvoie la liste des enregistrements de la table `my-table`.
 - `GET my-table/id` : renvoie l'enregistrement identifié par `id`.
@@ -201,7 +200,7 @@ URL `http://my-server-url/api.php/records/...`
 
 ---
 
-## Application
+### Application
 
 <https://github.com/ensc-mobi/MyMoviesNative>
 
@@ -209,7 +208,7 @@ URL `http://my-server-url/api.php/records/...`
 
 ---
 
-## Classe métier film
+### Classe métier film
 
 ```js
 export default class Movie {
@@ -234,28 +233,28 @@ export default class Movie {
 
 ---
 
-## Accès au SGBDR
+### Accès au SGBDR
 
 ```js
 const rootEndpoint = "http://localhost/mymovies/api.php/records";
 
 const headers = {
   "Content-Type": "application/json",
-  Accept: "application/json"
+  Accept: "application/json",
 };
 
 export const getAllMovies = () =>
   fetch(`${rootEndpoint}/movie/`, { headers })
-    .then(response => response.json())
-    .then(jsonResponse => jsonResponse.records)
-    .catch(error => {
+    .then((response) => response.json())
+    .then((jsonResponse) => jsonResponse.records)
+    .catch((error) => {
       console.log(error);
     });
 ```
 
 ---
 
-## Récupération de la liste des films
+### Récupération de la liste des films
 
 ```js
 export default class MovieStore {
@@ -264,9 +263,9 @@ export default class MovieStore {
 
   fetchAll() {
     this.movies = [];
-    getAllMovies().then(movies => {
+    getAllMovies().then((movies) => {
       //console.log(movies);
-      movies.forEach(movieData => {
+      movies.forEach((movieData) => {
         const movie = new Movie(
           movieData.mov_id,
           movieData.mov_title,
@@ -282,7 +281,7 @@ export default class MovieStore {
 
 ---
 
-## Vue principale
+### Vue principale
 
 ```jsx
 export default class HomeScreen extends React.Component {
@@ -299,7 +298,7 @@ export default class HomeScreen extends React.Component {
 
 ---
 
-## Affichage d'un film dans la liste
+### Affichage d'un film dans la liste
 
 ```js
 @observer
@@ -313,7 +312,7 @@ export default class MovieItem extends React.Component {
         <TouchableOpacity
           onPress={() => {
             navigation.navigate("Details", {
-              movie: movie
+              movie: movie,
             });
           }}
         >
@@ -329,7 +328,7 @@ export default class MovieItem extends React.Component {
 
 ---
 
-## Détails sur un film
+### Détails sur un film
 
 ```js
 export default class DetailsScreen extends React.Component {
