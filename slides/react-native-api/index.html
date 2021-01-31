@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>React Native : utilisation d'API web</title><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/reveal.css><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/theme/white.css></head><body><div class=reveal><div class=slides><section><h1>React Native : utilisation d'API web</h1><p><a href=https://ensc.bordeaux-inp.fr>Ecole Nationale Supérieure de Cognitique</a></p><p><a href=https://www.bpesquet.fr>Baptiste Pesquet</a></p></section><section><h2 id=sommaire>Sommaire</h2><ul><li>Introduction aux API web</li><li>Appels réseau avec JavaScript</li><li>Interactions avec un SGBDR via une API</li></ul></section><section><h2 id=introduction-aux-api-web>Introduction aux API web</h2></section><section><h2 id=la-notion-dapi>La notion d&rsquo;API</h2><p>Une <strong>API</strong> (<em>Application Programming Interface</em>) est un point d&rsquo;entrée programmatique dans un système.</p><p>Elle fournit un moyen d&rsquo;interagir avec ce système.</p><p>Les API permettent aux développeurs d&rsquo;intégrer des services externes dans leurs applications.</p></section><section><h2 id=spécificités-des-api-web>Spécificités des API web</h2><p>Une <strong>API web</strong> (appelée parfois service web) est une API accessible via les technologies du web : HTTP ou HTTPS.</p><p>Elles utilisent le plus souvent le format de donnée <strong>JSON</strong>.</p><p>Certaines sont librement utilisables, d&rsquo;autres nécessitent une authentification du client.</p></section><section><h2 id=exemples-dapi-web>Exemples d&rsquo;API web</h2><ul><li><a href=https://pokeapi.co/>PokéAPI</a></li><li><a href=https://swapi.co/>Star Wars API</a></li><li><a href=https://en.wikipedia.org/w/api.php?>Wikipedia</a></li><li><a href=https://developer.spotify.com/documentation/web-api/>Spotify</a></li><li><a href=https://www.omdbapi.com/>OMDb API</a></li></ul><p>(<a href=https://shkspr.mobi/blog/2016/05/easy-apis-without-authentication/>Source</a>)</p></section><section><h2 id=outils-pour-la-gestion-des-api-web>Outils pour la gestion des API web</h2><ul><li><a href=https://www.getpostman.com/>Postman</a>.</li><li>Extension <a href=https://addons.mozilla.org/fr/firefox/addon/restclient/>RESTClient</a> pour Firefox.</li></ul></section><section><h2 id=appels-réseau-avec-javascript>Appels réseau avec JavaScript</h2></section><section><h2 id=appels-asynchrones>Appels asynchrones</h2><p>Une <strong>promesse</strong> (<em>promise</em>) est un objet qui encapsule une opération dont le résultat n&rsquo;est pas encore connu.</p><p>La fonction JavaScript <code>fetch()</code> est importée du web.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#080;background-color:#0f140f;font-style:italic>// Envoie une requête HTTP asynchrone vers l&#39;URL spécifiée
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>React Native : utilisation d'API web</title><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/reveal.css><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/theme/white.css></head><body><div class=reveal><div class=slides><section><h1>React Native : utilisation d'API web</h1><p><a href=https://ensc.bordeaux-inp.fr>Ecole Nationale Supérieure de Cognitique</a></p><p><a href=https://www.bpesquet.fr>Baptiste Pesquet</a></p></section><section><h2 id=sommaire>Sommaire</h2><ul><li>Introduction aux API web</li><li>Appels réseau avec JavaScript</li><li>Interactions avec un SGBDR via une API</li></ul></section><section><h2 id=introduction-aux-api-web>Introduction aux API web</h2></section><section><h3 id=la-notion-dapi>La notion d&rsquo;API</h3><p>Une <strong>API</strong> (<em>Application Programming Interface</em>) est un point d&rsquo;entrée programmatique dans un système.</p><p>Elle fournit un moyen d&rsquo;interagir avec ce système.</p><p>Les API permettent aux développeurs d&rsquo;intégrer des services externes dans leurs applications.</p></section><section><h3 id=spécificités-des-api-web>Spécificités des API web</h3><p>Une <strong>API web</strong> (appelée parfois service web) est une API accessible via les technologies du web : HTTP ou HTTPS.</p><p>Les API web utilisent le plus souvent le format de donnée <strong>JSON</strong>.</p><p>Certaines sont librement utilisables, d&rsquo;autres nécessitent une authentification du client.</p></section><section><h3 id=exemples-dapi-web>Exemples d&rsquo;API web</h3><ul><li><a href=https://pokeapi.co/>PokéAPI</a></li><li><a href=https://swapi.dev/>Star Wars API</a></li><li><a href=https://en.wikipedia.org/w/api.php?>Wikipedia</a></li><li><a href=https://developer.spotify.com/documentation/web-api/>Spotify</a></li><li><a href=https://www.omdbapi.com/>OMDb API</a></li></ul><p>(<a href=https://shkspr.mobi/blog/2016/05/easy-apis-without-authentication/>Source</a>)</p></section><section><h3 id=outils-pour-la-gestion-des-api-web>Outils pour la gestion des API web</h3><ul><li><a href=https://www.getpostman.com/>Postman</a></li><li>Extension <a href=https://addons.mozilla.org/fr/firefox/addon/restclient/>RESTClient</a> pour Firefox</li></ul></section><section><h2 id=appels-réseau-avec-javascript>Appels réseau avec JavaScript</h2></section><section><h3 id=appels-asynchrones>Appels asynchrones</h3><p>Une <a href=https://web.dev/promises/>promesse</a> (<em>promise</em>) est un objet qui encapsule une opération dont le résultat n&rsquo;est pas encore connu.</p><p>La fonction JavaScript <a href=https://developers.google.com/web/updates/2015/03/introduction-to-fetch>fetch()</a> exploite les possibilités des promesses.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#080;background-color:#0f140f;font-style:italic>// Envoie une requête HTTP asynchrone vers l&#39;URL spécifiée
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span>fetch(url)
   .then(() =&gt; {
     <span style=color:#080;background-color:#0f140f;font-style:italic>// Code appelé ultérieurement si la requête réussit
@@ -6,45 +6,44 @@
   .<span style=color:#fb660a;font-weight:700>catch</span>(() =&gt; {
     <span style=color:#080;background-color:#0f140f;font-style:italic>// Code appelé ultérieurement si la requête échoue
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  });
-</code></pre></div></section><section><h2 id=accès-à-une-ressource-distante>Accès à une ressource distante</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#080;background-color:#0f140f;font-style:italic>// Envoi d&#39;une requête HTTP asynchrone vers l&#39;URL spécifiée
-</span><span style=color:#080;background-color:#0f140f;font-style:italic>// La réponse est reçue ici sous forme de données JSON
+</code></pre></div></section><section><h3 id=accès-à-une-ressource-distante>Accès à une ressource distante</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#080;background-color:#0f140f;font-style:italic>// Envoi d&#39;une requête HTTP asynchrone vers l&#39;URL spécifiée
+</span><span style=color:#080;background-color:#0f140f;font-style:italic>// La réponse reçue ici contient des données JSON
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span>fetch(<span style=color:#0086d2>&#34;http://my-api-url&#34;</span>)
   <span style=color:#080;background-color:#0f140f;font-style:italic>// Accès au contenu JSON de la réponse
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  .then(response =&gt; response.json())
-  <span style=color:#080;background-color:#0f140f;font-style:italic>// Utilisation du contenu de la réponse
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// `content` est un objet ou un tableau JavaScript
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  .then(content =&gt; {
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  .then((response) =&gt; response.json())
+  .then((content) =&gt; {
+    <span style=color:#080;background-color:#0f140f;font-style:italic>// Utilisation du contenu de la réponse
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#080;background-color:#0f140f;font-style:italic>// `content` est un objet ou un tableau JavaScript
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  })
-  .<span style=color:#fb660a;font-weight:700>catch</span>(error =&gt; {
+  .<span style=color:#fb660a;font-weight:700>catch</span>((error) =&gt; {
     console.error(errpr);
   });
-</code></pre></div></section><section><h2 id=mise-à-jour-dune-ressource-distante>Mise à jour d&rsquo;une ressource distante</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>fetch(<span style=color:#0086d2>&#39;https://mywebsite.com/endpoint/&#39;</span>, {
-  method: <span style=color:#0086d2>&#39;POST&#39;</span>,
+</code></pre></div></section><section><h3 id=mise-à-jour-dune-ressource-distante>Mise à jour d&rsquo;une ressource distante</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>fetch(<span style=color:#0086d2>&#34;https://mywebsite.com/endpoint/&#34;</span>, {
+  method: <span style=color:#0086d2>&#34;POST&#34;</span>,
   headers: {
-    Accept: <span style=color:#0086d2>&#39;application/json&#39;</span>,
-    <span style=color:#0086d2>&#39;Content-Type&#39;</span>: <span style=color:#0086d2>&#39;application/json&#39;</span>,
+    Accept: <span style=color:#0086d2>&#34;application/json&#34;</span>,
+    <span style=color:#0086d2>&#34;Content-Type&#34;</span>: <span style=color:#0086d2>&#34;application/json&#34;</span>,
   },
   body: JSON.stringify({
-    firstParam: <span style=color:#0086d2>&#39;yourValue&#39;</span>,
-    secondParam: <span style=color:#0086d2>&#39;yourOtherValue&#39;</span>,
+    firstParam: <span style=color:#0086d2>&#34;yourValue&#34;</span>,
+    secondParam: <span style=color:#0086d2>&#34;yourOtherValue&#34;</span>,
   }),
 });
-</code></pre></div></section><section><h2 id=application>Application</h2><p><a href=https://github.com/ensc-mobi/RandomBeer>https://github.com/ensc-mobi/RandomBeer</a></p><p><img src=images/random_beer.png alt="Random Beer app"></p></section><section><h2 id=consommation-dune-api-web>Consommation d&rsquo;une API web</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> headers = {
+</code></pre></div></section><section><h3 id=application>Application</h3><p><a href=https://github.com/ensc-mobi/RandomBeer>https://github.com/ensc-mobi/RandomBeer</a></p><p><img src=images/random_beer.png alt="Random Beer app"></p></section><section><h3 id=consommation-dune-api-web>Consommation d&rsquo;une API web</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> headers = {
   <span style=color:#0086d2>&#34;Content-Type&#34;</span>: <span style=color:#0086d2>&#34;application/json&#34;</span>,
-  Accept: <span style=color:#0086d2>&#34;application/json&#34;</span>
+  Accept: <span style=color:#0086d2>&#34;application/json&#34;</span>,
 };
 
 <span style=color:#080;background-color:#0f140f;font-style:italic>// Retourne une recette de bière au hasard
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>const</span> getRandomBrewdog = () =&gt;
   fetch(<span style=color:#0086d2>`</span><span style=color:#0086d2>${</span>rootEndpoint<span style=color:#0086d2>}</span><span style=color:#0086d2>/beers/random`</span>, { headers })
-    .then(response =&gt; response.json())
+    .then((response) =&gt; response.json())
     <span style=color:#080;background-color:#0f140f;font-style:italic>// Access first element of returned array
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    .then(beers =&gt; beers[<span style=color:#0086f7;font-weight:700>0</span>])
-    .<span style=color:#fb660a;font-weight:700>catch</span>(error =&gt; {
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    .then((beers) =&gt; beers[<span style=color:#0086f7;font-weight:700>0</span>])
+    .<span style=color:#fb660a;font-weight:700>catch</span>((error) =&gt; {
       console.error(error);
     });
-</code></pre></div></section><section><h2 id=mise-à-jour-de-lapplication>Mise à jour de l&rsquo;application</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx>  <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
+</code></pre></div></section><section><h3 id=mise-à-jour-de-lapplication>Mise à jour de l&rsquo;application</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx>  <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  _getRandomBrewdogWithFeedback = () =&gt; {
     <span style=color:#fb660a;font-weight:700>this</span>.setState({ isLoading: <span style=color:#fb660a;font-weight:700>true</span> });
     getRandomBrewdog().then(beer =&gt;
@@ -61,13 +60,13 @@
   }
 
   <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span></code></pre></div></section><section><h2 id=interactions-avec-un-sgbdr-via-une-api>Interactions avec un SGBDR via une API</h2></section><section><h2 id=php-crud-api>PHP-CRUD-API</h2><p><a href=https://github.com/mevdschee/php-crud-api>https://github.com/mevdschee/php-crud-api</a></p><p>Fichier <code>api.php</code> à publier sur un serveur web PHP. Fournit une API web pour accéder aux données d&rsquo;un SGBDR.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#080;background-color:#0f140f;font-style:italic>// Update to reflect your local settings
+</span></code></pre></div></section><section><h2 id=interactions-avec-un-sgbdr-via-une-api>Interactions avec un SGBDR via une API</h2></section><section><h3 id=php-crud-api>PHP-CRUD-API</h3><p><a href=https://github.com/mevdschee/php-crud-api>https://github.com/mevdschee/php-crud-api</a></p><p>Fichier <code>api.php</code> à publier sur un serveur web PHP. Fournit une API web pour accéder aux données d&rsquo;un SGBDR.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#080;background-color:#0f140f;font-style:italic>// Update to reflect your local settings
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a>$config</span> = <span style=color:#fb660a;font-weight:700>new</span> Config([
   <span style=color:#0086d2>&#39;username&#39;</span> =&gt; <span style=color:#0086d2>&#39;xxx&#39;</span>,
   <span style=color:#0086d2>&#39;password&#39;</span> =&gt; <span style=color:#0086d2>&#39;xxx&#39;</span>,
   <span style=color:#0086d2>&#39;database&#39;</span> =&gt; <span style=color:#0086d2>&#39;xxx&#39;</span>,
 ]);
-</code></pre></div></section><section><h2 id=utilisation-de-php-crud-api>Utilisation de PHP-CRUD-API</h2><p>URL <code>http://my-server-url/api.php/records/...</code></p><ul><li><code>GET my-table</code> : renvoie la liste des enregistrements de la table <code>my-table</code>.</li><li><code>GET my-table/id</code> : renvoie l&rsquo;enregistrement identifié par <code>id</code>.</li><li><code>POST my-table</code> : création d&rsquo;un nouvel enregistrement avec les données contenues dans le corps de la requête.</li></ul></section><section><h2 id=application-1>Application</h2><p><a href=https://github.com/ensc-mobi/MyMoviesNative>https://github.com/ensc-mobi/MyMoviesNative</a></p><p><img src=images/mymoviesnative.png alt="MyMoviesNative demo"></p></section><section><h2 id=classe-métier-film>Classe métier film</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> Movie {
+</code></pre></div></section><section><h3 id=utilisation-de-php-crud-api>Utilisation de PHP-CRUD-API</h3><p><code>http://my-server-url/api.php/records/...</code></p><ul><li><code>GET my-table</code> : renvoie la liste des enregistrements de la table <code>my-table</code>.</li><li><code>GET my-table/id</code> : renvoie l&rsquo;enregistrement identifié par <code>id</code>.</li><li><code>POST my-table</code> : création d&rsquo;un nouvel enregistrement avec les données contenues dans le corps de la requête.</li></ul></section><section><h3 id=application-1>Application</h3><p><a href=https://github.com/ensc-mobi/MyMoviesNative>https://github.com/ensc-mobi/MyMoviesNative</a></p><p><img src=images/mymoviesnative.png alt="MyMoviesNative demo"></p></section><section><h3 id=classe-métier-film>Classe métier film</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> Movie {
   @observable id;
   @observable title;
   <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
@@ -85,29 +84,29 @@
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>this</span>.image = image;
   }
 }
-</code></pre></div></section><section><h2 id=accès-au-sgbdr>Accès au SGBDR</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> rootEndpoint = <span style=color:#0086d2>&#34;http://localhost/mymovies/api.php/records&#34;</span>;
+</code></pre></div></section><section><h3 id=accès-au-sgbdr>Accès au SGBDR</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> rootEndpoint = <span style=color:#0086d2>&#34;http://localhost/mymovies/api.php/records&#34;</span>;
 
 <span style=color:#fb660a;font-weight:700>const</span> headers = {
   <span style=color:#0086d2>&#34;Content-Type&#34;</span>: <span style=color:#0086d2>&#34;application/json&#34;</span>,
-  Accept: <span style=color:#0086d2>&#34;application/json&#34;</span>
+  Accept: <span style=color:#0086d2>&#34;application/json&#34;</span>,
 };
 
 <span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>const</span> getAllMovies = () =&gt;
   fetch(<span style=color:#0086d2>`</span><span style=color:#0086d2>${</span>rootEndpoint<span style=color:#0086d2>}</span><span style=color:#0086d2>/movie/`</span>, { headers })
-    .then(response =&gt; response.json())
-    .then(jsonResponse =&gt; jsonResponse.records)
-    .<span style=color:#fb660a;font-weight:700>catch</span>(error =&gt; {
+    .then((response) =&gt; response.json())
+    .then((jsonResponse) =&gt; jsonResponse.records)
+    .<span style=color:#fb660a;font-weight:700>catch</span>((error) =&gt; {
       console.log(error);
     });
-</code></pre></div></section><section><h2 id=récupération-de-la-liste-des-films>Récupération de la liste des films</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> MovieStore {
+</code></pre></div></section><section><h3 id=récupération-de-la-liste-des-films>Récupération de la liste des films</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> MovieStore {
   @observable movies;
   <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span>
   fetchAll() {
     <span style=color:#fb660a;font-weight:700>this</span>.movies = [];
-    getAllMovies().then(movies =&gt; {
+    getAllMovies().then((movies) =&gt; {
       <span style=color:#080;background-color:#0f140f;font-style:italic>//console.log(movies);
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>      movies.forEach(movieData =&gt; {
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>      movies.forEach((movieData) =&gt; {
         <span style=color:#fb660a;font-weight:700>const</span> movie = <span style=color:#fb660a;font-weight:700>new</span> Movie(
           movieData.mov_id,
           movieData.mov_title,
@@ -119,7 +118,7 @@
     });
   }
 }
-</code></pre></div></section><section><h2 id=vue-principale>Vue principale</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> HomeScreen <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
+</code></pre></div></section><section><h3 id=vue-principale>Vue principale</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> HomeScreen <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
   render() {
     <span style=color:#fb660a;font-weight:700>const</span> movieStore = <span style=color:#fb660a;font-weight:700>new</span> MovieStore();
     <span style=color:#080;background-color:#0f140f;font-style:italic>// All React Navigation screens receive this object as prop
@@ -129,7 +128,7 @@
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>return</span> &lt;<span style=color:#fb660a;font-weight:700>MainView</span> <span style=color:#ff0086;font-weight:700>movieStore</span>={movieStore} <span style=color:#ff0086;font-weight:700>navigation</span>={navigation} /&gt;;
   }
 }
-</code></pre></div></section><section><h2 id=affichage-dun-film-dans-la-liste>Affichage d&rsquo;un film dans la liste</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>@observer
+</code></pre></div></section><section><h3 id=affichage-dun-film-dans-la-liste>Affichage d&rsquo;un film dans la liste</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>@observer
 <span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> MovieItem <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
   render() {
     <span style=color:#fb660a;font-weight:700>const</span> { movie } = <span style=color:#fb660a;font-weight:700>this</span>.props;
@@ -140,7 +139,7 @@
         &lt;TouchableOpacity
           onPress={() =&gt; {
             navigation.navigate(<span style=color:#0086d2>&#34;Details&#34;</span>, {
-              movie: movie
+              movie: movie,
             });
           }}
         &gt;
@@ -152,7 +151,7 @@
     );
   }
 }
-</code></pre></div></section><section><h2 id=détails-sur-un-film>Détails sur un film</h2><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> DetailsScreen <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
+</code></pre></div></section><section><h3 id=détails-sur-un-film>Détails sur un film</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> DetailsScreen <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
   render() {
     <span style=color:#fb660a;font-weight:700>const</span> { navigation } = <span style=color:#fb660a;font-weight:700>this</span>.props;
     <span style=color:#fb660a;font-weight:700>const</span> movie = navigation.getParam(<span style=color:#0086d2>&#34;movie&#34;</span>);
