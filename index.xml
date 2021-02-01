@@ -1477,7 +1477,7 @@ data={&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.todoS
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// `content` est un objet ou un tableau JavaScript
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> })
 .&lt;span style="color:#fb660a;font-weight:bold">catch&lt;/span>((error) =&amp;gt; {
-console.error(errpr);
+console.error(error);
 });
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="mise-à-jour-dune-ressource-distante">Mise à jour d&amp;rsquo;une ressource distante&lt;/h3>
