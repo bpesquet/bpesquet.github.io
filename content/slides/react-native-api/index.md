@@ -92,7 +92,7 @@ fetch("http://my-api-url")
     // `content` est un objet ou un tableau JavaScript
   })
   .catch((error) => {
-    console.error(errpr);
+    console.error(error);
   });
 ```
 
