@@ -431,7 +431,11 @@ Etat interne (données) d'un composant, susceptible de changer au cours du temps
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-class Counter extends Component {
+interface CoounterState {
+  count: number;
+}
+
+class Counter extends Component<{}, CoounterState> {
   constructor(public props: { color: string; size: number }) {
     super(props);
     this.state = { count: 0 };
