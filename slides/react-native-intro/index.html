@@ -141,7 +141,11 @@ npm start <span style=color:#080;background-color:#0f140f;font-style:italic># Or
 </code></pre></div></section><section><h3 id=etat-_state_-dun-composant>Etat (<em>state</em>) d&rsquo;un composant</h3><p>Etat interne (données) d&rsquo;un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via <code>setState()</code> (<a href=https://snack.expo.io/@bpesquet/counter>démo</a>).</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#fb660a;font-weight:700>import</span> React, { Component } <span style=color:#fb660a;font-weight:700>from</span> <span style=color:#0086d2>&#34;react&#34;</span>;
 <span style=color:#fb660a;font-weight:700>import</span> { StyleSheet, Text, View } <span style=color:#fb660a;font-weight:700>from</span> <span style=color:#0086d2>&#34;react-native&#34;</span>;
 
-<span style=color:#fb660a;font-weight:700>class</span> Counter <span style=color:#fb660a;font-weight:700>extends</span> Component {
+<span style=color:#fb660a;font-weight:700>interface</span> CoounterState {
+  count: <span style=color:#cdcaa9;font-weight:700>number</span>;
+}
+
+<span style=color:#fb660a;font-weight:700>class</span> Counter <span style=color:#fb660a;font-weight:700>extends</span> Component&lt;{}, CoounterState&gt; {
   <span style=color:#fb660a;font-weight:700>constructor</span>(<span style=color:#fb660a;font-weight:700>public</span> props: { color: <span style=color:#cdcaa9;font-weight:700>string</span>; size: <span style=color:#cdcaa9;font-weight:700>number</span> }) {
     <span style=color:#fb660a;font-weight:700>super</span>(props);
     <span style=color:#fb660a;font-weight:700>this</span>.state = { count: <span style=color:#cdcaa9;font-weight:700>0</span> };
