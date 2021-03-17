@@ -178,8 +178,8 @@ export default class FlexDimensionsBasics extends Component {
 
 ### React Navigation
 
-- Composant issu de la communauté des développeurs RN.
-- Devenu le standard pour les applications multi-vues
+- Composant issu de la communauté des développeurs React Native.
+- Devenu le standard pour les applications multi-vues.
 
 [![React Navigation logo](images/react_navigation_logo.png)](https://reactnavigation.org)
 
@@ -191,125 +191,80 @@ Utiliser `expo install` au lieu de `npm install` assure l'installation de versio
 
 ```bash
 # Core components and dependencies
-expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+expo install @react-navigation/native react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
 
 # StackNavigator dependencies
-expo install react-navigation-stack @react-native-community/masked-view
+expo install @react-navigation/stack
 
 # BottomTabNavigator dependencies
-expo install react-navigation-tabs
+expo install @react-navigation/bottom-tabs
 
 # DrawerNavigator dependencies
-expo install react-navigation-drawer
+expo install @react-navigation/drawer
 ```
 
 ---
 
-### `StackNavigator`
+### StackNavigator
 
 Principe similaire au web : gestion d'une pile de vues.
 
-```jsx
-const AppNavigator = createStackNavigator(
-  {
-    Home: HomeScreen,
-    Details: DetailsScreen,
-  },
-  {
-    initialRouteName: "Home",
-  }
-);
+```tsx
+const Stack = createStackNavigator();
 
-const AppContainer = createAppContainer(AppNavigator);
-
-export default class App extends React.Component {
-  render() {
-    return <AppContainer />;
-  }
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 ```
 
 ---
-
-{{% section %}}
 
 ### Navigation entre vues
 
-- `this.props.navigation.navigate('RouteName')`.
-- `this.props.navigation.push('RouteName')` : permet d'aller plusieurs fois vers la même vue.
-- `this.props.navigation.goBack()`.
+- Un objet `navigation` est automatiquement ajouté aux _props_ des vues gérées par React Navigation.
+- Son API permet de naviguer entre les vues.
 
----
+```ts
+// Navigue vers une vue
+this.props.navigation.navigate("RouteName");
 
-### Exemple
+// Permet d'aller plusieurs fois vers la même vue
+this.props.navigation.push("RouteName");
 
-```jsx
-class DetailsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Details Screen</Text>
-        <Button
-          title="Go to Details... again"
-          onPress={() => this.props.navigation.push("Details")}
-        />
-        <Button
-          title="Go to Home"
-          onPress={() => this.props.navigation.navigate("Home")}
-        />
-        <Button
-          title="Go back"
-          onPress={() => this.props.navigation.goBack()}
-        />
-      </View>
-    );
-  }
-}
+// Revient à la vue précédente
+this.props.navigation.goBack();
 ```
 
-{{% /section %}}
-
 ---
-
-{{% section %}}
 
 ### Passage de paramètres entre vues
 
-- `this.props.navigation.navigate('RouteName', {/* params */})`.
-- `this.props.navigation.getParam(paramName, defaultValue)`.
+```ts
+// Côté vue appelante
+this.props.navigation.navigate("RouteName", {
+  /* Objet dont les propriétés constituent les arguments */
+  param1: "value1",
+  // ...
+});
 
----
-
-### Exemple
-
-```jsx
-// Home Screen
-<Button
-  title="Go to Details"
-  onPress={() => {
-    this.props.navigation.navigate('Details', {
-      itemId: 86,
-      otherParam: 'anything you want here',
-    });
-  }}
-/>
-
-// Details Screen
-<Text>
-  itemId: {JSON.stringify(navigation.getParam('itemId', 'NO-ID'))}
-</Text>
+// Côté vue appelée
+// La propriété route.params permet de récupérer les paramètres passés à la vue
+const { param1 } = this.props.route.params;
 ```
-
-{{% /section %}}
 
 ---
 
 ### En-tête des vues
 
-```jsx
-class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: "Home",
+```tsx
+<MainStack.Navigator
+  screenOptions={{
     headerStyle: {
       backgroundColor: "#f4511e",
     },
@@ -317,31 +272,24 @@ class HomeScreen extends React.Component {
     headerTitleStyle: {
       fontWeight: "bold",
     },
-  };
-
-  /* render function, etc */
-}
+  }}
+>
+// ...
 ```
 
 ---
 
-### Fenêtre modale
+### Vue modale
 
-```jsx
-const RootStack = createStackNavigator(
-  {
-    Main: {
-      screen: MainStack,
-    },
-    MyModal: {
-      screen: ModalScreen,
-    },
-  },
-  {
-    mode: "modal",
-    headerMode: "none",
-  }
-);
+```tsx
+<RootStack.Navigator mode="modal" headerMode="none">
+  <RootStack.Screen
+    name="Main"
+    component={MainStackScreen}
+    options={{ headerShown: false }}
+  />
+  <RootStack.Screen name="MyModal" component={ModalScreen} />
+</RootStack.Navigator>
 ```
 
 ---
@@ -354,22 +302,22 @@ const RootStack = createStackNavigator(
 
 ---
 
-### `BottomTabNavigator`
+### TabNavigator
 
 Affichage d'onglets en bas de l'écran.
 
-```jsx
-const TabNavigator = createBottomTabNavigator({
-  Home: HomeScreen,
-  Settings: SettingsScreen,
-});
+```tsx
+const Tab = createBottomTabNavigator();
 
-const AppContainer = createAppContainer(TabNavigator);
-
-export default class App extends React.Component {
-  render() {
-    return <AppContainer />;
-  }
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
 }
 ```
 
@@ -377,39 +325,39 @@ export default class App extends React.Component {
 
 ### Navigation entre onglets
 
-`this.props.navigation.navigate('TabName')`.
+Fonctionnement identique à celui de la navigation entre les vues d'un `StackNavigator`.
 
-```jsx
-<View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-  <Text>Home!</Text>
-  <Button
-    title="Go to Settings"
-    onPress={() => this.props.navigation.navigate("Settings")}
-  />
-</View>
+```tsx
+<Button
+  title="Go to Settings"
+  onPress={() => navigation.navigate("Settings")}
+/>
 ```
 
 ---
 
-### Affichage de piles dans les onglets
+### Affichage de piles (_stacks_) dans les onglets
 
-```jsx
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
-  Details: DetailsScreen,
-});
+```tsx
+const HomeStack = createStackNavigator();
+function HomeStackScreen() {
+  // Define home stack
+}
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
-  Details: DetailsScreen,
-});
+const SettingsStack = createStackNavigator();
+function SettingsStackScreen() {
+  // Define settings stack
+}
 
-export default createAppContainer(
-  createBottomTabNavigator({
-    Home: HomeStack,
-    Settings: SettingsStack,
-  })
-);
+const Tab = createBottomTabNavigator();
+function TabScreen() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeStackScreen} />
+      <Tab.Screen name="Settings" component={SettingsStackScreen} />
+    </Tab.Navigator>
+  );
+}
 ```
 
 ---
@@ -424,6 +372,6 @@ export default createAppContainer(
 
 ### Autres possibilités de react-navigation
 
-- [Navigation par menu accordéon ou "hamburger'](https://reactnavigation.org/docs/drawer-based-navigation/) ([démo](https://snack.expo.io/@react-navigation/9b2a43)).
-- [Gestion de l'authentification](https://reactnavigation.org/docs/auth-flow/).
+- [Navigation par menu accordéon](https://reactnavigation.org/docs/drawer-based-navigation)
+- [Gestion de l'authentification](https://reactnavigation.org/docs/auth-flow)
 - ...
