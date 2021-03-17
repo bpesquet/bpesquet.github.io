@@ -809,102 +809,61 @@ render() {
 &lt;hr>
 &lt;h3 id="react-navigation">React Navigation&lt;/h3>
 &lt;ul>
-&lt;li>Composant issu de la communauté des développeurs RN.&lt;/li>
-&lt;li>Devenu le standard pour les applications multi-vues&lt;/li>
+&lt;li>Composant issu de la communauté des développeurs React Native.&lt;/li>
+&lt;li>Devenu le standard pour les applications multi-vues.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;a href="https://reactnavigation.org">&lt;img src="images/react_navigation_logo.png" alt="React Navigation logo">&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h3 id="installation-de-react-navigation">Installation de react-navigation&lt;/h3>
 &lt;p>Utiliser &lt;code>expo install&lt;/code> au lieu de &lt;code>npm install&lt;/code> assure l&amp;rsquo;installation de versions compatibles avec celle d&amp;rsquo;Expo.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Core components and dependencies&lt;/span>
-expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+expo install @react-navigation/native react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># StackNavigator dependencies&lt;/span>
-expo install react-navigation-stack @react-native-community/masked-view
+expo install @react-navigation/stack
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># BottomTabNavigator dependencies&lt;/span>
-expo install react-navigation-tabs
+expo install @react-navigation/bottom-tabs
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># DrawerNavigator dependencies&lt;/span>
-expo install react-navigation-drawer
+expo install @react-navigation/drawer
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="stacknavigator">&lt;code>StackNavigator&lt;/code>&lt;/h3>
+&lt;h3 id="stacknavigator">StackNavigator&lt;/h3>
 &lt;p>Principe similaire au web : gestion d&amp;rsquo;une pile de vues.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> AppNavigator = createStackNavigator(
-{
-Home: HomeScreen,
-Details: DetailsScreen,
-},
-{
-initialRouteName: &lt;span style="color:#0086d2">&amp;#34;Home&amp;#34;&lt;/span>,
-}
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> Stack = createStackNavigator();
+&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> App() {
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">NavigationContainer&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Stack.Navigator&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Stack.Screen&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Home&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">component&lt;/span>={HomeScreen} /&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">Stack.Navigator&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">NavigationContainer&lt;/span>&amp;gt;
 );
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> AppContainer = createAppContainer(AppNavigator);
-&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> App &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> React.Component {
-render() {
-&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">AppContainer&lt;/span> /&amp;gt;;
-}
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;section data-shortcode-section>
 &lt;h3 id="navigation-entre-vues">Navigation entre vues&lt;/h3>
 &lt;ul>
-&lt;li>&lt;code>this.props.navigation.navigate('RouteName')&lt;/code>.&lt;/li>
-&lt;li>&lt;code>this.props.navigation.push('RouteName')&lt;/code> : permet d&amp;rsquo;aller plusieurs fois vers la même vue.&lt;/li>
-&lt;li>&lt;code>this.props.navigation.goBack()&lt;/code>.&lt;/li>
+&lt;li>Un objet &lt;code>navigation&lt;/code> est automatiquement ajouté aux &lt;em>props&lt;/em> des vues gérées par React Navigation.&lt;/li>
+&lt;li>Son API permet de naviguer entre les vues.&lt;/li>
 &lt;/ul>
-&lt;hr>
-&lt;h3 id="exemple">Exemple&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> DetailsScreen &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> React.Component {
-render() {
-&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">style&lt;/span>={{ flex: &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>, alignItems: &lt;span style="color:#0086d2">&amp;#34;center&amp;#34;&lt;/span>, justifyContent: &lt;span style="color:#0086d2">&amp;#34;center&amp;#34;&lt;/span> }}&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span>&amp;gt;Details Screen&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Button&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">title&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Go to Details... again&amp;#34;&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">onPress&lt;/span>={() =&amp;gt; &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.navigation.push(&lt;span style="color:#0086d2">&amp;#34;Details&amp;#34;&lt;/span>)}
-/&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Button&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">title&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Go to Home&amp;#34;&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">onPress&lt;/span>={() =&amp;gt; &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.navigation.navigate(&lt;span style="color:#0086d2">&amp;#34;Home&amp;#34;&lt;/span>)}
-/&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Button&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">title&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Go back&amp;#34;&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">onPress&lt;/span>={() =&amp;gt; &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.navigation.goBack()}
-/&amp;gt;
-&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span>&amp;gt;
-);
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;/section>
-&lt;hr>
-&lt;section data-shortcode-section>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ts" data-lang="ts">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Navigue vers une vue
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.navigation.navigate(&lt;span style="color:#0086d2">&amp;#34;RouteName&amp;#34;&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Permet d&amp;#39;aller plusieurs fois vers la même vue
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.navigation.push(&lt;span style="color:#0086d2">&amp;#34;RouteName&amp;#34;&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Revient à la vue précédente
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.navigation.goBack();
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="passage-de-paramètres-entre-vues">Passage de paramètres entre vues&lt;/h3>
-&lt;ul>
-&lt;li>&lt;code>this.props.navigation.navigate('RouteName', {/* params */})&lt;/code>.&lt;/li>
-&lt;li>&lt;code>this.props.navigation.getParam(paramName, defaultValue)&lt;/code>.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="exemple">Exemple&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Home Screen
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Button&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">title&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Go to Details&amp;#34;&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">onPress&lt;/span>={() =&amp;gt; {
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.navigation.navigate(&lt;span style="color:#0086d2">&amp;#39;Details&amp;#39;&lt;/span>, {
-itemId: &lt;span style="color:#0086f7;font-weight:bold">86&lt;/span>,
-otherParam: &lt;span style="color:#0086d2">&amp;#39;anything you want here&amp;#39;&lt;/span>,
-});
-}}
-/&amp;gt;
-&lt;p>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Details Screen
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span>&amp;gt;
-itemId: {JSON.stringify(navigation.getParam(&lt;span style="color:#0086d2">'itemId'&lt;/span>, &lt;span style="color:#0086d2">'NO-ID'&lt;/span>))}
-&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;/p>
-&lt;/section>
-&lt;hr>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ts" data-lang="ts">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Côté vue appelante
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.navigation.navigate(&lt;span style="color:#0086d2">&amp;#34;RouteName&amp;#34;&lt;/span>, {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">/* Objet dont les propriétés constituent les arguments */&lt;/span>
+param1: &lt;span style="color:#0086d2">&amp;#34;value1&amp;#34;&lt;/span>,
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>});
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Côté vue appelée
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// La propriété route.params permet de récupérer les paramètres passés à la vue
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> { param1 } = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.route.params;
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="en-tête-des-vues">En-tête des vues&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> HomeScreen &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> React.Component {
-&lt;span style="color:#fb660a;font-weight:bold">static&lt;/span> navigationOptions = {
-title: &lt;span style="color:#0086d2">&amp;#34;Home&amp;#34;&lt;/span>,
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-tsx" data-lang="tsx">&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">MainStack.Navigator&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold">screenOptions&lt;/span>={{
 headerStyle: {
 backgroundColor: &lt;span style="color:#0086d2">&amp;#34;#f4511e&amp;#34;&lt;/span>,
 },
@@ -912,68 +871,63 @@ headerTintColor: &lt;span style="color:#0086d2">&amp;#34;#fff&amp;#34;&lt;/span>
 headerTitleStyle: {
 fontWeight: &lt;span style="color:#0086d2">&amp;#34;bold&amp;#34;&lt;/span>,
 },
-};
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">/* render function, etc */&lt;/span>
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="fenêtre-modale">Fenêtre modale&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> RootStack = createStackNavigator(
-{
-Main: {
-screen: MainStack,
-},
-MyModal: {
-screen: ModalScreen,
-},
-},
-{
-mode: &lt;span style="color:#0086d2">&amp;#34;modal&amp;#34;&lt;/span>,
-headerMode: &lt;span style="color:#0086d2">&amp;#34;none&amp;#34;&lt;/span>,
-}
-);
+}}
+&amp;gt;
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="vue-modale">Vue modale&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-tsx" data-lang="tsx">&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">RootStack.Navigator&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">mode&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;modal&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">headerMode&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;none&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">RootStack.Screen&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Main&amp;#34;&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold">component&lt;/span>={MainStackScreen}
+&lt;span style="color:#ff0086;font-weight:bold">options&lt;/span>={{ headerShown: &lt;span style="color:#cdcaa9;font-weight:bold">false&lt;/span> }}
+/&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">RootStack.Screen&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;MyModal&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">component&lt;/span>={ModalScreen} /&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">RootStack.Navigator&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="exemple-récapitulatif">Exemple récapitulatif&lt;/h3>
 &lt;p>&lt;a href="https://github.com/ensc-mobi/StackNavigatorDemo">https://github.com/ensc-mobi/StackNavigatorDemo&lt;/a>&lt;/p>
 &lt;p>&lt;img src="images/stack-navigator-demo.png" alt="StackNavigator demo">&lt;/p>
 &lt;hr>
-&lt;h3 id="bottomtabnavigator">&lt;code>BottomTabNavigator&lt;/code>&lt;/h3>
+&lt;h3 id="tabnavigator">TabNavigator&lt;/h3>
 &lt;p>Affichage d&amp;rsquo;onglets en bas de l&amp;rsquo;écran.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> TabNavigator = createBottomTabNavigator({
-Home: HomeScreen,
-Settings: SettingsScreen,
-});
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> AppContainer = createAppContainer(TabNavigator);
-&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> App &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> React.Component {
-render() {
-&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">AppContainer&lt;/span> /&amp;gt;;
-}
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> Tab = createBottomTabNavigator();
+&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> App() {
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">NavigationContainer&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Tab.Navigator&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Tab.Screen&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Home&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">component&lt;/span>={HomeScreen} /&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Tab.Screen&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Settings&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">component&lt;/span>={SettingsScreen} /&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">Tab.Navigator&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">NavigationContainer&lt;/span>&amp;gt;
+);
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="navigation-entre-onglets">Navigation entre onglets&lt;/h3>
-&lt;p>&lt;code>this.props.navigation.navigate('TabName')&lt;/code>.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">style&lt;/span>={{ flex: &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>, justifyContent: &lt;span style="color:#0086d2">&amp;#34;center&amp;#34;&lt;/span>, alignItems: &lt;span style="color:#0086d2">&amp;#34;center&amp;#34;&lt;/span> }}&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span>&amp;gt;Home!&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Button&lt;/span>
+&lt;p>Fonctionnement identique à celui de la navigation entre les vues d&amp;rsquo;un &lt;code>StackNavigator&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-tsx" data-lang="tsx">&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Button&lt;/span>
 &lt;span style="color:#ff0086;font-weight:bold">title&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Go to Settings&amp;#34;&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">onPress&lt;/span>={() =&amp;gt; &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.navigation.navigate(&lt;span style="color:#0086d2">&amp;#34;Settings&amp;#34;&lt;/span>)}
+&lt;span style="color:#ff0086;font-weight:bold">onPress&lt;/span>={() =&amp;gt; navigation.navigate(&lt;span style="color:#0086d2">&amp;#34;Settings&amp;#34;&lt;/span>)}
 /&amp;gt;
-&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="affichage-de-piles-dans-les-onglets">Affichage de piles dans les onglets&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> HomeStack = createStackNavigator({
-Home: HomeScreen,
-Details: DetailsScreen,
-});
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> SettingsStack = createStackNavigator({
-Settings: SettingsScreen,
-Details: DetailsScreen,
-});
-&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> createAppContainer(
-createBottomTabNavigator({
-Home: HomeStack,
-Settings: SettingsStack,
-})
+&lt;h3 id="affichage-de-piles-_stacks_-dans-les-onglets">Affichage de piles (&lt;em>stacks&lt;/em>) dans les onglets&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> HomeStack = createStackNavigator();
+&lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> HomeStackScreen() {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Define home stack
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> SettingsStack = createStackNavigator();
+&lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> SettingsStackScreen() {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Define settings stack
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> Tab = createBottomTabNavigator();
+&lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> TabScreen() {
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Tab.Navigator&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Tab.Screen&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Home&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">component&lt;/span>={HomeStackScreen} /&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Tab.Screen&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Settings&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">component&lt;/span>={SettingsStackScreen} /&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">Tab.Navigator&lt;/span>&amp;gt;
 );
+}
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="exemple-récapitulatif-1">Exemple récapitulatif&lt;/h3>
 &lt;p>&lt;a href="https://github.com/ensc-mobi/TabNavigatorDemo">https://github.com/ensc-mobi/TabNavigatorDemo&lt;/a>&lt;/p>
@@ -981,8 +935,8 @@ Settings: SettingsStack,
 &lt;hr>
 &lt;h3 id="autres-possibilités-de-react-navigation">Autres possibilités de react-navigation&lt;/h3>
 &lt;ul>
-&lt;li>&lt;a href="https://reactnavigation.org/docs/drawer-based-navigation/">Navigation par menu accordéon ou &amp;ldquo;hamburger'&lt;/a> (&lt;a href="https://snack.expo.io/@react-navigation/9b2a43">démo&lt;/a>).&lt;/li>
-&lt;li>&lt;a href="https://reactnavigation.org/docs/auth-flow/">Gestion de l&amp;rsquo;authentification&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="https://reactnavigation.org/docs/drawer-based-navigation">Navigation par menu accordéon&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://reactnavigation.org/docs/auth-flow">Gestion de l&amp;rsquo;authentification&lt;/a>&lt;/li>
 &lt;li>&amp;hellip;&lt;/li>
 &lt;/ul></description></item><item><title>Python for Data Science</title><link>https://www.bpesquet.fr/slides/python-data-science/</link><pubDate>Sat, 28 Sep 2019 21:59:13 +0200</pubDate><guid>https://www.bpesquet.fr/slides/python-data-science/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
