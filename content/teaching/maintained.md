@@ -6,32 +6,32 @@ draft: false
 
 The following resources are being used in some of my courses. As such, they are maintained on a (somewhat) regular basis and should be reasonably up-to-date.
 
-### Artificial intelligence
+## Artificial intelligence
 
 - [Deconstructing AI]({{< ref "slides/deconstructing-ai" >}} "Deconstructing AI")
 - [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook/)
 - [Machine Learning Katas](https://bpesquet.github.io/mlkatas/)
 - [pyfit](https://github.com/bpesquet/pyfit)
 
-### Mobile development
+## Mobile development
 
 - [React Native: introduction]({{< ref "slides/react-native-intro" >}} "Introduction à React Native")
 - [React Native : gestion de l'UI]({{< ref "slides/react-native-ui" >}} "React Native : gestion de l'UI")
 - [React Native : gestion de l'état]({{< ref "slides/react-native-state" >}} "React Native : gestion de l'état")
 - [React Native : utilisation d'API web]({{< ref "slides/react-native-api" >}} "React Native : utilisation d'API web")
 
-### Programming
+## Programming
 
 - [Le langage JavaScript]({{< ref "slides/javascript" >}} "Le langage JavaScript")
 - [The JavaScript Way](https://github.com/thejsway/thejsway) | [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
 - [Programmation orientée objet en C#](https://ensc.gitbook.io/programmation-objet-csharp/)
 
-### Software engineering
+## Software engineering
 
 - [Génie logiciel](https://ensc.gitbook.io/genie-logiciel/)
 - [Programmation évènementielle avec les WinForms](https://ensc.gitbook.io/programmation-evenementielle-winforms/)
 - [WinForms architecture patterns](https://github.com/bpesquet/winforms-architecture-patterns)
 
-### Virtual worlds
+## Virtual worlds
 
 - [Introduction à Unity]({{< ref "slides/unity-intro" >}} "Introduction à Unity")
