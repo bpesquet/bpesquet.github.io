@@ -4,7 +4,7 @@ date: 2021-05-14T15:21:48+02:00
 draft: false
 ---
 
-The following resources are being used in some of my current courses. As such, they are (more or less) actively maintained and should be up-to-date.
+The following resources are being used in some of my courses. As such, they are maintained on a (somewhat) regular basis and should be reasonably up-to-date.
 
 ### Artificial intelligence
 
