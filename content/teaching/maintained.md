@@ -10,7 +10,6 @@ The following resources are being used in some of my courses. As such, they are 
 
 - [Deconstructing AI]({{< ref "slides/deconstructing-ai" >}} "Deconstructing AI")
 - [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook/)
-- [Machine Learning Katas](https://bpesquet.github.io/mlkatas/)
 - [pyfit](https://github.com/bpesquet/pyfit)
 
 ## Mobile development
