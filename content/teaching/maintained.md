@@ -24,6 +24,7 @@ The following resources are being used in some of my courses. As such, they are 
 - [Le langage JavaScript]({{< ref "slides/javascript" >}} "Le langage JavaScript")
 - [The JavaScript Way](https://github.com/thejsway/thejsway) | [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
 - [Programmation orientée objet en C#](https://ensc.gitbook.io/programmation-objet-csharp/)
+- [C# : rappels et compléments]({{< ref "slides/csharp" >}} "C# : rappels et compléments")
 
 ## Software engineering
 
