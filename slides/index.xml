@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/slides/</link><description>👨‍💻 Baptiste Pesquet (Slides)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 14 Jan 2020 10:14:10 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>Le langage JavaScript</title><link>https://www.bpesquet.fr/slides/javascript/</link><pubDate>Mon, 16 Dec 2019 21:50:46 +0100</pubDate><guid>https://www.bpesquet.fr/slides/javascript/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/slides/</link><description>👨‍💻 Baptiste Pesquet (Slides)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 16 Sep 2021 11:15:17 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>Le langage JavaScript</title><link>https://www.bpesquet.fr/slides/javascript/</link><pubDate>Mon, 16 Dec 2019 21:50:46 +0100</pubDate><guid>https://www.bpesquet.fr/slides/javascript/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Pourquoi JavaScript ?&lt;/li>
 &lt;li>Syntaxe du langage&lt;/li>
@@ -1465,6 +1465,329 @@ render() {
 );
 }
 }
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;ul>
+&lt;li>Rappels sur la POO&lt;/li>
+&lt;li>Gestion des objets en mémoire&lt;/li>
+&lt;li>Gestion des exceptions&lt;/li>
+&lt;li>Possibilités syntaxiques récentes&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="rappels-sur-la-poo">Rappels sur la POO&lt;/h2>
+&lt;hr>
+&lt;h3 id="la-poo-en-bref">La POO en bref&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Objet&lt;/strong> : entité qui modélise (représente) un élément du domaine étudié.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Objet = état + actions.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Objet != &lt;strong>classe&lt;/strong> :&lt;/p>
+&lt;ul>
+&lt;li>Classe : modèle d’objet (type).&lt;/li>
+&lt;li>Objet : exemplaire concret, &lt;strong>instance&lt;/strong> d’une classe.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>POO&lt;/strong> : paradigme d&amp;rsquo;écriture de logiciels sous forme d’objets en interaction&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="représentation-graphique-dune-classe">Représentation graphique d&amp;rsquo;une classe&lt;/h3>
+&lt;p>Le standard : diagramme de classes &lt;strong>UML&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="images/uml_class_diagram.png" alt="Exemple de diagramme UML">&lt;/p>
+&lt;hr>
+&lt;h3 id="notion-de-propriété-en-c">Notion de propriété en C#&lt;/h3>
+&lt;ul>
+&lt;li>Propriété au sens de la majorité des langages à objets = &lt;strong>attribut&lt;/strong> ou &lt;strong>champ&lt;/strong>.&lt;/li>
+&lt;li>Propriété au sens du C# = &lt;strong>accesseur&lt;/strong> vers un attribut.&lt;/li>
+&lt;li>Les propriétés permettent de concilier accès aux données de l’objet et &lt;strong>encapsulation&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="propriété-avec-attribut-explicite">Propriété avec attribut explicite&lt;/h3>
+&lt;p>Déclaration explicite de l’attribut (le plus souvent &lt;strong>privé&lt;/strong>).&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">&lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> titulaire;
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Titulaire {
+&lt;span style="color:#fb660a;font-weight:bold">get&lt;/span> { &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> titulaire; }
+&lt;span style="color:#fb660a;font-weight:bold">set&lt;/span> { titulaire = &lt;span style="color:#fb660a;font-weight:bold">value&lt;/span>; }
+}
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>monCompte.Titulaire = &lt;span style="color:#0086d2">&amp;#34;Marco&amp;#34;&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Avantage : possibilité de contrôles dans les accesseurs (validation de la novuelle valeur, etc).&lt;/p>
+&lt;hr>
+&lt;h3 id="propriété-auto-implémentée">Propriété auto-implémentée&lt;/h3>
+&lt;p>Création implicite de l’attribut par le langage.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Titulaire { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>monCompte.Titulaire = &lt;span style="color:#0086d2">&amp;#34;Marco&amp;#34;&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Avantage : concision.&lt;/li>
+&lt;li>Bien adaptée aux cas simples (sans besoin de logique).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="gestion-des-objets-en-mémoire">Gestion des objets en mémoire&lt;/h2>
+&lt;hr>
+&lt;h3 id="classe-dexemple">Classe d&amp;rsquo;exemple&lt;/h3>
+&lt;p>&lt;img src="images/example_class.png" alt="Classe d&amp;rsquo;exemple">&lt;/p>
+&lt;hr>
+&lt;h3 id="affectation-entre-entiers">Affectation entre entiers&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nombre1;
+nombre1 = &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>;
+&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nombre2 = &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>;
+nombre2 = nombre1;
+nombre1 = &lt;span style="color:#0086f7;font-weight:bold">10&lt;/span>;
+Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;nombre1 = &amp;#34;&lt;/span> + nombre1); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 10
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;nombre2 = &amp;#34;&lt;/span> + nombre2); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="affectation-entre-objets">Affectation entre objets&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">Cercle cercle1;
+cercle1 = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Cercle(&lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>);
+&lt;p>Cercle cercle2 = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Cercle(&lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>);
+cercle2 = cercle1;&lt;/p>
+&lt;p>cercle1.Rayon = &lt;span style="color:#0086f7;font-weight:bold">10&lt;/span>;&lt;/p>
+&lt;p>Console.WriteLine(&lt;span style="color:#0086d2">&amp;quot;cercle1.Rayon = &amp;quot;&lt;/span> + cercle1.Rayon); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 10
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;quot;cercle2.Rayon = &amp;quot;&lt;/span> + cercle2.Rayon); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>&lt;/p>
+&lt;p>&lt;img src="images/object_result.png" alt="Réssultat de l&amp;rsquo;exécution">&lt;/p>
+&lt;p>&lt;img src="images/omg.png" alt="OMG">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="types-valeur">Types valeur&lt;/h3>
+&lt;ul>
+&lt;li>Type pour lequel la valeur est directement stockée dans la variable.&lt;/li>
+&lt;li>Types de bases C# : &lt;code>int&lt;/code>, &lt;code>float&lt;/code>, &lt;code>double&lt;/code>&amp;hellip;&lt;/li>
+&lt;li>Création d’une variable =&amp;gt; réservation d’une zone mémoire pour stocker sa valeur.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/value_types.png" alt="Exemple avec types valeur">
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="types-reference">Types référence&lt;/h3>
+&lt;ul>
+&lt;li>Type pour lequel l&amp;rsquo;instanciation d’un exemplaire déclenche la réservation d’une zone mémoire pour ses données, mais la &amp;ldquo;valeur&amp;rdquo; de l’exemplaire est une &lt;strong>référence&lt;/strong> vers cette zone.&lt;/li>
+&lt;li>Exemples : objets et tableaux.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/reference_types.png" alt="Exemple avec types référence">
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="types-référence-et-affectation">Types référence et affectation&lt;/h3>
+&lt;ul>
+&lt;li>La valeur de la variable source (une référence) est copiée dans la variable cible.&lt;/li>
+&lt;li>Les deux variables &lt;em>pointent&lt;/em> vers la même zone mémoire&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/reference_types_assignment.png" alt="Diagramme d&amp;rsquo;exécution">
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="passage-dun-type-valeur-en-parametre">Passage d’un type valeur en paramètre&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">static&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Main(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>[] args) {
+&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nombre = &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>;
+Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Avant l&amp;#39;appel, nombre = &amp;#34;&lt;/span> + nombre); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 5
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> Augmenter(nombre);
+Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Après l&amp;#39;appel, nombre = &amp;#34;&lt;/span> + nombre); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;span style="color:#fb660a;font-weight:bold">static&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Augmenter(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> unNombre) {
+Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Avant l&amp;#39;augmentation, unNombre = &amp;#34;&lt;/span> + unNombre);
+unNombre = unNombre + &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>;
+Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Après l&amp;#39;augmentation, unNombre = &amp;#34;&lt;/span> + unNombre);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="résultat-de-lexécution">Résultat de l&amp;rsquo;exécution&lt;/h3>
+&lt;p>&lt;img src="images/value_types_parameter_passing.png" alt="Résultat de l&amp;rsquo;exécution">&lt;/p>
+&lt;ul>
+&lt;li>La valeur de l’argument (un nombre entier) est copiée dans le paramètre.&lt;/li>
+&lt;li>Argument et paramètre correspondent à des zones mémoire différentes.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/value_types_parameter_passing_diagram.png" alt="Diagramme d&amp;rsquo;exécution">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="passage-dun-objet-en-parametre">Passage d’un objet en paramètre&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">static&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Main(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>[] args) {
+Cercle cercle = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Cercle(&lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>);
+Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Avant l&amp;#39;appel, cercle.Rayon = &amp;#34;&lt;/span> + cercle.Rayon); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 5
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> AugmenterRayon(cercle);
+Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Après l&amp;#39;appel, cercle.Rayon = &amp;#34;&lt;/span> + cercle.Rayon); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;span style="color:#fb660a;font-weight:bold">static&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> AugmenterRayon(Cercle unCercle) {
+Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Avant l&amp;#39;augmentation, unCercle.Rayon = &amp;#34;&lt;/span> + unCercle.Rayon);
+unCercle.Rayon = unCercle.Rayon + &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>;
+Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Après l&amp;#39;augmentation, unCercle.Rayon = &amp;#34;&lt;/span> + unCercle.Rayon);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="résultat-de-lexécution">Résultat de l&amp;rsquo;exécution&lt;/h3>
+&lt;p>&lt;img src="images/object_parameter_passing.png" alt="Résultat de l&amp;rsquo;exécution">&lt;/p>
+&lt;ul>
+&lt;li>La valeur de l’argument (une &lt;strong>référence&lt;/strong>) est copiée dans le paramètre.&lt;/li>
+&lt;li>Argument et paramètre pointent vers la même zone mémoire.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/object_parameter_passing_diagram.png" alt="Diagramme d&amp;rsquo;exécution">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="mode-de-passage-des-parametres-en-c">Mode de passage des paramètres en C#&lt;/h3>
+&lt;ul>
+&lt;li>Par défaut, &lt;strong>tous les paramètres sont passés par valeur&lt;/strong>.&lt;/li>
+&lt;li>Types valeur : valeur copiée de l’argument vers le paramètre =&amp;gt; zones mémoire distinctes.&lt;/li>
+&lt;li>Types référence : référence copiée de l’argument vers le paramètre =&amp;gt; même zone mémoire.&lt;/li>
+&lt;li>Possibilité de modifier ce comportement avec les mots-clés &lt;code>ref&lt;/code> et &lt;code>out&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="gestion-des-exceptions">Gestion des exceptions&lt;/h2>
+&lt;hr>
+&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Exception&lt;/strong> : évènement qui apparaît pendant le déroulement d&amp;rsquo;un programme et qui empêche la poursuite normale de son exécution
+&lt;ul>
+&lt;li>Exemples : BD inaccessible, fichier non trouvé, bug interne…&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Gestion des exceptions : technique de gestion des erreurs dans un programme&lt;/li>
+&lt;li>Avantage : séparation du code applicatif du code de gestion des erreurs&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="les-exceptions--syntaxe">Les exceptions : syntaxe&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">try&lt;/span> {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// code susceptible de lever des exceptions
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;span style="color:#fb660a;font-weight:bold">catch&lt;/span> (Exception e) {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// code de gestion de l’exception apparue
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;span style="color:#fb660a;font-weight:bold">finally&lt;/span> {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// code exécuté systématiquement
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// levée d’une nouvelle exception
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">throw&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Exception(&lt;span style="color:#0086d2">&amp;#34;Message d’erreur&amp;#34;&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="les-exceptions--dynamique">Les exceptions : dynamique&lt;/h3>
+&lt;ul>
+&lt;li>Une exception levée remonte la chaîne des appels dans l&amp;rsquo;ordre inverse.&lt;/li>
+&lt;li>Issues possibles :
+&lt;ul>
+&lt;li>interception dans un bloc &lt;code>catch&lt;/code>.&lt;/li>
+&lt;li>arrêt brutal du programme.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/exceptionx_dynamic.png" alt="Dynamique des exceptions">
+&lt;/section>
+&lt;hr>
+&lt;h3 id="la-hiérarchie-des-exceptions">La hiérarchie des exceptions&lt;/h3>
+&lt;p>&lt;img src="images/exceptions_hierarchy.png" alt="Hiérarchie des exceptions">&lt;/p>
+&lt;hr>
+&lt;h3 id="création-de-classes-dexceptions">Création de classes d&amp;rsquo;exceptions&lt;/h3>
+&lt;p>Potentiellement utile pour distinguer différentes catégories d&amp;rsquo;erreur, avec des données spécifiques.&lt;/p>
+&lt;p>&lt;img src="images/exceptions_classes.png" alt="Classes d&amp;rsquo;exceptions">&lt;/p>
+&lt;hr>
+&lt;h3 id="exceptions-et-bonnes-pratiques-13">Exceptions et bonnes pratiques (1/3)&lt;/h3>
+&lt;ul>
+&lt;li>Lever une exception uniquement pour signaler qu’une exécution normale n’est plus possible.&lt;/li>
+&lt;li>Ne pas utiliser les exceptions pour des situations non exceptionnelles (succès d’une recherche, fin d’une itération, etc).&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">i = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>;
+trouve = &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span>;
+&lt;span style="color:#fb660a;font-weight:bold">while&lt;/span> (!trouve) {
+i++;
+&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (i == &lt;span style="color:#0086f7;font-weight:bold">10&lt;/span>)
+&lt;span style="color:#fb660a;font-weight:bold">throw&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Exception(&lt;span style="color:#0086d2">&amp;#34;Fin de la boucle&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Antipattern
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">else&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="exceptions-et-bonnes-pratiques-23">Exceptions et bonnes pratiques (2/3)&lt;/h3>
+&lt;ul>
+&lt;li>Intercepter les exceptions uniquement si un traitement approprié est possible (message d’erreur, nouvelle tentative, etc)&lt;/li>
+&lt;li>Sinon, la laisser remonter la chaîne des appels vers un meilleur endroit.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">try&lt;/span> {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;span style="color:#fb660a;font-weight:bold">catch&lt;/span> (Exception e) {
+&lt;span style="color:#fb660a;font-weight:bold">throw&lt;/span> e; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Antipattern : bloc inutile
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">try&lt;/span> {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;span style="color:#fb660a;font-weight:bold">catch&lt;/span> (Exception) {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Antipattern : exception &amp;#34;avalée&amp;#34;
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="exceptions-et-bonnes-pratiques-33">Exceptions et bonnes pratiques (3/3)&lt;/h3>
+&lt;ul>
+&lt;li>Bien réfléchir avant de créer ses propres classes d’exception.
+&lt;ul>
+&lt;li>En deça d’une certaine complexité, utiliser la classe standard &lt;code>Exception&lt;/code> suffit souvent.&lt;/li>
+&lt;li>Toujours inclure le mot &lt;em>Exception&lt;/em> dans le nom de la classe.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Code de gestion des erreurs &lt;code>&amp;lt;&amp;lt;&lt;/code> code applicatif.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="possibilités-syntaxiques-récentes">Possibilités syntaxiques récentes&lt;/h2>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="variables-sans-type-explicite">Variables sans type explicite&lt;/h3>
+&lt;p>Le mot-clé &lt;code>var&lt;/code> permet de déclarer des variables &lt;em>implicitement typées&lt;/em>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> i = &lt;span style="color:#0086f7;font-weight:bold">10&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Typage explicite
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> i = &lt;span style="color:#0086f7;font-weight:bold">10&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Typage implicite
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Usage possible 1 : simplification du code de création d&amp;rsquo;objets (pas de répétition du type)&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> l = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> List&amp;lt;&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>&amp;gt;();
+l.Add(&lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;p>Usage possible 2 : non-nécessité de créer un type spécifique pour le résultat d&amp;rsquo;une opération.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// var est nécessaire car la clause SELECT définit un type anonyme
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> custQuery = &lt;span style="color:#fb660a;font-weight:bold">from&lt;/span> cust &lt;span style="color:#fb660a;font-weight:bold">in&lt;/span> customers
+&lt;span style="color:#fb660a;font-weight:bold">where&lt;/span> cust.City == &lt;span style="color:#0086d2">&amp;#34;Bordeaux&amp;#34;&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">select&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> { cust.Name, cust.Phone };
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Var est nécessaire car chaque élément de la collection est un type anonyme
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">foreach&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> item &lt;span style="color:#fb660a;font-weight:bold">in&lt;/span> custQuery)
+{
+Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Nom={0}, Téléphone={1}&amp;#34;&lt;/span>, item.Name, item.Phone);
+}
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="chaînes-de-caractères-interpolées">Chaînes de caractères interpolées&lt;/h3>
+&lt;p>Placé juste avant le début d&amp;rsquo;une chaîne, le caractère &lt;code>$&lt;/code> permet d&amp;rsquo;y insérer des expressions entre accolades &lt;code>{...}&lt;/code> qui seront évaluées pour produire la valeur de la chaîne.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> name = &lt;span style="color:#0086d2">&amp;#34;Clément&amp;#34;&lt;/span>;
+&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> date = DateTime.Now;
+Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Hello, {0}! Today is {1}&amp;#34;&lt;/span>, name, date.DayOfWeek);
+Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;Hello, {name}! Today is {date.DayOfWeek}&amp;#34;&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Ces deux lignes produisent un résultat identique, similaire à :
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello, Clément! Today is Monday&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="types-valeur-nullables">Types valeur nullables&lt;/h3>
+&lt;p>Un type valeur auquel on accole le caractère &lt;code>?&lt;/code> peut stocker la valeur &lt;code>null&lt;/code> en plus de sa plage de valeurs habituelle.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> a = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Erreur: ce type de peut stocker que des valeurs entières
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#cdcaa9;font-weight:bold">int?&lt;/span> b = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// OK
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> c = b ?? -&lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Conversion vers le type int
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Les types nullables facilitent la gestion des valeurs indéfinies (exemple : absence de valeur pour une colonne dans une BD).&lt;/p>
+&lt;hr>
+&lt;h3 id="annotations">Annotations&lt;/h3>
+&lt;p>Les &lt;strong>annotations&lt;/strong>, également appelées &lt;em>attributs&lt;/em>, permettent d&amp;rsquo;ajouter des &lt;strong>métadonnées&lt;/strong> (des informations supplémentaires) à certains éléments du code : types, méthodes, propriétés&amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#ff0086;font-weight:bold">[Serializable]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> ClasseExemple
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Les instances de cette classe sont sérialisables
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Cette propriété est associée à un type BD spécifique
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold">[DataType(DataType.Date)]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DateTime ReleaseDate { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Deconstructing AI</title><link>https://www.bpesquet.fr/slides/deconstructing-ai/</link><pubDate>Mon, 09 Dec 2019 10:47:12 +0100</pubDate><guid>https://www.bpesquet.fr/slides/deconstructing-ai/</guid><description>&lt;h2 id="summary">Summary&lt;/h2>
 &lt;ul>
 &lt;li>What Is AI, Actually?&lt;/li>
