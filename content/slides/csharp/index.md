@@ -271,7 +271,7 @@ static void AugmenterRayon(Cercle unCercle) {
 
 ---
 
-### Syntaxe
+### Les exceptions : syntaxe
 
 ```csharp
 try {
@@ -294,7 +294,7 @@ throw new Exception("Message d’erreur");
 
 {{% section %}}
 
-### Dynamique
+### Les exceptions : dynamique
 
 - Une exception levée remonte la chaîne des appels dans l'ordre inverse.
 - Issues possibles :
@@ -377,7 +377,7 @@ catch (Exception) {
 - Bien réfléchir avant de créer ses propres classes d’exception.
   - En deça d’une certaine complexité, utiliser la classe standard `Exception` suffit souvent.
   - Toujours inclure le mot _Exception_ dans le nom de la classe.
-- Code de gestion des erreurs << code applicatif.
+- Code de gestion des erreurs `<<` code applicatif.
 
 ---
 
@@ -429,19 +429,45 @@ foreach (var item in custQuery)
 Placé juste avant le début d'une chaîne, le caractère `$` permet d'y insérer des expressions entre accolades `{...}` qui seront évaluées pour produire la valeur de la chaîne.
 
 ```csharp
-string nom = "Clément";
+string name = "Clément";
 var date = DateTime.Now;
 
-Console.WriteLine("Hello, {0}! Today is {1}", nom, date.DayOfWeek);
-Console.WriteLine($"Hello, {nom}! Today is {date.DayOfWeek}");
+Console.WriteLine("Hello, {0}! Today is {1}", name, date.DayOfWeek);
+Console.WriteLine($"Hello, {name}! Today is {date.DayOfWeek}");
 // Ces deux lignes produisent un résultat identique, similaire à :
-// "Hello Clément! Today is Monday"
+// "Hello, Clément! Today is Monday"
 ```
 
 ---
 
 ### Types valeur nullables
 
+Un type valeur auquel on accole le caractère `?` peut stocker la valeur `null` en plus de sa plage de valeurs habituelle.
+
+```csharp
+int a = null; // Erreur: ce type de peut stocker que des valeurs entières
+int? b = null; // OK
+int c = b ?? -1; // Conversion vers le type int
+```
+
+Les types nullables facilitent la gestion des valeurs indéfinies (exemple : absence de valeur pour une colonne dans une BD).
+
 ---
 
 ### Annotations
+
+Les **annotations**, également appelées _attributs_, permettent d'ajouter des **métadonnées** (des informations supplémentaires) à certains éléments du code : types, méthodes, propriétés...
+
+```csharp
+[Serializable]
+public class ClasseExemple
+{
+    // Les instances de cette classe sont sérialisables
+}
+```
+
+```csharp
+// Cette propriété est associée à un type BD spécifique
+[DataType(DataType.Date)]
+public DateTime ReleaseDate { get; set; }
+```
