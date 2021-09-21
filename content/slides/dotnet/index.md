@@ -1,7 +1,7 @@
 ---
 title: ".NET"
 date: 2021-09-21T14:06:30+02:00
-draft: true
+draft: false
 ---
 
 ## Sommaire

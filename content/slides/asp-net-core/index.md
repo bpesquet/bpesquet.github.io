@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET Core"
 date: 2021-09-21T09:40:11+02:00
-draft: true
+draft: false
 ---
 
 ## Sommaire
@@ -220,4 +220,4 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Permet de modifier le code à la volée sans devoir relancer l'exécution.
+Permet de modifier le code à la volée sans devoir relancer l'exécution ([source](https://stackoverflow.com/a/57637903)).
