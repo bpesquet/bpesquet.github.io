@@ -21,14 +21,16 @@ The following resources are being used in some of my courses. As such, they are 
 
 ## Programming
 
-- [Le langage JavaScript]({{< ref "slides/javascript" >}} "Le langage JavaScript")
-- [The JavaScript Way](https://github.com/thejsway/thejsway) | [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
 - [Programmation orientée objet en C#](https://ensc.gitbook.io/programmation-objet-csharp/)
 - [C# : rappels et compléments]({{< ref "slides/csharp" >}} "C# : rappels et compléments")
+- [Le langage JavaScript]({{< ref "slides/javascript" >}} "Le langage JavaScript")
+- [The JavaScript Way](https://github.com/thejsway/thejsway) | [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
 
 ## Software engineering
 
 - [Génie logiciel](https://ensc.gitbook.io/genie-logiciel/)
+- [.NET]({{< ref "slides/dotnet" >}} ".NET")
+- [ASP.NET Core]({{< ref "slides/asp-net-core" >}} "ASP.NET Core")
 - [Programmation évènementielle avec les WinForms](https://ensc.gitbook.io/programmation-evenementielle-winforms/)
 - [WinForms architecture patterns](https://github.com/bpesquet/winforms-architecture-patterns)
 
