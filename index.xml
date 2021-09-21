@@ -1465,7 +1465,283 @@ render() {
 );
 }
 }
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>.NET</title><link>https://www.bpesquet.fr/slides/dotnet/</link><pubDate>Tue, 21 Sep 2021 14:06:30 +0200</pubDate><guid>https://www.bpesquet.fr/slides/dotnet/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;ul>
+&lt;li>.NET en bref&lt;/li>
+&lt;li>La ligne de commande .NET&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="net-en-bref">.NET en bref&lt;/h2>
+&lt;hr>
+&lt;h3 id="aux-origines-de-net">Aux origines de .NET&lt;/h3>
+&lt;ul>
+&lt;li>Plate-forme de développement d&amp;rsquo;applications créée par Microsoft en 2002.&lt;/li>
+&lt;li>Réponse à la domination du langage Java (multi-plateformes).&lt;/li>
+&lt;li>Inclut plusieurs langages de programmation : C#, VB.NET, F#, PowerShell&amp;hellip;&lt;/li>
+&lt;li>Uniquement disponible sous Windows.&lt;/li>
+&lt;li>Licence propriétaire.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/.NET_Framework">&lt;img src="images/dotnet_stack.png" alt="Pile .NET">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="architecture-technique-de-net">Architecture technique de .NET&lt;/h3>
+&lt;ul>
+&lt;li>Une application .NET s&amp;rsquo;exécute dans un environnement contrôlé appelé &lt;strong>CLR&lt;/strong> (&lt;em>Common Language Runtime&lt;/em>).&lt;/li>
+&lt;li>La compilation du code source produit un résultat indépendant du système d&amp;rsquo;exploitation, conformément à un standard nommé &lt;strong>CLI&lt;/strong> (&lt;em>Common Language Infrastructure&lt;/em>).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/Common_Language_Infrastructure">&lt;img src="images/dotnet_cli_clr.png" alt="CLI et CLR">&lt;/a>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="net-framework-et-net-core">.NET Framework et .NET Core&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://www.mono-project.com/docs/about-mono/history/">2004&lt;/a> : lr projet &lt;strong>Mono&lt;/strong>, indépendant de Microsoft, débute le portage de .NET vers Linux.&lt;/li>
+&lt;li>&lt;a href="https://devblogs.microsoft.com/dotnet/net-core-is-open-source/">2014&lt;/a> : Microsoft publie &lt;strong>.NET Core&lt;/strong>, la première version open source et multi-plateformes de .NET. La version WIndows-only de .NET est renommée &lt;strong>.NET Framework&lt;/strong>.&lt;/li>
+&lt;li>&lt;a href="https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/">2019&lt;/a> : la nouvelle version de .NET Core est renommée &lt;strong>.NET&lt;/strong>, et .NET Framework passe en mode maintenance.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;a href="https://devblogs.microsoft.com/dotnet/introducing-net-5/">&lt;img src="images/dotnet5_platform.png" alt=".NET 5">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="la-ligne-de-commande-net">La ligne de commande .NET&lt;/h2>
+&lt;hr>
+&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>.NET CLI&lt;/strong> (&lt;em>Command Line Interface&lt;/em>) permet d&amp;rsquo;interagir avec .NET depuis un terminal.&lt;/li>
+&lt;li>Nécessite que .NET soit installé sur la machine.&lt;/li>
+&lt;li>Syntaxe : &lt;code>dotnet &amp;lt;commande&amp;gt; &amp;lt;options&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="création-dune-application">Création d&amp;rsquo;une application&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet new &amp;lt;template&amp;gt; -o &amp;lt;output directory&amp;gt;&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Type d&amp;rsquo;application&lt;/th>
+&lt;th>Template&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Console&lt;/td>
+&lt;td>&lt;code>console&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Bibliothèque de classes&lt;/td>
+&lt;td>&lt;code>classlib&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ASP.NET (vide)&lt;/td>
+&lt;td>&lt;code>web&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ASP.NET (API)&lt;/td>
+&lt;td>&lt;code>webapi&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ASP.NET (MVC)&lt;/td>
+&lt;td>&lt;code>mvc&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="ajout-de-packages">Ajout de packages&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet add package &amp;lt;name&amp;gt;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>Utilise &lt;a href="https://www.nuget.org/">NuGet&lt;/a> en arrière-plan.&lt;/li>
+&lt;li>Vérifie la compatibilité du package à installer avec le projet.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="listage-des-packages-installés">Listage des packages installés&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet list package&lt;/code>&lt;/p>
+&lt;hr>
+&lt;h3 id="lancement-dune-application">Lancement d&amp;rsquo;une application&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet run&lt;/code>&lt;/p>
+&lt;p>Si nécessaire, effectue la restauration des dépendances du projet (équivalent de &lt;code>dotnet restore&lt;/code>).&lt;/p>
+&lt;hr>
+&lt;h3 id="autres-possibilités">Autres possibilités&lt;/h3>
+&lt;ul>
+&lt;li>Nettoyage, test, publication, gestion des packages installés, etc.&lt;/li>
+&lt;li>&lt;a href="https://docs.microsoft.com/en-us/dotnet/core/tools/">Plus d&amp;rsquo;informations&lt;/a>.&lt;/li>
+&lt;/ul></description></item><item><title>ASP.NET Core</title><link>https://www.bpesquet.fr/slides/asp-net-core/</link><pubDate>Tue, 21 Sep 2021 09:40:11 +0200</pubDate><guid>https://www.bpesquet.fr/slides/asp-net-core/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;ul>
+&lt;li>Qu&amp;rsquo;est-ce qu&amp;rsquo;ASP.NET Core ?&lt;/li>
+&lt;li>Le framework ASP.NET Core MVC&lt;/li>
+&lt;li>Création d&amp;rsquo;API web&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="quest-ce-quaspnet-core-">Qu&amp;rsquo;est-ce qu&amp;rsquo;ASP.NET Core ?&lt;/h2>
+&lt;hr>
+&lt;h3 id="histoire-daspnet-core">Histoire d&amp;rsquo;ASP.NET Core&lt;/h3>
+&lt;ul>
+&lt;li>A l&amp;rsquo;origine, .NET (Framework) incluait une technologie de création de pages web dynamiques nommée &lt;strong>ASP.NET&lt;/strong> (&lt;em>Active Server Pages&lt;/em>).&lt;/li>
+&lt;li>&lt;strong>ASP.NET Core&lt;/strong> est une réécriture d&amp;rsquo;ASP.NET basée sur .NET (Core).&lt;/li>
+&lt;li>Standard actuel pour le développement web sous .NET.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="points-clé-daspnet-core">Points-clé d&amp;rsquo;ASP.NET Core&lt;/h3>
+&lt;ul>
+&lt;li>Permet de créer des applications web et des services web (API) utilisés comme &lt;em>backends&lt;/em> par des clients riches ou des applications mobiles.&lt;/li>
+&lt;li>Léger, moderne et modulaire.&lt;/li>
+&lt;li>Inclut des technologies facilitant la gestion des pages dynamiques, des appels temps réel, des tests, etc.&lt;/li>
+&lt;li>Déployable sur plusieurs serveurs web : IIS, Apache, nginx, etc.&lt;/li>
+&lt;li>Multi-plateformes et &lt;a href="https://github.com/dotnet/aspnetcore">open source&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="le-framework-aspnet-core-mvc">Le framework ASP.NET Core MVC&lt;/h2>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="rappel--le-fonctionnement-du-web">Rappel : le fonctionnement du web&lt;/h3>
+&lt;p>Le web est basé sur un modèle &lt;strong>client/serveur&lt;/strong> :&lt;/p>
+&lt;ul>
+&lt;li>Le client (navigateur, application mobile, robot d&amp;rsquo;indexation, etc) envoie une demande (&lt;strong>requête&lt;/strong>) au serveur.&lt;/li>
+&lt;li>Le serveur prépare sa &lt;strong>réponse&lt;/strong> à la requête du client, puis la lui renvoie.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/web_request_response.png" alt="Modèle requête/réponse">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="le-protocole-http">Le protocole HTTP&lt;/h3>
+&lt;ul>
+&lt;li>&lt;em>HyperText Transfer Protocol&lt;/em>.&lt;/li>
+&lt;li>Socle technique du web.&lt;/li>
+&lt;li>Equivalent sécurisé : &lt;strong>HTTPS&lt;/strong>.&lt;/li>
+&lt;li>Basé sur des &lt;strong>commandes&lt;/strong> textuelles exprimant les différentes actions possibles : &lt;em>GET&lt;/em>, &lt;em>PUT&lt;/em>, &lt;em>POST&lt;/em>, etc).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="larchitecture-mvc">L&amp;rsquo;architecture MVC&lt;/h3>
+&lt;ul>
+&lt;li>&lt;em>Model-View-Controller&lt;/em> (&lt;em>Modèle-Vue-Contrôleur&lt;/em>).&lt;/li>
+&lt;li>Décomposition d’une application en trois grandes parties :
+&lt;ul>
+&lt;li>&lt;strong>Modèle&lt;/strong> : accès aux données et logique métier (&lt;em>business logic&lt;/em>).&lt;/li>
+&lt;li>&lt;strong>Vue&lt;/strong> : affichage et interactions avec l’utilisateur.&lt;/li>
+&lt;li>&lt;strong>Contrôleur&lt;/strong> : dynamique de l’application, lien entre Modèle et Vue.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Application du principe de séparation des responsabilités.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="mvc--un-peu-dhistoire">MVC : un peu d&amp;rsquo;histoire&lt;/h3>
+&lt;ul>
+&lt;li>Apparu à la fin des années 1970 pour le langage OO &lt;strong>Smalltalk&lt;/strong>. Objectif : séparer le code de l’IHM de la logique applicative.&lt;/li>
+&lt;li>Appliqué depuis dans de très nombreux contextes et langages :
+&lt;ul>
+&lt;li>web côté serveur : frameworks Symfony (PHP), Django (Python), Rails (Ruby), etc.&lt;/li>
+&lt;li>web côté client : frameworks Angular, Ember (JavaScript), etc.&lt;/li>
+&lt;li>desktop : bibliothèque Swing (Java), etc.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;a href="https://symfony.com/doc/current/index.html">&lt;img src="images/symfony_mvc.png" alt="Dynamique d&amp;rsquo;un serveur web MVC">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="avantages-et-inconvénients">Avantages et inconvénients&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Avantages :&lt;/p>
+&lt;ul>
+&lt;li>Clarification de l’architecture.&lt;/li>
+&lt;li>Séparation nette des responsabilités =&amp;gt; couplage faible, cohésion forte, maintenance et évolutions facilitées.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Inconvénients :&lt;/p>
+&lt;ul>
+&lt;li>Complexification de l’architecture.&lt;/li>
+&lt;li>Rigidité.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="aspnet-core-mvc">ASP.NET Core MVC&lt;/h3>
+&lt;ul>
+&lt;li>Framework de création d&amp;rsquo;applications web basées sur l&amp;rsquo;architecture MVC.&lt;/li>
+&lt;li>Implémente de nombreux services et bonnes pratiques, parmi lesquels :
+&lt;ul>
+&lt;li>Routage des requêtes entrantes.&lt;/li>
+&lt;li>Gestion des pages dynamiques.&lt;/li>
+&lt;li>Authentification.&lt;/li>
+&lt;li>Injection de dépendance.&lt;/li>
+&lt;li>Tests.&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="structure-dune-application-aspnet-core-mvc">Structure d&amp;rsquo;une application ASP.NET Core MVC&lt;/h3>
+&lt;p>&lt;img src="images/aspnetcoremvc_structure.png" alt="Structure d&amp;rsquo;une application ASP.NET Core MVC">&lt;/p>
+&lt;hr>
+&lt;h3 id="le-fichier-startupcs">Le fichier Startup.cs&lt;/h3>
+&lt;p>Contient la classe &lt;code>Startup&lt;/code> qui permet :&lt;/p>
+&lt;ul>
+&lt;li>la configuration des services utilisés par l&amp;rsquo;application ;&lt;/li>
+&lt;li>la définition du &lt;em>pipeline&lt;/em> de gestion des requêtes HTTP entrantes.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exemple-de-classe-startup">Exemple de classe Startup&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Startup
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Use this method to add services to the container.
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> ConfigureServices(IServiceCollection services)
+{
+services.AddControllersWithViews();
+}
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Use this method to configure the HTTP request pipeline.
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthorization();
+app.UseEndpoints(endpoints =&amp;gt;
+{
+endpoints.MapDefaultControllerRoute();
+});
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="routage-des-requêtes">Routage des requêtes&lt;/h3>
+&lt;ul>
+&lt;li>Associe le code à exécuter aux requêtes HTTP entrantes.&lt;/li>
+&lt;li>Permet à l&amp;rsquo;application web d&amp;rsquo;utiliser des URL propres et &lt;em>SEO-friendly&lt;/em>, plutôt que des noms de fichiers.&lt;/li>
+&lt;li>&lt;a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0">Plus d&amp;rsquo;informations&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="routage-par-convention">Routage par convention&lt;/h3>
+&lt;ul>
+&lt;li>Permet de définir globalement la correspondance entre le format de l&amp;rsquo;URL et la méthode d&amp;rsquo;action d&amp;rsquo;un contrôleur à exécuter.&lt;/li>
+&lt;li>Format par défaut : &lt;code>/[Controller]/[ActionName]/[Parameters]&lt;/code>.&lt;/li>
+&lt;li>Exemple : &lt;code>https://myapp/Student/Details/Code=137&lt;/code> appelle la méthode &lt;code>Details&lt;/code> du contrôleur &lt;code>StudentController&lt;/code>, en lui passant un paramètre nommé &lt;code>Code&lt;/code> ayant la valeur 137.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="configuration-du-routage-par-convention-dans-startup">Configuration du routage par convention dans Startup&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> app.UseEndpoints(endpoints =&amp;gt;
+{
+endpoints.MapControllerRoute(
+name: &lt;span style="color:#0086d2">&amp;#34;default&amp;#34;&lt;/span>,
+pattern: &lt;span style="color:#0086d2">&amp;#34;{controller=Home}/{action=Index}/{id?}&amp;#34;&lt;/span>);
+});
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>Home&lt;/code>, &lt;code>Index&lt;/code> et &lt;code>id&lt;/code> sont resp. les noms par défaut du contrôleur, de l&amp;rsquo;action et du paramètre (optionnel).&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="auto-certification-de-lapplication">Auto-certification de l&amp;rsquo;application&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet dev-certs https --trust&lt;/code>&lt;/p>
+&lt;p>Nécessaire pour lancer l&amp;rsquo;application localement avec HTTPS.&lt;/p>
+&lt;hr>
+&lt;h3 id="recompilation-dynamique">Recompilation dynamique&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> ConfigureServices(IServiceCollection services)
+{
+services.AddControllersWithViews().AddRazorRuntimeCompilation();
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Permet de modifier le code à la volée sans devoir relancer l&amp;rsquo;exécution (&lt;a href="https://stackoverflow.com/a/57637903">source&lt;/a>).&lt;/p></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Rappels sur la POO&lt;/li>
 &lt;li>Gestion des objets en mémoire&lt;/li>
@@ -1804,14 +2080,16 @@ Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;Hello, {name}! Today 
 &lt;/ul>
 &lt;h2 id="programming">Programming&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://www.bpesquet.fr/slides/javascript/" title="Le langage JavaScript">Le langage JavaScript&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/thejsway/thejsway">The JavaScript Way&lt;/a> | &lt;a href="https://github.com/thejsway/thejsway_fr">La voie du JavaScript&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://ensc.gitbook.io/programmation-objet-csharp/">Programmation orientée objet en C#&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.bpesquet.fr/slides/csharp/" title="C# : rappels et compléments">C# : rappels et compléments&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/javascript/" title="Le langage JavaScript">Le langage JavaScript&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/thejsway/thejsway">The JavaScript Way&lt;/a> | &lt;a href="https://github.com/thejsway/thejsway_fr">La voie du JavaScript&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="software-engineering">Software engineering&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://ensc.gitbook.io/genie-logiciel/">Génie logiciel&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/dotnet/" title=".NET">.NET&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/asp-net-core/" title="ASP.NET Core">ASP.NET Core&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://ensc.gitbook.io/programmation-evenementielle-winforms/">Programmation évènementielle avec les WinForms&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/bpesquet/winforms-architecture-patterns">WinForms architecture patterns&lt;/a>&lt;/li>
 &lt;/ul>
