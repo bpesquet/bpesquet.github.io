@@ -46,7 +46,7 @@ draft: false
 
 ### .NET Framework et .NET Core
 
-- [2004](https://www.mono-project.com/docs/about-mono/history/) : lr projet **Mono**, indépendant de Microsoft, débute le portage de .NET vers Linux.
+- [2004](https://www.mono-project.com/docs/about-mono/history/) : le projet **Mono**, indépendant de Microsoft, débute le portage de .NET vers Linux.
 - [2014](https://devblogs.microsoft.com/dotnet/net-core-is-open-source/) : Microsoft publie **.NET Core**, la première version open source et multi-plateformes de .NET. La version WIndows-only de .NET est renommée **.NET Framework**.
 - [2019](https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/) : la nouvelle version de .NET Core est renommée **.NET**, et .NET Framework passe en mode maintenance.
 
@@ -102,6 +102,14 @@ draft: false
 `> dotnet run`
 
 Si nécessaire, effectue la restauration des dépendances du projet (équivalent de `dotnet restore`).
+
+---
+
+### Surveillance des changements
+
+`> dotnet watch run`
+
+Pour une application web, jnjecte un script qui met à jour le contenu affiché par le navigateur lorsque des fichiers surveillés sont modifiés.
 
 ---
 
