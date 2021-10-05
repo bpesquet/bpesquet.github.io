@@ -8,7 +8,7 @@ draft: false
 
 - Qu'est-ce qu'ASP.NET Core ?
 - Le framework ASP.NET Core MVC
-- Création d'API web
+- Mécanismes fondamentaux
 
 ---
 
@@ -24,13 +24,41 @@ draft: false
 
 ---
 
-### Points-clé d'ASP.NET Core
+### Points-clés d'ASP.NET Core
 
 - Permet de créer des applications web et des services web (API) utilisés comme _backends_ par des clients riches ou des applications mobiles.
 - Léger, moderne et modulaire.
 - Inclut des technologies facilitant la gestion des pages dynamiques, des appels temps réel, des tests, etc.
-- Déployable sur plusieurs serveurs web : IIS, Apache, nginx, etc.
+- Déployable sur plusieurs serveurs web : Kestrel, Apache, nginx, etc.
 - Multi-plateformes et [open source](https://github.com/dotnet/aspnetcore).
+
+---
+
+### UI générée côté serveur
+
+Code HTML et CSS généré côté serveur, puis renvoyée au client.
+
+- Peu d'exigences techniques côté client (navigateur simple, trafic réseau limité).
+- Accès BD et contrôles centralisés.
+- Exemples d'usages : sites dynamiques, blogs, CMS.
+
+---
+
+### UI générée côté client
+
+Structure HTML (DOM) mise à jour dynamiquement côté client grâce à des appels asynchrones au serveur.
+
+- Interactions riches avec l'utilisateur.
+- Capacités matérielles et logicielles du client utilisables.
+- Exemples d'usages : tableau de bord interactif, applications collaboratives.
+
+---
+
+## L'offre technique ASP.NET Core
+
+- UI générée côté serveur : **Razor Pages**, **MVC**.
+- UI générée côté client : **Blazor**, **SPA** avec Angular ou React.
+- Une approche hybride est possible (exemple : MVC + Blazor).
 
 ---
 
@@ -121,6 +149,103 @@ Le web est basé sur un modèle **client/serveur** :
 
 ---
 
+### Les contrôleurs
+
+- Créés dans le répertoire `Controllers/`.
+- Héritent de la classe abstraite `Controller`.
+- Définissent les points d'entrée dans l'application sous la forme de méthodes d'action annotables.
+
+```csharp
+// GET: Movies/Details/5
+public async Task<IActionResult> Details(int? id)
+{
+    //...
+}
+
+// POST: Movies/Delete/5
+[HttpPost, ActionName("Delete")]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> DeleteConfirmed(int id)
+{
+  // ...
+}
+```
+
+---
+
+### Les modèles
+
+- Créés dans le répertoire `Models/`.
+- Implémentent la logique métier de l'application sous la forme de classes **POCO** (_Plain Old C# Objects_) souvent associées à des tables BD.
+
+```csharp
+public class Movie
+{
+    public int Id { get; set; }
+
+    [StringLength(60, MinimumLength = 3)]
+    public string Title { get; set; }
+
+    [Display(Name = "Release Date"), DataType(DataType.Date)]
+    public DateTime ReleaseDate { get; set; }
+    // ...
+```
+
+---
+
+### Les vues
+
+- Créés dans le répertoire `Views/` sous la forme de fichiers Razor (`.cshtml`).
+- Représentent l'interface utilisateur (UI) de l'application.
+
+```csharp
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<h2>Welcome</h2>
+
+<ul>
+    @for (int i = 0; i < (int)ViewData["NumTimes"]; i++)
+    {
+        <li>@ViewData["Message"]</li>
+    }
+</ul>
+```
+
+---
+
+### Code et librairies client
+
+- Regroupés dans le répertoire `wwwroot/`.
+- Rassemblent les fichiers CSS et JavaScript utilisés côté client.
+- Incluent par défaut Bootstrap et jQuery.
+
+---
+
+### Le fichier appsettings.json
+
+Centralise les paramètres de configuration de l'application.
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information",
+      "Microsoft.EntityFrameworkCore.Database.Command": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "MvcMovieContext": "Data Source=MvcMovieContext-8719dcdb-c317-48bf-9cd8-a4c4167ce370.db"
+  }
+}
+```
+
+---
+
 ### Le fichier Startup.cs
 
 Contient la classe `Startup` qui permet :
@@ -161,15 +286,19 @@ public class Startup
 
 ---
 
-### Routage des requêtes
-
-- Associe le code à exécuter aux requêtes HTTP entrantes.
-- Permet à l'application web d'utiliser des URL propres et _SEO-friendly_, plutôt que des noms de fichiers.
-- [Plus d'informations](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0).
+## Mécanismes fondamentaux
 
 ---
 
 {{% section %}}
+
+### Routage des requêtes
+
+- Associe les requêtes HTTP entrantes au code à éxécuter (méthodes des contrôleurs).
+- Permet à l'application web d'utiliser des URL propres et _SEO-friendly_, plutôt que des noms de fichiers.
+- [Plus d'informations](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0).
+
+---
 
 ### Routage par convention
 
@@ -200,24 +329,43 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 
 ---
 
-### Auto-certification de l'application
+### Scaffolding
 
-`> dotnet dev-certs https --trust`
+`> dotnet-aspnet-codegenerator [arguments]`
 
-Nécessaire pour lancer l'application localement avec HTTPS.
+- Permet de générer le code source pour les opérations élémentaires **CRUD** (_Create, Read, Update, Delete_) liées à une classe du Modèle.
+- [Plus d'informations](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/tools/dotnet-aspnet-codegenerator?view=aspnetcore-5.0).
+- [Exemple de résultat](https://github.com/ensc-glog/MvcMovie/commit/f5c4ec45033f5509ec736bc1bebf010f200921f0).
 
 ---
 
-### Recompilation dynamique
+### Database context
 
-`> dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation`
+- Hérite de la classe abstraite `DbContext`.
+- Spécifit les classes du Modèle à sauvegarder dans la base de données.
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
+public class MvcMovieContext : DbContext
 {
-    services.AddControllersWithViews().AddRazorRuntimeCompilation();
-    // ...
+    public MvcMovieContext(DbContextOptions<MvcMovieContext> options)
+        : base(options)
+    {}
+
+    public DbSet<MvcMovie.Models.Movie> Movie { get; set; }
 }
 ```
 
-Permet de modifier le code à la volée sans devoir relancer l'exécution ([source](https://stackoverflow.com/a/57637903)).
+---
+
+### Migrations
+
+`> dotnet ef migrations add InitialCreate`
+
+`> dotnet ef database update`
+
+- Permettent à la base de données d'être synchronisée avec les évolutions du Modèle, sans perte de données.
+- Migration = évolution incrémentale depuis la migration précédente.
+
+---
+
+### Envoi de données aux vues
