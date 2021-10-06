@@ -30,7 +30,7 @@ The following resources are being used in some of my courses. As such, they are 
 
 - [Génie logiciel](https://ensc.gitbook.io/genie-logiciel/)
 - [.NET]({{< ref "slides/dotnet" >}} ".NET")
-- [ASP.NET Core]({{< ref "slides/asp-net-core" >}} "ASP.NET Core")
+- [Introduction à ASP.NET Core]({{< ref "slides/asp-net-core" >}} "Introduction à ASP.NET Core")
 - [Programmation évènementielle avec les WinForms](https://ensc.gitbook.io/programmation-evenementielle-winforms/)
 - [WinForms architecture patterns](https://github.com/bpesquet/winforms-architecture-patterns)
 

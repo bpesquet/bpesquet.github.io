@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Core"
+title: "Introduction à ASP.NET Core"
 date: 2021-09-21T09:40:11+02:00
 draft: false
 ---
@@ -54,7 +54,7 @@ Structure HTML (DOM) mise à jour dynamiquement côté client grâce à des appe
 
 ---
 
-## L'offre technique ASP.NET Core
+### L'offre technique ASP.NET Core
 
 - UI générée côté serveur : **Razor Pages**, **MVC**.
 - UI générée côté client : **Blazor**, **SPA** avec Angular ou React.
@@ -77,7 +77,7 @@ Le web est basé sur un modèle **client/serveur** :
 
 ---
 
-![Modèle requête/réponse](images/web_request_response.png)
+![Modèle requête/réponse du web](images/web_request_response.png)
 
 {{% /section %}}
 
@@ -156,19 +156,21 @@ Le web est basé sur un modèle **client/serveur** :
 - Définissent les points d'entrée dans l'application sous la forme de méthodes d'action annotables.
 
 ```csharp
-// GET: Movies/Details/5
-public async Task<IActionResult> Details(int? id)
+public class MoviesController : Controller
 {
-    //...
-}
+    // GET: Movies/Details/5
+    public async Task<IActionResult> Details(int? id)
+    {
+        //...
+    }
 
-// POST: Movies/Delete/5
-[HttpPost, ActionName("Delete")]
-[ValidateAntiForgeryToken]
-public async Task<IActionResult> DeleteConfirmed(int id)
-{
-  // ...
-}
+    // POST: Movies/Delete/5
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        // ...
+    }
 ```
 
 ---
@@ -176,7 +178,7 @@ public async Task<IActionResult> DeleteConfirmed(int id)
 ### Les modèles
 
 - Créés dans le répertoire `Models/`.
-- Implémentent la logique métier de l'application sous la forme de classes **POCO** (_Plain Old C# Objects_) souvent associées à des tables BD.
+- Implémentent la logique métier de l'application sous la forme de classes **POCO** (_Plain Old CLR Objects_) souvent associées à des tables BD.
 
 ```csharp
 public class Movie
@@ -195,22 +197,17 @@ public class Movie
 
 ### Les vues
 
-- Créés dans le répertoire `Views/` sous la forme de fichiers Razor (`.cshtml`).
+- Créés dans le répertoire `Views/[Controller]` sous la forme de fichiers Razor (`.cshtml`).
 - Représentent l'interface utilisateur (UI) de l'application.
 
 ```csharp
 @{
-    ViewData["Title"] = "Welcome";
+    ViewData["Title"] = "About";
 }
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
 
-<h2>Welcome</h2>
-
-<ul>
-    @for (int i = 0; i < (int)ViewData["NumTimes"]; i++)
-    {
-        <li>@ViewData["Message"]</li>
-    }
-</ul>
+<p>Use this area to provide additional information.</p>
 ```
 
 ---
@@ -246,6 +243,8 @@ Centralise les paramètres de configuration de l'application.
 
 ---
 
+{{% section %}}
+
 ### Le fichier Startup.cs
 
 Contient la classe `Startup` qui permet :
@@ -265,17 +264,13 @@ public class Startup
     {
         services.AddControllersWithViews();
     }
-
     // Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         app.UseHttpsRedirection();
         app.UseStaticFiles();
-
         app.UseRouting();
-
         app.UseAuthorization();
-
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapDefaultControllerRoute();
@@ -283,6 +278,8 @@ public class Startup
     }
 }
 ```
+
+{{% /section %}}
 
 ---
 
@@ -350,8 +347,16 @@ public class MvcMovieContext : DbContext
     public MvcMovieContext(DbContextOptions<MvcMovieContext> options)
         : base(options)
     {}
-
     public DbSet<MvcMovie.Models.Movie> Movie { get; set; }
+}
+```
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    // ...
+    services.AddDbContext<MvcMovieContext>(options =>
+            options.UseSqlite(Configuration.GetConnectionString("MvcMovieContext")));
 }
 ```
 
@@ -368,4 +373,225 @@ public class MvcMovieContext : DbContext
 
 ---
 
-### Envoi de données aux vues
+{{% section %}}
+
+### Envoi de données aux vues : ViewData
+
+Approche _faiblement typée_ : on utilie un dictionnaire standard.
+
+```csharp
+public IActionResult Welcome(string name, int numTimes = 1)
+{
+    ViewData["Message"] = "Hello " + name;
+    ViewData["NumTimes"] = numTimes;
+    return View();
+}
+```
+
+---
+
+### Utilisation dans la vue
+
+```csharp
+@{
+    ViewData["Title"] = "Welcome";
+}
+<h2>Welcome</h2>
+<ul>
+    @for (int i = 0; i < (int)ViewData["NumTimes"]; i++)
+    {
+        <li>@ViewData["Message"]</li>
+    }
+</ul>
+```
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+### Envoi de données aux vues : ViewModel
+
+Approche _fortement typée_ : on définit une classe pour porter les données de la vue.
+
+```csharp
+public class Address
+{
+    public string Name { get; set; }
+    public string Street { get; set; }
+    public string City { get; set; }
+    public string State { get; set; }
+    public string PostalCode { get; set; }
+}
+```
+
+---
+
+### Utilisation dans le contrôleur
+
+```csharp
+public IActionResult Contact()
+{
+    var viewModel = new Address()
+    {
+        Name = "Microsoft",
+        Street = "One Microsoft Way",
+        City = "Redmond",
+        State = "WA",
+        PostalCode = "98052-6399"
+    };
+    return View(viewModel);
+}
+```
+
+---
+
+### Utilisation dans la vue
+
+```html
+@model WebApplication1.ViewModels.Address
+
+<h2>Contact</h2>
+<address>
+  @Model.Street<br />
+  @Model.City, @Model.State @Model.PostalCode<br />
+  <abbr title="Phone">P:</abbr> 425.555.0100
+</address>
+```
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+### View layout
+
+- Par défaut, toutes les vues partagent une structure commune définie dans le fichier `Views/Shared/_Layout.cshtml`.
+- Dans ce layout, la fonction `@RenderBody()` permet de générer le contenu spécifique de la vue à afficher.
+- Les éléments spécifiques à une vue (exemples : inclusions CSS ou JavaScript) peuvent être rassemblés dans des **sections** affichées par le layout.
+
+---
+
+### Exemple de layout
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Movie App</title>
+    <!-- ... -->
+  </head>
+  <body>
+    <header><!-- ... --></header>
+    <div class="container">
+      <main role="main" class="pb-3">@RenderBody()</main>
+    </div>
+    <footer><!-- ... --></footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- ... -->
+    @await RenderSectionAsync("Scripts", required: false)
+  </body>
+</html>
+```
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+### Validation des données
+
+L'annotation des classes du Modèle permet de définir des **règles de validation** qui seront automatiquement vérifiées à la fois côté serveur et côté client.
+
+```csharp
+using System.ComponentModel.DataAnnotations;
+public class LoginViewModel
+{
+    [Required]
+    [EmailAddress]
+    public string Email { get; set; }
+
+    [Required]
+    [DataType(DataType.Password)]
+    public string Password { get; set; }
+
+    [Display(Name = "Remember me?")]
+    public bool RememberMe { get; set; }
+}
+```
+
+---
+
+### Validation dans le contrôleur
+
+```csharp
+public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
+{
+    // Check model validation rules
+    if (ModelState.IsValid)
+    {
+      // ... (nominal case: work with the model)
+    }
+    // At this point, something failed: redisplay form
+    return View(model);
+}
+```
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+### Environnements
+
+- Permettent d'adapter la configuration de l'application au contexte (développement, test ou production).
+- Définis par la variable d'environnement `ASPNETCORE_ENVIRONMENT`. En l'absence de cette variable, l'environnement est de type Production.
+- [Plus d'informations](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-5.0).
+
+---
+
+### Définition de l'environnement avec Visual Studio Code
+
+Fichier `./vscode/launch.json`
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (web)",
+      # ...
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      # ...
+    }
+  ]
+}
+
+```
+
+---
+
+### Configuration de l'application selon l'environnement détecté
+
+```csharp
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+    if (env.IsProduction() || env.IsStaging())
+    {
+        app.UseExceptionHandler("/Error");
+    }
+    // ...
+```
+
+{{% /section %}}
