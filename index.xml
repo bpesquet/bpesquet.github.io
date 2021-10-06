@@ -1496,7 +1496,7 @@ render() {
 &lt;hr>
 &lt;h3 id="net-framework-et-net-core">.NET Framework et .NET Core&lt;/h3>
 &lt;ul>
-&lt;li>&lt;a href="https://www.mono-project.com/docs/about-mono/history/">2004&lt;/a> : lr projet &lt;strong>Mono&lt;/strong>, indépendant de Microsoft, débute le portage de .NET vers Linux.&lt;/li>
+&lt;li>&lt;a href="https://www.mono-project.com/docs/about-mono/history/">2004&lt;/a> : le projet &lt;strong>Mono&lt;/strong>, indépendant de Microsoft, débute le portage de .NET vers Linux.&lt;/li>
 &lt;li>&lt;a href="https://devblogs.microsoft.com/dotnet/net-core-is-open-source/">2014&lt;/a> : Microsoft publie &lt;strong>.NET Core&lt;/strong>, la première version open source et multi-plateformes de .NET. La version WIndows-only de .NET est renommée &lt;strong>.NET Framework&lt;/strong>.&lt;/li>
 &lt;li>&lt;a href="https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/">2019&lt;/a> : la nouvelle version de .NET Core est renommée &lt;strong>.NET&lt;/strong>, et .NET Framework passe en mode maintenance.&lt;/li>
 &lt;/ul>
@@ -1559,6 +1559,10 @@ render() {
 &lt;p>&lt;code>&amp;gt; dotnet run&lt;/code>&lt;/p>
 &lt;p>Si nécessaire, effectue la restauration des dépendances du projet (équivalent de &lt;code>dotnet restore&lt;/code>).&lt;/p>
 &lt;hr>
+&lt;h3 id="surveillance-des-changements">Surveillance des changements&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet watch run&lt;/code>&lt;/p>
+&lt;p>Pour une application web, jnjecte un script qui met à jour le contenu affiché par le navigateur lorsque des fichiers surveillés sont modifiés.&lt;/p>
+&lt;hr>
 &lt;h3 id="autres-possibilités">Autres possibilités&lt;/h3>
 &lt;ul>
 &lt;li>Nettoyage, test, publication, gestion des packages installés, etc.&lt;/li>
@@ -1567,7 +1571,7 @@ render() {
 &lt;ul>
 &lt;li>Qu&amp;rsquo;est-ce qu&amp;rsquo;ASP.NET Core ?&lt;/li>
 &lt;li>Le framework ASP.NET Core MVC&lt;/li>
-&lt;li>Création d&amp;rsquo;API web&lt;/li>
+&lt;li>Mécanismes fondamentaux&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="quest-ce-quaspnet-core-">Qu&amp;rsquo;est-ce qu&amp;rsquo;ASP.NET Core ?&lt;/h2>
@@ -1579,13 +1583,36 @@ render() {
 &lt;li>Standard actuel pour le développement web sous .NET.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="points-clé-daspnet-core">Points-clé d&amp;rsquo;ASP.NET Core&lt;/h3>
+&lt;h3 id="points-clés-daspnet-core">Points-clés d&amp;rsquo;ASP.NET Core&lt;/h3>
 &lt;ul>
 &lt;li>Permet de créer des applications web et des services web (API) utilisés comme &lt;em>backends&lt;/em> par des clients riches ou des applications mobiles.&lt;/li>
 &lt;li>Léger, moderne et modulaire.&lt;/li>
 &lt;li>Inclut des technologies facilitant la gestion des pages dynamiques, des appels temps réel, des tests, etc.&lt;/li>
-&lt;li>Déployable sur plusieurs serveurs web : IIS, Apache, nginx, etc.&lt;/li>
+&lt;li>Déployable sur plusieurs serveurs web : Kestrel, Apache, nginx, etc.&lt;/li>
 &lt;li>Multi-plateformes et &lt;a href="https://github.com/dotnet/aspnetcore">open source&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="ui-générée-côté-serveur">UI générée côté serveur&lt;/h3>
+&lt;p>Code HTML et CSS généré côté serveur, puis renvoyée au client.&lt;/p>
+&lt;ul>
+&lt;li>Peu d&amp;rsquo;exigences techniques côté client (navigateur simple, trafic réseau limité).&lt;/li>
+&lt;li>Accès BD et contrôles centralisés.&lt;/li>
+&lt;li>Exemples d&amp;rsquo;usages : sites dynamiques, blogs, CMS.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="ui-générée-côté-client">UI générée côté client&lt;/h3>
+&lt;p>Structure HTML (DOM) mise à jour dynamiquement côté client grâce à des appels asynchrones au serveur.&lt;/p>
+&lt;ul>
+&lt;li>Interactions riches avec l&amp;rsquo;utilisateur.&lt;/li>
+&lt;li>Capacités matérielles et logicielles du client utilisables.&lt;/li>
+&lt;li>Exemples d&amp;rsquo;usages : tableau de bord interactif, applications collaboratives.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="loffre-technique-aspnet-core">L&amp;rsquo;offre technique ASP.NET Core&lt;/h2>
+&lt;ul>
+&lt;li>UI générée côté serveur : &lt;strong>Razor Pages&lt;/strong>, &lt;strong>MVC&lt;/strong>.&lt;/li>
+&lt;li>UI générée côté client : &lt;strong>Blazor&lt;/strong>, &lt;strong>SPA&lt;/strong> avec Angular ou React.&lt;/li>
+&lt;li>Une approche hybride est possible (exemple : MVC + Blazor).&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="le-framework-aspnet-core-mvc">Le framework ASP.NET Core MVC&lt;/h2>
@@ -1672,6 +1699,81 @@ render() {
 &lt;h3 id="structure-dune-application-aspnet-core-mvc">Structure d&amp;rsquo;une application ASP.NET Core MVC&lt;/h3>
 &lt;p>&lt;img src="images/aspnetcoremvc_structure.png" alt="Structure d&amp;rsquo;une application ASP.NET Core MVC">&lt;/p>
 &lt;hr>
+&lt;h3 id="les-contrôleurs">Les contrôleurs&lt;/h3>
+&lt;ul>
+&lt;li>Créés dans le répertoire &lt;code>Controllers/&lt;/code>.&lt;/li>
+&lt;li>Héritent de la classe abstraite &lt;code>Controller&lt;/code>.&lt;/li>
+&lt;li>Définissent les points d&amp;rsquo;entrée dans l&amp;rsquo;application sous la forme de méthodes d&amp;rsquo;action annotables.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: Movies/Details/5
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Details(&lt;span style="color:#cdcaa9;font-weight:bold">int?&lt;/span> id)
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">//...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// POST: Movies/Delete/5
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold">[HttpPost, ActionName(&amp;#34;Delete&amp;#34;)]&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold">[ValidateAntiForgeryToken]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; DeleteConfirmed(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> id)
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="les-modèles">Les modèles&lt;/h3>
+&lt;ul>
+&lt;li>Créés dans le répertoire &lt;code>Models/&lt;/code>.&lt;/li>
+&lt;li>Implémentent la logique métier de l&amp;rsquo;application sous la forme de classes &lt;strong>POCO&lt;/strong> (&lt;em>Plain Old C# Objects&lt;/em>) souvent associées à des tables BD.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Movie
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;span style="color:#ff0086;font-weight:bold"> [StringLength(60, MinimumLength = 3)]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Title { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;span style="color:#ff0086;font-weight:bold"> [Display(Name = &amp;#34;Release Date&amp;#34;), DataType(DataType.Date)]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DateTime ReleaseDate { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="les-vues">Les vues&lt;/h3>
+&lt;ul>
+&lt;li>Créés dans le répertoire &lt;code>Views/&lt;/code> sous la forme de fichiers Razor (&lt;code>.cshtml&lt;/code>).&lt;/li>
+&lt;li>Représentent l&amp;rsquo;interface utilisateur (UI) de l&amp;rsquo;application.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">@{
+ViewData[&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span>] = &lt;span style="color:#0086d2">&amp;#34;Welcome&amp;#34;&lt;/span>;
+}
+&amp;lt;h2&amp;gt;Welcome&amp;lt;/h2&amp;gt;
+&amp;lt;ul&amp;gt;
+@for (&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> i = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>; i &amp;lt; (&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>)ViewData[&lt;span style="color:#0086d2">&amp;#34;NumTimes&amp;#34;&lt;/span>]; i++)
+{
+&amp;lt;li&amp;gt;@ViewData[&lt;span style="color:#0086d2">&amp;#34;Message&amp;#34;&lt;/span>]&amp;lt;/li&amp;gt;
+}
+&amp;lt;/ul&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="code-et-librairies-client">Code et librairies client&lt;/h3>
+&lt;ul>
+&lt;li>Regroupés dans le répertoire &lt;code>wwwroot/&lt;/code>.&lt;/li>
+&lt;li>Rassemblent les fichiers CSS et JavaScript utilisés côté client.&lt;/li>
+&lt;li>Incluent par défaut Bootstrap et jQuery.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="le-fichier-appsettingsjson">Le fichier appsettings.json&lt;/h3>
+&lt;p>Centralise les paramètres de configuration de l&amp;rsquo;application.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Logging&amp;#34;&lt;/span>: {
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;LogLevel&amp;#34;&lt;/span>: {
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Default&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Information&amp;#34;&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Microsoft&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Warning&amp;#34;&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Microsoft.Hosting.Lifetime&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Information&amp;#34;&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Microsoft.EntityFrameworkCore.Database.Command&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Information&amp;#34;&lt;/span>
+}
+},
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;AllowedHosts&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;*&amp;#34;&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;ConnectionStrings&amp;#34;&lt;/span>: {
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;MvcMovieContext&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Data Source=MvcMovieContext-8719dcdb-c317-48bf-9cd8-a4c4167ce370.db&amp;#34;&lt;/span>
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="le-fichier-startupcs">Le fichier Startup.cs&lt;/h3>
 &lt;p>Contient la classe &lt;code>Startup&lt;/code> qui permet :&lt;/p>
 &lt;ul>
@@ -1701,14 +1803,16 @@ endpoints.MapDefaultControllerRoute();
 }
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="mécanismes-fondamentaux">Mécanismes fondamentaux&lt;/h2>
+&lt;hr>
+&lt;section data-shortcode-section>
 &lt;h3 id="routage-des-requêtes">Routage des requêtes&lt;/h3>
 &lt;ul>
-&lt;li>Associe le code à exécuter aux requêtes HTTP entrantes.&lt;/li>
+&lt;li>Associe les requêtes HTTP entrantes au code à éxécuter (méthodes des contrôleurs).&lt;/li>
 &lt;li>Permet à l&amp;rsquo;application web d&amp;rsquo;utiliser des URL propres et &lt;em>SEO-friendly&lt;/em>, plutôt que des noms de fichiers.&lt;/li>
 &lt;li>&lt;a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0">Plus d&amp;rsquo;informations&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;section data-shortcode-section>
 &lt;h3 id="routage-par-convention">Routage par convention&lt;/h3>
 &lt;ul>
 &lt;li>Permet de définir globalement la correspondance entre le format de l&amp;rsquo;URL et la méthode d&amp;rsquo;action d&amp;rsquo;un contrôleur à exécuter.&lt;/li>
@@ -1730,18 +1834,36 @@ pattern: &lt;span style="color:#0086d2">&amp;#34;{controller=Home}/{action=Index
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>Home&lt;/code>, &lt;code>Index&lt;/code> et &lt;code>id&lt;/code> sont resp. les noms par défaut du contrôleur, de l&amp;rsquo;action et du paramètre (optionnel).&lt;/p>
 &lt;/section>
 &lt;hr>
-&lt;h3 id="auto-certification-de-lapplication">Auto-certification de l&amp;rsquo;application&lt;/h3>
-&lt;p>&lt;code>&amp;gt; dotnet dev-certs https --trust&lt;/code>&lt;/p>
-&lt;p>Nécessaire pour lancer l&amp;rsquo;application localement avec HTTPS.&lt;/p>
+&lt;h3 id="scaffolding">Scaffolding&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet-aspnet-codegenerator [arguments]&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>Permet de générer le code source pour les opérations élémentaires &lt;strong>CRUD&lt;/strong> (&lt;em>Create, Read, Update, Delete&lt;/em>) liées à une classe du Modèle.&lt;/li>
+&lt;li>&lt;a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/tools/dotnet-aspnet-codegenerator?view=aspnetcore-5.0">Plus d&amp;rsquo;informations&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="https://github.com/ensc-glog/MvcMovie/commit/f5c4ec45033f5509ec736bc1bebf010f200921f0">Exemple de résultat&lt;/a>.&lt;/li>
+&lt;/ul>
 &lt;hr>
-&lt;h3 id="recompilation-dynamique">Recompilation dynamique&lt;/h3>
-&lt;p>&lt;code>&amp;gt; dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> ConfigureServices(IServiceCollection services)
+&lt;h3 id="database-context">Database context&lt;/h3>
+&lt;ul>
+&lt;li>Hérite de la classe abstraite &lt;code>DbContext&lt;/code>.&lt;/li>
+&lt;li>Spécifit les classes du Modèle à sauvegarder dans la base de données.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MvcMovieContext : DbContext
 {
-services.AddControllersWithViews().AddRazorRuntimeCompilation();
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Permet de modifier le code à la volée sans devoir relancer l&amp;rsquo;exécution (&lt;a href="https://stackoverflow.com/a/57637903">source&lt;/a>).&lt;/p></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> MvcMovieContext(DbContextOptions&amp;lt;MvcMovieContext&amp;gt; options)
+: &lt;span style="color:#fb660a;font-weight:bold">base&lt;/span>(options)
+{}
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;MvcMovie.Models.Movie&amp;gt; Movie { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="migrations">Migrations&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet ef migrations add InitialCreate&lt;/code>&lt;/p>
+&lt;p>&lt;code>&amp;gt; dotnet ef database update&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>Permettent à la base de données d&amp;rsquo;être synchronisée avec les évolutions du Modèle, sans perte de données.&lt;/li>
+&lt;li>Migration = évolution incrémentale depuis la migration précédente.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="envoi-de-données-aux-vues">Envoi de données aux vues&lt;/h3></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Rappels sur la POO&lt;/li>
 &lt;li>Gestion des objets en mémoire&lt;/li>
