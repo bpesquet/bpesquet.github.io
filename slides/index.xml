@@ -1567,7 +1567,7 @@ render() {
 &lt;ul>
 &lt;li>Nettoyage, test, publication, gestion des packages installés, etc.&lt;/li>
 &lt;li>&lt;a href="https://docs.microsoft.com/en-us/dotnet/core/tools/">Plus d&amp;rsquo;informations&lt;/a>.&lt;/li>
-&lt;/ul></description></item><item><title>ASP.NET Core</title><link>https://www.bpesquet.fr/slides/asp-net-core/</link><pubDate>Tue, 21 Sep 2021 09:40:11 +0200</pubDate><guid>https://www.bpesquet.fr/slides/asp-net-core/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;/ul></description></item><item><title>Introduction à ASP.NET Core</title><link>https://www.bpesquet.fr/slides/asp-net-core/</link><pubDate>Tue, 21 Sep 2021 09:40:11 +0200</pubDate><guid>https://www.bpesquet.fr/slides/asp-net-core/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Qu&amp;rsquo;est-ce qu&amp;rsquo;ASP.NET Core ?&lt;/li>
 &lt;li>Le framework ASP.NET Core MVC&lt;/li>
@@ -1608,7 +1608,7 @@ render() {
 &lt;li>Exemples d&amp;rsquo;usages : tableau de bord interactif, applications collaboratives.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="loffre-technique-aspnet-core">L&amp;rsquo;offre technique ASP.NET Core&lt;/h2>
+&lt;h3 id="loffre-technique-aspnet-core">L&amp;rsquo;offre technique ASP.NET Core&lt;/h3>
 &lt;ul>
 &lt;li>UI générée côté serveur : &lt;strong>Razor Pages&lt;/strong>, &lt;strong>MVC&lt;/strong>.&lt;/li>
 &lt;li>UI générée côté client : &lt;strong>Blazor&lt;/strong>, &lt;strong>SPA&lt;/strong> avec Angular ou React.&lt;/li>
@@ -1625,7 +1625,7 @@ render() {
 &lt;li>Le serveur prépare sa &lt;strong>réponse&lt;/strong> à la requête du client, puis la lui renvoie.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>&lt;img src="images/web_request_response.png" alt="Modèle requête/réponse">&lt;/p>
+&lt;p>&lt;img src="images/web_request_response.png" alt="Modèle requête/réponse du web">&lt;/p>
 &lt;/section>
 &lt;hr>
 &lt;h3 id="le-protocole-http">Le protocole HTTP&lt;/h3>
@@ -1705,23 +1705,25 @@ render() {
 &lt;li>Héritent de la classe abstraite &lt;code>Controller&lt;/code>.&lt;/li>
 &lt;li>Définissent les points d&amp;rsquo;entrée dans l&amp;rsquo;application sous la forme de méthodes d&amp;rsquo;action annotables.&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: Movies/Details/5
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Details(&lt;span style="color:#cdcaa9;font-weight:bold">int?&lt;/span> id)
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MoviesController : Controller
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: Movies/Details/5
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Details(&lt;span style="color:#cdcaa9;font-weight:bold">int?&lt;/span> id)
 {
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">//...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> }
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// POST: Movies/Delete/5
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold">[HttpPost, ActionName(&amp;#34;Delete&amp;#34;)]&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">[ValidateAntiForgeryToken]&lt;/span>
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold"> [HttpPost, ActionName(&amp;#34;Delete&amp;#34;)]&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold"> [ValidateAntiForgeryToken]&lt;/span>
 &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; DeleteConfirmed(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> id)
 {
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> }
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="les-modèles">Les modèles&lt;/h3>
 &lt;ul>
 &lt;li>Créés dans le répertoire &lt;code>Models/&lt;/code>.&lt;/li>
-&lt;li>Implémentent la logique métier de l&amp;rsquo;application sous la forme de classes &lt;strong>POCO&lt;/strong> (&lt;em>Plain Old C# Objects&lt;/em>) souvent associées à des tables BD.&lt;/li>
+&lt;li>Implémentent la logique métier de l&amp;rsquo;application sous la forme de classes &lt;strong>POCO&lt;/strong> (&lt;em>Plain Old CLR Objects&lt;/em>) souvent associées à des tables BD.&lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Movie
 {
@@ -1736,19 +1738,15 @@ render() {
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="les-vues">Les vues&lt;/h3>
 &lt;ul>
-&lt;li>Créés dans le répertoire &lt;code>Views/&lt;/code> sous la forme de fichiers Razor (&lt;code>.cshtml&lt;/code>).&lt;/li>
+&lt;li>Créés dans le répertoire &lt;code>Views/[Controller]&lt;/code> sous la forme de fichiers Razor (&lt;code>.cshtml&lt;/code>).&lt;/li>
 &lt;li>Représentent l&amp;rsquo;interface utilisateur (UI) de l&amp;rsquo;application.&lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">@{
-ViewData[&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span>] = &lt;span style="color:#0086d2">&amp;#34;Welcome&amp;#34;&lt;/span>;
+ViewData[&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span>] = &lt;span style="color:#0086d2">&amp;#34;About&amp;#34;&lt;/span>;
 }
-&amp;lt;h2&amp;gt;Welcome&amp;lt;/h2&amp;gt;
-&amp;lt;ul&amp;gt;
-@for (&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> i = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>; i &amp;lt; (&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>)ViewData[&lt;span style="color:#0086d2">&amp;#34;NumTimes&amp;#34;&lt;/span>]; i++)
-{
-&amp;lt;li&amp;gt;@ViewData[&lt;span style="color:#0086d2">&amp;#34;Message&amp;#34;&lt;/span>]&amp;lt;/li&amp;gt;
-}
-&amp;lt;/ul&amp;gt;
+&amp;lt;h2&amp;gt;@ViewData[&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span>].&amp;lt;/h2&amp;gt;
+&amp;lt;h3&amp;gt;@ViewData[&lt;span style="color:#0086d2">&amp;#34;Message&amp;#34;&lt;/span>]&amp;lt;/h3&amp;gt;
+&amp;lt;p&amp;gt;Use &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span> area to provide additional information.&amp;lt;/p&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="code-et-librairies-client">Code et librairies client&lt;/h3>
 &lt;ul>
@@ -1774,6 +1772,7 @@ ViewData[&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span>] = &lt
 }
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;section data-shortcode-section>
 &lt;h3 id="le-fichier-startupcs">Le fichier Startup.cs&lt;/h3>
 &lt;p>Contient la classe &lt;code>Startup&lt;/code> qui permet :&lt;/p>
 &lt;ul>
@@ -1802,7 +1801,9 @@ endpoints.MapDefaultControllerRoute();
 });
 }
 }
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section>
+&lt;hr>
 &lt;h2 id="mécanismes-fondamentaux">Mécanismes fondamentaux&lt;/h2>
 &lt;hr>
 &lt;section data-shortcode-section>
@@ -1854,6 +1855,12 @@ pattern: &lt;span style="color:#0086d2">&amp;#34;{controller=Home}/{action=Index
 {}
 &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;MvcMovie.Models.Movie&amp;gt; Movie { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
 }
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> ConfigureServices(IServiceCollection services)
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> services.AddDbContext&amp;lt;MvcMovieContext&amp;gt;(options =&amp;gt;
+options.UseSqlite(Configuration.GetConnectionString(&lt;span style="color:#0086d2">&amp;#34;MvcMovieContext&amp;#34;&lt;/span>)));
+}
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="migrations">Migrations&lt;/h3>
 &lt;p>&lt;code>&amp;gt; dotnet ef migrations add InitialCreate&lt;/code>&lt;/p>
@@ -1863,7 +1870,167 @@ pattern: &lt;span style="color:#0086d2">&amp;#34;{controller=Home}/{action=Index
 &lt;li>Migration = évolution incrémentale depuis la migration précédente.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="envoi-de-données-aux-vues">Envoi de données aux vues&lt;/h3></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;section data-shortcode-section>
+&lt;h3 id="envoi-de-données-aux-vues--viewdata">Envoi de données aux vues : ViewData&lt;/h3>
+&lt;p>Approche &lt;em>faiblement typée&lt;/em> : on utilie un dictionnaire standard.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> IActionResult Welcome(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> name, &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> numTimes = &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>)
+{
+ViewData[&lt;span style="color:#0086d2">&amp;#34;Message&amp;#34;&lt;/span>] = &lt;span style="color:#0086d2">&amp;#34;Hello &amp;#34;&lt;/span> + name;
+ViewData[&lt;span style="color:#0086d2">&amp;#34;NumTimes&amp;#34;&lt;/span>] = numTimes;
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View();
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="utilisation-dans-la-vue">Utilisation dans la vue&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">@{
+ViewData[&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span>] = &lt;span style="color:#0086d2">&amp;#34;Welcome&amp;#34;&lt;/span>;
+}
+&amp;lt;h2&amp;gt;Welcome&amp;lt;/h2&amp;gt;
+&amp;lt;ul&amp;gt;
+@for (&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> i = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>; i &amp;lt; (&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>)ViewData[&lt;span style="color:#0086d2">&amp;#34;NumTimes&amp;#34;&lt;/span>]; i++)
+{
+&amp;lt;li&amp;gt;@ViewData[&lt;span style="color:#0086d2">&amp;#34;Message&amp;#34;&lt;/span>]&amp;lt;/li&amp;gt;
+}
+&amp;lt;/ul&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="envoi-de-données-aux-vues--viewmodel">Envoi de données aux vues : ViewModel&lt;/h3>
+&lt;p>Approche &lt;em>fortement typée&lt;/em> : on définit une classe pour porter les données de la vue.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Address
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Name { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Street { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> City { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> State { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> PostalCode { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="utilisation-dans-le-contrôleur">Utilisation dans le contrôleur&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> IActionResult Contact()
+{
+&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> viewModel = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Address()
+{
+Name = &lt;span style="color:#0086d2">&amp;#34;Microsoft&amp;#34;&lt;/span>,
+Street = &lt;span style="color:#0086d2">&amp;#34;One Microsoft Way&amp;#34;&lt;/span>,
+City = &lt;span style="color:#0086d2">&amp;#34;Redmond&amp;#34;&lt;/span>,
+State = &lt;span style="color:#0086d2">&amp;#34;WA&amp;#34;&lt;/span>,
+PostalCode = &lt;span style="color:#0086d2">&amp;#34;98052-6399&amp;#34;&lt;/span>
+};
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View(viewModel);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="utilisation-dans-la-vue">Utilisation dans la vue&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">@model WebApplication1.ViewModels.Address
+&lt;p>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;Contact&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">address&lt;/span>&amp;gt;
+@Model.Street&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">br&lt;/span> /&amp;gt;
+@Model.City, @Model.State @Model.PostalCode&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">br&lt;/span> /&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">abbr&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">title&lt;/span>=&lt;span style="color:#0086d2">&amp;quot;Phone&amp;quot;&lt;/span>&amp;gt;P:&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">abbr&lt;/span>&amp;gt; 425.555.0100
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">address&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="view-layout">View layout&lt;/h3>
+&lt;ul>
+&lt;li>Par défaut, toutes les vues partagent une structure commune définie dans le fichier &lt;code>Views/Shared/_Layout.cshtml&lt;/code>.&lt;/li>
+&lt;li>Dans ce layout, la fonction &lt;code>@RenderBody()&lt;/code> permet de générer le contenu spécifique de la vue à afficher.&lt;/li>
+&lt;li>Les éléments spécifiques à une vue (exemples : inclusions CSS ou JavaScript) peuvent être rassemblés dans des &lt;strong>sections&lt;/strong> affichées par le layout.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exemple-de-layout">Exemple de layout&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&lt;span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">html&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">lang&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;en&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">head&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">meta&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">charset&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;utf-8&amp;#34;&lt;/span> /&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">title&lt;/span>&amp;gt;@ViewData[&amp;#34;Title&amp;#34;] - Movie App&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">title&lt;/span>&amp;gt;
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&amp;lt;!-- ... --&amp;gt;&lt;/span>
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">head&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">body&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">header&lt;/span>&amp;gt;&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&amp;lt;!-- ... --&amp;gt;&lt;/span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">header&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;container&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">main&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">role&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;main&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;pb-3&amp;#34;&lt;/span>&amp;gt;@RenderBody()&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">main&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">footer&lt;/span>&amp;gt;&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&amp;lt;!-- ... --&amp;gt;&lt;/span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">footer&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">script&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">src&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;~/lib/jquery/dist/jquery.min.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&amp;lt;!-- ... --&amp;gt;&lt;/span>
+@await RenderSectionAsync(&amp;#34;Scripts&amp;#34;, required: false)
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">body&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="validation-des-données">Validation des données&lt;/h3>
+&lt;p>L&amp;rsquo;annotation des classes du Modèle permet de définir des &lt;strong>règles de validation&lt;/strong> qui seront automatiquement vérifiées à la fois côté serveur et côté client.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> System.ComponentModel.DataAnnotations;
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> LoginViewModel
+{
+&lt;span style="color:#ff0086;font-weight:bold"> [Required]&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold"> [EmailAddress]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Email { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;span style="color:#ff0086;font-weight:bold"> [Required]&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold"> [DataType(DataType.Password)]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Password { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;span style="color:#ff0086;font-weight:bold"> [Display(Name = &amp;#34;Remember me?&amp;#34;)]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">bool&lt;/span> RememberMe { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="validation-dans-le-contrôleur">Validation dans le contrôleur&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Login(LoginViewModel model, &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> returnUrl = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>)
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Check model validation rules
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (ModelState.IsValid)
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ... (nominal case: work with the model)
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> }
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// At this point, something failed: redisplay form
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View(model);
+}
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="environnements">Environnements&lt;/h3>
+&lt;ul>
+&lt;li>Permettent d&amp;rsquo;adapter la configuration de l&amp;rsquo;application au contexte (développement, test ou production).&lt;/li>
+&lt;li>Définis par la variable d&amp;rsquo;environnement &lt;code>ASPNETCORE_ENVIRONMENT&lt;/code>. En l&amp;rsquo;absence de cette variable, l&amp;rsquo;environnement est de type Production.&lt;/li>
+&lt;li>&lt;a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-5.0">Plus d&amp;rsquo;informations&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="définition-de-lenvironnement-avec-visual-studio-code">Définition de l&amp;rsquo;environnement avec Visual Studio Code&lt;/h3>
+&lt;p>Fichier &lt;code>./vscode/launch.json&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;version&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;0.2.0&amp;#34;&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;configurations&amp;#34;&lt;/span>: [
+{
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;.NET Core Launch (web)&amp;#34;&lt;/span>,
+# ...
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;env&amp;#34;&lt;/span>: {
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;ASPNETCORE_ENVIRONMENT&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Development&amp;#34;&lt;/span>
+},
+# ...
+}
+]
+}
+&lt;p>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>&lt;/p>
+&lt;h3 id="configuration-de-lapplication-selon-lenvironnement-détecté">Configuration de l&amp;rsquo;application selon l&amp;rsquo;environnement détecté&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (env.IsDevelopment())
+{
+app.UseDeveloperExceptionPage();
+}
+&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (env.IsProduction() || env.IsStaging())
+{
+app.UseExceptionHandler(&lt;span style="color:#0086d2">&amp;#34;/Error&amp;#34;&lt;/span>);
+}
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Rappels sur la POO&lt;/li>
 &lt;li>Gestion des objets en mémoire&lt;/li>
