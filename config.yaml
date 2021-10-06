@@ -3,49 +3,54 @@ baseUrl: "https://www.bpesquet.fr"
 title: "👨‍💻 Baptiste Pesquet"
 theme: "anubis"
 paginate: 10
-disqusShortname: 
+disqusShortname:
 googleAnalytics: "UA-39897312-4"
 enableRobotsTXT: true
 
 menu:
   main:
-  - identifier: cv
-    name: CV
-    title: CV
-    url: http://cv.bpesquet.fr/CV_BaptistePesquet.pdf
-    weight: 1
-  - identifier: posts
-    name: Posts
-    title: Posts 
-    url: /posts
-    weight: 2
-  - identifier: teaching
-    name: Teaching
-    title: Teaching
-    url: /teaching
-    weight: 3
-  - identifier: freelancing
-    name: Freelancing
-    title: Freelancing
-    url: /freelancing
-    weight: 4
+    - identifier: cv
+      name: CV
+      title: CV
+      url: http://cv.bpesquet.fr/CV_BaptistePesquet.pdf
+      weight: 1
+    - identifier: posts
+      name: Blog
+      title: Blog
+      url: /posts
+      weight: 2
+    - identifier: teaching
+      name: Teaching
+      title: Teaching
+      url: /teaching
+      weight: 3
+    - identifier: freelancing
+      name: Freelancing
+      title: Freelancing
+      url: /freelancing
+      weight: 4
 
 params:
   author: "Baptiste Pesquet"
+  email: bpesquet [at] gmail [dot] com # used for microformats
   description: "Baptiste Pesquet's personal website"
-  images:
-    - images/og-featured.png # relative path to "static" directory
-  customCSS:
-    - css/my.css # relative path to "static" directory
-  customJS:
-    - js/main.js # relative path to "static" directory
   dateFormat: "2006-01-02"
   paginationSinglePost: true
-  style: light-without-switcher
+  style: auto # light-without-switcher
   readMore: false
-  style: "auto"
+  social:
+    - id: email
+      name: bpesquet [at] gmail [dot] com
+    - id: github
+      name: bpesquet
+    - id: twitter
+      name: bpesquet
+    - id: youtube
+      name: ../channel/UCtcjS2WTFBxwLlkiJYj_mtQ # workaround since Anubis prepends "c/" to the YouTube channel name (format for renamed channels)
+    - id: linkedin
+      name: bpesquet
 
-taxonomies: 
+taxonomies:
   tag: "tags"
 
 markup:
