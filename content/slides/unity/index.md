@@ -1,5 +1,5 @@
 ---
-title: "Introduction à Unity"
+title: "Unity"
 date: 2018-08-25T16:13:52+02:00
 draft: false
 course: ["rv"]
@@ -51,7 +51,7 @@ course: ["rv"]
 
 - Rassemble tous les éléments constituant le jeu.
 - Peut être de type 2D ou 3D.
-- Correspond physiquement à un répertoire stocké localement ou dans le *cloud*.
+- Correspond physiquement à un répertoire stocké localement ou dans le _cloud_.
 
 ![Fenêtre Project](images/AssetWorkflowFolderAndProjectWindow.png)
 
@@ -230,6 +230,7 @@ GameObject dont le Collider est défini comme Trigger.
 - Permet de définir une **zone** et de réagir lorsque des RigidBody Colliders y pénètrent.
 
 ---
+
 [![Collision Matrix](images/UnityCollisionMatrix.png)](https://docs.unity3d.com/Manual/CollidersOverview.html)
 
 {{% /section %}}
