@@ -1100,7 +1100,7 @@ render() {
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Core</title><link>https://www.bpesquet.fr/slides/asp-net-core/</link><pubDate>Tue, 21 Sep 2021 09:40:11 +0200</pubDate><guid>https://www.bpesquet.fr/slides/asp-net-core/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Introduction à .NET&lt;/li>
-&lt;li>Qu&amp;rsquo;est-ce qu&amp;rsquo;ASP.NET Core ?&lt;/li>
+&lt;li>Présentation de ASP.NET Core&lt;/li>
 &lt;li>Le framework ASP.NET Core MVC&lt;/li>
 &lt;li>Mécanismes fondamentaux&lt;/li>
 &lt;li>Création d&amp;rsquo;API web&lt;/li>
@@ -1204,7 +1204,7 @@ render() {
 &lt;li>&lt;a href="https://docs.microsoft.com/en-us/dotnet/core/tools/">Plus d&amp;rsquo;informations&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="quest-ce-quaspnet-core-">Qu&amp;rsquo;est-ce qu&amp;rsquo;ASP.NET Core ?&lt;/h2>
+&lt;h2 id="présentation-de-aspnet-core">Présentation de ASP.NET Core&lt;/h2>
 &lt;hr>
 &lt;h3 id="histoire-daspnet-core">Histoire d&amp;rsquo;ASP.NET Core&lt;/h3>
 &lt;ul>
@@ -1663,7 +1663,164 @@ app.UseExceptionHandler(&lt;span style="color:#0086d2">&amp;#34;/Error&amp;#34;&
 &lt;/section>
 &lt;hr>
 &lt;h2 id="création-dapi-web">Création d&amp;rsquo;API web&lt;/h2>
-&lt;hr></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;hr>
+&lt;h3 id="la-notion-dapi">La notion d&amp;rsquo;API&lt;/h3>
+&lt;p>Une &lt;strong>API&lt;/strong> (&lt;em>Application Programming Interface&lt;/em>) est un point d&amp;rsquo;entrée programmatique dans un système.&lt;/p>
+&lt;p>Elle fournit un moyen d&amp;rsquo;interagir avec ce système.&lt;/p>
+&lt;p>Les API permettent aux développeurs d&amp;rsquo;intégrer des services externes dans leurs applications.&lt;/p>
+&lt;hr>
+&lt;h3 id="spécificités-des-api-web">Spécificités des API web&lt;/h3>
+&lt;p>Une &lt;strong>API web&lt;/strong> (appelée parfois service web) est une API accessible via les technologies du web : HTTP ou HTTPS.&lt;/p>
+&lt;p>Les API web utilisent le plus souvent le format de donnée &lt;strong>JSON&lt;/strong>.&lt;/p>
+&lt;p>Certaines sont librement utilisables, d&amp;rsquo;autres nécessitent une authentification du client.&lt;/p>
+&lt;hr>
+&lt;h3 id="exemples-dapi-web">Exemples d&amp;rsquo;API web&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://pokeapi.co/">PokéAPI&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://swapi.dev/">Star Wars API&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://en.wikipedia.org/w/api.php?">Wikipedia&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://developer.spotify.com/documentation/web-api/">Spotify&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.omdbapi.com/">OMDb API&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>(&lt;a href="https://shkspr.mobi/blog/2016/05/easy-apis-without-authentication/">Source&lt;/a>)&lt;/p>
+&lt;hr>
+&lt;h3 id="outils-pour-la-gestion-des-api-web">Outils pour la gestion des API web&lt;/h3>
+&lt;ul>
+&lt;li>N&amp;rsquo;importe quel navigateur pour les tests basiques.&lt;/li>
+&lt;li>Extension &lt;a href="https://addons.mozilla.org/fr/firefox/addon/restclient/">RESTClient&lt;/a> pour Firefox.&lt;/li>
+&lt;li>&lt;a href="https://www.getpostman.com/">Postman&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="les-api-restful">Les API RESTful&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>REST&lt;/strong> (&lt;em>REpresentational State Transfer&lt;/em>) est un ensemble de principes pour créer des API : client/serveur, pas de gestion d&amp;rsquo;état, etc.&lt;/li>
+&lt;li>Une API web &lt;em>RESTful&lt;/em> (conforme au standard REST) expose une interface basée sur les commandes HTTP. Exemples :
+&lt;ul>
+&lt;li>&lt;code>GET /&amp;lt;ResourceName&amp;gt;/&amp;lt;id&amp;gt;&lt;/code> pour accéder à une ressource.&lt;/li>
+&lt;li>&lt;code>POST /&amp;lt;ResourceName&amp;gt;&lt;/code> (avec les informations nécessaires dans le corps de la requête) pour la créer.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="le-format-json">Le format JSON&lt;/h3>
+&lt;ul>
+&lt;li>Inspiré de la syntaxe JavaScript pour les objets.&lt;/li>
+&lt;li>A remplacé XML comme standard pour les échanges de données via des API web.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;cars&amp;#34;&lt;/span>: [
+{
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;model&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Peugeot&amp;#34;&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;color&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;blue&amp;#34;&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;checkups&amp;#34;&lt;/span>: [&lt;span style="color:#0086f7;font-weight:bold">2015&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2017&lt;/span>]
+},
+{
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;model&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Citroën&amp;#34;&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;color&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;white&amp;#34;&lt;/span>,
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;checkups&amp;#34;&lt;/span>: [&lt;span style="color:#0086f7;font-weight:bold">2003&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2005&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2007&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2009&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2011&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2013&lt;/span>]
+}
+]
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="création-dune-api-web-avec-aspnet-core">Création d&amp;rsquo;une API web avec ASP.NET Core&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet-aspnet-codegenerator controller -name &amp;lt;ControllerName&amp;gt; -m &amp;lt;ModelName&amp;gt; -async -api [other arguments]&lt;/code>&lt;/p>
+&lt;p>Crée un contrôleur &lt;code>&amp;lt;ControllerName&amp;gt;&lt;/code> qui :&lt;/p>
+&lt;ul>
+&lt;li>expose une API web pour la classe &lt;code>&amp;lt;ModelName&amp;gt;&lt;/code> du Modèle ;&lt;/li>
+&lt;li>renvoie des données au format JSON et non des vues HTML.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="principe-de-fonctionnement">Principe de fonctionnement&lt;/h3>
+&lt;p>&lt;img src="images/aspnetcore_api.png" alt="API call with ASP.NET Core">&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple-de-contrôleur-dapi">Exemple de contrôleur d&amp;rsquo;API&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#ff0086;font-weight:bold">[Route(&amp;#34;api/[controller]&lt;/span>&lt;span style="color:#0086d2">&amp;#34;)]
+&lt;/span>&lt;span style="color:#0086d2">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold">[ApiController]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> TodosApiController : ControllerBase
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Hérite de la classe &lt;code>ControllerBase&lt;/code> et non pas de &lt;code>Controller&lt;/code> comme les contrôleurs &amp;ldquo;classiques&amp;rdquo;.&lt;/li>
+&lt;li>Associé aux routes du type &lt;code>api/TodosApi/&amp;lt;Argument?&amp;gt;&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="api-générée">API générée&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Route&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>GET /api/TodosApi&lt;/td>
+&lt;td>Renvoie tous les éléments&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GET /api/TodosApi/{id}&lt;/td>
+&lt;td>Renvoie un élément&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>POST /api/TodosApi&lt;/td>
+&lt;td>Ajoute un nouvel élément&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>PUT /api/TodosApi/{id}&lt;/td>
+&lt;td>Met à jour un élément&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>DELETE /api/TodosApi/{id}&lt;/td>
+&lt;td>Supprime un élément&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="exemple-de-méthode-dapi">Exemple de méthode d&amp;rsquo;API&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: api/TodosApi/5
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold">[HttpGet(&amp;#34;{id}&amp;#34;)]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;ActionResult&amp;lt;Todo&amp;gt;&amp;gt; GetTodo(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> id)
+{
+&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> todo = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.Todo.FindAsync(id);
+&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (todo == &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>)
+{
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NotFound();
+}
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> todo;
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="programmation-asynchrone">Programmation asynchrone&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Exemple : la préparation d&amp;rsquo;un petit déjeuner.&lt;/p>
+&lt;ol>
+&lt;li>Verser le café dans une tasse.&lt;/li>
+&lt;li>Faire chauffer la poêle, puis faire cuire deux œufs au plat.&lt;/li>
+&lt;li>Faire frire trois tranches de bacon.&lt;/li>
+&lt;li>Faire toaster deux tranches de pain.&lt;/li>
+&lt;li>Étaler le beurre et la confiture sur les toasts.&lt;/li>
+&lt;li>Verser du jus d’orange dans un verre.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>La plupart de ces tâches peuvent être exécutées simultanément.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exécution-séquentielle-synchrone">Exécution séquentielle (synchrone)&lt;/h3>
+&lt;p>&lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/">&lt;img src="images/synchronous-breakfast.png" alt="Synchronous breakfast">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="exécution-asynchrone">Exécution asynchrone&lt;/h3>
+&lt;p>&lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/">&lt;img src="images/async-breakfast.png" alt="Asynchronous breakfast">&lt;/a>&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="appels-synchrones">Appels synchrones&lt;/h3>
+&lt;p>&lt;a href="https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/">&lt;img src="images/sync-request-asp.net-core.png" alt="Synchronous requests">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="appels-asynchrones">Appels asynchrones&lt;/h3>
+&lt;p>&lt;a href="https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/">&lt;img src="images/async-request-asp.net-core.png" alt="Asynchronous requests">&lt;/a>&lt;/p></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Rappels sur la POO&lt;/li>
 &lt;li>Gestion des objets en mémoire&lt;/li>
