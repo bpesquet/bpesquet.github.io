@@ -6,6 +6,7 @@ paginate: 10
 disqusShortname:
 googleAnalytics: "UA-39897312-4"
 enableRobotsTXT: true
+enableGitInfo: true
 
 menu:
   main:

@@ -2,7 +2,6 @@
 title: "Le langage JavaScript"
 date: 2019-12-16T21:50:46+01:00
 draft: false
-weight: 1
 ---
 
 ## Sommaire
