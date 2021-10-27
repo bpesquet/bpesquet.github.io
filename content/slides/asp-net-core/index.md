@@ -7,7 +7,7 @@ draft: false
 ## Sommaire
 
 - Introduction à .NET
-- Qu'est-ce qu'ASP.NET Core ?
+- Présentation de ASP.NET Core
 - Le framework ASP.NET Core MVC
 - Mécanismes fondamentaux
 - Création d'API web
@@ -123,7 +123,7 @@ Pour une application web, jnjecte un script qui met à jour le contenu affiché 
 
 ---
 
-## Qu'est-ce qu'ASP.NET Core ?
+## Présentation de ASP.NET Core
 
 ---
 
@@ -712,3 +712,182 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 ## Création d'API web
 
 ---
+
+### La notion d'API
+
+Une **API** (_Application Programming Interface_) est un point d'entrée programmatique dans un système.
+
+Elle fournit un moyen d'interagir avec ce système.
+
+Les API permettent aux développeurs d'intégrer des services externes dans leurs applications.
+
+---
+
+### Spécificités des API web
+
+Une **API web** (appelée parfois service web) est une API accessible via les technologies du web : HTTP ou HTTPS.
+
+Les API web utilisent le plus souvent le format de donnée **JSON**.
+
+Certaines sont librement utilisables, d'autres nécessitent une authentification du client.
+
+---
+
+### Exemples d'API web
+
+- [PokéAPI](https://pokeapi.co/)
+- [Star Wars API](https://swapi.dev/)
+- [Wikipedia](https://en.wikipedia.org/w/api.php?)
+- [Spotify](https://developer.spotify.com/documentation/web-api/)
+- [OMDb API](https://www.omdbapi.com/)
+
+([Source](https://shkspr.mobi/blog/2016/05/easy-apis-without-authentication/))
+
+---
+
+### Outils pour la gestion des API web
+
+- N'importe quel navigateur pour les tests basiques.
+- Extension [RESTClient](https://addons.mozilla.org/fr/firefox/addon/restclient/) pour Firefox.
+- [Postman](https://www.getpostman.com/).
+
+---
+
+### Les API RESTful
+
+- **REST** (_REpresentational State Transfer_) est un ensemble de principes pour créer des API : client/serveur, pas de gestion d'état, etc.
+- Une API web _RESTful_ (conforme au standard REST) expose une interface basée sur les commandes HTTP. Exemples :
+  - `GET /<ResourceName>/<id>` pour accéder à une ressource.
+  - `POST /<ResourceName>` (avec les informations nécessaires dans le corps de la requête) pour la créer.
+
+---
+
+### Le format JSON
+
+- Inspiré de la syntaxe JavaScript pour les objets.
+- A remplacé XML comme standard pour les échanges de données via des API web.
+
+```json
+{
+  "cars": [
+    {
+      "model": "Peugeot",
+      "color": "blue",
+      "checkups": [2015, 2017]
+    },
+    {
+      "model": "Citroën",
+      "color": "white",
+      "checkups": [2003, 2005, 2007, 2009, 2011, 2013]
+    }
+  ]
+}
+```
+
+---
+
+### Création d'une API web avec ASP.NET Core
+
+`> dotnet-aspnet-codegenerator controller -name <ControllerName> -m <ModelName> -async -api [other arguments]`
+
+Crée un contrôleur `<ControllerName>` qui :
+
+- expose une API web pour la classe `<ModelName>` du Modèle ;
+- renvoie des données au format JSON et non des vues HTML.
+
+---
+
+### Principe de fonctionnement
+
+![API call with ASP.NET Core](images/aspnetcore_api.png)
+
+---
+
+### Exemple de contrôleur d'API
+
+```csharp
+[Route("api/[controller]")]
+[ApiController]
+public class TodosApiController : ControllerBase
+{
+  // ...
+}
+```
+
+- Hérite de la classe `ControllerBase` et non pas de `Controller` comme les contrôleurs "classiques".
+- Associé aux routes du type `api/TodosApi/<Argument?>`.
+
+---
+
+### API générée
+
+| Route                     | Description               |
+| ------------------------- | ------------------------- |
+| GET /api/TodosApi         | Renvoie tous les éléments |
+| GET /api/TodosApi/{id}    | Renvoie un élément        |
+| POST /api/TodosApi        | Ajoute un nouvel élément  |
+| PUT /api/TodosApi/{id}    | Met à jour un élément     |
+| DELETE /api/TodosApi/{id} | Supprime un élément       |
+
+---
+
+### Exemple de méthode d'API
+
+```csharp
+// GET: api/TodosApi/5
+[HttpGet("{id}")]
+public async Task<ActionResult<Todo>> GetTodo(int id)
+{
+    var todo = await _context.Todo.FindAsync(id);
+
+    if (todo == null)
+    {
+        return NotFound();
+    }
+
+    return todo;
+}
+```
+
+---
+
+{{% section %}}
+
+### Programmation asynchrone
+
+- Exemple : la préparation d'un petit déjeuner.
+
+  1. Verser le café dans une tasse.
+  1. Faire chauffer la poêle, puis faire cuire deux œufs au plat.
+  1. Faire frire trois tranches de bacon.
+  1. Faire toaster deux tranches de pain.
+  1. Étaler le beurre et la confiture sur les toasts.
+  1. Verser du jus d’orange dans un verre.
+
+- La plupart de ces tâches peuvent être exécutées simultanément.
+
+---
+
+### Exécution séquentielle (synchrone)
+
+[![Synchronous breakfast](images/synchronous-breakfast.png)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
+
+---
+
+### Exécution asynchrone
+
+[![Asynchronous breakfast](images/async-breakfast.png)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
+
+{{% /section %}}
+
+---
+
+### Appels synchrones
+
+[![Synchronous requests](images/sync-request-asp.net-core.png)](https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/)
+
+---
+
+### Appels asynchrones
+
+[![Asynchronous requests](images/async-request-asp.net-core.png)](https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/)
