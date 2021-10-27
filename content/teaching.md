@@ -6,11 +6,11 @@ draft: false
 
 I strive to make my pedagogical resources available to everyone.
 
-Unless otherwise stated, they are free to use for non-commercial purposes, using a Creative Commons [BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. Most of them are open-sourced on [GitHub](https://github.com/bpesquet?tab=repositories). The [online presentations]({{< ref "slides" >}} "Slides") are built with [reveal.js](https://revealjs.com/).
+Unless otherwise stated, they are free to use for non-commercial purposes, using a Creative Commons [BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. Most of them are open-sourced on [GitHub](https://github.com/bpesquet?tab=repositories). The [slides]({{< ref "slides" >}} "Slides") are built with [reveal.js](https://revealjs.com/).
 
 ## Maintained resources
 
-The following material is recent and/or currently being used in some of my courses. Maintained on a (somewhat) regular basis, it should be reasonably up-to-date.
+The following material is quite recent and/or currently being used in some of my courses. Maintained on a (somewhat) regular basis, it should be reasonably up-to-date.
 
 ### Artificial intelligence
 
