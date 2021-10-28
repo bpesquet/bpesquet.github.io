@@ -16,7 +16,8 @@ The following material is quite recent and/or currently being used in some of my
 
 - [Deconstructing AI]({{< ref "slides/deconstructing-ai" >}} "Deconstructing AI")
 - [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook/)
-- [pyfit](https://github.com/bpesquet/pyfit)
+- [pyfit, a minimalist neural networks library](https://github.com/bpesquet/pyfit)
+- [AI algorithms in Python](https://github.com/bpesquet/ai-algorithms)
 
 ### Software development: C# and .NET
 
