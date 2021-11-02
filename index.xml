@@ -1149,6 +1149,7 @@ render() {
 &lt;li>Le framework ASP.NET Core MVC&lt;/li>
 &lt;li>Mécanismes fondamentaux&lt;/li>
 &lt;li>Création d&amp;rsquo;API web&lt;/li>
+&lt;li>Interactions avec une base de données&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="introduction-à-net">Introduction à .NET&lt;/h2>
@@ -1747,11 +1748,17 @@ app.UseExceptionHandler(&lt;span style="color:#0086d2">&amp;#34;/Error&amp;#34;&
 &lt;/li>
 &lt;/ul>
 &lt;hr>
+&lt;section data-shortcode-section>
 &lt;h3 id="le-format-json">Le format JSON&lt;/h3>
 &lt;ul>
-&lt;li>Inspiré de la syntaxe JavaScript pour les objets.&lt;/li>
-&lt;li>A remplacé XML comme standard pour les échanges de données via des API web.&lt;/li>
+&lt;li>JSON = JavaScript Object Notation.&lt;/li>
+&lt;li>Format de description de données structurées inspiré de la syntaxe des objets JavaScript.&lt;/li>
+&lt;li>Contenu JSON = ensemble de paires champ/valeur.&lt;/li>
+&lt;li>Types de valeur possibles : nombres, chaînes, booléens, tableaux, objets.&lt;/li>
+&lt;li>A supplanté XML comme format standard pour les échanges de données via des API web.&lt;/li>
 &lt;/ul>
+&lt;hr>
+&lt;h3 id="exemple-de-contenu-json">Exemple de contenu JSON&lt;/h3>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;cars&amp;#34;&lt;/span>: [
 {
@@ -1766,7 +1773,9 @@ app.UseExceptionHandler(&lt;span style="color:#0086d2">&amp;#34;/Error&amp;#34;&
 }
 ]
 }
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section>
+&lt;hr>
 &lt;h3 id="création-dune-api-web-avec-aspnet-core">Création d&amp;rsquo;une API web avec ASP.NET Core&lt;/h3>
 &lt;p>&lt;code>&amp;gt; dotnet-aspnet-codegenerator controller -name &amp;lt;ControllerName&amp;gt; -m &amp;lt;ModelName&amp;gt; -async -api [other arguments]&lt;/code>&lt;/p>
 &lt;p>Crée un contrôleur &lt;code>&amp;lt;ControllerName&amp;gt;&lt;/code> qui :&lt;/p>
@@ -1865,7 +1874,361 @@ app.UseExceptionHandler(&lt;span style="color:#0086d2">&amp;#34;/Error&amp;#34;&
 &lt;p>&lt;a href="https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/">&lt;img src="images/sync-request-asp.net-core.png" alt="Synchronous requests">&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h3 id="appels-asynchrones">Appels asynchrones&lt;/h3>
-&lt;p>&lt;a href="https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/">&lt;img src="images/async-request-asp.net-core.png" alt="Asynchronous requests">&lt;/a>&lt;/p></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;p>&lt;a href="https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/">&lt;img src="images/async-request-asp.net-core.png" alt="Asynchronous requests">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="interactions-avec-une-base-de-données">Interactions avec une base de données&lt;/h2>
+&lt;hr>
+&lt;h3 id="les-données-persistantes">Les données persistantes&lt;/h3>
+&lt;ul>
+&lt;li>Ne disparaissent pas entre deux utilisations d&amp;rsquo;une application.&lt;/li>
+&lt;li>Contraire : données &lt;em>volatiles&lt;/em>.&lt;/li>
+&lt;li>Indispensable pour une très grande majorité des applications (données métier, configuration, etc).&lt;/li>
+&lt;li>Leur stockage nécessite :
+&lt;ul>
+&lt;li>un support dédié, appelé parfois mémoire de masse (disque dur/SSD, mémoire Flash, etc) ;&lt;/li>
+&lt;li>un format adapté.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="les-sgbdr-et-leurs-avantages">Les SGBDR et leurs avantages&lt;/h3>
+&lt;ul>
+&lt;li>Standard actuel pour la gestion de données persistantes.&lt;/li>
+&lt;li>Technologie connue depuis les années 1970.&lt;/li>
+&lt;li>Fiabilité.&lt;/li>
+&lt;li>Capacité à gérer de forts volumes de données.&lt;/li>
+&lt;li>Sécurité (authentification, réplication, etc).&lt;/li>
+&lt;li>Langage d’interrogation (SQL) standard.&lt;/li>
+&lt;li>Offre logicielle riche : de ORACLE à SQLite en passant par PostgreSQL, MySQL/MariaDB ou SQL Server.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="le-modèle-relationnel">Le modèle relationnel&lt;/h3>
+&lt;ul>
+&lt;li>Unité de représentation : table.&lt;/li>
+&lt;li>Caractéristiques : colonnes.&lt;/li>
+&lt;li>Entité : tuple (ligne).&lt;/li>
+&lt;li>Types de données : simples (nombres, chaîne, date, etc).&lt;/li>
+&lt;li>Identifiant : explicite (clé primaire).&lt;/li>
+&lt;li>Relations entre éléments : jointures SQL.&lt;/li>
+&lt;li>Concepts spécifiques : déclencheurs, procédures stockées&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="le-modèle-objet">Le modèle objet&lt;/h3>
+&lt;ul>
+&lt;li>Unité de représentation : classe.&lt;/li>
+&lt;li>Caractéristiques : propriétés et méthodes.&lt;/li>
+&lt;li>Entité : objet.&lt;/li>
+&lt;li>Types de données : simples ou complexes.&lt;/li>
+&lt;li>Identifiant : implicite (référence mémoire).&lt;/li>
+&lt;li>Relations entre éléments : navigation des associations.&lt;/li>
+&lt;li>Concepts spécifiques : encapsulation, héritage, interfaces&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="objectrelational-mapping-orm">Object/Relational Mapping (O/RM)&lt;/h3>
+&lt;ul>
+&lt;li>Lien entre une base de données et les objets manipulés par l’application.&lt;/li>
+&lt;li>Deux modèles très éloignés (&amp;ldquo;impedance mismatch&amp;rdquo;).&lt;/li>
+&lt;li>Pas de solution idéale.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="orm-is-the-vietnam-of-computer-science">&amp;ldquo;O/RM is the Vietnam of Computer Science&amp;rdquo;&lt;/h3>
+&lt;p>&lt;a href="https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/">&lt;img src="images/orm_vietnam.png" alt="O/RM is the Vietname of Computer Science">&lt;/a>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="solutions-possibles-pour-lorm">Solutions possibles pour l&amp;rsquo;O/RM&lt;/h3>
+&lt;ul>
+&lt;li>Approches radicales : suppression du SGBDR (utilisation d&amp;rsquo;une autre technologie de stockage) ou des objets (programmation procédurale ou fonctionnelle).&lt;/li>
+&lt;li>O/RM manuel : gestion de la (dé)connexion, requêtage avec SQL puis transformation des résultats en objets, etc doivent être codées.&lt;/li>
+&lt;li>O/RM automatisé : utilisation d&amp;rsquo;un outil dédié pour gérer les problématiques précédentes. Le requêtage SQL est effectué par l&amp;rsquo;outil.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="orm-automatisé-un-bon-choix-">O/RM automatisé, un bon choix ?&lt;/h3>
+&lt;ul>
+&lt;li>Avantages :
+&lt;ul>
+&lt;li>Automatisation de la gestion du &lt;em>mapping&lt;/em>.&lt;/li>
+&lt;li>Diminution du volume de code.&lt;/li>
+&lt;li>Mise en œuvre de bonnes pratiques.&lt;/li>
+&lt;li>Performances (le plus souvent).&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Inconvénients :
+&lt;ul>
+&lt;li>Nécessité de maitriser un outil dédié.&lt;/li>
+&lt;li>Certaines limitations liées à l’outil.&lt;/li>
+&lt;li>Aspect &amp;ldquo;boîte noire&amp;rdquo;.&lt;/li>
+&lt;li>Performances (dans certains cas).&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="entity-framework-core">Entity Framework Core&lt;/h3>
+&lt;ul>
+&lt;li>Outil d&amp;rsquo;O/RM &lt;a href="https://github.com/dotnet/efcore">open source&lt;/a> maintenu par Microsoft.&lt;/li>
+&lt;li>Supporte de nombreux SGDBR : SQL Server, SQLite, MySQL/MariaDB, PostgreSQL, etc.&lt;/li>
+&lt;li>Standard pour l&amp;rsquo;accès aux données persistantes dans l&amp;rsquo;environnement ASP.NET Core.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="sqlite">SQLite&lt;/h3>
+&lt;ul>
+&lt;li>SGBDR minimaliste mais suffisamment fiable, complet et performant pour la plupart des usages standards.&lt;/li>
+&lt;li>Toute la base de données tient dans un seul fichier de quelques dizaines/centaines de Ko.&lt;/li>
+&lt;li>&lt;a href="https://sqlite.org/mostdeployed.html">&amp;ldquo;Le SGBD le plus utilisé dans le monde&amp;rdquo;&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://sqlite.org">&lt;img src="images/sqlite370_banner.gif" alt="SQLite logo">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="installation-def-core-pour-sqlite">Installation d&amp;rsquo;EF Core pour SQLite&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet tool install --global dotnet-ef&lt;/code>&lt;/p>
+&lt;p>&lt;code>&amp;gt; dotnet add package Microsoft.EntityFrameworkCore.Design&lt;/code>&lt;/p>
+&lt;p>&lt;code>&amp;gt; dotnet add package Microsoft.EntityFrameworkCore.Sqlite&lt;/code>&lt;/p>
+&lt;hr>
+&lt;h3 id="support-de-sqlite-par-ef-core">Support de SQLite par EF Core&lt;/h3>
+&lt;ul>
+&lt;li>Des &lt;a href="https://docs.microsoft.com/en-us/ef/core/providers/?tabs=dotnet-core-cli">fournisseurs de données&lt;/a> permettent l&amp;rsquo;utilisation de EF Core avec un grand nombre de sources de données, dont SQLite.&lt;/li>
+&lt;li>Son fournisseur possède cependant certaines petites &lt;a href="https://docs.microsoft.com/en-us/ef/core/providers/sqlite/limitations">limitations&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="principe-de-fonctionnement-def-core">Principe de fonctionnement d&amp;rsquo;EF Core&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Modèle&lt;/strong> : un ensemble de classes POCO, parfois appelées &lt;em>classes métier&lt;/em>, qui modélisent les entités manipulées par l&amp;rsquo;application.&lt;/li>
+&lt;li>&lt;strong>Contexte BD&lt;/strong> : une classe qui représente une session d&amp;rsquo;échange avec une base de données (&lt;em>unité de travail&lt;/em>) et permet les opérations de lecture/écriture de données.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exemple-de-modèle">Exemple de modèle&lt;/h3>
+&lt;p>&lt;img src="images/efcore_blog_uml.png" alt="Exemple de modèle EF Core">&lt;/p>
+&lt;hr>
+&lt;h3 id="implémentation-du-modèle">Implémentation du modèle&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Url { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> List&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> List&amp;lt;Post&amp;gt;();
+}
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Post
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Title { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Content { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> BlogId { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> Blog Blog { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple-de-contexte-bd">Exemple de contexte BD&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> BloggingContext : DbContext
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;Blog&amp;gt; Blogs { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> DbPath { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> BloggingContext()
+{
+DbPath = &lt;span style="color:#0086d2">&amp;#34;EFGetStarted.db&amp;#34;&lt;/span>;
+}
+&lt;span style="color:#fb660a;font-weight:bold">protected&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">override&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> OnConfiguring(DbContextOptionsBuilder options)
+=&amp;gt; options.UseSqlite(&lt;span style="color:#0086d2">$&amp;#34;Data Source={DbPath}&amp;#34;&lt;/span>);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="migrations-1">Migrations&lt;/h3>
+&lt;ul>
+&lt;li>Approche &lt;em>&lt;strong>code first&lt;/strong>&lt;/em> : le modèle objet constitue la modélisation de référence. La base de données est automatiquement synchronisée avec lui.&lt;/li>
+&lt;li>&lt;a href="https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli">Migrations&lt;/a> : modifications incrémentales du schéma relationnel reflétant les évolutions du modèle.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="commandes-liées-aux-migrations">Commandes liées aux migrations&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet ef migrations add &amp;lt;MigrationName&amp;gt;&lt;/code>&lt;/p>
+&lt;p>Crée une nouvelle migration dans le répertoire &lt;strong>Migrations/&lt;/strong> du projet. Elle contient les mises à jour à réaliser au niveau du schéma relationnel pour le synchroniser avec le modèle objet.&lt;/p>
+&lt;p>&lt;code>&amp;gt; dotnet ef database update&lt;/code>&lt;/p>
+&lt;p>Synchronise la base de données configurée par le contexte BD avec la migration la plus récente.&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple-extrait-dune-migration">Exemple extrait d&amp;rsquo;une migration&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">migrationBuilder.CreateTable(
+name: &lt;span style="color:#0086d2">&amp;#34;Blogs&amp;#34;&lt;/span>,
+columns: table =&amp;gt; &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span>
+{
+Id = table.Column&amp;lt;&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>&amp;gt;(type: &lt;span style="color:#0086d2">&amp;#34;INTEGER&amp;#34;&lt;/span>, nullable: &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span>)
+.Annotation(&lt;span style="color:#0086d2">&amp;#34;Sqlite:Autoincrement&amp;#34;&lt;/span>, &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>),
+Url = table.Column&amp;lt;&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>&amp;gt;(type: &lt;span style="color:#0086d2">&amp;#34;TEXT&amp;#34;&lt;/span>, nullable: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>)
+},
+constraints: table =&amp;gt;
+{
+table.PrimaryKey(&lt;span style="color:#0086d2">&amp;#34;PK_Blogs&amp;#34;&lt;/span>, x =&amp;gt; x.Id);
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="résultat-de-la-mise-à-jour-bd">Résultat de la mise à jour BD&lt;/h3>
+&lt;p>&lt;img src="images/efcore_blog_schema.png" alt="Schéma BD généré par EF Core">&lt;/p>
+&lt;p>(Capture d&amp;rsquo;écran de &lt;a href="https://sqlitebrowser.org/">DB Browser pour SQLite&lt;/a>).&lt;/p>
+&lt;p>La colonne &lt;code>BlogId&lt;/code> est une clé étrangère vers la colonne &lt;code>Id&lt;/code> de la table &lt;code>Blog&lt;/code>.&lt;/p>
+&lt;hr>
+&lt;h3 id="opérations-crud">Opérations CRUD&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> db = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+{
+db.Add(&lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Blog { Url = &lt;span style="color:#0086d2">&amp;#34;http://blogs.msdn.com/adonet&amp;#34;&lt;/span> });
+db.SaveChanges();
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Retrieve blog with lowest id
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blog = db.Blogs
+.OrderBy(b =&amp;gt; b.Id)
+.First();
+blog.Url = &lt;span style="color:#0086d2">&amp;#34;https://devblogs.microsoft.com/dotnet&amp;#34;&lt;/span>;
+blog.Posts.Add(
+&lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Post { Title = &lt;span style="color:#0086d2">&amp;#34;Hello World&amp;#34;&lt;/span>, Content = &lt;span style="color:#0086d2">&amp;#34;I wrote an app using EF Core!&amp;#34;&lt;/span> });
+db.SaveChanges();
+db.Remove(blog);
+db.SaveChanges();
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="requêtage-avec-linq">Requêtage avec LINQ&lt;/h3>
+&lt;p>&lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/">Language Integrated Query (LINQ)&lt;/a> est le langage standard pour le requêtage en C#, quelle que soit la source de données (SGBDR, XML, service web, etc).&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> db = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Retrieve a list of blogs with a rating greater than 3,
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ordered by URL
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = db.Blogs
+.Where(b =&amp;gt; b.Rating &amp;gt; &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>)
+.OrderBy(b =&amp;gt; b.Url)
+.ToList();
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemples-dutilisation-de-linq">Exemples d&amp;rsquo;utilisation de LINQ&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get all blogs
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs.ToList();
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get a specific blog
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blog = context.Blogs
+.Single(b =&amp;gt; b.BlogId == &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get all blogs containing &amp;#34;dotnet&amp;#34; in their title
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs
+.Where(b =&amp;gt; b.Url.Contains(&lt;span style="color:#0086d2">&amp;#34;dotnet&amp;#34;&lt;/span>))
+.ToList();
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://docs.microsoft.com/en-us/ef/core/querying/">Plus de détails&lt;/a>.&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="sauvegarde-des-modifications">Sauvegarde des modifications&lt;/h3>
+&lt;p>La méthode &lt;code>SaveChanges()&lt;/code> de la classe &lt;code>DbContext&lt;/code> implante dans la base de données tous les changements ayant eu lieu depuis l&amp;rsquo;ouverture de la session liée au contexte BD.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> db = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+{
+&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blog = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Blog { Url = &lt;span style="color:#0086d2">&amp;#34;http://sample.com&amp;#34;&lt;/span> };
+db.Blogs.Add(blog);
+db.SaveChanges();
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="configuration-du-modèle">Configuration du modèle&lt;/h3>
+&lt;p>Effectuée via des &lt;a href="https://docs.microsoft.com/en-us/ef/core/modeling/entity-properties?tabs=data-annotations%2Cwithout-nrt">annotations&lt;/a> dans les classes du modèle.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;span style="color:#ff0086;font-weight:bold"> [StringLength(200, MinimumLength = 7), Required]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Url { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;span style="color:#ff0086;font-weight:bold"> [Display(Name = &amp;#34;Average Rating&amp;#34;)]&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold"> [Column(TypeName = &amp;#34;decimal(5, 2)&amp;#34;)]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">decimal&lt;/span> Rating { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="propriétés-obligatoires-et-optionnelles">Propriétés obligatoires et optionnelles&lt;/h3>
+&lt;ul>
+&lt;li>Une propriété est considérée comme optionnelle si elle peut contenir &lt;code>null&lt;/code>. La colonne BD associée accepte les valeurs nulles.&lt;/li>
+&lt;li>L&amp;rsquo;attribut &lt;code>[Required]&lt;/code> permet de rendre obligatoire une propriété ayant un type référence (exemple : &lt;code>string&lt;/code>).&lt;/li>
+&lt;li>L&amp;rsquo;utilisation d&amp;rsquo;un type &lt;em>nullable&lt;/em> (exemples : &lt;code>int?&lt;/code>, `bool?) rend la propriété optionnelle.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="clés-primaires">Clés primaires&lt;/h3>
+&lt;ul>
+&lt;li>Une propriété nommée &lt;code>Id&lt;/code> ou &lt;code>&amp;lt;Classe&amp;gt;Id&lt;/code> est considérée comme clé primaire.&lt;/li>
+&lt;li>Par défaut, une stratégie d'&lt;a href="https://docs.microsoft.com/en-us/ef/core/modeling/generated-properties?tabs=data-annotations">auto-génération des valeurs&lt;/a> est utilisée.&lt;/li>
+&lt;li>&lt;a href="https://docs.microsoft.com/en-us/ef/core/modeling/keys?tabs=data-annotations">Plus de détails&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="relations-entre-classes">Relations entre classes&lt;/h3>
+&lt;ul>
+&lt;li>Une propriété utilisant un type autre que scalaire est dite &lt;strong>propriété de navigation&lt;/strong>.&lt;/li>
+&lt;li>La détection d&amp;rsquo;une propriété de navigation entraine la création d&amp;rsquo;une &lt;strong>relation&lt;/strong> entre les deux classes impliquées.&lt;/li>
+&lt;li>Cette relation se traduit dans la base de données par la création d&amp;rsquo;une &lt;strong>clé étrangère&lt;/strong> dans la table associée à la classe dépendante (fille) de la relation.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="relation-un-à-plusieurs">Relation un-à-plusieurs&lt;/h3>
+&lt;ul>
+&lt;li>Propriété de navigation de type collection dans la classe principale (mère).&lt;/li>
+&lt;li>Propriété de navigation et d&amp;rsquo;une propriété de clé étrangère dans la classe dépendante (fille).&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> List&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+}
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Post
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> BlogId { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> Blog Blog { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="relation-un-à-un">Relation un-à-un&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> BlogImage BlogImage { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+}
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> BlogImage
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">byte&lt;/span>[] Image { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Caption { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> BlogId { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> Blog Blog { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="relation-plusieurs-à-plusieurs">Relation plusieurs-à-plusieurs&lt;/h3>
+&lt;p>Entraîne la création d&amp;rsquo;une table de jointure contenant deux clés étrangères dans la base de données.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Post
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> ICollection&amp;lt;Tag&amp;gt; Tags { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+}
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Tag
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> ICollection&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+}
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="ef-core-et-aspnet-core">EF Core et ASP.NET Core&lt;/h3>
+&lt;ul>
+&lt;li>Un contexte BD est &lt;a href="https://docs.microsoft.com/en-us/ef/core/dbcontext-configuration/">associé&lt;/a> à chaque requête HTTP entrante dans le fichier &lt;code>Startup.cs&lt;/code>.&lt;/li>
+&lt;li>Il est ensuite utilisé par les contrôleurs pour interagir avec la base de données.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Startup
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">//...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> ConfigureServices(IServiceCollection services)
+{
+services.AddControllersWithViews();
+services.AddDbContext&amp;lt;MvcMovieContext&amp;gt;(options =&amp;gt;
+options.UseSqlite(Configuration.GetConnectionString(&lt;span style="color:#0086d2">&amp;#34;MvcMovieContext&amp;#34;&lt;/span>)));
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="affichage-des-requêtes-sql-exécutées-par-ef-core">Affichage des requêtes SQL exécutées par EF Core&lt;/h3>
+&lt;p>Ajout de la ligne ci-dessous dans le fichier &lt;code>appsettings.json&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Logging&amp;#34;&lt;/span>: {
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;LogLevel&amp;#34;&lt;/span>: {
+# ...
+&lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Microsoft.EntityFrameworkCore.Database.Command&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Information&amp;#34;&lt;/span>
+}
+},
+# ...
+}
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Rappels sur la POO&lt;/li>
 &lt;li>Gestion des objets en mémoire&lt;/li>
