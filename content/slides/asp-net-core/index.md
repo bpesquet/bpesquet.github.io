@@ -451,7 +451,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 ### Database context
 
 - Hérite de la classe abstraite `DbContext`.
-- Spécifit les classes du Modèle à sauvegarder dans la base de données.
+- Spécifie les classes du modèle à sauvegarder dans la base de données.
 
 ```csharp
 public class MvcMovieContext : DbContext
@@ -1036,7 +1036,7 @@ public async Task<ActionResult<Todo>> GetTodo(int id)
 ### Principe de fonctionnement d'EF Core
 
 - **Modèle** : un ensemble de classes POCO, parfois appelées _classes métier_, qui modélisent les entités manipulées par l'application.
-- **Contexte BD** : une classe qui représente une session d'échange avec une base de données (_unité de travail_) et permet les opérations de lecture/écriture de données.
+- **Contexte BD** : une classe qui représente une session d'échange avec une base de données (_unité de travail_) et permet les opérations de lecture/écriture de données. Elle spécifie les classes du modèle à sauvegarder dans la base de données.
 
 ---
 
@@ -1053,7 +1053,7 @@ public class Blog
 {
     public int Id { get; set; }
     public string Url { get; set; }
-    public List<Post> Posts { get; } = new List<Post>();
+    public ICollection<Post> Posts { get; } = new List<Post>();
 }
 
 public class Post
@@ -1140,23 +1140,23 @@ La colonne `BlogId` est une clé étrangère vers la colonne `Id` de la table `B
 ### Opérations CRUD
 
 ```csharp
-using (var db = new BloggingContext())
+using (var context = new BloggingContext())
 {
-    db.Add(new Blog { Url = "http://blogs.msdn.com/adonet" });
-    db.SaveChanges();
+    context.Add(new Blog { Url = "http://blogs.msdn.com/adonet" });
+    context.SaveChanges();
 
     // Retrieve blog with lowest id
-    var blog = db.Blogs
+    var blog = context.Blogs
         .OrderBy(b => b.Id)
         .First();
 
     blog.Url = "https://devblogs.microsoft.com/dotnet";
     blog.Posts.Add(
         new Post { Title = "Hello World", Content = "I wrote an app using EF Core!" });
-    db.SaveChanges();
+    context.SaveChanges();
 
-    db.Remove(blog);
-    db.SaveChanges();
+    context.Remove(blog);
+    context.SaveChanges();
 }
 ```
 
@@ -1169,11 +1169,11 @@ using (var db = new BloggingContext())
 [Language Integrated Query (LINQ)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/) est le langage standard pour le requêtage en C#, quelle que soit la source de données (SGBDR, XML, service web, etc).
 
 ```csharp
-using (var db = new BloggingContext())
+using (var context = new BloggingContext())
 {
     // Retrieve a list of blogs with a rating greater than 3,
     // ordered by URL
-    var blogs = db.Blogs
+    var blogs = context.Blogs
         .Where(b => b.Rating > 3)
         .OrderBy(b => b.Url)
         .ToList();
@@ -1191,15 +1191,32 @@ using (var context = new BloggingContext())
     var blogs = context.Blogs.ToList();
     // Get a specific blog
     var blog = context.Blogs
-        .Single(b => b.BlogId == 1);
-    // Get all blogs containing "dotnet" in their title
+        .Single(b => b.Id == 1);
+    // Get all blogs containing "dotnet" in their URL
     var blogs = context.Blogs
         .Where(b => b.Url.Contains("dotnet"))
         .ToList();
 }
 ```
 
-[Plus de détails](https://docs.microsoft.com/en-us/ef/core/querying/).
+([Plus de détails](https://docs.microsoft.com/en-us/ef/core/querying/))
+
+---
+
+### Syntaxe alternative pour LINQ
+
+Pour plus de souplesse, il est possible de manipuler des requêtes LINQ en tant que variables.
+
+```csharp
+using (var context = new BloggingContext())
+{
+    // Get all blogs containing "dotnet" in their URL
+    var query = from b in context.Blogs
+                select b;
+    query = query.Where(b => b.Url.Contains("dotnet"));
+    var blogs = query.ToList();
+}
+```
 
 {{% /section %}}
 
@@ -1210,11 +1227,11 @@ using (var context = new BloggingContext())
 La méthode `SaveChanges()` de la classe `DbContext` implante dans la base de données tous les changements ayant eu lieu depuis l'ouverture de la session liée au contexte BD.
 
 ```csharp
-using (var db = new BloggingContext())
+using (var context = new BloggingContext())
 {
     var blog = new Blog { Url = "http://sample.com" };
-    db.Blogs.Add(blog);
-    db.SaveChanges();
+    context.Blogs.Add(blog);
+    context.SaveChanges();
 }
 ```
 
@@ -1234,7 +1251,8 @@ public class Blog
 
     [Display(Name = "Average Rating")]
     [Column(TypeName = "decimal(5, 2)")]
-    public decimal Rating { get; set; }
+    [DisplayFormat(NullDisplayText = "No rating")]
+    public decimal? Rating { get; set; }
 
     // ...
 ```
@@ -1245,7 +1263,7 @@ public class Blog
 
 - Une propriété est considérée comme optionnelle si elle peut contenir `null`. La colonne BD associée accepte les valeurs nulles.
 - L'attribut `[Required]` permet de rendre obligatoire une propriété ayant un type référence (exemple : `string`).
-- L'utilisation d'un type _nullable_ (exemples : `int?`, `bool?) rend la propriété optionnelle.
+- L'utilisation d'un [type nullable](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types) (exemples : `int?`, `bool?) rend la propriété optionnelle.
 
 ---
 
@@ -1330,6 +1348,25 @@ public class Tag
 ```
 
 {{% /section %}}
+
+---
+
+### Chargement des relations
+
+- Les méthodes `.Include()` et `.ThenInclude()` permettent de spécifier les données associées à inclure dans les résultats d'une requête.
+- Ce mécanisme est appelé [chargement hâtif](https://docs.microsoft.com/en-us/ef/core/querying/related-data/eager) (_eager loading_).
+
+```csharp
+using (var context = new BloggingContext())
+{
+    // Load posts for each blog
+    // Uncomment the .ThenInclude line to load post author
+    var blogs = context.Blogs
+        .Include(blog => blog.Posts)
+        // .ThenInclude(post => post.Author)
+        .ToList();
+}
+```
 
 ---
 
