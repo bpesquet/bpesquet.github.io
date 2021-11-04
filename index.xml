@@ -1522,7 +1522,7 @@ pattern: &lt;span style="color:#0086d2">&amp;#34;{controller=Home}/{action=Index
 &lt;h3 id="database-context">Database context&lt;/h3>
 &lt;ul>
 &lt;li>Hérite de la classe abstraite &lt;code>DbContext&lt;/code>.&lt;/li>
-&lt;li>Spécifit les classes du Modèle à sauvegarder dans la base de données.&lt;/li>
+&lt;li>Spécifie les classes du modèle à sauvegarder dans la base de données.&lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MvcMovieContext : DbContext
 {
@@ -1992,7 +1992,7 @@ app.UseExceptionHandler(&lt;span style="color:#0086d2">&amp;#34;/Error&amp;#34;&
 &lt;h3 id="principe-de-fonctionnement-def-core">Principe de fonctionnement d&amp;rsquo;EF Core&lt;/h3>
 &lt;ul>
 &lt;li>&lt;strong>Modèle&lt;/strong> : un ensemble de classes POCO, parfois appelées &lt;em>classes métier&lt;/em>, qui modélisent les entités manipulées par l&amp;rsquo;application.&lt;/li>
-&lt;li>&lt;strong>Contexte BD&lt;/strong> : une classe qui représente une session d&amp;rsquo;échange avec une base de données (&lt;em>unité de travail&lt;/em>) et permet les opérations de lecture/écriture de données.&lt;/li>
+&lt;li>&lt;strong>Contexte BD&lt;/strong> : une classe qui représente une session d&amp;rsquo;échange avec une base de données (&lt;em>unité de travail&lt;/em>) et permet les opérations de lecture/écriture de données. Elle spécifie les classes du modèle à sauvegarder dans la base de données.&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h3 id="exemple-de-modèle">Exemple de modèle&lt;/h3>
@@ -2003,7 +2003,7 @@ app.UseExceptionHandler(&lt;span style="color:#0086d2">&amp;#34;/Error&amp;#34;&
 {
 &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
 &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Url { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> List&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> List&amp;lt;Post&amp;gt;();
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> ICollection&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> List&amp;lt;Post&amp;gt;();
 }
 &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Post
 {
@@ -2060,30 +2060,30 @@ table.PrimaryKey(&lt;span style="color:#0086d2">&amp;#34;PK_Blogs&amp;#34;&lt;/s
 &lt;p>La colonne &lt;code>BlogId&lt;/code> est une clé étrangère vers la colonne &lt;code>Id&lt;/code> de la table &lt;code>Blog&lt;/code>.&lt;/p>
 &lt;hr>
 &lt;h3 id="opérations-crud">Opérations CRUD&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> db = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
 {
-db.Add(&lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Blog { Url = &lt;span style="color:#0086d2">&amp;#34;http://blogs.msdn.com/adonet&amp;#34;&lt;/span> });
-db.SaveChanges();
+context.Add(&lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Blog { Url = &lt;span style="color:#0086d2">&amp;#34;http://blogs.msdn.com/adonet&amp;#34;&lt;/span> });
+context.SaveChanges();
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Retrieve blog with lowest id
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blog = db.Blogs
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blog = context.Blogs
 .OrderBy(b =&amp;gt; b.Id)
 .First();
 blog.Url = &lt;span style="color:#0086d2">&amp;#34;https://devblogs.microsoft.com/dotnet&amp;#34;&lt;/span>;
 blog.Posts.Add(
 &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Post { Title = &lt;span style="color:#0086d2">&amp;#34;Hello World&amp;#34;&lt;/span>, Content = &lt;span style="color:#0086d2">&amp;#34;I wrote an app using EF Core!&amp;#34;&lt;/span> });
-db.SaveChanges();
-db.Remove(blog);
-db.SaveChanges();
+context.SaveChanges();
+context.Remove(blog);
+context.SaveChanges();
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;section data-shortcode-section>
 &lt;h3 id="requêtage-avec-linq">Requêtage avec LINQ&lt;/h3>
 &lt;p>&lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/">Language Integrated Query (LINQ)&lt;/a> est le langage standard pour le requêtage en C#, quelle que soit la source de données (SGBDR, XML, service web, etc).&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> db = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
 {
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Retrieve a list of blogs with a rating greater than 3,
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ordered by URL
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = db.Blogs
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs
 .Where(b =&amp;gt; b.Rating &amp;gt; &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>)
 .OrderBy(b =&amp;gt; b.Url)
 .ToList();
@@ -2096,22 +2096,34 @@ db.SaveChanges();
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs.ToList();
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get a specific blog
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blog = context.Blogs
-.Single(b =&amp;gt; b.BlogId == &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>);
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get all blogs containing &amp;#34;dotnet&amp;#34; in their title
+.Single(b =&amp;gt; b.Id == &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get all blogs containing &amp;#34;dotnet&amp;#34; in their URL
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs
 .Where(b =&amp;gt; b.Url.Contains(&lt;span style="color:#0086d2">&amp;#34;dotnet&amp;#34;&lt;/span>))
 .ToList();
 }
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://docs.microsoft.com/en-us/ef/core/querying/">Plus de détails&lt;/a>.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>(&lt;a href="https://docs.microsoft.com/en-us/ef/core/querying/">Plus de détails&lt;/a>)&lt;/p>
+&lt;hr>
+&lt;h3 id="syntaxe-alternative-pour-linq">Syntaxe alternative pour LINQ&lt;/h3>
+&lt;p>Pour plus de souplesse, il est possible de manipuler des requêtes LINQ en tant que variables.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get all blogs containing &amp;#34;dotnet&amp;#34; in their URL
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> query = &lt;span style="color:#fb660a;font-weight:bold">from&lt;/span> b &lt;span style="color:#fb660a;font-weight:bold">in&lt;/span> context.Blogs
+&lt;span style="color:#fb660a;font-weight:bold">select&lt;/span> b;
+query = query.Where(b =&amp;gt; b.Url.Contains(&lt;span style="color:#0086d2">&amp;#34;dotnet&amp;#34;&lt;/span>));
+&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = query.ToList();
+}
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;/section>
 &lt;hr>
 &lt;h3 id="sauvegarde-des-modifications">Sauvegarde des modifications&lt;/h3>
 &lt;p>La méthode &lt;code>SaveChanges()&lt;/code> de la classe &lt;code>DbContext&lt;/code> implante dans la base de données tous les changements ayant eu lieu depuis l&amp;rsquo;ouverture de la session liée au contexte BD.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> db = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
 {
 &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blog = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Blog { Url = &lt;span style="color:#0086d2">&amp;#34;http://sample.com&amp;#34;&lt;/span> };
-db.Blogs.Add(blog);
-db.SaveChanges();
+context.Blogs.Add(blog);
+context.SaveChanges();
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="configuration-du-modèle">Configuration du modèle&lt;/h3>
@@ -2125,14 +2137,15 @@ db.SaveChanges();
 &lt;span style="color:#ff0086;font-weight:bold">
 &lt;/span>&lt;span style="color:#ff0086;font-weight:bold"> [Display(Name = &amp;#34;Average Rating&amp;#34;)]&lt;/span>
 &lt;span style="color:#ff0086;font-weight:bold"> [Column(TypeName = &amp;#34;decimal(5, 2)&amp;#34;)]&lt;/span>
-&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">decimal&lt;/span> Rating { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;span style="color:#ff0086;font-weight:bold"> [DisplayFormat(NullDisplayText = &amp;#34;No rating&amp;#34;)]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">decimal?&lt;/span> Rating { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="propriétés-obligatoires-et-optionnelles">Propriétés obligatoires et optionnelles&lt;/h3>
 &lt;ul>
 &lt;li>Une propriété est considérée comme optionnelle si elle peut contenir &lt;code>null&lt;/code>. La colonne BD associée accepte les valeurs nulles.&lt;/li>
 &lt;li>L&amp;rsquo;attribut &lt;code>[Required]&lt;/code> permet de rendre obligatoire une propriété ayant un type référence (exemple : &lt;code>string&lt;/code>).&lt;/li>
-&lt;li>L&amp;rsquo;utilisation d&amp;rsquo;un type &lt;em>nullable&lt;/em> (exemples : &lt;code>int?&lt;/code>, `bool?) rend la propriété optionnelle.&lt;/li>
+&lt;li>L&amp;rsquo;utilisation d&amp;rsquo;un &lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types">type nullable&lt;/a> (exemples : &lt;code>int?&lt;/code>, `bool?) rend la propriété optionnelle.&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h3 id="clés-primaires">Clés primaires&lt;/h3>
@@ -2201,6 +2214,21 @@ db.SaveChanges();
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/section>
 &lt;hr>
+&lt;h3 id="chargement-des-relations">Chargement des relations&lt;/h3>
+&lt;ul>
+&lt;li>Les méthodes &lt;code>.Include()&lt;/code> et &lt;code>.ThenInclude()&lt;/code> permettent de spécifier les données associées à inclure dans les résultats d&amp;rsquo;une requête.&lt;/li>
+&lt;li>Ce mécanisme est appelé &lt;a href="https://docs.microsoft.com/en-us/ef/core/querying/related-data/eager">chargement hâtif&lt;/a> (&lt;em>eager loading&lt;/em>).&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Load posts for each blog
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Uncomment the .ThenInclude line to load post author
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs
+.Include(blog =&amp;gt; blog.Posts)
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// .ThenInclude(post =&amp;gt; post.Author)
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> .ToList();
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="ef-core-et-aspnet-core">EF Core et ASP.NET Core&lt;/h3>
 &lt;ul>
 &lt;li>Un contexte BD est &lt;a href="https://docs.microsoft.com/en-us/ef/core/dbcontext-configuration/">associé&lt;/a> à chaque requête HTTP entrante dans le fichier &lt;code>Startup.cs&lt;/code>.&lt;/li>
