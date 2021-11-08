@@ -1150,6 +1150,7 @@ render() {
 &lt;li>Mécanismes fondamentaux&lt;/li>
 &lt;li>Création d&amp;rsquo;API web&lt;/li>
 &lt;li>Interactions avec une base de données&lt;/li>
+&lt;li>Tests&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="introduction-à-net">Introduction à .NET&lt;/h2>
@@ -2255,6 +2256,137 @@ options.UseSqlite(Configuration.GetConnectionString(&lt;span style="color:#0086d
 }
 },
 # ...
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="tests">Tests&lt;/h2>
+&lt;hr>
+&lt;h3 id="typologie-des-tests">Typologie des tests&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Test unitaire&lt;/strong> (TU) : vérifie un composant individuel de l&amp;rsquo;application.&lt;/li>
+&lt;li>&lt;strong>Test d&amp;rsquo;intégration&lt;/strong> : vérifie les interactions entre différents composants de l&amp;rsquo;application, y compris des composants externes comme une base de données ou un service web.&lt;/li>
+&lt;li>&lt;strong>Test fonctionnel (ou test de validation)&lt;/strong> : vérifie que l&amp;rsquo;application fonctionne comme prévu du point de vue de l&amp;rsquo;utilisateur.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="tests-unitaires-vs-tests-dintégration">Tests unitaires Vs tests d&amp;rsquo;intégration&lt;/h3>
+&lt;ul>
+&lt;li>Ils sont tous deux automatisés.&lt;/li>
+&lt;li>Les TU isolent le composant à tester du reste de l&amp;rsquo;application à l&amp;rsquo;aide de &lt;em>test doubles&lt;/em> (parfois appelés &lt;em>dummies&lt;/em>, &lt;em>stubs&lt;/em> ou encore &lt;em>mocks&lt;/em>) qui simulent le comportement des autres composants. Leur exécution est rapide.&lt;/li>
+&lt;li>Les tests d&amp;rsquo;intégration se basent sur les véritables composants de l&amp;rsquo;application. Leur mise en place est souvent plus complexe et leur exécution plus lente.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="quelle-stratégie-adopter-">Quelle stratégie adopter ?&lt;/h3>
+&lt;ul>
+&lt;li>Vouloir tester tous les scénarios et configurations possibles est coûteux et pas forcément efficace.&lt;/li>
+&lt;li>Il est préférable de se concentrer sur les éléments-clés offrant le meilleur rapport coût/bénéfices : composants essentiels, opérations élémentaires (CRUD), principaux services de l&amp;rsquo;application&amp;hellip;&lt;/li>
+&lt;li>Des &lt;em>smoke tests&lt;/em> vérifiant uniquement le renvoi d&amp;rsquo;un code HTTP de succès pour chaque route peuvent constituer un premier filet de sécurité.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="etapes-dun-test--le-patron-aaa">Etapes d&amp;rsquo;un test : le patron AAA&lt;/h3>
+&lt;ul>
+&lt;li>&lt;em>Arrange&lt;/em> : préparation du test.
+&lt;ul>
+&lt;li>Lancement de l&amp;rsquo;application ;&lt;/li>
+&lt;li>Préparation de la base de données ;&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;em>Act&lt;/em> : réalisation des opérations à tester.&lt;/li>
+&lt;li>&lt;em>Assert&lt;/em> : vérification des résultats des actions précédentes au moyen d'&lt;a href="https://en.wikipedia.org/wiki/Assertion_(software_development)">assertions&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="création-dun-projet-de-test-net">Création d&amp;rsquo;un projet de test .NET&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet new xunit -o &amp;lt;TestProjectName&amp;gt;&lt;/code>&lt;/p>
+&lt;p>&lt;a href="https://xunit.net/">xUnit&lt;/a> est un framework de tests unitaires &lt;em>open source&lt;/em> pour la plate-forme .NET.&lt;/p>
+&lt;p>&lt;code>&amp;gt; dotnet add ./&amp;lt;TestProjectName&amp;gt;/&amp;lt;TestProjectName&amp;gt;.csproj reference ./&amp;lt;ProjectName&amp;gt;/&amp;lt;ProjectName&amp;gt;.csproj&lt;/code>&lt;/p>
+&lt;p>Ajoute au projet de test une référence vers le projet à tester (les deux étant situés dans le même répertoire parent).&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple-de-classe-de-test">Exemple de classe de test&lt;/h3>
+&lt;p>&lt;code>[Fact]&lt;/code> indique une méthode de test.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Xunit;
+&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> Prime.UnitTests.Services
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> PrimeService_IsPrimeShould
+{
+&lt;span style="color:#ff0086;font-weight:bold"> [Fact]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> IsPrime_InputIs1_ReturnFalse()
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Arrange
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> primeService = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> PrimeService();
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Act
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">bool&lt;/span> result = primeService.IsPrime(&lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Assert
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> Assert.False(result, &lt;span style="color:#0086d2">&amp;#34;1 should not be prime&amp;#34;&lt;/span>);
+}
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="initialisation-du-test">Initialisation du test&lt;/h3>
+&lt;p>Permet d&amp;rsquo;éviter la duplication de code.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">ppublic &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> PrimeService_IsPrimeShould
+{
+&lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">readonly&lt;/span> PrimeService _primeService;
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> PrimeService_IsPrimeShould()
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Create instance of tested class
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> _primeService = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> PrimeService();
+}
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="paramétrage-des-méthodes-de-test">Paramétrage des méthodes de test&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp"> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold"> [Theory]&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(2)]&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(3)]&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(5)]&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(7)]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> IsPrime_PrimesLessThan10_ReturnTrue(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">value&lt;/span>)
+{
+&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> result = _primeService.IsPrime(&lt;span style="color:#fb660a;font-weight:bold">value&lt;/span>);
+Assert.True(result, &lt;span style="color:#0086d2">$&amp;#34;{value} should be prime&amp;#34;&lt;/span>);
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exécution-des-tests">Exécution des tests&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet test&lt;/code>&lt;/p>
+&lt;p>&lt;img src="images/dotnet_test_result.png" alt="dotnet test result">&lt;/p>
+&lt;hr>
+&lt;h3 id="configuration-dun-projet-de-test-pour-aspnet-core">Configuration d&amp;rsquo;un projet de test pour ASP.NET Core&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet add package Microsoft.AspNetCore.Mvc.Testing -v 5.0.12&lt;/code>&lt;/p>
+&lt;p>Ajoute un package dédié aux tests dans cet environnement, ici dans une version adaptée à .NET 5.&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple-de-classe-de-test-1">Exemple de classe de test&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> System.Threading.Tasks;
+&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc.Testing;
+&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Xunit;
+&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Tests
+{
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> HomeControllerTests
+: IClassFixture&amp;lt;WebApplicationFactory&amp;lt;MvcMovie.Startup&amp;gt;&amp;gt;
+{
+&lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">readonly&lt;/span> WebApplicationFactory&amp;lt;MvcMovie.Startup&amp;gt; _factory;
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> HomeControllerTests(WebApplicationFactory&amp;lt;MvcMovie.Startup&amp;gt; factory)
+{
+_factory = factory;
+}
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="smoke-testing-dun-contrôleur">Smoke testing d&amp;rsquo;un contrôleur&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp"> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold"> [Theory]&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(&amp;#34;/&amp;#34;)]&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(&amp;#34;/Home/Index&amp;#34;)]&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(&amp;#34;/Home/Privacy&amp;#34;)]&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task Get_EndpointsReturnSuccessAndCorrectContentType(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> url)
+{
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Arrange
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> client = _factory.CreateClient();
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Act
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> response = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> client.GetAsync(url);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Assert
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> response.EnsureSuccessStatusCode(); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Status Code 200-299
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> Assert.Equal(&lt;span style="color:#0086d2">&amp;#34;text/html; charset=utf-8&amp;#34;&lt;/span>,
+response.Content.Headers.ContentType.ToString());
+}
 }
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
