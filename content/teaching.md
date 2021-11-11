@@ -12,26 +12,27 @@ Unless otherwise stated, they are free to use for non-commercial purposes, using
 
 The following material is quite recent and/or currently being used in some of my courses. Maintained on a (somewhat) regular basis, it should be reasonably up-to-date.
 
-### Artificial intelligence
+### Python/AI
 
+- [Python best practices]({{< ref "slides/python-best-practices" >}} "Python best practices")
 - [Deconstructing AI]({{< ref "slides/deconstructing-ai" >}} "Deconstructing AI")
 - [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook/)
 - [pyfit, a minimalist neural networks library](https://github.com/bpesquet/pyfit)
-- [AI algorithms in Python](https://github.com/bpesquet/ai-algorithms)
+- [pyai, minimalist implementations of various AI algorithms](https://github.com/bpesquet/pyai)
 
-### Software development: C# and .NET
+### C#/.NET
 
 - [Programmation orientée objet en C#](https://ensc.gitbook.io/programmation-objet-csharp/)
 - [C# : rappels et compléments]({{< ref "slides/csharp" >}} "C# : rappels et compléments")
 - [ASP.NET Core]({{< ref "slides/asp-net-core" >}} "ASP.NET Core")
 
-### Software development: JavaScript/TypeScript
+### JavaScript/TypeScript
 
 - [Le langage JavaScript]({{< ref "slides/javascript" >}} "Le langage JavaScript")
 - [The JavaScript Way](https://github.com/thejsway/thejsway) | [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
 - [React Native]({{< ref "slides/react-native" >}} "React Native")
 
-### Software development: miscellaneous
+### Miscellaneous
 
 - [Génie logiciel](https://ensc.gitbook.io/genie-logiciel/)
 - [Unity]({{< ref "slides/unity" >}} "Unity")
