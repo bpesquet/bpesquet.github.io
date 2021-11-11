@@ -1,7 +1,7 @@
 ---
 title: "Python best practices"
 date: 2021-11-11T12:25:14+01:00
-draft: true
+draft: false
 ---
 
 ## Table of contents
@@ -322,3 +322,7 @@ Offers a way to precisely define dependency versions.
 ---
 
 ## Working with notebooks
+
+---
+
+TODO
