@@ -4,7 +4,7 @@ date: 2019-12-09T10:47:12+01:00
 draft: false
 ---
 
-## Summary
+## Table of contents
 
 - What Is AI, Actually?
 - How Do Machines Learn?
@@ -16,9 +16,9 @@ draft: false
 
 ---
 
-## The original ambition of AI
+### The original ambition of AI
 
-> "AI is the science and engineering of making intelligent machines." ([John McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)))
+> "AI is the science and engineering of making intelligent machines." ([John McCarthy](<https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)>))
 
 > "Every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it." ([Dartmouth Workshop](https://en.wikipedia.org/wiki/Dartmouth_workshop), 1956)
 
@@ -26,7 +26,7 @@ draft: false
 
 ---
 
-## A technical definition of AI
+### A technical definition of AI
 
 > "AI refers to systems that **display** intelligent behavior by analysing their **environment** and taking **actions** - with some degree of **autonomy** - to achieve specific **goals**." ([EC, 2018](https://ec.europa.eu/newsroom/dae/document.cfm?doc_id=51625))
 
@@ -37,7 +37,7 @@ AI systems can be either:
 
 ---
 
-## Main areas of research
+### Main areas of research
 
 - **Problem solving** (e.g. search algorithms, constraint solving).
 - **Reasoning** and **decision making** (e.g. logic, knowledge representation).
@@ -46,7 +46,7 @@ AI systems can be either:
 
 ---
 
-## AI is a moving target
+### AI is a moving target
 
 As soon as AI successfully solves a problem, the problem is no longer considered a part of AI.
 
@@ -54,19 +54,19 @@ As soon as AI successfully solves a problem, the problem is no longer considered
 
 ---
 
-## The tumultuous history of AI
+### The tumultuous history of AI
 
 [![The AI timeline](images/ai_timeline.png)](https://www.slideshare.net/dlavenda/ai-and-productivity)
 
 ---
 
-## AI is a highly interdisciplinary field
+### AI is a highly interdisciplinary field
 
 ![AI fields](images/ai_fields.png)
 
 ---
 
-## AI is a social science
+### AI is a social science
 
 AI has many social and societal implications:
 
@@ -81,7 +81,7 @@ AI has many social and societal implications:
 
 ---
 
-## AI comes in different flavours
+### AI comes in different flavours
 
 - **Substitutive intelligence**: replacement of men by machines.
 - **Augmented intelligence**: human-centered AI for performance augmentation & autonomy enhancement.
@@ -89,7 +89,7 @@ AI has many social and societal implications:
 
 ---
 
-## A broader definition of AI
+### A broader definition of AI
 
 > "AI is an **interdisciplinary** field aiming at **understanding** and **imitating** the mechanisms of **cognition** and **reasoning**, in order to **assist** or **substitute** humans in their activities." ([Commission d'enrichissement de la langue française](https://fr.wikipedia.org/wiki/Commission_d%27enrichissement_de_la_langue_fran%C3%A7aise), 2018)
 
@@ -99,7 +99,7 @@ AI has many social and societal implications:
 
 ---
 
-## Machine Learning in a nutshell
+### Machine Learning in a nutshell
 
 Set of techniques for giving machines the ability to find **patterns** and extract **rules** from data, in order to:
 
@@ -121,7 +121,7 @@ a.k.a. **Statistical Learning**.
 
 ---
 
-## A new paradigm
+### A new paradigm
 
 ![Programming paradigm](images/programming_paradigm.png)
 
@@ -129,7 +129,7 @@ a.k.a. **Statistical Learning**.
 
 ---
 
-## The Machine Learning workflow
+### The Machine Learning workflow
 
 1. **Frame** the problem.
 1. Collect, analyze and prepare **data**.
@@ -139,7 +139,7 @@ a.k.a. **Statistical Learning**.
 
 ---
 
-## ML is not a silver bullet!
+### ML is not a silver bullet!
 
 - Some use cases are a better fit for ML than others:
   - Difficulty to express the actions as rules.
@@ -149,7 +149,7 @@ a.k.a. **Statistical Learning**.
 
 ---
 
-## Algorithm #1: K-Nearest Neighbors
+### Algorithm #1: K-Nearest Neighbors
 
 Prediction is based on the `k` nearest neighbors of a data sample.
 
@@ -157,7 +157,7 @@ Prediction is based on the `k` nearest neighbors of a data sample.
 
 ---
 
-## Algorithm #2: Decision Trees
+### Algorithm #2: Decision Trees
 
 Build a tree-like structure based on a series of discovered questions on the data.
 
@@ -165,7 +165,7 @@ Build a tree-like structure based on a series of discovered questions on the dat
 
 ---
 
-## Algorithm #3: Neural Networks
+### Algorithm #3: Neural Networks
 
 - Layers of loosely neuron-inpired computation units.
 - Can approximate any continuous function.
@@ -178,13 +178,13 @@ Build a tree-like structure based on a series of discovered questions on the dat
 
 ---
 
-## Training a network
+### Training a network
 
 ![Training and inference](images/training_inference1.png)
 
 ---
 
-## The Deep Learning tsunami
+### The Deep Learning tsunami
 
 - Multilayered neural networks trained on (generally) vast amounts of data.
 
@@ -202,7 +202,7 @@ Build a tree-like structure based on a series of discovered questions on the dat
 
 ---
 
-## From labs to everyday life
+### From labs to everyday life
 
 [![LeCun - LeNet](images/lecun_lenet.gif)](http://yann.lecun.com/exdb/lenet/)
 
@@ -210,11 +210,11 @@ Build a tree-like structure based on a series of discovered questions on the dat
 
 ---
 
-## Should We Be Scared Of AI?
+### Should We Be Scared Of AI?
 
 ---
 
-## AI is altering the job market...
+### AI is altering the job market...
 
 - Machines outperform humans in a growing list of cognitive tasks.
 - Repetitive tasks are most exposed (even complex ones, like medical diagnosis or financial analysis).
@@ -222,7 +222,7 @@ Build a tree-like structure based on a series of discovered questions on the dat
 
 ---
 
-## ... For better or worse
+### ... For better or worse
 
 - Net impact of AI on job quantity is unknown.
 - Most jobs will be **transformed**, not replaced by AI.
@@ -233,13 +233,13 @@ Build a tree-like structure based on a series of discovered questions on the dat
 
 ---
 
-## Real or fake?
+### Real or fake?
 
 [![GAN progress from 2014 to 2018](images/gan_2014_2018.jpg)](https://twitter.com/goodfellow_ian/status/1084973596236144640)
 
 ---
 
-## AGI is very far away
+### AGI is very far away
 
 - Current AI systems are **weak**: highly tuned to perform well in one task.
 - **Artificial General Intelligence** a.k.a. **strong AI**, the ability to perform any task as well as a human, is out of reach.
@@ -248,14 +248,14 @@ Build a tree-like structure based on a series of discovered questions on the dat
 
 ---
 
-## The intelligence debate
+### The intelligence debate
 
 - Despite their complexity, ML and DL algorithms can be viewed as merely [curve fitting](https://diginomica.com/ai-curve-fitting-not-intelligence).
 - On the contrary, some AI researchers envision DL as a new form of **algorithmic reasoning**, somehow mimicking the human brain.
 
 ---
 
-## The human brain is a masterpiece
+### The human brain is a masterpiece
 
 - Approx. 86 billions neurons in 1.4 kg.
 - Typical energy consumption: 20 W (!)
@@ -265,12 +265,12 @@ Build a tree-like structure based on a series of discovered questions on the dat
 
 ---
 
-## Babies are outstanding learners
+### Babies are outstanding learners
 
 [![Conceptuals acquisitions by babies](images/conceptual_acquisition_infants.png)](http://www.lscp.net/persons/dupoux/)
 
 ---
 
-## Any questions?
+### Any questions?
 
 ![The cutest baby ever](images/cutest_baby_ever.png)
