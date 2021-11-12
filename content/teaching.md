@@ -14,7 +14,7 @@ The following material is quite recent and/or currently being used in some of my
 
 ### Python/AI
 
-- [Python best practices]({{< ref "slides/python-best-practices" >}} "Python best practices")
+- [Python good practices]({{< ref "slides/python-good-practices" >}} "Python good practices")
 - [Deconstructing AI]({{< ref "slides/deconstructing-ai" >}} "Deconstructing AI")
 - [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook/)
 - [pyfit, a minimalist neural networks library](https://github.com/bpesquet/pyfit)

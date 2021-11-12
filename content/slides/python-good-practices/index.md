@@ -1,5 +1,5 @@
 ---
-title: "Python best practices"
+title: "Python good practices"
 date: 2021-11-11T12:25:14+01:00
 draft: false
 ---
@@ -46,12 +46,12 @@ Namespaces are one honking great idea -- let's do more of those!
 
 ---
 
-### What does "pythonic" mean?
+### What does "Pythonic" mean?
 
 - Python code is considered _pythonic_ if it:
   - conforms to the Python philosophy;
   - takes advantage of the language's specific features.
-- Pythonic code is **idiomatic Python code** that strives to be clean, concise and readable.
+- Pythonic code is nothing more than **idiomatic Python code** that strives to be clean, concise and readable.
 
 ---
 
@@ -325,4 +325,19 @@ Offers a way to precisely define dependency versions.
 
 ---
 
-TODO
+### Advantages of Jupyter notebooks
+
+- Standard format for mixing text, images and (executable) code.
+- Open source and platform-independant.
+- Useful for experimenting and prototyping.
+- Growing ecosystem of [extensions](https://tljh.jupyter.org/en/latest/howto/admin/enable-extensions.html) for various purposes and cloud hosting solutions ([Colaboratory](https://colab.research.google.com/), [AI notebooks](https://www.ovhcloud.com/en/public-cloud/ai-notebook/)...).
+- Integration with tools like [Visual Studio Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks).
+
+---
+
+### Drawbacks of Jupyter notebooks
+
+- Arbitrary execution order of cells can cause confusing errors.
+- Notebooks don't encourage good programming habits like modularization, linting and tests.
+- Being JSON-based, their versioning is more difficult than for plain text files.
+- Dependency management is also difficult, thus hindering reproducibility.
