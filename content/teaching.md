@@ -12,9 +12,8 @@ Unless otherwise stated, they are free to use for non-commercial purposes, using
 
 The following material is quite recent and/or currently being used in some of my courses. Maintained on a (somewhat) regular basis, it should be reasonably up-to-date.
 
-### Python/AI
+### Python & AI
 
-- [Python good practices]({{< ref "slides/python-good-practices" >}} "Python good practices")
 - [Deconstructing AI]({{< ref "slides/deconstructing-ai" >}} "Deconstructing AI")
 - [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook/)
 - [pyfit, a minimalist neural networks library](https://github.com/bpesquet/pyfit)
