@@ -15,15 +15,15 @@ menu:
       title: CV
       url: http://cv.bpesquet.fr/CV_BaptistePesquet.pdf
       weight: 1
-    - identifier: posts
-      name: Blog
-      title: Blog
-      url: /posts
-      weight: 2
     - identifier: teaching
       name: Teaching
       title: Teaching
       url: /teaching
+      weight: 2
+    - identifier: posts
+      name: Blog
+      title: Blog
+      url: /posts
       weight: 3
     - identifier: freelancing
       name: Freelancing
