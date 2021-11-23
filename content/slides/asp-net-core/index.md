@@ -61,11 +61,7 @@ draft: false
 
 ---
 
-## La ligne de commande .NET
-
----
-
-### Introduction
+### La ligne de commande .NET
 
 - **.NET CLI** (_Command Line Interface_) permet d'interagir avec .NET depuis un terminal.
 - Nécessite que .NET soit installé sur la machine.
@@ -87,18 +83,25 @@ draft: false
 
 ---
 
-### Ajout de packages
+### Création d'un fichier .gitignore
 
-`> dotnet add package <name>`
+`> dotnet new gitignore`
 
-- Utilise [NuGet](https://www.nuget.org/) en arrière-plan.
-- Vérifie la compatibilité du package à installer avec le projet.
+- Le fichier `.gitignore` permet d'exclure certains fichiers/dossiers de la gestion des versions avec [Git](https://git-scm.com/). Il le plus souvent s'agit de fichiers locaux (exemple : configuration de l'environnement de développement) ou de fichiers recréés systématiquement par le processus de génération de l'application.
+- Cette commande crée un fichier `.gitignore` adapté aux projets .NET.
 
 ---
 
-### Listage des packages installés
+### Gestion des packages
+
+`> dotnet add package <name>`
+
+- Utilise [NuGet](https://www.nuget.org/) pour télécharger un package et l'ajouter au projet.
+- Vérifie la compatibilité du package à installer avec le projet.
 
 `> dotnet list package`
+
+- Liste les packages installés pour un projet.
 
 ---
 
@@ -125,7 +128,7 @@ Pour une application web, jnjecte un script qui met à jour le contenu affiché 
 
 ---
 
-## Présentation de ASP.NET Core
+## Présentation d'ASP.NET Core
 
 ---
 
@@ -963,14 +966,14 @@ public async Task<ActionResult<Todo>> GetTodo(int id)
 ### Object/Relational Mapping (O/RM)
 
 - Lien entre une base de données et les objets manipulés par l’application.
-- Deux modèles très éloignés ("impedance mismatch").
+- Deux modèles très éloignés ("[impedance mismatch](https://en.wikipedia.org/wiki/Object%E2%80%93relational_impedance_mismatch)").
 - Pas de solution idéale.
 
 ---
 
-### "O/RM is the Vietnam of Computer Science"
+### ["O/RM is the Vietnam of Computer Science"](https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/)
 
-[![O/RM is the Vietname of Computer Science](images/orm_vietnam.png)](https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/)
+![](images/orm_vietnam.png)
 
 {{% /section %}}
 
