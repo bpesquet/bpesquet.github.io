@@ -1140,9 +1140,7 @@ render() {
 &lt;hr>
 &lt;p>&lt;a href="https://devblogs.microsoft.com/dotnet/introducing-net-5/">&lt;img src="images/dotnet5_platform.png" alt=".NET 5">&lt;/a>&lt;/p>
 &lt;hr>
-&lt;h2 id="la-ligne-de-commande-net">La ligne de commande .NET&lt;/h2>
-&lt;hr>
-&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;h3 id="la-ligne-de-commande-net">La ligne de commande .NET&lt;/h3>
 &lt;ul>
 &lt;li>&lt;strong>.NET CLI&lt;/strong> (&lt;em>Command Line Interface&lt;/em>) permet d&amp;rsquo;interagir avec .NET depuis un terminal.&lt;/li>
 &lt;li>Nécessite que .NET soit installé sur la machine.&lt;/li>
@@ -1182,15 +1180,23 @@ render() {
 &lt;/tbody>
 &lt;/table>
 &lt;hr>
-&lt;h3 id="ajout-de-packages">Ajout de packages&lt;/h3>
-&lt;p>&lt;code>&amp;gt; dotnet add package &amp;lt;name&amp;gt;&lt;/code>&lt;/p>
+&lt;h3 id="création-dun-fichier-gitignore">Création d&amp;rsquo;un fichier .gitignore&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet new gitignore&lt;/code>&lt;/p>
 &lt;ul>
-&lt;li>Utilise &lt;a href="https://www.nuget.org/">NuGet&lt;/a> en arrière-plan.&lt;/li>
-&lt;li>Vérifie la compatibilité du package à installer avec le projet.&lt;/li>
+&lt;li>Le fichier &lt;code>.gitignore&lt;/code> permet d&amp;rsquo;exclure certains fichiers/dossiers de la gestion des versions avec &lt;a href="https://git-scm.com/">Git&lt;/a>. Il le plus souvent s&amp;rsquo;agit de fichiers locaux (exemple : configuration de l&amp;rsquo;environnement de développement) ou de fichiers recréés systématiquement par le processus de génération de l&amp;rsquo;application.&lt;/li>
+&lt;li>Cette commande crée un fichier &lt;code>.gitignore&lt;/code> adapté aux projets .NET.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="listage-des-packages-installés">Listage des packages installés&lt;/h3>
+&lt;h3 id="gestion-des-packages">Gestion des packages&lt;/h3>
+&lt;p>&lt;code>&amp;gt; dotnet add package &amp;lt;name&amp;gt;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>Utilise &lt;a href="https://www.nuget.org/">NuGet&lt;/a> pour télécharger un package et l&amp;rsquo;ajouter au projet.&lt;/li>
+&lt;li>Vérifie la compatibilité du package à installer avec le projet.&lt;/li>
+&lt;/ul>
 &lt;p>&lt;code>&amp;gt; dotnet list package&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>Liste les packages installés pour un projet.&lt;/li>
+&lt;/ul>
 &lt;hr>
 &lt;h3 id="lancement-dune-application">Lancement d&amp;rsquo;une application&lt;/h3>
 &lt;p>&lt;code>&amp;gt; dotnet run&lt;/code>&lt;/p>
@@ -1206,7 +1212,7 @@ render() {
 &lt;li>&lt;a href="https://docs.microsoft.com/en-us/dotnet/core/tools/">Plus d&amp;rsquo;informations&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="présentation-de-aspnet-core">Présentation de ASP.NET Core&lt;/h2>
+&lt;h2 id="présentation-daspnet-core">Présentation d&amp;rsquo;ASP.NET Core&lt;/h2>
 &lt;hr>
 &lt;h3 id="histoire-daspnet-core">Histoire d&amp;rsquo;ASP.NET Core&lt;/h3>
 &lt;ul>
@@ -1884,12 +1890,12 @@ app.UseExceptionHandler(&lt;span style="color:#0086d2">&amp;#34;/Error&amp;#34;&
 &lt;h3 id="objectrelational-mapping-orm">Object/Relational Mapping (O/RM)&lt;/h3>
 &lt;ul>
 &lt;li>Lien entre une base de données et les objets manipulés par l’application.&lt;/li>
-&lt;li>Deux modèles très éloignés (&amp;ldquo;impedance mismatch&amp;rdquo;).&lt;/li>
+&lt;li>Deux modèles très éloignés (&amp;quot;&lt;a href="https://en.wikipedia.org/wiki/Object%E2%80%93relational_impedance_mismatch">impedance mismatch&lt;/a>&amp;quot;).&lt;/li>
 &lt;li>Pas de solution idéale.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="orm-is-the-vietnam-of-computer-science">&amp;ldquo;O/RM is the Vietnam of Computer Science&amp;rdquo;&lt;/h3>
-&lt;p>&lt;a href="https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/">&lt;img src="images/orm_vietnam.png" alt="O/RM is the Vietname of Computer Science">&lt;/a>
+&lt;h3 id="orm-is-the-vietnam-of-computer-sciencehttpsblogcodinghorrorcomobject-relational-mapping-is-the-vietnam-of-computer-science">&lt;a href="https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/">&amp;ldquo;O/RM is the Vietnam of Computer Science&amp;rdquo;&lt;/a>&lt;/h3>
+&lt;p>&lt;img src="images/orm_vietnam.png" alt="">
 &lt;/section>
 &lt;hr>
 &lt;h3 id="solutions-possibles-pour-lorm">Solutions possibles pour l&amp;rsquo;O/RM&lt;/h3>
