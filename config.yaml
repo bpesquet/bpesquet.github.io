@@ -35,7 +35,7 @@ params:
   author: "Baptiste Pesquet"
   email: bpesquet [at] gmail [dot] com # used for microformats
   description: "Baptiste Pesquet's personal website"
-  dateFormat: "2006-01-02"
+  dateFormat: "January 2, 2006"
   paginationSinglePost: true
   style: auto # light-without-switcher
   readMore: false
