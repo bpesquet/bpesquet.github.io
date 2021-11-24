@@ -33,6 +33,7 @@ The following material is quite recent and/or currently being used in some of my
 
 ### Miscellaneous
 
+- [Git & GitHub]({{< ref "slides/git-github" >}} "Git & GitHub")
 - [Génie logiciel](https://ensc.gitbook.io/genie-logiciel/)
 - [Unity]({{< ref "slides/unity" >}} "Unity")
 
