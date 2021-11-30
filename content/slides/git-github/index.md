@@ -6,7 +6,15 @@ draft: true
 
 ## Summary
 
+- Version Control Systems
+- Git fundamentals
+- Collaborating with Git
 - Git from the command line
+- GitHub
+
+---
+
+## Version Control Systems
 
 ---
 
@@ -71,11 +79,16 @@ Dedicated source code management tools, often called **Version Control Systems**
 
 ---
 
+## Git fundamentals
+
+---
+
 ### Git in a nutshell
 
-- Free and open source DVCS designed in 2005 to manage the Linux kernel source code.
+- Free and open source DVCS published in 2005 to manage the Linux kernel source code.
 - Has become the standard tool for versioning software.
 - Can handle any text-based project: knowledge bases, books, etc.
+- Designed as a command line tool.
 
 [![Git logo](images/git-logo.png)](https://git-scm.com/)
 
@@ -98,15 +111,6 @@ Dedicated source code management tools, often called **Version Control Systems**
   - ...
 - Added in the root folder, the `.gitignore` file defines files and folders excluded from the repository.
 - [This repository](https://github.com/github/gitignore) contains standard `.gitignore` files for many environments: Python, .NET, JavaScript...
-
----
-
-### Working with repos
-
-- Developers work locally, regularly archiving their code into their local repo.
-- Repos are kept in sync through specific commands.
-
-![Syncing Git repos](images/git-sync-repos.png)
 
 ---
 
@@ -138,7 +142,91 @@ Branches allow parallel work in isolated contexts, for:
 - Only one branch can be active at a time.
 - The content of a branch can be _merged_ into another. Once merged, a temporary branch should be destroyed.
 - The default branch is named `master` (sometimes renamed `main`). In general, it is considered the "production" branch and must be kept stable: commits or merges on this branch must not introduce generation errors or regressions.
-- _HEAD_ refers to the most recent commit of the active branch.
+
+---
+
+### HEAD
+
+_HEAD_ is an alias to the most recent commit of the active branch.
+
+[![Git HEAD](images/git-head.png)](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
+
+---
+
+### Under the hood
+
+- Git uses the [SHA-1](https://en.wikipedia.org/wiki/SHA-1) hash of content to create references to commits.
+- A commit object stores the metadata about a commit, such as the parent, the author, timestamps and references to the file tree of this commit.
+
+---
+
+### Git LFS
+
+- [Large File System](https://git-lfs.github.com/): Git extension for versioning large files.
+- The files live on an external server. Only references to them are stored in the Git repository.
+- Usage examples: audio and graphical assets, datasets...
+
+---
+
+## Collaborating with Git
+
+---
+
+### Collaboration workflow
+
+- Developers work locally, regularly commiting their code into their local repo.
+- Repos are kept in sync through specific commands.
+
+![Syncing Git repos](images/git-sync-repos.png)
+
+---
+
+### Remote repositories
+
+- Git repos that are hosted somewhere on the Internet or local network.
+- Can be:
+
+  - _cloned_ to create a local copy;
+  - _fetched_ to obtain remote updates, that can be _merged_ into a local branch thereafter;
+  - _pushed to_ to send local updates.
+
+- Identified by a **remote alias** (named _origin_ after cloning a repo).
+
+---
+
+### Pulling changes
+
+- Pulling = fetching & merging.
+- Creates a new _merge commit_.
+
+[![Git pulling example](images/git-pulling.png)](https://www.atlassian.com/git/tutorials/syncing/git-pull)
+
+---
+
+### Conflicts
+
+- Simultaneous file updates on different machines can result in _conflicts_ during repos syncing.
+- Git can resolve some of them by automerging files... But not all!
+
+---
+
+![I request your assistance](images/human-request.jpg)
+
+---
+
+### Manual conflict management
+
+- Typically, the second developer trying to push his/her updates receives a "non fast-forward" error.
+- He/she has to _pull_ remote updates first.
+- Files Git cannot automerge contain [conflict markers](https://wincent.com/wiki/Understanding_Git_conflict_markers). A manual merging is needed before commiting and pushing again.
+
+```git
+<<<<<<< HEAD
+# My Git project
+=======
+# My git project
+>>>>>>> c1129dfbbe585fc94978be38625b5ae7f63474bf
+```
 
 ---
 
@@ -160,7 +248,7 @@ Branches allow parallel work in isolated contexts, for:
 | Command           | Role                                             |
 | ----------------- | ------------------------------------------------ |
 | `git init`        | Create an empty repository in the current folder |
-| `git clone {url}` | Clone a remote repository located at `{url}`     |
+| `git clone {url}` | Clone an existing repository located at `{url}`  |
 
 ---
 
@@ -178,40 +266,79 @@ Branches allow parallel work in isolated contexts, for:
 
 ### Managing branches
 
-| Command                 | Role                                  |
-| ----------------------- | ------------------------------------- |
-| `git branch`            | List existing branches                |
-| `git branch {branch}`   | Create a new branch named `{branch}`  |
-| `git checkout {branch}` | Switch to `{branch}`                  |
-| `git merge {branch}`    | Merge `{branch}` into the current one |
+| Command                  | Role                                          |
+| ------------------------ | --------------------------------------------- |
+| `git branch`             | List existing branches                        |
+| `git branch {branch}`    | Create a new branch named `{branch}`          |
+| `git checkout {branch}`  | Switch to `{branch}`                          |
+| `git merge {branch}`     | Merge `{branch}` commits into the current one |
+| `git branch -d {branch}` | Delete `{branch}`                             |
 
 ---
 
-### Undoing things (file level)
-
-| Command                        | Role                                                    |
-| ------------------------------ | ------------------------------------------------------- |
-| `git checkout {file}`          | Overwrite `{file}` with latest committed version        |
-| `git checkout HEAD~{n} {file}` | Overwrite `{file}` with `{n}`-to-last committed version |
-| `git checkout {commit} {file}` | Overwrite `{file}` with `{commit}` version              |
-| `git reset {file}`             | Remove `{file}` from index                              |
-
----
-
-### Undoing things (unshared changes)
+### Undoing things
 
 | Command                     | Role                                               |
 | --------------------------- | -------------------------------------------------- |
-| `git reset`                 | Remove all files from index                        |
+| `git checkout {file}`       | Overwrite `{file}` with latest committed version   |
+| `git reset {file}`          | Remove `{file}` from index                         |
+| `git reset`                 | Empty index                                        |
 | `git reset --hard HEAD~{n}` | Return to `{n}`-to-last commit, losing all updates |
 
-([More details and options](https://stackoverflow.com/a/6866485))
+(More details and options [here](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting) and [here](https://stackoverflow.com/a/6866485))
 
 ---
 
 ### Collaborating
 
-| Command                        | Role                |
-| ------------------------------ | ------------------- |
-| `git remote add {alias} {url}` | Add a remote branch |
-| `git push -u {alias} {branch}` | Add a remote branch |
+| Command                        | Role                                         |
+| ------------------------------ | -------------------------------------------- |
+| `git remote add {alias} {url}` | Add a remote repository                      |
+| `git remote -v`                | List remote repositories                     |
+| `git pull {alias} {branch}`    | Fetch & merge remote commits into `{branch}` |
+| `git push {alias} {branch}`    | Push `{branch}` commits to a remote repo     |
+
+---
+
+## GitHub
+
+---
+
+### GitHub in a nutshell
+
+- [GitHub](https://github.com/) is a code hosting platform for version control and collaboration.
+- Its main purpose is the hosting of Git repositories.
+- Launched in 2008, it has been acquired by Microsoft in 2018 for $7.5 billion.
+- As of December 2021, it has approx. 73 million users worldwide.
+- GitHub is the central hub for open source projects.
+- Main alternatives are [BitBucket](https://bitbucket.org) and [GitLab](https://about.gitlab.com/).
+
+---
+
+### The shared repository model
+
+- A GitHub repo centralizes team updates.
+- Efficient for small teams and small-to-average-sized projects.
+
+![Shared repository model](images/github-shared-repo.png)
+
+---
+
+### The "fork & pull" model
+
+- Each developer _forks_ ($\approx$ clone on GitHub) the original repository.
+- Updates are pushed to the forks, then proposed to the original repo through [Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
+- Efficient for large organizations or public projects.
+
+![Fork & pull model](images/github-fork-pull.png)
+
+---
+
+### Other features and services
+
+- [Issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) are used to track ideas, feedback, tasks, or bugs.
+- [Gists](https://docs.github.com/en/github/writing-on-github/editing-and-sharing-content-with-gists/creating-gists) are single pieces of code that can be forked and cloned like repositories.
+- [Project boards](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards) offer a Kanban-like interface for organizing and prioritizing work.
+- [Codespaces](https://github.com/features/codespaces) is a cloud-based development environment mimicking Visual Studio Code.
+- [Copilot](https://copilot.github.com/) is an AI-based code suggestion service.
+- ...
