@@ -973,7 +973,7 @@ public async Task<ActionResult<Todo>> GetTodo(int id)
 
 ### ["O/RM is the Vietnam of Computer Science"](https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/)
 
-![](images/orm_vietnam.png)
+![Welcome to the jungle!](images/orm_vietnam.png)
 
 {{% /section %}}
 
