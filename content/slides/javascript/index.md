@@ -41,7 +41,7 @@ La norme **ES2015** (ou ES6) a apporté de très nombreuses améliorations au la
 
 ---
 
-## La syntaxe du langage
+## Syntaxe du langage
 
 ---
 
@@ -280,7 +280,7 @@ console.log(aurora.describe());
 
 ---
 
-## Modules et imports
+### Modules et imports
 
 JavaScript supporte la notion de **module** pour factoriser des éléments réutilisables.
 
@@ -293,6 +293,62 @@ import { View, Text, Image } from "react-native";
 
 // Importe à la fois l'élément par défaut et d'autres éléments
 import React, { View, Text, Image } from "react-native";
+```
+
+---
+
+### Programmation asynchrone
+
+JavaScript supporte la programmation asynchrone basée sur des **promesses** (_promises_). Une promesse représente une opération dont le résultat n'est pas encore disponible.
+
+La programmation asynchrone évite de bloquer le _thread_ courant en cas d'opération longue ou incertaine, comme par exemple un appel réseau.
+
+---
+
+### Fonctionnement d'une promesse
+
+[![Promise](images/promise.png)](https://javascript.info/promise-basics)
+
+Le mot-clé `then()` permet de définir le traitement de la promesse sous la forme d'une fonction.
+
+---
+
+### [Exemple d'utilisation d'une promesse](https://codepen.io/bpesquet/pen/vYePWjr?editors=0012)
+
+```js
+function resolveAfter2Seconds() {
+  return new Promise((resolve) => {
+    // Wait for 2 seconds before resolving promise
+    setTimeout(() => {
+      resolve("Success!");
+    }, 2000);
+  });
+}
+
+// Doesn't work: result is not yet available!
+console.log(resolveAfter2Seconds());
+
+// Wait for the result to be available, then output it
+resolveAfter2Seconds().then((result) => {
+  console.log(result); // "Success!"
+});
+```
+
+---
+
+### async et await
+
+Le mot-clé `await` interrompt l'exécution (sans bloquer le _thread_ courant) jusqu'à ce que le résultat d'une promesse soit disponible. Les fonctions utilisant `await` doivent être déclarées avec le mot-clé `async`.
+
+`async` et `await` constituent une syntaxe alternative pour les appels asynchrones en JavaScript.
+
+```js
+async function asyncCall() {
+  const result = await resolveAfter2Seconds();
+  console.log(result); // "Success!"
+}
+
+asyncCall();
 ```
 
 ---
@@ -510,7 +566,7 @@ function hello(person: Person) {
 
 ### Duck typing
 
-> "If it walks like a duck and quacks like a duck, it must be a duck."
+> "If it walks like a duck and quacks like a duck, then it must be a duck."
 
 TS se base sur la structure concrète des objets, et non sur l'implémentation explicite d'une interface.
 
