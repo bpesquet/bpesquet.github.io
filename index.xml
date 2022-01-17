@@ -3123,7 +3123,7 @@ Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;Hello, {name}! Today 
 &lt;p>&lt;img src="images/js_history.png" alt="ECMAScript releases">&lt;/p>
 &lt;p>La norme &lt;strong>ES2015&lt;/strong> (ou ES6) a apporté de très nombreuses améliorations au langage.&lt;/p>
 &lt;hr>
-&lt;h2 id="la-syntaxe-du-langage">La syntaxe du langage&lt;/h2>
+&lt;h2 id="syntaxe-du-langage">Syntaxe du langage&lt;/h2>
 &lt;hr>
 &lt;h3 id="déclaration-de-variables">Déclaration de variables&lt;/h3>
 &lt;p>JavaScript est un langage à typage &lt;strong>dynamique&lt;/strong>.&lt;/p>
@@ -3265,7 +3265,7 @@ describe() {
 &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> aurora = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Character(&lt;span style="color:#0086d2">&amp;#34;Aurora&amp;#34;&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">150&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">25&lt;/span>);
 console.log(aurora.describe());
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="modules-et-imports">Modules et imports&lt;/h2>
+&lt;h3 id="modules-et-imports">Modules et imports&lt;/h3>
 &lt;p>JavaScript supporte la notion de &lt;strong>module&lt;/strong> pour factoriser des éléments réutilisables.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Importe l&amp;#39;élément exporté par défaut par le module
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> React from &lt;span style="color:#0086d2">&amp;#34;react-native&amp;#34;&lt;/span>;
@@ -3273,6 +3273,39 @@ console.log(aurora.describe());
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> { View, Text, Image } from &lt;span style="color:#0086d2">&amp;#34;react-native&amp;#34;&lt;/span>;
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Importe à la fois l&amp;#39;élément par défaut et d&amp;#39;autres éléments
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> React, { View, Text, Image } from &lt;span style="color:#0086d2">&amp;#34;react-native&amp;#34;&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="programmation-asynchrone">Programmation asynchrone&lt;/h3>
+&lt;p>JavaScript supporte la programmation asynchrone basée sur des &lt;strong>promesses&lt;/strong> (&lt;em>promises&lt;/em>). Une promesse représente une opération dont le résultat n&amp;rsquo;est pas encore disponible.&lt;/p>
+&lt;p>La programmation asynchrone évite de bloquer le &lt;em>thread&lt;/em> courant en cas d&amp;rsquo;opération longue ou incertaine, comme par exemple un appel réseau.&lt;/p>
+&lt;hr>
+&lt;h3 id="fonctionnement-dune-promesse">Fonctionnement d&amp;rsquo;une promesse&lt;/h3>
+&lt;p>&lt;a href="https://javascript.info/promise-basics">&lt;img src="images/promise.png" alt="Promise">&lt;/a>&lt;/p>
+&lt;p>Le mot-clé &lt;code>then()&lt;/code> permet de définir le traitement de la promesse sous la forme d&amp;rsquo;une fonction.&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple-dutilisation-dune-promessehttpscodepeniobpesquetpenvyepwjreditors0012">&lt;a href="https://codepen.io/bpesquet/pen/vYePWjr?editors=0012">Exemple d&amp;rsquo;utilisation d&amp;rsquo;une promesse&lt;/a>&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> resolveAfter2Seconds() {
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Promise((resolve) =&amp;gt; {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Wait for 2 seconds before resolving promise
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> setTimeout(() =&amp;gt; {
+resolve(&lt;span style="color:#0086d2">&amp;#34;Success!&amp;#34;&lt;/span>);
+}, &lt;span style="color:#0086f7;font-weight:bold">2000&lt;/span>);
+});
+}
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Doesn&amp;#39;t work: result is not yet available!
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(resolveAfter2Seconds());
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Wait for the result to be available, then output it
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>resolveAfter2Seconds().then((result) =&amp;gt; {
+console.log(result); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Success!&amp;#34;
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="async-et-await">async et await&lt;/h3>
+&lt;p>Le mot-clé &lt;code>await&lt;/code> interrompt l&amp;rsquo;exécution (sans bloquer le &lt;em>thread&lt;/em> courant) jusqu&amp;rsquo;à ce que le résultat d&amp;rsquo;une promesse soit disponible. Les fonctions utilisant &lt;code>await&lt;/code> doivent être déclarées avec le mot-clé &lt;code>async&lt;/code>.&lt;/p>
+&lt;p>&lt;code>async&lt;/code> et &lt;code>await&lt;/code> constituent une syntaxe alternative pour les appels asynchrones en JavaScript.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">async &lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> asyncCall() {
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> result = await resolveAfter2Seconds();
+console.log(result); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Success!&amp;#34;
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+asyncCall();
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="plus-de-détails-sur-javascript">Plus de détails sur JavaScript&lt;/h3>
 &lt;p>&lt;a href="https://developer.mozilla.org/fr/docs/Web/JavaScript">https://developer.mozilla.org/fr/docs/Web/JavaScript&lt;/a>&lt;/p>
@@ -3418,7 +3451,7 @@ lastName: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>;
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="duck-typing">Duck typing&lt;/h3>
 &lt;blockquote>
-&lt;p>&amp;ldquo;If it walks like a duck and quacks like a duck, it must be a duck.&amp;rdquo;&lt;/p>
+&lt;p>&amp;ldquo;If it walks like a duck and quacks like a duck, then it must be a duck.&amp;rdquo;&lt;/p>
 &lt;/blockquote>
 &lt;p>TS se base sur la structure concrète des objets, et non sur l&amp;rsquo;implémentation explicite d&amp;rsquo;une interface.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ts" data-lang="ts">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// This object is structurally compatible with the Person interface
