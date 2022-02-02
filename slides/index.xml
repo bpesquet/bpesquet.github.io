@@ -1,4 +1,351 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/slides/</link><description>👨‍💻 Baptiste Pesquet (Slides)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 23 Nov 2021 19:01:29 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>Git &amp; Github</title><link>https://www.bpesquet.fr/slides/git-github/</link><pubDate>Tue, 23 Nov 2021 19:01:29 +0100</pubDate><guid>https://www.bpesquet.fr/slides/git-github/</guid><description>&lt;h2 id="summary">Summary&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/slides/</link><description>👨‍💻 Baptiste Pesquet (Slides)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 02 Feb 2022 11:09:39 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>Javascript pour le web</title><link>https://www.bpesquet.fr/slides/javascript-web/</link><pubDate>Wed, 02 Feb 2022 11:09:39 +0100</pubDate><guid>https://www.bpesquet.fr/slides/javascript-web/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;ul>
+&lt;li>Le DOM&lt;/li>
+&lt;li>Navigation dans le DOM&lt;/li>
+&lt;li>Modification de la structure&lt;/li>
+&lt;li>Gestion des évènements&lt;/li>
+&lt;li>Manipulation des formulaires&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="le-dom">Le DOM&lt;/h2>
+&lt;hr>
+&lt;h3 id="exemple-de-page-web">Exemple de page web&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&lt;span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">html&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">head&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">meta&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">charset&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;utf-8&amp;#34;&lt;/span> /&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">title&lt;/span>&amp;gt;My web page&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">title&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">head&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">body&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">h1&lt;/span>&amp;gt;My web page&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">h1&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;Hello! My name&amp;#39;s Baptiste.&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+I live in the great city of
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">href&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;https://en.wikipedia.org/wiki/Bordeaux&amp;#34;&lt;/span>&amp;gt;Bordeaux&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt;.
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">body&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="le-document-object-model-dom">Le Document Object Model (DOM)&lt;/h3>
+&lt;p>Description de la structure d&amp;rsquo;une page sous forme d&amp;rsquo;une arborescence de &lt;strong>noeuds&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="images/chapter13-02.png" alt="DOM example">&lt;/p>
+&lt;hr>
+&lt;h3 id="types-de-noeuds">Types de noeuds&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Eléments&lt;/strong> : noeuds structurants pouvant contenir des fils. Correspondent aux balises HTML comme &lt;code>&amp;lt;body&amp;gt;&lt;/code>, &lt;code>&amp;lt;p&amp;gt;&lt;/code>, etc.&lt;/li>
+&lt;li>&lt;strong>Texte&lt;/strong> : noeuds contenant uniquement du texte.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="accès-au-dom-avec-javascript">Accès au DOM avec JavaScript&lt;/h3>
+&lt;p>Quand le code JavaScript s&amp;rsquo;exécute dans le contexte d&amp;rsquo;une page web, la variable &lt;code>document&lt;/code> permet d&amp;rsquo;accéder à la racine du DOM.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> h = document.head; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Accès à l&amp;#39;en-tête de la page
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> b = document.body; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Accès au corps de la page
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>La propriété &lt;code>nodeType&lt;/code> permet de récupérer le type d&amp;rsquo;un noeud.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (document.body.nodeType === document.ELEMENT_NODE)
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="navigation-dans-le-dom">Navigation dans le DOM&lt;/h2>
+&lt;hr>
+&lt;h3 id="enfants-et-parent-dun-noeud">Enfants et parent d&amp;rsquo;un noeud&lt;/h3>
+&lt;p>La propriété &lt;code>childNodes&lt;/code> permet d&amp;rsquo;accéder aux enfants d&amp;rsquo;un noeud du DOM sous la forme d&amp;rsquo;une collection ordonnée.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Affiche les noeuds fils du corps de la page
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>document.body.childNodes.forEach((node) =&amp;gt; {
+console.log(node);
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>A l&amp;rsquo;inverse, la propriété &lt;code>parentNode&lt;/code> permet de remonter au noeud parent.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">document.body.childNodes[&lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>].parentNode; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Accès au noeud &amp;lt;body&amp;gt;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="sélection-par-type-de-balise">Sélection par type de balise&lt;/h3>
+&lt;p>La méthode &lt;code>getElementsByTagName()&lt;/code> renvoie la liste des noeuds correspond à une balise HTML.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Liste des noeuds h2
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> titleElements = document.getElementsByTagName(&lt;span style="color:#0086d2">&amp;#34;h2&amp;#34;&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="sélection-par-classe">Sélection par classe&lt;/h3>
+&lt;p>La méthode &lt;code>getElementsByClassName()&lt;/code> renvoie la liste des noeuds possédant une certaine classe CSS.&lt;/p>
+&lt;p>Comme toutes les méthodes de sélection, elle renvoie une liste de noeuds qui doit être convertie en tableau (par exemple avec &lt;code>Array.from()&lt;/code>) avant de pouvoir être parcourue.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> existingElements = Array.from(document.getElementsByClassName(&lt;span style="color:#0086d2">&amp;#34;exists&amp;#34;&lt;/span>));
+existingElements.forEach((element) =&amp;gt; {
+console.log(element);
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="sélection-par-identifiant">Sélection par identifiant&lt;/h3>
+&lt;p>La méthode &lt;code>getElementById()&lt;/code> renvoie le noeud possédant l&amp;rsquo;identifiant CSS spécifié, ou &lt;code>null&lt;/code> si aucun noeud n&amp;rsquo;est trouvé.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Affiche le noeud identifié par &amp;#34;new&amp;#34;
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(document.getElementById(&lt;span style="color:#0086d2">&amp;#34;new&amp;#34;&lt;/span>));
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="sélection-par-sélecteur-css">Sélection par sélecteur CSS&lt;/h3>
+&lt;p>Les méthodes &lt;code>querySelectorAll()&lt;/code> et &lt;code>querySelector()&lt;/code> permettent de rechercher des éléments en utilisant un &lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">sélecteur CSS&lt;/a>. La première renvoie une liste, la seconde le premier noeud résultat.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Tous les noeuds paragraphes
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>document.querySelectorAll(&lt;span style="color:#0086d2">&amp;#34;p&amp;#34;&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Tous les noeuds paragraphes descendants du noeud identifié par &amp;#34;content&amp;#34;
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>document.querySelectorAll(&lt;span style="color:#0086d2">&amp;#34;#content p&amp;#34;&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Tous les noeuds de classe &amp;#34;exists&amp;#34; fils du noeud identifié par &amp;#34;ancient&amp;#34;
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>document.querySelectorAll(&lt;span style="color:#0086d2">&amp;#34;#ancient &amp;gt; .exists&amp;#34;&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Le premier noeud paragraphe
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>document.querySelector(&lt;span style="color:#0086d2">&amp;#34;p&amp;#34;&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="méthodes-de-sélection">Méthodes de sélection&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Noeuds cibles&lt;/th>
+&lt;th>Méthode&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Plusieurs, par balise HTML&lt;/td>
+&lt;td>&lt;code>getElementsByTagName()&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Plusieurs, par classe&lt;/td>
+&lt;td>&lt;code>getElementsByClassName()&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Plusieurs&lt;/td>
+&lt;td>&lt;code>querySelectorAll()&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Un seul, par identifiant&lt;/td>
+&lt;td>&lt;code>getElementById()&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Le premier&lt;/td>
+&lt;td>&lt;code>querySelector()&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="contenu-dun-noeud">Contenu d&amp;rsquo;un noeud&lt;/h3>
+&lt;p>La propriété &lt;code>innerHTML&lt;/code> renvoie le contenu HTML d&amp;rsquo;un noeud du DOM sous forme d&amp;rsquo;une chaîne de caractères.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">document.getElementById(&lt;span style="color:#0086d2">&amp;#34;content&amp;#34;&lt;/span>).innerHTML;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>La propriété &lt;code>textContent&lt;/code> renvoie le contenu textuel d&amp;rsquo;un noeud du DOM (sans les balises HTML) sous forme d&amp;rsquo;une chaîne de caractères.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">document.getElementById(&lt;span style="color:#0086d2">&amp;#34;content&amp;#34;&lt;/span>).textContent;
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="attributs-dun-noeud">Attributs d&amp;rsquo;un noeud&lt;/h3>
+&lt;p>Les méthodes &lt;code>getAttribute()&lt;/code> et &lt;code>hasAttribute()&lt;/code> permettent de consulter les attributs d&amp;rsquo;un noeud du DOM.&lt;/p>
+&lt;p>Certains attributs comme &lt;code>id&lt;/code>, &lt;code>href&lt;/code> ou &lt;code>value&lt;/code> peuvent être accédés directement.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">document.querySelector(&lt;span style="color:#0086d2">&amp;#34;a&amp;#34;&lt;/span>).getAttribute(&lt;span style="color:#0086d2">&amp;#34;href&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Cible du premier noeud &amp;lt;a&amp;gt;
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>document.querySelector(&lt;span style="color:#0086d2">&amp;#34;a&amp;#34;&lt;/span>).href; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Idem
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>document.querySelector(&lt;span style="color:#0086d2">&amp;#34;ul&amp;#34;&lt;/span>).id; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Identifiant du premier noeud &amp;lt;a&amp;gt;
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (document.querySelector(&lt;span style="color:#0086d2">&amp;#34;a&amp;#34;&lt;/span>).hasAttribute(&lt;span style="color:#0086d2">&amp;#34;target&amp;#34;&lt;/span>))
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">//...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="classes-dun-noeud">Classes d&amp;rsquo;un noeud&lt;/h3>
+&lt;p>La propriété &lt;code>classList&lt;/code> permet d&amp;rsquo;accéder à la liste des classes CSS d&amp;rsquo;un noeud.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Liste des classes du noeud identifié par &amp;#34;ancient&amp;#34;
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> classes = document.getElementById(&lt;span style="color:#0086d2">&amp;#34;ancient&amp;#34;&lt;/span>).classList
+console.log(classes.length); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Nombre de classes
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
+&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (document.getElementById(&lt;span style="color:#0086d2">&amp;#34;ancient&amp;#34;&lt;/span>).classList.contains(&lt;span style="color:#0086d2">&amp;#34;wonders&amp;#34;&lt;/span>))
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="modification-de-la-structure">Modification de la structure&lt;/h2>
+&lt;hr>
+&lt;h3 id="modification-dun-noeud">Modification d&amp;rsquo;un noeud&lt;/h3>
+&lt;p>Les propriétés &lt;code>innerHTML&lt;/code>, &lt;code>textContent&lt;/code> et &lt;code>classList&lt;/code> ainsi que la méthode &lt;code>setAttribute()&lt;/code> peuvent permettre de mettre à jour un noeud existant.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">/// Suppression du contenu (y compris les éventuels fils)
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>document.getElementById(&lt;span style="color:#0086d2">&amp;#34;languages&amp;#34;&lt;/span>).innerHTML = &lt;span style="color:#0086d2">&amp;#34;&amp;#34;&lt;/span>;
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Ajout d&amp;#39;une chaîne au texte
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>document.querySelector(&lt;span style="color:#0086d2">&amp;#34;h3&amp;#34;&lt;/span>).textContent += &lt;span style="color:#0086d2">&amp;#34; and sons&amp;#34;&lt;/span>;
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> titleElement = document.querySelector(&lt;span style="color:#0086d2">&amp;#34;h3&amp;#34;&lt;/span>);
+titleElement.classList.remove(&lt;span style="color:#0086d2">&amp;#34;beginning&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Suppression d&amp;#39;une classe
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>titleElement.classList.add(&lt;span style="color:#0086d2">&amp;#34;title&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Ajout d&amp;#39;une classe
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Mise à jour de l&amp;#39;identifiant (deux solutions possibles)
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>document.querySelector(&lt;span style="color:#0086d2">&amp;#34;h3&amp;#34;&lt;/span>).setAttribute(&lt;span style="color:#0086d2">&amp;#34;id&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;title&amp;#34;&lt;/span>);
+document.querySelector(&lt;span style="color:#0086d2">&amp;#34;h3&amp;#34;&lt;/span>).id = &lt;span style="color:#0086d2">&amp;#34;title&amp;#34;&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="ajout-dun-nouveau-noeud">Ajout d&amp;rsquo;un nouveau noeud&lt;/h3>
+&lt;p>Il s&amp;rsquo;effectue en 3 étapes :&lt;/p>
+&lt;ol>
+&lt;li>Création du nouveau noeud&lt;/li>
+&lt;li>Définition de ses attributs&lt;/li>
+&lt;li>Insertion du noeud dans le DOM&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> pythonElement = document.createElement(&lt;span style="color:#0086d2">&amp;#34;li&amp;#34;&lt;/span>);
+pythonElement.id = &lt;span style="color:#0086d2">&amp;#34;python&amp;#34;&lt;/span>;
+pythonElement.textContent = &lt;span style="color:#0086d2">&amp;#34;Python&amp;#34;&lt;/span>;
+document.getElementById(&lt;span style="color:#0086d2">&amp;#34;languages&amp;#34;&lt;/span>).appendChild(pythonElement);
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="création-du-noeud">Création du noeud&lt;/h3>
+&lt;p>La méthode &lt;code>createElement()&lt;/code> prend en paramètre un type de balise HTML et renvoie un noeud.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Création d&amp;#39;un noeud élément de liste
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> pythonElement = document.createElement(&lt;span style="color:#0086d2">&amp;#34;li&amp;#34;&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="définition-des-attributs-du-noeud">Définition des attributs du noeud&lt;/h3>
+&lt;p>Les propriétés permettant de modifier un noeud (&lt;code>textContent&lt;/code>, &lt;code>classList&lt;/code>, etc) permettent de définir les valeurs des attributs du noeud créé.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">pythonElement.id = &lt;span style="color:#0086d2">&amp;#34;python&amp;#34;&lt;/span>;
+pythonElement.textContent = &lt;span style="color:#0086d2">&amp;#34;Python&amp;#34;&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="insertion-du-noeud-dans-le-dom">Insertion du noeud dans le DOM&lt;/h3>
+&lt;p>La solution la plus courante est d&amp;rsquo;utiliser la méthode &lt;code>appendChild()&lt;/code> sur un noeud existant. Elle ajoute le nouveau noeud à la fin de la liste de ses fils.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">document.getElementById(&lt;span style="color:#0086d2">&amp;#34;languages&amp;#34;&lt;/span>).appendChild(pythonElement);
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>On peut également utiliser &lt;code>insertBefore()&lt;/code> pour ajouter le nouveau noeud avant un noeud fils spécifié.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">document
+.getElementById(&lt;span style="color:#0086d2">&amp;#34;languages&amp;#34;&lt;/span>)
+.insertBefore(pythonElement, document.getElementById(&lt;span style="color:#0086d2">&amp;#34;php&amp;#34;&lt;/span>));
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="remplacement-ou-suppression-dun-noeud">Remplacement ou suppression d&amp;rsquo;un noeud&lt;/h3>
+&lt;p>La méthode &lt;code>replaceChild()&lt;/code> permet de remplacer un noeud par un autre.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">document
+.getElementById(&lt;span style="color:#0086d2">&amp;#34;languages&amp;#34;&lt;/span>)
+.replaceChild(pythonElement, document.getElementById(&lt;span style="color:#0086d2">&amp;#34;perl&amp;#34;&lt;/span>));
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>La méthode &lt;code>removeChild()&lt;/code> permet de supprimer un noeud existant.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">document
+.getElementById(&lt;span style="color:#0086d2">&amp;#34;languages&amp;#34;&lt;/span>)
+.removeChild(document.getElementById(&lt;span style="color:#0086d2">&amp;#34;lisp&amp;#34;&lt;/span>));
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="gestion-du-style">Gestion du style&lt;/h3>
+&lt;p>La propriété &lt;code>style&lt;/code> permet d&amp;rsquo;accéder à l&amp;rsquo;attribut &lt;code>style&lt;/code> du noeud, composé de propriétés CSS (&lt;code>color&lt;/code>, &lt;code>fontFamily&lt;/code>, etc) qu&amp;rsquo;il est possible d&amp;rsquo;exploiter.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> paragraphElement = document.querySelector(&lt;span style="color:#0086d2">&amp;#34;p&amp;#34;&lt;/span>);
+paragraphElement.style.color = &lt;span style="color:#0086d2">&amp;#34;red&amp;#34;&lt;/span>;
+paragraphElement.style.fontFamily = &lt;span style="color:#0086d2">&amp;#34;Arial&amp;#34;&lt;/span>;
+paragraphElement.style.backgroundColor = &lt;span style="color:#0086d2">&amp;#34;black&amp;#34;&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>En cas d&amp;rsquo;utilisation d&amp;rsquo;une feuile de style CSS, il faut utiliser la fonction &lt;code>getComputedStyle()&lt;/code> pour accéder à l&amp;rsquo;intégralité des styles d&amp;rsquo;un noeud.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> paragraphStyle = getComputedStyle(document.getElementById(&lt;span style="color:#0086d2">&amp;#34;para&amp;#34;&lt;/span>));
+console.log(paragraphStyle.fontStyle);
+console.log(paragraphStyle.color);
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="gestion-des-évènements">Gestion des évènements&lt;/h2>
+&lt;hr>
+&lt;h3 id="principe-de-fonctionnement">Principe de fonctionnement&lt;/h3>
+&lt;p>Un &lt;strong>gestionnaire d&amp;rsquo;évènement&lt;/strong> est une fonction JavaScript qui va d&amp;rsquo;exécuter lorsqu&amp;rsquo;un évènement apparaît : clic sur un bouton, soumission d&amp;rsquo;un formulaire, survol d&amp;rsquo;une zone avec la souris, etc.&lt;/p>
+&lt;p>L&amp;rsquo;ajout de gestionnaires d&amp;rsquo;évènement va améliorer l&amp;rsquo;interactivité de la page web.&lt;/p>
+&lt;p>Cette manière d&amp;rsquo;écrire du code est appelée &lt;strong>programmation évènementielle&lt;/strong> : l&amp;rsquo;ordre d&amp;rsquo;exécution des instructions n&amp;rsquo;est plus prédéfini, mais dépend des actions de l&amp;rsquo;utilisateur.&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple-de-gestionnaire-dévènement">Exemple de gestionnaire d&amp;rsquo;évènement&lt;/h3>
+&lt;p>L&amp;rsquo;évènement intercepté est passé en paramètre de la fonction gestionnaire sous la forme d&amp;rsquo;un objet souvent nommé &lt;code>e&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">button&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">id&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;myButton&amp;#34;&lt;/span>&amp;gt;Cliquez-moi !&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> showMessage = (e) =&amp;gt; {
+console.log(&lt;span style="color:#0086d2">`Type d&amp;#39;évènement : &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>e.type&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">, cible: &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>e.target&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">`&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Affiche une pop-up
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> alert(&lt;span style="color:#0086d2">&amp;#34;Hello!&amp;#34;&lt;/span>);
+};
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Accès au bouton
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> buttonElement = document.getElementById(&lt;span style="color:#0086d2">&amp;#34;myButton&amp;#34;&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Gestion du clic via la fonction showMessage()
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>buttonElement.addEventListener(&lt;span style="color:#0086d2">&amp;#34;click&amp;#34;&lt;/span>, showMessage);
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="evènements-utilisables">Evènements utilisables&lt;/h3>
+&lt;p>JavaScript permet d&amp;rsquo;exploiter de nombreux évènements sur la page : &lt;code>click&lt;/code>, &lt;code>keypress&lt;/code>, &lt;code>mousedown&lt;/code>, &lt;code>load&lt;/code>, etc.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">document.addEventListener(&lt;span style="color:#0086d2">&amp;#34;keypress&amp;#34;&lt;/span>, (e) =&amp;gt; {
+console.log(
+&lt;span style="color:#0086d2">`Vous avez appuyé sur la touche &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>String.fromCharCode(e.charCode)&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">`&lt;/span>
+);
+});
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;window&amp;#34; représente la fenêtre du navigateur affichant la page
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>window.addEventListener(&lt;span style="color:#0086d2">&amp;#34;load&amp;#34;&lt;/span>, (e) =&amp;gt; {
+console.log(&lt;span style="color:#0086d2">&amp;#34;Page web chargée !&amp;#34;&lt;/span>);
+});
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Affiche un message de confirmation de fermeture
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>window.addEventListener(&lt;span style="color:#0086d2">&amp;#34;beforeunload&amp;#34;&lt;/span>, (e) =&amp;gt; {
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> message = &lt;span style="color:#0086d2">&amp;#34;Voulez-vous vraiment quitter ?&amp;#34;&lt;/span>;
+e.returnValue = message;
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message;
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="propagation-des-évènements">Propagation des évènements&lt;/h3>
+&lt;p>Un évènement qui apparaît au niveau d&amp;rsquo;un noeud se propage vers ses noeuds parents, jusqu&amp;rsquo;à arriver à la racine du DOM.&lt;/p>
+&lt;p>Appelée sur un objet évènement, la méthode &lt;code>stopPropagation()&lt;/code> permet d&amp;rsquo;interrompre sa propagation.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">document.getElementById(&lt;span style="color:#0086d2">&amp;#34;propa&amp;#34;&lt;/span>).addEventListener(&lt;span style="color:#0086d2">&amp;#34;click&amp;#34;&lt;/span>, (e) =&amp;gt; {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Interrompt la propagation de cet évènement
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> e.stopPropagation();
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="comportement-par-défaut">Comportement par défaut&lt;/h3>
+&lt;p>De nombreux évènements déclenchent des comportements par défaut : clic sur un lien web, clic droit sur la page, etc. Appelée sur un objet évènement, la méthode &lt;code>preventDefault()&lt;/code> annule ce comportement.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+Du temps à perdre ? &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">id&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;forbidden&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">href&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;https://9gag.com/&amp;#34;&lt;/span>&amp;gt;cliquez ici&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">document.getElementById(&lt;span style="color:#0086d2">&amp;#34;forbidden&amp;#34;&lt;/span>).addEventListener(&lt;span style="color:#0086d2">&amp;#34;click&amp;#34;&lt;/span>, (e) =&amp;gt; {
+alert(&lt;span style="color:#0086d2">&amp;#34;Pas une bonne idée&amp;#34;&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Annule l&amp;#39;ouverture du lien
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> e.preventDefault();
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="manipulation-des-formulaires">Manipulation des formulaires&lt;/h2>
+&lt;hr>
+&lt;h3 id="exemple-de-formulaire">Exemple de formulaire&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">form&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">h1&lt;/span>&amp;gt;Formulaire d&amp;#39;inscription&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">h1&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;username&amp;#34;&lt;/span>&amp;gt;Nom d&amp;#39;utilisateur&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span>&amp;gt;:
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">type&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;text&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;username&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">id&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;username&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">required&lt;/span> /&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">id&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;usernameHelp&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;password&amp;#34;&lt;/span>&amp;gt;Mot de passe&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span>&amp;gt;:
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">type&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;password&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;password&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">id&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;password&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">required&lt;/span> /&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">id&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;passwordHelp&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;nationality&amp;#34;&lt;/span>&amp;gt;Nationalité&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span>&amp;gt;:
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">select&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;nationality&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">id&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;nationality&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">option&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">value&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;US&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">selected&lt;/span>&amp;gt;Américaine&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">option&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">option&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">value&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;FR&amp;#34;&lt;/span>&amp;gt;Française&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">option&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">option&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">value&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;ES&amp;#34;&lt;/span>&amp;gt;Espagnole&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">option&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">option&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">value&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;XX&amp;#34;&lt;/span>&amp;gt;Autre&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">option&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">select&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">type&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;submit&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">value&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Envoyer&amp;#34;&lt;/span> /&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">type&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;reset&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">value&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Annuler&amp;#34;&lt;/span> /&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">form&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="gestion-du-focus">Gestion du focus&lt;/h3>
+&lt;p>Les évènements &lt;code>focus&lt;/code> et &lt;code>blur&lt;/code> permettent d&amp;rsquo;ajouter du comportement lorsqu&amp;rsquo;un champ du formulaire reçoit ou perd le focus.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> usernameElement = document.getElementById(&lt;span style="color:#0086d2">&amp;#34;username&amp;#34;&lt;/span>);
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Ajoute le texte d&amp;#39;aide quand le champ reçoit le focus
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>usernameElement.addEventListener(&lt;span style="color:#0086d2">&amp;#34;focus&amp;#34;&lt;/span>, (e) =&amp;gt; {
+document.getElementById(&lt;span style="color:#0086d2">&amp;#34;usernameHelp&amp;#34;&lt;/span>).textContent =
+&lt;span style="color:#0086d2">&amp;#34;Ajoutez votre nom d&amp;#39;utilisateur&amp;#34;&lt;/span>;
+});
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Vide la zone d&amp;#39;aide quand le champ perd le focus
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>usernameElement.addEventListener(&lt;span style="color:#0086d2">&amp;#34;blur&amp;#34;&lt;/span>, (e) =&amp;gt; {
+document.getElementById(&lt;span style="color:#0086d2">&amp;#34;usernameHelp&amp;#34;&lt;/span>).textContent = &lt;span style="color:#0086d2">&amp;#34;&amp;#34;&lt;/span>;
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="choix-dans-une-liste-déroulante">Choix dans une liste déroulante&lt;/h3>
+&lt;p>L&amp;rsquo;évènement &lt;code>change&lt;/code> sur une liste déroulante permet de gérer le changement de sélection par l&amp;rsquo;utilisateur.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">document.getElementById(&lt;span style="color:#0086d2">&amp;#34;nationality&amp;#34;&lt;/span>).addEventListener(&lt;span style="color:#0086d2">&amp;#34;change&amp;#34;&lt;/span>, (e) =&amp;gt; {
+console.log(&lt;span style="color:#0086d2">&amp;#34;Code de nationalité : &amp;#34;&lt;/span> + e.target.value);
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Les boutions radio et les cases à cocher fonctionnent sur le même principe.&lt;/p>
+&lt;hr>
+&lt;h3 id="validation-pendant-la-saisie">Validation pendant la saisie&lt;/h3>
+&lt;p>L&amp;rsquo;évènement &lt;code>input&lt;/code> permet de déclencher l&amp;rsquo;exécution de code à chaque modification du texte saisi dans un champ.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Affiche un texte d&amp;#39;aide qui dépend de la longueur du mot de passe saisi
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>document.getElementById(&lt;span style="color:#0086d2">&amp;#34;password&amp;#34;&lt;/span>).addEventListener(&lt;span style="color:#0086d2">&amp;#34;input&amp;#34;&lt;/span>, (e) =&amp;gt; {
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> password = e.target.value; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Texte saisi dans le champ
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">let&lt;/span> helpText = &lt;span style="color:#0086d2">&amp;#34;Trop court&amp;#34;&lt;/span>;
+&lt;span style="color:#fb660a;font-weight:bold">let&lt;/span> messageColor = &lt;span style="color:#0086d2">&amp;#34;red&amp;#34;&lt;/span>;
+&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (password.length &amp;gt;= &lt;span style="color:#0086f7;font-weight:bold">8&lt;/span>) {
+helpText = &lt;span style="color:#0086d2">&amp;#34;OK&amp;#34;&lt;/span>;
+messageColor = &lt;span style="color:#0086d2">&amp;#34;green&amp;#34;&lt;/span>;
+}
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> passwordHelpElement = document.getElementById(&lt;span style="color:#0086d2">&amp;#34;passwordHelp&amp;#34;&lt;/span>);
+passwordHelpElement.textContent = helpText;
+passwordHelpElement.style.color = messageColor;
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="validation-après-soumission">Validation après soumission&lt;/h3>
+&lt;p>Le noeud correspond à un formulaire dispose d&amp;rsquo;une propriété &lt;code>elements&lt;/code> qui permet d&amp;rsquo;accéder aux champs par leur nom.&lt;/p>
+&lt;p>La gestion de l&amp;rsquo;évènement &lt;code>submit&lt;/code> permet de réagir à la soumission du formulaire par l&amp;rsquo;utilisateur.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">document.querySelector(&lt;span style="color:#0086d2">&amp;#34;form&amp;#34;&lt;/span>).addEventListener(&lt;span style="color:#0086d2">&amp;#34;submit&amp;#34;&lt;/span>, (e) =&amp;gt; {
+e.preventDefault(); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Annule l&amp;#39;envoi du formulaire au serveur web
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Récupération des informations saisies par l&amp;#39;utilisateur
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> username = e.target.elements.username.value;
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> password = e.target.elements.password.value;
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> nationalityCode = e.target.elements.nationality.value;
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ... (Vérification éventuelles)
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>});
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Git &amp; Github</title><link>https://www.bpesquet.fr/slides/git-github/</link><pubDate>Tue, 23 Nov 2021 19:01:29 +0100</pubDate><guid>https://www.bpesquet.fr/slides/git-github/</guid><description>&lt;h2 id="summary">Summary&lt;/h2>
 &lt;ul>
 &lt;li>Version Control Systems&lt;/li>
 &lt;li>Git fundamentals&lt;/li>
