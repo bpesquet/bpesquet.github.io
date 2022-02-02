@@ -20,7 +20,7 @@
             {{ partial "post-language-switcher.html" . }}
         </header>
         <div class="post-info">
-            <div class="post-date dt-published">{{ .Lastmod.Format .Site.Params.dateFormat }}</div>
+            <div class="post-date dt-published">Last updated on {{ .Lastmod.Format .Site.Params.dateFormat }}</div>
         </div>
     </div>
     {{ end }}
