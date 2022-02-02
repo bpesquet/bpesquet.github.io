@@ -28,6 +28,7 @@ The following material is quite recent and/or currently being used in some of my
 ### JavaScript/TypeScript
 
 - [Le langage JavaScript]({{< ref "slides/javascript" >}} "Le langage JavaScript")
+- [JavaScript pour le web]({{< ref "slides/javascript-web" >}} "JavaScript pour le web")
 - [The JavaScript Way](https://github.com/thejsway/thejsway) | [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
 - [React Native]({{< ref "slides/react-native" >}} "React Native")
 
