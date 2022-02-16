@@ -7,8 +7,10 @@ draft: false
 ## Sommaire
 
 - Introduction
+- Composants React Native
 - Gestion de l'UI
 - Gestion de l'état
+- Navigation
 - Utilisation d'API web
 
 ---
@@ -131,10 +133,10 @@ Déclinaison mobile du framework JavaScript [React](https://reactjs.org/).
 
 Framework pour faciliter la création et le déploiement d'applications React Native.
 
-![Expo logo](images/expo_logo.png)
+[![Expo logo](images/expo_logo.png)](https://expo.dev/)
 
 - [Expo CLI](https://github.com/expo/expo-cli) : outil en ligne de commande pour le développement local.
-- [Expo client](https://expo.io) : application mobile à installer sur le terminal cible pour le déploiement.
+- [Expo Go](https://expo.io) : application mobile à installer sur le terminal cible pour le déploiement.
 
 ---
 
@@ -169,7 +171,7 @@ cd my-new-project # move into project directory
 npm start # Or 'expo start'
 ```
 
-Ensuite, scan du QR Code depuis l'application Expo (Android) ou l'appareil photo du smartphone (iOS).
+Ensuite, scan du QR Code depuis l'application Expo Go (Android) ou l'appareil photo du smartphone (iOS).
 
 ![Expo QR Code](images/expo_qrcode.png)
 
@@ -334,6 +336,10 @@ const b = (
 
 ---
 
+## Composants React Native
+
+---
+
 ### La notion de composant
 
 - Les **composants** sont les blocs de base d'une application React (Native).
@@ -392,8 +398,15 @@ Caractéristiques définies au moment de la création, modifiables uniquement pa
 import React, { Component } from "react";
 import { Text, View } from "react-native";
 
-class Greeting extends Component {
-  // Component has a name property which is of type string
+// Function component
+// Component has a name property, which is of type string
+const GreetingFun = (props: { name: string }) => {
+  return <Text>Hello {props.name}!</Text>;
+};
+
+// Class component
+class GreetingClass extends Component {
+  // Component has a name property, which is of type string
   constructor(public props: { name: string }) {
     super(props);
   }
@@ -406,9 +419,9 @@ export default class LotsOfGreetings extends Component {
   render() {
     return (
       <View style={{ alignItems: "center" }}>
-        <Greeting name="John" />
-        <Greeting name="Paul" />
-        <Greeting name="Jones" />
+        <GreetingFun name="John" />
+        <GreetingClass name="Paul" />
+        <GreetingFun name="Jones" />
       </View>
     );
   }
@@ -419,38 +432,42 @@ export default class LotsOfGreetings extends Component {
 
 ### Etat (_state_) d'un composant
 
-Etat interne (données) d'un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via `setState()` ([démo](https://snack.expo.io/@bpesquet/counter)).
+Etat interne (données) d'un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via `setState()` ([démo](https://snack.expo.dev/@bpesquet/state-2)).
 
 ```tsx
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 
-interface CoounterState {
+// State shape: a "count" property of type number
+interface AppState {
   count: number;
 }
 
-class Counter extends Component<{}, CoounterState> {
-  constructor(public props: { color: string; size: number }) {
-    super(props);
-    this.state = { count: 0 };
-    setInterval(() => {
-      this.setState({ count: this.state.count + 1 });
-    }, 1000);
-  }
+// React.Component is a generic type: Component<PropType, StateType>
+// We can provide it with optionale prop and state shapes
+// {} means an empty shape (no props or state)
+class App extends Component<{}, AppState> {
+  // Init state
+  state: AppState = {
+    count: 0,
+  };
 
-  render() {
-    const { count } = this.state;
-    const { color, size } = this.props;
+  // Function that updates state, triggering component re-rendering
+  onPress = () => {
+    this.setState({
+      count: this.state.count + 1,
+    });
+  };
 
-    return <Text style={{ color, fontSize: size }}>{count}</Text>;
-  }
-}
-
-export default class CounterApp extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Counter color="red" size={50} />
+        <TouchableOpacity style={styles.button} onPress={this.onPress}>
+          <Text>Click me</Text>
+        </TouchableOpacity>
+        <View>
+          <Text>You clicked {this.state.count} times</Text>
+        </View>
       </View>
     );
   }
@@ -459,11 +476,18 @@ export default class CounterApp extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
     justifyContent: "center",
+    alignItems: "center",
+  },
+  button: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
+    marginBottom: 10,
   },
 });
+
+export default App;
 ```
 
 ---
@@ -477,10 +501,6 @@ const styles = StyleSheet.create({
 ### Composants d'interface utilisateur
 
 ![React native UI components](images/ui_components.png)
-
----
-
-## Gestion de l'UI
 
 ---
 
@@ -501,6 +521,10 @@ Les redéfinir permet d'exécuter du code spécifique.
 1. `componentDidMount()` : appels asynchrones.
 1. `shouldComponentUpdate()` : renvoi d'un booléen pour annuler la mise à jour.
 1. `componentDidUpdate()` : actions après la mise à jour du rendu.
+
+---
+
+## Gestion de l'UI
 
 ---
 
@@ -634,6 +658,151 @@ export default class FlexDimensionsBasics extends Component {
 
 ---
 
+## Gestion de l'état
+
+---
+
+### Rappels sur les propriétés
+
+**Propriétés (_props_)** = caractéristiques définies au moment de la création du composant.
+
+Les propriétés sont modifiables uniquement par le composant parent.
+
+---
+
+### Rappels sur l'état
+
+**Etat (_state_)** = ensemble des données susceptibles d'être modifiées pendant l'exécution de l'application.
+
+Chaque composant React Native possède un état interne, géré avec `this.state` et `this.setState()`.
+
+Toute modification de l'état déclenche un nouveau rendu du composant.
+
+---
+
+### Problématique
+
+La gestion locale de l'état devient insuffisante lorsqu'un composant doit **accéder à** ou **modifier** l'état d'un autre composant.
+
+Nécessité de partager un état commun entre certains composants.
+
+---
+
+### Solution : _"lifting state up"_
+
+- Remonter l'état au niveau du plus proche composant parent commun.
+- Définir les actions de modification dans ce composant parent.
+- Dans les composants enfants :
+  - Remplacer l'état local par des propriétés définies par le parent.
+  - Remplacer les actions locales par des appels aux actions définies dans le parent.
+
+[Lifting State Up (React)](https://reactjs.org/docs/lifting-state-up.html)
+
+---
+
+### Application
+
+<https://github.com/ensc-mobi/TempConverter>
+
+![TempConverter demo](images/temp-converter.png)
+
+---
+
+### Utilisation de props dans les composants enfants
+
+```tsx
+interface TemperatureInputProps {
+  temperature: string;
+  scale: Scale;
+  onTemperatureChange: (text: string) => void;
+}
+
+// Component for displaying and inputting a temperature in a specific scale
+class TemperatureInput extends React.Component<TemperatureInputProps, {}> {
+  _onChangeText = (text: string) => {
+    // Call callback passed as component prop
+    this.props.onTemperatureChange(text);
+  };
+
+  render() {
+    const temperature = this.props.temperature;
+    const scale = this.props.scale;
+    const placeholder = `Enter temperature in ${scale}`;
+    return (
+      <TextInput
+        style={styles.text}
+        placeholder={placeholder}
+        onChangeText={this._onChangeText}
+        value={temperature}
+      />
+    );
+  }
+}
+```
+
+---
+
+### Remontée de l'état dans le composant parent
+
+```tsx
+class Calculator extends React.Component<{}, CalculatorState> {
+  // Common state is lifted here, the closest parent of TemperatureInput components
+  // Temperature can be set either in Celsius or in Fahrenheit
+  state = { temperature: "", scale: Scale.Celsius };
+
+  _onCelsiusChange = (temperature: string) => {
+    this.setState({ scale: Scale.Celsius, temperature });
+  };
+
+  _onFahrenheitChange = (temperature: string) => {
+    this.setState({ scale: Scale.Fahrenheit, temperature });
+  };
+  // ...
+```
+
+---
+
+### Appel aux actions définies dans le parent
+
+```tsx
+  // ...
+  render() {
+    const scale = this.state.scale;
+    const temperature = this.state.temperature;
+    const tempCelsius =
+      scale === Scale.Fahrenheit
+        ? tryConvert(temperature, toCelsius)
+        : temperature;
+    const tempFahrenheit =
+      scale === Scale.Celsius
+        ? tryConvert(temperature, toFahrenheit)
+        : temperature;
+
+    return (
+      <View>
+        <TemperatureInput
+          scale={Scale.Celsius}
+          temperature={tempCelsius}
+          onTemperatureChange={this._onCelsiusChange}
+        />
+        <TemperatureInput
+          scale={Scale.Fahrenheit}
+          temperature={tempFahrenheit}
+          onTemperatureChange={this._onFahrenheitChange}
+        />
+        <BoilingResult tempCelsius={parseFloat(tempCelsius)} />
+      </View>
+    );
+  }
+  }
+```
+
+---
+
+## Navigation
+
+---
+
 ### Gestion de la navigation avec React Navigation
 
 - Composant issu de la communauté des développeurs React Native.
@@ -649,10 +818,10 @@ Utiliser `expo install` au lieu de `npm install` assure l'installation de versio
 
 ```bash
 # Core components and dependencies
-expo install @react-navigation/native react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+expo install @react-navigation/native react-native-screens react-native-safe-area-context
 
 # StackNavigator dependencies
-expo install @react-navigation/stack
+expo install @react-navigation/native-stack
 
 # BottomTabNavigator dependencies
 expo install @react-navigation/bottom-tabs
@@ -706,7 +875,7 @@ this.props.navigation.goBack();
 ```ts
 // Côté vue appelante
 this.props.navigation.navigate("RouteName", {
-  /* Objet dont les propriétés constituent les arguments */
+  /* Objet dont les propriétés constituent les paramètres passés à la nouvelle vue */
   param1: "value1",
   // ...
 });
@@ -836,398 +1005,6 @@ function TabScreen() {
 
 ---
 
-## Gestion de l'état
-
----
-
-### Rappels sur les propriétés
-
-**Propriétés (_props_)** = caractéristiques définies au moment de la création du composant.
-
-Les propriétés sont modifiables uniquement par le composant parent.
-
----
-
-### Rappels sur l'état
-
-**Etat (_state_)** = ensemble des données susceptibles d'être modifiées pendant l'exécution de l'application.
-
-Chaque composant React Native possède un état interne, géré avec `this.state` et `this.setState()`.
-
-Toute modification de l'état déclenche un nouveau rendu du composant.
-
----
-
-### Problématique
-
-La gestion locale de l'état devient insuffisante lorsqu'un composant doit **accéder à** ou **modifier** l'état d'un autre composant.
-
-Nécessité de partager un état commun entre certains composants.
-
----
-
-### Solution : _"lifting state up"_
-
-- Remonter l'état au niveau du plus proche composant parent commun.
-- Définir les actions de modification dans ce composant parent.
-- Dans les composants enfants :
-  - Remplacer l'état local par des propriétés définies par le parent.
-  - Remplacer les actions locales par des appels aux actions définies dans le parent.
-
-[Lifting State Up (React)](https://reactjs.org/docs/lifting-state-up.html)
-
----
-
-### Application
-
-<https://github.com/ensc-mobi/TempConverter>
-
-![TempConverter demo](images/temp-converter.png)
-
----
-
-### Utilisation de props dans les composants enfants
-
-```jsx
-class TemperatureInput extends React.Component {
-  _onChangeText = (text) => {
-    // Callback passed as component prop is called
-    this.props.onTemperatureChange(text);
-  };
-
-  render() {
-    const temperature = this.props.temperature;
-    const scale = this.props.scale;
-    const placeholder = `Enter temperature in ${scaleNames[scale]}`;
-    return (
-      <TextInput
-        style={styles.text}
-        placeholder={placeholder}
-        value={temperature}
-        onChangeText={this._onChangeText}
-      />
-    );
-  }
-}
-```
-
----
-
-### Remontée de l'état dans le composant parent
-
-```jsx
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    // Common state is lifted in closest parent of TemperatureInput components
-    // Temperature can be set either in Celsius or in Fahrenheit
-    this.state = { temperature: "", scale: "c" };
-  }
-
-  _onCelsiusChange = temperature => {
-    this.setState({ scale: "c", temperature });
-  };
-
-  _onFahrenheitChange = temperature => {
-    this.setState({ scale: "f", temperature });
-  };
-  // ...
-```
-
----
-
-### Appel aux actions définies dans le parent
-
-```jsx
-  // ...
-  render() {
-    const scale = this.state.scale;
-    const temperature = this.state.temperature;
-    const tempCelsius =
-      scale === "f" ? tryConvert(temperature, toCelsius) : temperature;
-    const tempFahrenheit =
-      scale === "c" ? tryConvert(temperature, toFahrenheit) : temperature;
-
-    return (
-      <View>
-        <TemperatureInput
-          scale="c"
-          temperature={tempCelsius}
-          onTemperatureChange={this._onCelsiusChange}
-        />
-        <TemperatureInput
-          scale="f"
-          temperature={tempFahrenheit}
-          onTemperatureChange={this._onFahrenheitChange}
-        />
-        <BoilingResult tempCelsius={parseFloat(tempCelsius)} />
-      </View>
-    );
-  }
-```
-
----
-
-### Centralisation de l'état
-
-Les composants parents peuvent finir par rassembler trop de choses :
-
-- Etat commun
-- Actions de modification
-- Hiérarchie des composants enfants
-
-Non-respect du principe de **séparation des responsabilités**.
-
----
-
-### Solution
-
-- Centraliser l'état et les actions de modifications dans des objets dédiés, souvent appelés **stores**.
-- Donner accès à ces objets aux composants via des propriétés.
-- Prévoir un mécanisme d'**abonnement** des composants aux mutations de l'état effectués uniquement dans les stores.
-
----
-
-### Application
-
-<https://github.com/ensc-mobi/TodoNative>
-
-![TodoNative demo](images/todonative.png)
-
----
-
-### Définition d'un store
-
-```js
-export default class TodoStore extends Store {
-  constructor() {
-    // Call to parent constructor is needed to init observation
-    super();
-
-    // The TODO task is used as key (unique identifier)
-    // Therefore, each TODO must have a different task
-    this.todos = [];
-  }
-
-  addTodo = (task) => {
-    // Add new TODO at beginning of array
-    this.todos = [{ task, completed: false }, ...this.todos];
-
-    this.notifyObservers();
-  };
-
-  // ...
-
-  // Used in parent class when notifying observers
-  getState() {
-    const todos = this.todos;
-    return { todos };
-  }
-}
-```
-
----
-
-### Notification des changements d'état
-
-Basée sur le Design Pattern [Observateur](https://fr.wikipedia.org/wiki/Observateur_%28patron_de_conception%29).
-
-```js
-export default class Store {
-  constructor() {
-    // Define an empty observer list
-    this.observers = [];
-  }
-
-  // Add new observer to list
-  addObserver(observer) {
-    this.observers.push(observer);
-  }
-
-  // Notify all observers of a state change in the store
-  notifyObservers() {
-    this.observers.forEach((observer) => observer.setState(this.getState()));
-  }
-}
-```
-
----
-
-### Lien entre store et composant principal
-
-```jsx
-const App = () => {
-  const todoStore = new TodoStore();
-
-  return <MainView todoStore={todoStore} />;
-};
-
-export default App;
-```
-
----
-
-### Abonnement d'un composant
-
-```jsx
-export default class MainView extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = this.props.todoStore.getState();
-    this.props.todoStore.addObserver(this);
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Header title="TodoNative" />
-        <Input
-          placeholder="Saisissez une nouvelle tâche"
-          onSubmitEditing={this.props.todoStore.addTodo}
-        />
-        // ...
-```
-
----
-
-### Gestion de l'état avec MobX
-
-- Quand l'application devient complexe, le nombre croissant de composants complique les évolutions de l'état.
-- Les mutations de l'état peuvent déclencher un (trop) grand nombre de rendus des composants.
-
----
-
-### Solution
-
-- Utiliser une librairie dédiée à la gestion de l'état.
-- [Bon choix](https://www.robinwieruch.de/redux-mobx-confusion/) pour la plupart des projets de taille intermédiaire : [MobX](https://mobx.js.org).
-
-![MobX logo](images/mobx-logo.png)
-
-```bash
-# Add MobX to a React Native project
-expo install mobx mobx-react
-expo install --save-dev babel-preset-mobx
-```
-
----
-
-![MobX overview](images/mobx-overview.png)
-
----
-
-### Application
-
-<https://github.com/ensc-mobi/TodoNative-MobX>
-
-![TodoNative-MobX demo](images/todonative.png)
-
----
-
-### Définition d'une classe métier
-
-```js
-import { observable } from "mobx";
-
-export default class Todo {
-  @observable task;
-  @observable completed;
-
-  constructor(task = "", completed = false) {
-    this.task = task;
-    this.completed = completed;
-  }
-
-  toggle() {
-    this.completed = !this.completed;
-  }
-}
-```
-
----
-
-### Définition d'un store
-
-```js
-import { observable } from "mobx";
-import Todo from "../domain/Todo";
-
-export default class TodoStore {
-  @observable todos;
-  @observable isLoading = true;
-
-  constructor() {
-    // The TODO task is used as key (unique identifier)
-    // Therefore, each TODO must have a different task
-    this.todos = [];
-  }
-
-  addTodo(task) {
-    const todo = new Todo(task);
-    // Add new TODO at beginning of array
-    this.todos = [todo, ...this.todos];
-  }
-
-  // ...
-}
-```
-
----
-
-### Lien entre store et composant principal
-
-```jsx
-const App = () => {
-  const todoStore = new TodoStore();
-
-  return <MainView todoStore={todoStore} />;
-};
-
-export default App;
-```
-
----
-
-### Abonnement d'un composant
-
-```js
-import { observer } from "mobx-react";
-// ...
-
-@observer
-export default class MainView extends React.Component {
-  onAddTodo = task => {
-    this.props.todoStore.addTodo(task);
-  };
-  // ...
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Header title="TodoNative" />
-        <Input
-          placeholder="Saisissez une nouvelle tâche"
-          onSubmitEditing={this.onAddTodo}
-        />
-        <FlatList
-          style={styles.todoContainer}
-          data={this.props.todoStore.todos}
-          // ...
-}
-```
-
----
-
-## Pourquoi pas Redux ?
-
-![Redux all!](images/redux-all.jpeg)
-
-- Librairie créée pour adresser des problématiques à l'échelle de Facebook
-- Complexe et _overkill_ pour les projets "normaux"
-- ["You might not need Redux"](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367) (écrit par son créateur)
-
----
-
 ## Utilisation d'API web
 
 ---
@@ -1268,6 +1045,7 @@ Certaines sont librement utilisables, d'autres nécessitent une authentification
 
 - [Postman](https://www.getpostman.com/)
 - Extension [RESTClient](https://addons.mozilla.org/fr/firefox/addon/restclient/) pour Firefox
+- [Insomnia](https://insomnia.rest/)
 
 ---
 
@@ -1337,18 +1115,24 @@ fetch("https://mywebsite.com/endpoint/", {
 
 ### Consommation d'une API web
 
-```js
+```ts
+const rootEndpoint = "https://api.punkapi.com/v2";
+
+export interface Beer {
+  name: string;
+  description: string;
+}
+
 const headers = {
   "Content-Type": "application/json",
   Accept: "application/json",
 };
 
-// Retourne une recette de bière au hasard
+// Return a random beer from API
 export const getRandomBrewdog = () =>
   fetch(`${rootEndpoint}/beers/random`, { headers })
     .then((response) => response.json())
-    // Access first element of returned array
-    .then((beers) => beers[0])
+    .then((beers) => beers[0]) // Access first element of returned array
     .catch((error) => {
       console.error(error);
     });
@@ -1358,23 +1142,34 @@ export const getRandomBrewdog = () =>
 
 ### Mise à jour de l'application
 
-```jsx
-  // ...
+```tsx
+interface AppState {
+  isLoading: boolean; // Is a beer request pending?
+  name: string; // Beer name
+  description: string; // Beer description
+}
+
+export default class App extends Component<{}, AppState> {
+  // Initial state
+  state: AppState = {
+    name: "",
+    description: "",
+    isLoading: false,
+  };
+
+  // Function called when user want to search for another beer
   _getRandomBrewdogWithFeedback = () => {
+    // Begin a new request for a beer
     this.setState({ isLoading: true });
-    getRandomBrewdog().then(beer =>
+
+    getRandomBrewdog().then((beer: Beer) =>
       this.setState({
         name: beer.name,
         description: beer.description,
-        isLoading: false // la requête est terminée
+        isLoading: false, // Request is finished
       })
     );
   };
-
-  componentDidMount() {
-    this._getRandomBrewdogWithFeedback();
-  }
-
   // ...
 ```
 
@@ -1404,156 +1199,3 @@ $config = new Config([
 - `GET my-table` : renvoie la liste des enregistrements de la table `my-table`.
 - `GET my-table/id` : renvoie l'enregistrement identifié par `id`.
 - `POST my-table` : création d'un nouvel enregistrement avec les données contenues dans le corps de la requête.
-
----
-
-### Application
-
-<https://github.com/ensc-mobi/MyMoviesNative>
-
-![MyMoviesNative demo](images/mymoviesnative.png)
-
----
-
-### Classe métier film
-
-```js
-export default class Movie {
-  @observable id;
-  @observable title;
-  // ...
-  @observable image;
-
-  constructor(
-    id,
-    title,
-    // ...
-    image
-  ) {
-    this.id = id;
-    this.title = title;
-    // ...
-    this.image = image;
-  }
-}
-```
-
----
-
-### Accès au SGBDR
-
-```js
-const rootEndpoint = "http://localhost/mymovies/api.php/records";
-
-const headers = {
-  "Content-Type": "application/json",
-  Accept: "application/json",
-};
-
-export const getAllMovies = () =>
-  fetch(`${rootEndpoint}/movie/`, { headers })
-    .then((response) => response.json())
-    .then((jsonResponse) => jsonResponse.records)
-    .catch((error) => {
-      console.log(error);
-    });
-```
-
----
-
-### Récupération de la liste des films
-
-```js
-export default class MovieStore {
-  @observable movies;
-  // ...
-
-  fetchAll() {
-    this.movies = [];
-    getAllMovies().then((movies) => {
-      //console.log(movies);
-      movies.forEach((movieData) => {
-        const movie = new Movie(
-          movieData.mov_id,
-          movieData.mov_title,
-          // ...
-          movieData.mov_image
-        );
-        this.movies = [movie, ...this.movies];
-      });
-    });
-  }
-}
-```
-
----
-
-### Vue principale
-
-```jsx
-export default class HomeScreen extends React.Component {
-  render() {
-    const movieStore = new MovieStore();
-    // All React Navigation screens receive this object as prop
-    const { navigation } = this.props;
-
-    // Navigation object is passed down to children components
-    return <MainView movieStore={movieStore} navigation={navigation} />;
-  }
-}
-```
-
----
-
-### Affichage d'un film dans la liste
-
-```js
-@observer
-export default class MovieItem extends React.Component {
-  render() {
-    const { movie } = this.props;
-    const { navigation } = this.props;
-
-    return (
-      <View style={styles.container}>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate("Details", {
-              movie: movie,
-            });
-          }}
-        >
-          <Text style={styles.text}>
-            {movie.title} ({movie.year})
-          </Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-}
-```
-
----
-
-### Détails sur un film
-
-```js
-export default class DetailsScreen extends React.Component {
-  render() {
-    const { navigation } = this.props;
-    const movie = navigation.getParam("movie");
-    const imageUrl = imagesEndpoint + movie.image;
-
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>
-          {movie.title} ({movie.year})
-        </Text>
-        <Text style={styles.director}>Réalisateur(s) : {movie.director}</Text>
-        <Text style={styles.description}>{movie.shortDescription}</Text>
-        <Image style={styles.image} source={{ uri: imageUrl }}></Image>
-      </View>
-    );
-  }
-}
-```
