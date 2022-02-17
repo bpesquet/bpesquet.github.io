@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>React Native</title><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/reveal.css><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/theme/white.css></head><body><div class=reveal><div class=slides><section><h1>React Native</h1><p><a href=https://ensc.bordeaux-inp.fr>Ecole Nationale Supérieure de Cognitique</a></p><p><a href=https://www.bpesquet.fr>Baptiste Pesquet</a></p></section><section><h2 id=sommaire>Sommaire</h2><ul><li>Introduction</li><li>Gestion de l&rsquo;UI</li><li>Gestion de l&rsquo;état</li><li>Utilisation d&rsquo;API web</li></ul></section><section><h2 id=introduction>Introduction</h2></section><section><h3 id=lécosystème-mobile>L&rsquo;écosystème mobile</h3><ul><li>Absence de monopole.</li><li>Deux poids lourds : Android et iOS.</li><li>Parts de marché stables depuis plusieurs années.</li></ul></section><section><p><img src=images/smartphone_market_share_2016.jpg alt="Smartphone platform market share"></p></section><section><p><img src=images/market-share-2015_2019.png alt="Market share evolution 2015-2019"></p></section><section><p><img src=images/os-fragmentation_2018.jpg alt="Mobile OS Fragmentation"></p></section><section><section data-shortcode-section><h3 id=développement-mobile-natif>Développement mobile natif</h3><p>Création d&rsquo;applications en utilisant la technologie prévue par le concepteur de l&rsquo;OS.</p><ul><li>Android : Java</li><li>IOS : Objective-C ou Swift</li></ul><p class=fragment>Ces technologies sont <strong>incompatibles</strong>.</p></section><section><h3 id=avantages>Avantages</h3><ul><li>Accès à l&rsquo;intégralité des fonctionnalités matérielles et logicielles du terminal mobile.</li><li>Performances optimales.</li></ul></section><section><h3 id=inconvénient-majeur->Inconvénient (majeur !)</h3><p>Nécessité de créer puis de faire évoluer une application pour chaque environnement.</p></section></section><section><section data-shortcode-section><h3 id=solutions-hybrides>Solutions hybrides</h3><p>Création d&rsquo;applications mobiles compatibles avec plusieurs OS mobiles grâce à un framework dédié.</p><p>Une application hybride est une application web qui s&rsquo;exécute à l&rsquo;intérieur d&rsquo;un navigateur.</p><p>Exemples : <a href=https://cordova.apache.org>Apache Cordova</a>, <a href=https://ionicframework.com>Ionic</a></p></section><section><h3 id=avantages>Avantages</h3><ul><li>Fonctionnalités et performances proches de celles d&rsquo;une application native.</li><li>Economies de ressources pour créer l&rsquo;application.</li><li>Une seule base de code : maintenance et évolution facilitées.</li></ul></section><section><h3 id=inconvénients>Inconvénients</h3><ul><li>Impossible d&rsquo;accéder à certaines fonctionnalités matérielles ou logicielles spécifiques.</li><li><em>Look&rsquo;n&rsquo;feel</em> non natif.</li><li>Mauvaises performances dans certains scenarii.</li></ul></section></section><section><section data-shortcode-section><h3 id=développement-natif-multi-plateformes>Développement natif multi-plateformes</h3><p>Création d&rsquo;applications mobiles compatibles avec plusieurs OS mobiles grâce à un framework dédié.</p><p>Le framework encapsule les véritables composants natifs de l&rsquo;OS.</p><p>Exemples : <a href=https://facebook.github.io/react-native/>React Native</a>, <a href=https://weex.apache.org/>Weex</a>, <a href=https://www.visualstudio.com/fr/xamarin/>Xamarin</a></p></section><section><h3 id=le-meilleur-des-deux-mondes->Le meilleur des deux mondes ?</h3><p>Combine les avantages du natif (<em>look&rsquo;n&rsquo;feel</em>, performances) et de l&rsquo;hybride (une seule base de code).</p><p>Limite potentielle : le support de l&rsquo;OS dépend entièrement du framework.</p></section></section><section><h3 id=react-native>React Native</h3><p>Framework créé par Facebook, open source depuis 2015.</p><p>Déclinaison mobile du framework JavaScript <a href=https://reactjs.org/>React</a>.</p><p><img src=images/reactjs.png alt="React logo"></p></section><section><h3 id=expo>Expo</h3><p>Framework pour faciliter la création et le déploiement d&rsquo;applications React Native.</p><p><img src=images/expo_logo.png alt="Expo logo"></p><ul><li><a href=https://github.com/expo/expo-cli>Expo CLI</a> : outil en ligne de commande pour le développement local.</li><li><a href=https://expo.io>Expo client</a> : application mobile à installer sur le terminal cible pour le déploiement.</li></ul></section><section><h3 id=création-dune-application>Création d&rsquo;une application</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#080;background-color:#0f140f;font-style:italic># Install expo-cli globally</span>
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>React Native</title><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/reveal.css><link rel=stylesheet href=https://www.bpesquet.fr/reveal.js/dist/theme/white.css></head><body><div class=reveal><div class=slides><section><h1>React Native</h1><p><a href=https://ensc.bordeaux-inp.fr>Ecole Nationale Supérieure de Cognitique</a></p><p><a href=https://www.bpesquet.fr>Baptiste Pesquet</a></p></section><section><h2 id=sommaire>Sommaire</h2><ul><li>Introduction</li><li>Composants React Native</li><li>Gestion de l&rsquo;UI</li><li>Gestion de l&rsquo;état</li><li>Navigation</li><li>Utilisation d&rsquo;API web</li></ul></section><section><h2 id=introduction>Introduction</h2></section><section><h3 id=lécosystème-mobile>L&rsquo;écosystème mobile</h3><ul><li>Absence de monopole.</li><li>Deux poids lourds : Android et iOS.</li><li>Parts de marché stables depuis plusieurs années.</li></ul></section><section><p><img src=images/smartphone_market_share_2016.jpg alt="Smartphone platform market share"></p></section><section><p><img src=images/market-share-2015_2019.png alt="Market share evolution 2015-2019"></p></section><section><p><img src=images/os-fragmentation_2018.jpg alt="Mobile OS Fragmentation"></p></section><section><section data-shortcode-section><h3 id=développement-mobile-natif>Développement mobile natif</h3><p>Création d&rsquo;applications en utilisant la technologie prévue par le concepteur de l&rsquo;OS.</p><ul><li>Android : Java</li><li>IOS : Objective-C ou Swift</li></ul><p class=fragment>Ces technologies sont <strong>incompatibles</strong>.</p></section><section><h3 id=avantages>Avantages</h3><ul><li>Accès à l&rsquo;intégralité des fonctionnalités matérielles et logicielles du terminal mobile.</li><li>Performances optimales.</li></ul></section><section><h3 id=inconvénient-majeur->Inconvénient (majeur !)</h3><p>Nécessité de créer puis de faire évoluer une application pour chaque environnement.</p></section></section><section><section data-shortcode-section><h3 id=solutions-hybrides>Solutions hybrides</h3><p>Création d&rsquo;applications mobiles compatibles avec plusieurs OS mobiles grâce à un framework dédié.</p><p>Une application hybride est une application web qui s&rsquo;exécute à l&rsquo;intérieur d&rsquo;un navigateur.</p><p>Exemples : <a href=https://cordova.apache.org>Apache Cordova</a>, <a href=https://ionicframework.com>Ionic</a></p></section><section><h3 id=avantages>Avantages</h3><ul><li>Fonctionnalités et performances proches de celles d&rsquo;une application native.</li><li>Economies de ressources pour créer l&rsquo;application.</li><li>Une seule base de code : maintenance et évolution facilitées.</li></ul></section><section><h3 id=inconvénients>Inconvénients</h3><ul><li>Impossible d&rsquo;accéder à certaines fonctionnalités matérielles ou logicielles spécifiques.</li><li><em>Look&rsquo;n&rsquo;feel</em> non natif.</li><li>Mauvaises performances dans certains scenarii.</li></ul></section></section><section><section data-shortcode-section><h3 id=développement-natif-multi-plateformes>Développement natif multi-plateformes</h3><p>Création d&rsquo;applications mobiles compatibles avec plusieurs OS mobiles grâce à un framework dédié.</p><p>Le framework encapsule les véritables composants natifs de l&rsquo;OS.</p><p>Exemples : <a href=https://facebook.github.io/react-native/>React Native</a>, <a href=https://weex.apache.org/>Weex</a>, <a href=https://www.visualstudio.com/fr/xamarin/>Xamarin</a></p></section><section><h3 id=le-meilleur-des-deux-mondes->Le meilleur des deux mondes ?</h3><p>Combine les avantages du natif (<em>look&rsquo;n&rsquo;feel</em>, performances) et de l&rsquo;hybride (une seule base de code).</p><p>Limite potentielle : le support de l&rsquo;OS dépend entièrement du framework.</p></section></section><section><h3 id=react-native>React Native</h3><p>Framework créé par Facebook, open source depuis 2015.</p><p>Déclinaison mobile du framework JavaScript <a href=https://reactjs.org/>React</a>.</p><p><img src=images/reactjs.png alt="React logo"></p></section><section><h3 id=expo>Expo</h3><p>Framework pour faciliter la création et le déploiement d&rsquo;applications React Native.</p><p><a href=https://expo.dev/><img src=images/expo_logo.png alt="Expo logo"></a></p><ul><li><a href=https://github.com/expo/expo-cli>Expo CLI</a> : outil en ligne de commande pour le développement local.</li><li><a href=https://expo.io>Expo Go</a> : application mobile à installer sur le terminal cible pour le déploiement.</li></ul></section><section><h3 id=création-dune-application>Création d&rsquo;une application</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#080;background-color:#0f140f;font-style:italic># Install expo-cli globally</span>
 <span style=color:#080;background-color:#0f140f;font-style:italic># (Node.js and Git are prerequisites)</span>
 npm install -g expo-cli
 
@@ -7,7 +7,7 @@ npm install -g expo-cli
 expo init my-new-project -t expo-template-blank-typescript
 </code></pre></div><ul><li><p>Workflow <em>managé</em> : projet entièrement géré par Expo (plus simple).</p></li><li><p>Workflow <em>bare</em> : plus proche d&rsquo;un projet React Native pur.</p></li></ul></section><section><h3 id=contenu-du-répertoire-créé>Contenu du répertoire créé</h3><p><img src=images/rn-app-structure.png alt="Arborescence React Native"></p></section><section><h3 id=déploiement-de-lapplication>Déploiement de l&rsquo;application</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd my-new-project <span style=color:#080;background-color:#0f140f;font-style:italic># move into project directory</span>
 npm start <span style=color:#080;background-color:#0f140f;font-style:italic># Or &#39;expo start&#39;</span>
-</code></pre></div><p>Ensuite, scan du QR Code depuis l&rsquo;application Expo (Android) ou l&rsquo;appareil photo du smartphone (iOS).</p><p><img src=images/expo_qrcode.png alt="Expo QR Code"></p></section><section><h3 id=détails-sur-le-déploiement>Détails sur le déploiement</h3><ul><li>L&rsquo;application est hébergée sur un serveur web local.</li><li>Expo s&rsquo;y connecte pour la récupérer puis la lancer.</li><li>Une interface web de gestion s&rsquo;affiche.</li></ul><p><img src=images/expo_management.png alt="Expo Management"></p></section><section><h3 id=rechargement-dynamique>Rechargement dynamique</h3><p><a href=https://openclassrooms.com/fr/courses/4902061-developpez-une-application-mobile-react-native/><img src=images/expo_reload.jpeg alt="Live Reload"></a></p></section><section><h3 id=connexion-au-serveur-expo>Connexion au serveur Expo</h3><p>L&rsquo;application mobile Expo client doit accéder au serveur web de la machine de développement pour pouvoir lancer l&rsquo;application RN.</p><p>Il existe plusieurs modes de connexion :</p><ul><li><strong>LAN</strong> : utilisation du réseau Wifi local. Peut poser problème dans certains environnements Wifi sécurisés.</li><li><strong>Tunnel</strong> : création d&rsquo;un tunnel avec <a href=https://ngrok.com/>ngrok</a> pour accéder au serveur local via le web. Nécessite que le terminal mobile dispose d&rsquo;un accès internet.</li></ul></section><section><h3 id=utilisation-dun-émulateur>Utilisation d&rsquo;un émulateur</h3><ul><li>Alternative à l&rsquo;emploi d&rsquo;un terminal mobile pour tester l&rsquo;application RN.</li><li>Nécessite l&rsquo;installation de <a href=https://developer.apple.com/xcode/>XCode (iOS)</a> ou <a href=https://developer.android.com/studio>Android Studio</a> sur le machine de développement.</li><li>Documentation : <a href=https://docs.expo.io/workflow/ios-simulator/>iOS</a> | <a href=https://docs.expo.io/workflow/android-studio-emulator/>Android</a>.</li></ul><p><img src=images/expo-emulator.png alt="Expo emulator"></p></section><section><h3 id=le-fichier-de-configuration-appjson>Le fichier de configuration app.json</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+</code></pre></div><p>Ensuite, scan du QR Code depuis l&rsquo;application Expo Go (Android) ou l&rsquo;appareil photo du smartphone (iOS).</p><p><img src=images/expo_qrcode.png alt="Expo QR Code"></p></section><section><h3 id=détails-sur-le-déploiement>Détails sur le déploiement</h3><ul><li>L&rsquo;application est hébergée sur un serveur web local.</li><li>Expo s&rsquo;y connecte pour la récupérer puis la lancer.</li><li>Une interface web de gestion s&rsquo;affiche.</li></ul><p><img src=images/expo_management.png alt="Expo Management"></p></section><section><h3 id=rechargement-dynamique>Rechargement dynamique</h3><p><a href=https://openclassrooms.com/fr/courses/4902061-developpez-une-application-mobile-react-native/><img src=images/expo_reload.jpeg alt="Live Reload"></a></p></section><section><h3 id=connexion-au-serveur-expo>Connexion au serveur Expo</h3><p>L&rsquo;application mobile Expo client doit accéder au serveur web de la machine de développement pour pouvoir lancer l&rsquo;application RN.</p><p>Il existe plusieurs modes de connexion :</p><ul><li><strong>LAN</strong> : utilisation du réseau Wifi local. Peut poser problème dans certains environnements Wifi sécurisés.</li><li><strong>Tunnel</strong> : création d&rsquo;un tunnel avec <a href=https://ngrok.com/>ngrok</a> pour accéder au serveur local via le web. Nécessite que le terminal mobile dispose d&rsquo;un accès internet.</li></ul></section><section><h3 id=utilisation-dun-émulateur>Utilisation d&rsquo;un émulateur</h3><ul><li>Alternative à l&rsquo;emploi d&rsquo;un terminal mobile pour tester l&rsquo;application RN.</li><li>Nécessite l&rsquo;installation de <a href=https://developer.apple.com/xcode/>XCode (iOS)</a> ou <a href=https://developer.android.com/studio>Android Studio</a> sur le machine de développement.</li><li>Documentation : <a href=https://docs.expo.io/workflow/ios-simulator/>iOS</a> | <a href=https://docs.expo.io/workflow/android-studio-emulator/>Android</a>.</li></ul><p><img src=images/expo-emulator.png alt="Expo emulator"></p></section><section><h3 id=le-fichier-de-configuration-appjson>Le fichier de configuration app.json</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
   <span style=color:#fb660a;font-weight:700>&#34;expo&#34;</span>: {
     <span style=color:#fb660a;font-weight:700>&#34;name&#34;</span>: <span style=color:#0086d2>&#34;My New Project&#34;</span>,
     <span style=color:#fb660a;font-weight:700>&#34;slug&#34;</span>: <span style=color:#0086d2>&#34;my-new-project&#34;</span>,
@@ -94,7 +94,7 @@ npm start <span style=color:#080;background-color:#0f140f;font-style:italic># Or
     &lt;<span style=color:#fb660a;font-weight:700>Text</span>&gt;<span style=color:#0086f7;font-weight:700>42</span>&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;
   &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
 );
-</code></pre></div></section><section><h3 id=la-notion-de-composant>La notion de composant</h3><ul><li><p>Les <strong>composants</strong> sont les blocs de base d&rsquo;une application React (Native).</p></li><li><p>Ils permettent de créer une UI sous forme <strong>déclarative</strong> par assemblage de composants.</p></li><li><p>Ils doivent comporter une fonction qui définit leur rendu visuel.</p></li></ul></section><section><h3 id=composants-fonctions>Composants fonctions</h3><ul><li>La valeur de retour de la fonction définit le rendu.</li><li>Syntaxe la plus concise, pratique pour les composants simples.</li></ul><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#fb660a;font-weight:700>import</span> React <span style=color:#fb660a;font-weight:700>from</span> <span style=color:#0086d2>&#34;react&#34;</span>;
+</code></pre></div></section><section><h2 id=composants-react-native>Composants React Native</h2></section><section><h3 id=la-notion-de-composant>La notion de composant</h3><ul><li><p>Les <strong>composants</strong> sont les blocs de base d&rsquo;une application React (Native).</p></li><li><p>Ils permettent de créer une UI sous forme <strong>déclarative</strong> par assemblage de composants.</p></li><li><p>Ils doivent comporter une fonction qui définit leur rendu visuel.</p></li></ul></section><section><h3 id=composants-fonctions>Composants fonctions</h3><ul><li>La valeur de retour de la fonction définit le rendu.</li><li>Syntaxe la plus concise, pratique pour les composants simples.</li></ul><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#fb660a;font-weight:700>import</span> React <span style=color:#fb660a;font-weight:700>from</span> <span style=color:#0086d2>&#34;react&#34;</span>;
 <span style=color:#fb660a;font-weight:700>import</span> { Text } <span style=color:#fb660a;font-weight:700>from</span> <span style=color:#0086d2>&#34;react-native&#34;</span>;
 
 <span style=color:#fb660a;font-weight:700>const</span> Cat = () =&gt; {
@@ -117,8 +117,15 @@ npm start <span style=color:#080;background-color:#0f140f;font-style:italic># Or
 </code></pre></div></section><section><h3 id=propriétés-_props_-dun-composant>Propriétés (<em>props</em>) d&rsquo;un composant</h3><p>Caractéristiques définies au moment de la création, modifiables uniquement par le composant parent (<a href=https://snack.expo.io/@bpesquet/greeting>démo</a>).</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#fb660a;font-weight:700>import</span> React, { Component } <span style=color:#fb660a;font-weight:700>from</span> <span style=color:#0086d2>&#34;react&#34;</span>;
 <span style=color:#fb660a;font-weight:700>import</span> { Text, View } <span style=color:#fb660a;font-weight:700>from</span> <span style=color:#0086d2>&#34;react-native&#34;</span>;
 
-<span style=color:#fb660a;font-weight:700>class</span> Greeting <span style=color:#fb660a;font-weight:700>extends</span> Component {
-  <span style=color:#080;background-color:#0f140f;font-style:italic>// Component has a name property which is of type string
+<span style=color:#080;background-color:#0f140f;font-style:italic>// Function component
+</span><span style=color:#080;background-color:#0f140f;font-style:italic>// Component has a name property, which is of type string
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>const</span> GreetingFun = (props: { name: <span style=color:#cdcaa9;font-weight:700>string</span> }) =&gt; {
+  <span style=color:#fb660a;font-weight:700>return</span> &lt;<span style=color:#fb660a;font-weight:700>Text</span>&gt;Hello {props.name}!&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;;
+};
+
+<span style=color:#080;background-color:#0f140f;font-style:italic>// Class component
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>class</span> GreetingClass <span style=color:#fb660a;font-weight:700>extends</span> Component {
+  <span style=color:#080;background-color:#0f140f;font-style:italic>// Component has a name property, which is of type string
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  <span style=color:#fb660a;font-weight:700>constructor</span>(<span style=color:#fb660a;font-weight:700>public</span> props: { name: <span style=color:#cdcaa9;font-weight:700>string</span> }) {
     <span style=color:#fb660a;font-weight:700>super</span>(props);
   }
@@ -131,42 +138,46 @@ npm start <span style=color:#080;background-color:#0f140f;font-style:italic># Or
   render() {
     <span style=color:#fb660a;font-weight:700>return</span> (
       &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={{ alignItems: <span style=color:#0086d2>&#34;center&#34;</span> }}&gt;
-        &lt;<span style=color:#fb660a;font-weight:700>Greeting</span> <span style=color:#ff0086;font-weight:700>name</span>=<span style=color:#0086d2>&#34;John&#34;</span> /&gt;
-        &lt;<span style=color:#fb660a;font-weight:700>Greeting</span> <span style=color:#ff0086;font-weight:700>name</span>=<span style=color:#0086d2>&#34;Paul&#34;</span> /&gt;
-        &lt;<span style=color:#fb660a;font-weight:700>Greeting</span> <span style=color:#ff0086;font-weight:700>name</span>=<span style=color:#0086d2>&#34;Jones&#34;</span> /&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>GreetingFun</span> <span style=color:#ff0086;font-weight:700>name</span>=<span style=color:#0086d2>&#34;John&#34;</span> /&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>GreetingClass</span> <span style=color:#ff0086;font-weight:700>name</span>=<span style=color:#0086d2>&#34;Paul&#34;</span> /&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>GreetingFun</span> <span style=color:#ff0086;font-weight:700>name</span>=<span style=color:#0086d2>&#34;Jones&#34;</span> /&gt;
       &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
     );
   }
 }
-</code></pre></div></section><section><h3 id=etat-_state_-dun-composant>Etat (<em>state</em>) d&rsquo;un composant</h3><p>Etat interne (données) d&rsquo;un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via <code>setState()</code> (<a href=https://snack.expo.io/@bpesquet/counter>démo</a>).</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#fb660a;font-weight:700>import</span> React, { Component } <span style=color:#fb660a;font-weight:700>from</span> <span style=color:#0086d2>&#34;react&#34;</span>;
-<span style=color:#fb660a;font-weight:700>import</span> { StyleSheet, Text, View } <span style=color:#fb660a;font-weight:700>from</span> <span style=color:#0086d2>&#34;react-native&#34;</span>;
+</code></pre></div></section><section><h3 id=etat-_state_-dun-composant>Etat (<em>state</em>) d&rsquo;un composant</h3><p>Etat interne (données) d&rsquo;un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via <code>setState()</code> (<a href=https://snack.expo.dev/@bpesquet/state-2>démo</a>).</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#fb660a;font-weight:700>import</span> React, { Component } <span style=color:#fb660a;font-weight:700>from</span> <span style=color:#0086d2>&#34;react&#34;</span>;
+<span style=color:#fb660a;font-weight:700>import</span> { StyleSheet, TouchableOpacity, Text, View } <span style=color:#fb660a;font-weight:700>from</span> <span style=color:#0086d2>&#34;react-native&#34;</span>;
 
-<span style=color:#fb660a;font-weight:700>interface</span> CoounterState {
+<span style=color:#080;background-color:#0f140f;font-style:italic>// State shape: a &#34;count&#34; property of type number
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>interface</span> AppState {
   count: <span style=color:#cdcaa9;font-weight:700>number</span>;
 }
 
-<span style=color:#fb660a;font-weight:700>class</span> Counter <span style=color:#fb660a;font-weight:700>extends</span> Component&lt;{}, CoounterState&gt; {
-  <span style=color:#fb660a;font-weight:700>constructor</span>(<span style=color:#fb660a;font-weight:700>public</span> props: { color: <span style=color:#cdcaa9;font-weight:700>string</span>; size: <span style=color:#cdcaa9;font-weight:700>number</span> }) {
-    <span style=color:#fb660a;font-weight:700>super</span>(props);
-    <span style=color:#fb660a;font-weight:700>this</span>.state = { count: <span style=color:#cdcaa9;font-weight:700>0</span> };
-    setInterval(() =&gt; {
-      <span style=color:#fb660a;font-weight:700>this</span>.setState({ count: <span style=color:#cdcaa9;font-weight:700>this.state.count</span> + <span style=color:#0086f7;font-weight:700>1</span> });
-    }, <span style=color:#0086f7;font-weight:700>1000</span>);
-  }
+<span style=color:#080;background-color:#0f140f;font-style:italic>// React.Component is a generic type: Component&lt;PropType, StateType&gt;
+</span><span style=color:#080;background-color:#0f140f;font-style:italic>// We can provide it with optionale prop and state shapes
+</span><span style=color:#080;background-color:#0f140f;font-style:italic>// {} means an empty shape (no props or state)
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>class</span> App <span style=color:#fb660a;font-weight:700>extends</span> Component&lt;{}, AppState&gt; {
+  <span style=color:#080;background-color:#0f140f;font-style:italic>// Init state
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  state: <span style=color:#cdcaa9;font-weight:700>AppState</span> = {
+    count: <span style=color:#cdcaa9;font-weight:700>0</span>,
+  };
 
-  render() {
-    <span style=color:#fb660a;font-weight:700>const</span> { count } = <span style=color:#fb660a;font-weight:700>this</span>.state;
-    <span style=color:#fb660a;font-weight:700>const</span> { color, size } = <span style=color:#fb660a;font-weight:700>this</span>.props;
+  <span style=color:#080;background-color:#0f140f;font-style:italic>// Function that updates state, triggering component re-rendering
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  onPress = () =&gt; {
+    <span style=color:#fb660a;font-weight:700>this</span>.setState({
+      count: <span style=color:#cdcaa9;font-weight:700>this.state.count</span> + <span style=color:#0086f7;font-weight:700>1</span>,
+    });
+  };
 
-    <span style=color:#fb660a;font-weight:700>return</span> &lt;<span style=color:#fb660a;font-weight:700>Text</span> <span style=color:#ff0086;font-weight:700>style</span>={{ color, fontSize: <span style=color:#cdcaa9;font-weight:700>size</span> }}&gt;{count}&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;;
-  }
-}
-
-<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> CounterApp <span style=color:#fb660a;font-weight:700>extends</span> Component {
   render() {
     <span style=color:#fb660a;font-weight:700>return</span> (
       &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={styles.container}&gt;
-        &lt;<span style=color:#fb660a;font-weight:700>Counter</span> <span style=color:#ff0086;font-weight:700>color</span>=<span style=color:#0086d2>&#34;red&#34;</span> <span style=color:#ff0086;font-weight:700>size</span>={<span style=color:#0086f7;font-weight:700>50</span>} /&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>TouchableOpacity</span> <span style=color:#ff0086;font-weight:700>style</span>={styles.button} <span style=color:#ff0086;font-weight:700>onPress</span>={<span style=color:#fb660a;font-weight:700>this</span>.onPress}&gt;
+          &lt;<span style=color:#fb660a;font-weight:700>Text</span>&gt;Click me&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;
+        &lt;/<span style=color:#fb660a;font-weight:700>TouchableOpacity</span>&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>View</span>&gt;
+          &lt;<span style=color:#fb660a;font-weight:700>Text</span>&gt;You clicked {<span style=color:#fb660a;font-weight:700>this</span>.state.count} times&lt;/<span style=color:#fb660a;font-weight:700>Text</span>&gt;
+        &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
       &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
     );
   }
@@ -175,12 +186,19 @@ npm start <span style=color:#080;background-color:#0f140f;font-style:italic># Or
 <span style=color:#fb660a;font-weight:700>const</span> styles = StyleSheet.create({
   container: {
     flex: <span style=color:#cdcaa9;font-weight:700>1</span>,
-    backgroundColor: <span style=color:#0086d2>&#34;#fff&#34;</span>,
-    alignItems: <span style=color:#0086d2>&#34;center&#34;</span>,
     justifyContent: <span style=color:#0086d2>&#34;center&#34;</span>,
+    alignItems: <span style=color:#0086d2>&#34;center&#34;</span>,
+  },
+  button: {
+    alignItems: <span style=color:#0086d2>&#34;center&#34;</span>,
+    backgroundColor: <span style=color:#0086d2>&#34;#DDDDDD&#34;</span>,
+    padding: <span style=color:#cdcaa9;font-weight:700>10</span>,
+    marginBottom: <span style=color:#cdcaa9;font-weight:700>10</span>,
   },
 });
-</code></pre></div></section><section><h3 id=composants-de-base>Composants de base</h3><p><img src=images/basic_components.png alt="React Native core components"></p></section><section><h3 id=composants-dinterface-utilisateur>Composants d&rsquo;interface utilisateur</h3><p><img src=images/ui_components.png alt="React native UI components"></p></section><section><h2 id=gestion-de-lui>Gestion de l&rsquo;UI</h2></section><section><h3 id=cycle-de-vie-dun-composant>Cycle de vie d&rsquo;un composant</h3><p>Les composants RN suivent un cycle de vie bien défini composé d&rsquo;étapes : <strong>montage</strong>, <strong>rendu</strong>, <strong>mise à jour</strong>, <strong>démontage</strong> et <strong>suppression</strong>.</p><p><a href=http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/><img src=images/react-lifecycle.png alt="React lifecycle"></a></p></section><section><h3 id=méthodes-liées-au-cycle-de-vie>Méthodes liées au cycle de vie</h3><p>Les redéfinir permet d&rsquo;exécuter du code spécifique.</p><ol><li><code>constructor(props)</code> : initialisation des propriétés et de l&rsquo;état.</li><li><code>render()</code> : renvoi d&rsquo;un élément React Native.</li><li><code>componentDidMount()</code> : appels asynchrones.</li><li><code>shouldComponentUpdate()</code> : renvoi d&rsquo;un booléen pour annuler la mise à jour.</li><li><code>componentDidUpdate()</code> : actions après la mise à jour du rendu.</li></ol></section><section><h3 id=gestion-du-style>Gestion du style</h3><p>Propriété <code>style</code> pour les composants de base.</p><p>Semblable à CSS avec nommage <em>camelCase</em>.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>import</span> React, { Component } from <span style=color:#0086d2>&#34;react&#34;</span>;
+
+<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> App;
+</code></pre></div></section><section><h3 id=composants-de-base>Composants de base</h3><p><img src=images/basic_components.png alt="React Native core components"></p></section><section><h3 id=composants-dinterface-utilisateur>Composants d&rsquo;interface utilisateur</h3><p><img src=images/ui_components.png alt="React native UI components"></p></section><section><h3 id=cycle-de-vie-dun-composant>Cycle de vie d&rsquo;un composant</h3><p>Les composants RN suivent un cycle de vie bien défini composé d&rsquo;étapes : <strong>montage</strong>, <strong>rendu</strong>, <strong>mise à jour</strong>, <strong>démontage</strong> et <strong>suppression</strong>.</p><p><a href=http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/><img src=images/react-lifecycle.png alt="React lifecycle"></a></p></section><section><h3 id=méthodes-liées-au-cycle-de-vie>Méthodes liées au cycle de vie</h3><p>Les redéfinir permet d&rsquo;exécuter du code spécifique.</p><ol><li><code>constructor(props)</code> : initialisation des propriétés et de l&rsquo;état.</li><li><code>render()</code> : renvoi d&rsquo;un élément React Native.</li><li><code>componentDidMount()</code> : appels asynchrones.</li><li><code>shouldComponentUpdate()</code> : renvoi d&rsquo;un booléen pour annuler la mise à jour.</li><li><code>componentDidUpdate()</code> : actions après la mise à jour du rendu.</li></ol></section><section><h2 id=gestion-de-lui>Gestion de l&rsquo;UI</h2></section><section><h3 id=gestion-du-style>Gestion du style</h3><p>Propriété <code>style</code> pour les composants de base.</p><p>Semblable à CSS avec nommage <em>camelCase</em>.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>import</span> React, { Component } from <span style=color:#0086d2>&#34;react&#34;</span>;
 <span style=color:#fb660a;font-weight:700>import</span> { StyleSheet, Text, View } from <span style=color:#0086d2>&#34;react-native&#34;</span>;
 
 <span style=color:#fb660a;font-weight:700>const</span> styles = StyleSheet.create({
@@ -241,11 +259,81 @@ npm start <span style=color:#080;background-color:#0f140f;font-style:italic># Or
     );
   }
 }
-</code></pre></div></section><section><h3 id=flexbox>Flexbox</h3><ul><li>Mode de mise en page pour les éléments situés à l&rsquo;intérieur d&rsquo;un conteneur.</li><li>Objectif : répartir au mieux l&rsquo;espace disponible.</li></ul><p><img src=images/flexbox_terminology.png alt="Flexbox terminology"></p></section><section><h3 id=flexdirection--flux-des-éléments><code>flexDirection</code> : flux des éléments</h3><p><code>column</code> (par défaut), <code>row</code>, <code>column-reverse</code>, <code>row-reverse</code>.</p><p><a href=https://css-tricks.com/snippets/css/a-guide-to-flexbox/><img src=images/flexbox_flex_direction.png alt="Flex direction"></a></p></section><section><h3 id=justifycontent--axe-principal><code>justifyContent</code> : axe principal</h3><p><a href=https://css-tricks.com/snippets/css/a-guide-to-flexbox/><img src=images/flexbox_justify_content.png alt="Flexbox: justify content"></a></p></section><section><h3 id=alignitems--axe-secondaire><code>alignItems</code> : axe secondaire</h3><p><a href=https://css-tricks.com/snippets/css/a-guide-to-flexbox/><img src=images/flexbox_align_items.png alt="Flexbox: align Items"></a></p></section><section><h3 id=gestion-de-la-navigation-avec-react-navigation>Gestion de la navigation avec React Navigation</h3><ul><li>Composant issu de la communauté des développeurs React Native.</li><li>Devenu le standard pour les applications multi-vues.</li></ul><p><a href=https://reactnavigation.org><img src=images/react_navigation_logo.png alt="React Navigation logo"></a></p></section><section><h3 id=installation-de-react-navigation>Installation de react-navigation</h3><p>Utiliser <code>expo install</code> au lieu de <code>npm install</code> assure l&rsquo;installation de versions compatibles avec celle d&rsquo;Expo.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#080;background-color:#0f140f;font-style:italic># Core components and dependencies</span>
-expo install @react-navigation/native react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+</code></pre></div></section><section><h3 id=flexbox>Flexbox</h3><ul><li>Mode de mise en page pour les éléments situés à l&rsquo;intérieur d&rsquo;un conteneur.</li><li>Objectif : répartir au mieux l&rsquo;espace disponible.</li></ul><p><img src=images/flexbox_terminology.png alt="Flexbox terminology"></p></section><section><h3 id=flexdirection--flux-des-éléments><code>flexDirection</code> : flux des éléments</h3><p><code>column</code> (par défaut), <code>row</code>, <code>column-reverse</code>, <code>row-reverse</code>.</p><p><a href=https://css-tricks.com/snippets/css/a-guide-to-flexbox/><img src=images/flexbox_flex_direction.png alt="Flex direction"></a></p></section><section><h3 id=justifycontent--axe-principal><code>justifyContent</code> : axe principal</h3><p><a href=https://css-tricks.com/snippets/css/a-guide-to-flexbox/><img src=images/flexbox_justify_content.png alt="Flexbox: justify content"></a></p></section><section><h3 id=alignitems--axe-secondaire><code>alignItems</code> : axe secondaire</h3><p><a href=https://css-tricks.com/snippets/css/a-guide-to-flexbox/><img src=images/flexbox_align_items.png alt="Flexbox: align Items"></a></p></section><section><h2 id=gestion-de-létat>Gestion de l&rsquo;état</h2></section><section><h3 id=rappels-sur-les-propriétés>Rappels sur les propriétés</h3><p><strong>Propriétés (<em>props</em>)</strong> = caractéristiques définies au moment de la création du composant.</p><p>Les propriétés sont modifiables uniquement par le composant parent.</p></section><section><h3 id=rappels-sur-létat>Rappels sur l&rsquo;état</h3><p><strong>Etat (<em>state</em>)</strong> = ensemble des données susceptibles d&rsquo;être modifiées pendant l&rsquo;exécution de l&rsquo;application.</p><p>Chaque composant React Native possède un état interne, géré avec <code>this.state</code> et <code>this.setState()</code>.</p><p>Toute modification de l&rsquo;état déclenche un nouveau rendu du composant.</p></section><section><h3 id=problématique>Problématique</h3><p>La gestion locale de l&rsquo;état devient insuffisante lorsqu&rsquo;un composant doit <strong>accéder à</strong> ou <strong>modifier</strong> l&rsquo;état d&rsquo;un autre composant.</p><p>Nécessité de partager un état commun entre certains composants.</p></section><section><h3 id=solution--_lifting-state-up_>Solution : <em>&ldquo;lifting state up&rdquo;</em></h3><ul><li>Remonter l&rsquo;état au niveau du plus proche composant parent commun.</li><li>Définir les actions de modification dans ce composant parent.</li><li>Dans les composants enfants :<ul><li>Remplacer l&rsquo;état local par des propriétés définies par le parent.</li><li>Remplacer les actions locales par des appels aux actions définies dans le parent.</li></ul></li></ul><p><a href=https://reactjs.org/docs/lifting-state-up.html>Lifting State Up (React)</a></p></section><section><h3 id=application>Application</h3><p><a href=https://github.com/ensc-mobi/TempConverter>https://github.com/ensc-mobi/TempConverter</a></p><p><img src=images/temp-converter.png alt="TempConverter demo"></p></section><section><h3 id=utilisation-de-props-dans-les-composants-enfants>Utilisation de props dans les composants enfants</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#fb660a;font-weight:700>interface</span> TemperatureInputProps {
+  temperature: <span style=color:#cdcaa9;font-weight:700>string</span>;
+  scale: <span style=color:#cdcaa9;font-weight:700>Scale</span>;
+  onTemperatureChange: (text: <span style=color:#cdcaa9;font-weight:700>string</span>) =&gt; <span style=color:#fb660a;font-weight:700>void</span>;
+}
+
+<span style=color:#080;background-color:#0f140f;font-style:italic>// Component for displaying and inputting a temperature in a specific scale
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>class</span> TemperatureInput <span style=color:#fb660a;font-weight:700>extends</span> React.Component&lt;<span style=color:#fb660a;font-weight:700>TemperatureInputProps</span>, {}&gt; {
+  _onChangeText = (text: <span style=color:#cdcaa9;font-weight:700>string</span>) =&gt; {
+    <span style=color:#080;background-color:#0f140f;font-style:italic>// Call callback passed as component prop
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>this</span>.props.onTemperatureChange(text);
+  };
+
+  render() {
+    <span style=color:#fb660a;font-weight:700>const</span> temperature = <span style=color:#fb660a;font-weight:700>this</span>.props.temperature;
+    <span style=color:#fb660a;font-weight:700>const</span> scale = <span style=color:#fb660a;font-weight:700>this</span>.props.scale;
+    <span style=color:#fb660a;font-weight:700>const</span> placeholder = <span style=color:#0086d2>`Enter temperature in </span><span style=color:#0086d2>${</span>scale<span style=color:#0086d2>}</span><span style=color:#0086d2>`</span>;
+    <span style=color:#fb660a;font-weight:700>return</span> (
+      &lt;<span style=color:#fb660a;font-weight:700>TextInput</span>
+        <span style=color:#ff0086;font-weight:700>style</span>={styles.text}
+        <span style=color:#ff0086;font-weight:700>placeholder</span>={placeholder}
+        <span style=color:#ff0086;font-weight:700>onChangeText</span>={<span style=color:#fb660a;font-weight:700>this</span>._onChangeText}
+        <span style=color:#ff0086;font-weight:700>value</span>={temperature}
+      /&gt;
+    );
+  }
+}
+</code></pre></div></section><section><h3 id=remontée-de-létat-dans-le-composant-parent>Remontée de l&rsquo;état dans le composant parent</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#fb660a;font-weight:700>class</span> Calculator <span style=color:#fb660a;font-weight:700>extends</span> React.Component&lt;{}, CalculatorState&gt; {
+  <span style=color:#080;background-color:#0f140f;font-style:italic>// Common state is lifted here, the closest parent of TemperatureInput components
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// Temperature can be set either in Celsius or in Fahrenheit
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  state = { temperature: <span style=color:#0086d2>&#34;&#34;</span>, scale: <span style=color:#cdcaa9;font-weight:700>Scale.Celsius</span> };
+
+  _onCelsiusChange = (temperature: <span style=color:#cdcaa9;font-weight:700>string</span>) =&gt; {
+    <span style=color:#fb660a;font-weight:700>this</span>.setState({ scale: <span style=color:#cdcaa9;font-weight:700>Scale.Celsius</span>, temperature });
+  };
+
+  _onFahrenheitChange = (temperature: <span style=color:#cdcaa9;font-weight:700>string</span>) =&gt; {
+    <span style=color:#fb660a;font-weight:700>this</span>.setState({ scale: <span style=color:#cdcaa9;font-weight:700>Scale.Fahrenheit</span>, temperature });
+  };
+  <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
+</span></code></pre></div></section><section><h3 id=appel-aux-actions-définies-dans-le-parent>Appel aux actions définies dans le parent</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx>  <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  render() {
+    <span style=color:#fb660a;font-weight:700>const</span> scale = <span style=color:#fb660a;font-weight:700>this</span>.state.scale;
+    <span style=color:#fb660a;font-weight:700>const</span> temperature = <span style=color:#fb660a;font-weight:700>this</span>.state.temperature;
+    <span style=color:#fb660a;font-weight:700>const</span> tempCelsius =
+      scale === Scale.Fahrenheit
+        ? tryConvert(temperature, toCelsius)
+        : temperature;
+    <span style=color:#fb660a;font-weight:700>const</span> tempFahrenheit =
+      scale === Scale.Celsius
+        ? tryConvert(temperature, toFahrenheit)
+        : temperature;
+
+    <span style=color:#fb660a;font-weight:700>return</span> (
+      &lt;<span style=color:#fb660a;font-weight:700>View</span>&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>TemperatureInput</span>
+          <span style=color:#ff0086;font-weight:700>scale</span>={Scale.Celsius}
+          <span style=color:#ff0086;font-weight:700>temperature</span>={tempCelsius}
+          <span style=color:#ff0086;font-weight:700>onTemperatureChange</span>={<span style=color:#fb660a;font-weight:700>this</span>._onCelsiusChange}
+        /&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>TemperatureInput</span>
+          <span style=color:#ff0086;font-weight:700>scale</span>={Scale.Fahrenheit}
+          <span style=color:#ff0086;font-weight:700>temperature</span>={tempFahrenheit}
+          <span style=color:#ff0086;font-weight:700>onTemperatureChange</span>={<span style=color:#fb660a;font-weight:700>this</span>._onFahrenheitChange}
+        /&gt;
+        &lt;<span style=color:#fb660a;font-weight:700>BoilingResult</span> <span style=color:#ff0086;font-weight:700>tempCelsius</span>={parseFloat(tempCelsius)} /&gt;
+      &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
+    );
+  }
+  }
+</code></pre></div></section><section><h2 id=navigation>Navigation</h2></section><section><h3 id=gestion-de-la-navigation-avec-react-navigation>Gestion de la navigation avec React Navigation</h3><ul><li>Composant issu de la communauté des développeurs React Native.</li><li>Devenu le standard pour les applications multi-vues.</li></ul><p><a href=https://reactnavigation.org><img src=images/react_navigation_logo.png alt="React Navigation logo"></a></p></section><section><h3 id=installation-de-react-navigation>Installation de react-navigation</h3><p>Utiliser <code>expo install</code> au lieu de <code>npm install</code> assure l&rsquo;installation de versions compatibles avec celle d&rsquo;Expo.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#080;background-color:#0f140f;font-style:italic># Core components and dependencies</span>
+expo install @react-navigation/native react-native-screens react-native-safe-area-context
 
 <span style=color:#080;background-color:#0f140f;font-style:italic># StackNavigator dependencies</span>
-expo install @react-navigation/stack
+expo install @react-navigation/native-stack
 
 <span style=color:#080;background-color:#0f140f;font-style:italic># BottomTabNavigator dependencies</span>
 expo install @react-navigation/bottom-tabs
@@ -273,7 +361,7 @@ expo install @react-navigation/drawer
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>this</span>.props.navigation.goBack();
 </code></pre></div></section><section><h3 id=passage-de-paramètres-entre-vues>Passage de paramètres entre vues</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#080;background-color:#0f140f;font-style:italic>// Côté vue appelante
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>this</span>.props.navigation.navigate(<span style=color:#0086d2>&#34;RouteName&#34;</span>, {
-  <span style=color:#080;background-color:#0f140f;font-style:italic>/* Objet dont les propriétés constituent les arguments */</span>
+  <span style=color:#080;background-color:#0f140f;font-style:italic>/* Objet dont les propriétés constituent les paramètres passés à la nouvelle vue */</span>
   param1: <span style=color:#0086d2>&#34;value1&#34;</span>,
   <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span>});
@@ -336,201 +424,7 @@ expo install @react-navigation/drawer
     &lt;/<span style=color:#fb660a;font-weight:700>Tab.Navigator</span>&gt;
   );
 }
-</code></pre></div></section><section><h3 id=exemple-récapitulatif-1>Exemple récapitulatif</h3><p><a href=https://github.com/ensc-mobi/TabNavigatorDemo>https://github.com/ensc-mobi/TabNavigatorDemo</a></p><p><img src=images/tab-navigator-demo.png alt="BottomTabNavigator demo"></p></section><section><h3 id=autres-possibilités-de-react-navigation>Autres possibilités de react-navigation</h3><ul><li><a href=https://reactnavigation.org/docs/drawer-based-navigation>Navigation par menu accordéon</a></li><li><a href=https://reactnavigation.org/docs/auth-flow>Gestion de l&rsquo;authentification</a></li><li>&mldr;</li></ul></section><section><h2 id=gestion-de-létat>Gestion de l&rsquo;état</h2></section><section><h3 id=rappels-sur-les-propriétés>Rappels sur les propriétés</h3><p><strong>Propriétés (<em>props</em>)</strong> = caractéristiques définies au moment de la création du composant.</p><p>Les propriétés sont modifiables uniquement par le composant parent.</p></section><section><h3 id=rappels-sur-létat>Rappels sur l&rsquo;état</h3><p><strong>Etat (<em>state</em>)</strong> = ensemble des données susceptibles d&rsquo;être modifiées pendant l&rsquo;exécution de l&rsquo;application.</p><p>Chaque composant React Native possède un état interne, géré avec <code>this.state</code> et <code>this.setState()</code>.</p><p>Toute modification de l&rsquo;état déclenche un nouveau rendu du composant.</p></section><section><h3 id=problématique>Problématique</h3><p>La gestion locale de l&rsquo;état devient insuffisante lorsqu&rsquo;un composant doit <strong>accéder à</strong> ou <strong>modifier</strong> l&rsquo;état d&rsquo;un autre composant.</p><p>Nécessité de partager un état commun entre certains composants.</p></section><section><h3 id=solution--_lifting-state-up_>Solution : <em>&ldquo;lifting state up&rdquo;</em></h3><ul><li>Remonter l&rsquo;état au niveau du plus proche composant parent commun.</li><li>Définir les actions de modification dans ce composant parent.</li><li>Dans les composants enfants :<ul><li>Remplacer l&rsquo;état local par des propriétés définies par le parent.</li><li>Remplacer les actions locales par des appels aux actions définies dans le parent.</li></ul></li></ul><p><a href=https://reactjs.org/docs/lifting-state-up.html>Lifting State Up (React)</a></p></section><section><h3 id=application>Application</h3><p><a href=https://github.com/ensc-mobi/TempConverter>https://github.com/ensc-mobi/TempConverter</a></p><p><img src=images/temp-converter.png alt="TempConverter demo"></p></section><section><h3 id=utilisation-de-props-dans-les-composants-enfants>Utilisation de props dans les composants enfants</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>class</span> TemperatureInput <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
-  _onChangeText = (text) =&gt; {
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// Callback passed as component prop is called
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>this</span>.props.onTemperatureChange(text);
-  };
-
-  render() {
-    <span style=color:#fb660a;font-weight:700>const</span> temperature = <span style=color:#fb660a;font-weight:700>this</span>.props.temperature;
-    <span style=color:#fb660a;font-weight:700>const</span> scale = <span style=color:#fb660a;font-weight:700>this</span>.props.scale;
-    <span style=color:#fb660a;font-weight:700>const</span> placeholder = <span style=color:#0086d2>`Enter temperature in </span><span style=color:#0086d2>${</span>scaleNames[scale]<span style=color:#0086d2>}</span><span style=color:#0086d2>`</span>;
-    <span style=color:#fb660a;font-weight:700>return</span> (
-      &lt;<span style=color:#fb660a;font-weight:700>TextInput</span>
-        <span style=color:#ff0086;font-weight:700>style</span>={styles.text}
-        <span style=color:#ff0086;font-weight:700>placeholder</span>={placeholder}
-        <span style=color:#ff0086;font-weight:700>value</span>={temperature}
-        <span style=color:#ff0086;font-weight:700>onChangeText</span>={<span style=color:#fb660a;font-weight:700>this</span>._onChangeText}
-      /&gt;
-    );
-  }
-}
-</code></pre></div></section><section><h3 id=remontée-de-létat-dans-le-composant-parent>Remontée de l&rsquo;état dans le composant parent</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>class</span> Calculator <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
-  constructor(props) {
-    <span style=color:#fb660a;font-weight:700>super</span>(props);
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// Common state is lifted in closest parent of TemperatureInput components
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#080;background-color:#0f140f;font-style:italic>// Temperature can be set either in Celsius or in Fahrenheit
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>this</span>.state = { temperature: <span style=color:#0086d2>&#34;&#34;</span>, scale: <span style=color:#0086d2>&#34;c&#34;</span> };
-  }
-
-  _onCelsiusChange = temperature =&gt; {
-    <span style=color:#fb660a;font-weight:700>this</span>.setState({ scale: <span style=color:#0086d2>&#34;c&#34;</span>, temperature });
-  };
-
-  _onFahrenheitChange = temperature =&gt; {
-    <span style=color:#fb660a;font-weight:700>this</span>.setState({ scale: <span style=color:#0086d2>&#34;f&#34;</span>, temperature });
-  };
-  <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span></code></pre></div></section><section><h3 id=appel-aux-actions-définies-dans-le-parent>Appel aux actions définies dans le parent</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx>  <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  render() {
-    <span style=color:#fb660a;font-weight:700>const</span> scale = <span style=color:#fb660a;font-weight:700>this</span>.state.scale;
-    <span style=color:#fb660a;font-weight:700>const</span> temperature = <span style=color:#fb660a;font-weight:700>this</span>.state.temperature;
-    <span style=color:#fb660a;font-weight:700>const</span> tempCelsius =
-      scale === <span style=color:#0086d2>&#34;f&#34;</span> ? tryConvert(temperature, toCelsius) : temperature;
-    <span style=color:#fb660a;font-weight:700>const</span> tempFahrenheit =
-      scale === <span style=color:#0086d2>&#34;c&#34;</span> ? tryConvert(temperature, toFahrenheit) : temperature;
-
-    <span style=color:#fb660a;font-weight:700>return</span> (
-      &lt;<span style=color:#fb660a;font-weight:700>View</span>&gt;
-        &lt;<span style=color:#fb660a;font-weight:700>TemperatureInput</span>
-          <span style=color:#ff0086;font-weight:700>scale</span>=<span style=color:#0086d2>&#34;c&#34;</span>
-          <span style=color:#ff0086;font-weight:700>temperature</span>={tempCelsius}
-          <span style=color:#ff0086;font-weight:700>onTemperatureChange</span>={<span style=color:#fb660a;font-weight:700>this</span>._onCelsiusChange}
-        /&gt;
-        &lt;<span style=color:#fb660a;font-weight:700>TemperatureInput</span>
-          <span style=color:#ff0086;font-weight:700>scale</span>=<span style=color:#0086d2>&#34;f&#34;</span>
-          <span style=color:#ff0086;font-weight:700>temperature</span>={tempFahrenheit}
-          <span style=color:#ff0086;font-weight:700>onTemperatureChange</span>={<span style=color:#fb660a;font-weight:700>this</span>._onFahrenheitChange}
-        /&gt;
-        &lt;<span style=color:#fb660a;font-weight:700>BoilingResult</span> <span style=color:#ff0086;font-weight:700>tempCelsius</span>={parseFloat(tempCelsius)} /&gt;
-      &lt;/<span style=color:#fb660a;font-weight:700>View</span>&gt;
-    );
-  }
-</code></pre></div></section><section><h3 id=centralisation-de-létat>Centralisation de l&rsquo;état</h3><p>Les composants parents peuvent finir par rassembler trop de choses :</p><ul><li>Etat commun</li><li>Actions de modification</li><li>Hiérarchie des composants enfants</li></ul><p>Non-respect du principe de <strong>séparation des responsabilités</strong>.</p></section><section><h3 id=solution>Solution</h3><ul><li>Centraliser l&rsquo;état et les actions de modifications dans des objets dédiés, souvent appelés <strong>stores</strong>.</li><li>Donner accès à ces objets aux composants via des propriétés.</li><li>Prévoir un mécanisme d'<strong>abonnement</strong> des composants aux mutations de l&rsquo;état effectués uniquement dans les stores.</li></ul></section><section><h3 id=application-1>Application</h3><p><a href=https://github.com/ensc-mobi/TodoNative>https://github.com/ensc-mobi/TodoNative</a></p><p><img src=images/todonative.png alt="TodoNative demo"></p></section><section><h3 id=définition-dun-store>Définition d&rsquo;un store</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> TodoStore <span style=color:#fb660a;font-weight:700>extends</span> Store {
-  constructor() {
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// Call to parent constructor is needed to init observation
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>super</span>();
-
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// The TODO task is used as key (unique identifier)
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#080;background-color:#0f140f;font-style:italic>// Therefore, each TODO must have a different task
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>this</span>.todos = [];
-  }
-
-  addTodo = (task) =&gt; {
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// Add new TODO at beginning of array
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>this</span>.todos = [{ task, completed: <span style=color:#fb660a;font-weight:700>false</span> }, ...<span style=color:#fb660a;font-weight:700>this</span>.todos];
-
-    <span style=color:#fb660a;font-weight:700>this</span>.notifyObservers();
-  };
-
-  <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>
-  <span style=color:#080;background-color:#0f140f;font-style:italic>// Used in parent class when notifying observers
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  getState() {
-    <span style=color:#fb660a;font-weight:700>const</span> todos = <span style=color:#fb660a;font-weight:700>this</span>.todos;
-    <span style=color:#fb660a;font-weight:700>return</span> { todos };
-  }
-}
-</code></pre></div></section><section><h3 id=notification-des-changements-détat>Notification des changements d&rsquo;état</h3><p>Basée sur le Design Pattern <a href=https://fr.wikipedia.org/wiki/Observateur_%28patron_de_conception%29>Observateur</a>.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> Store {
-  constructor() {
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// Define an empty observer list
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>this</span>.observers = [];
-  }
-
-  <span style=color:#080;background-color:#0f140f;font-style:italic>// Add new observer to list
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  addObserver(observer) {
-    <span style=color:#fb660a;font-weight:700>this</span>.observers.push(observer);
-  }
-
-  <span style=color:#080;background-color:#0f140f;font-style:italic>// Notify all observers of a state change in the store
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  notifyObservers() {
-    <span style=color:#fb660a;font-weight:700>this</span>.observers.forEach((observer) =&gt; observer.setState(<span style=color:#fb660a;font-weight:700>this</span>.getState()));
-  }
-}
-</code></pre></div></section><section><h3 id=lien-entre-store-et-composant-principal>Lien entre store et composant principal</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>const</span> App = () =&gt; {
-  <span style=color:#fb660a;font-weight:700>const</span> todoStore = <span style=color:#fb660a;font-weight:700>new</span> TodoStore();
-
-  <span style=color:#fb660a;font-weight:700>return</span> &lt;<span style=color:#fb660a;font-weight:700>MainView</span> <span style=color:#ff0086;font-weight:700>todoStore</span>={todoStore} /&gt;;
-};
-
-<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> App;
-</code></pre></div></section><section><h3 id=abonnement-dun-composant>Abonnement d&rsquo;un composant</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> MainView <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
-  constructor(props) {
-    <span style=color:#fb660a;font-weight:700>super</span>(props);
-    <span style=color:#fb660a;font-weight:700>this</span>.state = <span style=color:#fb660a;font-weight:700>this</span>.props.todoStore.getState();
-    <span style=color:#fb660a;font-weight:700>this</span>.props.todoStore.addObserver(<span style=color:#fb660a;font-weight:700>this</span>);
-  }
-
-  render() {
-    <span style=color:#fb660a;font-weight:700>return</span> (
-      &lt;<span style=color:#fb660a;font-weight:700>View</span> <span style=color:#ff0086;font-weight:700>style</span>={styles.container}&gt;
-        &lt;<span style=color:#fb660a;font-weight:700>Header</span> <span style=color:#ff0086;font-weight:700>title</span>=<span style=color:#0086d2>&#34;TodoNative&#34;</span> /&gt;
-        &lt;<span style=color:#fb660a;font-weight:700>Input</span>
-          <span style=color:#ff0086;font-weight:700>placeholder</span>=<span style=color:#0086d2>&#34;Saisissez une nouvelle tâche&#34;</span>
-          <span style=color:#ff0086;font-weight:700>onSubmitEditing</span>={<span style=color:#fb660a;font-weight:700>this</span>.props.todoStore.addTodo}
-        /&gt;
-        <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span></code></pre></div></section><section><h3 id=gestion-de-létat-avec-mobx>Gestion de l&rsquo;état avec MobX</h3><ul><li>Quand l&rsquo;application devient complexe, le nombre croissant de composants complique les évolutions de l&rsquo;état.</li><li>Les mutations de l&rsquo;état peuvent déclencher un (trop) grand nombre de rendus des composants.</li></ul></section><section><h3 id=solution-1>Solution</h3><ul><li>Utiliser une librairie dédiée à la gestion de l&rsquo;état.</li><li><a href=https://www.robinwieruch.de/redux-mobx-confusion/>Bon choix</a> pour la plupart des projets de taille intermédiaire : <a href=https://mobx.js.org>MobX</a>.</li></ul><p><img src=images/mobx-logo.png alt="MobX logo"></p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#080;background-color:#0f140f;font-style:italic># Add MobX to a React Native project</span>
-expo install mobx mobx-react
-expo install --save-dev babel-preset-mobx
-</code></pre></div></section><section><p><img src=images/mobx-overview.png alt="MobX overview"></p></section><section><h3 id=application-2>Application</h3><p><a href=https://github.com/ensc-mobi/TodoNative-MobX>https://github.com/ensc-mobi/TodoNative-MobX</a></p><p><img src=images/todonative.png alt="TodoNative-MobX demo"></p></section><section><h3 id=définition-dune-classe-métier>Définition d&rsquo;une classe métier</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>import</span> { observable } from <span style=color:#0086d2>&#34;mobx&#34;</span>;
-
-<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> Todo {
-  @observable task;
-  @observable completed;
-
-  constructor(task = <span style=color:#0086d2>&#34;&#34;</span>, completed = <span style=color:#fb660a;font-weight:700>false</span>) {
-    <span style=color:#fb660a;font-weight:700>this</span>.task = task;
-    <span style=color:#fb660a;font-weight:700>this</span>.completed = completed;
-  }
-
-  toggle() {
-    <span style=color:#fb660a;font-weight:700>this</span>.completed = !<span style=color:#fb660a;font-weight:700>this</span>.completed;
-  }
-}
-</code></pre></div></section><section><h3 id=définition-dun-store-1>Définition d&rsquo;un store</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>import</span> { observable } from <span style=color:#0086d2>&#34;mobx&#34;</span>;
-<span style=color:#fb660a;font-weight:700>import</span> Todo from <span style=color:#0086d2>&#34;../domain/Todo&#34;</span>;
-
-<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> TodoStore {
-  @observable todos;
-  @observable isLoading = <span style=color:#fb660a;font-weight:700>true</span>;
-
-  constructor() {
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// The TODO task is used as key (unique identifier)
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#080;background-color:#0f140f;font-style:italic>// Therefore, each TODO must have a different task
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>this</span>.todos = [];
-  }
-
-  addTodo(task) {
-    <span style=color:#fb660a;font-weight:700>const</span> todo = <span style=color:#fb660a;font-weight:700>new</span> Todo(task);
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// Add new TODO at beginning of array
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>this</span>.todos = [todo, ...<span style=color:#fb660a;font-weight:700>this</span>.todos];
-  }
-
-  <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>}
-</code></pre></div></section><section><h3 id=lien-entre-store-et-composant-principal-1>Lien entre store et composant principal</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>const</span> App = () =&gt; {
-  <span style=color:#fb660a;font-weight:700>const</span> todoStore = <span style=color:#fb660a;font-weight:700>new</span> TodoStore();
-
-  <span style=color:#fb660a;font-weight:700>return</span> &lt;<span style=color:#fb660a;font-weight:700>MainView</span> <span style=color:#ff0086;font-weight:700>todoStore</span>={todoStore} /&gt;;
-};
-
-<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> App;
-</code></pre></div></section><section><h3 id=abonnement-dun-composant-1>Abonnement d&rsquo;un composant</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>import</span> { observer } from <span style=color:#0086d2>&#34;mobx-react&#34;</span>;
-<span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>
-@observer
-<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> MainView <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
-  onAddTodo = task =&gt; {
-    <span style=color:#fb660a;font-weight:700>this</span>.props.todoStore.addTodo(task);
-  };
-  <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>
-  render() {
-    <span style=color:#fb660a;font-weight:700>return</span> (
-      &lt;View style={styles.container}&gt;
-        &lt;Header title=<span style=color:#0086d2>&#34;TodoNative&#34;</span> /&gt;
-        &lt;Input
-          placeholder=<span style=color:#0086d2>&#34;Saisissez une nouvelle tâche&#34;</span>
-          onSubmitEditing={<span style=color:#fb660a;font-weight:700>this</span>.onAddTodo}
-        /&gt;
-        &lt;FlatList
-          style={styles.todoContainer}
-          data={<span style=color:#fb660a;font-weight:700>this</span>.props.todoStore.todos}
-          <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>}
-</code></pre></div></section><section><h2 id=pourquoi-pas-redux->Pourquoi pas Redux ?</h2><p><img src=images/redux-all.jpeg alt="Redux all!"></p><ul><li>Librairie créée pour adresser des problématiques à l&rsquo;échelle de Facebook</li><li>Complexe et <em>overkill</em> pour les projets &ldquo;normaux&rdquo;</li><li><a href=https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367>&ldquo;You might not need Redux&rdquo;</a> (écrit par son créateur)</li></ul></section><section><h2 id=utilisation-dapi-web>Utilisation d&rsquo;API web</h2></section><section><h3 id=la-notion-dapi>La notion d&rsquo;API</h3><p>Une <strong>API</strong> (<em>Application Programming Interface</em>) est un point d&rsquo;entrée programmatique dans un système.</p><p>Elle fournit un moyen d&rsquo;interagir avec ce système.</p><p>Les API permettent aux développeurs d&rsquo;intégrer des services externes dans leurs applications.</p></section><section><h3 id=spécificités-des-api-web>Spécificités des API web</h3><p>Une <strong>API web</strong> (appelée parfois service web) est une API accessible via les technologies du web : HTTP ou HTTPS.</p><p>Les API web utilisent le plus souvent le format de donnée <strong>JSON</strong>.</p><p>Certaines sont librement utilisables, d&rsquo;autres nécessitent une authentification du client.</p></section><section><h3 id=exemples-dapi-web>Exemples d&rsquo;API web</h3><ul><li><a href=https://pokeapi.co/>PokéAPI</a></li><li><a href=https://swapi.dev/>Star Wars API</a></li><li><a href=https://en.wikipedia.org/w/api.php?>Wikipedia</a></li><li><a href=https://developer.spotify.com/documentation/web-api/>Spotify</a></li><li><a href=https://www.omdbapi.com/>OMDb API</a></li></ul><p>(<a href=https://shkspr.mobi/blog/2016/05/easy-apis-without-authentication/>Source</a>)</p></section><section><h3 id=outils-pour-la-gestion-des-api-web>Outils pour la gestion des API web</h3><ul><li><a href=https://www.getpostman.com/>Postman</a></li><li>Extension <a href=https://addons.mozilla.org/fr/firefox/addon/restclient/>RESTClient</a> pour Firefox</li></ul></section><section><h3 id=appels-réseau-asynchrones-avec-javascript>Appels réseau asynchrones avec JavaScript</h3><p>Une <a href=https://web.dev/promises/>promesse</a> (<em>promise</em>) est un objet qui encapsule une opération dont le résultat n&rsquo;est pas encore connu.</p><p>La fonction JavaScript <a href=https://developers.google.com/web/updates/2015/03/introduction-to-fetch>fetch()</a> exploite les possibilités des promesses.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#080;background-color:#0f140f;font-style:italic>// Envoie une requête HTTP asynchrone vers l&#39;URL spécifiée
+</code></pre></div></section><section><h3 id=exemple-récapitulatif-1>Exemple récapitulatif</h3><p><a href=https://github.com/ensc-mobi/TabNavigatorDemo>https://github.com/ensc-mobi/TabNavigatorDemo</a></p><p><img src=images/tab-navigator-demo.png alt="BottomTabNavigator demo"></p></section><section><h3 id=autres-possibilités-de-react-navigation>Autres possibilités de react-navigation</h3><ul><li><a href=https://reactnavigation.org/docs/drawer-based-navigation>Navigation par menu accordéon</a></li><li><a href=https://reactnavigation.org/docs/auth-flow>Gestion de l&rsquo;authentification</a></li><li>&mldr;</li></ul></section><section><h2 id=utilisation-dapi-web>Utilisation d&rsquo;API web</h2></section><section><h3 id=la-notion-dapi>La notion d&rsquo;API</h3><p>Une <strong>API</strong> (<em>Application Programming Interface</em>) est un point d&rsquo;entrée programmatique dans un système.</p><p>Elle fournit un moyen d&rsquo;interagir avec ce système.</p><p>Les API permettent aux développeurs d&rsquo;intégrer des services externes dans leurs applications.</p></section><section><h3 id=spécificités-des-api-web>Spécificités des API web</h3><p>Une <strong>API web</strong> (appelée parfois service web) est une API accessible via les technologies du web : HTTP ou HTTPS.</p><p>Les API web utilisent le plus souvent le format de donnée <strong>JSON</strong>.</p><p>Certaines sont librement utilisables, d&rsquo;autres nécessitent une authentification du client.</p></section><section><h3 id=exemples-dapi-web>Exemples d&rsquo;API web</h3><ul><li><a href=https://pokeapi.co/>PokéAPI</a></li><li><a href=https://swapi.dev/>Star Wars API</a></li><li><a href=https://en.wikipedia.org/w/api.php?>Wikipedia</a></li><li><a href=https://developer.spotify.com/documentation/web-api/>Spotify</a></li><li><a href=https://www.omdbapi.com/>OMDb API</a></li></ul><p>(<a href=https://shkspr.mobi/blog/2016/05/easy-apis-without-authentication/>Source</a>)</p></section><section><h3 id=outils-pour-la-gestion-des-api-web>Outils pour la gestion des API web</h3><ul><li><a href=https://www.getpostman.com/>Postman</a></li><li>Extension <a href=https://addons.mozilla.org/fr/firefox/addon/restclient/>RESTClient</a> pour Firefox</li><li><a href=https://insomnia.rest/>Insomnia</a></li></ul></section><section><h3 id=appels-réseau-asynchrones-avec-javascript>Appels réseau asynchrones avec JavaScript</h3><p>Une <a href=https://web.dev/promises/>promesse</a> (<em>promise</em>) est un objet qui encapsule une opération dont le résultat n&rsquo;est pas encore connu.</p><p>La fonction JavaScript <a href=https://developers.google.com/web/updates/2015/03/introduction-to-fetch>fetch()</a> exploite les possibilités des promesses.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#080;background-color:#0f140f;font-style:italic>// Envoie une requête HTTP asynchrone vers l&#39;URL spécifiée
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span>fetch(url)
   .then(() =&gt; {
     <span style=color:#080;background-color:#0f140f;font-style:italic>// Code appelé ultérieurement si la requête réussit
@@ -561,36 +455,53 @@ expo install --save-dev babel-preset-mobx
     secondParam: <span style=color:#0086d2>&#34;yourOtherValue&#34;</span>,
   }),
 });
-</code></pre></div></section><section><h3 id=application-3>Application</h3><p><a href=https://github.com/ensc-mobi/RandomBeer>https://github.com/ensc-mobi/RandomBeer</a></p><p><img src=images/random_beer.png alt="Random Beer app"></p></section><section><h3 id=consommation-dune-api-web>Consommation d&rsquo;une API web</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> headers = {
+</code></pre></div></section><section><h3 id=application-1>Application</h3><p><a href=https://github.com/ensc-mobi/RandomBeer>https://github.com/ensc-mobi/RandomBeer</a></p><p><img src=images/random_beer.png alt="Random Beer app"></p></section><section><h3 id=consommation-dune-api-web>Consommation d&rsquo;une API web</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#fb660a;font-weight:700>const</span> rootEndpoint = <span style=color:#0086d2>&#34;https://api.punkapi.com/v2&#34;</span>;
+
+<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>interface</span> Beer {
+  name: <span style=color:#cdcaa9;font-weight:700>string</span>;
+  description: <span style=color:#cdcaa9;font-weight:700>string</span>;
+}
+
+<span style=color:#fb660a;font-weight:700>const</span> headers = {
   <span style=color:#0086d2>&#34;Content-Type&#34;</span>: <span style=color:#0086d2>&#34;application/json&#34;</span>,
   Accept: <span style=color:#0086d2>&#34;application/json&#34;</span>,
 };
 
-<span style=color:#080;background-color:#0f140f;font-style:italic>// Retourne une recette de bière au hasard
+<span style=color:#080;background-color:#0f140f;font-style:italic>// Return a random beer from API
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>const</span> getRandomBrewdog = () =&gt;
   fetch(<span style=color:#0086d2>`</span><span style=color:#0086d2>${</span>rootEndpoint<span style=color:#0086d2>}</span><span style=color:#0086d2>/beers/random`</span>, { headers })
     .then((response) =&gt; response.json())
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// Access first element of returned array
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    .then((beers) =&gt; beers[<span style=color:#0086f7;font-weight:700>0</span>])
-    .<span style=color:#fb660a;font-weight:700>catch</span>((error) =&gt; {
+    .then((beers) =&gt; beers[<span style=color:#0086f7;font-weight:700>0</span>]) <span style=color:#080;background-color:#0f140f;font-style:italic>// Access first element of returned array
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    .<span style=color:#fb660a;font-weight:700>catch</span>((error) =&gt; {
       console.error(error);
     });
-</code></pre></div></section><section><h3 id=mise-à-jour-de-lapplication>Mise à jour de l&rsquo;application</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx>  <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
+</code></pre></div></section><section><h3 id=mise-à-jour-de-lapplication>Mise à jour de l&rsquo;application</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#fb660a;font-weight:700>interface</span> AppState {
+  isLoading: <span style=color:#cdcaa9;font-weight:700>boolean</span>; <span style=color:#080;background-color:#0f140f;font-style:italic>// Is a beer request pending?
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  name: <span style=color:#cdcaa9;font-weight:700>string</span>; <span style=color:#080;background-color:#0f140f;font-style:italic>// Beer name
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  description: <span style=color:#cdcaa9;font-weight:700>string</span>; <span style=color:#080;background-color:#0f140f;font-style:italic>// Beer description
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>}
+
+<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> App <span style=color:#fb660a;font-weight:700>extends</span> Component&lt;{}, AppState&gt; {
+  <span style=color:#080;background-color:#0f140f;font-style:italic>// Initial state
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  state: <span style=color:#cdcaa9;font-weight:700>AppState</span> = {
+    name: <span style=color:#0086d2>&#34;&#34;</span>,
+    description: <span style=color:#0086d2>&#34;&#34;</span>,
+    isLoading: <span style=color:#cdcaa9;font-weight:700>false</span>,
+  };
+
+  <span style=color:#080;background-color:#0f140f;font-style:italic>// Function called when user want to search for another beer
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  _getRandomBrewdogWithFeedback = () =&gt; {
-    <span style=color:#fb660a;font-weight:700>this</span>.setState({ isLoading: <span style=color:#fb660a;font-weight:700>true</span> });
-    getRandomBrewdog().then(beer =&gt;
+    <span style=color:#080;background-color:#0f140f;font-style:italic>// Begin a new request for a beer
+</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>this</span>.setState({ isLoading: <span style=color:#cdcaa9;font-weight:700>true</span> });
+
+    getRandomBrewdog().then((beer: <span style=color:#cdcaa9;font-weight:700>Beer</span>) =&gt;
       <span style=color:#fb660a;font-weight:700>this</span>.setState({
-        name: beer.name,
-        description: beer.description,
-        isLoading: <span style=color:#fb660a;font-weight:700>false</span> <span style=color:#080;background-color:#0f140f;font-style:italic>// la requête est terminée
+        name: <span style=color:#cdcaa9;font-weight:700>beer.name</span>,
+        description: <span style=color:#cdcaa9;font-weight:700>beer.description</span>,
+        isLoading: <span style=color:#cdcaa9;font-weight:700>false</span>, <span style=color:#080;background-color:#0f140f;font-style:italic>// Request is finished
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span>      })
     );
   };
-
-  componentDidMount() {
-    <span style=color:#fb660a;font-weight:700>this</span>._getRandomBrewdogWithFeedback();
-  }
-
   <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
 </span></code></pre></div></section><section><h3 id=interactions-avec-un-sgbdr-via-une-api-web>Interactions avec un SGBDR via une API web</h3><p><a href=https://github.com/mevdschee/php-crud-api>https://github.com/mevdschee/php-crud-api</a></p><p>Fichier <code>api.php</code> à publier sur un serveur web PHP. Fournit une API web pour accéder aux données d&rsquo;un SGBDR.</p><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#080;background-color:#0f140f;font-style:italic>// Update to reflect your local settings
 </span><span style=color:#080;background-color:#0f140f;font-style:italic></span><span style=color:#fb660a>$config</span> = <span style=color:#fb660a;font-weight:700>new</span> Config([
@@ -598,107 +509,4 @@ expo install --save-dev babel-preset-mobx
   <span style=color:#0086d2>&#39;password&#39;</span> =&gt; <span style=color:#0086d2>&#39;xxx&#39;</span>,
   <span style=color:#0086d2>&#39;database&#39;</span> =&gt; <span style=color:#0086d2>&#39;xxx&#39;</span>,
 ]);
-</code></pre></div></section><section><h3 id=utilisation-de-php-crud-api>Utilisation de PHP-CRUD-API</h3><p><code>http://my-server-url/api.php/records/...</code></p><ul><li><code>GET my-table</code> : renvoie la liste des enregistrements de la table <code>my-table</code>.</li><li><code>GET my-table/id</code> : renvoie l&rsquo;enregistrement identifié par <code>id</code>.</li><li><code>POST my-table</code> : création d&rsquo;un nouvel enregistrement avec les données contenues dans le corps de la requête.</li></ul></section><section><h3 id=application-4>Application</h3><p><a href=https://github.com/ensc-mobi/MyMoviesNative>https://github.com/ensc-mobi/MyMoviesNative</a></p><p><img src=images/mymoviesnative.png alt="MyMoviesNative demo"></p></section><section><h3 id=classe-métier-film>Classe métier film</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> Movie {
-  @observable id;
-  @observable title;
-  <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>  @observable image;
-
-  constructor(
-    id,
-    title,
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    image
-  ) {
-    <span style=color:#fb660a;font-weight:700>this</span>.id = id;
-    <span style=color:#fb660a;font-weight:700>this</span>.title = title;
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>this</span>.image = image;
-  }
-}
-</code></pre></div></section><section><h3 id=accès-au-sgbdr>Accès au SGBDR</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>const</span> rootEndpoint = <span style=color:#0086d2>&#34;http://localhost/mymovies/api.php/records&#34;</span>;
-
-<span style=color:#fb660a;font-weight:700>const</span> headers = {
-  <span style=color:#0086d2>&#34;Content-Type&#34;</span>: <span style=color:#0086d2>&#34;application/json&#34;</span>,
-  Accept: <span style=color:#0086d2>&#34;application/json&#34;</span>,
-};
-
-<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>const</span> getAllMovies = () =&gt;
-  fetch(<span style=color:#0086d2>`</span><span style=color:#0086d2>${</span>rootEndpoint<span style=color:#0086d2>}</span><span style=color:#0086d2>/movie/`</span>, { headers })
-    .then((response) =&gt; response.json())
-    .then((jsonResponse) =&gt; jsonResponse.records)
-    .<span style=color:#fb660a;font-weight:700>catch</span>((error) =&gt; {
-      console.log(error);
-    });
-</code></pre></div></section><section><h3 id=récupération-de-la-liste-des-films>Récupération de la liste des films</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> MovieStore {
-  @observable movies;
-  <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>
-  fetchAll() {
-    <span style=color:#fb660a;font-weight:700>this</span>.movies = [];
-    getAllMovies().then((movies) =&gt; {
-      <span style=color:#080;background-color:#0f140f;font-style:italic>//console.log(movies);
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>      movies.forEach((movieData) =&gt; {
-        <span style=color:#fb660a;font-weight:700>const</span> movie = <span style=color:#fb660a;font-weight:700>new</span> Movie(
-          movieData.mov_id,
-          movieData.mov_title,
-          <span style=color:#080;background-color:#0f140f;font-style:italic>// ...
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>          movieData.mov_image
-        );
-        <span style=color:#fb660a;font-weight:700>this</span>.movies = [movie, ...<span style=color:#fb660a;font-weight:700>this</span>.movies];
-      });
-    });
-  }
-}
-</code></pre></div></section><section><h3 id=vue-principale>Vue principale</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> HomeScreen <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
-  render() {
-    <span style=color:#fb660a;font-weight:700>const</span> movieStore = <span style=color:#fb660a;font-weight:700>new</span> MovieStore();
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// All React Navigation screens receive this object as prop
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>const</span> { navigation } = <span style=color:#fb660a;font-weight:700>this</span>.props;
-
-    <span style=color:#080;background-color:#0f140f;font-style:italic>// Navigation object is passed down to children components
-</span><span style=color:#080;background-color:#0f140f;font-style:italic></span>    <span style=color:#fb660a;font-weight:700>return</span> &lt;<span style=color:#fb660a;font-weight:700>MainView</span> <span style=color:#ff0086;font-weight:700>movieStore</span>={movieStore} <span style=color:#ff0086;font-weight:700>navigation</span>={navigation} /&gt;;
-  }
-}
-</code></pre></div></section><section><h3 id=affichage-dun-film-dans-la-liste>Affichage d&rsquo;un film dans la liste</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>@observer
-<span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> MovieItem <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
-  render() {
-    <span style=color:#fb660a;font-weight:700>const</span> { movie } = <span style=color:#fb660a;font-weight:700>this</span>.props;
-    <span style=color:#fb660a;font-weight:700>const</span> { navigation } = <span style=color:#fb660a;font-weight:700>this</span>.props;
-
-    <span style=color:#fb660a;font-weight:700>return</span> (
-      &lt;View style={styles.container}&gt;
-        &lt;TouchableOpacity
-          onPress={() =&gt; {
-            navigation.navigate(<span style=color:#0086d2>&#34;Details&#34;</span>, {
-              movie: movie,
-            });
-          }}
-        &gt;
-          &lt;Text style={styles.text}&gt;
-            {movie.title} ({movie.year})
-          &lt;/Text&gt;
-        &lt;/TouchableOpacity&gt;
-      &lt;/View&gt;
-    );
-  }
-}
-</code></pre></div></section><section><h3 id=détails-sur-un-film>Détails sur un film</h3><div class=highlight><pre style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#fb660a;font-weight:700>export</span> <span style=color:#fb660a;font-weight:700>default</span> <span style=color:#fb660a;font-weight:700>class</span> DetailsScreen <span style=color:#fb660a;font-weight:700>extends</span> React.Component {
-  render() {
-    <span style=color:#fb660a;font-weight:700>const</span> { navigation } = <span style=color:#fb660a;font-weight:700>this</span>.props;
-    <span style=color:#fb660a;font-weight:700>const</span> movie = navigation.getParam(<span style=color:#0086d2>&#34;movie&#34;</span>);
-    <span style=color:#fb660a;font-weight:700>const</span> imageUrl = imagesEndpoint + movie.image;
-
-    <span style=color:#fb660a;font-weight:700>return</span> (
-      &lt;View style={styles.container}&gt;
-        &lt;Text style={styles.title}&gt;
-          {movie.title} ({movie.year})
-        &lt;/Text&gt;
-        &lt;Text style={styles.director}&gt;Réalisateur(s) : {movie.director}&lt;/Text&gt;
-        &lt;Text style={styles.description}&gt;{movie.shortDescription}&lt;/Text&gt;
-        &lt;Image style={styles.image} source={{ uri: imageUrl }}&gt;&lt;/Image&gt;
-      &lt;/View&gt;
-    );
-  }
-}
-</code></pre></div></section></div></div><div><a href=https://ensc.bordeaux-inp.fr><img src=https://www.bpesquet.fr/images/ENSC.jpg style=position:absolute;bottom:10px;left:10px></a></div><script src=https://www.bpesquet.fr/reveal.js/dist/reveal.js></script><script src=https://www.bpesquet.fr/reveal.js/plugin/math/math.js></script><script>Reveal.initialize({history:false,slideNumber:true,transition:"convex",math:{mathjax:'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',config:'TeX-MML-AM_HTMLorMML'},dependencies:[{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/markdown\/marked.js'},{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/markdown\/markdown.js'},{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/notes\/notes.js',async:true},{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/zoom-js\/zoom.js',async:true},{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/highlight\/highlight.js',async:true,callback:function(){hljs.initHighlightingOnLoad();}},],plugins:[RevealMath]});</script></body></html>
+</code></pre></div></section><section><h3 id=utilisation-de-php-crud-api>Utilisation de PHP-CRUD-API</h3><p><code>http://my-server-url/api.php/records/...</code></p><ul><li><code>GET my-table</code> : renvoie la liste des enregistrements de la table <code>my-table</code>.</li><li><code>GET my-table/id</code> : renvoie l&rsquo;enregistrement identifié par <code>id</code>.</li><li><code>POST my-table</code> : création d&rsquo;un nouvel enregistrement avec les données contenues dans le corps de la requête.</li></ul></section></div></div><div><a href=https://ensc.bordeaux-inp.fr><img src=https://www.bpesquet.fr/images/ENSC.jpg style=position:absolute;bottom:10px;left:10px></a></div><script src=https://www.bpesquet.fr/reveal.js/dist/reveal.js></script><script src=https://www.bpesquet.fr/reveal.js/plugin/math/math.js></script><script>Reveal.initialize({history:false,slideNumber:true,transition:"convex",math:{mathjax:'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',config:'TeX-MML-AM_HTMLorMML'},dependencies:[{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/markdown\/marked.js'},{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/markdown\/markdown.js'},{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/notes\/notes.js',async:true},{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/zoom-js\/zoom.js',async:true},{src:'https:\/\/www.bpesquet.fr\/reveal.js\/plugin\/highlight\/highlight.js',async:true,callback:function(){hljs.initHighlightingOnLoad();}},],plugins:[RevealMath]});</script></body></html>

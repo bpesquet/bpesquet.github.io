@@ -778,8 +778,10 @@ e.preventDefault(); &lt;span style="color:#080;background-color:#0f140f;font-sty
 &lt;/ul></description></item><item><title>React Native</title><link>https://www.bpesquet.fr/slides/react-native/</link><pubDate>Wed, 27 Oct 2021 13:48:28 +0200</pubDate><guid>https://www.bpesquet.fr/slides/react-native/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Introduction&lt;/li>
+&lt;li>Composants React Native&lt;/li>
 &lt;li>Gestion de l&amp;rsquo;UI&lt;/li>
 &lt;li>Gestion de l&amp;rsquo;état&lt;/li>
+&lt;li>Navigation&lt;/li>
 &lt;li>Utilisation d&amp;rsquo;API web&lt;/li>
 &lt;/ul>
 &lt;hr>
@@ -859,10 +861,10 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;hr>
 &lt;h3 id="expo">Expo&lt;/h3>
 &lt;p>Framework pour faciliter la création et le déploiement d&amp;rsquo;applications React Native.&lt;/p>
-&lt;p>&lt;img src="images/expo_logo.png" alt="Expo logo">&lt;/p>
+&lt;p>&lt;a href="https://expo.dev/">&lt;img src="images/expo_logo.png" alt="Expo logo">&lt;/a>&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/expo/expo-cli">Expo CLI&lt;/a> : outil en ligne de commande pour le développement local.&lt;/li>
-&lt;li>&lt;a href="https://expo.io">Expo client&lt;/a> : application mobile à installer sur le terminal cible pour le déploiement.&lt;/li>
+&lt;li>&lt;a href="https://expo.io">Expo Go&lt;/a> : application mobile à installer sur le terminal cible pour le déploiement.&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h3 id="création-dune-application">Création d&amp;rsquo;une application&lt;/h3>
@@ -887,7 +889,7 @@ expo init my-new-project -t expo-template-blank-typescript
 &lt;h3 id="déploiement-de-lapplication">Déploiement de l&amp;rsquo;application&lt;/h3>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cd my-new-project &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># move into project directory&lt;/span>
 npm start &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Or &amp;#39;expo start&amp;#39;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ensuite, scan du QR Code depuis l&amp;rsquo;application Expo (Android) ou l&amp;rsquo;appareil photo du smartphone (iOS).&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ensuite, scan du QR Code depuis l&amp;rsquo;application Expo Go (Android) ou l&amp;rsquo;appareil photo du smartphone (iOS).&lt;/p>
 &lt;p>&lt;img src="images/expo_qrcode.png" alt="Expo QR Code">&lt;/p>
 &lt;hr>
 &lt;h3 id="détails-sur-le-déploiement">Détails sur le déploiement&lt;/h3>
@@ -1015,6 +1017,8 @@ justifyContent: &lt;span style="color:#0086d2">&amp;#34;center&amp;#34;&lt;/span
 &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span>&amp;gt;
 );
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="composants-react-native">Composants React Native&lt;/h2>
+&lt;hr>
 &lt;h3 id="la-notion-de-composant">La notion de composant&lt;/h3>
 &lt;ul>
 &lt;li>
@@ -1060,8 +1064,14 @@ render() {
 &lt;p>Caractéristiques définies au moment de la création, modifiables uniquement par le composant parent (&lt;a href="https://snack.expo.io/@bpesquet/greeting">démo&lt;/a>).&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> React, { Component } &lt;span style="color:#fb660a;font-weight:bold">from&lt;/span> &lt;span style="color:#0086d2">&amp;#34;react&amp;#34;&lt;/span>;
 &lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> { Text, View } &lt;span style="color:#fb660a;font-weight:bold">from&lt;/span> &lt;span style="color:#0086d2">&amp;#34;react-native&amp;#34;&lt;/span>;
-&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Greeting &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> Component {
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Component has a name property which is of type string
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Function component
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Component has a name property, which is of type string
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> GreetingFun = (props: { name: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> }) =&amp;gt; {
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span>&amp;gt;Hello {props.name}!&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span>&amp;gt;;
+};
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Class component
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> GreetingClass &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> Component {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Component has a name property, which is of type string
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">constructor&lt;/span>(&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> props: { name: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> }) {
 &lt;span style="color:#fb660a;font-weight:bold">super&lt;/span>(props);
 }
@@ -1073,40 +1083,45 @@ render() {
 render() {
 &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
 &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">style&lt;/span>={{ alignItems: &lt;span style="color:#0086d2">&amp;#34;center&amp;#34;&lt;/span> }}&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Greeting&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;John&amp;#34;&lt;/span> /&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Greeting&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Paul&amp;#34;&lt;/span> /&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Greeting&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Jones&amp;#34;&lt;/span> /&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">GreetingFun&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;John&amp;#34;&lt;/span> /&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">GreetingClass&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Paul&amp;#34;&lt;/span> /&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">GreetingFun&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Jones&amp;#34;&lt;/span> /&amp;gt;
 &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span>&amp;gt;
 );
 }
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="etat-_state_-dun-composant">Etat (&lt;em>state&lt;/em>) d&amp;rsquo;un composant&lt;/h3>
-&lt;p>Etat interne (données) d&amp;rsquo;un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via &lt;code>setState()&lt;/code> (&lt;a href="https://snack.expo.io/@bpesquet/counter">démo&lt;/a>).&lt;/p>
+&lt;p>Etat interne (données) d&amp;rsquo;un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via &lt;code>setState()&lt;/code> (&lt;a href="https://snack.expo.dev/@bpesquet/state-2">démo&lt;/a>).&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> React, { Component } &lt;span style="color:#fb660a;font-weight:bold">from&lt;/span> &lt;span style="color:#0086d2">&amp;#34;react&amp;#34;&lt;/span>;
-&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> { StyleSheet, Text, View } &lt;span style="color:#fb660a;font-weight:bold">from&lt;/span> &lt;span style="color:#0086d2">&amp;#34;react-native&amp;#34;&lt;/span>;
-&lt;span style="color:#fb660a;font-weight:bold">interface&lt;/span> CoounterState {
+&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> { StyleSheet, TouchableOpacity, Text, View } &lt;span style="color:#fb660a;font-weight:bold">from&lt;/span> &lt;span style="color:#0086d2">&amp;#34;react-native&amp;#34;&lt;/span>;
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// State shape: a &amp;#34;count&amp;#34; property of type number
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">interface&lt;/span> AppState {
 count: &lt;span style="color:#cdcaa9;font-weight:bold">number&lt;/span>;
 }
-&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Counter &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> Component&amp;lt;{}, CoounterState&amp;gt; {
-&lt;span style="color:#fb660a;font-weight:bold">constructor&lt;/span>(&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> props: { color: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>; size: &lt;span style="color:#cdcaa9;font-weight:bold">number&lt;/span> }) {
-&lt;span style="color:#fb660a;font-weight:bold">super&lt;/span>(props);
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.state = { count: &lt;span style="color:#cdcaa9;font-weight:bold">0&lt;/span> };
-setInterval(() =&amp;gt; {
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.setState({ count: &lt;span style="color:#cdcaa9;font-weight:bold">this.state.count&lt;/span> + &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span> });
-}, &lt;span style="color:#0086f7;font-weight:bold">1000&lt;/span>);
-}
-render() {
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> { count } = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.state;
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> { color, size } = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props;
-&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">style&lt;/span>={{ color, fontSize: &lt;span style="color:#cdcaa9;font-weight:bold">size&lt;/span> }}&amp;gt;{count}&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span>&amp;gt;;
-}
-}
-&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> CounterApp &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> Component {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// React.Component is a generic type: Component&amp;lt;PropType, StateType&amp;gt;
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// We can provide it with optionale prop and state shapes
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// {} means an empty shape (no props or state)
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> App &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> Component&amp;lt;{}, AppState&amp;gt; {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Init state
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> state: &lt;span style="color:#cdcaa9;font-weight:bold">AppState&lt;/span> = {
+count: &lt;span style="color:#cdcaa9;font-weight:bold">0&lt;/span>,
+};
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Function that updates state, triggering component re-rendering
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> onPress = () =&amp;gt; {
+&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.setState({
+count: &lt;span style="color:#cdcaa9;font-weight:bold">this.state.count&lt;/span> + &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>,
+});
+};
 render() {
 &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
 &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">style&lt;/span>={styles.container}&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Counter&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">color&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;red&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">size&lt;/span>={&lt;span style="color:#0086f7;font-weight:bold">50&lt;/span>} /&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">TouchableOpacity&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">style&lt;/span>={styles.button} &lt;span style="color:#ff0086;font-weight:bold">onPress&lt;/span>={&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.onPress}&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span>&amp;gt;Click me&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">TouchableOpacity&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span>&amp;gt;You clicked {&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.state.count} times&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">Text&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span>&amp;gt;
 &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span>&amp;gt;
 );
 }
@@ -1114,19 +1129,23 @@ render() {
 &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> styles = StyleSheet.create({
 container: {
 flex: &lt;span style="color:#cdcaa9;font-weight:bold">1&lt;/span>,
-backgroundColor: &lt;span style="color:#0086d2">&amp;#34;#fff&amp;#34;&lt;/span>,
-alignItems: &lt;span style="color:#0086d2">&amp;#34;center&amp;#34;&lt;/span>,
 justifyContent: &lt;span style="color:#0086d2">&amp;#34;center&amp;#34;&lt;/span>,
+alignItems: &lt;span style="color:#0086d2">&amp;#34;center&amp;#34;&lt;/span>,
+},
+button: {
+alignItems: &lt;span style="color:#0086d2">&amp;#34;center&amp;#34;&lt;/span>,
+backgroundColor: &lt;span style="color:#0086d2">&amp;#34;#DDDDDD&amp;#34;&lt;/span>,
+padding: &lt;span style="color:#cdcaa9;font-weight:bold">10&lt;/span>,
+marginBottom: &lt;span style="color:#cdcaa9;font-weight:bold">10&lt;/span>,
 },
 });
+&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> App;
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="composants-de-base">Composants de base&lt;/h3>
 &lt;p>&lt;img src="images/basic_components.png" alt="React Native core components">&lt;/p>
 &lt;hr>
 &lt;h3 id="composants-dinterface-utilisateur">Composants d&amp;rsquo;interface utilisateur&lt;/h3>
 &lt;p>&lt;img src="images/ui_components.png" alt="React native UI components">&lt;/p>
-&lt;hr>
-&lt;h2 id="gestion-de-lui">Gestion de l&amp;rsquo;UI&lt;/h2>
 &lt;hr>
 &lt;h3 id="cycle-de-vie-dun-composant">Cycle de vie d&amp;rsquo;un composant&lt;/h3>
 &lt;p>Les composants RN suivent un cycle de vie bien défini composé d&amp;rsquo;étapes : &lt;strong>montage&lt;/strong>, &lt;strong>rendu&lt;/strong>, &lt;strong>mise à jour&lt;/strong>, &lt;strong>démontage&lt;/strong> et &lt;strong>suppression&lt;/strong>.&lt;/p>
@@ -1141,6 +1160,8 @@ justifyContent: &lt;span style="color:#0086d2">&amp;#34;center&amp;#34;&lt;/span
 &lt;li>&lt;code>shouldComponentUpdate()&lt;/code> : renvoi d&amp;rsquo;un booléen pour annuler la mise à jour.&lt;/li>
 &lt;li>&lt;code>componentDidUpdate()&lt;/code> : actions après la mise à jour du rendu.&lt;/li>
 &lt;/ol>
+&lt;hr>
+&lt;h2 id="gestion-de-lui">Gestion de l&amp;rsquo;UI&lt;/h2>
 &lt;hr>
 &lt;h3 id="gestion-du-style">Gestion du style&lt;/h3>
 &lt;p>Propriété &lt;code>style&lt;/code> pour les composants de base.&lt;/p>
@@ -1234,6 +1255,111 @@ render() {
 &lt;h3 id="alignitems--axe-secondaire">&lt;code>alignItems&lt;/code> : axe secondaire&lt;/h3>
 &lt;p>&lt;a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">&lt;img src="images/flexbox_align_items.png" alt="Flexbox: align Items">&lt;/a>&lt;/p>
 &lt;hr>
+&lt;h2 id="gestion-de-létat">Gestion de l&amp;rsquo;état&lt;/h2>
+&lt;hr>
+&lt;h3 id="rappels-sur-les-propriétés">Rappels sur les propriétés&lt;/h3>
+&lt;p>&lt;strong>Propriétés (&lt;em>props&lt;/em>)&lt;/strong> = caractéristiques définies au moment de la création du composant.&lt;/p>
+&lt;p>Les propriétés sont modifiables uniquement par le composant parent.&lt;/p>
+&lt;hr>
+&lt;h3 id="rappels-sur-létat">Rappels sur l&amp;rsquo;état&lt;/h3>
+&lt;p>&lt;strong>Etat (&lt;em>state&lt;/em>)&lt;/strong> = ensemble des données susceptibles d&amp;rsquo;être modifiées pendant l&amp;rsquo;exécution de l&amp;rsquo;application.&lt;/p>
+&lt;p>Chaque composant React Native possède un état interne, géré avec &lt;code>this.state&lt;/code> et &lt;code>this.setState()&lt;/code>.&lt;/p>
+&lt;p>Toute modification de l&amp;rsquo;état déclenche un nouveau rendu du composant.&lt;/p>
+&lt;hr>
+&lt;h3 id="problématique">Problématique&lt;/h3>
+&lt;p>La gestion locale de l&amp;rsquo;état devient insuffisante lorsqu&amp;rsquo;un composant doit &lt;strong>accéder à&lt;/strong> ou &lt;strong>modifier&lt;/strong> l&amp;rsquo;état d&amp;rsquo;un autre composant.&lt;/p>
+&lt;p>Nécessité de partager un état commun entre certains composants.&lt;/p>
+&lt;hr>
+&lt;h3 id="solution--_lifting-state-up_">Solution : &lt;em>&amp;ldquo;lifting state up&amp;rdquo;&lt;/em>&lt;/h3>
+&lt;ul>
+&lt;li>Remonter l&amp;rsquo;état au niveau du plus proche composant parent commun.&lt;/li>
+&lt;li>Définir les actions de modification dans ce composant parent.&lt;/li>
+&lt;li>Dans les composants enfants :
+&lt;ul>
+&lt;li>Remplacer l&amp;rsquo;état local par des propriétés définies par le parent.&lt;/li>
+&lt;li>Remplacer les actions locales par des appels aux actions définies dans le parent.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://reactjs.org/docs/lifting-state-up.html">Lifting State Up (React)&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="application">Application&lt;/h3>
+&lt;p>&lt;a href="https://github.com/ensc-mobi/TempConverter">https://github.com/ensc-mobi/TempConverter&lt;/a>&lt;/p>
+&lt;p>&lt;img src="images/temp-converter.png" alt="TempConverter demo">&lt;/p>
+&lt;hr>
+&lt;h3 id="utilisation-de-props-dans-les-composants-enfants">Utilisation de props dans les composants enfants&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="color:#fb660a;font-weight:bold">interface&lt;/span> TemperatureInputProps {
+temperature: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>;
+scale: &lt;span style="color:#cdcaa9;font-weight:bold">Scale&lt;/span>;
+onTemperatureChange: (text: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>) =&amp;gt; &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span>;
+}
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Component for displaying and inputting a temperature in a specific scale
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> TemperatureInput &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> React.Component&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">TemperatureInputProps&lt;/span>, {}&amp;gt; {
+_onChangeText = (text: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>) =&amp;gt; {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Call callback passed as component prop
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.onTemperatureChange(text);
+};
+render() {
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> temperature = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.temperature;
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> scale = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.scale;
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> placeholder = &lt;span style="color:#0086d2">`Enter temperature in &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>scale&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">`&lt;/span>;
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">TextInput&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold">style&lt;/span>={styles.text}
+&lt;span style="color:#ff0086;font-weight:bold">placeholder&lt;/span>={placeholder}
+&lt;span style="color:#ff0086;font-weight:bold">onChangeText&lt;/span>={&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>._onChangeText}
+&lt;span style="color:#ff0086;font-weight:bold">value&lt;/span>={temperature}
+/&amp;gt;
+);
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="remontée-de-létat-dans-le-composant-parent">Remontée de l&amp;rsquo;état dans le composant parent&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Calculator &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> React.Component&amp;lt;{}, CalculatorState&amp;gt; {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Common state is lifted here, the closest parent of TemperatureInput components
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Temperature can be set either in Celsius or in Fahrenheit
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> state = { temperature: &lt;span style="color:#0086d2">&amp;#34;&amp;#34;&lt;/span>, scale: &lt;span style="color:#cdcaa9;font-weight:bold">Scale.Celsius&lt;/span> };
+_onCelsiusChange = (temperature: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>) =&amp;gt; {
+&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.setState({ scale: &lt;span style="color:#cdcaa9;font-weight:bold">Scale.Celsius&lt;/span>, temperature });
+};
+_onFahrenheitChange = (temperature: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>) =&amp;gt; {
+&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.setState({ scale: &lt;span style="color:#cdcaa9;font-weight:bold">Scale.Fahrenheit&lt;/span>, temperature });
+};
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="appel-aux-actions-définies-dans-le-parent">Appel aux actions définies dans le parent&lt;/h3>
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-tsx" data-lang="tsx"> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> render() {
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> scale = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.state.scale;
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> temperature = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.state.temperature;
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> tempCelsius =
+scale === Scale.Fahrenheit
+? tryConvert(temperature, toCelsius)
+: temperature;
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> tempFahrenheit =
+scale === Scale.Celsius
+? tryConvert(temperature, toFahrenheit)
+: temperature;
+&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">TemperatureInput&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold">scale&lt;/span>={Scale.Celsius}
+&lt;span style="color:#ff0086;font-weight:bold">temperature&lt;/span>={tempCelsius}
+&lt;span style="color:#ff0086;font-weight:bold">onTemperatureChange&lt;/span>={&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>._onCelsiusChange}
+/&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">TemperatureInput&lt;/span>
+&lt;span style="color:#ff0086;font-weight:bold">scale&lt;/span>={Scale.Fahrenheit}
+&lt;span style="color:#ff0086;font-weight:bold">temperature&lt;/span>={tempFahrenheit}
+&lt;span style="color:#ff0086;font-weight:bold">onTemperatureChange&lt;/span>={&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>._onFahrenheitChange}
+/&amp;gt;
+&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">BoilingResult&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">tempCelsius&lt;/span>={parseFloat(tempCelsius)} /&amp;gt;
+&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span>&amp;gt;
+);
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="navigation">Navigation&lt;/h2>
+&lt;hr>
 &lt;h3 id="gestion-de-la-navigation-avec-react-navigation">Gestion de la navigation avec React Navigation&lt;/h3>
 &lt;ul>
 &lt;li>Composant issu de la communauté des développeurs React Native.&lt;/li>
@@ -1244,9 +1370,9 @@ render() {
 &lt;h3 id="installation-de-react-navigation">Installation de react-navigation&lt;/h3>
 &lt;p>Utiliser &lt;code>expo install&lt;/code> au lieu de &lt;code>npm install&lt;/code> assure l&amp;rsquo;installation de versions compatibles avec celle d&amp;rsquo;Expo.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Core components and dependencies&lt;/span>
-expo install @react-navigation/native react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+expo install @react-navigation/native react-native-screens react-native-safe-area-context
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># StackNavigator dependencies&lt;/span>
-expo install @react-navigation/stack
+expo install @react-navigation/native-stack
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># BottomTabNavigator dependencies&lt;/span>
 expo install @react-navigation/bottom-tabs
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># DrawerNavigator dependencies&lt;/span>
@@ -1280,7 +1406,7 @@ expo install @react-navigation/drawer
 &lt;h3 id="passage-de-paramètres-entre-vues">Passage de paramètres entre vues&lt;/h3>
 &lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ts" data-lang="ts">&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Côté vue appelante
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.navigation.navigate(&lt;span style="color:#0086d2">&amp;#34;RouteName&amp;#34;&lt;/span>, {
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">/* Objet dont les propriétés constituent les arguments */&lt;/span>
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">/* Objet dont les propriétés constituent les paramètres passés à la nouvelle vue */&lt;/span>
 param1: &lt;span style="color:#0086d2">&amp;#34;value1&amp;#34;&lt;/span>,
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>});
@@ -1367,280 +1493,6 @@ fontWeight: &lt;span style="color:#0086d2">&amp;#34;bold&amp;#34;&lt;/span>,
 &lt;li>&amp;hellip;&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="gestion-de-létat">Gestion de l&amp;rsquo;état&lt;/h2>
-&lt;hr>
-&lt;h3 id="rappels-sur-les-propriétés">Rappels sur les propriétés&lt;/h3>
-&lt;p>&lt;strong>Propriétés (&lt;em>props&lt;/em>)&lt;/strong> = caractéristiques définies au moment de la création du composant.&lt;/p>
-&lt;p>Les propriétés sont modifiables uniquement par le composant parent.&lt;/p>
-&lt;hr>
-&lt;h3 id="rappels-sur-létat">Rappels sur l&amp;rsquo;état&lt;/h3>
-&lt;p>&lt;strong>Etat (&lt;em>state&lt;/em>)&lt;/strong> = ensemble des données susceptibles d&amp;rsquo;être modifiées pendant l&amp;rsquo;exécution de l&amp;rsquo;application.&lt;/p>
-&lt;p>Chaque composant React Native possède un état interne, géré avec &lt;code>this.state&lt;/code> et &lt;code>this.setState()&lt;/code>.&lt;/p>
-&lt;p>Toute modification de l&amp;rsquo;état déclenche un nouveau rendu du composant.&lt;/p>
-&lt;hr>
-&lt;h3 id="problématique">Problématique&lt;/h3>
-&lt;p>La gestion locale de l&amp;rsquo;état devient insuffisante lorsqu&amp;rsquo;un composant doit &lt;strong>accéder à&lt;/strong> ou &lt;strong>modifier&lt;/strong> l&amp;rsquo;état d&amp;rsquo;un autre composant.&lt;/p>
-&lt;p>Nécessité de partager un état commun entre certains composants.&lt;/p>
-&lt;hr>
-&lt;h3 id="solution--_lifting-state-up_">Solution : &lt;em>&amp;ldquo;lifting state up&amp;rdquo;&lt;/em>&lt;/h3>
-&lt;ul>
-&lt;li>Remonter l&amp;rsquo;état au niveau du plus proche composant parent commun.&lt;/li>
-&lt;li>Définir les actions de modification dans ce composant parent.&lt;/li>
-&lt;li>Dans les composants enfants :
-&lt;ul>
-&lt;li>Remplacer l&amp;rsquo;état local par des propriétés définies par le parent.&lt;/li>
-&lt;li>Remplacer les actions locales par des appels aux actions définies dans le parent.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;p>&lt;a href="https://reactjs.org/docs/lifting-state-up.html">Lifting State Up (React)&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h3 id="application">Application&lt;/h3>
-&lt;p>&lt;a href="https://github.com/ensc-mobi/TempConverter">https://github.com/ensc-mobi/TempConverter&lt;/a>&lt;/p>
-&lt;p>&lt;img src="images/temp-converter.png" alt="TempConverter demo">&lt;/p>
-&lt;hr>
-&lt;h3 id="utilisation-de-props-dans-les-composants-enfants">Utilisation de props dans les composants enfants&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> TemperatureInput &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> React.Component {
-_onChangeText = (text) =&amp;gt; {
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Callback passed as component prop is called
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.onTemperatureChange(text);
-};
-render() {
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> temperature = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.temperature;
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> scale = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.scale;
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> placeholder = &lt;span style="color:#0086d2">`Enter temperature in &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>scaleNames[scale]&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">`&lt;/span>;
-&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">TextInput&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">style&lt;/span>={styles.text}
-&lt;span style="color:#ff0086;font-weight:bold">placeholder&lt;/span>={placeholder}
-&lt;span style="color:#ff0086;font-weight:bold">value&lt;/span>={temperature}
-&lt;span style="color:#ff0086;font-weight:bold">onChangeText&lt;/span>={&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>._onChangeText}
-/&amp;gt;
-);
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="remontée-de-létat-dans-le-composant-parent">Remontée de l&amp;rsquo;état dans le composant parent&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Calculator &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> React.Component {
-constructor(props) {
-&lt;span style="color:#fb660a;font-weight:bold">super&lt;/span>(props);
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Common state is lifted in closest parent of TemperatureInput components
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Temperature can be set either in Celsius or in Fahrenheit
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.state = { temperature: &lt;span style="color:#0086d2">&amp;#34;&amp;#34;&lt;/span>, scale: &lt;span style="color:#0086d2">&amp;#34;c&amp;#34;&lt;/span> };
-}
-_onCelsiusChange = temperature =&amp;gt; {
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.setState({ scale: &lt;span style="color:#0086d2">&amp;#34;c&amp;#34;&lt;/span>, temperature });
-};
-_onFahrenheitChange = temperature =&amp;gt; {
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.setState({ scale: &lt;span style="color:#0086d2">&amp;#34;f&amp;#34;&lt;/span>, temperature });
-};
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="appel-aux-actions-définies-dans-le-parent">Appel aux actions définies dans le parent&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx"> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> render() {
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> scale = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.state.scale;
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> temperature = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.state.temperature;
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> tempCelsius =
-scale === &lt;span style="color:#0086d2">&amp;#34;f&amp;#34;&lt;/span> ? tryConvert(temperature, toCelsius) : temperature;
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> tempFahrenheit =
-scale === &lt;span style="color:#0086d2">&amp;#34;c&amp;#34;&lt;/span> ? tryConvert(temperature, toFahrenheit) : temperature;
-&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">TemperatureInput&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">scale&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;c&amp;#34;&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">temperature&lt;/span>={tempCelsius}
-&lt;span style="color:#ff0086;font-weight:bold">onTemperatureChange&lt;/span>={&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>._onCelsiusChange}
-/&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">TemperatureInput&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">scale&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;f&amp;#34;&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">temperature&lt;/span>={tempFahrenheit}
-&lt;span style="color:#ff0086;font-weight:bold">onTemperatureChange&lt;/span>={&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>._onFahrenheitChange}
-/&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">BoilingResult&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">tempCelsius&lt;/span>={parseFloat(tempCelsius)} /&amp;gt;
-&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span>&amp;gt;
-);
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="centralisation-de-létat">Centralisation de l&amp;rsquo;état&lt;/h3>
-&lt;p>Les composants parents peuvent finir par rassembler trop de choses :&lt;/p>
-&lt;ul>
-&lt;li>Etat commun&lt;/li>
-&lt;li>Actions de modification&lt;/li>
-&lt;li>Hiérarchie des composants enfants&lt;/li>
-&lt;/ul>
-&lt;p>Non-respect du principe de &lt;strong>séparation des responsabilités&lt;/strong>.&lt;/p>
-&lt;hr>
-&lt;h3 id="solution">Solution&lt;/h3>
-&lt;ul>
-&lt;li>Centraliser l&amp;rsquo;état et les actions de modifications dans des objets dédiés, souvent appelés &lt;strong>stores&lt;/strong>.&lt;/li>
-&lt;li>Donner accès à ces objets aux composants via des propriétés.&lt;/li>
-&lt;li>Prévoir un mécanisme d'&lt;strong>abonnement&lt;/strong> des composants aux mutations de l&amp;rsquo;état effectués uniquement dans les stores.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="application-1">Application&lt;/h3>
-&lt;p>&lt;a href="https://github.com/ensc-mobi/TodoNative">https://github.com/ensc-mobi/TodoNative&lt;/a>&lt;/p>
-&lt;p>&lt;img src="images/todonative.png" alt="TodoNative demo">&lt;/p>
-&lt;hr>
-&lt;h3 id="définition-dun-store">Définition d&amp;rsquo;un store&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> TodoStore &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> Store {
-constructor() {
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Call to parent constructor is needed to init observation
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">super&lt;/span>();
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// The TODO task is used as key (unique identifier)
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Therefore, each TODO must have a different task
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.todos = [];
-}
-addTodo = (task) =&amp;gt; {
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Add new TODO at beginning of array
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.todos = [{ task, completed: &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span> }, ...&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.todos];
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.notifyObservers();
-};
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Used in parent class when notifying observers
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> getState() {
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> todos = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.todos;
-&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> { todos };
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="notification-des-changements-détat">Notification des changements d&amp;rsquo;état&lt;/h3>
-&lt;p>Basée sur le Design Pattern &lt;a href="https://fr.wikipedia.org/wiki/Observateur_%28patron_de_conception%29">Observateur&lt;/a>.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Store {
-constructor() {
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Define an empty observer list
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.observers = [];
-}
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Add new observer to list
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> addObserver(observer) {
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.observers.push(observer);
-}
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Notify all observers of a state change in the store
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> notifyObservers() {
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.observers.forEach((observer) =&amp;gt; observer.setState(&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.getState()));
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="lien-entre-store-et-composant-principal">Lien entre store et composant principal&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> App = () =&amp;gt; {
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> todoStore = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> TodoStore();
-&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">MainView&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">todoStore&lt;/span>={todoStore} /&amp;gt;;
-};
-&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> App;
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="abonnement-dun-composant">Abonnement d&amp;rsquo;un composant&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MainView &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> React.Component {
-constructor(props) {
-&lt;span style="color:#fb660a;font-weight:bold">super&lt;/span>(props);
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.state = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.todoStore.getState();
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.todoStore.addObserver(&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>);
-}
-render() {
-&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">View&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">style&lt;/span>={styles.container}&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Header&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">title&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;TodoNative&amp;#34;&lt;/span> /&amp;gt;
-&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">Input&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">placeholder&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Saisissez une nouvelle tâche&amp;#34;&lt;/span>
-&lt;span style="color:#ff0086;font-weight:bold">onSubmitEditing&lt;/span>={&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.todoStore.addTodo}
-/&amp;gt;
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="gestion-de-létat-avec-mobx">Gestion de l&amp;rsquo;état avec MobX&lt;/h3>
-&lt;ul>
-&lt;li>Quand l&amp;rsquo;application devient complexe, le nombre croissant de composants complique les évolutions de l&amp;rsquo;état.&lt;/li>
-&lt;li>Les mutations de l&amp;rsquo;état peuvent déclencher un (trop) grand nombre de rendus des composants.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="solution-1">Solution&lt;/h3>
-&lt;ul>
-&lt;li>Utiliser une librairie dédiée à la gestion de l&amp;rsquo;état.&lt;/li>
-&lt;li>&lt;a href="https://www.robinwieruch.de/redux-mobx-confusion/">Bon choix&lt;/a> pour la plupart des projets de taille intermédiaire : &lt;a href="https://mobx.js.org">MobX&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="images/mobx-logo.png" alt="MobX logo">&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Add MobX to a React Native project&lt;/span>
-expo install mobx mobx-react
-expo install --save-dev babel-preset-mobx
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;p>&lt;img src="images/mobx-overview.png" alt="MobX overview">&lt;/p>
-&lt;hr>
-&lt;h3 id="application-2">Application&lt;/h3>
-&lt;p>&lt;a href="https://github.com/ensc-mobi/TodoNative-MobX">https://github.com/ensc-mobi/TodoNative-MobX&lt;/a>&lt;/p>
-&lt;p>&lt;img src="images/todonative.png" alt="TodoNative-MobX demo">&lt;/p>
-&lt;hr>
-&lt;h3 id="définition-dune-classe-métier">Définition d&amp;rsquo;une classe métier&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> { observable } from &lt;span style="color:#0086d2">&amp;#34;mobx&amp;#34;&lt;/span>;
-&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Todo {
-@observable task;
-@observable completed;
-constructor(task = &lt;span style="color:#0086d2">&amp;#34;&amp;#34;&lt;/span>, completed = &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span>) {
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.task = task;
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.completed = completed;
-}
-toggle() {
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.completed = !&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.completed;
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="définition-dun-store-1">Définition d&amp;rsquo;un store&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> { observable } from &lt;span style="color:#0086d2">&amp;#34;mobx&amp;#34;&lt;/span>;
-&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> Todo from &lt;span style="color:#0086d2">&amp;#34;../domain/Todo&amp;#34;&lt;/span>;
-&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> TodoStore {
-@observable todos;
-@observable isLoading = &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>;
-constructor() {
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// The TODO task is used as key (unique identifier)
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Therefore, each TODO must have a different task
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.todos = [];
-}
-addTodo(task) {
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> todo = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Todo(task);
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Add new TODO at beginning of array
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.todos = [todo, ...&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.todos];
-}
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="lien-entre-store-et-composant-principal-1">Lien entre store et composant principal&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> App = () =&amp;gt; {
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> todoStore = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> TodoStore();
-&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">MainView&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">todoStore&lt;/span>={todoStore} /&amp;gt;;
-};
-&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> App;
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="abonnement-dun-composant-1">Abonnement d&amp;rsquo;un composant&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> { observer } from &lt;span style="color:#0086d2">&amp;#34;mobx-react&amp;#34;&lt;/span>;
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
-@observer
-&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MainView &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> React.Component {
-onAddTodo = task =&amp;gt; {
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.todoStore.addTodo(task);
-};
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
-render() {
-&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
-&amp;lt;View style={styles.container}&amp;gt;
-&amp;lt;Header title=&lt;span style="color:#0086d2">&amp;#34;TodoNative&amp;#34;&lt;/span> /&amp;gt;
-&amp;lt;Input
-placeholder=&lt;span style="color:#0086d2">&amp;#34;Saisissez une nouvelle tâche&amp;#34;&lt;/span>
-onSubmitEditing={&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.onAddTodo}
-/&amp;gt;
-&amp;lt;FlatList
-style={styles.todoContainer}
-data={&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.todoStore.todos}
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="pourquoi-pas-redux-">Pourquoi pas Redux ?&lt;/h2>
-&lt;p>&lt;img src="images/redux-all.jpeg" alt="Redux all!">&lt;/p>
-&lt;ul>
-&lt;li>Librairie créée pour adresser des problématiques à l&amp;rsquo;échelle de Facebook&lt;/li>
-&lt;li>Complexe et &lt;em>overkill&lt;/em> pour les projets &amp;ldquo;normaux&amp;rdquo;&lt;/li>
-&lt;li>&lt;a href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">&amp;ldquo;You might not need Redux&amp;rdquo;&lt;/a> (écrit par son créateur)&lt;/li>
-&lt;/ul>
-&lt;hr>
 &lt;h2 id="utilisation-dapi-web">Utilisation d&amp;rsquo;API web&lt;/h2>
 &lt;hr>
 &lt;h3 id="la-notion-dapi">La notion d&amp;rsquo;API&lt;/h3>
@@ -1667,6 +1519,7 @@ data={&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props.todoS
 &lt;ul>
 &lt;li>&lt;a href="https://www.getpostman.com/">Postman&lt;/a>&lt;/li>
 &lt;li>Extension &lt;a href="https://addons.mozilla.org/fr/firefox/addon/restclient/">RESTClient&lt;/a> pour Firefox&lt;/li>
+&lt;li>&lt;a href="https://insomnia.rest/">Insomnia&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h3 id="appels-réseau-asynchrones-avec-javascript">Appels réseau asynchrones avec JavaScript&lt;/h3>
@@ -1708,40 +1561,54 @@ secondParam: &lt;span style="color:#0086d2">&amp;#34;yourOtherValue&amp;#34;&lt;
 }),
 });
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="application-3">Application&lt;/h3>
+&lt;h3 id="application-1">Application&lt;/h3>
 &lt;p>&lt;a href="https://github.com/ensc-mobi/RandomBeer">https://github.com/ensc-mobi/RandomBeer&lt;/a>&lt;/p>
 &lt;p>&lt;img src="images/random_beer.png" alt="Random Beer app">&lt;/p>
 &lt;hr>
 &lt;h3 id="consommation-dune-api-web">Consommation d&amp;rsquo;une API web&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> headers = {
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ts" data-lang="ts">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> rootEndpoint = &lt;span style="color:#0086d2">&amp;#34;https://api.punkapi.com/v2&amp;#34;&lt;/span>;
+&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">interface&lt;/span> Beer {
+name: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>;
+description: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>;
+}
+&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> headers = {
 &lt;span style="color:#0086d2">&amp;#34;Content-Type&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;application/json&amp;#34;&lt;/span>,
 Accept: &lt;span style="color:#0086d2">&amp;#34;application/json&amp;#34;&lt;/span>,
 };
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Retourne une recette de bière au hasard
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Return a random beer from API
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> getRandomBrewdog = () =&amp;gt;
 fetch(&lt;span style="color:#0086d2">`&lt;/span>&lt;span style="color:#0086d2">${&lt;/span>rootEndpoint&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">/beers/random`&lt;/span>, { headers })
 .then((response) =&amp;gt; response.json())
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Access first element of returned array
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> .then((beers) =&amp;gt; beers[&lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>])
-.&lt;span style="color:#fb660a;font-weight:bold">catch&lt;/span>((error) =&amp;gt; {
+.then((beers) =&amp;gt; beers[&lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>]) &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Access first element of returned array
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> .&lt;span style="color:#fb660a;font-weight:bold">catch&lt;/span>((error) =&amp;gt; {
 console.error(error);
 });
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="mise-à-jour-de-lapplication">Mise à jour de l&amp;rsquo;application&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx"> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
+&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="color:#fb660a;font-weight:bold">interface&lt;/span> AppState {
+isLoading: &lt;span style="color:#cdcaa9;font-weight:bold">boolean&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Is a beer request pending?
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> name: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Beer name
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> description: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Beer description
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> App &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> Component&amp;lt;{}, AppState&amp;gt; {
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Initial state
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> state: &lt;span style="color:#cdcaa9;font-weight:bold">AppState&lt;/span> = {
+name: &lt;span style="color:#0086d2">&amp;#34;&amp;#34;&lt;/span>,
+description: &lt;span style="color:#0086d2">&amp;#34;&amp;#34;&lt;/span>,
+isLoading: &lt;span style="color:#cdcaa9;font-weight:bold">false&lt;/span>,
+};
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Function called when user want to search for another beer
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> _getRandomBrewdogWithFeedback = () =&amp;gt; {
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.setState({ isLoading: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span> });
-getRandomBrewdog().then(beer =&amp;gt;
+&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Begin a new request for a beer
+&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.setState({ isLoading: &lt;span style="color:#cdcaa9;font-weight:bold">true&lt;/span> });
+getRandomBrewdog().then((beer: &lt;span style="color:#cdcaa9;font-weight:bold">Beer&lt;/span>) =&amp;gt;
 &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.setState({
-name: beer.name,
-description: beer.description,
-isLoading: &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// la requête est terminée
+name: &lt;span style="color:#cdcaa9;font-weight:bold">beer.name&lt;/span>,
+description: &lt;span style="color:#cdcaa9;font-weight:bold">beer.description&lt;/span>,
+isLoading: &lt;span style="color:#cdcaa9;font-weight:bold">false&lt;/span>, &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Request is finished
 &lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> })
 );
 };
-componentDidMount() {
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>._getRandomBrewdogWithFeedback();
-}
 &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="interactions-avec-un-sgbdr-via-une-api-web">Interactions avec un SGBDR via une API web&lt;/h3>
@@ -1760,121 +1627,7 @@ componentDidMount() {
 &lt;li>&lt;code>GET my-table&lt;/code> : renvoie la liste des enregistrements de la table &lt;code>my-table&lt;/code>.&lt;/li>
 &lt;li>&lt;code>GET my-table/id&lt;/code> : renvoie l&amp;rsquo;enregistrement identifié par &lt;code>id&lt;/code>.&lt;/li>
 &lt;li>&lt;code>POST my-table&lt;/code> : création d&amp;rsquo;un nouvel enregistrement avec les données contenues dans le corps de la requête.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="application-4">Application&lt;/h3>
-&lt;p>&lt;a href="https://github.com/ensc-mobi/MyMoviesNative">https://github.com/ensc-mobi/MyMoviesNative&lt;/a>&lt;/p>
-&lt;p>&lt;img src="images/mymoviesnative.png" alt="MyMoviesNative demo">&lt;/p>
-&lt;hr>
-&lt;h3 id="classe-métier-film">Classe métier film&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Movie {
-@observable id;
-@observable title;
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> @observable image;
-constructor(
-id,
-title,
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> image
-) {
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.id = id;
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.title = title;
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.image = image;
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="accès-au-sgbdr">Accès au SGBDR&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> rootEndpoint = &lt;span style="color:#0086d2">&amp;#34;http://localhost/mymovies/api.php/records&amp;#34;&lt;/span>;
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> headers = {
-&lt;span style="color:#0086d2">&amp;#34;Content-Type&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;application/json&amp;#34;&lt;/span>,
-Accept: &lt;span style="color:#0086d2">&amp;#34;application/json&amp;#34;&lt;/span>,
-};
-&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> getAllMovies = () =&amp;gt;
-fetch(&lt;span style="color:#0086d2">`&lt;/span>&lt;span style="color:#0086d2">${&lt;/span>rootEndpoint&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">/movie/`&lt;/span>, { headers })
-.then((response) =&amp;gt; response.json())
-.then((jsonResponse) =&amp;gt; jsonResponse.records)
-.&lt;span style="color:#fb660a;font-weight:bold">catch&lt;/span>((error) =&amp;gt; {
-console.log(error);
-});
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="récupération-de-la-liste-des-films">Récupération de la liste des films&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieStore {
-@observable movies;
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
-fetchAll() {
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.movies = [];
-getAllMovies().then((movies) =&amp;gt; {
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">//console.log(movies);
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> movies.forEach((movieData) =&amp;gt; {
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> movie = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Movie(
-movieData.mov_id,
-movieData.mov_title,
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> movieData.mov_image
-);
-&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.movies = [movie, ...&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.movies];
-});
-});
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="vue-principale">Vue principale&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> HomeScreen &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> React.Component {
-render() {
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> movieStore = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> MovieStore();
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// All React Navigation screens receive this object as prop
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> { navigation } = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props;
-&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Navigation object is passed down to children components
-&lt;/span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">MainView&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">movieStore&lt;/span>={movieStore} &lt;span style="color:#ff0086;font-weight:bold">navigation&lt;/span>={navigation} /&amp;gt;;
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="affichage-dun-film-dans-la-liste">Affichage d&amp;rsquo;un film dans la liste&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">@observer
-&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieItem &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> React.Component {
-render() {
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> { movie } = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props;
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> { navigation } = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props;
-&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
-&amp;lt;View style={styles.container}&amp;gt;
-&amp;lt;TouchableOpacity
-onPress={() =&amp;gt; {
-navigation.navigate(&lt;span style="color:#0086d2">&amp;#34;Details&amp;#34;&lt;/span>, {
-movie: movie,
-});
-}}
-&amp;gt;
-&amp;lt;Text style={styles.text}&amp;gt;
-{movie.title} ({movie.year})
-&amp;lt;/Text&amp;gt;
-&amp;lt;/TouchableOpacity&amp;gt;
-&amp;lt;/View&amp;gt;
-);
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="détails-sur-un-film">Détails sur un film&lt;/h3>
-&lt;div class="highlight">&lt;pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> DetailsScreen &lt;span style="color:#fb660a;font-weight:bold">extends&lt;/span> React.Component {
-render() {
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> { navigation } = &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.props;
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> movie = navigation.getParam(&lt;span style="color:#0086d2">&amp;#34;movie&amp;#34;&lt;/span>);
-&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> imageUrl = imagesEndpoint + movie.image;
-&lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
-&amp;lt;View style={styles.container}&amp;gt;
-&amp;lt;Text style={styles.title}&amp;gt;
-{movie.title} ({movie.year})
-&amp;lt;/Text&amp;gt;
-&amp;lt;Text style={styles.director}&amp;gt;Réalisateur(s) : {movie.director}&amp;lt;/Text&amp;gt;
-&amp;lt;Text style={styles.description}&amp;gt;{movie.shortDescription}&amp;lt;/Text&amp;gt;
-&amp;lt;Image style={styles.image} source={{ uri: imageUrl }}&amp;gt;&amp;lt;/Image&amp;gt;
-&amp;lt;/View&amp;gt;
-);
-}
-}
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Core</title><link>https://www.bpesquet.fr/slides/asp-net-core/</link><pubDate>Tue, 21 Sep 2021 09:40:11 +0200</pubDate><guid>https://www.bpesquet.fr/slides/asp-net-core/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
+&lt;/ul></description></item><item><title>ASP.NET Core</title><link>https://www.bpesquet.fr/slides/asp-net-core/</link><pubDate>Tue, 21 Sep 2021 09:40:11 +0200</pubDate><guid>https://www.bpesquet.fr/slides/asp-net-core/</guid><description>&lt;h2 id="sommaire">Sommaire&lt;/h2>
 &lt;ul>
 &lt;li>Introduction à .NET&lt;/li>
 &lt;li>Présentation de ASP.NET Core&lt;/li>
