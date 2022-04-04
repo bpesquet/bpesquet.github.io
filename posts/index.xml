@@ -35,8 +35,13 @@
 &lt;p>Pour ma part, l&amp;rsquo;expérience fut très concluante et je la renouvellerai dès que possible. Bons quiz !&lt;/p></description></item><item><title>PAISS 2018 : le debrief</title><link>https://www.bpesquet.fr/posts/paiss-2018-debrief/</link><pubDate>Mon, 09 Jul 2018 08:48:56 +0200</pubDate><guid>https://www.bpesquet.fr/posts/paiss-2018-debrief/</guid><description>&lt;p>La session 2018 de la &lt;em>summer school&lt;/em> de l&amp;rsquo;INRIA consacrée à l&amp;rsquo;IA, nommée &lt;a href="https://project.inria.fr/paiss/">PAISS&lt;/a>, s&amp;rsquo;est déroulée à Grenoble du 2 au 6 juillet 2018. Voici un petit compte-rendu de ce qui s&amp;rsquo;y est dit et fait.&lt;/p>
 &lt;p>&lt;img src="https://project.inria.fr/paiss/files/2018/04/te%CC%82tie%CC%80re-3.jpg" alt="Logo PAISS">&lt;/p>
 &lt;p>Le P de PAISS correspond à l&amp;rsquo;institut &lt;a href="https://inria.fr/actualite/actualites-inria/creation-de-l-institut-prairie">PRAIRIE&lt;/a>, le centre français d&amp;rsquo;excellence en IA dont la création a été annoncée lors du sommet &lt;a href="https://www.aiforhumanity.fr/">AI for Humanity&lt;/a> en mars 2018.&lt;/p>
-&lt;h2 id="quelques-chiffres">Quelques chiffres&lt;/h2>
-&lt;p>L&amp;rsquo;école d&amp;rsquo;été 2018 a rassemblé environ 200 participants sélectionnés parmi plus de 700 candidatures. 44 nationalités étaient représentées. La composition du public était la suivante :&lt;/p>
+&lt;h2 id="quelques-chiffres" >Quelques chiffres
+&lt;span>
+&lt;a href="#quelques-chiffres">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>L&amp;rsquo;école d&amp;rsquo;été 2018 a rassemblé environ 200 participants sélectionnés parmi plus de 700 candidatures. 44 nationalités étaient représentées. La composition du public était la suivante :&lt;/p>
 &lt;ul>
 &lt;li>60% d&amp;rsquo;étudiants, presque tous thésards ou post-doctorants ;&lt;/li>
 &lt;li>15% d&amp;rsquo;académiques (dont votre serviteur) ;&lt;/li>
@@ -45,17 +50,20 @@
 &lt;p>De quoi prendre un petit coup de vieux au milieu de nombreux visages juvéniles&amp;hellip;&lt;/p>
 &lt;p>En dépit des efforts des organisateurs, il n&amp;rsquo;y avait &amp;ldquo;que&amp;rdquo; 25% de femmes parmi les participants. Elles ont pourtant toute leur place en IA comme dans les autres secteurs scientifiques. Allez les filles !&lt;/p>
 &lt;p>L&amp;rsquo;agenda de l&amp;rsquo;école d&amp;rsquo;été fut très dense, avec au total 15 conférences et 3 sessions pratiques réparties sur cinq jours. Le peu de temps restant fut occupé par une soirée de bienvenue sur les hauteurs de Grenoble, une session &amp;ldquo;posters&amp;rdquo; et une réception dans les somptueux locaux de &lt;a href="http://www.europe.naverlabs.com/">Naver Labs&lt;/a>, l&amp;rsquo;ancien laboratoire de recherche en IA de Xerox.&lt;/p>
-&lt;figure>
-&lt;img src="images/Grenoble_Bastille.jpg"
-alt="Vue de Grenoble depuis la Bastille"/> &lt;figcaption>
+&lt;figure>&lt;img src="images/Grenoble_Bastille.jpg"
+alt="Vue de Grenoble depuis la Bastille"/>&lt;figcaption>
 &lt;p>Vue de Grenoble depuis la Bastille&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
-&lt;h2 id="le-contenu">Le contenu&lt;/h2>
-&lt;p>Le casting des intervenants a rassemblé de nombreuses pointures de la recherche en IA, dont une véritable &lt;em>dream team&lt;/em> francophone composée de Yann LeCun (patron de l&amp;rsquo;IA chez Facebook), Rémi Munos (responsable du laboratoire DeepMind à Paris), Hugo Larochelle (Google Brain) et bien d&amp;rsquo;autres.&lt;/p>
-&lt;figure>
-&lt;img src="images/paiss_selfie.jpg"
-alt="Je sais, on avait dit pas de selfie avec Yann LeCun&amp;amp;hellip;"/> &lt;figcaption>
+&lt;h2 id="le-contenu" >Le contenu
+&lt;span>
+&lt;a href="#le-contenu">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Le casting des intervenants a rassemblé de nombreuses pointures de la recherche en IA, dont une véritable &lt;em>dream team&lt;/em> francophone composée de Yann LeCun (patron de l&amp;rsquo;IA chez Facebook), Rémi Munos (responsable du laboratoire DeepMind à Paris), Hugo Larochelle (Google Brain) et bien d&amp;rsquo;autres.&lt;/p>
+&lt;figure>&lt;img src="images/paiss_selfie.jpg"
+alt="Je sais, on avait dit pas de selfie avec Yann LeCun&amp;amp;hellip;"/>&lt;figcaption>
 &lt;p>Je sais, on avait dit pas de selfie avec Yann LeCun&amp;hellip;&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
@@ -68,12 +76,16 @@ alt="Je sais, on avait dit pas de selfie avec Yann LeCun&amp;amp;hellip;"/> &lt;
 &lt;li>&lt;a href="https://github.com/criteo-research/paiss_deeprl">Session pratique sur l&amp;rsquo;apprentissage profond par renforcement&lt;/a>&lt;/li>
 &lt;li>La session pratique sur PyTorch correspond aux &lt;a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html">tutoriels&lt;/a> du site officiel.&lt;/li>
 &lt;/ul>
-&lt;h2 id="bilan-personnel">Bilan personnel&lt;/h2>
-&lt;p>Cette école d&amp;rsquo;été m&amp;rsquo;a permis de mesurer l&amp;rsquo;écart entre mes connaissances actuelles et l&amp;rsquo;état de l&amp;rsquo;art. J&amp;rsquo;ai bien l&amp;rsquo;intention de continuer à travailler pour réduire cet écart, même si mes objectifs en matière d&amp;rsquo;IA sont avant tout d&amp;rsquo;ordre pédagogique (pour le moment).&lt;/p>
+&lt;h2 id="bilan-personnel" >Bilan personnel
+&lt;span>
+&lt;a href="#bilan-personnel">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Cette école d&amp;rsquo;été m&amp;rsquo;a permis de mesurer l&amp;rsquo;écart entre mes connaissances actuelles et l&amp;rsquo;état de l&amp;rsquo;art. J&amp;rsquo;ai bien l&amp;rsquo;intention de continuer à travailler pour réduire cet écart, même si mes objectifs en matière d&amp;rsquo;IA sont avant tout d&amp;rsquo;ordre pédagogique (pour le moment).&lt;/p>
 &lt;p>La recherche en IA semble plutôt une affaire de mathématiciens que d&amp;rsquo;informaticiens. Toutes les présentations se sont basées sur un formalisme mathématique important, avec dans certains cas la mobilisation de concepts qui m&amp;rsquo;ont ramené tout droit à mes lointaines années de prépa.&lt;/p>
-&lt;figure>
-&lt;img src="images/paiss_bottou.jpg"
-alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissage non supervisé"/> &lt;figcaption>
+&lt;figure>&lt;img src="images/paiss_bottou.jpg"
+alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissage non supervisé"/>&lt;figcaption>
 &lt;p>Extrait de la présentation de Léon Bottou sur l&amp;rsquo;apprentissage non supervisé&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
@@ -82,8 +94,13 @@ alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissa
 &lt;p>Je reste cependant très content d&amp;rsquo;avoir participé à cette école d&amp;rsquo;été qui a été l&amp;rsquo;occasion de cogitations intenses et de rencontres variées et enrichissantes.&lt;/p>
 &lt;p>D&amp;rsquo;après mes discussions avec les organisateurs, la prochaine session devrait avoir lieu à Paris en 2019. Avis aux amateurs !&lt;/p></description></item><item><title>Artistes et spécifieurs, un jeu pour découvrir l'agilité</title><link>https://www.bpesquet.fr/posts/artistes-et-specifieurs/</link><pubDate>Thu, 24 May 2018 15:57:43 +0200</pubDate><guid>https://www.bpesquet.fr/posts/artistes-et-specifieurs/</guid><description>&lt;p>Dans le cadre du module de cours Gestion de projet, j&amp;rsquo;ai testé avec succès un atelier ludique et efficace pour s&amp;rsquo;initier aux valeurs de l&amp;rsquo;agilité : le jeu &lt;strong>artistes et spécifieurs&lt;/strong>. Imaginé par &lt;a href="http://alistair.cockburn.us/">Alistair Cockburn&lt;/a>, l&amp;rsquo;un des signataires du &lt;a href="http://agilemanifesto.org/">manifeste agile&lt;/a>, ce jeu est souvent utilisé par les coachs agiles en entreprise.&lt;/p>
 &lt;p>Par rapport à d&amp;rsquo;autres ateliers similiaires comme &lt;a href="https://www.lego4scrum.com/">lego4scrum&lt;/a>, il a l&amp;rsquo;avantage de ne nécessiter presque aucun matériel. En 1h30 environ, il offre une première approche de certains principes agiles dans un cadre propice à la bonne humeur.&lt;/p>
-&lt;h2 id="principe-du-jeu">Principe du jeu&lt;/h2>
-&lt;p>Pour commencer, on forme des équipes de 4 à 6 personnes selon le nombre total de participants à l&amp;rsquo;atelier. Chaque équipe se scinde en deux : les spécifieurs d&amp;rsquo;une part et les artistes de l&amp;rsquo;autre.&lt;/p>
+&lt;h2 id="principe-du-jeu" >Principe du jeu
+&lt;span>
+&lt;a href="#principe-du-jeu">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Pour commencer, on forme des équipes de 4 à 6 personnes selon le nombre total de participants à l&amp;rsquo;atelier. Chaque équipe se scinde en deux : les spécifieurs d&amp;rsquo;une part et les artistes de l&amp;rsquo;autre.&lt;/p>
 &lt;p>L&amp;rsquo;objectif est pour les artistes de reproduire aussi fidèlement que possible un dessin à partir des spécifications fournies par les spécifieurs de l&amp;rsquo;équipe.&lt;/p>
 &lt;p>Les contraintes sont les suivantes :&lt;/p>
 &lt;ul>
@@ -93,19 +110,34 @@ alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissa
 &lt;li>Les artistes ne peuvent pas se déplacer.&lt;/li>
 &lt;/ul>
 &lt;p>Le reste de l&amp;rsquo;organisation spécifieurs/artistes est libre : nombre d&amp;rsquo;allers-retours, format de communication écrite, attente d&amp;rsquo;un spécifieur aux côtés des artistes, etc.&lt;/p>
-&lt;h2 id="matériel-nécessaire">Matériel nécessaire&lt;/h2>
-&lt;ul>
+&lt;h2 id="matériel-nécessaire" >Matériel nécessaire
+&lt;span>
+&lt;a href="#mat%c3%a9riel-n%c3%a9cessaire">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
 &lt;li>Trois dessins de complexité croissante, imprimés en autant d&amp;rsquo;exemplaires qu&amp;rsquo;il y aura d&amp;rsquo;équipes. Afin de conserver l&amp;rsquo;effet de surprise pour mes étudiants, je ne mets pas en ligne ceux que j&amp;rsquo;utilise. Contactez-moi si vous souhaitez les obtenir.&lt;/li>
 &lt;li>Des feuilles A3 ou A4 vierges et des marqueurs pour dessiner dessus.&lt;/li>
 &lt;li>Des feuilles de brouillon pour écrire les spécifications.&lt;/li>
 &lt;/ul>
 &lt;p>Ce jeu peut être gourmand en papier. Je donne à mes étudiants des consignes d&amp;rsquo;économie pour éviter le gaspillage.&lt;/p>
-&lt;h2 id="déroulement">Déroulement&lt;/h2>
-&lt;p>Une fois les consignes de jeu données à tous les participants, on sépare physiquement le groupe des spécifieurs et celui des artistes. Il est possible de les placer dans deux salles limitrophes, ou de les éloigner au maximum dans une même salle. La partie peut commencer !&lt;/p>
+&lt;h2 id="déroulement" >Déroulement
+&lt;span>
+&lt;a href="#d%c3%a9roulement">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Une fois les consignes de jeu données à tous les participants, on sépare physiquement le groupe des spécifieurs et celui des artistes. Il est possible de les placer dans deux salles limitrophes, ou de les éloigner au maximum dans une même salle. La partie peut commencer !&lt;/p>
 &lt;p>Chaque phase de jeu dure 10 minutes. L&amp;rsquo;idéal pour rythmer la session et instiller une petite dose de stress est de vidéoprojeter un &lt;a href="https://www.online-stopwatch.com/full-screen-stopwatch/">compte à rebours&lt;/a> aux spécifieurs. Une fois le temps écoulé, on récupère les dessins de chaque équipe et tous les participants sont regroupés pour un debriefing collectif souvent très drôle.&lt;/p>
 &lt;p>On laisse ensuite quelques minutes à chaque équipe pour trouver des axes d&amp;rsquo;amélioration avant la prochaine phase. Les participants peuvent décider de changer de rôle d&amp;rsquo;une phase à l&amp;rsquo;autre.&lt;/p>
-&lt;h2 id="conclusion">Conclusion&lt;/h2>
-&lt;p>Au bout de trois phases de jeu, on observe l&amp;rsquo;adoption naturelle de plusieurs des grands principes agiles :&lt;/p>
+&lt;h2 id="conclusion" >Conclusion
+&lt;span>
+&lt;a href="#conclusion">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Au bout de trois phases de jeu, on observe l&amp;rsquo;adoption naturelle de plusieurs des grands principes agiles :&lt;/p>
 &lt;ul>
 &lt;li>Fonctionnement en boucle courte.&lt;/li>
 &lt;li>Echanges réguliers entre les parties prenantes.&lt;/li>
@@ -118,8 +150,13 @@ alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissa
 &lt;p>Vous trouverez plus de détails sur ce jeu dans &lt;a href="http://www.agilex.fr/2013/01/mon-jeu-agile-prefere/">cet article&lt;/a>.&lt;/p></description></item><item><title>How to launch your own open source book that’s popular and profitable</title><link>https://www.bpesquet.fr/posts/how-to-launch-your-own-open-source-book/</link><pubDate>Tue, 03 Oct 2017 20:29:18 +0000</pubDate><guid>https://www.bpesquet.fr/posts/how-to-launch-your-own-open-source-book/</guid><description>&lt;p>&lt;img src="images/1.jpeg" alt="A Soyuz rocket launched from the Baikonur cosmodrome in Kazakhstan">&lt;/p>
 &lt;p>I am the author of &lt;a href="https://github.com/bpesquet/thejsway">The JavaScript Way&lt;/a>, a self-published open source book for learning to code. Despite the lack of any initial audience, it topped GitHub trending charts worldwide during its launch.&lt;/p>
 &lt;p>This is the story of this unexpected success.&lt;/p>
-&lt;h3 id="project-inception">Project inception&lt;/h3>
-&lt;p>At the beginning of this project, I &lt;a href="https://www.bpesquet.fr/posts/walk-this-javascript-way/">explained&lt;/a> why I started it and went over some of my initial choices. In short:&lt;/p>
+&lt;h3 id="project-inception" >Project inception
+&lt;span>
+&lt;a href="#project-inception">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>At the beginning of this project, I &lt;a href="https://www.bpesquet.fr/posts/walk-this-javascript-way/">explained&lt;/a> why I started it and went over some of my initial choices. In short:&lt;/p>
 &lt;ul>
 &lt;li>There was a need for a book teaching modern JavaScript to beginners.&lt;/li>
 &lt;li>I decided to self-publish this book and write it in the open on &lt;a href="https://github.com">GitHub&lt;/a>. Doing so, I was hoping to reach as many people as possible. Also, to leverage the great &lt;a href="https://en.wikipedia.org/wiki/Open-source_model">collaborative model&lt;/a> that is at the heart of open source.&lt;/li>
@@ -132,41 +169,71 @@ alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissa
 &lt;li>I wanted to hone my JavaScript skills, and knew firsthand that teaching something is a great way to master it.&lt;/li>
 &lt;/ul>
 &lt;p>What I lacked was an initial audience, something often seen as a critical asset for this kind of project. Since someone has to start somewhere, I went on anyway.&lt;/p>
-&lt;h3 id="choosing-a-business-model">Choosing a business model&lt;/h3>
-&lt;p>Every creator faces the same dilemma. How to share your work with the world that would make an impact and also be profitable? There is no definitive answer to this age-old question.&lt;/p>
+&lt;h3 id="choosing-a-business-model" >Choosing a business model
+&lt;span>
+&lt;a href="#choosing-a-business-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Every creator faces the same dilemma. How to share your work with the world that would make an impact and also be profitable? There is no definitive answer to this age-old question.&lt;/p>
 &lt;p>The digital revolution has turned things upside down for authors. It has lowered the distribution and sharing costs to zero. In our “reputation economy”, content creators must battle to gain consumer attention. As a new player in this field, meeting success will be very difficult if all your content sits behind a paywall. Some of it &lt;em>has&lt;/em> to be available for free.&lt;/p>
 &lt;p>For authors, the most common marketing tactic is now to split your work into several parts. The first one free, gives potential customers a glimpse of your content and style. In the hope that hooked up customers will buy the other parts.&lt;/p>
 &lt;p>Kyle Simpson’s alternative &lt;a href="https://github.com/getify/You-Dont-Know-JS/blob/master/CONTRIBUTING.md#reading-experience-chaptersection-links-etc">choice&lt;/a> for its quite successful &lt;a href="https://github.com/getify/You-Dont-Know-JS">You Don’t Know JS&lt;/a> book series appealed to me. Like him, I decided to give away the entire book content for free, but let users pay for a better reading experience through the ebook version.&lt;/p>
 &lt;p>Taking example from &lt;a href="https://leanpub.com/rprogramming">another self-published bestseller&lt;/a>, I chose to include coding exercises and projects right into the book, but sell their solutions as an extra.&lt;/p>
 &lt;p>This “hybrid” business model seemed a reasonable balance between openness and potential profit.&lt;/p>
-&lt;h3 id="building-an-audience-or-not">Building an audience (or not)&lt;/h3>
-&lt;p>Another common marketing advice is building some audience through a mailing list, using some existing content (for example, your own blog) as a magnet.&lt;/p>
+&lt;h3 id="building-an-audience-or-not" >Building an audience (or not)
+&lt;span>
+&lt;a href="#building-an-audience-or-not">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Another common marketing advice is building some audience through a mailing list, using some existing content (for example, your own blog) as a magnet.&lt;/p>
 &lt;p>I don’t like this approach very much and didn’t want to bother my readers with any subscription.&lt;/p>
 &lt;p>I also considered launching a crowdfunding campaign. Without any initial audience, this seemed to me as a lot of work for a very uncertain outcome, so I shied away from it. Maybe next time!&lt;/p>
-&lt;h3 id="tools-and-process">Tools and process&lt;/h3>
-&lt;p>The very best file format for authoring &lt;em>any&lt;/em> book (not only technical ones) is &lt;strong>plain text&lt;/strong>. No need for a dedicated editor. No interoperability issue. The ability to use a &lt;a href="https://en.wikipedia.org/wiki/Version_control">version control&lt;/a> system like &lt;a href="https://git-scm.com/">Git&lt;/a> to keep track of changes.&lt;/p>
+&lt;h3 id="tools-and-process" >Tools and process
+&lt;span>
+&lt;a href="#tools-and-process">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>The very best file format for authoring &lt;em>any&lt;/em> book (not only technical ones) is &lt;strong>plain text&lt;/strong>. No need for a dedicated editor. No interoperability issue. The ability to use a &lt;a href="https://en.wikipedia.org/wiki/Version_control">version control&lt;/a> system like &lt;a href="https://git-scm.com/">Git&lt;/a> to keep track of changes.&lt;/p>
 &lt;p>Among the various text-based markup languages available. I chose &lt;a href="https://en.wikipedia.org/wiki/Markdown">Markdown&lt;/a> because I already knew and liked its syntax. Markdown is also a first-class citizen on GitHub, which was essential for this project.&lt;/p>
 &lt;p>A self-published author needs a toolchain to transform the raw manuscript files into various ebook formats (PDF, EPUB, MOBI). For me, the &lt;a href="https://leanpub.com">Leanpub&lt;/a> platform ticked all the boxes: Markdown support, integration with GitHub and a fair royalty structure (90% minus 50 cents per sale).&lt;/p>
 &lt;p>I used the free text editor &lt;a href="https://code.visualstudio.com/">Visual Studio Code&lt;/a> for authoring the book files on my computer. It has great Markdown support out of the box and a very convenient side-by-side file preview (see image below). Extensions like &lt;a href="https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts">Markdown Shortcuts&lt;/a> and &lt;a href="https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint">markdownlint&lt;/a> can be installed to become even more productive.&lt;/p>
 &lt;p>&lt;img src="images/2.png" alt="image">&lt;/p>
 &lt;p>After all tools were chosen, I drafted the book outline (a very important first step) using my previous courses as a basis. Then I dived into the writing process.&lt;/p>
-&lt;h3 id="early-publishing">Early publishing&lt;/h3>
-&lt;p>Leanpub’s motto is “Publish early, publish often”. The platform empowers you to publish early drafts of your work. Receive feedback and create traction, enabling an &lt;a href="https://en.wikipedia.org/wiki/Minimum_viable_product">MVP&lt;/a>-like approach to book authoring.&lt;/p>
+&lt;h3 id="early-publishing" >Early publishing
+&lt;span>
+&lt;a href="#early-publishing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Leanpub’s motto is “Publish early, publish often”. The platform empowers you to publish early drafts of your work. Receive feedback and create traction, enabling an &lt;a href="https://en.wikipedia.org/wiki/Minimum_viable_product">MVP&lt;/a>-like approach to book authoring.&lt;/p>
 &lt;p>It’s a great idea on paper… Which unfortunately didn’t work at all for me. One month after the writing process started, I made the book public on Leanpub. By that time, the ebook price was $0, so anyone could get it for free.&lt;/p>
 &lt;p>I told my personal network about it, &lt;a href="https://twitter.com/bpesquet/status/836354787616641024">twitted&lt;/a> about it, submitted it to &lt;a href="https://www.reddit.com/r/javascript/comments/5wmw8q/the_javascript_way_a_new_book_for_learning_modern/">Reddit&lt;/a> and &lt;a href="https://news.ycombinator.com/item?id=13749641">Hacker News&lt;/a>. I also reached out to other book authors or prominent individuals. I also reached out to Kyle Simpson, &lt;a href="https://www.robinwieruch.de/">Robin Wieruch&lt;/a> and freeCodeCamp’s &lt;a href="https://twitter.com/ossia">Quincy Larson&lt;/a>, looking for advice and support.&lt;/p>
 &lt;p>The outcome was a mixed bag. A few GitHub stars, a handful of messages on Twitter and Reddit. An HN thread that went out-of-topic and got buried. Execution was poor, the lack of any initial audience was too much of a disadvantage there.&lt;/p>
 &lt;p>A majority of comments were like “Ping me back when it’s finished”. People may not want to invest time to read in-progress books, which is understandable after all.&lt;/p>
 &lt;p>But, individual responses from Kyle, Robin and Quincy were hearthwarming. They played a big role in keeping me motivated. I’m very thankful to them.&lt;/p>
-&lt;h3 id="the-writing-phase">The writing phase&lt;/h3>
-&lt;p>Even after this underwhelming early launch, I was still convinced that my book was worth something. I didn’t want to give up after having already spent dozens of hours on it. Using an unchanged book outline, I went for a no-feedback route and kept on writing all by myself until the book got finished.&lt;/p>
+&lt;h3 id="the-writing-phase" >The writing phase
+&lt;span>
+&lt;a href="#the-writing-phase">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Even after this underwhelming early launch, I was still convinced that my book was worth something. I didn’t want to give up after having already spent dozens of hours on it. Using an unchanged book outline, I went for a no-feedback route and kept on writing all by myself until the book got finished.&lt;/p>
 &lt;p>That was the hardest part. Spending countless hours, day after day, only to see things take shape very slow. Inevitably, doubts surface: how could it ever succeed? Is this all a giant waste of time? Why am I inflicting this to myself?&lt;/p>
 &lt;p>The key to overcome these obstacles is &lt;strong>putting the right amount of pressure on yourself&lt;/strong>. If your time commitment is too scarce, you will lose motivation and give up. But, trying to move forward too fast, neglecting other important aspects of your life along the way, is risky on many levels.&lt;/p>
 &lt;p>After all, this was only a side project. Low risk, low pressure! Self-publishing means I had no deadlines to meet, which can be both a blessing and a curse. I tried to use this to my advantage: I was free to invest time in something I believed into, but at my own pace.&lt;/p>
 &lt;p>I found a reasonable balance (about 10–15 hours a week) between work, personal life and the writing process. Limited long and hazardous breaks. This &lt;a href="https://open.buffer.com/side-projects-creative-hobbies/">article on side projects&lt;/a> gives useful advice to keep things going during this phase.&lt;/p>
 &lt;p>&lt;img src="images/3.png" alt="My commit statistics on GitHub during the writing phase">&lt;/p>
 &lt;p>Luckily, I had some existing material to build upon. Some experience writing content on my own… And also a very understanding spouse ;)&lt;/p>
-&lt;h3 id="launch-day">Launch day&lt;/h3>
-&lt;p>After eight months of steady work and a few last hours feverishly spent fixing things here and there, my book was ready at last!&lt;/p>
+&lt;h3 id="launch-day" >Launch day
+&lt;span>
+&lt;a href="#launch-day">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>After eight months of steady work and a few last hours feverishly spent fixing things here and there, my book was ready at last!&lt;/p>
 &lt;p>The upside of writing in a vacuum like I did is that your book launch becomes a pretty big event. After such a huge time investment, it’s a great feeling (and also a huge relief) to show your finished creation to the world.&lt;/p>
 &lt;p>For lack of anything better, I reused my previous launch strategy. &lt;a href="https://twitter.com/bpesquet/status/890564975596630017">Twitter&lt;/a>, &lt;a href="https://www.reddit.com/r/javascript/comments/6poszc/the_javascript_way_a_new_book_for_learning_modern/">Reddit&lt;/a> and &lt;a href="https://news.ycombinator.com/item?id=14865043">Hacker News&lt;/a> (&lt;a href="https://www.quora.com/When-is-the-best-time-to-post-on-Hacker-News-to-get-and-stay-long-on-the-front-page">timing submissions&lt;/a> for most visibility). Also, the same nice people that kept me motivated after the early launch.&lt;/p>
 &lt;p>To my astonishment, the result was this time overwhelmingly positive. Kyle Simpson and Quincy Larson kindly tweeted about the book to their dozens of thousands of followers.&lt;/p>
@@ -184,39 +251,74 @@ alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissa
 &lt;li>I already received &lt;strong>two translation requests&lt;/strong>, to Spanish and Chinese.&lt;/li>
 &lt;/ul>
 &lt;p>All in all, far more than what I could dream of.&lt;/p>
-&lt;h3 id="financial-outcome">Financial outcome&lt;/h3>
-&lt;p>Can an open source book be profitable after all? Of course, it’s too soon to tell. Two days after launch, it became Leanpub’s bestselling book of the week, with more than &lt;strong>$1,000&lt;/strong> in royalties.&lt;/p>
+&lt;h3 id="financial-outcome" >Financial outcome
+&lt;span>
+&lt;a href="#financial-outcome">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Can an open source book be profitable after all? Of course, it’s too soon to tell. Two days after launch, it became Leanpub’s bestselling book of the week, with more than &lt;strong>$1,000&lt;/strong> in royalties.&lt;/p>
 &lt;p>&lt;img src="images/4.png" alt="Leanpub royalties dashboard two days after launch">&lt;/p>
 &lt;p>Profitability was not the reason this project was started in the first place. Yet the hybrid pricing model, with free sources and paid ebook/corrections, will ultimately contribute to the book’s reputation while making for some welcome passive income.&lt;/p>
 &lt;p>Later on, I may create a paperback version of the book (Maybe &lt;a href="https://www.createspace.com/">Amazon CreateSpace&lt;/a>) if there is any demand for it. An interactive online course offering a richer user experience is already under way.&lt;/p>
 &lt;p>Most importantly, I have the deep satisfaction of having contributed something meaningful to the community. Thousands of people around the world will use my book to learn to code, improve at JavaScript and it may change their lives for the better.&lt;/p>
 &lt;p>And that is priceless.&lt;/p>
-&lt;h3 id="conclusion">Conclusion&lt;/h3>
-&lt;p>It wasn’t all roses, but self-publishing a successful open source book without any prior audience is definitely possible.&lt;/p>
+&lt;h3 id="conclusion" >Conclusion
+&lt;span>
+&lt;a href="#conclusion">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>It wasn’t all roses, but self-publishing a successful open source book without any prior audience is definitely possible.&lt;/p>
 &lt;p>I hope this little story has entertained you. I also hope it might inspire you to start a creative project on your own, be it a book or something completely different.&lt;/p>
 &lt;p>I look forward to see what you will achieve!&lt;/p></description></item><item><title>Walk This (JavaScript) Way</title><link>https://www.bpesquet.fr/posts/walk-this-javascript-way/</link><pubDate>Mon, 27 Feb 2017 23:15:37 +0000</pubDate><guid>https://www.bpesquet.fr/posts/walk-this-javascript-way/</guid><description>&lt;p>&lt;img src="images/1.jpeg" alt="Run DMC and Aerosmith">&lt;/p>
 &lt;p>So I’ve decided to go ahead and write a &lt;a href="https://hackernoon.com/tagged/book">book&lt;/a> about &lt;a href="https://hackernoon.com/tagged/javascript">JavaScript&lt;/a>. It’s called &lt;strong>The JavaScript Way&lt;/strong> and is available through &lt;a href="https://leanpub.com/thejsway">Leanpub&lt;/a> and &lt;a href="https://github.com/bpesquet/thejsway">GitHub&lt;/a> (more on that later).&lt;/p>
-&lt;h3 id="but-why">But… Why?&lt;/h3>
-&lt;p>It’s true there are tons of learning resources about JS. However, many are outdated and teach obsolete practices. Many others cover advanced topics like design patterns, language internals, or frameworks that are of little interest to newcomers.&lt;/p>
+&lt;h3 id="but-why" >But… Why?
+&lt;span>
+&lt;a href="#but-why">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>It’s true there are tons of learning resources about JS. However, many are outdated and teach obsolete practices. Many others cover advanced topics like design patterns, language internals, or frameworks that are of little interest to newcomers.&lt;/p>
 &lt;p>I’m starting this project because I think there is room for a beginner-centric book teaching modern JavaScript. I hope to make it a useful companion for anyone wishing to (re)discover the many facets of JS.&lt;/p>
-&lt;h3 id="design-and-content">Design and content&lt;/h3>
-&lt;p>The book is targeted towards JavaScript newcomers: complete beginners with no programming experience whatsoever or “switchers” coming from another language background. It won’t be a in-depth study of JavaScript (which is &lt;a href="https://github.com/getify/You-Dont-Know-JS">already existing&lt;/a>, by the way). I’ll try to keep it as beginner-friendly as possible while covering some advanced concepts and good practices.&lt;/p>
+&lt;h3 id="design-and-content" >Design and content
+&lt;span>
+&lt;a href="#design-and-content">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>The book is targeted towards JavaScript newcomers: complete beginners with no programming experience whatsoever or “switchers” coming from another language background. It won’t be a in-depth study of JavaScript (which is &lt;a href="https://github.com/getify/You-Dont-Know-JS">already existing&lt;/a>, by the way). I’ll try to keep it as beginner-friendly as possible while covering some advanced concepts and good practices.&lt;/p>
 &lt;p>It was pretty obvious from the start that the book would be written entirely using the more future-proof and often easier to explain ES6/ES2015 standard. As I want to keep things simple, many tricky and primarily ES5-related topics like &lt;a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting">hoisting&lt;/a> or &lt;a href="http://bjorn.tipling.com/all-this">&lt;em>this&lt;/em> behavior&lt;/a> won’t be covered.&lt;/p>
 &lt;p>As a teacher myself, I know that real learning comes from practicing. Each book chapter will be accompanied by a series of exercises to put the newly acquired skills into practice.&lt;/p>
 &lt;p>I also know that students don’t like to lose hours configuring their environment before getting their feet wet. So there won’t be any complex setup: throughout the book, all you’ll need is a JavaScript playground (&lt;a href="http://codepen.io">CodePen&lt;/a> and &lt;a href="http://gomix.com">Gomix&lt;/a> are the recommended ones) for coding along.&lt;/p>
-&lt;h3 id="publication">Publication&lt;/h3>
-&lt;p>After much afterthought, I’ve decided to self-publish my book through &lt;a href="https://leanpub.com/thejsway">Leanpub&lt;/a> and to make its source code available on &lt;a href="https://github.com/bpesquet/thejsway">GitHub&lt;/a>.&lt;/p>
+&lt;h3 id="publication" >Publication
+&lt;span>
+&lt;a href="#publication">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>After much afterthought, I’ve decided to self-publish my book through &lt;a href="https://leanpub.com/thejsway">Leanpub&lt;/a> and to make its source code available on &lt;a href="https://github.com/bpesquet/thejsway">GitHub&lt;/a>.&lt;/p>
 &lt;p>I’d like to reach as many people as possible, regardless of wealth. I also hope to leverage the open source collaborative model to improve and validate the content.&lt;/p>
 &lt;p>The chosen license, Creative Commons &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA&lt;/a>, lets anyone share or build upon this work for non-commercial purposes, as long as it is properly attributed and using the same license.&lt;/p>
-&lt;h3 id="lets-roll">Let’s roll!&lt;/h3>
-&lt;p>Publishing a book is a lot of work, but also a pretty exciting journey. Thanks for reading this, and I hope you’ll soon join me on the JavaScript Way.&lt;/p></description></item><item><title>Admission Post-Bac côté recruteur</title><link>https://www.bpesquet.fr/posts/apb-cote-recruteur/</link><pubDate>Thu, 09 Jun 2016 20:56:38 +0000</pubDate><guid>https://www.bpesquet.fr/posts/apb-cote-recruteur/</guid><description>&lt;p>L’orientation scolaire des jeunes bacheliers français est un sujet sensible. Le fonctionnement du portail &lt;a href="http://www.admission-postbac.fr/">Admission Post-Bac&lt;/a> (APB), pierre angulaire du dispositif d’orientation, est source &lt;a href="http://www.studyrama.com/revision-examen/bac/admission-postbac-fr/apb-vos-questions-nos-reponses-sur-les-phases-d-84327">d’interrogations&lt;/a> et &lt;a href="http://www.francetvinfo.fr/bac/demoralises-decourages-les-lyceens-face-a-la-galere-des-admissions-post-bac_1489753.html">d’angoisses&lt;/a> pour de nombreux élèves et leurs familles.&lt;/p>
+&lt;h3 id="lets-roll" >Let’s roll!
+&lt;span>
+&lt;a href="#lets-roll">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Publishing a book is a lot of work, but also a pretty exciting journey. Thanks for reading this, and I hope you’ll soon join me on the JavaScript Way.&lt;/p></description></item><item><title>Admission Post-Bac côté recruteur</title><link>https://www.bpesquet.fr/posts/apb-cote-recruteur/</link><pubDate>Thu, 09 Jun 2016 20:56:38 +0000</pubDate><guid>https://www.bpesquet.fr/posts/apb-cote-recruteur/</guid><description>&lt;p>L’orientation scolaire des jeunes bacheliers français est un sujet sensible. Le fonctionnement du portail &lt;a href="http://www.admission-postbac.fr/">Admission Post-Bac&lt;/a> (APB), pierre angulaire du dispositif d’orientation, est source &lt;a href="http://www.studyrama.com/revision-examen/bac/admission-postbac-fr/apb-vos-questions-nos-reponses-sur-les-phases-d-84327">d’interrogations&lt;/a> et &lt;a href="http://www.francetvinfo.fr/bac/demoralises-decourages-les-lyceens-face-a-la-galere-des-admissions-post-bac_1489753.html">d’angoisses&lt;/a> pour de nombreux élèves et leurs familles.&lt;/p>
 &lt;p>&lt;a href="http://www.lesitedaurel.com/">&lt;img src="images/1.jpeg" alt="image">&lt;/a>&lt;/p>
 &lt;p>Pendant plusieurs années, j’ai été amené à piloter le recrutement d’une section de BTS dans un lycée public. Voici comment les choses se passent de l’intérieur.&lt;/p>
 &lt;blockquote>
 &lt;p>Ce témoignage est personnel et n’engage ni mon établissement, ni l’institution Education Nationale.&lt;/p>
 &lt;/blockquote>
-&lt;h3 id="tldr-pour-les-candidats">TL:DR pour les candidats&lt;/h3>
-&lt;p>Voici quelques conseils pour maximiser vos chances d’être retenu(e) dans une formation sélective sur APB :&lt;/p>
+&lt;h3 id="tldr-pour-les-candidats" >TL:DR pour les candidats
+&lt;span>
+&lt;a href="#tldr-pour-les-candidats">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Voici quelques conseils pour maximiser vos chances d’être retenu(e) dans une formation sélective sur APB :&lt;/p>
 &lt;ul>
 &lt;li>Construisez-vous &lt;em>sur plusieurs années&lt;/em> un dossier scolaire d’élève méritant(e).&lt;/li>
 &lt;li>Dans vos bulletins, évitez à tout pris les critiques sur le (manque de) travail, l’attitude en classe et les absences répétées.&lt;/li>
@@ -225,8 +327,13 @@ alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissa
 &lt;li>Essayez de rencontrer l’équipe pédagogique de la formation ciblée pour vous présenter et leur expliquer votre projet.&lt;/li>
 &lt;li>Soyez réactif et restez optimiste pendant la phase d’admission.&lt;/li>
 &lt;/ul>
-&lt;h3 id="apb-pour-les-établissements-daccueil">APB pour les établissements d’accueil&lt;/h3>
-&lt;p>Une très grande majorité des établissements d’enseignement supérieur français utilisent le portail APB pour gérer leur recrutement. Ils disposent d’une version adaptée à leurs besoins présentée dans &lt;a href="https://documentation.admission-postbac.fr/guide_usr_destinataire/A_Les_informations_de_base_05-01-2016.pdf">ce document&lt;/a>.&lt;/p>
+&lt;h3 id="apb-pour-les-établissements-daccueil" >APB pour les établissements d’accueil
+&lt;span>
+&lt;a href="#apb-pour-les-%c3%a9tablissements-daccueil">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Une très grande majorité des établissements d’enseignement supérieur français utilisent le portail APB pour gérer leur recrutement. Ils disposent d’une version adaptée à leurs besoins présentée dans &lt;a href="https://documentation.admission-postbac.fr/guide_usr_destinataire/A_Les_informations_de_base_05-01-2016.pdf">ce document&lt;/a>.&lt;/p>
 &lt;p>A partir du mois de mai, un établissement présent sur APB peut consulter la liste complète des candidatures pour sa formation.&lt;/p>
 &lt;p>&lt;img src="images/2.png" alt="image">&lt;/p>
 &lt;p>L’ordre des voeux des candidats n’est pas accessible aux formations. La seule information donnée par APB est le total de voeux 1, autrement dit le nombre de candidats ayant classé la formation en première position dans leur liste de vœux.&lt;/p>
@@ -235,30 +342,55 @@ alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissa
 &lt;li>Retenir des candidats ayant le profil pour réussir dans la formation.&lt;/li>
 &lt;li>Sélectionner un maximum de candidats ayant placé la formation dans leurs tous premiers voeux. En effet, ce sont les plus susceptibles de venir pour de bon plutôt que d’aller voir ailleurs : la concurrence existe aussi entre les établissements !&lt;/li>
 &lt;/ul>
-&lt;h3 id="le-classement-des-candidatures">Le classement des candidatures&lt;/h3>
-&lt;p>Il n’existe pas de règle absolue pour classer les candidats à une formation. Chaque établissement est libre de choisir ses critères et d’appliquer sa propre politique.&lt;/p>
-&lt;h4 id="lexamen-des-dossiers">L’examen des dossiers&lt;/h4>
-&lt;p>Le portail APB permet aux établissements d’accéder au dossier scolaire des candidats, qui comprend notamment leurs bulletins des dernières années (notes + appréciations) ainsi que leurs résultats au bac pour les candidats déjà scolarisés dans le supérieur et en réorientation. Les établissements peuvent exploiter ces notes afin de calculer des moyennes servant à classer les candidats.&lt;/p>
+&lt;h3 id="le-classement-des-candidatures" >Le classement des candidatures
+&lt;span>
+&lt;a href="#le-classement-des-candidatures">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Il n’existe pas de règle absolue pour classer les candidats à une formation. Chaque établissement est libre de choisir ses critères et d’appliquer sa propre politique.&lt;/p>
+&lt;h4 id="lexamen-des-dossiers" >L’examen des dossiers
+&lt;span>
+&lt;a href="#lexamen-des-dossiers">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Le portail APB permet aux établissements d’accéder au dossier scolaire des candidats, qui comprend notamment leurs bulletins des dernières années (notes + appréciations) ainsi que leurs résultats au bac pour les candidats déjà scolarisés dans le supérieur et en réorientation. Les établissements peuvent exploiter ces notes afin de calculer des moyennes servant à classer les candidats.&lt;/p>
 &lt;p>A ce critère &lt;strong>quantitatif&lt;/strong> s’ajoute presque toujours un critère &lt;strong>qualitatif&lt;/strong> lié à l’étude du dossier de candidature. Pour la formation dont j’ai eu la responsabilité, chaque dossier se voyait attribué une note qualitative qui comptait pour un tiers de la note finale.&lt;/p>
 &lt;p>Les avis et appréciations des différents bulletins sont examinés avec soin : un élève souvent qualifié de “sérieux” ou de “travailleur” verra sa candidature favorisée. A l’inverse, les mentions fortement négatives (“aucun travail”, “trop de bavardages”, etc) ainsi qu’un nombre élevé d’absences non justifiées sont des signaux d’alarme qui entraineront systématiquement une pénalisation, voire un rejet pur et simple de la candidature.&lt;/p>
 &lt;p>D’après mon expérience personnelle en BTS, un établissement choisira un candidat moyen mais méritant plutôt qu’un bon candidat au dossier problématique. Un “des difficultés, mais fait des efforts” sera mieux perçu qu’un “n’exploite pas son potentiel”.&lt;/p>
 &lt;p>Afin d’être certain de compléter ses effectifs, un établissement classe toujours bien plus de dossiers qu’il n’a de places disponibles. En revanche, les candidatures rejetées ne sont pas classées : dans ce cas, le candidat ne peut plus rejoindre la formation durant la phase d’admission (voir plus loin).&lt;/p>
-&lt;h4 id="comment-sortir-du-lot-">Comment sortir du lot ?&lt;/h4>
-&lt;p>Comme je l’ai évoqué plus haut, chaque formation tente “à l’aveugle” de classer en priorité des candidats réellement désireux de la rejoindre. Comme l’ordre des voeux est inaccessible aux établissements d’accueil, c’est au candidat d’agir afin de démontrer sa volonté réelle d’intégrer une formation. Les deux possibilités à sa disposition sont :&lt;/p>
+&lt;h4 id="comment-sortir-du-lot-" >Comment sortir du lot ?
+&lt;span>
+&lt;a href="#comment-sortir-du-lot-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Comme je l’ai évoqué plus haut, chaque formation tente “à l’aveugle” de classer en priorité des candidats réellement désireux de la rejoindre. Comme l’ordre des voeux est inaccessible aux établissements d’accueil, c’est au candidat d’agir afin de démontrer sa volonté réelle d’intégrer une formation. Les deux possibilités à sa disposition sont :&lt;/p>
 &lt;ul>
 &lt;li>Personnaliser et soigner sa &lt;strong>lettre de motivation&lt;/strong> afin de justifier explicitement son choix. La lecture de cette lettre fait partie intégrante de l’examen du dossier. Attention aux lettres trop génériques qui sentent le copier/coller, ou pire à une candidature en BTS qui commence par “Mon grand intérêt pour le DUT…” (j’en lis tous les ans). Toute candidature “exotique”, tout changement de filière et/ou d’académie doit impérativement être justifié en détail dans la lettre.&lt;/li>
 &lt;li>Rencontrer l’équipe pédagogique par le biais des &lt;strong>salons&lt;/strong> et des &lt;strong>journées portes ouvertes&lt;/strong>. Ce sera l’occasion d’avoir une vision plus concrète de la formation et de vérifier la validité d’un projet d’orientation. Les établissements conservent souvent les coordonnées de leurs visiteurs et bonifient leur candidature quand ils les retrouvent quelques semaines plus tard dans APB.&lt;/li>
 &lt;/ul>
-&lt;h4 id="les-contraintes-externes">Les contraintes externes&lt;/h4>
-&lt;p>La liberté de recrutement des établissements du supérieur est soumise à certaines contraintes, comme le nombre de places disponibles. Récemment, de nouvelles règles concernant l’origine scolaire des candidats ont vu le jour. Elles font suite à la volonté ministérielle d’offrir des débouchés à toutes les séries du baccalauréat, en particulier les sections technologiques (vers les IUT) et professionnelles (vers les BTS).&lt;/p>
+&lt;h4 id="les-contraintes-externes" >Les contraintes externes
+&lt;span>
+&lt;a href="#les-contraintes-externes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>La liberté de recrutement des établissements du supérieur est soumise à certaines contraintes, comme le nombre de places disponibles. Récemment, de nouvelles règles concernant l’origine scolaire des candidats ont vu le jour. Elles font suite à la volonté ministérielle d’offrir des débouchés à toutes les séries du baccalauréat, en particulier les sections technologiques (vers les IUT) et professionnelles (vers les BTS).&lt;/p>
 &lt;p>Concrètement, les IUT se voient imposer un pourcentage minimal de bacheliers technologiques dans leur recrutement, et les BTS un pourcentage minimal de bacheliers professionnels. Pour l’académie de Lyon, les pourcentages de 2016 varient entre 6% et 50% selon le type de BTS. Ces chiffres sont destinés à augmenter dans les années à venir.&lt;/p>
 &lt;blockquote>
 &lt;p>Les établissements privés sous contrat, pourtant tout aussi concernés que les établissements publics par ces exigences, sont pour l’instant très peu nombreux à les appliquer. Cette situation injuste devra évoluer.&lt;/p>
 &lt;/blockquote>
 &lt;p>Conséquence logique : &lt;strong>il devient plus difficile d’intégrer un BTS ou un IUT après un baccalauréat général&lt;/strong>. C’est une donnée importante à prendre en compte dès la classe de Seconde pour choisir son orientation.&lt;/p>
 &lt;p>Afin d’affiner leur recrutement et de respecter ces contraintes, les établissement d’accueil définissent souvent des &lt;strong>groupes&lt;/strong> de candidats selon leur série d’origine au baccalauréat. Il n’y a plus un classement unique mélangeant tous les dossiers, mais un classement pour chaque groupe.&lt;/p>
-&lt;h3 id="la-phase-dadmission">La phase d’admission&lt;/h3>
-&lt;p>Début juin commence sur APB la phase d’admission. A trois reprises, le logiciel exploite les classements remontés par chaque établissement et les voeux des candidats pour leur proposer (ou pas) une affectation.&lt;/p>
+&lt;h3 id="la-phase-dadmission" >La phase d’admission
+&lt;span>
+&lt;a href="#la-phase-dadmission">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Début juin commence sur APB la phase d’admission. A trois reprises, le logiciel exploite les classements remontés par chaque établissement et les voeux des candidats pour leur proposer (ou pas) une affectation.&lt;/p>
 &lt;p>Les établissements d’accueil suivent attentivement les résultats d’admission afin d’éviter de se retrouver en déficit de candidats. Durant cette phase, chaque établissement a une vue actualisée au jour le jour de l’état de son recrutement.&lt;/p>
 &lt;p>&lt;img src="images/3.png" alt="image">&lt;/p>
 &lt;p>Il peut se passer beaucoup de choses pendant la phase d’admission :&lt;/p>
@@ -267,8 +399,13 @@ alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissa
 &lt;li>Les établissements peuvent rectifier leurs &lt;strong>données d’appel&lt;/strong>, c’est-à-dire le nombre de candidats qu’ils souhaitent appeler pour chacun de leurs groupes. C’est notamment le cas lorsqu’une liste de classement est épuisée (plus aucun candidat à appeler dans un groupe).&lt;/li>
 &lt;/ul>
 &lt;p>Les candidats doivent surveiller avec attention l’évolution des résultats d’admission, afin de respecter les délais de réponse imposés par APB. Malgré l’incertitude et le stress inhérents à cette phase, il faut essayer de rester optimiste et positif : les propositions d’APB ne peuvent évoluer que dans leur sens, et il est fréquent que des situations se débloquent entre le début et la fin de la phase d’admission.&lt;/p>
-&lt;h3 id="conclusion">Conclusion&lt;/h3>
-&lt;p>J’espère que ce rapide tour d’horizon vous aura permis de mieux comprendre comment les établissements de formation peuvent gérer leur recrutement post-bac.&lt;/p>
+&lt;h3 id="conclusion" >Conclusion
+&lt;span>
+&lt;a href="#conclusion">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>J’espère que ce rapide tour d’horizon vous aura permis de mieux comprendre comment les établissements de formation peuvent gérer leur recrutement post-bac.&lt;/p>
 &lt;p>Bonne orientation avec APB !&lt;/p></description></item><item><title>Pourquoi JavaScript est devenu essentiel</title><link>https://www.bpesquet.fr/posts/pourquoi-javascript-est-devenu-essentiel/</link><pubDate>Wed, 17 Feb 2016 09:42:35 +0000</pubDate><guid>https://www.bpesquet.fr/posts/pourquoi-javascript-est-devenu-essentiel/</guid><description>&lt;p>&lt;a href="http://somethingkindawierd.com/presentations/native-javascript/presentation/index.html">&lt;img src="images/1.jpeg" alt="Eating the world">&lt;/a>&lt;/p>
 &lt;p>Pour plusieurs générations de développeurs et d’enseignants en informatique, le langage JavaScript a une image fortement négative. Mal fichu, plein de limitations et de défauts. il serait tout juste bon à animer des pages Web et rien de plus.&lt;/p>
 &lt;p>Tout cela était vrai à l’époque où JavaScript n’était qu’un langage de script peu standardisé et cantonné au petit monde des navigateurs Web.&lt;/p>
