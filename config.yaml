@@ -36,6 +36,8 @@ params:
   email: bpesquet [at] gmail [dot] com # used for microformats
   description: "Baptiste Pesquet's personal website"
   dateFormat: "January 2, 2006"
+  customCSS:
+    - css/my.css
   paginationSinglePost: true
   style: auto # light-without-switcher
   readMore: false
