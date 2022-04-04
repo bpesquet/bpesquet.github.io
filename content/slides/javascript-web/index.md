@@ -1,5 +1,5 @@
 ---
-title: "Javascript pour le web"
+title: "JavaScript pour le web"
 date: 2022-02-02T11:09:39+01:00
 draft: false
 ---
