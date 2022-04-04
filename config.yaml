@@ -38,6 +38,8 @@ params:
   dateFormat: "January 2, 2006"
   customCSS:
     - css/my.css
+  mainSections:
+    - posts
   paginationSinglePost: true
   style: auto # light-without-switcher
   readMore: false
