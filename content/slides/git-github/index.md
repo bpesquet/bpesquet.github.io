@@ -10,6 +10,7 @@ draft: false
 - Git fundamentals
 - Collaborating with Git
 - Git from the command line
+- Additional resources
 - GitHub
 
 ---
@@ -297,6 +298,19 @@ _HEAD_ is an alias to the most recent commit of the active branch.
 | `git remote -v`                | List remote repositories                     |
 | `git pull {alias} {branch}`    | Fetch & merge remote commits into `{branch}` |
 | `git push {alias} {branch}`    | Push `{branch}` commits to a remote repo     |
+
+---
+
+## Additional resources
+
+---
+
+- [What is version control?](https://www.atlassian.com/git/tutorials/what-is-version-control)
+- [Git - the simple guide](http://rogerdudler.github.io/git-guide/)
+- [Learn Git branching](https://learngitbranching.js.org)
+- [Git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+- [Another Git cheat sheet](https://ndpsoftware.com/git-cheatsheet.html)
+- [Oh sh.t, Git!?!](https://ohshitgit.com/)
 
 ---
 
