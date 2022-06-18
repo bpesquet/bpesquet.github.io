@@ -47,8 +47,8 @@ languages:
         - name: Training
           url: /training
           weight: 2
-        - name: Projects
-          url: /projects
+        - name: Resources
+          url: /resources
           weight: 3
 
 params:

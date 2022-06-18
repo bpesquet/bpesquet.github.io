@@ -1,5 +1,5 @@
 ---
-title: "Teaching"
+title: "Pedagogical resources"
 date: 2022-06-17T14:55:50+02:00
 draft: true
 ---

@@ -10,6 +10,6 @@ draft: false
 
 🤝 J'effectue également des missions de [formation]({{< ref "training" >}}) auprès d'entreprises ou de partenaires externes.
 
-📚 Je m'efforce de partager les [ressources pédagogiques]({{< ref "resources" >}}) créées dans le cadre de mon activité professionnelle.
+📚 Une partie des [ressources pédagogiques]({{< ref "resources" >}}) créées dans le cadre de mon activité professionnelle est disponible en ligne.
 
 ✍️ En complément, vous pouvez consulter mon [CV](http://cv.bpesquet.fr/CV_BaptistePesquet.pdf) et l'archive de mon [blog]({{< ref "posts" >}}).
