@@ -1,59 +1,64 @@
 ---
-title: "Teaching"
+title: "Enseignement"
 date: 2021-10-27T14:59:36+02:00
 draft: false
+menu:
+  subpage1:
+    identifier: teaching-iprog
+    parent: teaching-ensc
+    name: Introduction à la programmation
+    url: /teaching/iprog/
+    weight: 1
+  subpage2:
+    identifier: teaching-progav
+    parent: teaching
+    name: Programmation avancée
+    url: /teaching/progav/
+    weight: 2
+  subpage3:
+    identifier: teaching-pw
+    parent: teaching
+    name: Développement web
+    url: /teaching/pw/
+    weight: 3
+  subpage4:
+    identifier: teaching-gl
+    parent: teaching
+    name: Génie logiciel
+    url: /teaching/gl/
+    weight: 4
+  subpage5:
+    identifier: teaching-mobi
+    parent: teaching
+    name: Développement mobile
+    url: /teaching/mobi/
+    weight: 5
+  subpage6:
+    identifier: teaching-aa
+    parent: teaching
+    name: Apprentissage automatique
+    url: /teaching/aa/
+    weight: 6
+  subpage7:
+    identifier: teaching-iogs
+    parent: teaching
+    name: IA@IOGS
+    url: /teaching/iogs/
+    weight: 7
 ---
 
-I strive to make my pedagogical resources available to everyone.
+L'essentiel de mon activité à l'[ENSC](https://ensc.bordeaux-inp.fr) consiste à concevoir et animer des cours à destination des étudiants de l'école. Vous trouverez ci-dessous la description des enseignements dont j'ai actuellement la responsabilité :
 
-Unless otherwise stated, they are free to use for non-commercial purposes, using a Creative Commons [BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. Most of them are open-sourced on [GitHub](https://github.com/bpesquet?tab=repositories). The [slides]({{< ref "slides" >}} "Slides") are built with [reveal.js](https://revealjs.com/).
+- Introduction à la programmation
+- Programmation avancée
+- Communication web
+- Génie logiciel
+- Développement mobile
+- Apprentissage automatique
 
-## Maintained resources
+Depuis 2018, j'interviens également chaque année devant les étudiants de l'[Institut d'Optique Graduate School](https://www.institutoptique.fr) pour un cours d'introduction au Deep Learning.
 
-The following material is quite recent and/or currently being used in some of my courses. Maintained on a (somewhat) regular basis, it should be reasonably up-to-date.
+Plus ponctuellement, j'ai eu l'opportunité de m'impliquer dans des projets pédagogiques inter-établissements :
 
-### Python & AI
-
-- [Deconstructing AI]({{< ref "slides/deconstructing-ai" >}} "Deconstructing AI")
-- [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook/)
-- [pyfit, a minimalist neural networks library](https://github.com/bpesquet/pyfit)
-- [pyai, minimalist implementations of various AI algorithms](https://github.com/bpesquet/pyai)
-
-### C#/.NET
-
-- [Programmation orientée objet en C#](https://ensc.gitbook.io/programmation-objet-csharp/)
-- [C# : rappels et compléments]({{< ref "slides/csharp" >}} "C# : rappels et compléments")
-- [ASP.NET Core]({{< ref "slides/asp-net-core" >}} "ASP.NET Core")
-
-### JavaScript/TypeScript
-
-- [Le langage JavaScript]({{< ref "slides/javascript" >}} "Le langage JavaScript")
-- [JavaScript pour le web]({{< ref "slides/javascript-web" >}} "JavaScript pour le web")
-- [The JavaScript Way](https://github.com/thejsway/thejsway) | [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
-- [React Native]({{< ref "slides/react-native" >}} "React Native")
-
-### Miscellaneous
-
-- [Git & GitHub]({{< ref "slides/git-github" >}} "Git & GitHub")
-- [Génie logiciel](https://ensc.gitbook.io/genie-logiciel/)
-- [Unity]({{< ref "slides/unity" >}} "Unity")
-
-## Older stuff
-
-The following material was authored for courses I no longer teach. While not maintained anymore, it still might be relevant in some contexts.
-
-## Software development
-
-- [Programmation évènementielle avec les WinForms](https://ensc.gitbook.io/programmation-evenementielle-winforms/)
-- [WinForms architecture patterns](https://github.com/bpesquet/winforms-architecture-patterns)
-- [Guide du développeur PHP](https://bpesquet.gitbooks.io/guide-developpeur-php/)
-- [Evoluez vers une architecture MVC en PHP](https://bpesquet.developpez.com/tutoriels/php/evoluer-architecture-mvc/)
-
-## Databases
-
-- [Le langage SQL](/pub/cours_sql.zip) (PDF archive)
-- [Les bases de données](/pub/cours_sgbd.zip) (PDF archive)
-
-## Networks
-
-- [Les réseaux](/pub/cours_reseaux.zip) (PDF archive)
+- De 2019 à 2021, j'ai co-conçu et co-piloté la spécialisation de troisième année [Intelligence artificielle](https://3aia.fr). Initialement commun à l'ENSC et l'[ENSEIRB-MATMECA](https://enseirb-matmeca.bordeaux-inp.fr), ce parcours est depuis 2022 décliné en deux versions, chacune spécifique à une école. J'ai conservé la responsabilité de celui de l'ENSC.
+- En 2021, j'ai participé à la conception et à l'animation de l'école d'été _Machine Learning for Defence_ dans le cadre du projet européen [ASSETs+](https://assets-plus.eu/).

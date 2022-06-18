@@ -1,4 +1,3 @@
-languageCode: "en-us"
 baseUrl: "https://www.bpesquet.fr"
 title: "👨‍💻 Baptiste Pesquet"
 theme: "anubis"
@@ -7,29 +6,50 @@ disqusShortname:
 googleAnalytics: "UA-39897312-4"
 enableRobotsTXT: true
 enableGitInfo: true
+defaultContentLanguage: fr
 
-menu:
-  main:
-    - identifier: cv
-      name: CV
-      title: CV
-      url: http://cv.bpesquet.fr/CV_BaptistePesquet.pdf
-      weight: 1
-    - identifier: teaching
-      name: Teaching
-      title: Teaching
-      url: /teaching
-      weight: 2
-    - identifier: posts
-      name: Blog
-      title: Blog
-      url: /posts
-      weight: 3
-    - identifier: freelancing
-      name: Freelancing
-      title: Freelancing
-      url: /freelancing
-      weight: 4
+languages:
+  fr:
+    languageName: Français
+    weight: 1
+    menu:
+      main:
+        - name: Enseignement
+          url: /teaching
+          weight: 1
+        - name: Formation
+          url: /training
+          weight: 2
+        - name: Ressources
+          url: /resources
+          weight: 3
+    params:
+      social:
+        - id: email
+          name: bpesquet [at] gmail [dot] com
+        - id: github
+          name: bpesquet
+        - id: twitter
+          name: bpesquet
+        - id: youtube
+          name: ../channel/UCtcjS2WTFBxwLlkiJYj_mtQ # workaround since Anubis prepends "c/" to the YouTube channel name (format for renamed channels)
+        - id: linkedin
+          name: bpesquet
+
+  en:
+    languageName: English
+    weight: 2
+    menu:
+      main:
+        - name: Teaching
+          url: /teaching
+          weight: 1
+        - name: Training
+          url: /training
+          weight: 2
+        - name: Projects
+          url: /projects
+          weight: 3
 
 params:
   author: "Baptiste Pesquet"
@@ -49,10 +69,6 @@ params:
     - id: github
       name: bpesquet
     - id: twitter
-      name: bpesquet
-    - id: youtube
-      name: ../channel/UCtcjS2WTFBxwLlkiJYj_mtQ # workaround since Anubis prepends "c/" to the YouTube channel name (format for renamed channels)
-    - id: linkedin
       name: bpesquet
 
 taxonomies:
