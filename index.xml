@@ -1,4 +1,71 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Front page on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/</link><description>👨‍💻 Baptiste Pesquet (Front page)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>JavaScript pour le web</title><link>https://www.bpesquet.fr/slides/javascript-web/</link><pubDate>Wed, 02 Feb 2022 11:09:39 +0100</pubDate><guid>https://www.bpesquet.fr/slides/javascript-web/</guid><description>&lt;h2 id="sommaire" >Sommaire
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Accueil on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/</link><description>👨‍💻 Baptiste Pesquet (Accueil)</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>Ressources pédagogiques</title><link>https://www.bpesquet.fr/resources/</link><pubDate>Sat, 18 Jun 2022 08:16:44 +0200</pubDate><guid>https://www.bpesquet.fr/resources/</guid><description>&lt;p>Je m&amp;rsquo;efforce de rendre accessibles au plus grand nombre les productions pédagogiques créées dans le cadre de mon activité professionnelle.&lt;/p>
+&lt;p>Sauf mention contraire, elles sont librement réutilisables dans le cadre d&amp;rsquo;une licence &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA&lt;/a> pour les textes et &lt;a href="https://opensource.org/licenses/MIT">MIT&lt;/a> pour le code source. La plupart d&amp;rsquo;entre elles sont publiées sur &lt;a href="https://github.com/bpesquet?tab=repositories">GitHub&lt;/a>.&lt;/p>
+&lt;h2 id="resources-maintenues" >Resources maintenues
+&lt;span>
+&lt;a href="#resources-maintenues">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Les productions suivantes sont récentes et/ou utilisées dans certains de mes cours actuels. Je tâche de les maintenir à jour sur une base régulière.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/">Présentations&lt;/a>&lt;/li>
+&lt;li>Livres
+&lt;ul>
+&lt;li>&lt;a href="https://bpesquet.github.io/mlhandbook/">Machine Learning Handbook&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.github.io/mlkatas/">Machine Learning Katas&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/thejsway/thejsway">The JavaScript Way&lt;/a> | &lt;a href="https://github.com/thejsway/thejsway_fr">La voie du JavaScript&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ensc.gitbook.io/programmation-objet-csharp/">Programmation orientée objet en C#&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ensc.gitbook.io/genie-logiciel/">Génie logiciel&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Projets
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/bpesquet/pyfit">pyfit&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/bpesquet/pyai">pyai&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources-non-maintenues" >Resources non maintenues
+&lt;span>
+&lt;a href="#resources-non-maintenues">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Les productions suivantes ont été créées pour d&amp;rsquo;anciens cours. Non maintenues, elles sont pontentiellement dépassées mais peuvent encore avoir leur utilité dans certaines contextes.&lt;/p>
+&lt;ul>
+&lt;li>Livres
+&lt;ul>
+&lt;li>&lt;a href="https://ensc.gitbook.io/programmation-evenementielle-winforms/">Programmation évènementielle avec les WinForms&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.gitbooks.io/guide-developpeur-php/">Guide du développeur PHP&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Tutoriels
+&lt;ul>
+&lt;li>&lt;a href="https://bpesquet.developpez.com/tutoriels/php/evoluer-architecture-mvc/">Evoluez vers une architecture MVC en PHP&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Projets
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/bpesquet/winforms-architecture-patterns">WinForms architecture patterns&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/bpesquet/MonBlog">MonBlog&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Archives PDF
+&lt;ul>
+&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_sql.zip">Le langage SQL&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_sgbd.zip">Les bases de données&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_reseaux.zip">Les réseaux&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Formation</title><link>https://www.bpesquet.fr/training/</link><pubDate>Fri, 17 Jun 2022 15:55:09 +0200</pubDate><guid>https://www.bpesquet.fr/training/</guid><description>&lt;p>J&amp;rsquo;anime régulièrement des formations à destination d&amp;rsquo;un public professionnel.&lt;/p>
+&lt;p>Il peut s&amp;rsquo;agir de sessions liées à l&amp;rsquo;activité de &lt;strong>formation continue&lt;/strong> à l&amp;rsquo;ENSC. A ce sujet, vous pouvez consulter le catalogue des &lt;a href="https://ensc.bordeaux-inp.fr/fr/autres-diplomes-ensc">diplômes d&amp;rsquo;établissement&lt;/a> et celui des &lt;a href="https://ensc.bordeaux-inp.fr/fr/les-formations-courtes-lensc">formations courtes&lt;/a> de l&amp;rsquo;école.&lt;/p>
+&lt;p>J&amp;rsquo;ai récemment été en charge des contenus suivants :&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>Machine Learning&lt;/em>, &lt;em>Deep Learning&lt;/em> et &lt;em>MLOps&lt;/em>, dans le cadre de la formation courte &lt;a href="https://ensc.bordeaux-inp.fr/fr/formation-courte-intelligence-artificielle">Intelligence artificielle&lt;/a> (sessions de juin 2020, juin 2021 et novembre 2021) ;&lt;/li>
+&lt;li>&lt;em>Initiation au Deep Learning&lt;/em>, dans le cadre du DU &lt;a href="https://ensc.bordeaux-inp.fr/fr/du-big-data-et-statistique-pour-lingenieur">Big Data et Statistique pour l&amp;rsquo;Ingénieur&lt;/a> (tous les ans depuis 2019).&lt;/li>
+&lt;/ul>
+&lt;p>J&amp;rsquo;ai également une activité de &lt;strong>formateur indépendant&lt;/strong>. A partir d&amp;rsquo;un contexte et de besoins métiers précis, je m&amp;rsquo;attache à construire une offre pédagogique sur mesure sur la base de mes compétences techniques et de mon expérience d&amp;rsquo;enseignant. La session ainsi conçue peut se dérouler dans vos locaux ou à distance, selon vos préférences et contraintes.&lt;/p>
+&lt;p>N&amp;rsquo;hésitez pas à &lt;a href="mailto:bpesquet%20%5Bat%5D%20gmail%20%5Bdot%5D%20com?subject=Projet%20de%20formation">prendre contact avec moi&lt;/a> afin de concevoir ensemble la formation qui saura répondre au mieux à vos attentes.&lt;/p></description></item><item><title>JavaScript pour le web</title><link>https://www.bpesquet.fr/slides/javascript-web/</link><pubDate>Wed, 02 Feb 2022 11:09:39 +0100</pubDate><guid>https://www.bpesquet.fr/slides/javascript-web/</guid><description>&lt;h2 id="sommaire" >Sommaire
 &lt;span>
 &lt;a href="#sommaire">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -1111,98 +1178,20 @@
 &lt;li>&lt;a href="https://github.com/features/codespaces">Codespaces&lt;/a> is a cloud-based development environment mimicking Visual Studio Code.&lt;/li>
 &lt;li>&lt;a href="https://copilot.github.com/">Copilot&lt;/a> is an AI-based code suggestion service.&lt;/li>
 &lt;li>&amp;hellip;&lt;/li>
-&lt;/ul></description></item><item><title>Teaching</title><link>https://www.bpesquet.fr/teaching/</link><pubDate>Wed, 27 Oct 2021 14:59:36 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/</guid><description>&lt;p>I strive to make my pedagogical resources available to everyone.&lt;/p>
-&lt;p>Unless otherwise stated, they are free to use for non-commercial purposes, using a Creative Commons &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA&lt;/a> license. Most of them are open-sourced on &lt;a href="https://github.com/bpesquet?tab=repositories">GitHub&lt;/a>. The &lt;a href="https://www.bpesquet.fr/slides/" title="Slides">slides&lt;/a> are built with &lt;a href="https://revealjs.com/">reveal.js&lt;/a>.&lt;/p>
-&lt;h2 id="maintained-resources" >Maintained resources
-&lt;span>
-&lt;a href="#maintained-resources">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;p>The following material is quite recent and/or currently being used in some of my courses. Maintained on a (somewhat) regular basis, it should be reasonably up-to-date.&lt;/p>
-&lt;h3 id="python--ai" >Python &amp;amp; AI
-&lt;span>
-&lt;a href="#python--ai">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;a href="https://www.bpesquet.fr/slides/deconstructing-ai/" title="Deconstructing AI">Deconstructing AI&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/mlhandbook/">Machine Learning Handbook&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/bpesquet/pyfit">pyfit, a minimalist neural networks library&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/bpesquet/pyai">pyai, minimalist implementations of various AI algorithms&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Enseignement</title><link>https://www.bpesquet.fr/teaching/</link><pubDate>Wed, 27 Oct 2021 14:59:36 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/</guid><description>&lt;p>L&amp;rsquo;essentiel de mon activité à l&amp;rsquo;&lt;a href="https://ensc.bordeaux-inp.fr">ENSC&lt;/a> consiste à concevoir et animer des cours à destination des étudiants de l&amp;rsquo;école. Vous trouverez ci-dessous la description des enseignements dont j&amp;rsquo;ai actuellement la responsabilité :&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&amp;amp;mode=consultation&amp;amp;chemin=65571_65569_65559_65558_65557_65556&amp;amp;langue=1">Introduction à la programmation&lt;/a> ;&lt;/li>
+&lt;li>&lt;a href="https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&amp;amp;mode=consultation&amp;amp;chemin=65589_65588_65579_65558_65557_65556&amp;amp;langue=1">Communication web&lt;/a> ;&lt;/li>
+&lt;li>&lt;a href="https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&amp;amp;mode=consultation&amp;amp;chemin=65590_65588_65579_65558_65557_65556&amp;amp;langue=1">Programmation avancée&lt;/a> ;&lt;/li>
+&lt;li>&lt;a href="https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&amp;amp;mode=consultation&amp;amp;chemin=65615_65613_65601_65600_65599_65557_65556&amp;amp;langue=1">Génie logiciel&lt;/a> ;&lt;/li>
+&lt;li>&lt;a href="https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&amp;amp;mode=consultation&amp;amp;chemin=65643_65639_65625_65624_65599_65557_65556&amp;amp;langue=1">Développement mobile&lt;/a> ;&lt;/li>
+&lt;li>&lt;a href="https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&amp;amp;mode=consultation&amp;amp;chemin=65635_65632_65625_65624_65599_65557_65556&amp;amp;langue=1">Apprentissage automatique&lt;/a>.&lt;/li>
 &lt;/ul>
-&lt;h3 id="cnet" >C#/.NET
-&lt;span>
-&lt;a href="#cnet">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;a href="https://ensc.gitbook.io/programmation-objet-csharp/">Programmation orientée objet en C#&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.bpesquet.fr/slides/csharp/" title="C# : rappels et compléments">C# : rappels et compléments&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.bpesquet.fr/slides/asp-net-core/" title="ASP.NET Core">ASP.NET Core&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h3 id="javascripttypescript" >JavaScript/TypeScript
-&lt;span>
-&lt;a href="#javascripttypescript">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;a href="https://www.bpesquet.fr/slides/javascript/" title="Le langage JavaScript">Le langage JavaScript&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.bpesquet.fr/slides/javascript-web/" title="JavaScript pour le web">JavaScript pour le web&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/thejsway/thejsway">The JavaScript Way&lt;/a> | &lt;a href="https://github.com/thejsway/thejsway_fr">La voie du JavaScript&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.bpesquet.fr/slides/react-native/" title="React Native">React Native&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h3 id="miscellaneous" >Miscellaneous
-&lt;span>
-&lt;a href="#miscellaneous">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;a href="https://www.bpesquet.fr/slides/git-github/" title="Git &amp;amp; GitHub">Git &amp;amp; GitHub&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ensc.gitbook.io/genie-logiciel/">Génie logiciel&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.bpesquet.fr/slides/unity/" title="Unity">Unity&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="older-stuff" >Older stuff
-&lt;span>
-&lt;a href="#older-stuff">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;p>The following material was authored for courses I no longer teach. While not maintained anymore, it still might be relevant in some contexts.&lt;/p>
-&lt;h2 id="software-development" >Software development
-&lt;span>
-&lt;a href="#software-development">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;ul>
-&lt;li>&lt;a href="https://ensc.gitbook.io/programmation-evenementielle-winforms/">Programmation évènementielle avec les WinForms&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/bpesquet/winforms-architecture-patterns">WinForms architecture patterns&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.gitbooks.io/guide-developpeur-php/">Guide du développeur PHP&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.developpez.com/tutoriels/php/evoluer-architecture-mvc/">Evoluez vers une architecture MVC en PHP&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="databases" >Databases
-&lt;span>
-&lt;a href="#databases">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;ul>
-&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_sql.zip">Le langage SQL&lt;/a> (PDF archive)&lt;/li>
-&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_sgbd.zip">Les bases de données&lt;/a> (PDF archive)&lt;/li>
-&lt;/ul>
-&lt;h2 id="networks" >Networks
-&lt;span>
-&lt;a href="#networks">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;ul>
-&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_reseaux.zip">Les réseaux&lt;/a> (PDF archive)&lt;/li>
+&lt;p>Depuis 2018, j&amp;rsquo;interviens chaque année à l&amp;rsquo;&lt;a href="https://www.institutoptique.fr">Institut d&amp;rsquo;Optique Graduate School&lt;/a> pour un cours d&amp;rsquo;introduction au &lt;em>Deep Learning&lt;/em>.&lt;/p>
+&lt;p>Plus ponctuellement, j&amp;rsquo;ai l&amp;rsquo;opportunité de m&amp;rsquo;impliquer dans des projets pédagogiques inter-établissements :&lt;/p>
+&lt;ul>
+&lt;li>De 2019 à 2021, j&amp;rsquo;ai co-créé et piloté le parcours de troisième année &lt;a href="https://3aia.fr">Intelligence artificielle&lt;/a> commun à l&amp;rsquo;ENSC et l&amp;rsquo;&lt;a href="https://enseirb-matmeca.bordeaux-inp.fr">ENSEIRB-MATMECA&lt;/a>, deux écoles d&amp;rsquo;ingénieurs de &lt;a href="https://www.bordeaux-inp.fr">Bordeaux INP&lt;/a>. Depuis 2022, ce parcours se décline en deux versions, une par école. J&amp;rsquo;ai conservé la responsabilité de celui de l&amp;rsquo;ENSC.&lt;/li>
+&lt;li>En 2021 et 2022, j&amp;rsquo;ai participé à la conception et à l&amp;rsquo;animation de l&amp;rsquo;école d&amp;rsquo;été &lt;em>Machine Learning for Defence&lt;/em> dans le cadre du projet européen &lt;a href="https://assets-plus.eu/">ASSETs+&lt;/a>.&lt;/li>
 &lt;/ul></description></item><item><title>React Native</title><link>https://www.bpesquet.fr/slides/react-native/</link><pubDate>Wed, 27 Oct 2021 13:48:28 +0200</pubDate><guid>https://www.bpesquet.fr/slides/react-native/</guid><description>&lt;h2 id="sommaire" >Sommaire
 &lt;span>
 &lt;a href="#sommaire">
@@ -5850,14 +5839,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;li>On peut illustrer chaque question avec une image. Si celles-ci sont trop riches, leur lisibilité au videoprojecteur peut laisser à désirer.&lt;/li>
 &lt;/ul>
 &lt;p>J&amp;rsquo;espère que cet article vous aura donné envie de tester Kahoot, Socrative ou un autre outil de gamification. Si la technique suit, vous ne risquez pas grand-chose, à part rendre vos élèves accros à ce type de séance :)&lt;/p>
-&lt;p>Pour ma part, l&amp;rsquo;expérience fut très concluante et je la renouvellerai dès que possible. Bons quiz !&lt;/p></description></item><item><title>Freelancing</title><link>https://www.bpesquet.fr/freelancing/</link><pubDate>Thu, 04 Oct 2018 19:02:15 +0200</pubDate><guid>https://www.bpesquet.fr/freelancing/</guid><description>&lt;p>Depending on my work schedule, I may be available for working with external partners. This could include:&lt;/p>
-&lt;ul>
-&lt;li>Consulting in one of my areas of knowledge.&lt;/li>
-&lt;li>Creation of custom training material: courses, textbooks or assessments.&lt;/li>
-&lt;li>Animation of courses or corporate workshops.&lt;/li>
-&lt;li>Conference talks.&lt;/li>
-&lt;/ul>
-&lt;p>Feel free to &lt;a href="mailto:bpesquet%20%5Bat%5D%20gmail%20%5Bdot%5D%20com">reach out to me&lt;/a> for more details.&lt;/p></description></item><item><title>Unity</title><link>https://www.bpesquet.fr/slides/unity/</link><pubDate>Sat, 25 Aug 2018 16:13:52 +0200</pubDate><guid>https://www.bpesquet.fr/slides/unity/</guid><description>&lt;h2 id="sommaire" >Sommaire
+&lt;p>Pour ma part, l&amp;rsquo;expérience fut très concluante et je la renouvellerai dès que possible. Bons quiz !&lt;/p></description></item><item><title>Unity</title><link>https://www.bpesquet.fr/slides/unity/</link><pubDate>Sat, 25 Aug 2018 16:13:52 +0200</pubDate><guid>https://www.bpesquet.fr/slides/unity/</guid><description>&lt;h2 id="sommaire" >Sommaire
 &lt;span>
 &lt;a href="#sommaire">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
