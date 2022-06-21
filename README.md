@@ -8,6 +8,12 @@ Deployed to [GitHub Pages](https://www.bpesquet.fr) via [Hugo Setup Action](http
 
 ## Development notes
 
+### Testing the site locally
+
+```bash
+hugo server -D
+```
+
 ### Generating a PDF version of slides
 
 Use [pandoc](https://pandoc.org/) in the Markdown source file directory (`content/slides/<title>`):
