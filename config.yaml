@@ -23,18 +23,6 @@ languages:
         - name: Ressources
           url: /resources
           weight: 3
-    params:
-      social:
-        - id: email
-          name: bpesquet [at] gmail [dot] com
-        - id: github
-          name: bpesquet
-        - id: twitter
-          name: bpesquet
-        - id: youtube
-          name: ../channel/UCtcjS2WTFBxwLlkiJYj_mtQ # workaround since Anubis prepends "c/" to the YouTube channel name (format for renamed channels)
-        - id: linkedin
-          name: bpesquet
 
   en:
     languageName: English
@@ -69,6 +57,10 @@ params:
     - id: github
       name: bpesquet
     - id: twitter
+      name: bpesquet
+    - id: youtube
+      name: ../channel/UCtcjS2WTFBxwLlkiJYj_mtQ # workaround since Anubis prepends "c/" to the YouTube channel name (format for renamed channels)
+    - id: linkedin
       name: bpesquet
 
 taxonomies:

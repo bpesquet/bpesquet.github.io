@@ -15,4 +15,4 @@ J'ai récemment été en charge des contenus suivants :
 
 J'ai également une activité de **formateur indépendant**. A partir d'un contexte et de besoins métiers précis, je m'attache à construire une offre pédagogique sur mesure sur la base de mes compétences techniques et de mon expérience d'enseignant. La session ainsi conçue peut se dérouler dans vos locaux ou à distance, selon vos préférences et contraintes.
 
-N'hésitez pas à [prendre contact avec moi](mailto:bpesquet%20[at]%20gmail%20[dot]%20com?subject=Projet%20de%20formation) afin de définir ensemble la formation qui saura répondre au mieux à vos attentes.
+N'hésitez pas à [prendre contact avec moi](mailto:bpesquet%20[at]%20gmail%20[dot]%20com?subject=Projet%20de%20formation) afin de concevoir ensemble la formation qui saura répondre au mieux à vos attentes.

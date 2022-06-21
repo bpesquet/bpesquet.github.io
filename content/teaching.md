@@ -17,5 +17,5 @@ Depuis 2018, j'interviens chaque année à l'[Institut d'Optique Graduate School
 
 Plus ponctuellement, j'ai l'opportunité de m'impliquer dans des projets pédagogiques inter-établissements :
 
-- De 2019 à 2021, j'ai co-créé et co-piloté la spécialisation de troisième année [Intelligence artificielle](https://3aia.fr). Initialement commun à l'ENSC et l'[ENSEIRB-MATMECA](https://enseirb-matmeca.bordeaux-inp.fr), ce parcours est depuis 2022 décliné en deux versions, chacune spécifique à une école. J'ai conservé la responsabilité du parcours IA de l'ENSC.
-- En 2021, j'ai participé à la conception et à l'animation de l'école d'été _Machine Learning for Defence_ dans le cadre du projet européen [ASSETs+](https://assets-plus.eu/).
+- De 2019 à 2021, j'ai co-créé et piloté le parcours de troisième année [Intelligence artificielle](https://3aia.fr) commun à l'ENSC et l'[ENSEIRB-MATMECA](https://enseirb-matmeca.bordeaux-inp.fr), deux écoles d'ingénieurs de [Bordeaux INP](https://www.bordeaux-inp.fr). Depuis 2022, ce parcours se décline en deux versions, une par école. J'ai conservé la responsabilité de celui de l'ENSC.
+- En 2021 et 2022, j'ai participé à la conception et à l'animation de l'école d'été _Machine Learning for Defence_ dans le cadre du projet européen [ASSETs+](https://assets-plus.eu/).

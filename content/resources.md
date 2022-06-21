@@ -4,13 +4,13 @@ date: 2022-06-18T08:16:44+02:00
 draft: true
 ---
 
-Je m'efforce de rendre mes productions pédagogiques accessibles au plus grand nombre.
+Je m'efforce de rendre accessibles au plus grand nombre les productions pédagogiques créées dans le cadre de mon activité professionnelle.
 
-Sauf mention contraire, elles sont librement réutilisables dans le cadre d'une licence [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) pour le texte et [MIT](https://opensource.org/licenses/MIT) pour le code source. La plupart d'entre elles sont publiées sur [GitHub](https://github.com/bpesquet?tab=repositories).
+Sauf mention contraire, elles sont librement réutilisables dans le cadre d'une licence [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) pour les textes et [MIT](https://opensource.org/licenses/MIT) pour le code source. La plupart d'entre elles sont publiées sur [GitHub](https://github.com/bpesquet?tab=repositories).
 
 ## Resources maintenues
 
-Les productions suivantes sont utilisées dans certains de mes cours actuels. Je tâche donc de les maintenir à jour sur une base régulière.
+Les productions suivantes sont récentes et/ou utilisées dans certains de mes cours actuels. Je tâche de les maintenir à jour sur une base régulière.
 
 - [Présentations]({{< ref "/slides" >}})
 - Livres
@@ -25,7 +25,7 @@ Les productions suivantes sont utilisées dans certains de mes cours actuels. Je
 
 ## Resources non maintenues
 
-Les productions suivantes ont été créées pour d'anciens cours. Elles sont donc pontentiellement dépassées mais peuvent encore répondre à certains besoins.
+Les productions suivantes ont été créées pour d'anciens cours. Non maintenues, elles sont pontentiellement dépassées mais peuvent encore avoir leur utilité dans certaines contextes.
 
 - Livres
   - [Programmation évènementielle avec les WinForms](https://ensc.gitbook.io/programmation-evenementielle-winforms/)
