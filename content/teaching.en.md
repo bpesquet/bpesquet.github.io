@@ -1,7 +1,7 @@
 ---
 title: "Teaching"
 date: 2022-06-18T17:28:25+02:00
-draft: true
+draft: false
 ---
 
 My core activity at [ENSC](https://ensc.bordeaux-inp.fr/en) is creating and presenting courses to students. Here is a list of the classes i'm currently in charge of:

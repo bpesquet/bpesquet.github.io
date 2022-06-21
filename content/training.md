@@ -1,7 +1,7 @@
 ---
 title: "Formation"
 date: 2022-06-17T15:55:09+02:00
-draft: true
+draft: false
 ---
 
 J'anime régulièrement des formations à destination d'un public professionnel.

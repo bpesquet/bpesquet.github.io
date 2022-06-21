@@ -1,7 +1,7 @@
 ---
 title: "Training"
 date: 2022-06-18T17:25:29+02:00
-draft: true
+draft: false
 ---
 
 I regularly host training sessions for professionals.

@@ -1,7 +1,7 @@
 ---
 title: "Front page"
 date: 2022-06-17T14:48:00+02:00
-draft: true
+draft: false
 ---
 
 👋 Hi there! I'm a software engineer and teacher currently living near Bordeaux, France.

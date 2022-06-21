@@ -1,7 +1,7 @@
 ---
 title: "Ressources pédagogiques"
 date: 2022-06-18T08:16:44+02:00
-draft: true
+draft: false
 ---
 
 Je m'efforce de rendre accessibles au plus grand nombre les productions pédagogiques créées dans le cadre de mon activité professionnelle.
