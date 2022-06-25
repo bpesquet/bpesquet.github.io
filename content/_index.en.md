@@ -12,4 +12,4 @@ draft: false
 
 📚 Some of my [pedagogical resources]({{< ref "resources" >}}) are available online.
 
-✍️ I [blog]({{< relref path="/posts" lang="fr" >}}) infrequently about technical or pedagogical issues.
+✍️ You can check out my [resume](http://cv.bpesquet.fr/CV_BaptistePesquet.pdf) (in French) as well as my [blog]({{< relref path="/posts" lang="fr" >}}) archive.

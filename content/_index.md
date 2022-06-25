@@ -12,4 +12,4 @@ draft: false
 
 📚 Une partie de mes [ressources pédagogiques]({{< ref "resources" >}}) est disponible en ligne.
 
-✍️ Vous pouvez consulter mon [CV](http://cv.bpesquet.fr/CV_BaptistePesquet.pdf) ainsi l'archive de mon [blog]({{< ref "posts" >}}).
+✍️ Vous pouvez consulter mon [CV](http://cv.bpesquet.fr/CV_BaptistePesquet.pdf) ainsi que l'archive de mon [blog]({{< ref "posts" >}}).
