@@ -286,7 +286,7 @@
 </span></span><span style=display:flex><span><span style=color:#ff0086;font-weight:700>[HttpGet(&#34;{id}&#34;)]</span>
 </span></span><span style=display:flex><span><span style=color:#fb660a;font-weight:700>public</span> <span style=color:#fb660a;font-weight:700>async</span> Task&lt;ActionResult&lt;Todo&gt;&gt; GetTodo(<span style=color:#cdcaa9;font-weight:700>int</span> id)
 </span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    <span style=color:#cdcaa9;font-weight:700>var</span> todo = <span style=color:#fb660a;font-weight:700>await</span> <span style=color:#0086f7;font-weight:700>_</span>context.Todo.FindAsync(id);
+</span></span><span style=display:flex><span>    <span style=color:#cdcaa9;font-weight:700>var</span> todo = <span style=color:#fb660a;font-weight:700>await</span> _context.Todo.FindAsync(id);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>if</span> (todo == <span style=color:#fb660a;font-weight:700>null</span>)
 </span></span><span style=display:flex><span>    {
@@ -538,12 +538,12 @@
 </span></span></code></pre></div></section><section><h3 id=initialisation-du-test>Initialisation du test
 <span><a href=#initialisation-du-test><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p>Permet d&rsquo;éviter la duplication de code.</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>ppublic <span style=color:#fb660a;font-weight:700>class</span> PrimeService_IsPrimeShould
 </span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>private</span> <span style=color:#fb660a;font-weight:700>readonly</span> PrimeService <span style=color:#0086f7;font-weight:700>_</span>primeService;
+</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>private</span> <span style=color:#fb660a;font-weight:700>readonly</span> PrimeService _primeService;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>public</span> PrimeService_IsPrimeShould()
 </span></span><span style=display:flex><span>    {
 </span></span><span style=display:flex><span>        <span style=color:#080;background-color:#0f140f;font-style:italic>// Create instance of tested class</span>
-</span></span><span style=display:flex><span>        <span style=color:#0086f7;font-weight:700>_</span>primeService = <span style=color:#fb660a;font-weight:700>new</span> PrimeService();
+</span></span><span style=display:flex><span>        _primeService = <span style=color:#fb660a;font-weight:700>new</span> PrimeService();
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>    <span style=color:#080;background-color:#0f140f;font-style:italic>// ...</span>
 </span></span></code></pre></div></section><section><h3 id=paramétrage-des-méthodes-de-test>Paramétrage des méthodes de test
@@ -555,7 +555,7 @@
 </span></span><span style=display:flex><span><span style=color:#ff0086;font-weight:700>    [InlineData(7)]</span>
 </span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>public</span> <span style=color:#fb660a;font-weight:700>void</span> IsPrime_PrimesLessThan10_ReturnTrue(<span style=color:#cdcaa9;font-weight:700>int</span> <span style=color:#fb660a;font-weight:700>value</span>)
 </span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>        <span style=color:#cdcaa9;font-weight:700>var</span> result = <span style=color:#0086f7;font-weight:700>_</span>primeService.IsPrime(<span style=color:#fb660a;font-weight:700>value</span>);
+</span></span><span style=display:flex><span>        <span style=color:#cdcaa9;font-weight:700>var</span> result = _primeService.IsPrime(<span style=color:#fb660a;font-weight:700>value</span>);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        Assert.True(result, <span style=color:#0086d2>$&#34;{value} should be prime&#34;</span>);
 </span></span><span style=display:flex><span>    }
@@ -572,11 +572,11 @@
 </span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>public</span> <span style=color:#fb660a;font-weight:700>class</span> HomeControllerTests
 </span></span><span style=display:flex><span>    : IClassFixture&lt;WebApplicationFactory&lt;MvcMovie.Startup&gt;&gt;
 </span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>        <span style=color:#fb660a;font-weight:700>private</span> <span style=color:#fb660a;font-weight:700>readonly</span> WebApplicationFactory&lt;MvcMovie.Startup&gt; <span style=color:#0086f7;font-weight:700>_f</span>actory;
+</span></span><span style=display:flex><span>        <span style=color:#fb660a;font-weight:700>private</span> <span style=color:#fb660a;font-weight:700>readonly</span> WebApplicationFactory&lt;MvcMovie.Startup&gt; _factory;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#fb660a;font-weight:700>public</span> HomeControllerTests(WebApplicationFactory&lt;MvcMovie.Startup&gt; factory)
 </span></span><span style=display:flex><span>        {
-</span></span><span style=display:flex><span>            <span style=color:#0086f7;font-weight:700>_f</span>actory = factory;
+</span></span><span style=display:flex><span>            _factory = factory;
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>        <span style=color:#080;background-color:#0f140f;font-style:italic>// ...</span>
 </span></span></code></pre></div></section><section><h3 id=smoke-testing-dun-contrôleur>Smoke testing d&rsquo;un contrôleur
@@ -588,7 +588,7 @@
 </span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>public</span> <span style=color:#fb660a;font-weight:700>async</span> Task Get_EndpointsReturnSuccessAndCorrectContentType(<span style=color:#cdcaa9;font-weight:700>string</span> url)
 </span></span><span style=display:flex><span>    {
 </span></span><span style=display:flex><span>        <span style=color:#080;background-color:#0f140f;font-style:italic>// Arrange</span>
-</span></span><span style=display:flex><span>        <span style=color:#cdcaa9;font-weight:700>var</span> client = <span style=color:#0086f7;font-weight:700>_f</span>actory.CreateClient();
+</span></span><span style=display:flex><span>        <span style=color:#cdcaa9;font-weight:700>var</span> client = _factory.CreateClient();
 </span></span><span style=display:flex><span>        <span style=color:#080;background-color:#0f140f;font-style:italic>// Act</span>
 </span></span><span style=display:flex><span>        <span style=color:#cdcaa9;font-weight:700>var</span> response = <span style=color:#fb660a;font-weight:700>await</span> client.GetAsync(url);
 </span></span><span style=display:flex><span>        <span style=color:#080;background-color:#0f140f;font-style:italic>// Assert</span>

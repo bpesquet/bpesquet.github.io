@@ -3428,7 +3428,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">[HttpGet(&amp;#34;{id}&amp;#34;)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;ActionResult&amp;lt;Todo&amp;gt;&amp;gt; GetTodo(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> id)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> todo = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> &lt;span style="color:#0086f7;font-weight:bold">_&lt;/span>context.Todo.FindAsync(id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> todo = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.Todo.FindAsync(id);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (todo == &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
@@ -4171,12 +4171,12 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/h3>&lt;p>Permet d&amp;rsquo;éviter la duplication de code.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>ppublic &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> PrimeService_IsPrimeShould
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">readonly&lt;/span> PrimeService &lt;span style="color:#0086f7;font-weight:bold">_&lt;/span>primeService;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">readonly&lt;/span> PrimeService _primeService;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> PrimeService_IsPrimeShould()
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Create instance of tested class&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086f7;font-weight:bold">_&lt;/span>primeService = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> PrimeService();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _primeService = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> PrimeService();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
@@ -4194,7 +4194,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(7)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> IsPrime_PrimesLessThan10_ReturnTrue(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">value&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> result = &lt;span style="color:#0086f7;font-weight:bold">_&lt;/span>primeService.IsPrime(&lt;span style="color:#fb660a;font-weight:bold">value&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> result = _primeService.IsPrime(&lt;span style="color:#fb660a;font-weight:bold">value&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assert.True(result, &lt;span style="color:#0086d2">$&amp;#34;{value} should be prime&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
@@ -4233,11 +4233,11 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> HomeControllerTests
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> : IClassFixture&amp;lt;WebApplicationFactory&amp;lt;MvcMovie.Startup&amp;gt;&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">readonly&lt;/span> WebApplicationFactory&amp;lt;MvcMovie.Startup&amp;gt; &lt;span style="color:#0086f7;font-weight:bold">_f&lt;/span>actory;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">readonly&lt;/span> WebApplicationFactory&amp;lt;MvcMovie.Startup&amp;gt; _factory;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> HomeControllerTests(WebApplicationFactory&amp;lt;MvcMovie.Startup&amp;gt; factory)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086f7;font-weight:bold">_f&lt;/span>actory = factory;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _factory = factory;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
@@ -4255,7 +4255,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task Get_EndpointsReturnSuccessAndCorrectContentType(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> url)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Arrange&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> client = &lt;span style="color:#0086f7;font-weight:bold">_f&lt;/span>actory.CreateClient();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> client = _factory.CreateClient();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Act&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> response = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> client.GetAsync(url);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Assert&lt;/span>
