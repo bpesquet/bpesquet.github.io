@@ -8,7 +8,7 @@ draft: false
 
 🏫 I [teach]({{< ref "teaching" >}}) computer science and artificial intelligence to graduate students of the [Ecole Nationale Supérieure de Cognitique](https://ensc.bordeaux-inp.fr/en).
 
-🤝 I also do [training missions]({{< ref "training" >}}) for professionals or external partners.
+🤝 I also carry out [training missions]({{< ref "training" >}}) for professionals or external partners.
 
 📚 Some of my [pedagogical resources]({{< ref "resources" >}}) are available online.
 
