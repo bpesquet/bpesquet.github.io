@@ -4,7 +4,7 @@ My [Hugo](https://gohugo.io)-powered personal website.
 
 Current theme: [Anubis](https://github.com/mitrichius/hugo-theme-anubis).
 
-Deployed to [GitHub Pages](https://www.bpesquet.fr) via [Hugo Setup Action](https://github.com/peaceiris/actions-hugo).
+Deployed to [www.bpesquet.fr](https://www.bpesquet.fr) on [GitHub Pages](https://pages.github.com/) via [Hugo Setup Action](https://github.com/peaceiris/actions-hugo).
 
 ## Development notes
 
