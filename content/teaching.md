@@ -4,7 +4,7 @@ date: 2021-10-27T14:59:36+02:00
 draft: false
 ---
 
-L'essentiel de mon activité à l'[ENSC](https://ensc.bordeaux-inp.fr) consiste à concevoir et animer des cours à destination des étudiants de l'école. Vous trouverez ci-dessous la description des enseignements dont j'ai actuellement la responsabilité :
+L'essentiel de mon activité à l'[ENSC](https://ensc.bordeaux-inp.fr) consiste à concevoir et animer des cours à destination des étudiants de l'école. Vous trouverez ci-dessous la description des enseignements dont j'ai actuellement la responsabilité. Certains des supports de cours associés sont [disponibles en ligne]({{< ref "resources" >}}).
 
 - [Introduction à la programmation](https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&mode=consultation&chemin=65571_65569_65559_65558_65557_65556&langue=1) ;
 - [Communication web](https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&mode=consultation&chemin=65589_65588_65579_65558_65557_65556&langue=1) ;

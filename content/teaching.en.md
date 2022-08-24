@@ -4,7 +4,7 @@ date: 2022-06-18T17:28:25+02:00
 draft: false
 ---
 
-My core activity at [ENSC](https://ensc.bordeaux-inp.fr/en) is creating and presenting courses to students. Here is a list of the classes i'm currently in charge of:
+My core activity at [ENSC](https://ensc.bordeaux-inp.fr/en) is creating and presenting courses to students. Below is a list of the classes I'm currently in charge of. Some of the associated pedagogical resources are [available online]({{< ref "resources" >}}).
 
 - [Programming 101](https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&mode=consultation&chemin=65571_65569_65559_65558_65557_65556&langue=1) ;
 - [Web development](https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&mode=consultation&chemin=65589_65588_65579_65558_65557_65556&langue=1) ;
