@@ -14,7 +14,7 @@ Unless otherwise stated, they are free to reuse under a [Creative Commons BY-NC-
 
 The following material is either quite recent or currently being used in some of my courses. Maintained on a (somewhat) regular basis, it should be reasonably up-to-date.
 
-- [Slides]({{< relref path="/slides" lang="fr" >}})
+- [Slideshows list]({{< relref path="/slides" lang="fr" >}})
 - Books
   - [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook/)
   - [Machine Learning Katas](https://bpesquet.github.io/mlkatas/)

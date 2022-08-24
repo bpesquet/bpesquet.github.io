@@ -12,7 +12,7 @@ Sauf mention contraire, elles sont librement réutilisables dans le cadre d'une 
 
 Les ressources suivantes sont récentes ou utilisées dans certains de mes cours actuels. Je tâche de les maintenir à jour sur une base régulière.
 
-- [Présentations]({{< ref "/slides" >}})
+- [Liste des diaporamas]({{< ref "/slides" >}})
 - Livres
   - [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook/)
   - [Machine Learning Katas](https://bpesquet.github.io/mlkatas/)
