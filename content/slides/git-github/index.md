@@ -95,6 +95,12 @@ Dedicated source code management tools, often called **Version Control Systems**
 
 ---
 
+### Git is not (that) hard
+
+![](images/git-spongebob.jpg)
+
+---
+
 ### The Git repository
 
 - Storage place for all versioning data: source code, history, versions, remote addresses...
