@@ -471,3 +471,53 @@ public class ClasseExemple
 [DataType(DataType.Date)]
 public DateTime ReleaseDate { get; set; }
 ```
+
+---
+
+{{% section %}}
+
+### Programmation asynchrone
+
+- Exemple : la préparation d'un petit déjeuner.
+
+  1. Verser le café dans une tasse.
+  1. Faire chauffer la poêle, puis faire cuire deux œufs au plat.
+  1. Faire frire trois tranches de bacon.
+  1. Faire toaster deux tranches de pain.
+  1. Étaler le beurre et la confiture sur les toasts.
+  1. Verser du jus d’orange dans un verre.
+
+- La plupart de ces tâches peuvent être exécutées simultanément.
+
+---
+
+### Exécution séquentielle (synchrone)
+
+[![Synchronous breakfast](images/synchronous-breakfast.png)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
+
+---
+
+### Exécution asynchrone
+
+[![Asynchronous breakfast](images/async-breakfast.png)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
+
+---
+
+### Les mots-clés async et await
+
+Placé dans la signature d'une méthode, le mot-clé `async` permet l'utilisation de `await` dans le corps de cette méthode.
+
+Placé devant une expression, le mot-clé `await` déclenche l'attente asynchrone de la fin de cette opération. Contrairement au comportement synchrone standard, le contexte d'exécution (*thread*) courant n'est pas bloqué par cette attente.
+
+---
+
+```csharp
+public async Task DoSomethingAsync()
+{
+    // Asynchronously wait 100ms
+    await Task.Delay(100);
+}
+```
+
+{{% /section %}}
+

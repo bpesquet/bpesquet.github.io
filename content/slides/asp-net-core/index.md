@@ -867,37 +867,6 @@ public async Task<ActionResult<Todo>> GetTodo(int id)
 
 ---
 
-{{% section %}}
-
-### Programmation asynchrone
-
-- Exemple : la préparation d'un petit déjeuner.
-
-  1. Verser le café dans une tasse.
-  1. Faire chauffer la poêle, puis faire cuire deux œufs au plat.
-  1. Faire frire trois tranches de bacon.
-  1. Faire toaster deux tranches de pain.
-  1. Étaler le beurre et la confiture sur les toasts.
-  1. Verser du jus d’orange dans un verre.
-
-- La plupart de ces tâches peuvent être exécutées simultanément.
-
----
-
-### Exécution séquentielle (synchrone)
-
-[![Synchronous breakfast](images/synchronous-breakfast.png)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
-
----
-
-### Exécution asynchrone
-
-[![Asynchronous breakfast](images/async-breakfast.png)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
-
-{{% /section %}}
-
----
-
 ### Appels synchrones
 
 [![Synchronous requests](images/sync-request-asp.net-core.png)](https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/)
