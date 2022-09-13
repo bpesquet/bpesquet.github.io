@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="125"
+   height="170"
+   id="svg2522"
+   sodipodi:version="0.32"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="Vererbung_T.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   version="1.0">
+  <defs
+     id="defs2524" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="21.7673"
+     inkscape:cy="96.436475"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="827"
+     inkscape:window-height="817"
+     inkscape:window-x="223"
+     inkscape:window-y="101"
+     width="125px"
+     height="170px"
+     showgrid="false"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2527">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-11.335136,-358.91177)">
+    <polygon
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1139465;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       points="12.8,7.76216 12.4,6.96216 12,7.76216 12.8,7.76216 "
+       id="polygon2172"
+       transform="matrix(17.552097,0,0,17.552097,-143.31087,297.20339)" />
+    <rect
+       y="472.80759"
+       x="34.669666"
+       height="49.409088"
+       width="79.284348"
+       id="rect2170"
+       style="fill:#ffffff;stroke-linejoin:miter" />
+    <rect
+       style="fill:#ffffff;stroke-linejoin:miter"
+       id="rect2168"
+       width="79.284348"
+       height="49.409088"
+       x="34.669666"
+       y="367.07272" />
+    <rect
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       x="34.835136"
+       y="391.72308"
+       width="79"
+       height="12.084583"
+       id="rect4210" />
+    <rect
+       id="rect4167"
+       height="24.572935"
+       width="79"
+       y="367.41177"
+       x="34.835136"
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    <rect
+       id="rect4177"
+       height="12.738072"
+       width="79"
+       y="403.81955"
+       x="34.835136"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    <polyline
+       transform="matrix(17.552097,0,0,17.552097,-143.31087,297.20339)"
+       id="polyline4197"
+       points="12.4,7.76216 12.4,9.94965 12.4,9.94965 "
+       style="fill:none;fill-opacity:0;stroke:#ff8d1b;stroke-width:0.1139465;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <polygon
+       transform="matrix(17.552097,0,0,17.552097,-143.31087,297.20339)"
+       id="polygon4201"
+       points="12.8,7.76216 12.4,6.96216 12,7.76216 12.8,7.76216 "
+       style="fill:none;fill-opacity:0;stroke:#ff8d1b;stroke-width:0.1139465;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       id="rect4212"
+       height="12.084583"
+       width="79"
+       y="497.22308"
+       x="34.835136"
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    <rect
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       x="34.835136"
+       y="472.91174"
+       width="79"
+       height="24.572935"
+       id="rect4216" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       x="34.835136"
+       y="509.31958"
+       width="79"
+       height="12.738072"
+       id="rect4220" />
+    <path
+       style="font-size:14px;font-style:normal;font-weight:bold;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       d="M 69.632011,374.59521 L 79.038261,374.59521 L 79.038261,376.58447 L 75.654472,376.58447 L 75.654472,384.80127 L 73.022636,384.80127 L 73.022636,376.58447 L 69.632011,376.58447 L 69.632011,374.59521 z "
+       id="text2168" />
+    <path
+       style="font-size:14px;font-style:normal;font-weight:bold;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       d="M 68.121269,480.09518 L 77.527519,480.09518 L 77.527519,482.08444 L 74.14373,482.08444 L 74.14373,490.30124 L 71.511894,490.30124 L 71.511894,482.08444 L 68.121269,482.08444 L 68.121269,480.09518 z M 80.549004,480.09518 L 80.549004,483.88913 L 78.928886,483.88913 L 78.928886,480.09518 L 80.549004,480.09518 z "
+       id="text2172" />
+  </g>
+</svg>

@@ -1,4 +1,315 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Accueil on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/</link><description>👨‍💻 Baptiste Pesquet (Accueil)</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>Ressources pédagogiques</title><link>https://www.bpesquet.fr/resources/</link><pubDate>Sat, 18 Jun 2022 08:16:44 +0200</pubDate><guid>https://www.bpesquet.fr/resources/</guid><description>&lt;p>Je m&amp;rsquo;efforce de rendre accessibles au plus grand nombre les ressources pédagogiques créées dans le cadre de mon activité professionnelle.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Accueil on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/</link><description>👨‍💻 Baptiste Pesquet (Accueil)</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>UML</title><link>https://www.bpesquet.fr/slides/uml/</link><pubDate>Mon, 12 Sep 2022 14:16:21 +0200</pubDate><guid>https://www.bpesquet.fr/slides/uml/</guid><description>&lt;h2 id="sommaire" >Sommaire
+&lt;span>
+&lt;a href="#sommaire">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Introduction à UML&lt;/li>
+&lt;li>Le diagramme de classes&lt;/li>
+&lt;li>Principaux autres diagrammes&lt;/li>
+&lt;li>UML en pratique&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="introduction-à-uml" >Introduction à UML
+&lt;span>
+&lt;a href="#introduction-%c3%a0-uml">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="quest-ce-quuml-" >Qu&amp;rsquo;est-ce qu&amp;rsquo;UML ?
+&lt;span>
+&lt;a href="#quest-ce-quuml-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>UML = &lt;em>Unified Modeling Language&lt;/em>.&lt;/li>
+&lt;li>Langage unifié (multi-langages, multi-plateformes) pour la conception de logiciels orientés objet.&lt;/li>
+&lt;li>Permet de modéliser les éléments d&amp;rsquo;un logiciel sous la forme de &lt;strong>diagrammes&lt;/strong> indépendants de toute technologie spécifique.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="histoire-duml" >Histoire d&amp;rsquo;UML
+&lt;span>
+&lt;a href="#histoire-duml">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Les premières versions datent des années 1990, période où la POO s&amp;rsquo;impose comme le nouveau standard pour la création de logiciels.&lt;/li>
+&lt;li>Ses &amp;ldquo;papas&amp;rdquo; sont &lt;a href="https://en.wikipedia.org/wiki/Grady_Booch">Grady Booch&lt;/a>, &lt;a href="https://en.wikipedia.org/wiki/James_Rumbaugh">James Rumbaugh&lt;/a> et &lt;a href="https://en.wikipedia.org/wiki/Ivar_Jacobson">Ivar Jacobson&lt;/a>, trois architectes logiciels reconnus de l&amp;rsquo;époque.&lt;/li>
+&lt;li>La version la plus récente est la 2.5, normalisée en 2017.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;a href="https://fr.wikipedia.org/wiki/UML_(informatique)">&lt;img src="images/1024px-OO-historie.jpg" alt="Historisque d&amp;amp;rsquo;UML">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="rôle-duml" >Rôle d&amp;rsquo;UML
+&lt;span>
+&lt;a href="#r%c3%b4le-duml">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>UML est un langage de modélisation, pas une méthode.&lt;/li>
+&lt;li>Boîte à outils dans laquelle le concepteur peut piocher pour représenter graphiquement certains aspects de son application (structure, comportement, cas d&amp;rsquo;usage, etc).&lt;/li>
+&lt;li>Avantages :
+&lt;ul>
+&lt;li>indépendance vis-à-vis de toute implémentation spécifique ;&lt;/li>
+&lt;li>universalité.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="liste-des-diagrammes-uml" >Liste des diagrammes UML
+&lt;span>
+&lt;a href="#liste-des-diagrammes-uml">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Chacun a son propre formalisme ainsi qu&amp;rsquo;une sémantique spécifique.&lt;/p>
+&lt;p>&lt;img src="images/DiagrammesUML.png" alt="Diagramme des diagrammes UML">&lt;/p>
+&lt;hr>
+&lt;h3 id="place-duml-dans-le-processus-de-conception-logicielle" >Place d&amp;rsquo;UML dans le processus de conception logicielle
+&lt;span>
+&lt;a href="#place-duml-dans-le-processus-de-conception-logicielle">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Souvent utilisé pendant les phases initiales d&amp;rsquo;&lt;strong>analyse&lt;/strong> et de &lt;strong>conception&lt;/strong> :
+&lt;ul>
+&lt;li>Modélisation des concepts manipulés sous la forme d&amp;rsquo;objets en interaction ;&lt;/li>
+&lt;li>Formalisation des scénarios d&amp;rsquo;utilisation ;&lt;/li>
+&lt;li>Dynamique des interactions.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Les diagrammes créées constituent une forme de documentation précieuse pour la suite du projet (codage, maintenance, évolutions).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="le-diagramme-de-classes" >Le diagramme de classes
+&lt;span>
+&lt;a href="#le-diagramme-de-classes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="rôle-du-diagramme-de-classes" >Rôle du diagramme de classes
+&lt;span>
+&lt;a href="#r%c3%b4le-du-diagramme-de-classes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Diagramme structurel qui permet de modéliser un ensemble de classes ainsi que leurs interactions.&lt;/p>
+&lt;p>&lt;img src="images/uml_analysis_example.png" alt="Extrait du livre &amp;amp;ldquo;Applying UML and patterns&amp;amp;rdquo;">&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple-de-représentation-dune-classe" >Exemple de représentation d&amp;rsquo;une classe
+&lt;span>
+&lt;a href="#exemple-de-repr%c3%a9sentation-dune-classe">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>(Peut légèrement varier selon le logiciel UML utilisé)&lt;/p>
+&lt;p>&lt;img src="images/uml_class.png" alt="Exemple de classe UML">&lt;/p>
+&lt;hr>
+&lt;h3 id="caractéristiques-dune-classe-dans-un-diagramme" >Caractéristiques d&amp;rsquo;une classe dans un diagramme
+&lt;span>
+&lt;a href="#caract%c3%a9ristiques-dune-classe-dans-un-diagramme">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Nom de la classe en caractères gras (en italique pour les classes abstraites).&lt;/li>
+&lt;li>Un compartiment pour les attributs, un autre pour les opérations (méthodes).&lt;/li>
+&lt;li>Symboles avant les membres = niveau d&amp;rsquo;accessibilité public (&lt;code>+&lt;/code>), privé (&lt;code>-&lt;/code>), protégé (&lt;code>#&lt;/code>).&lt;/li>
+&lt;li>Paramètres et type de retour des méthodes sont parfois omis.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="association-entre-classes" >Association entre classes
+&lt;span>
+&lt;a href="#association-entre-classes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Relation entre classes de type &amp;ldquo;&lt;strong>a un&lt;/strong>&amp;rdquo; ou &amp;ldquo;&lt;strong>a plusieurs&lt;/strong>&amp;rdquo;.
+&lt;ul>
+&lt;li>Un compte bancaire a un titulaire, un livre a plusieurs pages, etc.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Une association binaire est matérialisée en UML par un trait continu entre les deux classes enrichi d&amp;rsquo;informations sur la &lt;strong>navigabilité&lt;/strong> et les &lt;strong>multiplicités&lt;/strong> de l&amp;rsquo;association.&lt;/li>
+&lt;li>Elle implique un lien (&lt;em>couplage&lt;/em>) entre les classes concernées.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="navigabilité-dune-association" >Navigabilité d&amp;rsquo;une association
+&lt;span>
+&lt;a href="#navigabilit%c3%a9-dune-association">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Possibilité de parcourir l&amp;rsquo;association, cad de passer de l&amp;rsquo;instance d&amp;rsquo;une classe aux instances de l&amp;rsquo;autre classe concernées par la relation.&lt;/li>
+&lt;li>Matérialisée par une flèche si unidirectionnelle.&lt;/li>
+&lt;li>Peut comporter le nom du membre de la classe impliqué dans la relation.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/Association.JPG" alt="Associations UML">&lt;/p>
+&lt;hr>
+&lt;h3 id="multiplicité-dune-association" >Multiplicité d&amp;rsquo;une association
+&lt;span>
+&lt;a href="#multiplicit%c3%a9-dune-association">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Situées à une extrémité d&amp;rsquo;une association, elle indique &lt;em>à combien d&amp;rsquo;instances de la classe une instance de l&amp;rsquo;autre classe peut être associée&lt;/em>.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Multiplicité&lt;/th>
+&lt;th>Signification&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;em>0..1&lt;/em>&lt;/td>
+&lt;td>Zéro ou une&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;em>1&lt;/em>&lt;/td>
+&lt;td>Une (valeur par défaut)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;em>*&lt;/em>&lt;/td>
+&lt;td>De zéro à plusieurs&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;em>1..*&lt;/em>&lt;/td>
+&lt;td>De un à plusieurs&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="exemples-de-multiplicités" >Exemples de multiplicités
+&lt;span>
+&lt;a href="#exemples-de-multiplicit%c3%a9s">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/uml_multiplicites.jpg" alt="Exemples de multiplicités">&lt;/p>
+&lt;hr>
+&lt;h3 id="agrégation" >Agrégation
+&lt;span>
+&lt;a href="#agr%c3%a9gation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Type particulier d&amp;rsquo;association qui modélise une relation de subordination entre classes.&lt;/li>
+&lt;li>Indiqué par un losange vide du côté &amp;ldquo;tout&amp;rdquo; de la relation.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/uml_agregation.jpg" alt="Exemple d&amp;amp;rsquo;agrégation UML">&lt;/p>
+&lt;hr>
+&lt;h3 id="composition" >Composition
+&lt;span>
+&lt;a href="#composition">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Type particulier d&amp;rsquo;association qui modélise une relation de type composant/composé dans laquelle les cycles de vie des éléments sont liés.&lt;/li>
+&lt;li>La disparition du composé entraîne celle de tous ses composants.&lt;/li>
+&lt;li>Indiqué par un losange plein du côté &amp;ldquo;composé&amp;rdquo; de la relation.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/uml_composition.jpg" alt="Exemple de composition UML">&lt;/p>
+&lt;hr>
+&lt;h3 id="héritage-entre-classes" >Héritage entre classes
+&lt;span>
+&lt;a href="#h%c3%a9ritage-entre-classes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Relation entre classes de type &amp;ldquo;&lt;strong>est un&lt;/strong>&amp;rdquo;.&lt;/li>
+&lt;li>Représentée en UML par une flêche pleine allant de la classe dérivée (fille) vers la classe parente (classe mère ou superclasse).&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/uml_heritage.png" alt="Exemple d&amp;amp;rsquo;héritage UML">&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple-récapitulatif" >Exemple récapitulatif
+&lt;span>
+&lt;a href="#exemple-r%c3%a9capitulatif">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/uml_recap.png" alt="Exemple de diagramme de classes">&lt;/p>
+&lt;hr>
+&lt;h2 id="principaux-autres-diagrammes" >Principaux autres diagrammes
+&lt;span>
+&lt;a href="#principaux-autres-diagrammes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="diagramme-de-séquences" >Diagramme de séquence(s)
+&lt;span>
+&lt;a href="#diagramme-de-s%c3%a9quences">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Représente les interactions entre différents éléments (objets) selon un ordre chronologique.&lt;/li>
+&lt;li>Les acteurs dialoguent à l&amp;rsquo;aide de messages.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/uml_diag_seq.svg" alt="Exemple de diagramme de séquence">&lt;/p>
+&lt;hr>
+&lt;h3 id="diagramme-de-cas-dutilisation" >Diagramme de cas d&amp;rsquo;utilisation
+&lt;span>
+&lt;a href="#diagramme-de-cas-dutilisation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Représente un scénario d&amp;rsquo;utilisation du système.&lt;/p>
+&lt;p>&lt;img src="images/UML_use_case_example1-750x731.png" alt="Exemple de diagramme de cas d&amp;amp;rsquo;utilisation">&lt;/p>
+&lt;hr>
+&lt;h3 id="diagramme-détats-transitions" >Diagramme d&amp;rsquo;états-transitions
+&lt;span>
+&lt;a href="#diagramme-d%c3%a9tats-transitions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Décrit le comportement d&amp;rsquo;un élément du système à l&amp;rsquo;aide d&amp;rsquo;un automate à états finis.&lt;/p>
+&lt;p>&lt;img src="images/uml_diag_et.svg" alt="Exemple de diagramme d&amp;amp;rsquo;états-transitions">&lt;/p>
+&lt;hr>
+&lt;h2 id="uml-en-pratique" >UML en pratique
+&lt;span>
+&lt;a href="#uml-en-pratique">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="ecosystème-logiciel" >Ecosystème logiciel
+&lt;span>
+&lt;a href="#ecosyst%c3%a8me-logiciel">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>UML est un standard depuis 25 ans.&lt;/li>
+&lt;li>De très nombreux outils de développement logiciel offrent la possibilité de créer des diagrammes UML.&lt;/li>
+&lt;li>Certains IDE (environnements de développement intégrés) permettent de générer du code à partir de diagrammes existants, voire l&amp;rsquo;inverse (rétroconception).&lt;/li>
+&lt;li>Exemple de service gratuit en ligne : &lt;a href="https://app.diagrams.net/">diagrams.net&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="uml-serait-il-dépassé-" >UML serait-il dépassé ?
+&lt;span>
+&lt;a href="#uml-serait-il-d%c3%a9pass%c3%a9-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&amp;ldquo;Has UML Died Without Anyone Noticing?&amp;rdquo; (&lt;a href="https://garba.org/posts/2021/uml/">blog post&lt;/a>, &lt;a href="https://news.ycombinator.com/item?id=26934577">Hacker News discussion&lt;/a>)&lt;/li>
+&lt;li>Comme langage universel permettant la génération directe d&amp;rsquo;applications à partir de diagrammes les modélisant, UML a échoué.&lt;/li>
+&lt;li>Le travail itératif en mode agile a supplanté l&amp;rsquo;analyse métier exhaustive qui avait auparavant lieu au début des projets logiciels.&lt;/li>
+&lt;li>Certains diagrammes restent utiles et très employés.&lt;/li>
+&lt;/ul></description></item><item><title>Ressources pédagogiques</title><link>https://www.bpesquet.fr/resources/</link><pubDate>Sat, 18 Jun 2022 08:16:44 +0200</pubDate><guid>https://www.bpesquet.fr/resources/</guid><description>&lt;p>Je m&amp;rsquo;efforce de rendre accessibles au plus grand nombre les ressources pédagogiques créées dans le cadre de mon activité professionnelle.&lt;/p>
 &lt;p>Sauf mention contraire, elles sont librement réutilisables dans le cadre d&amp;rsquo;une licence &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA&lt;/a> pour les textes et &lt;a href="https://opensource.org/licenses/MIT">MIT&lt;/a> pour le code source. La plupart d&amp;rsquo;entre elles sont publiées sur &lt;a href="https://github.com/bpesquet?tab=repositories">GitHub&lt;/a>.&lt;/p>
 &lt;h2 id="resources-maintenues" >Resources maintenues
 &lt;span>
@@ -3527,47 +3838,6 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> todo;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;section data-shortcode-section>
-&lt;h3 id="programmation-asynchrone" >Programmation asynchrone
-&lt;span>
-&lt;a href="#programmation-asynchrone">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>
-&lt;p>Exemple : la préparation d&amp;rsquo;un petit déjeuner.&lt;/p>
-&lt;ol>
-&lt;li>Verser le café dans une tasse.&lt;/li>
-&lt;li>Faire chauffer la poêle, puis faire cuire deux œufs au plat.&lt;/li>
-&lt;li>Faire frire trois tranches de bacon.&lt;/li>
-&lt;li>Faire toaster deux tranches de pain.&lt;/li>
-&lt;li>Étaler le beurre et la confiture sur les toasts.&lt;/li>
-&lt;li>Verser du jus d’orange dans un verre.&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>
-&lt;p>La plupart de ces tâches peuvent être exécutées simultanément.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="exécution-séquentielle-synchrone" >Exécution séquentielle (synchrone)
-&lt;span>
-&lt;a href="#ex%c3%a9cution-s%c3%a9quentielle-synchrone">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/">&lt;img src="images/synchronous-breakfast.png" alt="Synchronous breakfast">&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h3 id="exécution-asynchrone" >Exécution asynchrone
-&lt;span>
-&lt;a href="#ex%c3%a9cution-asynchrone">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/">&lt;img src="images/async-breakfast.png" alt="Asynchronous breakfast">&lt;/a>&lt;/p>
-&lt;/section>
-&lt;hr>
 &lt;h3 id="appels-synchrones" >Appels synchrones
 &lt;span>
 &lt;a href="#appels-synchrones">
@@ -4848,7 +5118,63 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Cette propriété est associée à un type BD spécifique&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">[DataType(DataType.Date)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DateTime ReleaseDate { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Le langage JavaScript</title><link>https://www.bpesquet.fr/slides/javascript/</link><pubDate>Mon, 16 Dec 2019 21:50:46 +0100</pubDate><guid>https://www.bpesquet.fr/slides/javascript/</guid><description>&lt;h2 id="sommaire" >Sommaire
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="programmation-asynchrone" >Programmation asynchrone
+&lt;span>
+&lt;a href="#programmation-asynchrone">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>Exemple : la préparation d&amp;rsquo;un petit déjeuner.&lt;/p>
+&lt;ol>
+&lt;li>Verser le café dans une tasse.&lt;/li>
+&lt;li>Faire chauffer la poêle, puis faire cuire deux œufs au plat.&lt;/li>
+&lt;li>Faire frire trois tranches de bacon.&lt;/li>
+&lt;li>Faire toaster deux tranches de pain.&lt;/li>
+&lt;li>Étaler le beurre et la confiture sur les toasts.&lt;/li>
+&lt;li>Verser du jus d’orange dans un verre.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>La plupart de ces tâches peuvent être exécutées simultanément.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exécution-séquentielle-synchrone" >Exécution séquentielle (synchrone)
+&lt;span>
+&lt;a href="#ex%c3%a9cution-s%c3%a9quentielle-synchrone">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/">&lt;img src="images/synchronous-breakfast.png" alt="Synchronous breakfast">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="exécution-asynchrone" >Exécution asynchrone
+&lt;span>
+&lt;a href="#ex%c3%a9cution-asynchrone">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/">&lt;img src="images/async-breakfast.png" alt="Asynchronous breakfast">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="les-mots-clés-async-et-await" >Les mots-clés async et await
+&lt;span>
+&lt;a href="#les-mots-cl%c3%a9s-async-et-await">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Placé dans la signature d&amp;rsquo;une méthode, le mot-clé &lt;code>async&lt;/code> permet l&amp;rsquo;utilisation de &lt;code>await&lt;/code> dans le corps de cette méthode.&lt;/p>
+&lt;p>Placé devant une expression, le mot-clé &lt;code>await&lt;/code> déclenche l&amp;rsquo;attente asynchrone de la fin de cette opération. Contrairement au comportement synchrone standard, le contexte d&amp;rsquo;exécution (&lt;em>thread&lt;/em>) courant n&amp;rsquo;est pas bloqué par cette attente.&lt;/p>
+&lt;hr>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task DoSomethingAsync()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Asynchronously wait 100ms&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> Task.Delay(&lt;span style="color:#0086f7;font-weight:bold">100&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section></description></item><item><title>Le langage JavaScript</title><link>https://www.bpesquet.fr/slides/javascript/</link><pubDate>Mon, 16 Dec 2019 21:50:46 +0100</pubDate><guid>https://www.bpesquet.fr/slides/javascript/</guid><description>&lt;h2 id="sommaire" >Sommaire
 &lt;span>
 &lt;a href="#sommaire">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>

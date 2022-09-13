@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="350.0px" height="336.0px" viewBox="0 0 350 336">
+  <title>Restaurant UML Sequence</title>
+  <desc>Sequence diagram</desc>
+  <defs>
+    <marker id="atip" orient="auto" refY="0.0" refX="0.0" style="overflow:visible">
+      <path stroke-width="0.5" stroke-linejoin="round" transform="scale(0.9)rotate(180)" d="M8.7,4.0 L-2.2,0.0 L8.7,-4.0 C7.0,-1.63 7,1.62 8.7,4.0 z"/>
+    </marker>
+  </defs>
+  <rect width="350" height="336" fill="#F4F0F2" stroke="none"/>
+  <g stroke="#000" fill="none" transform="translate(20,20)">
+    <rect x="0" width="66" height="36" fill="#7E6"/>
+    <rect x="80" width="66" height="36" fill="#7E6"/>
+    <rect x="160" width="66" height="36" fill="#7E6"/>
+    <rect x="240" width="66" height="36" fill="#7E6"/>
+    <path stroke-dasharray="3,2" d="M33 38 v 260"/>
+    <path stroke-dasharray="3,2" d="M113 38 v 260"/>
+    <path stroke-dasharray="3,2" d="M193 38 v 260"/>
+    <path stroke-dasharray="3,2" d="M273 38 v 260"/>
+    <g fill="#fff">
+      <rect x="26" y="70" width="14" height="34"/>
+      <rect x="106" y="70" width="14" height="34"/>
+      <rect x="26" y="128" width="14" height="34"/>
+      <rect x="106" y="128" width="14" height="34"/>
+      <rect x="106" y="186" width="14" height="34"/>
+      <rect x="186" y="94" width="14" height="102"/>
+      <rect x="26" y="210" width="14" height="42"/>
+      <rect x="266" y="242" width="14" height="34"/>
+    </g>
+    <g marker-end="url(#atip)">
+      <path d="M40,75 h 66"/>
+      <path d="M120,99 h 66"/>
+      <path d="M106,133 h -66"/>
+      <path d="M186,191 h -66"/>
+      <path d="M106,215 h -66"/>
+      <path d="M40,247 h 226"/>
+    </g>
+    <path d="M19,247 l12,12 m0,-12 l-12,12"/>
+  </g>
+  <g stroke="none" fill="#000" font-size="14" font-family="Arial" text-anchor="middle">
+    <g transform="translate(20, 36)">
+      <switch><text x="33" id="trsvg15-ja" systemLanguage="ja"><tspan id="trsvg1-ja">フレッド</tspan></text><text x="33" id="trsvg15"><tspan id="trsvg1">Fred</tspan></text></switch>
+      <switch><text x="113" id="trsvg16-ja" systemLanguage="ja"><tspan id="trsvg2-ja">ボブ</tspan></text><text x="113" id="trsvg16"><tspan id="trsvg2">Bob</tspan></text></switch>
+      <switch><text x="193" id="trsvg17-ja" systemLanguage="ja"><tspan id="trsvg3-ja">ハンク</tspan></text><text x="193" id="trsvg17"><tspan id="trsvg3">Hank</tspan></text></switch>
+      <switch><text x="273" id="trsvg18-ja" systemLanguage="ja"><tspan id="trsvg4-ja">レンリー</tspan></text><text x="273" id="trsvg18"><tspan id="trsvg4">Renee</tspan></text></switch>
+    </g>
+    <g transform="translate(20, 50)">
+      <switch><text x="33" id="trsvg19-ja" systemLanguage="ja"><tspan id="trsvg5-ja">:お客様</tspan></text><text x="33" id="trsvg19"><tspan id="trsvg5">:Patron</tspan></text></switch>
+      <switch><text x="113" id="trsvg20-ja" systemLanguage="ja"><tspan id="trsvg6-ja">:給仕係</tspan></text><text x="113" id="trsvg20"><tspan id="trsvg6">:Waiter</tspan></text></switch>
+      <switch><text x="193" id="trsvg21-ja" systemLanguage="ja"><tspan id="trsvg7-ja">:料理人</tspan></text><text x="193" id="trsvg21"><tspan id="trsvg7">:Cook</tspan></text></switch>
+      <switch><text x="273" id="trsvg22-ja" systemLanguage="ja"><tspan id="trsvg8-ja">:レジ係</tspan></text><text x="273" id="trsvg22"><tspan id="trsvg8">:Cashier</tspan></text></switch>
+    </g>
+    <g font-size="11" transform="translate(20,20)">
+      <switch><text y="70" x="73" id="trsvg23-ja" systemLanguage="ja"><tspan id="trsvg9-ja">料理の注文</tspan></text><text y="70" x="73" id="trsvg23"><tspan id="trsvg9">order food</tspan></text></switch>
+      <switch><text y="94" x="153" id="trsvg24-ja" systemLanguage="ja"><tspan id="trsvg10-ja">調理依頼</tspan></text><text y="94" x="153" id="trsvg24"><tspan id="trsvg10">order food</tspan></text></switch>
+      <switch><text y="128" x="73" id="trsvg25-ja" systemLanguage="ja"><tspan id="trsvg11-ja">お冷の提供</tspan></text><text y="128" x="73" id="trsvg25"><tspan id="trsvg11">serve wine</tspan></text></switch>
+      <switch><text y="186" x="153" id="trsvg26-ja" systemLanguage="ja"><tspan id="trsvg12-ja">持ち出し</tspan></text><text y="186" x="153" id="trsvg26"><tspan id="trsvg12">pickup</tspan></text></switch>
+      <switch><text y="210" x="73" id="trsvg27-ja" systemLanguage="ja"><tspan id="trsvg13-ja">料理の提供</tspan></text><text y="210" x="73" id="trsvg27"><tspan id="trsvg13">serve food</tspan></text></switch>
+      <switch><text y="242" x="153" id="trsvg28-ja" systemLanguage="ja"><tspan id="trsvg14-ja">支払い</tspan></text><text y="242" x="153" id="trsvg28"><tspan id="trsvg14">pay</tspan></text></switch>
+    </g>
+  </g>
+</svg>
