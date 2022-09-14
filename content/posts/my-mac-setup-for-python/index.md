@@ -128,3 +128,4 @@ I hope some of this has been useful to you. Happy Python setup ;)
 - <https://drgabrielharris.medium.com/python-how-farewell-anaconda-take-full-control-of-your-development-environment-6c4f8103980f>
 - <https://www.ethanrosenthal.com/2022/02/01/everything-gets-a-package/>
 - <https://news.ycombinator.com/item?id=25650140>
+- <https://news.ycombinator.com/item?id=25647034>
