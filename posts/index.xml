@@ -1,4 +1,126 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/posts/</link><description>👨‍💻 Baptiste Pesquet (Posts)</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 29 Nov 2018 23:26:45 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Mon premier Kahoot</title><link>https://www.bpesquet.fr/posts/mon-premier-kahoot/</link><pubDate>Thu, 29 Nov 2018 23:26:45 +0100</pubDate><guid>https://www.bpesquet.fr/posts/mon-premier-kahoot/</guid><description>&lt;p>La &lt;em>gamification&lt;/em> de l&amp;rsquo;enseignement est dans l&amp;rsquo;air du temps, et il existe maintenant de nombreux outils permettant d&amp;rsquo;engager les apprenants de manière ludique et interactive. Cela faisait un petit moment que j&amp;rsquo;avais envie d&amp;rsquo;expérimenter un service de quiz interactif pendant un cours magistral. Le dernier CM de l&amp;rsquo;un de mes modules de cours m&amp;rsquo;en a récemment fourni l&amp;rsquo;occasion. Avant la séance, j&amp;rsquo;ai demandé aux étudiants de revoir l&amp;rsquo;ensemble des notions vues depuis le début du module, en leur annonçant un test de révision. Restait à trouver l&amp;rsquo;outil adéquat.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/posts/</link><description>👨‍💻 Baptiste Pesquet (Posts)</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 14 Sep 2022 12:15:28 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>My M1 Mac setup for Python development</title><link>https://www.bpesquet.fr/posts/my-mac-setup-for-python/</link><pubDate>Wed, 14 Sep 2022 12:15:28 +0200</pubDate><guid>https://www.bpesquet.fr/posts/my-mac-setup-for-python/</guid><description>&lt;p>I recently got my lucky hands on a brand new M1 MacBook Pro as my new work machine. As an teacher, I maintain several &lt;a href="https://www.bpesquet.fr/en/resources/">pedagogical resources&lt;/a> written in Python and thus needed to quickly set up an efficient work environment on this machine.&lt;/p>
+&lt;p>For all its qualities as a language, Python is notoriously hard to configure in a robust and efficient way. Along the years, many tools have been created to handle interpreter versions, virtual environments, project dependencies and the many chores associated with Python development. This is an ever evolving field, and the solutions listed below might very well become obsolete rather soon.&lt;/p>
+&lt;p>&lt;a href="https://xkcd.com/1987/">&lt;img src="images/python_environment.png" alt="There&amp;amp;rsquo;s an xkcd for that, too!">&lt;/a>&lt;/p>
+&lt;p>This post is a chronological overview of the choices I made to create a functional Python development environment on an M1/M2 Mac. Useful external resources are linked as references for further research.&lt;/p>
+&lt;h2 id="general-package-management" >General package management
+&lt;span>
+&lt;a href="#general-package-management">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://brew.sh">Homebrew&lt;/a> is the go-to solution for downloading and managing various tools on macOS, so I started by installing it.&lt;/p>
+&lt;h2 id="python-interpreter" >Python interpreter
+&lt;span>
+&lt;a href="#python-interpreter">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>The version of macOS installed on my MacBook Pro was Monterey. Out of the box, it comes with python (2.7.18) and python3 (3.8.9) interpreters available in the &lt;code>/usr/bin&lt;/code> folder. However, Python is evolving quickly and it&amp;rsquo;s great to be able to use specific versions for different projects.&lt;/p>
+&lt;p>&lt;a href="https://github.com/pyenv/pyenv">pyenv&lt;/a> is a tool that lets you easily switch between multiple versions of Python. I installed it via brew, then downloaded the most up-to-date Python version (3.10.6 for me) and made it the default global Python interpreter.&lt;/p>
+&lt;p>&lt;strong>References&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://nedbatchelder.com/text/which-py.html">https://nedbatchelder.com/text/which-py.html&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="dependency-management" >Dependency management
+&lt;span>
+&lt;a href="#dependency-management">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>The overall richness of its open source ecosystem means that any non-trivial Python project depends on a number of external libraries. Moreover, different versions of the same tool might be needed by specific projects, creating potential conflicts and instabilities.&lt;/p>
+&lt;p>The standard solution is to use virtual environments to isolate projects and their dependencies in sandboxed contexts. The &lt;a href="https://docs.python.org/3/library/venv.html">venv&lt;/a> package is one of the available solutions to this problem. It is leveraged by the tool I chose to use for project dependency management: &lt;a href="https://python-poetry.org/">poetry&lt;/a>.&lt;/p>
+&lt;p>After installing poetry via &lt;a href="https://curl.se/">curl&lt;/a>, I configured it to store the virtual environment in the project&amp;rsquo;s folder (or more precisely, in a folder named &lt;code>.venv/&lt;/code> within the root directory of the project).&lt;/p>
+&lt;p>All my Python projects are managed through poetry with a dedicated, locally-stored virtual environment for each of them.&lt;/p>
+&lt;p>References:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://stackoverflow.com/a/62071321/2380880">https://stackoverflow.com/a/62071321/2380880&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="code-utilities" >Code utilities
+&lt;span>
+&lt;a href="#code-utilities">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Development tools like code formatters and linters are typically reused from project to project. It is thefore a good practice to install them globally rather than duplicating them in each project.&lt;/p>
+&lt;p>In order to avoid polluting the global Python directories, I used &lt;a href="https://github.com/pypa/pipx">pipx&lt;/a> which installs command line tools in dedicated virtual environments.&lt;/p>
+&lt;p>Initially, I wanted to install &lt;a href="https://github.com/psf/black">black&lt;/a> and &lt;a href="https://github.com/PyCQA/pylint">pylint&lt;/a> this way. However, the latter didn&amp;rsquo;t play nice with Visual Studio Code (my code editor of choice) when installed elsewhere than in the project&amp;rsquo;s own virtual environment. Thus, only black was installed system-wide through pipx. On the contrary, pylint is added to each project&amp;rsquo;s virtual environment as a development dependency.&lt;/p>
+&lt;p>In addition, here are the VS Code settings (&lt;code>.vscode/settings.json&lt;/code>) I use for configuring black and pylint in a project.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;python.formatting.provider&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;black&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;python.formatting.blackPath&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;~/.local/bin/black&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;python.linting.pylintEnabled&amp;#34;&lt;/span>: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;python.linting.enabled&amp;#34;&lt;/span>: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>References&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://code.visualstudio.com/docs/python/editing#_formatting">https://code.visualstudio.com/docs/python/editing#_formatting&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://code.visualstudio.com/docs/python/linting">https://code.visualstudio.com/docs/python/linting&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.twoistoomany.com/blog/2020/11/24/how-i-work-pipx/">https://www.twoistoomany.com/blog/2020/11/24/how-i-work-pipx/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://stackoverflow.com/q/70488092/2380880">https://stackoverflow.com/q/70488092/2380880&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="jupyter-notebook" >Jupyter notebook
+&lt;span>
+&lt;a href="#jupyter-notebook">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>My workflow includes working with &lt;a href="https://github.com/jupyter/notebook">Jupyter notebooks&lt;/a>, either through a web browser or Visual Studio Code. In particular, I use the &lt;a href="https://rise.readthedocs.io">RISE&lt;/a> extension to showcase notebooks as slides when teaching.&lt;/p>
+&lt;p>After struggling for a while, I gave up on trying to install the Jupyter ecosystem globally while making it available in Visual Studio Code, which uses the local virtual environment of the project. Instead, I use poetry to add jupyter as a dependency for all notebook-based projects. I also add RISE as a developement dependency for projects needing slideshows.&lt;/p>
+&lt;p>&lt;strong>References&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">https://code.visualstudio.com/docs/datascience/jupyter-notebooks&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://hippocampus-garden.com/jupyter_poetry_pipenv/">https://hippocampus-garden.com/jupyter_poetry_pipenv/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments">https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="deep-learning" >Deep Learning
+&lt;span>
+&lt;a href="#deep-learning">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>As the icing on the cake, I obviously wanted to leverage the power of the M1 architecture in my Deep Learning projects. Fortunately, both &lt;a href="https://pytorch.org/">PyTorch&lt;/a> and &lt;a href="https://www.tensorflow.org/">TensorFlow&lt;/a> now support the M1 family of processors, so the installation process is straighforward: I simply added &lt;code>torch&lt;/code> (for PyTorch) or &lt;code>tensorflow-macos&lt;/code> and &lt;code>tensorflow-metal&lt;/code> (for TF) as project dependencies.&lt;/p>
+&lt;p>The following code subsequently checks if a CUDA (NVIDIA) or Metal (Apple ARM) GPU is available for PyTorch and for TensorFlow. The M1 GPU should be successfully detected in both cases.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> torch
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Device configuration&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> torch.cuda.is_available():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> device = torch.device(&lt;span style="color:#0086d2">&amp;#34;cuda&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#0086d2">f&lt;/span>&lt;span style="color:#0086d2">&amp;#34;CUDA GPU &lt;/span>&lt;span style="color:#0086d2">{&lt;/span>torch.cuda.get_device_name(&lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>)&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2"> found :)&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">elif&lt;/span> torch.backends.mps.is_available():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> device = torch.device(&lt;span style="color:#0086d2">&amp;#34;mps&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#0086d2">&amp;#34;Metal GPU found :)&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> device = torch.device(&lt;span style="color:#0086d2">&amp;#34;cpu&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#0086d2">&amp;#34;No available GPU :/&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> tensorflow &lt;span style="color:#fb660a;font-weight:bold">as&lt;/span> tf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Device configuration&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> len(tf.config.list_physical_devices(&lt;span style="color:#0086d2">&amp;#34;GPU&amp;#34;&lt;/span>)) &amp;gt; &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#0086d2">&amp;#34;GPU found :)&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#0086d2">&amp;#34;No available GPU :/&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>References&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://pytorch.org/blog/introducing-accelerated-pytorch-training-on-mac/">https://pytorch.org/blog/introducing-accelerated-pytorch-training-on-mac/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://stackoverflow.com/a/72401340">https://stackoverflow.com/a/72401340&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://pytorch.org/docs/master/notes/mps.html">https://pytorch.org/docs/master/notes/mps.html&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://developer.apple.com/metal/tensorflow-plugin/">https://developer.apple.com/metal/tensorflow-plugin/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="closing-thoughts" >Closing thoughts
+&lt;span>
+&lt;a href="#closing-thoughts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>This is of course an imperfect work in progress, and things might change in the future. Meanwhile, I&amp;rsquo;m pretty happy with the current result.&lt;/p>
+&lt;p>I hope some of this has been useful to you. Happy Python setup ;)&lt;/p>
+&lt;p>&lt;strong>References&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://blog.jayway.com/2019/12/28/pyenv-poetry-saviours-in-the-python-chaos/">https://blog.jayway.com/2019/12/28/pyenv-poetry-saviours-in-the-python-chaos/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://drgabrielharris.medium.com/python-how-farewell-anaconda-take-full-control-of-your-development-environment-6c4f8103980f">https://drgabrielharris.medium.com/python-how-farewell-anaconda-take-full-control-of-your-development-environment-6c4f8103980f&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.ethanrosenthal.com/2022/02/01/everything-gets-a-package/">https://www.ethanrosenthal.com/2022/02/01/everything-gets-a-package/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://news.ycombinator.com/item?id=25650140">https://news.ycombinator.com/item?id=25650140&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Mon premier Kahoot</title><link>https://www.bpesquet.fr/posts/mon-premier-kahoot/</link><pubDate>Thu, 29 Nov 2018 23:26:45 +0100</pubDate><guid>https://www.bpesquet.fr/posts/mon-premier-kahoot/</guid><description>&lt;p>La &lt;em>gamification&lt;/em> de l&amp;rsquo;enseignement est dans l&amp;rsquo;air du temps, et il existe maintenant de nombreux outils permettant d&amp;rsquo;engager les apprenants de manière ludique et interactive. Cela faisait un petit moment que j&amp;rsquo;avais envie d&amp;rsquo;expérimenter un service de quiz interactif pendant un cours magistral. Le dernier CM de l&amp;rsquo;un de mes modules de cours m&amp;rsquo;en a récemment fourni l&amp;rsquo;occasion. Avant la séance, j&amp;rsquo;ai demandé aux étudiants de revoir l&amp;rsquo;ensemble des notions vues depuis le début du module, en leur annonçant un test de révision. Restait à trouver l&amp;rsquo;outil adéquat.&lt;/p>
 &lt;p>&lt;a href="https://socrative.com/">&lt;img src="images/socrative-logo.png#center" alt="Socrative logo">&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://socrative.com/">Socrative&lt;/a> est un service de quiz en ligne simple et efficace. Son éditeur de questions se révèle très complet et agréable à utiliser. Il y a quelques années, j&amp;rsquo;avais testé son mode &lt;a href="http://help.socrative.com/launch/space-race/deliver-a-space-race">space race&lt;/a>, dans lequel les bonnes réponses font avancer une fusée à l&amp;rsquo;écran : ambiance garantie !&lt;/p>
 &lt;p>&lt;img src="images/Space-Race-Live-Results.png#center" alt="Space race">&lt;/p>
