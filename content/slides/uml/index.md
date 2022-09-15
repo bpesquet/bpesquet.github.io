@@ -115,7 +115,7 @@ Diagramme structurel qui permet de modéliser un ensemble de classes ainsi que l
 
 ### Multiplicité d'une association
 
-Situées à une extrémité d'une association, elle indique *à combien d'instances de la classe une instance de l'autre classe peut être associée*.
+Située à une extrémité d'une association, elle indique *à combien d'instances de la classe une instance de l'autre classe peut être associée*.
 
 | Multiplicité | Signification |
 |--------------|---------------|
@@ -129,6 +129,24 @@ Situées à une extrémité d'une association, elle indique *à combien d'instan
 ### Exemples de multiplicités
 
 ![Exemples de multiplicités](images/uml_multiplicites.jpg)
+
+---
+
+### Traduction en code de l'exemple précédent
+
+```csharp
+public class CompteBancaire
+{
+    // Permet de naviguer l'association entre un compte et son client
+    // Multiplicité = 1 => pas de liste, une seule instance de Client suffit
+    private Client titulaire;
+
+    public Client Titulaire
+    {
+        get { return titulaire; }
+    }
+    // ...
+```
 
 ---
 
