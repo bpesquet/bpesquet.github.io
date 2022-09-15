@@ -283,7 +283,7 @@
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Situées à une extrémité d&amp;rsquo;une association, elle indique &lt;em>à combien d&amp;rsquo;instances de la classe une instance de l&amp;rsquo;autre classe peut être associée&lt;/em>.&lt;/p>
+&lt;/h3>&lt;p>Située à une extrémité d&amp;rsquo;une association, elle indique &lt;em>à combien d&amp;rsquo;instances de la classe une instance de l&amp;rsquo;autre classe peut être associée&lt;/em>.&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -319,6 +319,24 @@
 &lt;/span>
 &lt;/h3>&lt;p>&lt;img src="images/uml_multiplicites.jpg" alt="Exemples de multiplicités">&lt;/p>
 &lt;hr>
+&lt;h3 id="traduction-en-code-de-lexemple-précédent" >Traduction en code de l&amp;rsquo;exemple précédent
+&lt;span>
+&lt;a href="#traduction-en-code-de-lexemple-pr%c3%a9c%c3%a9dent">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> CompteBancaire
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Permet de naviguer l&amp;#39;association entre un compte et son client&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Multiplicité = 1 =&amp;gt; pas de liste, une seule instance de Client suffit&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> Client titulaire;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> Client Titulaire
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span> { &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> titulaire; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="agrégation" >Agrégation
 &lt;span>
 &lt;a href="#agr%c3%a9gation">
