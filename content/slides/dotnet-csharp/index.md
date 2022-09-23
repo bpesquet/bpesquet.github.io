@@ -751,7 +751,7 @@ Ne pas confondre `==` et `=` (affectation) !
 |`\|\|`|OU logique|
 |`!`|NON logique|
 
-L'évaluation de l'expression est abrégée si possible.
+L'évaluation de l'expression est [abrégée si possible](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators#conditional-logical-and-operator-).
 
 ---
 
@@ -943,7 +943,7 @@ if (condition)
 
 ---
 
-### Alternative avec if/else
+### L'alternative avec if/else
 
 - Associée à un `if`, le mot-clé `else` permet d'exprimer une **alternative**.
 - Si la condition du `if` est vérifiée, alors les instructions du bloc de code associé seront exécutées, sinon ce seront celles du bloc associé au `else`.
@@ -956,6 +956,20 @@ if (condition) {
 else {
     // Instructions exécutées si la condition n'est pas vérifiée
 }
+```
+
+---
+
+### L'instruction conditionnelle ternaire
+
+- L'instruction `?:` renvoie la valeur d'une expression parmi deux, selon la valeur d'une condition booléenne : `(condition) ? valeur_si_vraie : valeur_si_fausse`
+
+- Elle constitue une alternative plus concise au `if/else` dans certains scénarions.
+
+```csharp
+double tempetature = 38.5;
+string etat = (tempetature > 38) ? "malade" : "bien portant";
+Console.WriteLine(etat); // "malade"
 ```
 
 ---
@@ -1009,6 +1023,123 @@ else
 
 ### L'instruction de choix switch
 
+L'instruction `switch` permet d'exécuter un bloc parmi plusieurs selon la valeur d'une expression.
+
+```csharp
+string meteo = "orage";
+switch (meteo)
+{
+    case "soleil":
+        Console.WriteLine("Sortez en t-shirt");
+        break;
+    case "vent":
+        Console.WriteLine("Sortez en coupe-vent");
+        break;
+    default:
+        Console.WriteLine("Restez au chaud à la maison !");
+        break;
+}
+```
+
 ---
 
 ## Structures répétitives
+
+---
+
+### La boucle while
+
+- L'instruction `while` permet de répéter des instructions tant qu'une condition est vérifiée.
+- Ce type d'instruction est souvent appelée **boucle**.
+- Avant chaque tour de boucle, la condition du `while` est évaluée :
+  - Si elle est vraie, le bloc associé au `while` (appelé _corps de la boucle_) est exécuté, puis la condition est de nouveau évaluée.
+  - Sinon, l'exécution de la boucle est terminée.
+
+```csharp
+while (condition) {
+    // Instructions exécutées tant que la condition est vérifiée
+}
+```
+
+---
+
+### Le danger des boucles infinies
+
+- L'exécution d'une boucle `while` dont la condition ne peut pas devenir fausse ne s'arrête jamais.
+- On parle alors de **boucle infinie**, qui nécessite une interruption externe brutale.
+
+```csharp
+int nombre = 1;
+while (nombre <= 5)
+{
+    Console.WriteLine(nombre);
+    // nombre n'est jamais modifiée => condition toujours vraie
+}
+```
+
+---
+
+### La boucle for
+
+- Cette boucle permet de répéter des instructions en exécutant une instruction après chaque tour.
+  - L'**initialisation** se produit une seule fois, au début de l'exécution.
+  - La **condition** est évaluée avant chaque tour de boucle afin d'effectuer un nouveau tour ou de sortir de la boucle.
+  - L'**étape** est réalisée après chaque tour de boucle.
+
+```csharp
+for (initialisation; condition; étape) {
+    // Instruction executées tant que la condition est vérifiée
+}
+```
+
+---
+
+### Compteur de boucle
+
+- La boucle `for` est fréquemment utilisée avec une variable (le _compteur_) qui permet de numéroter les tours de boucle.
+- Le compteur peut également être exploité dans le corps de la boucle.
+  - Sauf exception rare, il ne doit pas y être modifié.
+- Il est souvent nommé `i`, `j` ou `k`.
+
+```csharp
+int i;
+for (i = 1; i <= 5; i++)
+{
+    Console.WriteLine(i);
+}
+```
+
+---
+
+### Déclaration du compteur de boucle
+
+Afin de limiter sa portée au corps de la boucle, on peut déclarer la variable compteur dans l'initialisation d'une boucle `for`.
+
+```csharp
+for (int i = 0; i < 5; i++)
+{
+    Console.WriteLine(i + 1);
+}
+i = 10; // NOK : i est inaccessible ici
+```
+
+---
+
+### Choix entre un while et un for
+
+- La boucle `for` intègre la gestion du compteur, mais implique que le nombre de tours de boucle soit connu à l'avance.
+- Les scénarios où le nombre de tours ne peut pas être prévu à l'avance sont plus simples à écrire avec un `while`. En revanche, attention aux boucles infinies !
+
+---
+
+### La boucle do... while
+
+Variante de la boucle `while` dans laquelle le corps de la boucle est toujours exécuté au moins une fois.
+
+```csharp
+do
+{
+    // Instructions exécutées tant que la condition est vérifiée
+}
+while (condition);
+```
