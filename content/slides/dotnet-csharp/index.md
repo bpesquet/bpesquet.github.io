@@ -886,3 +886,129 @@ string ecole = "ENSC";
 string u = $"Il y a {nbFamilles} familles à l'{ecole}";
 Console.WriteLine(u); "Il y a 5 familles à l'ENSC"
 ```
+
+---
+
+## Conditions et alternatives
+
+---
+
+### La notion de condition
+
+- Une **condition** est une expression dont l'évaluation produit une valeur booléenne.
+- Quand la valeur d'une condition est vraie, on dit que la condition est _vérifiée_.
+- Les conditions peuvent être composées en utilisant des parenthèses.
+
+```csharp
+int a = 3;
+string s = "Hi";
+
+Console.WriteLine(a == 3); // true
+Console.WriteLine(a != 3); // false
+
+Console.WriteLine((a == 3) && (s == "Hello")); // false
+Console.WriteLine((a == 3) || (s == "Hello")); // true
+```
+
+---
+
+### Evaluation abrégée
+
+Dans une condition composée avec `&&`, la seconde sous-condition n'est évaluée que si la première vaut `true`.
+
+```csharp
+int a = 3;
+string s = "Hi";
+
+// La sous-condition (s == "Hi") n'est pas évaluée
+Console.WriteLine((a != 3) && (s == "Hi")); // false
+```
+
+---
+
+### L'instruction conditionnelle if
+
+- L'instruction `if` permet de soumettre l'exécution d'une partie du programme à une condition, qui doit être vérifiée.
+- Le bloc de code associé est délimité par des accolades.
+- Lorsque le bloc se réduit à une seule instruction, ces accolades peuvent être omises.
+
+```csharp
+if (condition) {
+    // Instructions exécutées si la condition est vérifiée
+}
+
+if (condition)
+    // Seule instruction exécutée si la condition est vérifiée
+```
+
+---
+
+### Alternative avec if/else
+
+- Associée à un `if`, le mot-clé `else` permet d'exprimer une **alternative**.
+- Si la condition du `if` est vérifiée, alors les instructions du bloc de code associé seront exécutées, sinon ce seront celles du bloc associé au `else`.
+- L'instruction `if/else` permet de créer un branchement logique dans le code.
+
+```csharp
+if (condition) {
+    // Instructions exécutées si la condition est vérifiée
+}
+else {
+    // Instructions exécutées si la condition n'est pas vérifiée
+}
+```
+
+---
+
+### Instructions if/else imbriquées
+
+```csharp
+int nombre = 1;
+if (nombre > 0)
+{
+    Console.WriteLine($"{nombre} est positif");
+}
+else
+{   // nombre <= 0
+    if (nombre < 0)
+    {
+        Console.WriteLine($"{nombre} est négatif");
+    }
+    else
+    {   // nombre == 0
+        Console.WriteLine($"{nombre} est null");
+    }
+}
+```
+
+---
+
+### Flux d'exécution de l'exemple précédent
+
+![Flux d'exécution if/else](images/chapter03-01.png)
+
+---
+
+### Version abrégée de l'exemple précédent
+
+- Le second `if/else` constitue une seule instruction : les accolades peuvent donc être omises.
+- Pas de `elif` en C# !
+
+```csharp
+int nombre = 1;
+
+if (nombre > 0)
+    Console.WriteLine($"{nombre} est positif");
+else if (nombre < 0)
+    Console.WriteLine($"{nombre} est négatif");
+else
+    Console.WriteLine($"{nombre} est null");
+```
+
+---
+
+### L'instruction de choix switch
+
+---
+
+## Structures répétitives
