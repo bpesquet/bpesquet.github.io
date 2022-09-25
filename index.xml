@@ -1,4 +1,1538 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Accueil on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/</link><description>👨‍💻 Baptiste Pesquet (Accueil)</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>My M1 Mac setup for Python development</title><link>https://www.bpesquet.fr/posts/my-mac-setup-for-python/</link><pubDate>Wed, 14 Sep 2022 12:15:28 +0200</pubDate><guid>https://www.bpesquet.fr/posts/my-mac-setup-for-python/</guid><description>&lt;p>I recently got my lucky hands on a brand new M1 MacBook Pro as my new work machine. As an teacher, I maintain several &lt;a href="https://www.bpesquet.fr/en/resources/">pedagogical resources&lt;/a> written in Python and thus needed to quickly set up an efficient work environment on this machine.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Accueil on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/</link><description>👨‍💻 Baptiste Pesquet (Accueil)</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>.NET et C#</title><link>https://www.bpesquet.fr/slides/dotnet-csharp/</link><pubDate>Tue, 20 Sep 2022 10:27:11 +0200</pubDate><guid>https://www.bpesquet.fr/slides/dotnet-csharp/</guid><description>&lt;h2 id="sommaire" >Sommaire
+&lt;span>
+&lt;a href="#sommaire">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Introduction à .NET&lt;/li>
+&lt;li>La notion de programme&lt;/li>
+&lt;li>Premiers pas avec C#&lt;/li>
+&lt;li>Guide de codage C#&lt;/li>
+&lt;li>Variables, valeurs et types&lt;/li>
+&lt;li>Expressions&lt;/li>
+&lt;li>Conditions et alternatives&lt;/li>
+&lt;li>Structures répétitives&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="introduction-à-net" >Introduction à .NET
+&lt;span>
+&lt;a href="#introduction-%c3%a0-net">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="aux-origines-de-net" >Aux origines de .NET
+&lt;span>
+&lt;a href="#aux-origines-de-net">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Plate-forme de développement d&amp;rsquo;applications créée par Microsoft en 2002.&lt;/li>
+&lt;li>Réponse à la domination de Java (premier langage multi-plateformes).&lt;/li>
+&lt;li>Inclut plusieurs langages de programmation : C#, VB.NET, F#, PowerShell&amp;hellip;&lt;/li>
+&lt;li>A l&amp;rsquo;époque :
+&lt;ul>
+&lt;li>Uniquement disponible sous Windows.&lt;/li>
+&lt;li>Licence propriétaire.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/.NET_Framework">&lt;img src="images/dotnet_stack.png" alt="Pile .NET">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="architecture-technique-de-net" >Architecture technique de .NET
+&lt;span>
+&lt;a href="#architecture-technique-de-net">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Une application .NET s&amp;rsquo;exécute dans un environnement contrôlé appelé &lt;a href="https://github.com/dotnet/runtime/blob/main/docs/design/coreclr/botr/intro-to-clr.md">CLR&lt;/a> (&lt;em>Common Language Runtime&lt;/em>).&lt;/li>
+&lt;li>La compilation du code source produit un résultat indépendant du système d&amp;rsquo;exploitation, conformément à un standard nommé &lt;strong>CIL&lt;/strong> (&lt;em>Common Intermediate Language&lt;/em>).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/Common_Language_Infrastructure">&lt;img src="images/dotnet_cli_clr.png" alt="CLI et CLR">&lt;/a>&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="net-framework-et-net-core" >.NET Framework et .NET Core
+&lt;span>
+&lt;a href="#net-framework-et-net-core">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://www.mono-project.com/docs/about-mono/history/">2004&lt;/a> : le projet &lt;strong>Mono&lt;/strong>, indépendant de Microsoft, débute le portage de .NET vers Linux.&lt;/li>
+&lt;li>&lt;a href="https://devblogs.microsoft.com/dotnet/net-core-is-open-source/">2014&lt;/a> : Microsoft publie &lt;strong>.NET Core&lt;/strong>, la première version open source et multi-plateformes de .NET. La version WIndows-only de .NET est renommée &lt;strong>.NET Framework&lt;/strong>.&lt;/li>
+&lt;li>&lt;a href="https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/">2019&lt;/a> : la nouvelle version de .NET Core est renommée &lt;strong>.NET&lt;/strong>, et .NET Framework passe en mode maintenance.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="net-5--multiplateforme-par-défaut" >.NET 5+ : multiplateforme par défaut
+&lt;span>
+&lt;a href="#net-5--multiplateforme-par-d%c3%a9faut">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>La version actuelle est .NET 6 (2021).&lt;/p>
+&lt;p>&lt;a href="https://devblogs.microsoft.com/dotnet/announcing-net-6/">&lt;img src="images/dotnet-unified-platform.png" alt=".NET 5">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="la-ligne-de-commande-net" >La ligne de commande .NET
+&lt;span>
+&lt;a href="#la-ligne-de-commande-net">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>.NET CLI&lt;/strong> (&lt;em>Command Line Interface&lt;/em>) permet d&amp;rsquo;interagir avec .NET depuis un terminal.&lt;/li>
+&lt;li>Nécessite que .NET soit installé sur la machine.&lt;/li>
+&lt;li>Syntaxe : &lt;code>dotnet &amp;lt;commande&amp;gt; &amp;lt;options&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="création-dune-application" >Création d&amp;rsquo;une application
+&lt;span>
+&lt;a href="#cr%c3%a9ation-dune-application">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet new &amp;lt;template&amp;gt; -o &amp;lt;output directory&amp;gt;&lt;/code>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Type d&amp;rsquo;application&lt;/th>
+&lt;th>Template&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Console&lt;/td>
+&lt;td>&lt;code>console&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Bibliothèque de classes&lt;/td>
+&lt;td>&lt;code>classlib&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ASP.NET (vide)&lt;/td>
+&lt;td>&lt;code>web&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ASP.NET (API)&lt;/td>
+&lt;td>&lt;code>webapi&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ASP.NET (MVC)&lt;/td>
+&lt;td>&lt;code>mvc&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="création-dun-fichier-gitignore" >Création d&amp;rsquo;un fichier .gitignore
+&lt;span>
+&lt;a href="#cr%c3%a9ation-dun-fichier-gitignore">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet new gitignore&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>Le fichier &lt;code>.gitignore&lt;/code> permet d&amp;rsquo;exclure certains fichiers/dossiers de la gestion des versions avec &lt;a href="https://git-scm.com/">Git&lt;/a>. Il le plus souvent s&amp;rsquo;agit de fichiers locaux (exemple : configuration de l&amp;rsquo;environnement de développement) ou de fichiers recréés systématiquement par le processus de génération de l&amp;rsquo;application.&lt;/li>
+&lt;li>Cette commande crée un fichier &lt;code>.gitignore&lt;/code> adapté aux projets .NET.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="gestion-des-packages" >Gestion des packages
+&lt;span>
+&lt;a href="#gestion-des-packages">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet add package &amp;lt;name&amp;gt;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>Utilise &lt;a href="https://www.nuget.org/">NuGet&lt;/a> pour télécharger un package et l&amp;rsquo;ajouter au projet.&lt;/li>
+&lt;li>Vérifie la compatibilité du package à installer avec le projet.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>&amp;gt; dotnet list package&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>Liste les packages installés pour un projet.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="lancement-dune-application" >Lancement d&amp;rsquo;une application
+&lt;span>
+&lt;a href="#lancement-dune-application">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet run&lt;/code>&lt;/p>
+&lt;p>Si nécessaire, effectue la restauration des dépendances du projet (équivalent de &lt;code>dotnet restore&lt;/code>).&lt;/p>
+&lt;hr>
+&lt;h3 id="surveillance-des-changements" >Surveillance des changements
+&lt;span>
+&lt;a href="#surveillance-des-changements">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet watch run&lt;/code>&lt;/p>
+&lt;p>Pour une application web, jnjecte un script qui met à jour le contenu affiché par le navigateur lorsque des fichiers surveillés sont modifiés.&lt;/p>
+&lt;hr>
+&lt;h3 id="autres-possibilités" >Autres possibilités
+&lt;span>
+&lt;a href="#autres-possibilit%c3%a9s">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Nettoyage, test, publication, gestion des packages installés, etc.&lt;/li>
+&lt;li>&lt;a href="https://docs.microsoft.com/en-us/dotnet/core/tools/">Plus d&amp;rsquo;informations&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="la-notion-de-programme" >La notion de programme
+&lt;span>
+&lt;a href="#la-notion-de-programme">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="quest-ce-quun-programme-" >Qu&amp;rsquo;est-ce qu&amp;rsquo;un programme ?
+&lt;span>
+&lt;a href="#quest-ce-quun-programme-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Programme&lt;/strong> (application, logiciel) : implémentation (réalisation) d&amp;rsquo;un algorithme sous la forme d&amp;rsquo;un ensemble de commandes textuelles appelées &lt;strong>instructions&lt;/strong>.&lt;/li>
+&lt;li>Ces instructions sont spécifiques à un langage de programmation.&lt;/li>
+&lt;li>Elles sont ensuite traduites dans un langage compris par (le processeur de) la machine qui exécute le programme.&lt;/li>
+&lt;li>L&amp;rsquo;ensemble des instructions d&amp;rsquo;un programme est appelé son &lt;strong>code source&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="au-plus-près-de-la-machine--lassembleur" >Au plus près de la machine : l&amp;rsquo;assembleur
+&lt;span>
+&lt;a href="#au-plus-pr%c3%a8s-de-la-machine--lassembleur">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Jeu d&amp;rsquo;instructions élémentaires comprises par une famille de processeurs.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-asm" data-lang="asm">&lt;span style="display:flex;">&lt;span>str:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff0086;font-weight:bold">.ascii&lt;/span> &lt;span style="color:#0086d2">&amp;#34;Bonjour\n&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ff0086;font-weight:bold">.global&lt;/span> &lt;span style="color:#0086d2">_start&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>_start:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">movl&lt;/span> &lt;span style="color:#0086d2">$4&lt;/span>, &lt;span style="color:#fb660a">%eax&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">movl&lt;/span> &lt;span style="color:#0086d2">$1&lt;/span>, &lt;span style="color:#fb660a">%ebx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">movl&lt;/span> &lt;span style="color:#0086d2">$str&lt;/span>, &lt;span style="color:#fb660a">%ecx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">movl&lt;/span> &lt;span style="color:#0086d2">$8&lt;/span>, &lt;span style="color:#fb660a">%edx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">int&lt;/span> &lt;span style="color:#0086d2">$0x80&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">movl&lt;/span> &lt;span style="color:#0086d2">$1&lt;/span>, &lt;span style="color:#fb660a">%eax&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">movl&lt;/span> &lt;span style="color:#0086d2">$0&lt;/span>, &lt;span style="color:#fb660a">%ebx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">int&lt;/span> &lt;span style="color:#0086d2">$0x80&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="langages-compilés" >Langages compilés
+&lt;span>
+&lt;a href="#langages-compil%c3%a9s">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Compilation&lt;/strong> = phase de traduction du code source en langage machine, puis exécution du résultat de la compilation.
+&lt;ul>
+&lt;li>Performances optimales.&lt;/li>
+&lt;li>Permet de détecter les erreurs syntaxiques avant l&amp;rsquo;exécution.&lt;/li>
+&lt;li>Recompilation nécessaire sur un nouvel environnement.&lt;/li>
+&lt;li>Exemples : C, C++.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="langages-interprétés" >Langages interprétés
+&lt;span>
+&lt;a href="#langages-interpr%c3%a9t%c3%a9s">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Interprétation&lt;/strong> = exécution du code source d&amp;rsquo;un programme ligne après ligne.
+&lt;ul>
+&lt;li>Pas de phase de compilation (gain de temps).&lt;/li>
+&lt;li>Code directement portable d&amp;rsquo;un environnement à l&amp;rsquo;autre.&lt;/li>
+&lt;li>Performances inférieures aux langages compilés.&lt;/li>
+&lt;li>Détection tardive des erreurs syntaxiques (durant l&amp;rsquo;exécution).&lt;/li>
+&lt;li>Exemples : Python, JavaScript, PHP.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="langages-pseudo-compilés" >Langages pseudo-compilés
+&lt;span>
+&lt;a href="#langages-pseudo-compil%c3%a9s">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Code source compilé vers un format intermédiaire multi-plaformes (&amp;quot;&lt;em>Write once, run anywhere&lt;/em>&amp;quot;).
+&lt;ul>
+&lt;li>Erreurs syntaxiques détectées à la compilation.&lt;/li>
+&lt;li>Evite les recompilations.&lt;/li>
+&lt;li>Nécessite que l&amp;rsquo;environnement soit supporté par la plate-forme d&amp;rsquo;exécution du code intermédiaire.&lt;/li>
+&lt;li>Exemples : Java, C#.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="le-rôle-du-programmeur" >Le rôle du programmeur
+&lt;span>
+&lt;a href="#le-r%c3%b4le-du-programmeur">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Créer des programmes qui réalisent de manière fiable les tâches attendues.&lt;/li>
+&lt;li>Maîtriser la complexité qui apparaît inévitablement lorsque les fonctionnalités du programme évoluent.&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Le programmeur est un créateur d&amp;rsquo;univers dont il est seul responsable.&amp;rdquo; (Joseph Weizenbaum).&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="premiers-pas-avec-c" >Premiers pas avec C#
+&lt;span>
+&lt;a href="#premiers-pas-avec-c">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="c-en-quelques-mots" >C# en quelques mots
+&lt;span>
+&lt;a href="#c-en-quelques-mots">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Langage de programmation apparu en 2002 avec la première version de .NET (Framework).&lt;/li>
+&lt;li>Syntaxe très inspirée de Java et de C++.&lt;/li>
+&lt;li>Typage statique, orienté objet.&lt;/li>
+&lt;li>Permet de créer une grande variété d&amp;rsquo;applications (bureau, web, mobile, cloud, etc).&lt;/li>
+&lt;li>Version associée à .NET 6 : C# 10.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="coder-en-c" >Coder en C#
+&lt;span>
+&lt;a href="#coder-en-c">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Environnements de développement intégré (IDE) :
+&lt;ul>
+&lt;li>&lt;a href="https://visualstudio.microsoft.com/fr/">Visual Studio&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.jetbrains.com/rider/">Rider&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Editeurs de code :
+&lt;ul>
+&lt;li>&lt;a href="https://code.visualstudio.com/">Visual Studio Code&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://atom.io/">Atom&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.sublimetext.com/">Sublime Text&lt;/a>&lt;/li>
+&lt;li>&lt;del>Notepad++&lt;/del>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="création-dune-application-console-avec-net" >Création d&amp;rsquo;une application console avec .NET
+&lt;span>
+&lt;a href="#cr%c3%a9ation-dune-application-console-avec-net">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Type d&amp;rsquo;application basique qui s&amp;rsquo;exécute dans un terminal.&lt;/li>
+&lt;li>UI pauvre, interactions limitées au clavier.&lt;/li>
+&lt;li>Création d&amp;rsquo;un projet console .NET nommé &lt;strong>HelloCSharp&lt;/strong> :&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Le projet est créé dans le sous-répertoire HelloCSharp&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotnet new console -o HelloCSharp
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="résultat-obtenu" >Résultat obtenu
+&lt;span>
+&lt;a href="#r%c3%a9sultat-obtenu">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/vscode-hellocsharp.png" alt="VS Code - HelloCSharp">&lt;/p>
+&lt;hr>
+&lt;h3 id="le-fichier-csproj" >Le fichier .csproj
+&lt;span>
+&lt;a href="#le-fichier-csproj">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Décrit la configuration du projet.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;Project&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">Sdk=&lt;/span>&lt;span style="color:#0086d2">&amp;#34;Microsoft.NET.Sdk&amp;#34;&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;PropertyGroup&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;OutputType&amp;gt;&lt;/span>Exe&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/OutputType&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;TargetFramework&amp;gt;&lt;/span>net6.0&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/TargetFramework&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;ImplicitUsings&amp;gt;&lt;/span>enable&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/ImplicitUsings&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;Nullable&amp;gt;&lt;/span>enable&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/Nullable&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/PropertyGroup&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/Project&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="le-fichier-programcs" >Le fichier Program.cs
+&lt;span>
+&lt;a href="#le-fichier-programcs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Fichier source principal contenant le code C#.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// See https://aka.ms/new-console-template for more information&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Hello, World!&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exécution-du-programme" >Exécution du programme
+&lt;span>
+&lt;a href="#ex%c3%a9cution-du-programme">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Cette commande doit être lancée dans le répertoire HelloCSharp&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotnet run
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="images/vscode-hellocsharp-run.png" alt="VS Code - HelloCSharp run">&lt;/p>
+&lt;hr>
+&lt;h3 id="littéraux" >Littéraux
+&lt;span>
+&lt;a href="#litt%c3%a9raux">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Un littéral est une valeur donnée explicitement dans le code source.&lt;/li>
+&lt;li>Exemples : &lt;code>2&lt;/code>, &lt;code>3.14&lt;/code>, &lt;code>&amp;quot;Hello World!&amp;quot;&lt;/code>.&lt;/li>
+&lt;li>Séparateur décimal : le point &lt;code>.&lt;/code>&lt;/li>
+&lt;li>Chaînes de caractères (texte) : guillemets doubles &lt;code>&amp;quot;...&amp;quot;&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="instructions" >Instructions
+&lt;span>
+&lt;a href="#instructions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Une instruction est un ordre écrit dans le code.&lt;/li>
+&lt;li>Elles se terminent par &lt;code>;&lt;/code> en C#.&lt;/li>
+&lt;li>Elles peuvent être regroupées dans des &lt;strong>blocs&lt;/strong> délimités par des accolades &lt;code>{ ... }&lt;/code>.&lt;/li>
+&lt;li>Durant l&amp;rsquo;exécution, chaque instruction est &amp;ldquo;lue&amp;rdquo; séquentiellement et produit un résultat.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="commentaires" >Commentaires
+&lt;span>
+&lt;a href="#commentaires">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Rôle : expliquer &lt;em>aux humains&lt;/em> certaines parties du code.&lt;/li>
+&lt;li>Syntaxe : &lt;code>//...&lt;/code> (monoligne) ou &lt;code>/* ... */&lt;/code> (multilignes).&lt;/li>
+&lt;li>Peuvent être ajoutés/supprimés automatiquement par les éditeurs de code et les IDE.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="guide-de-codage-c" >Guide de codage C#
+&lt;span>
+&lt;a href="#guide-de-codage-c">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="nommage-des-identifiants" >Nommage des identifiants
+&lt;span>
+&lt;a href="#nommage-des-identifiants">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Un &lt;strong>identifiant&lt;/strong> est le nom donné à un élément du code créé par le développeur.&lt;/li>
+&lt;li>Ils doivent commencer par une lettre ou un &lt;em>underscore&lt;/em> &lt;code>_&lt;/code>.&lt;/li>
+&lt;li>Ils sont sensibles à la casse (distinction majuscules/minuscules).&lt;/li>
+&lt;li>Au sein d&amp;rsquo;un bloc, le même identifiant ne peut pas être attribué à des éléments distincts.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="mots-réservés-du-c" >Mots réservés du C#
+&lt;span>
+&lt;a href="#mots-r%c3%a9serv%c3%a9s-du-c">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>abstract
+as
+base
+bool
+break
+byte
+case
+catch
+char
+checked
+class
+const
+continue
+decimal
+default
+delegate
+do
+double
+else
+enum
+event
+explicit
+extern
+false
+file finally
+fixed
+float
+for
+foreach
+goto
+if
+implicit
+in
+int
+interface
+internal
+is
+lock
+long
+namespace
+new
+null
+object
+operator
+out
+override
+params
+private
+protected
+public
+readonly
+ref
+return
+sbyte
+sealed
+short
+sizeof
+stackalloc
+static
+string
+struct
+switch
+this
+throw
+true
+try
+typeof
+uint
+ulong
+unchecked
+unsafe
+ushort
+using
+virtual
+void
+volatile
+while&lt;/p>
+&lt;hr>
+&lt;h3 id="conventions-de-nommage" >Conventions de nommage
+&lt;span>
+&lt;a href="#conventions-de-nommage">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Plus l&amp;rsquo;élément est utilisé dans le code, plus il faut le nommer avec soin.&lt;/li>
+&lt;li>Notation &lt;a href="https://fr.wikipedia.org/wiki/Camel_case">camelCase&lt;/a> : &lt;code>totalFacturesClient&lt;/code>.
+&lt;ul>
+&lt;li>Pas d&amp;rsquo;underscores entre les mots (!= Python).&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Notation PascalCase (première lettre en majuscule) pour certains éléments (fonctions, méthodes, structures, classes) : &lt;code>CompteBancaire&lt;/code>.&lt;/li>
+&lt;li>Pas d&amp;rsquo;accents ! (même si ça fonctionne)&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="formatage-du-code" >Formatage du code
+&lt;span>
+&lt;a href="#formatage-du-code">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Pas plus d&amp;rsquo;une instruction par ligne.&lt;/li>
+&lt;li>Longueur maximum d&amp;rsquo;une ligne : 80-ish caractères.&lt;/li>
+&lt;li>Accolades ouvrantes et fermantes sur des lignes distinctes.&lt;/li>
+&lt;li>Indentation = 4 espaces.&lt;/li>
+&lt;li>&amp;hellip; Utiliser le formateur automatique de son éditeur/IDE !
+&lt;ul>
+&lt;li>Activer le formatage à la sauvegarde pour plus de confort.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="formatage-des-commentaires" >Formatage des commentaires
+&lt;span>
+&lt;a href="#formatage-des-commentaires">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Placer les commentaires sur des lignes distinctes.&lt;/li>
+&lt;li>Débuter par une majuscule et terminer par un point.&lt;/li>
+&lt;li>Laisser un espace entre le symbole de début et le texte.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Ceci est un commentaire tellement long qu&amp;#39;il est réparti&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// sur plusieurs lignes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">/*
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">Encore
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">un
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">commentaire.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">*/&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="ressources" >Ressources
+&lt;span>
+&lt;a href="#ressources">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions">C# Coding Conventions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/dotnet/runtime/blob/main/docs/coding-guidelines/coding-style.md">C# Coding Style&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://code.visualstudio.com/docs/editor/codebasics#_formatting">Visual Studio Code - Formatting&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="variables-valeurs-et-types" >Variables, valeurs et types
+&lt;span>
+&lt;a href="#variables-valeurs-et-types">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="valeur-vs-type" >Valeur Vs type
+&lt;span>
+&lt;a href="#valeur-vs-type">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Valeur&lt;/strong> = morceau d&amp;rsquo;information utilisée dans un programme.&lt;/li>
+&lt;li>Chaque valeur possède un &lt;strong>type&lt;/strong> qui détermine :
+&lt;ul>
+&lt;li>son encodage en mémoire ;&lt;/li>
+&lt;li>la plage des valeurs possibles ;&lt;/li>
+&lt;li>les opérations permises.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>C# est un langage à &lt;strong>typage statique&lt;/strong> : les types doivent être explicitement précisés (!= Python).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="variables" >Variables
+&lt;span>
+&lt;a href="#variables">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Variable&lt;/strong> = zone de stockage d&amp;rsquo;information dans la mémoire allouée au programme.
+&lt;ul>
+&lt;li>Sorte de &amp;ldquo;boîte&amp;rdquo; dans laquelle on range des choses.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Caractérisée par :
+&lt;ul>
+&lt;li>son nom (identifiant) ;&lt;/li>
+&lt;li>sa valeur ;&lt;/li>
+&lt;li>son type.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="déclaration-dune-variable" >Déclaration d&amp;rsquo;une variable
+&lt;span>
+&lt;a href="#d%c3%a9claration-dune-variable">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Type défini explicitement à la déclaration.&lt;/li>
+&lt;li>Valeur modifiée par l&amp;rsquo;opérateur d&amp;rsquo;affectation &lt;code>=&lt;/code>.
+&lt;ul>
+&lt;li>Ne pas confondre avec l&amp;rsquo;égalité mathématique !&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Possibilité de définir la valeur initiale au moment de la déclaration.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> x; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Déclaration : aucune valeur dans la variable x&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>x = &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Affectation de la valeur 3 à x&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> y = &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Déclaration et initialisation de la variable y&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>y = &lt;span style="color:#0086d2">&amp;#34;Coucou&amp;#34;&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK : valeur incompatible avec le type de y&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="portée-dune-variable" >Portée d&amp;rsquo;une variable
+&lt;span>
+&lt;a href="#port%c3%a9e-dune-variable">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Portée&lt;/strong> (&lt;em>scope&lt;/em>) = portion du code source dans laquelle une variable est visible et donc utilisable.&lt;/li>
+&lt;li>L&amp;rsquo;unité de portée est le bloc de code &lt;code>{ ... }&lt;/code> ainsi que ses sous-blocs éventuels.&lt;/li>
+&lt;li>En l&amp;rsquo;absence d&amp;rsquo;accolades, un bloc par défaut est implicitement défini.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> a = &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a = &lt;span style="color:#0086f7;font-weight:bold">2&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// OK : a est déclarée dans le bloc parent&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> b = &lt;span style="color:#0086f7;font-weight:bold">4&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// La portée de b se limite au bloc actuel&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(a); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// OK : a est déclarée dans le bloc courant&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(b); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK : b n&amp;#39;est pas visible ici&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="types-prédéfinis" >Types prédéfinis
+&lt;span>
+&lt;a href="#types-pr%c3%a9d%c3%a9finis">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Extrait du vaste éventail de &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types">types prédéfinis du C#&lt;/a> :&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Mot-clé&lt;/th>
+&lt;th>Nom complet&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types">int&lt;/a>&lt;/td>
+&lt;td>&lt;code>System.Int32&lt;/code>&lt;/td>
+&lt;td>Entier (signé)&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types">double&lt;/a>&lt;/td>
+&lt;td>&lt;code>System.Double&lt;/code>&lt;/td>
+&lt;td>Réel&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool">bool&lt;/a>&lt;/td>
+&lt;td>&lt;code>System.Boolean&lt;/code>&lt;/td>
+&lt;td>Booléen&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/char">char&lt;/a>&lt;/td>
+&lt;td>&lt;code>System.Char&lt;/code>&lt;/td>
+&lt;td>Caractère&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/reference-types#the-string-type">string&lt;/a>&lt;/td>
+&lt;td>&lt;code>System.String&lt;/code>&lt;/td>
+&lt;td>Chaîne de caractères&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="valeurs-prédéfinies" >Valeurs prédéfinies
+&lt;span>
+&lt;a href="#valeurs-pr%c3%a9d%c3%a9finies">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Plusieurs valeurs constantes sont associées à certains types.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> i = &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>.MaxValue; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Plus grande valeur gérée par int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> j = &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>.MinValue; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Plus petite valeur gérée par int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> a = &lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span>.MaxValue; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Plus grande valeur gérée par double&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> b = &lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span>.MinValue; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Plus petite valeur gérée par double&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> c = &lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span>.Epsilon; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Plus petite valeur réelle positive&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> d = &lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span>.NaN; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Pas un nombre (Not a Number)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> e = &lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span>.PositiveInfinity; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// +∞&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> f = &lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span>.NegativeInfinity; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// −∞&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="notation-suffixée" >Notation suffixée
+&lt;span>
+&lt;a href="#notation-suffix%c3%a9e">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Les litéraux réels sont considérés par défaut comme ayant le type &lt;code>double&lt;/code>.&lt;/li>
+&lt;li>Dans certaines situations, il est utile de préciser explicitement le type souhaité en utilisant la &lt;strong>notation suffixée&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">float&lt;/span> f = &lt;span style="color:#0086f7;font-weight:bold">1.2f&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Réel sur 32 bits&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> d = &lt;span style="color:#0086f7;font-weight:bold">1.2d&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Réel sur 64 bits&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">decimal&lt;/span> m = &lt;span style="color:#0086f7;font-weight:bold">1.2&lt;/span>m; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Réel sur 128 bits&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="types-valeur-vs-types-référence" >Types valeur Vs types référence
+&lt;span>
+&lt;a href="#types-valeur-vs-types-r%c3%a9f%c3%a9rence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Les types C# se divisent en deux catégories.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types">Types valeur&lt;/a> : la variable contient directement la valeur qu&amp;rsquo;elle stocke.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/reference-types">Types référence&lt;/a> : la variable contient une référence vers la valeur ($\approx$ son adresse dans la mémoire). Cette &lt;em>indirection&lt;/em> permet d&amp;rsquo;optimiser certaines opérations (comparaison, copie, etc).&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Tous les exemples précédents sont des types valeur, sauf &lt;code>string&lt;/code> (mais qui s&amp;rsquo;utilise comme un type valeur).&lt;/p>
+&lt;hr>
+&lt;h3 id="hiérarchie-des-types-c" >Hiérarchie des types C#
+&lt;span>
+&lt;a href="#hi%c3%a9rarchie-des-types-c">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/">&lt;img src="images/value-reference-types-common-type-system.png" alt="Hiérarchie des types C#">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="types-valeur-nullables" >Types valeur nullables
+&lt;span>
+&lt;a href="#types-valeur-nullables">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Le mot-clé &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/null">null&lt;/a> indique l&amp;rsquo;absence de référence.&lt;/li>
+&lt;li>C&amp;rsquo;est la &amp;ldquo;valeur&amp;rdquo; par défaut des variables de type référence.&lt;/li>
+&lt;li>Un type valeur est &lt;em>non-nullable&lt;/em> par défaut. Il peut devenir &lt;a href="(https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types)">nullable&lt;/a> en le suffixant par &lt;code>?&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> a = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK : type valeur non nullable&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int?&lt;/span> b = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// OK, type nullable&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="types-référence-nullables" >Types référence nullables
+&lt;span>
+&lt;a href="#types-r%c3%a9f%c3%a9rence-nullables">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Depuis C# 8, on peut paramétrer un projet C# afin que les types référence deviennent &lt;em>non-nullables&lt;/em>, cad &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-reference-types">qu&amp;rsquo;on ne puisse pas leur affecter&lt;/a> &lt;code>null&lt;/code> ou une valeur potentiellement égale à &lt;code>null&lt;/code>.
+&lt;ul>
+&lt;li>C&amp;rsquo;est le cas par défaut avec .NET 6.&lt;/li>
+&lt;li>Objectif : améliorer la sûreté du code.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Le préfixage par &lt;code>?&lt;/code> autorise &lt;code>null&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> s; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// OK, valeur de s = null (variable inutilisable en l&amp;#39;état)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK, type référence non nullable (C# 8+)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string?&lt;/span> t = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// OK, type nullable&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="conversions-de-types-implicites" >Conversions de types implicites
+&lt;span>
+&lt;a href="#conversions-de-types-implicites">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>En C#, le type d&amp;rsquo;une variable ne peut plus être modifié après sa déclaration (typage statique).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Une &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/casting-and-type-conversions#implicit-conversions">conversion implicite&lt;/a> a lieu quand la nouvelle valeur est directement compatible avec le type actuel (exemples : entier vers entier de plus grande précision, entier vers réel).&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> i = &lt;span style="color:#0086d2">&amp;#34;Bonjour&amp;#34;&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK, valeur incompatible avec le type int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> n = &lt;span style="color:#0086f7;font-weight:bold">2147483647&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> d = n; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// OK, conversion implicite&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Le type entier long peut stocker n&amp;#39;importe quel int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">long&lt;/span> l = n; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// OK, conversion implicite&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="conversions-de-types-explicites" >Conversions de types explicites
+&lt;span>
+&lt;a href="#conversions-de-types-explicites">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/casting-and-type-conversions#explicit-conversions">Transtypage&lt;/a> (&lt;em>cast&lt;/em>) : on force le type de la nouvelle valeur en la préfixant par le nouveau type entre parenthèses.
+&lt;ul>
+&lt;li>Perte possible d&amp;rsquo;information.&lt;/li>
+&lt;li>Potentiellement dangereux !&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Fonctions de conversion C# : &lt;code>{type}.Parse&lt;/code> ou &lt;code>Convert.To{type}&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> x = (&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>)&lt;span style="color:#0086f7;font-weight:bold">12.3&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// OK : transtypage possible, x vaut 12&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> y = &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>.Parse(&lt;span style="color:#0086d2">&amp;#34;123&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// OK, y vaut 123&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> z = &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>.Parse(&lt;span style="color:#0086d2">&amp;#34;12.3&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK : nouvelle valeur non entière&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="booléens" >Booléens
+&lt;span>
+&lt;a href="#bool%c3%a9ens">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Le type &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool">bool&lt;/a> représente une valeur booléenne &lt;code>true&lt;/code> ou &lt;code>false&lt;/code>.&lt;/li>
+&lt;li>Booléen nullable : &lt;code>bool?&lt;/code>&lt;/li>
+&lt;li>Un conversion explicite est requise vers/depuis les types entier : toutes les valeurs non-zéro sont converties à &lt;code>true&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">bool&lt;/span> b = &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">bool?&lt;/span> n = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// OK : type nullable&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">bool&lt;/span> p = Convert.ToBoolean(&lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// p vaut true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">bool&lt;/span> q = Convert.ToBoolean(&lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// r vaut false&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="caractères" >Caractères
+&lt;span>
+&lt;a href="#caract%c3%a8res">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Le type &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/char">char&lt;/a> représente un caractère alphanumérique &lt;a href="https://en.wikipedia.org/wiki/Unicode">Unicode&lt;/a>.&lt;/li>
+&lt;li>On peut lui affecter un caractère litéral délimité par des guillemets simples &lt;code>''&lt;/code> ou sa &lt;a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters#Basic_Latin">valeur Unicode&lt;/a> transtypée.&lt;/li>
+&lt;li>Le caractère d&amp;rsquo;échappement est &lt;code>\&lt;/code>.&lt;/li>
+&lt;li>La conversion est implicite vers les principaux types entiers et réels.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">char&lt;/span> c = &lt;span style="color:#0086d2">&amp;#39;a&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> cVal = c; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// cVal vaut 97, la valeur Unicode de &amp;#39;a&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">char&lt;/span> cBis = (&lt;span style="color:#cdcaa9;font-weight:bold">char&lt;/span>)&lt;span style="color:#0086f7;font-weight:bold">97&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Initialisation à partir de la valeur Unicode&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="séquences-déchappement" >Séquences d&amp;rsquo;échappement
+&lt;span>
+&lt;a href="#s%c3%a9quences-d%c3%a9chappement">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Extrait de la &lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/#string-escape-sequences">liste complète des séquences d&amp;rsquo;échappement C#&lt;/a> :&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Séquence&lt;/th>
+&lt;th>Valeur&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>\'&lt;/code>&lt;/td>
+&lt;td>Guillemet simple&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>\&amp;quot;&lt;/code>&lt;/td>
+&lt;td>Guillemet double&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>\\&lt;/code>&lt;/td>
+&lt;td>Antislash&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>\n&lt;/code>&lt;/td>
+&lt;td>Saut de ligne&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>\t&lt;/code>&lt;/td>
+&lt;td>Tabulation&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="chaînes-de-caractères" >Chaînes de caractères
+&lt;span>
+&lt;a href="#cha%c3%aenes-de-caract%c3%a8res">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Le type &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/reference-types#the-string-type">string&lt;/a> représente une séquence de caractères Unicode.&lt;/li>
+&lt;li>L&amp;rsquo;instruction &lt;code>{chaîne}.Length&lt;/code> renvoie le nombre de caractères d&amp;rsquo;une chaîne.&lt;/li>
+&lt;li>La syntaxe entre crochets &lt;code>[]&lt;/code> permet d&amp;rsquo;accéder à un caractère de la chaîne à partir de son rang.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> s = &lt;span style="color:#0086d2">&amp;#34;abc&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">char&lt;/span> premier = s[&lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>]; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#39;a&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">char&lt;/span> dernier = s[s.Length - &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>]; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#39;c&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="chaînes-verbatim" >Chaînes verbatim
+&lt;span>
+&lt;a href="#cha%c3%aenes-verbatim">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Placé devant son début, le caractère &lt;code>@&lt;/code> permet de créer une &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/verbatim">chaîne verbatime&lt;/a> dans laquelle on peut ajouter des caractères spéciaux sans les échapper.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Ces deux chaînes contiennent &amp;#34;c:\Windows\Temp&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> c1 = &lt;span style="color:#0086d2">&amp;#34;c:\\Windows\\Temp&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> c2 = &lt;span style="color:#0086d2">@&amp;#34;c:\Windows\Temp&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="void" >Void
+&lt;span>
+&lt;a href="#void">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Le mot-clé &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/void">void&lt;/a> est utilisé pour indiquer l&amp;rsquo;absence de valeur de retour par une instruction.&lt;/li>
+&lt;li>Une variable ou une expression ne peut pas être de type &lt;code>void&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="expressions" >Expressions
+&lt;span>
+&lt;a href="#expressions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="définition-dune-expression" >Définition d&amp;rsquo;une expression
+&lt;span>
+&lt;a href="#d%c3%a9finition-dune-expression">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Une &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/expressions">expression&lt;/a> est une combinaison de variables, de valeurs et d&amp;rsquo;opérateurs.&lt;/li>
+&lt;li>Toute expression qui renvoie une valeur possède un type.&lt;/li>
+&lt;li>Le résultat d&amp;rsquo;une expression peut être inclus dans une autre expression.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="opérateurs-arithmétiques" >Opérateurs arithmétiques
+&lt;span>
+&lt;a href="#op%c3%a9rateurs-arithm%c3%a9tiques">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Opérateur&lt;/th>
+&lt;th>Rôle&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>+&lt;/code>&lt;/td>
+&lt;td>Addition&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-&lt;/code>&lt;/td>
+&lt;td>Soustraction&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>*&lt;/code>&lt;/td>
+&lt;td>Multiplication&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/&lt;/code>&lt;/td>
+&lt;td>Division&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>%&lt;/code>&lt;/td>
+&lt;td>Modulo&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="opérateurs-de-comparaison" >Opérateurs de comparaison
+&lt;span>
+&lt;a href="#op%c3%a9rateurs-de-comparaison">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Ne pas confondre &lt;code>==&lt;/code> et &lt;code>=&lt;/code> (affectation) !&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Opérateur&lt;/th>
+&lt;th>Rôle&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>==&lt;/code>&lt;/td>
+&lt;td>Egal à&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!=&lt;/code>&lt;/td>
+&lt;td>Différent de&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>&amp;lt;&lt;/code>&lt;/td>
+&lt;td>Inférieur&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>&amp;lt;=&lt;/code>&lt;/td>
+&lt;td>Inférieur ou égal&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Supérieur&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>&amp;gt;=&lt;/code>&lt;/td>
+&lt;td>Supérieur ou égal&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="opérateurs-logiques" >Opérateurs logiques
+&lt;span>
+&lt;a href="#op%c3%a9rateurs-logiques">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Opérateur&lt;/th>
+&lt;th>Rôle&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>&amp;amp;&amp;amp;&lt;/code>&lt;/td>
+&lt;td>ET logique&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>||&lt;/code>&lt;/td>
+&lt;td>OU logique&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!&lt;/code>&lt;/td>
+&lt;td>NON logique&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="priorité-des-opérateurs" >Priorité des opérateurs
+&lt;span>
+&lt;a href="#priorit%c3%a9-des-op%c3%a9rateurs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Elle est gérée comme en mathématiques à l&amp;rsquo;aide de parenthèses &lt;code>()&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">let&lt;/span> e = &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span> + &lt;span style="color:#0086f7;font-weight:bold">2&lt;/span> * &lt;span style="color:#0086f7;font-weight:bold">4&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// e contient la valeur 11&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> f = (&lt;span style="color:#0086f7;font-weight:bold">3&lt;/span> + &lt;span style="color:#0086f7;font-weight:bold">2&lt;/span>) * &lt;span style="color:#0086f7;font-weight:bold">4&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// f contient la valeur 20&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="division-entière" >Division entière
+&lt;span>
+&lt;a href="#division-enti%c3%a8re">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Une division entre deux entiers donne un résultat de type entier.&lt;/li>
+&lt;li>Pour obtenir un résultat réel, il faut que l&amp;rsquo;un des deux opérandes soit de type réel ou que le résultat soit explicitement converti.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> q = &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span> / &lt;span style="color:#0086f7;font-weight:bold">2&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// q vaut 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> r = &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span> % &lt;span style="color:#0086f7;font-weight:bold">2&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// r vaut 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> d = &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span> / &lt;span style="color:#0086f7;font-weight:bold">2.0&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// d vaut 2,5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> e = &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span> / &lt;span style="color:#0086f7;font-weight:bold">2d&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// e vaut 2,5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> f = (&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span>)&lt;span style="color:#0086f7;font-weight:bold">5&lt;/span> / &lt;span style="color:#0086f7;font-weight:bold">2&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// f vaut 2,5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> z = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> g = &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span> / z; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK, division par zéro à l&amp;#39;exécution&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="incrémentation-et-décrémentation" >Incrémentation et décrémentation
+&lt;span>
+&lt;a href="#incr%c3%a9mentation-et-d%c3%a9cr%c3%a9mentation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Les opérateurs &lt;code>++&lt;/code> et &lt;code>--&lt;/code> permettent resp. d&amp;rsquo;augmenter et de diminuer de 1 la valeur d&amp;rsquo;une variable.&lt;/li>
+&lt;li>Ils équivalent à &lt;code>variable = variable ± 1&lt;/code>.&lt;/li>
+&lt;li>Attention, le résultat renvoyé par l&amp;rsquo;expression est différent selon la position de l&amp;rsquo;opérateur (pré- ou post-incrémentation/décrémentation).&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> a = &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a++; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// a vaut 4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> b = a++; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// a vaut 5, b vaut 4 !&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> c = ++a; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// a et c valent 6&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="opérateurs-combinés-daffectation" >Opérateurs combinés d&amp;rsquo;affectation
+&lt;span>
+&lt;a href="#op%c3%a9rateurs-combin%c3%a9s-daffectation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>De la forme &lt;code>variable {opérateur}= valeur&lt;/code>, ils équivalent à &lt;code>variable = variable {operateur} valeur&lt;/code>&lt;/li>
+&lt;li>Ils permettent de raccourcir certaines expressions.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> i = &lt;span style="color:#0086f7;font-weight:bold">10&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>i += &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Equivaut à i = i + 5, donc i vaut 15&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>i /= &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// i vaut 5&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="dépassement-de-capacité" >Dépassement de capacité
+&lt;span>
+&lt;a href="#d%c3%a9passement-de-capacit%c3%a9">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Les types numériques ont une taille finie en mémoire, et donc une capacité limitée.&lt;/li>
+&lt;li>Dans certaines circonstances, les limites des plages de valeur peuvent être dépassées&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> x = &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>.MaxValue; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Plus grand int possible&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>x++;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(x == &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>.MinValue); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// true !&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="erreurs-darrondi" >Erreurs d&amp;rsquo;arrondi
+&lt;span>
+&lt;a href="#erreurs-darrondi">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>L&amp;rsquo;arithmétique sur les types à virgule flottante peut entrainer des imprécisions et des erreurs d&amp;rsquo;arrondi.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086f7;font-weight:bold">5.32&lt;/span> + &lt;span style="color:#0086f7;font-weight:bold">2.23&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 7,550000000000001&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086f7;font-weight:bold">5.32&lt;/span>m + &lt;span style="color:#0086f7;font-weight:bold">2.23&lt;/span>m); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 7,55&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="concaténation-de-chaînes" >Concaténation de chaînes
+&lt;span>
+&lt;a href="#concat%c3%a9nation-de-cha%c3%aenes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Elle s&amp;rsquo;effectue à l&amp;rsquo;aide de l&amp;rsquo;opérateur &lt;code>+&lt;/code> lorsqu&amp;rsquo;au moins l&amp;rsquo;une des deux opérandes est une chaîne.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> s = &lt;span style="color:#0086d2">&amp;#34;I &amp;#34;&lt;/span> + &lt;span style="color:#0086d2">&amp;#34;feel &amp;#34;&lt;/span> + &lt;span style="color:#0086d2">&amp;#34;good!&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(s);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nbFamilles = &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> ecole = &lt;span style="color:#0086d2">&amp;#34;ENSC&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> t = &lt;span style="color:#0086d2">&amp;#34;Il y a &amp;#34;&lt;/span> + nbFamilles + &lt;span style="color:#0086d2">&amp;#34; familles à l&amp;#39;&amp;#34;&lt;/span> + ecole;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(t); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Il y a 5 familles à l&amp;#39;ENSC&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="interpolation-de-chaînes" >Interpolation de chaînes
+&lt;span>
+&lt;a href="#interpolation-de-cha%c3%aenes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Placé devant son début, le caractère &lt;code>$&lt;/code> permet de créer une &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated">chaîne interpolée&lt;/a> dans laquelle on peut ajouter des expressions entre accolades &lt;code>{}&lt;/code>.&lt;/li>
+&lt;li>Ces expressions seront évaluées au moment du calcul de la valeur de la chaîne interpolée.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nbFamilles = &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> ecole = &lt;span style="color:#0086d2">&amp;#34;ENSC&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> u = &lt;span style="color:#0086d2">$&amp;#34;Il y a {nbFamilles} familles à l&amp;#39;{ecole}&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(u); &lt;span style="color:#0086d2">&amp;#34;Il y a 5 familles à l&amp;#39;ENSC&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="conditions-et-alternatives" >Conditions et alternatives
+&lt;span>
+&lt;a href="#conditions-et-alternatives">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="la-notion-de-condition" >La notion de condition
+&lt;span>
+&lt;a href="#la-notion-de-condition">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Une expression dont l&amp;rsquo;évaluation produit une valeur booléenne peut être utilisée comme &lt;strong>condition&lt;/strong>.&lt;/li>
+&lt;li>Quand la valeur d&amp;rsquo;une condition est vraie, on dit que la condition est &lt;em>vérifiée&lt;/em>.&lt;/li>
+&lt;li>Elles peuvent être &lt;strong>composées&lt;/strong> en utilisant des opérateurs logiques et des parenthèses.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> a = &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(a == &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(a != &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// false&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="tables-de-vérité-des-opérateurs-logiques" >Tables de vérité des opérateurs logiques
+&lt;span>
+&lt;a href="#tables-de-v%c3%a9rit%c3%a9-des-op%c3%a9rateurs-logiques">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ET logique&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#fb660a;font-weight:bold">true&lt;/span> &amp;amp;&amp;amp; &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#fb660a;font-weight:bold">true&lt;/span> &amp;amp;&amp;amp; &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#fb660a;font-weight:bold">false&lt;/span> &amp;amp;&amp;amp; &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#fb660a;font-weight:bold">false&lt;/span> &amp;amp;&amp;amp; &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// OU logique&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#fb660a;font-weight:bold">true&lt;/span> || &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#fb660a;font-weight:bold">true&lt;/span> || &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#fb660a;font-weight:bold">false&lt;/span> || &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#fb660a;font-weight:bold">false&lt;/span> || &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NON logique&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(!&lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(!&lt;span style="color:#fb660a;font-weight:bold">false&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// true&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="evaluation-abrégée" >Evaluation abrégée
+&lt;span>
+&lt;a href="#evaluation-abr%c3%a9g%c3%a9e">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Dans une condition composée avec &lt;code>&amp;amp;&amp;amp;&lt;/code>, la seconde sous-condition n&amp;rsquo;est évaluée que si la première vaut &lt;code>true&lt;/code> (&lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators#conditional-logical-and-operator-">évaluation abrégée&lt;/a>).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> a = &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> s = &lt;span style="color:#0086d2">&amp;#34;Hi&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine((a == &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>) &amp;amp;&amp;amp; (s == &lt;span style="color:#0086d2">&amp;#34;Hello&amp;#34;&lt;/span>)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine((a == &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>) || (s == &lt;span style="color:#0086d2">&amp;#34;Hello&amp;#34;&lt;/span>)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// La sous-condition (s == &amp;#34;Hi&amp;#34;) n&amp;#39;est pas évaluée&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// puisque (a != 3) vaut false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine((a != &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>) &amp;amp;&amp;amp; (s == &lt;span style="color:#0086d2">&amp;#34;Hi&amp;#34;&lt;/span>)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// false&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="linstruction-conditionnelle-if" >L&amp;rsquo;instruction conditionnelle if
+&lt;span>
+&lt;a href="#linstruction-conditionnelle-if">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>L&amp;rsquo;instruction &lt;code>if&lt;/code> permet de soumettre l&amp;rsquo;exécution d&amp;rsquo;une partie du programme à une condition, qui doit être vérifiée.&lt;/li>
+&lt;li>Le bloc de code associé est délimité par des accolades (!= Python).&lt;/li>
+&lt;li>Lorsque ce bloc se réduit à une seule instruction, ces accolades peuvent être omises.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (condition) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Instructions exécutées si la condition est vérifiée&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (condition)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Seule instruction exécutée si la condition est vérifiée&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="lalternative-avec-ifelse" >L&amp;rsquo;alternative avec if/else
+&lt;span>
+&lt;a href="#lalternative-avec-ifelse">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Associée à un &lt;code>if&lt;/code>, le mot-clé &lt;code>else&lt;/code> permet d&amp;rsquo;exprimer une &lt;strong>alternative&lt;/strong>.&lt;/li>
+&lt;li>Si la condition du &lt;code>if&lt;/code> est vérifiée, alors les instructions du bloc de code associé seront exécutées, sinon ce seront celles du bloc associé au &lt;code>else&lt;/code>.&lt;/li>
+&lt;li>L&amp;rsquo;instruction &lt;code>if/else&lt;/code> permet de créer un branchement logique dans le code.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (condition) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Instructions exécutées si la condition est vérifiée&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Instructions exécutées si la condition n&amp;#39;est pas vérifiée&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="instructions-ifelse-imbriquées" >Instructions if/else imbriquées
+&lt;span>
+&lt;a href="#instructions-ifelse-imbriqu%c3%a9es">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nombre = &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (nombre &amp;gt; &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;{nombre} est positif&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{ &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// nombre &amp;lt;= 0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (nombre &amp;lt; &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;{nombre} est négatif&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> { &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// nombre == 0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;{nombre} est nul&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="flux-dexécution-de-lexemple-précédent" >Flux d&amp;rsquo;exécution de l&amp;rsquo;exemple précédent
+&lt;span>
+&lt;a href="#flux-dex%c3%a9cution-de-lexemple-pr%c3%a9c%c3%a9dent">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/chapter03-01.png" alt="Flux d&amp;amp;rsquo;exécution if/else">&lt;/p>
+&lt;hr>
+&lt;h3 id="version-abrégée-de-lexemple-précédent" >Version abrégée de l&amp;rsquo;exemple précédent
+&lt;span>
+&lt;a href="#version-abr%c3%a9g%c3%a9e-de-lexemple-pr%c3%a9c%c3%a9dent">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Le second &lt;code>if/else&lt;/code> constitue une seule instruction : les accolades peuvent donc être omises.&lt;/li>
+&lt;li>Pas de &lt;code>elif&lt;/code> en C# !&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nombre = &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (nombre &amp;gt; &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;{nombre} est positif&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">else&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (nombre &amp;lt; &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;{nombre} est négatif&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;{nombre} est nul&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="la-conditionnelle-ternaire" >La conditionnelle ternaire
+&lt;span>
+&lt;a href="#la-conditionnelle-ternaire">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>L&amp;rsquo;instruction &lt;code>?:&lt;/code> renvoie la valeur d&amp;rsquo;une expression parmi deux, selon la valeur d&amp;rsquo;une condition booléenne : &lt;code>(condition) ? valeur_si_vraie : valeur_si_fausse&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Appelée &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator">instruction conditionnelle ternaire&lt;/a>, elle constitue une alternative plus concise au &lt;code>if/else&lt;/code> dans certains scénarions.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> tempetature = &lt;span style="color:#0086f7;font-weight:bold">38.5&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> etat = (tempetature &amp;gt; &lt;span style="color:#0086f7;font-weight:bold">38&lt;/span>) ? &lt;span style="color:#0086d2">&amp;#34;malade&amp;#34;&lt;/span> : &lt;span style="color:#0086d2">&amp;#34;bien portant&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(etat); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;malade&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="linstruction-de-choix-switch" >L&amp;rsquo;instruction de choix switch
+&lt;span>
+&lt;a href="#linstruction-de-choix-switch">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>L&amp;rsquo;instruction &lt;code>switch&lt;/code> permet d&amp;rsquo;exécuter un bloc parmi plusieurs selon la valeur d&amp;rsquo;une expression.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> meteo = &lt;span style="color:#0086d2">&amp;#34;orage&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">switch&lt;/span> (meteo)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">case&lt;/span> &lt;span style="color:#0086d2">&amp;#34;soleil&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Sortez en t-shirt&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">case&lt;/span> &lt;span style="color:#0086d2">&amp;#34;vent&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Sortez en coupe-vent&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Restez au chaud à la maison !&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="structures-répétitives" >Structures répétitives
+&lt;span>
+&lt;a href="#structures-r%c3%a9p%c3%a9titives">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="la-boucle-while" >La boucle while
+&lt;span>
+&lt;a href="#la-boucle-while">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>L&amp;rsquo;instruction &lt;code>while&lt;/code> permet de répéter des instructions tant qu&amp;rsquo;une condition est vérifiée.&lt;/li>
+&lt;li>Ce type d&amp;rsquo;instruction est souvent appelée &lt;strong>boucle&lt;/strong>.&lt;/li>
+&lt;li>Avant chaque tour de boucle, la condition du &lt;code>while&lt;/code> est évaluée :
+&lt;ul>
+&lt;li>Si elle est vraie, le bloc associé au &lt;code>while&lt;/code> (appelé &lt;em>corps de la boucle&lt;/em>) est exécuté, puis la condition est de nouveau évaluée.&lt;/li>
+&lt;li>Sinon, l&amp;rsquo;exécution de la boucle est terminée.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">while&lt;/span> (condition) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Instructions exécutées tant que la condition est vérifiée&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="le-danger-des-boucles-infinies" >Le danger des boucles infinies
+&lt;span>
+&lt;a href="#le-danger-des-boucles-infinies">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>L&amp;rsquo;exécution d&amp;rsquo;une boucle &lt;code>while&lt;/code> dont la condition ne peut pas devenir fausse ne s&amp;rsquo;arrête jamais.&lt;/li>
+&lt;li>On parle alors de &lt;strong>boucle infinie&lt;/strong>, qui nécessite une interruption externe brutale.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nombre = &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">while&lt;/span> (nombre &amp;lt;= &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(nombre);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// nombre n&amp;#39;est jamais modifiée =&amp;gt; condition toujours vraie&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="la-boucle-for" >La boucle for
+&lt;span>
+&lt;a href="#la-boucle-for">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Cette boucle permet de répéter des instructions en exécutant une instruction après chaque tour.
+&lt;ul>
+&lt;li>L&amp;rsquo;&lt;strong>initialisation&lt;/strong> se produit une seule fois, au début de l&amp;rsquo;exécution.&lt;/li>
+&lt;li>La &lt;strong>condition&lt;/strong> est évaluée avant chaque tour de boucle afin d&amp;rsquo;effectuer un nouveau tour ou de sortir de la boucle.&lt;/li>
+&lt;li>L&amp;rsquo;&lt;strong>étape&lt;/strong> est réalisée après chaque tour de boucle.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">for&lt;/span> (initialisation; condition; étape) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Instruction executées tant que la condition est vérifiée&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="compteur-de-boucle" >Compteur de boucle
+&lt;span>
+&lt;a href="#compteur-de-boucle">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>La boucle &lt;code>for&lt;/code> est fréquemment utilisée avec une variable (appelée &lt;em>compteur&lt;/em>) qui permet d&amp;rsquo;identifier et de numéroter les tours de boucle.&lt;/li>
+&lt;li>Le compteur peut également être exploité dans le corps de la boucle.
+&lt;ul>
+&lt;li>Sauf exception rare, il ne doit pas y être modifié !&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Il est souvent nommé &lt;code>i&lt;/code>, &lt;code>j&lt;/code> ou &lt;code>k&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> i;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">for&lt;/span> (i = &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>; i &amp;lt;= &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>; i++)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(i);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(i); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 6&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="déclaration-du-compteur-de-boucle" >Déclaration du compteur de boucle
+&lt;span>
+&lt;a href="#d%c3%a9claration-du-compteur-de-boucle">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Afin de limiter sa portée au corps de la boucle, on peut déclarer la variable compteur dans l&amp;rsquo;initialisation d&amp;rsquo;une boucle &lt;code>for&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">for&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> i = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>; i &amp;lt; &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>; i++)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(i + &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(i); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK : i est inaccessible ici&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="choix-entre-un-while-et-un-for" >Choix entre un while et un for
+&lt;span>
+&lt;a href="#choix-entre-un-while-et-un-for">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>La boucle &lt;code>for&lt;/code> intègre la gestion du compteur, mais implique que le nombre de tours de boucle soit connu à l&amp;rsquo;avance.&lt;/li>
+&lt;li>Les scénarios où le nombre de tours ne peut pas être prévu à l&amp;rsquo;avance sont plus simples à écrire avec un &lt;code>while&lt;/code>. En revanche, attention aux boucles infinies !&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="la-boucle-do-while" >La boucle do&amp;hellip; while
+&lt;span>
+&lt;a href="#la-boucle-do-while">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Variante de la boucle &lt;code>while&lt;/code> dans laquelle le corps de la boucle est toujours exécuté au moins une fois.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Instructions exécutées tant que la condition est vérifiée&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">while&lt;/span> (condition);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>My M1 Mac setup for Python development</title><link>https://www.bpesquet.fr/posts/my-mac-setup-for-python/</link><pubDate>Wed, 14 Sep 2022 12:15:28 +0200</pubDate><guid>https://www.bpesquet.fr/posts/my-mac-setup-for-python/</guid><description>&lt;p>I recently got my lucky hands on a brand new M1 MacBook Pro as my new work machine. As an teacher, I maintain several &lt;a href="https://www.bpesquet.fr/en/resources/">pedagogical resources&lt;/a> written in Python and thus needed to quickly set up an efficient work environment on this machine.&lt;/p>
 &lt;p>For all its qualities as a language, Python is notoriously hard to configure in a robust and efficient way. Along the years, many tools have been created to handle interpreter versions, virtual environments, project dependencies and the many chores associated with Python development. This is an ever evolving field, and the solutions listed below might very well become obsolete rather soon.&lt;/p>
 &lt;p>&lt;a href="https://xkcd.com/1987/">&lt;img src="images/python_environment.png" alt="There&amp;amp;rsquo;s an xkcd for that, too!">&lt;/a>&lt;/p>
 &lt;p>This post is a chronological overview of the choices I made to create a functional Python development environment on an M1/M2 Mac. Useful external resources are linked as references for further research.&lt;/p>
