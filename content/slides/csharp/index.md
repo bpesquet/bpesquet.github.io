@@ -19,14 +19,14 @@ draft: false
 
 ### La POO en bref
 
-- **Objet** : entité qui modélise (représente) un élément du domaine étudié.
-- Objet = état + actions.
+- **Objet** : entité qui modélise (représente) un élément du domaine étudié.
+- Objet = état + actions.
 - Objet != **classe** :
 
-  - Classe : modèle d’objet (type).
+  - Classe : modèle d’objet (type).
   - Objet : exemplaire concret, **instance** d’une classe.
 
-- **POO** : paradigme d'écriture de logiciels sous forme d’objets en interaction
+- **POO** : paradigme d'écriture de logiciels sous forme d’objets en interaction
 
 ---
 
@@ -40,15 +40,15 @@ Le standard : diagramme de classes **UML**.
 
 ### Notion de propriété en C\#
 
-- Propriété au sens de la majorité des langages à objets = **attribut** ou **champ**.
-- Propriété au sens du C# = **accesseur** vers un attribut.
-- Les propriétés permettent de concilier accès aux données de l’objet et **encapsulation**.
+- Propriété au sens de la majorité des langages à objets = **attribut** ou **champ**.
+- Propriété au sens du C# = **accesseur** vers un attribut.
+- Les propriétés permettent de concilier accès aux données de l’objet et **encapsulation**.
 
 ---
 
 ### Propriété avec attribut explicite
 
-Déclaration explicite de l’attribut (le plus souvent **privé**).
+Déclaration explicite de l’attribut (le plus souvent **privé**).
 
 ```c#
 private string titulaire;
@@ -60,13 +60,13 @@ public string Titulaire {
 monCompte.Titulaire = "Marco";
 ```
 
-Avantage : possibilité de contrôles dans les accesseurs (validation de la novuelle valeur, etc).
+Avantage : possibilité de contrôles dans les accesseurs (validation de la novuelle valeur, etc).
 
 ---
 
 ### Propriété auto-implémentée
 
-Création implicite de l’attribut par le langage.
+Création implicite de l’attribut par le langage.
 
 ```csharp
 public string Titulaire { get; set; }
@@ -75,7 +75,7 @@ monCompte.Titulaire = "Marco";
 ```
 
 - Avantage : concision.
-- Bien adaptée aux cas simples (sans besoin de logique).
+- Bien adaptée aux cas simples (sans besoin de logique).
 
 ---
 
@@ -137,9 +137,9 @@ Console.WriteLine("cercle2.Rayon = " + cercle2.Rayon); // ?
 
 ### Types valeur
 
-- Type pour lequel la valeur est directement stockée dans la variable.
+- Type pour lequel la valeur est directement stockée dans la variable.
 - Types de bases C# : `int`, `float`, `double`...
-- Création d’une variable => réservation d’une zone mémoire pour stocker sa valeur.
+- Création d’une variable => réservation d’une zone mémoire pour stocker sa valeur.
 
 ---
 
@@ -151,9 +151,9 @@ Console.WriteLine("cercle2.Rayon = " + cercle2.Rayon); // ?
 
 {{% section %}}
 
-### Types référence
+### Types référence
 
-- Type pour lequel l'instanciation d’un exemplaire déclenche la réservation d’une zone mémoire pour ses données, mais la "valeur" de l’exemplaire est une **référence** vers cette zone.
+- Type pour lequel l'instanciation d’un exemplaire déclenche la réservation d’une zone mémoire pour ses données, mais la "valeur" de l’exemplaire est une **référence** vers cette zone.
 - Exemples : objets et tableaux.
 
 ---
@@ -168,8 +168,8 @@ Console.WriteLine("cercle2.Rayon = " + cercle2.Rayon); // ?
 
 ### Types référence et affectation
 
-- La valeur de la variable source (une référence) est copiée dans la variable cible.
-- Les deux variables _pointent_ vers la même zone mémoire
+- La valeur de la variable source (une référence) est copiée dans la variable cible.
+- Les deux variables _pointent_ vers la même zone mémoire
 
 ---
 
@@ -181,7 +181,7 @@ Console.WriteLine("cercle2.Rayon = " + cercle2.Rayon); // ?
 
 {{% section %}}
 
-### Passage d’un type valeur en paramètre
+### Passage d’un type valeur en paramètre
 
 ```csharp
 static void Main(string[] args) {
@@ -216,7 +216,7 @@ static void Augmenter(int unNombre) {
 
 {{% section %}}
 
-### Passage d’un objet en paramètre
+### Passage d’un objet en paramètre
 
 ```csharp
 static void Main(string[] args) {
@@ -238,8 +238,8 @@ static void AugmenterRayon(Cercle unCercle) {
 
 ![Résultat de l'exécution](images/object_parameter_passing.png)
 
-- La valeur de l’argument (une **référence**) est copiée dans le paramètre.
-- Argument et paramètre pointent vers la même zone mémoire.
+- La valeur de l’argument (une **référence**) est copiée dans le paramètre.
+- Argument et paramètre pointent vers la même zone mémoire.
 
 ---
 
@@ -249,12 +249,12 @@ static void AugmenterRayon(Cercle unCercle) {
 
 ---
 
-### Mode de passage des paramètres en C\#
+### Mode de passage des paramètres en C\#
 
-- Par défaut, **tous les paramètres sont passés par valeur**.
-- Types valeur : valeur copiée de l’argument vers le paramètre => zones mémoire distinctes.
-- Types référence : référence copiée de l’argument vers le paramètre => même zone mémoire.
-- Possibilité de modifier ce comportement avec les mots-clés `ref` et `out`.
+- Par défaut, **tous les paramètres sont passés par valeur**.
+- Types valeur : valeur copiée de l’argument vers le paramètre => zones mémoire distinctes.
+- Types référence : référence copiée de l’argument vers le paramètre => même zone mémoire.
+- Possibilité de modifier ce comportement avec les mots-clés `ref` et `out`.
 
 ---
 
@@ -507,7 +507,7 @@ public DateTime ReleaseDate { get; set; }
 
 Placé dans la signature d'une méthode, le mot-clé `async` permet l'utilisation de `await` dans le corps de cette méthode.
 
-Placé devant une expression, le mot-clé `await` déclenche l'attente asynchrone de la fin de cette opération. Contrairement au comportement synchrone standard, le contexte d'exécution (*thread*) courant n'est pas bloqué par cette attente.
+Placé devant une expression, le mot-clé `await` déclenche l'attente asynchrone de la fin de cette opération. Contrairement au comportement synchrone standard, le contexte d'exécution (_thread_) courant n'est pas bloqué par cette attente.
 
 ---
 
@@ -520,4 +520,3 @@ public async Task DoSomethingAsync()
 ```
 
 {{% /section %}}
-
