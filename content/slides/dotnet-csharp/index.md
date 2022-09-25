@@ -1,7 +1,7 @@
 ---
 title: ".NET et C#"
 date: 2022-09-20T10:27:11+02:00
-draft: true
+draft: false
 ---
 
 ## Sommaire
@@ -577,7 +577,7 @@ Les types C# se divisent en deux catégories.
 
 - [Types valeur](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types) : la variable contient directement la valeur qu'elle stocke.
 
-- [Types référence](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/reference-types) : la variable contient une référence vers la valeur (≈ son adresse dans la mémoire). Cette _indirection_ permet d'optimiser certaines opérations (comparaison, copie, etc).
+- [Types référence](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/reference-types) : la variable contient une référence vers la valeur ($\approx$ son adresse dans la mémoire). Cette _indirection_ permet d'optimiser certaines opérations (comparaison, copie, etc).
 
 Tous les exemples précédents sont des types valeur, sauf `string` (mais qui s'utilise comme un type valeur).
 
