@@ -26,7 +26,7 @@ draft: false
 - Plate-forme de développement d'applications créée par Microsoft en 2002.
 - Réponse à la domination de Java (premier langage multi-plateformes).
 - Inclut plusieurs langages de programmation : C#, VB.NET, F#, PowerShell...
-- A l'époque :
+- A l'origine :
   - Uniquement disponible sous Windows.
   - Licence propriétaire.
 

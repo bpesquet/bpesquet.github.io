@@ -25,7 +25,7 @@ Les ressources suivantes sont récentes ou utilisées dans certains de mes cours
 
 ## Resources non maintenues
 
-Les ressources suivantes ont été créées pour d'anciens cours. Non maintenues, elles sont pontentiellement dépassées mais peuvent encore avoir leur utilité dans certaines contextes.
+Les ressources suivantes ont été créées pour d'anciens cours. Non maintenues, elles sont potentiellement dépassées mais peuvent encore avoir leur utilité dans certaines contextes.
 
 - Livres
   - [Programmation évènementielle avec les WinForms](https://ensc.gitbook.io/programmation-evenementielle-winforms/)
