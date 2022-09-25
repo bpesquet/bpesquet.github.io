@@ -6166,20 +6166,20 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>
-&lt;p>&lt;strong>Objet&lt;/strong> : entité qui modélise (représente) un élément du domaine étudié.&lt;/p>
+&lt;p>&lt;strong>Objet&lt;/strong> : entité qui modélise (représente) un élément du domaine étudié.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Objet = état + actions.&lt;/p>
+&lt;p>Objet = état + actions.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Objet != &lt;strong>classe&lt;/strong> :&lt;/p>
 &lt;ul>
-&lt;li>Classe : modèle d’objet (type).&lt;/li>
+&lt;li>Classe : modèle d’objet (type).&lt;/li>
 &lt;li>Objet : exemplaire concret, &lt;strong>instance&lt;/strong> d’une classe.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;strong>POO&lt;/strong> : paradigme d&amp;rsquo;écriture de logiciels sous forme d’objets en interaction&lt;/p>
+&lt;p>&lt;strong>POO&lt;/strong> : paradigme d&amp;rsquo;écriture de logiciels sous forme d’objets en interaction&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;hr>
@@ -6199,9 +6199,9 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>Propriété au sens de la majorité des langages à objets = &lt;strong>attribut&lt;/strong> ou &lt;strong>champ&lt;/strong>.&lt;/li>
-&lt;li>Propriété au sens du C# = &lt;strong>accesseur&lt;/strong> vers un attribut.&lt;/li>
-&lt;li>Les propriétés permettent de concilier accès aux données de l’objet et &lt;strong>encapsulation&lt;/strong>.&lt;/li>
+&lt;li>Propriété au sens de la majorité des langages à objets = &lt;strong>attribut&lt;/strong> ou &lt;strong>champ&lt;/strong>.&lt;/li>
+&lt;li>Propriété au sens du C# = &lt;strong>accesseur&lt;/strong> vers un attribut.&lt;/li>
+&lt;li>Les propriétés permettent de concilier accès aux données de l’objet et &lt;strong>encapsulation&lt;/strong>.&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h3 id="propriété-avec-attribut-explicite" >Propriété avec attribut explicite
@@ -6210,7 +6210,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Déclaration explicite de l’attribut (le plus souvent &lt;strong>privé&lt;/strong>).&lt;/p>
+&lt;/h3>&lt;p>Déclaration explicite de l’attribut (le plus souvent &lt;strong>privé&lt;/strong>).&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> titulaire;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Titulaire {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span> { &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> titulaire; }
@@ -6218,7 +6218,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>monCompte.Titulaire = &lt;span style="color:#0086d2">&amp;#34;Marco&amp;#34;&lt;/span>;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Avantage : possibilité de contrôles dans les accesseurs (validation de la novuelle valeur, etc).&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Avantage : possibilité de contrôles dans les accesseurs (validation de la novuelle valeur, etc).&lt;/p>
 &lt;hr>
 &lt;h3 id="propriété-auto-implémentée" >Propriété auto-implémentée
 &lt;span>
@@ -6226,13 +6226,13 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Création implicite de l’attribut par le langage.&lt;/p>
+&lt;/h3>&lt;p>Création implicite de l’attribut par le langage.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Titulaire { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>monCompte.Titulaire = &lt;span style="color:#0086d2">&amp;#34;Marco&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Avantage : concision.&lt;/li>
-&lt;li>Bien adaptée aux cas simples (sans besoin de logique).&lt;/li>
+&lt;li>Bien adaptée aux cas simples (sans besoin de logique).&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="gestion-des-objets-en-mémoire" >Gestion des objets en mémoire
@@ -6297,23 +6297,23 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>Type pour lequel la valeur est directement stockée dans la variable.&lt;/li>
+&lt;li>Type pour lequel la valeur est directement stockée dans la variable.&lt;/li>
 &lt;li>Types de bases C# : &lt;code>int&lt;/code>, &lt;code>float&lt;/code>, &lt;code>double&lt;/code>&amp;hellip;&lt;/li>
-&lt;li>Création d’une variable =&amp;gt; réservation d’une zone mémoire pour stocker sa valeur.&lt;/li>
+&lt;li>Création d’une variable =&amp;gt; réservation d’une zone mémoire pour stocker sa valeur.&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;p>&lt;img src="images/value_types.png" alt="Exemple avec types valeur">&lt;/p>
 &lt;/section>
 &lt;hr>
 &lt;section data-shortcode-section>
-&lt;h3 id="types-reference" >Types référence
+&lt;h3 id="types-référence" >Types référence
 &lt;span>
-&lt;a href="#types-reference">
+&lt;a href="#types-r%c3%a9f%c3%a9rence">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>Type pour lequel l&amp;rsquo;instanciation d’un exemplaire déclenche la réservation d’une zone mémoire pour ses données, mais la &amp;ldquo;valeur&amp;rdquo; de l’exemplaire est une &lt;strong>référence&lt;/strong> vers cette zone.&lt;/li>
+&lt;li>Type pour lequel l&amp;rsquo;instanciation d’un exemplaire déclenche la réservation d’une zone mémoire pour ses données, mais la &amp;ldquo;valeur&amp;rdquo; de l’exemplaire est une &lt;strong>référence&lt;/strong> vers cette zone.&lt;/li>
 &lt;li>Exemples : objets et tableaux.&lt;/li>
 &lt;/ul>
 &lt;hr>
@@ -6328,17 +6328,17 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>La valeur de la variable source (une référence) est copiée dans la variable cible.&lt;/li>
-&lt;li>Les deux variables &lt;em>pointent&lt;/em> vers la même zone mémoire&lt;/li>
+&lt;li>La valeur de la variable source (une référence) est copiée dans la variable cible.&lt;/li>
+&lt;li>Les deux variables &lt;em>pointent&lt;/em> vers la même zone mémoire&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;p>&lt;img src="images/reference_types_assignment.png" alt="Diagramme d&amp;amp;rsquo;exécution">&lt;/p>
 &lt;/section>
 &lt;hr>
 &lt;section data-shortcode-section>
-&lt;h3 id="passage-dun-type-valeur-en-parametre" >Passage d’un type valeur en paramètre
+&lt;h3 id="passage-dun-type-valeur-en-paramètre" >Passage d’un type valeur en paramètre
 &lt;span>
-&lt;a href="#passage-dun-type-valeur-en-parametre">
+&lt;a href="#passage-dun-type-valeur-en-param%c3%a8tre">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -6370,9 +6370,9 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/section>
 &lt;hr>
 &lt;section data-shortcode-section>
-&lt;h3 id="passage-dun-objet-en-parametre" >Passage d’un objet en paramètre
+&lt;h3 id="passage-dun-objet-en-paramètre" >Passage d’un objet en paramètre
 &lt;span>
-&lt;a href="#passage-dun-objet-en-parametre">
+&lt;a href="#passage-dun-objet-en-param%c3%a8tre">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -6396,24 +6396,24 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>
 &lt;/h3>&lt;p>&lt;img src="images/object_parameter_passing.png" alt="Résultat de l&amp;amp;rsquo;exécution">&lt;/p>
 &lt;ul>
-&lt;li>La valeur de l’argument (une &lt;strong>référence&lt;/strong>) est copiée dans le paramètre.&lt;/li>
-&lt;li>Argument et paramètre pointent vers la même zone mémoire.&lt;/li>
+&lt;li>La valeur de l’argument (une &lt;strong>référence&lt;/strong>) est copiée dans le paramètre.&lt;/li>
+&lt;li>Argument et paramètre pointent vers la même zone mémoire.&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;p>&lt;img src="images/object_parameter_passing_diagram.png" alt="Diagramme d&amp;amp;rsquo;exécution">&lt;/p>
 &lt;/section>
 &lt;hr>
-&lt;h3 id="mode-de-passage-des-parametres-en-c" >Mode de passage des paramètres en C#
+&lt;h3 id="mode-de-passage-des-paramètres-en-c" >Mode de passage des paramètres en C#
 &lt;span>
-&lt;a href="#mode-de-passage-des-parametres-en-c">
+&lt;a href="#mode-de-passage-des-param%c3%a8tres-en-c">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>Par défaut, &lt;strong>tous les paramètres sont passés par valeur&lt;/strong>.&lt;/li>
-&lt;li>Types valeur : valeur copiée de l’argument vers le paramètre =&amp;gt; zones mémoire distinctes.&lt;/li>
-&lt;li>Types référence : référence copiée de l’argument vers le paramètre =&amp;gt; même zone mémoire.&lt;/li>
-&lt;li>Possibilité de modifier ce comportement avec les mots-clés &lt;code>ref&lt;/code> et &lt;code>out&lt;/code>.&lt;/li>
+&lt;li>Par défaut, &lt;strong>tous les paramètres sont passés par valeur&lt;/strong>.&lt;/li>
+&lt;li>Types valeur : valeur copiée de l’argument vers le paramètre =&amp;gt; zones mémoire distinctes.&lt;/li>
+&lt;li>Types référence : référence copiée de l’argument vers le paramètre =&amp;gt; même zone mémoire.&lt;/li>
+&lt;li>Possibilité de modifier ce comportement avec les mots-clés &lt;code>ref&lt;/code> et &lt;code>out&lt;/code>.&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="gestion-des-exceptions" >Gestion des exceptions
