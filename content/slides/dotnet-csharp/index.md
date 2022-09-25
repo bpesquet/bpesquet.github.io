@@ -10,7 +10,8 @@ draft: true
 - La notion de programme
 - Premiers pas avec C#
 - Guide de codage C\#
-- Variables, types et expressions
+- Variables, valeurs et types
+- Expressions
 - Conditions et alternatives
 - Structures répétitives
 
@@ -23,10 +24,11 @@ draft: true
 ### Aux origines de .NET
 
 - Plate-forme de développement d'applications créée par Microsoft en 2002.
-- Réponse à la domination du langage Java (multi-plateformes).
+- Réponse à la domination de Java (premier langage multi-plateformes).
 - Inclut plusieurs langages de programmation : C#, VB.NET, F#, PowerShell...
-- Uniquement disponible sous Windows.
-- Licence propriétaire.
+- A l'époque :
+  - Uniquement disponible sous Windows.
+  - Licence propriétaire.
 
 ---
 
@@ -59,7 +61,7 @@ draft: true
 
 ### .NET 5+ : multiplateforme par défaut
 
-Version de référence : .NET 6 (2021).
+La version actuelle est .NET 6 (2021).
 
 [![.NET 5](images/dotnet-unified-platform.png)](https://devblogs.microsoft.com/dotnet/announcing-net-6/)
 
@@ -190,8 +192,8 @@ int $0x80
 
 ### Langages pseudo-compilés
 
-- Code source "compilé" vers un format intermédiaire multi-plaformes ("_Write once, run anywhere_").
-  - Erreurs syntaxiques détectées à la "compilation".
+- Code source compilé vers un format intermédiaire multi-plaformes ("_Write once, run anywhere_").
+  - Erreurs syntaxiques détectées à la compilation.
   - Evite les recompilations.
   - Nécessite que l'environnement soit supporté par la plate-forme d'exécution du code intermédiaire.
   - Exemples : Java, C#.
@@ -329,7 +331,6 @@ dotnet run
 - Un **identifiant** est le nom donné à un élément du code créé par le développeur.
 - Ils doivent commencer par une lettre ou un _underscore_ `_`.
 - Ils sont sensibles à la casse (distinction majuscules/minuscules).
-- Pas d'accents ! (même si ça fonctionne)
 - Au sein d'un bloc, le même identifiant ne peut pas être attribué à des éléments distincts.
 
 ---
@@ -422,6 +423,7 @@ while
 - Notation [camelCase](https://fr.wikipedia.org/wiki/Camel_case) : `totalFacturesClient`.
   - Pas d'underscores entre les mots (!= Python).
 - Notation PascalCase (première lettre en majuscule) pour certains éléments (fonctions, méthodes, structures, classes) : `CompteBancaire`.
+- Pas d'accents ! (même si ça fonctionne)
 
 ---
 
@@ -445,6 +447,12 @@ while
 ```csharp
 // Ceci est un commentaire tellement long qu'il est réparti
 // sur plusieurs lignes
+
+/*
+Encore
+un
+commentaire.
+*/
 ```
 
 ---
@@ -457,7 +465,7 @@ while
 
 ---
 
-## Variables, types et expressions
+## Variables, valeurs et types
 
 ---
 
@@ -575,6 +583,12 @@ Tous les exemples précédents sont des types valeur, sauf `string` (mais qui s'
 
 ---
 
+### Hiérarchie des types C\#
+
+[![Hiérarchie des types C#](images/value-reference-types-common-type-system.png)](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/)
+
+---
+
 ### Types valeur nullables
 
 - Le mot-clé [null](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/null) indique l'absence de référence.
@@ -638,7 +652,7 @@ int z = int.Parse("12.3"); // NOK : nouvelle valeur non entière
 
 ### Booléens
 
-- Le type `bool` représente une valeur booléenne `true` ou `false`.
+- Le type [bool](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool) représente une valeur booléenne `true` ou `false`.
 - Booléen nullable : `bool?`
 - Un conversion explicite est requise vers/depuis les types entier : toutes les valeurs non-zéro sont converties à `true`.
 
@@ -655,7 +669,7 @@ bool q = Convert.ToBoolean(0); // r vaut false
 
 ### Caractères
 
-- Le type `char` représente un caractère alphanumérique [Unicode](https://en.wikipedia.org/wiki/Unicode).
+- Le type [char](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/char) représente un caractère alphanumérique [Unicode](https://en.wikipedia.org/wiki/Unicode).
 - On peut lui affecter un caractère litéral délimité par des guillemets simples `''` ou sa [valeur Unicode](https://en.wikipedia.org/wiki/List_of_Unicode_characters#Basic_Latin) transtypée.
 - Le caractère d'échappement est `\`.
 - La conversion est implicite vers les principaux types entiers et réels.
@@ -670,7 +684,7 @@ char cBis = (char)97; // Initialisation à partir de la valeur Unicode
 
 ### Séquences d'échappement
 
-Extrait de la [liste complète](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/#string-escape-sequences).
+Extrait de la [liste complète des séquences d'échappement C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/#string-escape-sequences) :
 
 |Séquence|Valeur|
 |---------|----|
@@ -684,7 +698,7 @@ Extrait de la [liste complète](https://docs.microsoft.com/en-us/dotnet/csharp/p
 
 ### Chaînes de caractères
 
-- Le type `string` représente une séquence de caractères Unicode.
+- Le type [string](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/reference-types#the-string-type) représente une séquence de caractères Unicode.
 - L'instruction `{chaîne}.Length` renvoie le nombre de caractères d'une chaîne.
 - La syntaxe entre crochets `[]` permet d'accéder à un caractère de la chaîne à partir de son rang.
 
@@ -708,9 +722,20 @@ string c2 = @"c:\Windows\Temp";
 
 ---
 
-### Expressions
+### Void
 
-- Une **expression** est une combinaison de variables, de valeurs et d'opérateurs.
+- Le mot-clé [void](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/void) est utilisé pour indiquer l'absence de valeur de retour par une instruction.
+- Une variable ou une expression ne peut pas être de type `void`.
+
+---
+
+## Expressions
+
+---
+
+### Définition d'une expression
+
+- Une [expression](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/expressions) est une combinaison de variables, de valeurs et d'opérateurs.
 - Toute expression qui renvoie une valeur possède un type.
 - Le résultat d'une expression peut être inclus dans une autre expression.
 
@@ -750,30 +775,6 @@ Ne pas confondre `==` et `=` (affectation) !
 |`&&`|ET logique|
 |`\|\|`|OU logique|
 |`!`|NON logique|
-
-L'évaluation de l'expression est [abrégée si possible](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators#conditional-logical-and-operator-).
-
----
-
-### Tables de vérité des opérateurs
-
-```csharp
-// ET logique
-Console.WriteLine(true && true); // true
-Console.WriteLine(true && false); // false
-Console.WriteLine(false && true); // false
-Console.WriteLine(false && false); // false
-
-// OU logique
-Console.WriteLine(true || true); // true
-Console.WriteLine(true || false); // true
-Console.WriteLine(false || true); // true
-Console.WriteLine(false || false); // false
-
-// NON logique
-Console.WriteLine(!true); // false
-Console.WriteLine(!false); // true
-```
 
 ---
 
@@ -895,32 +896,54 @@ Console.WriteLine(u); "Il y a 5 familles à l'ENSC"
 
 ### La notion de condition
 
-- Une **condition** est une expression dont l'évaluation produit une valeur booléenne.
+- Une expression dont l'évaluation produit une valeur booléenne peut être utilisée comme **condition**.
 - Quand la valeur d'une condition est vraie, on dit que la condition est _vérifiée_.
-- Les conditions peuvent être composées en utilisant des parenthèses.
+- Elles peuvent être **composées** en utilisant des opérateurs logiques et des parenthèses.
 
 ```csharp
 int a = 3;
-string s = "Hi";
 
 Console.WriteLine(a == 3); // true
 Console.WriteLine(a != 3); // false
+```
 
-Console.WriteLine((a == 3) && (s == "Hello")); // false
-Console.WriteLine((a == 3) || (s == "Hello")); // true
+---
+
+### Tables de vérité des opérateurs logiques
+
+```csharp
+// ET logique
+Console.WriteLine(true && true); // true
+Console.WriteLine(true && false); // false
+Console.WriteLine(false && true); // false
+Console.WriteLine(false && false); // false
+
+// OU logique
+Console.WriteLine(true || true); // true
+Console.WriteLine(true || false); // true
+Console.WriteLine(false || true); // true
+Console.WriteLine(false || false); // false
+
+// NON logique
+Console.WriteLine(!true); // false
+Console.WriteLine(!false); // true
 ```
 
 ---
 
 ### Evaluation abrégée
 
-Dans une condition composée avec `&&`, la seconde sous-condition n'est évaluée que si la première vaut `true`.
+Dans une condition composée avec `&&`, la seconde sous-condition n'est évaluée que si la première vaut `true` ([évaluation abrégée](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators#conditional-logical-and-operator-)).
 
 ```csharp
 int a = 3;
 string s = "Hi";
 
+Console.WriteLine((a == 3) && (s == "Hello")); // false
+Console.WriteLine((a == 3) || (s == "Hello")); // true
+
 // La sous-condition (s == "Hi") n'est pas évaluée
+// puisque (a != 3) vaut false
 Console.WriteLine((a != 3) && (s == "Hi")); // false
 ```
 
@@ -929,8 +952,8 @@ Console.WriteLine((a != 3) && (s == "Hi")); // false
 ### L'instruction conditionnelle if
 
 - L'instruction `if` permet de soumettre l'exécution d'une partie du programme à une condition, qui doit être vérifiée.
-- Le bloc de code associé est délimité par des accolades.
-- Lorsque le bloc se réduit à une seule instruction, ces accolades peuvent être omises.
+- Le bloc de code associé est délimité par des accolades (!= Python).
+- Lorsque ce bloc se réduit à une seule instruction, ces accolades peuvent être omises.
 
 ```csharp
 if (condition) {
@@ -960,19 +983,7 @@ else {
 
 ---
 
-### L'instruction conditionnelle ternaire
-
-- L'instruction `?:` renvoie la valeur d'une expression parmi deux, selon la valeur d'une condition booléenne : `(condition) ? valeur_si_vraie : valeur_si_fausse`
-
-- Elle constitue une alternative plus concise au `if/else` dans certains scénarions.
-
-```csharp
-double tempetature = 38.5;
-string etat = (tempetature > 38) ? "malade" : "bien portant";
-Console.WriteLine(etat); // "malade"
-```
-
----
+{{% section %}}
 
 ### Instructions if/else imbriquées
 
@@ -990,7 +1001,7 @@ else
     }
     else
     {   // nombre == 0
-        Console.WriteLine($"{nombre} est null");
+        Console.WriteLine($"{nombre} est nul");
     }
 }
 ```
@@ -1016,7 +1027,23 @@ if (nombre > 0)
 else if (nombre < 0)
     Console.WriteLine($"{nombre} est négatif");
 else
-    Console.WriteLine($"{nombre} est null");
+    Console.WriteLine($"{nombre} est nul");
+```
+
+{{% /section %}}
+
+---
+
+### La conditionnelle ternaire
+
+- L'instruction `?:` renvoie la valeur d'une expression parmi deux, selon la valeur d'une condition booléenne : `(condition) ? valeur_si_vraie : valeur_si_fausse`
+
+- Appelée [instruction conditionnelle ternaire](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator), elle constitue une alternative plus concise au `if/else` dans certains scénarions.
+
+```csharp
+double tempetature = 38.5;
+string etat = (tempetature > 38) ? "malade" : "bien portant";
+Console.WriteLine(etat); // "malade"
 ```
 
 ---
@@ -1096,9 +1123,9 @@ for (initialisation; condition; étape) {
 
 ### Compteur de boucle
 
-- La boucle `for` est fréquemment utilisée avec une variable (le _compteur_) qui permet de numéroter les tours de boucle.
+- La boucle `for` est fréquemment utilisée avec une variable (appelée _compteur_) qui permet d'identifier et de numéroter les tours de boucle.
 - Le compteur peut également être exploité dans le corps de la boucle.
-  - Sauf exception rare, il ne doit pas y être modifié.
+  - Sauf exception rare, il ne doit pas y être modifié !
 - Il est souvent nommé `i`, `j` ou `k`.
 
 ```csharp
@@ -1107,6 +1134,7 @@ for (i = 1; i <= 5; i++)
 {
     Console.WriteLine(i);
 }
+Console.WriteLine(i); // 6
 ```
 
 ---
@@ -1120,7 +1148,7 @@ for (int i = 0; i < 5; i++)
 {
     Console.WriteLine(i + 1);
 }
-i = 10; // NOK : i est inaccessible ici
+Console.WriteLine(i); // NOK : i est inaccessible ici
 ```
 
 ---
