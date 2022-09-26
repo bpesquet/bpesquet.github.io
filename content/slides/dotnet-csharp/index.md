@@ -200,6 +200,50 @@ int $0x80
 
 ---
 
+### Notion d'algorithme
+
+> "Un algorithme est une méthode de calcul qui indique la démarche à suivre pour résoudre une série de problèmes équivalents en appliquant dans un ordre précis une suite finie de règles." (Académie Française)
+
+---
+
+{{% section %}}
+
+### Exemple d'algorithme
+
+```txt
+Début
+    Sortir une casserole
+    Mettre de l'eau dans la casserole
+    Ajouter du sel
+    Mettre la casserole sur le feu
+    Tant que l'eau ne bout pas
+    Attendre
+    Sortir les pâtes du placard
+    Verser les pâtes dans la casserole
+    Tant que les pâtes ne sont pas cuites
+        Attendre
+    Verser les pâtes dans une passoire
+    Egoutter les pâtes
+    Verser les pâtes dans un plat
+    Goûter
+    Tant que les pâtes sont trop fades
+        Ajouter du sel
+        Goûter
+    Si on préfère le beurre à l'huile
+        Ajouter du beurre
+    Sinon
+        Ajouter de l'huile
+Fin
+```
+
+---
+
+![Miam!](images/P%C3%A2tes-ricotta_69287116.jpeg)
+
+{{% /section %}}
+
+---
+
 ### Le rôle du programmeur
 
 - Créer des programmes qui réalisent de manière fiable les tâches attendues.
