@@ -278,6 +278,50 @@
 &lt;/li>
 &lt;/ul>
 &lt;hr>
+&lt;h3 id="notion-dalgorithme" >Notion d&amp;rsquo;algorithme
+&lt;span>
+&lt;a href="#notion-dalgorithme">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;blockquote>
+&lt;p>&amp;ldquo;Un algorithme est une méthode de calcul qui indique la démarche à suivre pour résoudre une série de problèmes équivalents en appliquant dans un ordre précis une suite finie de règles.&amp;rdquo; (Académie Française)&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="exemple-dalgorithme" >Exemple d&amp;rsquo;algorithme
+&lt;span>
+&lt;a href="#exemple-dalgorithme">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span>Début
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Sortir une casserole
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Mettre de l&amp;#39;eau dans la casserole
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ajouter du sel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Mettre la casserole sur le feu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Tant que l&amp;#39;eau ne bout pas
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Attendre
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Sortir les pâtes du placard
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Verser les pâtes dans la casserole
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Tant que les pâtes ne sont pas cuites
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Attendre
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Verser les pâtes dans une passoire
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Egoutter les pâtes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Verser les pâtes dans un plat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Goûter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Tant que les pâtes sont trop fades
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ajouter du sel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Goûter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Si on préfère le beurre à l&amp;#39;huile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ajouter du beurre
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Sinon
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ajouter de l&amp;#39;huile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Fin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;p>&lt;img src="images/P%C3%A2tes-ricotta_69287116.jpeg" alt="Miam!">&lt;/p>
+&lt;/section>
+&lt;hr>
 &lt;h3 id="le-rôle-du-programmeur" >Le rôle du programmeur
 &lt;span>
 &lt;a href="#le-r%c3%b4le-du-programmeur">
