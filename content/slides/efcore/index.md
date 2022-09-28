@@ -123,7 +123,7 @@ draft: false
 - Toute la base de données tient dans un seul fichier de quelques dizaines/centaines de Ko.
 - ["Le SGBD le plus utilisé dans le monde"](https://sqlite.org/mostdeployed.html).
 
-[![SQLite logo](images/sqlite370_banner.gif)](https://sqlite.org)
+[![Logo SQLite](images/sqlite370_banner.gif)](https://sqlite.org)
 
 ---
 
@@ -341,7 +341,7 @@ La colonne `BlogId` est une clé étrangère vers la colonne `Id` de la table `B
 
 <https://github.com/ensc-glog/EFGetStarted>
 
-![](images/efcore-efgetstarted.png)
+![Structure de l'application d'exemple](images/efcore-efgetstarted.png)
 
 ---
 
@@ -619,6 +619,6 @@ dotnet ef migrations add RssBlog
 dotnet ef database update
 ```
 
-![TPH strategy - Tables](images/efcore_tph_tables.png)
+![Stratégie TPH - Tables](images/efcore_tph_tables.png)
 
-![TPH strategy - Rows](images/inheritance-tph-data.png)
+![Stratégie YPH - Enregistrements](images/inheritance-tph-data.png)
