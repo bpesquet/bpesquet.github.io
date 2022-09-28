@@ -1,7 +1,7 @@
 ---
 title: "Entity Framework Core"
 date: 2022-09-26T15:12:20+02:00
-draft: true
+draft: false
 ---
 
 ## Sommaire
@@ -337,6 +337,14 @@ La colonne `BlogId` est une clé étrangère vers la colonne `Id` de la table `B
 
 ---
 
+### Structure de l'application
+
+<https://github.com/ensc-glog/EFGetStarted>
+
+![](images/efcore-efgetstarted.png)
+
+---
+
 ### Opérations CRUD
 
 ```csharp
@@ -400,7 +408,10 @@ using (var context = new BloggingContext())
 }
 ```
 
-([Plus de détails](https://docs.microsoft.com/en-us/ef/core/querying/))
+Plus de détails :
+
+- [Querying data](https://docs.microsoft.com/en-us/ef/core/querying/)
+- [Basic LINQ Query Operations](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/basic-linq-query-operations)
 
 ---
 
@@ -451,50 +462,51 @@ public class Blog
 
 - Une propriété est considérée comme optionnelle si elle peut contenir `null`. La colonne BD associée accepte les valeurs nulles.
 - L'attribut `[Required]` permet de rendre obligatoire une propriété ayant un type référence (exemple : `string`).
-- L'utilisation d'un [type nullable](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types) (exemples : `int?`, `bool?`) rend la propriété optionnelle.
+- L'utilisation d'un [type valeur nullable](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types) (exemples : `int?`, `bool?`) rend la propriété optionnelle.
 
 ---
 
 ### Clés primaires
 
-- Une propriété nommée `Id` ou `<Classe>Id` est considérée comme clé primaire.
+- Une propriété nommée `Id` ou `{NomDeLaClasse}Id` est considérée comme clé primaire.
 - Par défaut, une stratégie d'[auto-génération des valeurs](https://docs.microsoft.com/en-us/ef/core/modeling/generated-properties?tabs=data-annotations) est utilisée.
 - [Plus de détails](https://docs.microsoft.com/en-us/ef/core/modeling/keys?tabs=data-annotations).
 
 ---
 
-### Relations entre classes
+### Mapping des associations
 
 - Une propriété utilisant un type autre que scalaire est dite **propriété de navigation**.
 - La détection d'une propriété de navigation entraine la création d'une **relation** entre les deux classes impliquées.
 - Cette relation se traduit dans la base de données par la création d'une **clé étrangère** dans la table associée à la classe dépendante (fille) de la relation.
+- [Plus de détails](https://learn.microsoft.com/en-us/ef/core/modeling/relationships).
 
 ---
 
-### Relation un-à-plusieurs
+### Association un-à-plusieurs
 
 - Propriété de navigation de type collection dans la classe principale (mère).
-- Propriété de navigation et d'une propriété de clé étrangère dans la classe dépendante (fille).
+- Propriété de navigation et propriété de clé étrangère dans la classe dépendante (fille).
 
 ```csharp
 public class Blog
 {
     public int Id { get; set; }
     // ...
-    public List<Post> Posts { get; set; }
+    public List<Post> Posts { get; set; } = new List<Post>();
 }
 public class Post
 {
     public int Id { get; set; }
     // ...
-    public int BlogId { get; set; }
-    public Blog Blog { get; set; }
+    public int BlogId { get; set; } // FK
+    public Blog Blog { get; set; } // Navigation
 }
 ```
 
 ---
 
-### Relation un-à-un
+### Association un-à-un
 
 ```csharp
 public class Blog
@@ -508,14 +520,14 @@ public class BlogImage
     public int Id { get; set; }
     public byte[] Image { get; set; }
     public string Caption { get; set; }
-    public int BlogId { get; set; }
+    public int BlogId { get; set; } // FK
     public Blog Blog { get; set; }
 }
 ```
 
 ---
 
-### Relation plusieurs-à-plusieurs
+### Association plusieurs-à-plusieurs
 
 Entraîne la création d'une table de jointure contenant deux clés étrangères dans la base de données.
 
@@ -535,7 +547,7 @@ public class Tag
 
 ---
 
-### Chargement des relations
+### Chargement des Associations
 
 - Les méthodes `.Include()` et `.ThenInclude()` permettent de spécifier les données associées à inclure dans les résultats d'une requête.
 - Ce mécanisme est appelé [chargement hâtif](https://docs.microsoft.com/en-us/ef/core/querying/related-data/eager) (_eager loading_).
@@ -551,3 +563,62 @@ using (var context = new BloggingContext())
         .ToList();
 }
 ```
+
+---
+
+### Mapping de l'héritage
+
+- Problème épineux : les SGBDR ne supportent pas le concept d’héritage.
+- Plusieurs stratégies possibles, avec chacune des avantages et des inconvénients :
+  - une table pour toute la hiérarchie (TPH) ;
+  - une table par classe concrète (TPC) ;
+  - une table par type (TPT).
+- Le choix dépend du contexte. Donnée-clé : nombre de propriétés communes.
+- [Plus de détails](https://learn.microsoft.com/en-us/ef/core/modeling/inheritance).
+
+---
+
+### La stratégie TPH avec EF Core
+
+- Solution par défaut (souvent la plus simple).
+- Ajoute à l'unique table qui mappe la hiérarchie :
+  - une colonne par propriété de chacune des classes de la hiérarchie ;
+  - une colonne `Discriminator` qui détermine le type concret de l'objet stocké en BD.
+
+---
+
+### Exemple de mapping de l'héritage
+
+```csharp
+internal class BloggingContext : DbContext
+{
+    public DbSet<Blog> Blogs { get; set; }
+    public DbSet<RssBlog> RssBlogs { get; set; }
+    // ...
+}
+
+public class Blog
+{
+    public int BlogId { get; set; }
+    // ...
+}
+
+public class RssBlog : Blog
+{
+    public string RssUrl { get; set; }
+    // ...
+}
+```
+
+---
+
+### Schéma BD après migration
+
+```bash
+dotnet ef migrations add RssBlog
+dotnet ef database update
+```
+
+![TPH strategy - Tables](images/efcore_tph_tables.png)
+
+![TPH strategy - Rows](images/inheritance-tph-data.png)
