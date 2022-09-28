@@ -1,4 +1,707 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/slides/</link><description>👨‍💻 Baptiste Pesquet (Slides)</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 20 Sep 2022 10:27:11 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>.NET et C#</title><link>https://www.bpesquet.fr/slides/dotnet-csharp/</link><pubDate>Tue, 20 Sep 2022 10:27:11 +0200</pubDate><guid>https://www.bpesquet.fr/slides/dotnet-csharp/</guid><description>&lt;h2 id="sommaire" >Sommaire
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/slides/</link><description>👨‍💻 Baptiste Pesquet (Slides)</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 26 Sep 2022 15:12:20 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>Entity Framework Core</title><link>https://www.bpesquet.fr/slides/efcore/</link><pubDate>Mon, 26 Sep 2022 15:12:20 +0200</pubDate><guid>https://www.bpesquet.fr/slides/efcore/</guid><description>&lt;h2 id="sommaire" >Sommaire
+&lt;span>
+&lt;a href="#sommaire">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Des objets et des tables&lt;/li>
+&lt;li>Présentation d&amp;rsquo;EF Core&lt;/li>
+&lt;li>Mise en oeuvre d&amp;rsquo;EF Core&lt;/li>
+&lt;li>Mapping d&amp;rsquo;un modèle métier&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="des-objets-et-des-tables" >Des objets et des tables
+&lt;span>
+&lt;a href="#des-objets-et-des-tables">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="les-données-persistantes" >Les données persistantes
+&lt;span>
+&lt;a href="#les-donn%c3%a9es-persistantes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Ne disparaissent pas entre deux utilisations d&amp;rsquo;une application.&lt;/li>
+&lt;li>Contraire : données &lt;em>volatiles&lt;/em>.&lt;/li>
+&lt;li>Indispensable pour une très grande majorité des applications (données métier, configuration, etc).&lt;/li>
+&lt;li>Leur stockage nécessite :
+&lt;ul>
+&lt;li>un support dédié, appelé parfois mémoire de masse (disque dur, SSD, mémoire Flash, etc) ;&lt;/li>
+&lt;li>un format adapté.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="les-sgbdr-et-leurs-avantages" >Les SGBDR et leurs avantages
+&lt;span>
+&lt;a href="#les-sgbdr-et-leurs-avantages">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Standard actuel pour la gestion de données persistantes.&lt;/li>
+&lt;li>Technologie connue depuis les années 1970.&lt;/li>
+&lt;li>Fiabilité.&lt;/li>
+&lt;li>Capacité à gérer de forts volumes de données.&lt;/li>
+&lt;li>Sécurité (authentification, réplication, etc).&lt;/li>
+&lt;li>Langage d’interrogation (SQL) standard.&lt;/li>
+&lt;li>Offre logicielle riche : de ORACLE à SQLite en passant par PostgreSQL, MySQL/MariaDB ou SQL Server.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="le-modèle-relationnel" >Le modèle relationnel
+&lt;span>
+&lt;a href="#le-mod%c3%a8le-relationnel">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Unité de représentation : table.&lt;/li>
+&lt;li>Caractéristiques : colonnes.&lt;/li>
+&lt;li>Entité : tuple (ligne).&lt;/li>
+&lt;li>Types de données : simples (nombres, chaîne, date, etc).&lt;/li>
+&lt;li>Identifiant : explicite (clé primaire).&lt;/li>
+&lt;li>Relations entre éléments : jointures SQL.&lt;/li>
+&lt;li>Concepts spécifiques : déclencheurs, procédures stockées&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="le-modèle-objet" >Le modèle objet
+&lt;span>
+&lt;a href="#le-mod%c3%a8le-objet">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Unité de représentation : classe.&lt;/li>
+&lt;li>Caractéristiques : propriétés et méthodes.&lt;/li>
+&lt;li>Entité : objet.&lt;/li>
+&lt;li>Types de données : simples ou complexes.&lt;/li>
+&lt;li>Identifiant : implicite (référence mémoire).&lt;/li>
+&lt;li>Relations entre éléments : navigation des associations.&lt;/li>
+&lt;li>Concepts spécifiques : encapsulation, héritage, interfaces&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="objectrelational-mapping-orm" >Object/Relational Mapping (O/RM)
+&lt;span>
+&lt;a href="#objectrelational-mapping-orm">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Lien entre une base de données et les objets manipulés par l’application.&lt;/li>
+&lt;li>Deux modèles très éloignés (&amp;quot;&lt;a href="https://en.wikipedia.org/wiki/Object%E2%80%93relational_impedance_mismatch">Impedance mismatch&lt;/a>&amp;quot;).&lt;/li>
+&lt;li>Pas de solution idéale.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="orm-is-the-vietnam-of-computer-sciencehttpsblogcodinghorrorcomobject-relational-mapping-is-the-vietnam-of-computer-science" >&lt;a href="https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/">&amp;ldquo;O/RM is the Vietnam of Computer Science&amp;rdquo;&lt;/a>
+&lt;span>
+&lt;a href="#orm-is-the-vietnam-of-computer-sciencehttpsblogcodinghorrorcomobject-relational-mapping-is-the-vietnam-of-computer-science">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/orm_vietnam.png" alt="Welcome to the jungle!">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="solutions-possibles-pour-lorm" >Solutions possibles pour l&amp;rsquo;O/RM
+&lt;span>
+&lt;a href="#solutions-possibles-pour-lorm">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Approches radicales : suppression du SGBDR (utilisation d&amp;rsquo;une autre technologie de stockage) ou des objets (programmation procédurale ou fonctionnelle).&lt;/li>
+&lt;li>O/RM manuel : gestion de la (dé)connexion, requêtage avec SQL puis transformation des résultats en objets, etc doivent être codées.&lt;/li>
+&lt;li>O/RM automatisé : utilisation d&amp;rsquo;un outil dédié pour gérer les problématiques précédentes. Le requêtage SQL est effectué par l&amp;rsquo;outil.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="orm-automatisé-un-bon-choix-" >O/RM automatisé, un bon choix ?
+&lt;span>
+&lt;a href="#orm-automatis%c3%a9-un-bon-choix-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Avantages :
+&lt;ul>
+&lt;li>Automatisation de la gestion du &lt;em>mapping&lt;/em>.&lt;/li>
+&lt;li>Diminution du volume de code.&lt;/li>
+&lt;li>Mise en œuvre de bonnes pratiques.&lt;/li>
+&lt;li>Performances (le plus souvent).&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Inconvénients :
+&lt;ul>
+&lt;li>Nécessité de maitriser un outil dédié.&lt;/li>
+&lt;li>Certaines limitations liées à l’outil.&lt;/li>
+&lt;li>Aspect &amp;ldquo;boîte noire&amp;rdquo;.&lt;/li>
+&lt;li>Performances (dans certains cas).&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="présentation-def-core" >Présentation d&amp;rsquo;EF Core
+&lt;span>
+&lt;a href="#pr%c3%a9sentation-def-core">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="entity-framework-core" >Entity Framework Core
+&lt;span>
+&lt;a href="#entity-framework-core">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Outil d&amp;rsquo;O/RM &lt;a href="https://github.com/dotnet/efcore">open source&lt;/a> maintenu par Microsoft.&lt;/li>
+&lt;li>Supporte de nombreux SGDBR : SQL Server, SQLite, MySQL/MariaDB, PostgreSQL, etc.&lt;/li>
+&lt;li>Standard pour l&amp;rsquo;accès aux données persistantes dans l&amp;rsquo;environnement ASP.NET Core.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="sqlite" >SQLite
+&lt;span>
+&lt;a href="#sqlite">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>SGBDR minimaliste mais suffisamment fiable, complet et performant pour la plupart des usages standards.&lt;/li>
+&lt;li>Toute la base de données tient dans un seul fichier de quelques dizaines/centaines de Ko.&lt;/li>
+&lt;li>&lt;a href="https://sqlite.org/mostdeployed.html">&amp;ldquo;Le SGBD le plus utilisé dans le monde&amp;rdquo;&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://sqlite.org">&lt;img src="images/sqlite370_banner.gif" alt="Logo SQLite">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="installation-def-core-pour-sqlite" >Installation d&amp;rsquo;EF Core pour SQLite
+&lt;span>
+&lt;a href="#installation-def-core-pour-sqlite">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Installation globale de l&amp;rsquo;outil EF Core CLI :&lt;/p>
+&lt;p>&lt;code>&amp;gt; dotnet tool install --global dotnet-ef&lt;/code>&lt;/p>
+&lt;p>Installation des packages nécessaires dans le répertoire du projet :&lt;/p>
+&lt;p>&lt;code>&amp;gt; dotnet add package Microsoft.EntityFrameworkCore.Design&lt;/code>&lt;/p>
+&lt;p>&lt;code>&amp;gt; dotnet add package Microsoft.EntityFrameworkCore.Sqlite&lt;/code>&lt;/p>
+&lt;hr>
+&lt;h3 id="support-de-sqlite-par-ef-core" >Support de SQLite par EF Core
+&lt;span>
+&lt;a href="#support-de-sqlite-par-ef-core">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Des &lt;a href="https://docs.microsoft.com/en-us/ef/core/providers/?tabs=dotnet-core-cli">fournisseurs de données&lt;/a> permettent l&amp;rsquo;utilisation de EF Core avec un grand nombre de sources de données, dont SQLite.&lt;/li>
+&lt;li>Son fournisseur possède cependant certaines petites &lt;a href="https://docs.microsoft.com/en-us/ef/core/providers/sqlite/limitations">limitations&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="principe-de-fonctionnement-def-core" >Principe de fonctionnement d&amp;rsquo;EF Core
+&lt;span>
+&lt;a href="#principe-de-fonctionnement-def-core">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Modèle&lt;/strong> : un ensemble de classes POCO, parfois appelées &lt;em>classes métier&lt;/em>, qui modélisent les entités manipulées par l&amp;rsquo;application.&lt;/li>
+&lt;li>&lt;strong>Contexte BD&lt;/strong> : une classe héritant de &lt;code>DbContext&lt;/code> qui représente une session d&amp;rsquo;échanges (lecture/écriture de données) avec une BD. Elle spécifie les classes du modèle à synchroniser avec la BD.&lt;/li>
+&lt;li>&lt;strong>BD&lt;/strong> : la base de données dans laquelle les instances du modèle sont lues/écrites.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="migrations" >Migrations
+&lt;span>
+&lt;a href="#migrations">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Approche &lt;em>&lt;strong>code first&lt;/strong>&lt;/em> : le modèle objet constitue la modélisation de référence. La base de données est automatiquement synchronisée avec lui.&lt;/li>
+&lt;li>&lt;a href="https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli">Migrations&lt;/a> : modifications incrémentales du schéma relationnel reflétant les évolutions du modèle.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="commandes-liées-aux-migrations" >Commandes liées aux migrations
+&lt;span>
+&lt;a href="#commandes-li%c3%a9es-aux-migrations">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet ef migrations add {MigrationName}&lt;/code>&lt;/p>
+&lt;p>Crée une nouvelle migration dans le répertoire &lt;strong>Migrations/&lt;/strong> du projet. Elle contient les mises à jour à réaliser au niveau du schéma relationnel pour le synchroniser avec le modèle objet.&lt;/p>
+&lt;p>&lt;code>&amp;gt; dotnet ef database update&lt;/code>&lt;/p>
+&lt;p>Synchronise la base de données configurée par le contexte BD avec la migration la plus récente.&lt;/p>
+&lt;hr>
+&lt;h3 id="interactions-avec-la-bd" >Interactions avec la BD
+&lt;span>
+&lt;a href="#interactions-avec-la-bd">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>L&amp;rsquo;instanciation d&amp;rsquo;un contexte BD permet de débuter une session de travail avec la base de données.&lt;/li>
+&lt;li>Sa méthode &lt;code>SaveChanges()&lt;/code> implante dans la BD tous les changements ayant eu lieu depuis l&amp;rsquo;ouverture de la session.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> {App}Context())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ... (Opérations on model classes)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Synchronize all changes with database&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.SaveChanges();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="mise-en-oeuvre-def-core" >Mise en oeuvre d&amp;rsquo;EF Core
+&lt;span>
+&lt;a href="#mise-en-oeuvre-def-core">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="exemple-de-modèle-métier" >Exemple de modèle métier
+&lt;span>
+&lt;a href="#exemple-de-mod%c3%a8le-m%c3%a9tier">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/efcore_blog_uml.png" alt="Exemple de modèle EF Core">&lt;/p>
+&lt;hr>
+&lt;h3 id="création-de-lapplication" >Création de l&amp;rsquo;application
+&lt;span>
+&lt;a href="#cr%c3%a9ation-de-lapplication">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>dotnet new console -o {AppName}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd {AppName}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotnet new gitignore
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotnet add package Microsoft.EntityFrameworkCore.Design
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csproj" data-lang="csproj">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;Project&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">Sdk=&lt;/span>&lt;span style="color:#0086d2">&amp;#34;Microsoft.NET.Sdk&amp;#34;&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;PropertyGroup&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;OutputType&amp;gt;&lt;/span>Exe&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/OutputType&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;TargetFramework&amp;gt;&lt;/span>net6.0&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/TargetFramework&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;ImplicitUsings&amp;gt;&lt;/span>enable&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/ImplicitUsings&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;Nullable&amp;gt;&lt;/span>disable&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/Nullable&amp;gt;&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">&amp;lt;!-- A MODIFIER --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/PropertyGroup&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;ItemGroup&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;PackageReference&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">Include=&lt;/span>&lt;span style="color:#0086d2">&amp;#34;Microsoft.EntityFrameworkCore.Design&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">Version=&lt;/span>&lt;span style="color:#0086d2">&amp;#34;6.0.9&amp;#34;&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;IncludeAssets&amp;gt;&lt;/span>runtime; build; native; contentfiles; analyzers; buildtransitive&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/IncludeAssets&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;PrivateAssets&amp;gt;&lt;/span>all&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/PrivateAssets&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/PackageReference&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;PackageReference&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">Include=&lt;/span>&lt;span style="color:#0086d2">&amp;#34;Microsoft.EntityFrameworkCore.Sqlite&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">Version=&lt;/span>&lt;span style="color:#0086d2">&amp;#34;6.0.9&amp;#34;&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/ItemGroup&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/Project&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="implémentation-du-modèle" >Implémentation du modèle
+&lt;span>
+&lt;a href="#impl%c3%a9mentation-du-mod%c3%a8le">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Chaque classe est codée dans son propre fichier &lt;code>.cs&lt;/code>, dans le sous-répertoire &lt;code>Models/&lt;/code> du projet.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Url { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> List&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> List&amp;lt;Post&amp;gt;();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Post
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Title { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Content { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> BlogId { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> Blog Blog { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="création-du-contexte-bd" >Création du contexte BD
+&lt;span>
+&lt;a href="#cr%c3%a9ation-du-contexte-bd">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Classe créée dans le sous-répertoire &lt;code>Data/&lt;/code> du projet.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.EntityFrameworkCore;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.Extensions.Logging;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> BloggingContext : DbContext
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;Blog&amp;gt; Blogs { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> DbPath { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> BloggingContext()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Path to SQLite database file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DbPath = &lt;span style="color:#0086d2">&amp;#34;EFGetStarted.db&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// The following configures EF to create a SQLite database file locally&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">protected&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">override&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> OnConfiguring(DbContextOptionsBuilder options)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Use SQLite as database&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.UseSqlite(&lt;span style="color:#0086d2">$&amp;#34;Data Source={DbPath}&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Optional: log SQL queries to console&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.LogTo(Console.WriteLine, &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span>[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="initialisation-de-la-base-de-données" >Initialisation de la base de données
+&lt;span>
+&lt;a href="#initialisation-de-la-base-de-donn%c3%a9es">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>(&lt;code>dotnet-ef&lt;/code> doit avoir été installé globalement)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>dotnet ef migrations add InitialCreate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotnet ef database update
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="extrait-de-la-migration-créée" >Extrait de la migration créée
+&lt;span>
+&lt;a href="#extrait-de-la-migration-cr%c3%a9%c3%a9e">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>migrationBuilder.CreateTable(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: &lt;span style="color:#0086d2">&amp;#34;Blogs&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> columns: table =&amp;gt; &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Id = table.Column&amp;lt;&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>&amp;gt;(type: &lt;span style="color:#0086d2">&amp;#34;INTEGER&amp;#34;&lt;/span>, nullable: &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .Annotation(&lt;span style="color:#0086d2">&amp;#34;Sqlite:Autoincrement&amp;#34;&lt;/span>, &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Url = table.Column&amp;lt;&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>&amp;gt;(type: &lt;span style="color:#0086d2">&amp;#34;TEXT&amp;#34;&lt;/span>, nullable: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> constraints: table =&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> table.PrimaryKey(&lt;span style="color:#0086d2">&amp;#34;PK_Blogs&amp;#34;&lt;/span>, x =&amp;gt; x.Id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="base-de-données-créée" >Base de données créée
+&lt;span>
+&lt;a href="#base-de-donn%c3%a9es-cr%c3%a9%c3%a9e">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Capture d&amp;rsquo;écran de &lt;a href="https://sqlitebrowser.org/">DB Browser pour SQLite&lt;/a> :&lt;/p>
+&lt;p>&lt;img src="images/efcore_blog_schema.png" alt="Schéma BD généré par EF Core">&lt;/p>
+&lt;p>La colonne &lt;code>BlogId&lt;/code> est une clé étrangère vers la colonne &lt;code>Id&lt;/code> de la table &lt;code>Blogs&lt;/code>.&lt;/p>
+&lt;hr>
+&lt;h3 id="structure-de-lapplication" >Structure de l&amp;rsquo;application
+&lt;span>
+&lt;a href="#structure-de-lapplication">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://github.com/ensc-glog/EFGetStarted">https://github.com/ensc-glog/EFGetStarted&lt;/a>&lt;/p>
+&lt;p>&lt;img src="images/efcore-efgetstarted.png" alt="Structure de l&amp;amp;rsquo;application d&amp;amp;rsquo;exemple">&lt;/p>
+&lt;hr>
+&lt;h3 id="opérations-crud" >Opérations CRUD
+&lt;span>
+&lt;a href="#op%c3%a9rations-crud">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;--- Inserting a new blog ---&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Add(&lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Blog { Url = &lt;span style="color:#0086d2">&amp;#34;http://blogs.msdn.com/adonet&amp;#34;&lt;/span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.SaveChanges();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;--- Retrieve blog with lowest id ---&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blog = context.Blogs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .OrderBy(b =&amp;gt; b.Id)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .First();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;--- Updating the blog and adding a post ---&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> blog.Url = &lt;span style="color:#0086d2">&amp;#34;https://devblogs.microsoft.com/dotnet&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> blog.Posts.Add(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Post { Title = &lt;span style="color:#0086d2">&amp;#34;Hello World&amp;#34;&lt;/span>, Content = &lt;span style="color:#0086d2">&amp;#34;I wrote an app using EF Core!&amp;#34;&lt;/span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.SaveChanges();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;--- Deleting the blog ---&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Remove(blog);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.SaveChanges();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="requêtage-avec-linq" >Requêtage avec LINQ
+&lt;span>
+&lt;a href="#requ%c3%aatage-avec-linq">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/">Language Integrated Query (LINQ)&lt;/a> est le langage standard pour le requêtage en C#, quelle que soit la source de données (SGBDR, XML, service web, etc).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Retrieve a list of blogs with a rating greater than 3,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ordered by URL&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .Where(b =&amp;gt; b.Rating &amp;gt; &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .OrderBy(b =&amp;gt; b.Url)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .ToList();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemples-dutilisation-de-linq" >Exemples d&amp;rsquo;utilisation de LINQ
+&lt;span>
+&lt;a href="#exemples-dutilisation-de-linq">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get all blogs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs.ToList();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get the blog with id 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blog = context.Blogs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .Single(b =&amp;gt; b.Id == &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get all blogs containing &amp;#34;dotnet&amp;#34; in their URL&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .Where(b =&amp;gt; b.Url.Contains(&lt;span style="color:#0086d2">&amp;#34;dotnet&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .ToList();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Plus de détails :&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.microsoft.com/en-us/ef/core/querying/">Querying data&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/basic-linq-query-operations">Basic LINQ Query Operations&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="syntaxe-alternative-pour-linq" >Syntaxe alternative pour LINQ
+&lt;span>
+&lt;a href="#syntaxe-alternative-pour-linq">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Pour plus de souplesse, il est possible de manipuler des requêtes LINQ en tant que variables.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get all blogs containing &amp;#34;dotnet&amp;#34; in their URL&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> query = &lt;span style="color:#fb660a;font-weight:bold">from&lt;/span> b &lt;span style="color:#fb660a;font-weight:bold">in&lt;/span> context.Blogs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">select&lt;/span> b;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> query = query.Where(b =&amp;gt; b.Url.Contains(&lt;span style="color:#0086d2">&amp;#34;dotnet&amp;#34;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = query.ToList();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="mapping-dun-modèle-métier" >Mapping d&amp;rsquo;un modèle métier
+&lt;span>
+&lt;a href="#mapping-dun-mod%c3%a8le-m%c3%a9tier">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="configuration-du-modèle" >Configuration du modèle
+&lt;span>
+&lt;a href="#configuration-du-mod%c3%a8le">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Effectuée via des &lt;a href="https://docs.microsoft.com/en-us/ef/core/modeling/entity-properties?tabs=data-annotations%2Cwithout-nrt">annotations&lt;/a> dans les classes du modèle.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [StringLength(200, MinimumLength = 7), Required]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Url { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Display(Name = &amp;#34;Average Rating&amp;#34;)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Column(TypeName = &amp;#34;decimal(5, 2)&amp;#34;)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [DisplayFormat(NullDisplayText = &amp;#34;No rating&amp;#34;)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">decimal?&lt;/span> Rating { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="propriétés-obligatoires-et-optionnelles" >Propriétés obligatoires et optionnelles
+&lt;span>
+&lt;a href="#propri%c3%a9t%c3%a9s-obligatoires-et-optionnelles">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Une propriété est considérée comme optionnelle si elle peut contenir &lt;code>null&lt;/code>. La colonne BD associée accepte les valeurs nulles.&lt;/li>
+&lt;li>L&amp;rsquo;attribut &lt;code>[Required]&lt;/code> permet de rendre obligatoire une propriété ayant un type référence (exemple : &lt;code>string&lt;/code>).&lt;/li>
+&lt;li>L&amp;rsquo;utilisation d&amp;rsquo;un &lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types">type valeur nullable&lt;/a> (exemples : &lt;code>int?&lt;/code>, &lt;code>bool?&lt;/code>) rend la propriété optionnelle.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="clés-primaires" >Clés primaires
+&lt;span>
+&lt;a href="#cl%c3%a9s-primaires">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Une propriété nommée &lt;code>Id&lt;/code> ou &lt;code>{NomDeLaClasse}Id&lt;/code> est considérée comme clé primaire.&lt;/li>
+&lt;li>Par défaut, une stratégie d&amp;rsquo;&lt;a href="https://docs.microsoft.com/en-us/ef/core/modeling/generated-properties?tabs=data-annotations">auto-génération des valeurs&lt;/a> est utilisée.&lt;/li>
+&lt;li>&lt;a href="https://docs.microsoft.com/en-us/ef/core/modeling/keys?tabs=data-annotations">Plus de détails&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="mapping-des-associations" >Mapping des associations
+&lt;span>
+&lt;a href="#mapping-des-associations">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Une propriété utilisant un type autre que scalaire est dite &lt;strong>propriété de navigation&lt;/strong>.&lt;/li>
+&lt;li>La détection d&amp;rsquo;une propriété de navigation entraine la création d&amp;rsquo;une &lt;strong>relation&lt;/strong> entre les deux classes impliquées.&lt;/li>
+&lt;li>Cette relation se traduit dans la base de données par la création d&amp;rsquo;une &lt;strong>clé étrangère&lt;/strong> dans la table associée à la classe dépendante (fille) de la relation.&lt;/li>
+&lt;li>&lt;a href="https://learn.microsoft.com/en-us/ef/core/modeling/relationships">Plus de détails&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="association-un-à-plusieurs" >Association un-à-plusieurs
+&lt;span>
+&lt;a href="#association-un-%c3%a0-plusieurs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Propriété de navigation de type collection dans la classe principale (mère).&lt;/li>
+&lt;li>Propriété de navigation et propriété de clé étrangère dans la classe dépendante (fille).&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> List&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> List&amp;lt;Post&amp;gt;();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Post
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> BlogId { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// FK&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> Blog Blog { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Navigation&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="association-un-à-un" >Association un-à-un
+&lt;span>
+&lt;a href="#association-un-%c3%a0-un">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> BlogImage BlogImage { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> BlogImage
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">byte&lt;/span>[] Image { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Caption { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> BlogId { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// FK&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> Blog Blog { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="association-plusieurs-à-plusieurs" >Association plusieurs-à-plusieurs
+&lt;span>
+&lt;a href="#association-plusieurs-%c3%a0-plusieurs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Entraîne la création d&amp;rsquo;une table de jointure contenant deux clés étrangères dans la base de données.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Post
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> ICollection&amp;lt;Tag&amp;gt; Tags { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Tag
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> ICollection&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="chargement-des-associations" >Chargement des Associations
+&lt;span>
+&lt;a href="#chargement-des-associations">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Les méthodes &lt;code>.Include()&lt;/code> et &lt;code>.ThenInclude()&lt;/code> permettent de spécifier les données associées à inclure dans les résultats d&amp;rsquo;une requête.&lt;/li>
+&lt;li>Ce mécanisme est appelé &lt;a href="https://docs.microsoft.com/en-us/ef/core/querying/related-data/eager">chargement hâtif&lt;/a> (&lt;em>eager loading&lt;/em>).&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Load posts for each blog&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Uncomment the .ThenInclude line to load post author&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .Include(blog =&amp;gt; blog.Posts)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// .ThenInclude(post =&amp;gt; post.Author)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .ToList();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="mapping-de-lhéritage" >Mapping de l&amp;rsquo;héritage
+&lt;span>
+&lt;a href="#mapping-de-lh%c3%a9ritage">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Problème épineux : les SGBDR ne supportent pas le concept d’héritage.&lt;/li>
+&lt;li>Plusieurs stratégies possibles, avec chacune des avantages et des inconvénients :
+&lt;ul>
+&lt;li>une table pour toute la hiérarchie (TPH) ;&lt;/li>
+&lt;li>une table par classe concrète (TPC) ;&lt;/li>
+&lt;li>une table par type (TPT).&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Le choix dépend du contexte. Donnée-clé : nombre de propriétés communes.&lt;/li>
+&lt;li>&lt;a href="https://learn.microsoft.com/en-us/ef/core/modeling/inheritance">Plus de détails&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="la-stratégie-tph-avec-ef-core" >La stratégie TPH avec EF Core
+&lt;span>
+&lt;a href="#la-strat%c3%a9gie-tph-avec-ef-core">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Solution par défaut (souvent la plus simple).&lt;/li>
+&lt;li>Ajoute à l&amp;rsquo;unique table qui mappe la hiérarchie :
+&lt;ul>
+&lt;li>une colonne par propriété de chacune des classes de la hiérarchie ;&lt;/li>
+&lt;li>une colonne &lt;code>Discriminator&lt;/code> qui détermine le type concret de l&amp;rsquo;objet stocké en BD.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exemple-de-mapping-de-lhéritage" >Exemple de mapping de l&amp;rsquo;héritage
+&lt;span>
+&lt;a href="#exemple-de-mapping-de-lh%c3%a9ritage">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">internal&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> BloggingContext : DbContext
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;Blog&amp;gt; Blogs { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;RssBlog&amp;gt; RssBlogs { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> BlogId { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> RssBlog : Blog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> RssUrl { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="schéma-bd-après-migration" >Schéma BD après migration
+&lt;span>
+&lt;a href="#sch%c3%a9ma-bd-apr%c3%a8s-migration">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>dotnet ef migrations add RssBlog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotnet ef database update
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="images/efcore_tph_tables.png" alt="Stratégie TPH - Tables">&lt;/p>
+&lt;p>&lt;img src="images/inheritance-tph-data.png" alt="Stratégie YPH - Enregistrements">&lt;/p></description></item><item><title>.NET et C#</title><link>https://www.bpesquet.fr/slides/dotnet-csharp/</link><pubDate>Tue, 20 Sep 2022 10:27:11 +0200</pubDate><guid>https://www.bpesquet.fr/slides/dotnet-csharp/</guid><description>&lt;h2 id="sommaire" >Sommaire
 &lt;span>
 &lt;a href="#sommaire">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -629,7 +1332,7 @@ while&lt;/p>
 &lt;li>Laisser un espace entre le symbole de début et le texte.&lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Ceci est un commentaire tellement long qu&amp;#39;il est réparti&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// sur plusieurs lignes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// sur plusieurs lignes.&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">/*
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">Encore
@@ -1008,7 +1711,7 @@ while&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Placé devant son début, le caractère &lt;code>@&lt;/code> permet de créer une &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/verbatim">chaîne verbatime&lt;/a> dans laquelle on peut ajouter des caractères spéciaux sans les échapper.&lt;/p>
+&lt;/h3>&lt;p>Placé devant son début, le caractère &lt;code>@&lt;/code> permet de créer une &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/verbatim">chaîne verbatim&lt;/a> dans laquelle on peut ajouter des caractères spéciaux sans les échapper.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Ces deux chaînes contiennent &amp;#34;c:\Windows\Temp&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> c1 = &lt;span style="color:#0086d2">&amp;#34;c:\\Windows\\Temp&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> c2 = &lt;span style="color:#0086d2">@&amp;#34;c:\Windows\Temp&amp;#34;&lt;/span>;
@@ -5216,529 +5919,6 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;hr>
-&lt;h3 id="les-données-persistantes" >Les données persistantes
-&lt;span>
-&lt;a href="#les-donn%c3%a9es-persistantes">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Ne disparaissent pas entre deux utilisations d&amp;rsquo;une application.&lt;/li>
-&lt;li>Contraire : données &lt;em>volatiles&lt;/em>.&lt;/li>
-&lt;li>Indispensable pour une très grande majorité des applications (données métier, configuration, etc).&lt;/li>
-&lt;li>Leur stockage nécessite :
-&lt;ul>
-&lt;li>un support dédié, appelé parfois mémoire de masse (disque dur/SSD, mémoire Flash, etc) ;&lt;/li>
-&lt;li>un format adapté.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="les-sgbdr-et-leurs-avantages" >Les SGBDR et leurs avantages
-&lt;span>
-&lt;a href="#les-sgbdr-et-leurs-avantages">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Standard actuel pour la gestion de données persistantes.&lt;/li>
-&lt;li>Technologie connue depuis les années 1970.&lt;/li>
-&lt;li>Fiabilité.&lt;/li>
-&lt;li>Capacité à gérer de forts volumes de données.&lt;/li>
-&lt;li>Sécurité (authentification, réplication, etc).&lt;/li>
-&lt;li>Langage d’interrogation (SQL) standard.&lt;/li>
-&lt;li>Offre logicielle riche : de ORACLE à SQLite en passant par PostgreSQL, MySQL/MariaDB ou SQL Server.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="le-modèle-relationnel" >Le modèle relationnel
-&lt;span>
-&lt;a href="#le-mod%c3%a8le-relationnel">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Unité de représentation : table.&lt;/li>
-&lt;li>Caractéristiques : colonnes.&lt;/li>
-&lt;li>Entité : tuple (ligne).&lt;/li>
-&lt;li>Types de données : simples (nombres, chaîne, date, etc).&lt;/li>
-&lt;li>Identifiant : explicite (clé primaire).&lt;/li>
-&lt;li>Relations entre éléments : jointures SQL.&lt;/li>
-&lt;li>Concepts spécifiques : déclencheurs, procédures stockées&amp;hellip;&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="le-modèle-objet" >Le modèle objet
-&lt;span>
-&lt;a href="#le-mod%c3%a8le-objet">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Unité de représentation : classe.&lt;/li>
-&lt;li>Caractéristiques : propriétés et méthodes.&lt;/li>
-&lt;li>Entité : objet.&lt;/li>
-&lt;li>Types de données : simples ou complexes.&lt;/li>
-&lt;li>Identifiant : implicite (référence mémoire).&lt;/li>
-&lt;li>Relations entre éléments : navigation des associations.&lt;/li>
-&lt;li>Concepts spécifiques : encapsulation, héritage, interfaces&amp;hellip;&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;section data-shortcode-section>
-&lt;h3 id="objectrelational-mapping-orm" >Object/Relational Mapping (O/RM)
-&lt;span>
-&lt;a href="#objectrelational-mapping-orm">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Lien entre une base de données et les objets manipulés par l’application.&lt;/li>
-&lt;li>Deux modèles très éloignés (&amp;quot;&lt;a href="https://en.wikipedia.org/wiki/Object%E2%80%93relational_impedance_mismatch">impedance mismatch&lt;/a>&amp;quot;).&lt;/li>
-&lt;li>Pas de solution idéale.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="orm-is-the-vietnam-of-computer-sciencehttpsblogcodinghorrorcomobject-relational-mapping-is-the-vietnam-of-computer-science" >&lt;a href="https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/">&amp;ldquo;O/RM is the Vietnam of Computer Science&amp;rdquo;&lt;/a>
-&lt;span>
-&lt;a href="#orm-is-the-vietnam-of-computer-sciencehttpsblogcodinghorrorcomobject-relational-mapping-is-the-vietnam-of-computer-science">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;img src="images/orm_vietnam.png" alt="Welcome to the jungle!">&lt;/p>
-&lt;/section>
-&lt;hr>
-&lt;h3 id="solutions-possibles-pour-lorm" >Solutions possibles pour l&amp;rsquo;O/RM
-&lt;span>
-&lt;a href="#solutions-possibles-pour-lorm">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Approches radicales : suppression du SGBDR (utilisation d&amp;rsquo;une autre technologie de stockage) ou des objets (programmation procédurale ou fonctionnelle).&lt;/li>
-&lt;li>O/RM manuel : gestion de la (dé)connexion, requêtage avec SQL puis transformation des résultats en objets, etc doivent être codées.&lt;/li>
-&lt;li>O/RM automatisé : utilisation d&amp;rsquo;un outil dédié pour gérer les problématiques précédentes. Le requêtage SQL est effectué par l&amp;rsquo;outil.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="orm-automatisé-un-bon-choix-" >O/RM automatisé, un bon choix ?
-&lt;span>
-&lt;a href="#orm-automatis%c3%a9-un-bon-choix-">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Avantages :
-&lt;ul>
-&lt;li>Automatisation de la gestion du &lt;em>mapping&lt;/em>.&lt;/li>
-&lt;li>Diminution du volume de code.&lt;/li>
-&lt;li>Mise en œuvre de bonnes pratiques.&lt;/li>
-&lt;li>Performances (le plus souvent).&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Inconvénients :
-&lt;ul>
-&lt;li>Nécessité de maitriser un outil dédié.&lt;/li>
-&lt;li>Certaines limitations liées à l’outil.&lt;/li>
-&lt;li>Aspect &amp;ldquo;boîte noire&amp;rdquo;.&lt;/li>
-&lt;li>Performances (dans certains cas).&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="entity-framework-core" >Entity Framework Core
-&lt;span>
-&lt;a href="#entity-framework-core">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Outil d&amp;rsquo;O/RM &lt;a href="https://github.com/dotnet/efcore">open source&lt;/a> maintenu par Microsoft.&lt;/li>
-&lt;li>Supporte de nombreux SGDBR : SQL Server, SQLite, MySQL/MariaDB, PostgreSQL, etc.&lt;/li>
-&lt;li>Standard pour l&amp;rsquo;accès aux données persistantes dans l&amp;rsquo;environnement ASP.NET Core.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="sqlite" >SQLite
-&lt;span>
-&lt;a href="#sqlite">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>SGBDR minimaliste mais suffisamment fiable, complet et performant pour la plupart des usages standards.&lt;/li>
-&lt;li>Toute la base de données tient dans un seul fichier de quelques dizaines/centaines de Ko.&lt;/li>
-&lt;li>&lt;a href="https://sqlite.org/mostdeployed.html">&amp;ldquo;Le SGBD le plus utilisé dans le monde&amp;rdquo;&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;a href="https://sqlite.org">&lt;img src="images/sqlite370_banner.gif" alt="SQLite logo">&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h3 id="installation-def-core-pour-sqlite" >Installation d&amp;rsquo;EF Core pour SQLite
-&lt;span>
-&lt;a href="#installation-def-core-pour-sqlite">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet tool install --global dotnet-ef&lt;/code>&lt;/p>
-&lt;p>&lt;code>&amp;gt; dotnet add package Microsoft.EntityFrameworkCore.Design&lt;/code>&lt;/p>
-&lt;p>&lt;code>&amp;gt; dotnet add package Microsoft.EntityFrameworkCore.Sqlite&lt;/code>&lt;/p>
-&lt;hr>
-&lt;h3 id="support-de-sqlite-par-ef-core" >Support de SQLite par EF Core
-&lt;span>
-&lt;a href="#support-de-sqlite-par-ef-core">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Des &lt;a href="https://docs.microsoft.com/en-us/ef/core/providers/?tabs=dotnet-core-cli">fournisseurs de données&lt;/a> permettent l&amp;rsquo;utilisation de EF Core avec un grand nombre de sources de données, dont SQLite.&lt;/li>
-&lt;li>Son fournisseur possède cependant certaines petites &lt;a href="https://docs.microsoft.com/en-us/ef/core/providers/sqlite/limitations">limitations&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="principe-de-fonctionnement-def-core" >Principe de fonctionnement d&amp;rsquo;EF Core
-&lt;span>
-&lt;a href="#principe-de-fonctionnement-def-core">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Modèle&lt;/strong> : un ensemble de classes POCO, parfois appelées &lt;em>classes métier&lt;/em>, qui modélisent les entités manipulées par l&amp;rsquo;application.&lt;/li>
-&lt;li>&lt;strong>Contexte BD&lt;/strong> : une classe qui représente une session d&amp;rsquo;échange avec une base de données (&lt;em>unité de travail&lt;/em>) et permet les opérations de lecture/écriture de données. Elle spécifie les classes du modèle à sauvegarder dans la base de données.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="exemple-de-modèle" >Exemple de modèle
-&lt;span>
-&lt;a href="#exemple-de-mod%c3%a8le">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;img src="images/efcore_blog_uml.png" alt="Exemple de modèle EF Core">&lt;/p>
-&lt;hr>
-&lt;h3 id="implémentation-du-modèle" >Implémentation du modèle
-&lt;span>
-&lt;a href="#impl%c3%a9mentation-du-mod%c3%a8le">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Url { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> ICollection&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> List&amp;lt;Post&amp;gt;();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Post
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Title { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Content { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> BlogId { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> Blog Blog { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="exemple-de-contexte-bd" >Exemple de contexte BD
-&lt;span>
-&lt;a href="#exemple-de-contexte-bd">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> BloggingContext : DbContext
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;Blog&amp;gt; Blogs { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> DbPath { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> BloggingContext()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DbPath = &lt;span style="color:#0086d2">&amp;#34;EFGetStarted.db&amp;#34;&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">protected&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">override&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> OnConfiguring(DbContextOptionsBuilder options)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> =&amp;gt; options.UseSqlite(&lt;span style="color:#0086d2">$&amp;#34;Data Source={DbPath}&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="migrations-1" >Migrations
-&lt;span>
-&lt;a href="#migrations-1">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Approche &lt;em>&lt;strong>code first&lt;/strong>&lt;/em> : le modèle objet constitue la modélisation de référence. La base de données est automatiquement synchronisée avec lui.&lt;/li>
-&lt;li>&lt;a href="https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli">Migrations&lt;/a> : modifications incrémentales du schéma relationnel reflétant les évolutions du modèle.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="commandes-liées-aux-migrations" >Commandes liées aux migrations
-&lt;span>
-&lt;a href="#commandes-li%c3%a9es-aux-migrations">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet ef migrations add &amp;lt;MigrationName&amp;gt;&lt;/code>&lt;/p>
-&lt;p>Crée une nouvelle migration dans le répertoire &lt;strong>Migrations/&lt;/strong> du projet. Elle contient les mises à jour à réaliser au niveau du schéma relationnel pour le synchroniser avec le modèle objet.&lt;/p>
-&lt;p>&lt;code>&amp;gt; dotnet ef database update&lt;/code>&lt;/p>
-&lt;p>Synchronise la base de données configurée par le contexte BD avec la migration la plus récente.&lt;/p>
-&lt;hr>
-&lt;h3 id="exemple-extrait-dune-migration" >Exemple extrait d&amp;rsquo;une migration
-&lt;span>
-&lt;a href="#exemple-extrait-dune-migration">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>migrationBuilder.CreateTable(
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: &lt;span style="color:#0086d2">&amp;#34;Blogs&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> columns: table =&amp;gt; &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Id = table.Column&amp;lt;&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>&amp;gt;(type: &lt;span style="color:#0086d2">&amp;#34;INTEGER&amp;#34;&lt;/span>, nullable: &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .Annotation(&lt;span style="color:#0086d2">&amp;#34;Sqlite:Autoincrement&amp;#34;&lt;/span>, &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>),
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Url = table.Column&amp;lt;&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>&amp;gt;(type: &lt;span style="color:#0086d2">&amp;#34;TEXT&amp;#34;&lt;/span>, nullable: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> constraints: table =&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> table.PrimaryKey(&lt;span style="color:#0086d2">&amp;#34;PK_Blogs&amp;#34;&lt;/span>, x =&amp;gt; x.Id);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="résultat-de-la-mise-à-jour-bd" >Résultat de la mise à jour BD
-&lt;span>
-&lt;a href="#r%c3%a9sultat-de-la-mise-%c3%a0-jour-bd">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;img src="images/efcore_blog_schema.png" alt="Schéma BD généré par EF Core">&lt;/p>
-&lt;p>(Capture d&amp;rsquo;écran de &lt;a href="https://sqlitebrowser.org/">DB Browser pour SQLite&lt;/a>).&lt;/p>
-&lt;p>La colonne &lt;code>BlogId&lt;/code> est une clé étrangère vers la colonne &lt;code>Id&lt;/code> de la table &lt;code>Blog&lt;/code>.&lt;/p>
-&lt;hr>
-&lt;h3 id="opérations-crud" >Opérations CRUD
-&lt;span>
-&lt;a href="#op%c3%a9rations-crud">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Add(&lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Blog { Url = &lt;span style="color:#0086d2">&amp;#34;http://blogs.msdn.com/adonet&amp;#34;&lt;/span> });
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.SaveChanges();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Retrieve blog with lowest id&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blog = context.Blogs
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .OrderBy(b =&amp;gt; b.Id)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .First();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> blog.Url = &lt;span style="color:#0086d2">&amp;#34;https://devblogs.microsoft.com/dotnet&amp;#34;&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> blog.Posts.Add(
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Post { Title = &lt;span style="color:#0086d2">&amp;#34;Hello World&amp;#34;&lt;/span>, Content = &lt;span style="color:#0086d2">&amp;#34;I wrote an app using EF Core!&amp;#34;&lt;/span> });
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.SaveChanges();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Remove(blog);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.SaveChanges();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;section data-shortcode-section>
-&lt;h3 id="requêtage-avec-linq" >Requêtage avec LINQ
-&lt;span>
-&lt;a href="#requ%c3%aatage-avec-linq">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/">Language Integrated Query (LINQ)&lt;/a> est le langage standard pour le requêtage en C#, quelle que soit la source de données (SGBDR, XML, service web, etc).&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Retrieve a list of blogs with a rating greater than 3,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ordered by URL&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .Where(b =&amp;gt; b.Rating &amp;gt; &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .OrderBy(b =&amp;gt; b.Url)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .ToList();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="exemples-dutilisation-de-linq" >Exemples d&amp;rsquo;utilisation de LINQ
-&lt;span>
-&lt;a href="#exemples-dutilisation-de-linq">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get all blogs&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs.ToList();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get a specific blog&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blog = context.Blogs
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .Single(b =&amp;gt; b.Id == &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get all blogs containing &amp;#34;dotnet&amp;#34; in their URL&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .Where(b =&amp;gt; b.Url.Contains(&lt;span style="color:#0086d2">&amp;#34;dotnet&amp;#34;&lt;/span>))
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .ToList();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>(&lt;a href="https://docs.microsoft.com/en-us/ef/core/querying/">Plus de détails&lt;/a>)&lt;/p>
-&lt;hr>
-&lt;h3 id="syntaxe-alternative-pour-linq" >Syntaxe alternative pour LINQ
-&lt;span>
-&lt;a href="#syntaxe-alternative-pour-linq">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>Pour plus de souplesse, il est possible de manipuler des requêtes LINQ en tant que variables.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Get all blogs containing &amp;#34;dotnet&amp;#34; in their URL&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> query = &lt;span style="color:#fb660a;font-weight:bold">from&lt;/span> b &lt;span style="color:#fb660a;font-weight:bold">in&lt;/span> context.Blogs
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">select&lt;/span> b;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> query = query.Where(b =&amp;gt; b.Url.Contains(&lt;span style="color:#0086d2">&amp;#34;dotnet&amp;#34;&lt;/span>));
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = query.ToList();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/section>
-&lt;hr>
-&lt;h3 id="sauvegarde-des-modifications" >Sauvegarde des modifications
-&lt;span>
-&lt;a href="#sauvegarde-des-modifications">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>La méthode &lt;code>SaveChanges()&lt;/code> de la classe &lt;code>DbContext&lt;/code> implante dans la base de données tous les changements ayant eu lieu depuis l&amp;rsquo;ouverture de la session liée au contexte BD.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blog = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Blog { Url = &lt;span style="color:#0086d2">&amp;#34;http://sample.com&amp;#34;&lt;/span> };
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Blogs.Add(blog);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.SaveChanges();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="configuration-du-modèle" >Configuration du modèle
-&lt;span>
-&lt;a href="#configuration-du-mod%c3%a8le">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>Effectuée via des &lt;a href="https://docs.microsoft.com/en-us/ef/core/modeling/entity-properties?tabs=data-annotations%2Cwithout-nrt">annotations&lt;/a> dans les classes du modèle.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [StringLength(200, MinimumLength = 7), Required]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Url { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Display(Name = &amp;#34;Average Rating&amp;#34;)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Column(TypeName = &amp;#34;decimal(5, 2)&amp;#34;)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [DisplayFormat(NullDisplayText = &amp;#34;No rating&amp;#34;)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">decimal?&lt;/span> Rating { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="propriétés-obligatoires-et-optionnelles" >Propriétés obligatoires et optionnelles
-&lt;span>
-&lt;a href="#propri%c3%a9t%c3%a9s-obligatoires-et-optionnelles">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Une propriété est considérée comme optionnelle si elle peut contenir &lt;code>null&lt;/code>. La colonne BD associée accepte les valeurs nulles.&lt;/li>
-&lt;li>L&amp;rsquo;attribut &lt;code>[Required]&lt;/code> permet de rendre obligatoire une propriété ayant un type référence (exemple : &lt;code>string&lt;/code>).&lt;/li>
-&lt;li>L&amp;rsquo;utilisation d&amp;rsquo;un &lt;a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types">type nullable&lt;/a> (exemples : &lt;code>int?&lt;/code>, `bool?) rend la propriété optionnelle.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="clés-primaires" >Clés primaires
-&lt;span>
-&lt;a href="#cl%c3%a9s-primaires">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Une propriété nommée &lt;code>Id&lt;/code> ou &lt;code>&amp;lt;Classe&amp;gt;Id&lt;/code> est considérée comme clé primaire.&lt;/li>
-&lt;li>Par défaut, une stratégie d&amp;rsquo;&lt;a href="https://docs.microsoft.com/en-us/ef/core/modeling/generated-properties?tabs=data-annotations">auto-génération des valeurs&lt;/a> est utilisée.&lt;/li>
-&lt;li>&lt;a href="https://docs.microsoft.com/en-us/ef/core/modeling/keys?tabs=data-annotations">Plus de détails&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;section data-shortcode-section>
-&lt;h3 id="relations-entre-classes" >Relations entre classes
-&lt;span>
-&lt;a href="#relations-entre-classes">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Une propriété utilisant un type autre que scalaire est dite &lt;strong>propriété de navigation&lt;/strong>.&lt;/li>
-&lt;li>La détection d&amp;rsquo;une propriété de navigation entraine la création d&amp;rsquo;une &lt;strong>relation&lt;/strong> entre les deux classes impliquées.&lt;/li>
-&lt;li>Cette relation se traduit dans la base de données par la création d&amp;rsquo;une &lt;strong>clé étrangère&lt;/strong> dans la table associée à la classe dépendante (fille) de la relation.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="relation-un-à-plusieurs" >Relation un-à-plusieurs
-&lt;span>
-&lt;a href="#relation-un-%c3%a0-plusieurs">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Propriété de navigation de type collection dans la classe principale (mère).&lt;/li>
-&lt;li>Propriété de navigation et d&amp;rsquo;une propriété de clé étrangère dans la classe dépendante (fille).&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> List&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Post
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> BlogId { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> Blog Blog { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="relation-un-à-un" >Relation un-à-un
-&lt;span>
-&lt;a href="#relation-un-%c3%a0-un">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> BlogImage BlogImage { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> BlogImage
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">byte&lt;/span>[] Image { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Caption { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> BlogId { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> Blog Blog { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="relation-plusieurs-à-plusieurs" >Relation plusieurs-à-plusieurs
-&lt;span>
-&lt;a href="#relation-plusieurs-%c3%a0-plusieurs">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>Entraîne la création d&amp;rsquo;une table de jointure contenant deux clés étrangères dans la base de données.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Post
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> ICollection&amp;lt;Tag&amp;gt; Tags { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Tag
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> ICollection&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/section>
-&lt;hr>
-&lt;h3 id="chargement-des-relations" >Chargement des relations
-&lt;span>
-&lt;a href="#chargement-des-relations">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Les méthodes &lt;code>.Include()&lt;/code> et &lt;code>.ThenInclude()&lt;/code> permettent de spécifier les données associées à inclure dans les résultats d&amp;rsquo;une requête.&lt;/li>
-&lt;li>Ce mécanisme est appelé &lt;a href="https://docs.microsoft.com/en-us/ef/core/querying/related-data/eager">chargement hâtif&lt;/a> (&lt;em>eager loading&lt;/em>).&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> BloggingContext())
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Load posts for each blog&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Uncomment the .ThenInclude line to load post author&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> blogs = context.Blogs
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .Include(blog =&amp;gt; blog.Posts)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// .ThenInclude(post =&amp;gt; post.Author)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .ToList();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="ef-core-et-aspnet-core" >EF Core et ASP.NET Core
 &lt;span>
 &lt;a href="#ef-core-et-aspnet-core">
