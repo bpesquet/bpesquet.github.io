@@ -490,7 +490,7 @@ while
 
 ```csharp
 // Ceci est un commentaire tellement long qu'il est réparti
-// sur plusieurs lignes
+// sur plusieurs lignes.
 
 /*
 Encore
@@ -756,7 +756,7 @@ char dernier = s[s.Length - 1]; // 'c'
 
 ### Chaînes verbatim
 
-Placé devant son début, le caractère `@` permet de créer une [chaîne verbatime](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/verbatim) dans laquelle on peut ajouter des caractères spéciaux sans les échapper.
+Placé devant son début, le caractère `@` permet de créer une [chaîne verbatim](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/verbatim) dans laquelle on peut ajouter des caractères spéciaux sans les échapper.
 
 ```csharp
 // Ces deux chaînes contiennent "c:\Windows\Temp"
