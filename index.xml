@@ -2133,8 +2133,8 @@ while&lt;/p>
 &lt;p>Appelée &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator">instruction conditionnelle ternaire&lt;/a>, elle constitue une alternative plus concise au &lt;code>if/else&lt;/code> dans certains scénarions.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> tempetature = &lt;span style="color:#0086f7;font-weight:bold">38.5&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> etat = (tempetature &amp;gt; &lt;span style="color:#0086f7;font-weight:bold">38&lt;/span>) ? &lt;span style="color:#0086d2">&amp;#34;malade&amp;#34;&lt;/span> : &lt;span style="color:#0086d2">&amp;#34;bien portant&amp;#34;&lt;/span>;
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">double&lt;/span> temperature = &lt;span style="color:#0086f7;font-weight:bold">38.5&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> etat = (temperature &amp;gt; &lt;span style="color:#0086f7;font-weight:bold">38&lt;/span>) ? &lt;span style="color:#0086d2">&amp;#34;malade&amp;#34;&lt;/span> : &lt;span style="color:#0086d2">&amp;#34;bien portant&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(etat); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;malade&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="linstruction-de-choix-switch" >L&amp;rsquo;instruction de choix switch
