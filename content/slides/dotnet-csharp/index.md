@@ -1085,8 +1085,8 @@ else
 - Appelée [instruction conditionnelle ternaire](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator), elle constitue une alternative plus concise au `if/else` dans certains scénarions.
 
 ```csharp
-double tempetature = 38.5;
-string etat = (tempetature > 38) ? "malade" : "bien portant";
+double temperature = 38.5;
+string etat = (temperature > 38) ? "malade" : "bien portant";
 Console.WriteLine(etat); // "malade"
 ```
 
