@@ -10,7 +10,6 @@ draft: false
 - Git fundamentals
 - Collaborating with Git
 - Git from the command line
-- Additional resources
 - GitHub
 
 ---
@@ -201,6 +200,12 @@ _HEAD_ is an alias to the most recent commit of the active branch.
 
 ---
 
+### Remote Git workflow
+
+![Remote Git workflow](images/git_workflow.png)
+
+---
+
 ### Pulling changes
 
 - Pulling = fetching & merging.
@@ -307,15 +312,15 @@ _HEAD_ is an alias to the most recent commit of the active branch.
 
 ---
 
-## Additional resources
-
----
+### Additional resources
 
 - [What is version control?](https://www.atlassian.com/git/tutorials/what-is-version-control)
 - [Git - the simple guide](http://rogerdudler.github.io/git-guide/)
 - [Learn Git branching](https://learngitbranching.js.org)
-- [Git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
-- [Another Git cheat sheet](https://ndpsoftware.com/git-cheatsheet.html)
+- [Git cheat sheet](https://github.com/mikeizbicki/ucr-cs100/blob/2015winter/textbook/cheatsheets/git-cheatsheet.md)
+- [Another Git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+- [Yet another Git cheat sheet](https://ndpsoftware.com/git-cheatsheet.html)
+- [The Git game](https://github.com/git-game/git-game)
 - [Oh sh.t, Git!?!](https://ohshitgit.com/)
 
 ---
