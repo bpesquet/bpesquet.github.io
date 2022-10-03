@@ -3157,7 +3157,6 @@ while&lt;/p>
 &lt;li>Git fundamentals&lt;/li>
 &lt;li>Collaborating with Git&lt;/li>
 &lt;li>Git from the command line&lt;/li>
-&lt;li>Additional resources&lt;/li>
 &lt;li>GitHub&lt;/li>
 &lt;/ul>
 &lt;hr>
@@ -3413,6 +3412,14 @@ while&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;hr>
+&lt;h3 id="remote-git-workflow" >Remote Git workflow
+&lt;span>
+&lt;a href="#remote-git-workflow">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/git_workflow.png" alt="Remote Git workflow">&lt;/p>
+&lt;hr>
 &lt;h3 id="pulling-changes" >Pulling changes
 &lt;span>
 &lt;a href="#pulling-changes">
@@ -3653,19 +3660,20 @@ while&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;hr>
-&lt;h2 id="additional-resources" >Additional resources
+&lt;h3 id="additional-resources" >Additional resources
 &lt;span>
 &lt;a href="#additional-resources">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;hr>
-&lt;ul>
+&lt;/h3>&lt;ul>
 &lt;li>&lt;a href="https://www.atlassian.com/git/tutorials/what-is-version-control">What is version control?&lt;/a>&lt;/li>
 &lt;li>&lt;a href="http://rogerdudler.github.io/git-guide/">Git - the simple guide&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://learngitbranching.js.org">Learn Git branching&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://education.github.com/git-cheat-sheet-education.pdf">Git cheat sheet&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ndpsoftware.com/git-cheatsheet.html">Another Git cheat sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/mikeizbicki/ucr-cs100/blob/2015winter/textbook/cheatsheets/git-cheatsheet.md">Git cheat sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://education.github.com/git-cheat-sheet-education.pdf">Another Git cheat sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ndpsoftware.com/git-cheatsheet.html">Yet another Git cheat sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/git-game/git-game">The Git game&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://ohshitgit.com/">Oh sh.t, Git!?!&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;hr>
