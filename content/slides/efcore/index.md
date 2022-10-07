@@ -219,7 +219,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Sqlite
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable> <!-- A MODIFIER -->
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -244,7 +244,7 @@ Chaque classe est codée dans son propre fichier `.cs`, dans le sous-répertoire
 public class Blog
 {
     public int Id { get; set; }
-    public string Url { get; set; }
+    public string Url { get; set; } = null!;
     public List<Post> Posts { get; } = new List<Post>();
 }
 ```
@@ -253,12 +253,28 @@ public class Blog
 public class Post
 {
     public int Id { get; set; }
-    public string Title { get; set; }
-    public string Content { get; set; }
+    public string Title { get; set; } = null!;
+    public string Content { get; set; } = null!;
     public int BlogId { get; set; }
-    public Blog Blog { get; set; }
+    public Blog Blog { get; set; } = null!;
 }
 ```
+
+---
+
+{{% section %}}
+
+### L'opérateur de null-suppression
+
+- Appelée aussi _null-forgiving operator_.
+- Précise au compilateur qu'une expression de type référence ne vaudra jamais `null` (donc qu'elle pourra être déréférencée sans risque).
+- `= null!` permet d'initialiser les propriétés C# gérées par EF Core dans le contexte _null-aware_ de .NET 6+.
+
+---
+
+[![JKK '62 speech](images/we-choose.png)](https://youtu.be/g25G1M4EXrQ?t=93)
+
+{{% /section %}}
 
 ---
 
@@ -272,8 +288,8 @@ using Microsoft.Extensions.Logging;
 
 public class BloggingContext : DbContext
 {
-    public DbSet<Blog> Blogs { get; set; }
-    public DbSet<Post> Posts { get; set; }
+    public DbSet<Blog> Blogs { get; set; } = null!;
+    public DbSet<Post> Posts { get; set; } = null!;
 
     public string DbPath { get; private set; }
 
@@ -317,7 +333,7 @@ migrationBuilder.CreateTable(
     {
         Id = table.Column<int>(type: "INTEGER", nullable: false)
             .Annotation("Sqlite:Autoincrement", true),
-        Url = table.Column<string>(type: "TEXT", nullable: true)
+        Url = table.Column<string>(type: "TEXT", nullable: false)
     },
     constraints: table =>
     {
