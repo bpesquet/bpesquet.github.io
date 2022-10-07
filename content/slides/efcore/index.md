@@ -205,8 +205,8 @@ using (var context = new {App}Context())
 ### Création de l'application
 
 ```bash
-dotnet new console -o {AppName}
-cd {AppName}
+dotnet new console -o EFBlog
+cd EFBlog
 dotnet new gitignore
 dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite
@@ -280,7 +280,7 @@ public class BloggingContext : DbContext
     public BloggingContext()
     {
         // Path to SQLite database file
-        DbPath = "EFGetStarted.db";
+        DbPath = "EFBlog.db";
     }
 
     // The following configures EF to create a SQLite database file locally
@@ -339,9 +339,9 @@ La colonne `BlogId` est une clé étrangère vers la colonne `Id` de la table `B
 
 ### Structure de l'application
 
-<https://github.com/ensc-glog/EFGetStarted>
+<https://github.com/ensc-glog/EFBlog>
 
-![Structure de l'application d'exemple](images/efcore-efgetstarted.png)
+![Structure de l'application d'exemple](images/efcore-efblog.png)
 
 ---
 
