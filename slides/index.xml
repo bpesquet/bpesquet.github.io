@@ -5127,7 +5127,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Code HTML et CSS généré côté serveur, puis renvoyée au client.&lt;/p>
+&lt;/h3>&lt;p>Structure HTML contenant les données générée côté serveur, puis renvoyée au client.&lt;/p>
 &lt;ul>
 &lt;li>Peu d&amp;rsquo;exigences techniques côté client (navigateur simple, trafic réseau limité).&lt;/li>
 &lt;li>Accès BD et contrôles centralisés.&lt;/li>
@@ -5144,7 +5144,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Structure HTML (DOM) mise à jour dynamiquement côté client grâce à des appels asynchrones au serveur.&lt;/p>
+&lt;/h3>&lt;p>Squelette HTML (sans données) initialement renvoyé au client. Ensuite, DOM mis à jour dynamiquement grâce à des appels asynchrones du client vers le serveur.&lt;/p>
 &lt;ul>
 &lt;li>Interactions riches avec l&amp;rsquo;utilisateur.&lt;/li>
 &lt;li>Capacités matérielles et logicielles du client utilisables.&lt;/li>
