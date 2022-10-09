@@ -160,6 +160,7 @@ Installation des packages nécessaires dans le répertoire du projet :
 
 - Approche _**code first**_ : le modèle objet constitue la modélisation de référence. La base de données est automatiquement synchronisée avec lui.
 - [Migrations](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli) : modifications incrémentales du schéma relationnel reflétant les évolutions du modèle.
+- Permettent à la BD d'être synchronisée avec les évolutions du modèle, sans perte de données.
 
 ---
 
@@ -266,9 +267,9 @@ public class Post
 
 ### L'opérateur de null-suppression
 
-- Appelée aussi _null-forgiving operator_.
+- Appelée aussi [null-forgiving operator](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-forgiving).
 - Précise au compilateur qu'une expression de type référence ne vaudra jamais `null` (donc qu'elle pourra être déréférencée sans risque).
-- `= null!` permet d'initialiser les propriétés C# gérées par EF Core dans le contexte _null-aware_ de .NET 6+.
+- `= null!` permet d'[initialiser les propriétés C# gérées par EF Core](https://learn.microsoft.com/en-us/ef/core/miscellaneous/nullable-reference-types) dans le contexte _null-aware_ de .NET 6+.
 
 ---
 
