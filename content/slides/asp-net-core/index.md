@@ -8,9 +8,10 @@ draft: false
 
 - Présentation de ASP.NET Core
 - Le framework ASP.NET Core MVC
-- Mécanismes fondamentaux
-- Création d'API web
+- Routage et environnement
 - Interactions avec une base de données
+- Création d'API web
+- Création de vues HTML
 - Tests
 
 ---
@@ -37,38 +38,6 @@ draft: false
 
 ---
 
-### UI générée côté serveur
-
-Code HTML et CSS généré côté serveur, puis renvoyée au client.
-
-- Peu d'exigences techniques côté client (navigateur simple, trafic réseau limité).
-- Accès BD et contrôles centralisés.
-- Exemples d'usages : sites dynamiques, blogs, CMS.
-
----
-
-### UI générée côté client
-
-Structure HTML (DOM) mise à jour dynamiquement côté client grâce à des appels asynchrones au serveur.
-
-- Interactions riches avec l'utilisateur.
-- Capacités matérielles et logicielles du client utilisables.
-- Exemples d'usages : tableau de bord interactif, applications collaboratives.
-
----
-
-### L'offre technique ASP.NET Core
-
-- UI générée côté serveur : **Razor Pages**, **MVC**.
-- UI générée côté client : **Blazor**, **SPA** avec Angular ou React.
-- Une approche hybride est possible (exemple : MVC + Blazor).
-
----
-
-## Le framework ASP.NET Core MVC
-
----
-
 {{% section %}}
 
 ### Rappel : le fonctionnement du web
@@ -86,12 +55,60 @@ Le web est basé sur un modèle **client/serveur** :
 
 ---
 
-### Le protocole HTTP
+### Rappel : le protocole HTTP
 
 - _HyperText Transfer Protocol_.
 - Socle technique du web.
 - Equivalent sécurisé : **HTTPS**.
 - Basé sur des **commandes** textuelles exprimant les différentes actions possibles : _GET_, _PUT_, _POST_, etc).
+
+---
+
+{{% section %}}
+
+### UI web générée côté serveur
+
+Code HTML et CSS généré côté serveur, puis renvoyée au client.
+
+- Peu d'exigences techniques côté client (navigateur simple, trafic réseau limité).
+- Accès BD et contrôles centralisés.
+- Exemples d'usages : sites dynamiques, blogs, CMS...
+
+---
+
+[![SSR](images/Server-Side-Rendering-Flowchart.jpg)](https://www.growth-rocket.com/blog/a-closer-look-at-client-side-server-side-rendering/)
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+### UI web générée côté client
+
+Structure HTML (DOM) mise à jour dynamiquement côté client grâce à des appels asynchrones au serveur.
+
+- Interactions riches avec l'utilisateur.
+- Capacités matérielles et logicielles du client utilisables.
+- Exemples d'usages : tableau de bord interactif, applications collaboratives...
+
+---
+
+[![CSR](images/Client-Side-Rendering-Flowchart.jpg)](https://www.growth-rocket.com/blog/a-closer-look-at-client-side-server-side-rendering/)
+
+{{% /section %}}
+
+---
+
+### L'offre technique ASP.NET Core
+
+- UI générée côté serveur : **Razor Pages**, **MVC**.
+- UI générée côté client : **Blazor**, **SPA** avec Angular ou React.
+- Une approche hybride est possible (exemple : MVC + Blazor).
+
+---
+
+## Le framework ASP.NET Core MVC
 
 ---
 
@@ -124,8 +141,8 @@ Le web est basé sur un modèle **client/serveur** :
 
 - Avantages :
 
-  - Clarification de l’architecture.
   - Séparation nette des responsabilités => couplage faible, cohésion forte, maintenance et évolutions facilitées.
+  - Standard connu et bien établi.
 
 - Inconvénients :
   - Complexification de l’architecture.
@@ -146,7 +163,19 @@ Le web est basé sur un modèle **client/serveur** :
 
 ---
 
-### Structure d'une application ASP.NET Core MVC
+### Creation d'une application ASP.NET Core MVC
+
+```bash
+dotnet new mvc -o {AppName}
+cd {AppName}
+dotnet new gitignore
+```
+
+---
+
+### Structure de l'application créée
+
+<https://github.com/ensc-glog/MvcMovie>
 
 ![Structure d'une application ASP.NET Core MVC](images/aspnetcoremvc_structure.png)
 
@@ -155,25 +184,30 @@ Le web est basé sur un modèle **client/serveur** :
 ### Les contrôleurs
 
 - Créés dans le répertoire `Controllers/`.
-- Héritent de la classe abstraite `Controller`.
+- Définis dans l'espace de noms `{AppName}/Controllers`.
+- Héritent des classes abstraites `Controller` (vues HTML) ou `ControllerBase` (API web).
 - Définissent les points d'entrée dans l'application sous la forme de méthodes d'action annotables.
 
-```csharp
-public class MoviesController : Controller
-{
-    // GET: Movies/Details/5
-    public async Task<IActionResult> Details(int? id)
-    {
-        //...
-    }
+---
 
-    // POST: Movies/Delete/5
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
+### Exemple de contrôleur
+
+```csharp
+namespace MvcMovie.Controllers;
+
+public class HomeController : Controller
+{
+    // ...
+    public IActionResult Index()
     {
-        // ...
+        return View();
     }
+    public IActionResult Privacy()
+    {
+        return View();
+    }
+    // ...
+}
 ```
 
 ---
@@ -181,36 +215,26 @@ public class MoviesController : Controller
 ### Les modèles
 
 - Créés dans le répertoire `Models/`.
+- Définis dans l'espace de noms `{AppName}/Models`.
 - Implémentent la logique métier de l'application sous la forme de classes **POCO** (_Plain Old CLR Objects_) souvent associées à des tables BD.
-
-```csharp
-public class Movie
-{
-    public int Id { get; set; }
-
-    [StringLength(60, MinimumLength = 3)]
-    public string Title { get; set; }
-
-    [Display(Name = "Release Date"), DataType(DataType.Date)]
-    public DateTime ReleaseDate { get; set; }
-    // ...
-```
 
 ---
 
 ### Les vues
 
-- Créés dans le répertoire `Views/[Controller]` sous la forme de fichiers Razor (`.cshtml`).
+- Créées dans le répertoire `Views/{ControllerName}` sous la forme de fichiers [Razor](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-6.0&tabs=visual-studio) (`.cshtml`).
 - Représentent l'interface utilisateur (UI) de l'application.
 
 ```csharp
 @{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "Home Page";
 }
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
 ```
 
 ---
@@ -219,7 +243,9 @@ public class Movie
 
 - Regroupés dans le répertoire `wwwroot/`.
 - Rassemblent les fichiers CSS et JavaScript utilisés côté client.
-- Incluent par défaut Bootstrap et jQuery.
+- Intègrent par défaut Bootstrap et jQuery.
+
+![wwwroot folder structure](images/aspnetcoremvc_wwwroot.png)
 
 ---
 
@@ -232,69 +258,58 @@ Centralise les paramètres de configuration de l'application.
   "Logging": {
     "LogLevel": {
       "Default": "Information",
-      "Microsoft": "Warning",
-      "Microsoft.Hosting.Lifetime": "Information",
+      "Microsoft.AspNetCore": "Warning",
       "Microsoft.EntityFrameworkCore.Database.Command": "Information"
     }
-  },
-  "AllowedHosts": "*",
-  "ConnectionStrings": {
-    "MvcMovieContext": "Data Source=MvcMovieContext-8719dcdb-c317-48bf-9cd8-a4c4167ce370.db"
   }
 }
 ```
 
 ---
 
-{{% section %}}
+### Le fichier Program.cs
 
-### Le fichier Startup.cs
-
-Contient la classe `Startup` qui permet :
-
-- la configuration des services utilisés par l'application ;
-- la définition du _pipeline_ de gestion des requêtes HTTP entrantes.
-
----
-
-### Exemple de classe Startup
+- Configure les services utilisés et le _pipeline_ de gestion des requêtes HTTP entrantes.
+- Démarre l'application.
 
 ```csharp
-public class Startup
-{
-    // Use this method to add services to the container.
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddControllersWithViews();
-    }
-    // Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-    {
-        app.UseHttpsRedirection();
-        app.UseStaticFiles();
-        app.UseRouting();
-        app.UseAuthorization();
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapDefaultControllerRoute();
-        });
-    }
-}
+var builder = WebApplication.CreateBuilder(args);
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+var app = builder.Build();
+// ...
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.Run();
+
 ```
 
-{{% /section %}}
+---
+
+### Lancement de l'application
+
+- En ligne de commande avec `dotnet run` ou depuis VS Code, après avoir généré les _assets_.
+- Compile le code puis écoute un port aléatoire > 1000 pour attendre les requêtes HTTP entrantes sur la machine locale.
+- Recompilation nécessaire après tout changement.
+
+![dotnet run](images/dotnet-run.png)
 
 ---
 
-## Mécanismes fondamentaux
+## Routage et environnement
 
 ---
-
-{{% section %}}
 
 ### Routage des requêtes
 
-- Associe les requêtes HTTP entrantes au code à éxécuter (méthodes des contrôleurs).
+- Associe les requêtes HTTP entrantes au code à exécuter (méthodes des contrôleurs).
 - Permet à l'application web d'utiliser des URL propres et _SEO-friendly_, plutôt que des noms de fichiers.
 - [Plus d'informations](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0).
 
@@ -303,76 +318,643 @@ public class Startup
 ### Routage par convention
 
 - Permet de définir globalement la correspondance entre le format de l'URL et la méthode d'action d'un contrôleur à exécuter.
-- Format par défaut : `/[Controller]/[ActionName]/[Parameters]`.
-- Exemple : `https://myapp/Student/Details/Code=137` appelle la méthode `Details` du contrôleur `StudentController`, en lui passant un paramètre nommé `Code` ayant la valeur 137.
+- Format par défaut : `/{ControllerName}/{ActionName}?{Parameters}`.
+- Exemple : `https://myapp/Student/Details?code=137` appelle la méthode `Details` du contrôleur `StudentController`, en lui passant un paramètre nommé `code` ayant la valeur 137.
 
 ---
 
-### Configuration du routage par convention dans Startup
+### Configuration du routage par convention dans Program.cs
 
 ```csharp
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
-    // ...
-    app.UseEndpoints(endpoints =>
-    {
-        endpoints.MapControllerRoute(
-            name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}");
-    });
-}
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 ```
 
 `Home`, `Index` et `id` sont resp. les noms par défaut du contrôleur, de l'action et du paramètre (optionnel).
+
+---
+
+### Exemple : ajout d'un contrôleur
+
+Dans le fichier `Controllers/HelloController.cs`.
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+
+namespace MvcMovie.Controllers;
+
+public class HelloController : ControllerBase
+{
+    // GET: /Hello/
+    public string Index()
+    {
+        return "Hello World!";
+    }
+}
+```
+
+---
+
+### Utilisation du contrôleur créé
+
+- L'URL <https://localhost:{port}/hello> est automatiquement routée vers la méthode `Index` de la classe `HelloController`.
+- Même résultat avec <https://localhost:{port}/hello/index>,  `Index` étant le nom de l'action par défaut.
+
+![Hello World!](images/helloworldcontroller.png)
+
+---
+
+### Passage de paramètres à un contrôleur
+
+- On définit des paramètres dans l'URL via la syntaxe `?{name1}={value1}&{name2}=...`
+- Leurs valeurs sont passées aux méthodes d'actions des contrôleurs.
+
+```csharp
+using System.Text.Encodings.Web;
+// ...
+public class HelloController : ControllerBase
+{
+    // ...
+    // GET: /Hello/Welcome/ 
+    public string Welcome(string name, int numTimes = 1)
+    {
+        // Prevents injection attacks
+        return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
+    }
+}
+
+```
+
+---
+
+### Exemple : passage de paramètres au contrôleur créé
+
+- L'URL <https://localhost:{port}/hello/welcome> est automatiquement routée vers la méthode `Welcome` de la classe `HelloController`.
+- On peut définir (ou pas) les valeurs des paramètres `name` et `numTimes`.
+
+![Welcome](images/welcomecontroller.png)
+
+---
+
+### Environnements
+
+- Permettent d'adapter la configuration de l'application au contexte (développement, test ou production).
+- Définis par la variable d'environnement `ASPNETCORE_ENVIRONMENT`. En l'absence de cette variable, l'environnement est de type Production.
+- [Plus d'informations](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-5.0).
+
+---
+
+### Définition de l'environnement avec Visual Studio Code
+
+Dans le fichier `./vscode/launch.json`
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (web)",
+      # ...
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      # ...
+    }
+  ]
+}
+
+```
+
+---
+
+### Configuration de l'application selon l'environnement détecté
+
+Dans le fichier `Program.cs`.
+
+```csharp
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
+}
+else
+{
+    app.UseDeveloperExceptionPage();
+}
+```
+
+---
+
+## Interactions avec une base de données
+
+---
+
+### EF Core et ASP.NET Core
+
+- Entity Framework Core est la solution de persistance par défaut sous ASP.NET Core.
+- Après son installation, on configure l'application pour [associer](https://docs.microsoft.com/en-us/ef/core/dbcontext-configuration/) un contexte BD à chaque requête HTTP entrante.
+- Il est ensuite utilisé par les contrôleurs pour interagir avec la base de données.
+
+---
+
+### Exemple : ajout d'une classe métier
+
+Dans le fichier `Models/Movie.cs`.
+
+```csharp
+using System.ComponentModel.DataAnnotations;
+
+namespace MvcMovie.Models;
+
+public class Movie
+{
+    public int Id { get; set; }
+
+    public string Title { get; set; } = null!;
+
+    [Display(Name = "Release Date"), DataType(DataType.Date)]
+    public DateTime ReleaseDate { get; set; }
+
+    public string Genre { get; set; } = null!;
+}
+````
+
+---
+
+### Création du contexte BD
+
+Dans le fichier `Data/MvcMovieContext.cs`.
+
+```csharp
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Models;
+
+namespace MvcMovie.Data;
+
+public class MvcMovieContext : DbContext
+{
+    public DbSet<Movie> Movies { get; set; } = null!;
+    public string DbPath { get; private set; }
+
+    public MvcMovieContext()
+    {
+        // Path to SQLite database file
+        DbPath = "MvcMovie.db";
+    }
+
+    // The following configures EF to create a SQLite database file locally
+    protected override void OnConfiguring(DbContextOptionsBuilder options)
+    {
+        // Use SQLite as database
+        options.UseSqlite($"Data Source={DbPath}");
+        // Optional: log SQL queries to console
+        options.LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information);
+    }
+}
+```
+
+---
+
+### Synchronisation de la base de données avec le modèle
+
+Réalisée via des migrations.
+
+```bash
+# Create a new migration
+dotnet ef migrations add {MigratioName}
+
+# Sync DB with most recent migrations
+dotnet ef database update
+```
+
+---
+
+### Configuration de l'application pour EF Core
+
+Dans le fichier `Program.cs`.
+
+```csharp
+// ...
+using MvcMovie.Data;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+// Attach an EF Core database context to each query
+builder.Services.AddDbContext<MvcMovieContext>();
+// ...
+```
+
+---
+
+### Gestion des fichiers temporaires SQLite
+
+Edition du fichier `.gitignore` pour ignorer ces fichiers.
+
+```bash
+# Ignore SQLite temp files
+*.db-shm
+*.db-wal
+# ...
+```
+
+---
+
+### Remplissage de la base de données
+
+Classe `SeedData` créée dans le répertoire `Models/`.
+
+```csharp
+using MvcMovie.Data;
+
+namespace MvcMovie.Models;
+
+public class SeedData
+{
+    public static void Init()
+    {
+        using (var context = new MvcMovieContext())
+        {
+            // Look for existing content
+            if (context.Movies.Any())
+            {
+                return;   // DB already filled
+            }
+
+            // Add several movies
+            context.Movies.AddRange(
+                                new Movie
+                                {
+                                    Title = "When Harry Met Sally",
+                                    ReleaseDate = DateTime.Parse("1989-2-12"),
+                                    Genre = "Romantic Comedy",
+                                },
+                                // ...
+                            );
+
+            // Commit changes into DB
+            context.SaveChanges();
+        }
+    }
+}
+```
+
+---
+
+### Exécution du code de remplissage
+
+Dans le fichier `Program.cs`.
+
+```csharp
+using MvcMovie.Data;
+using MvcMovie.Models;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+// Attach an EF Core database context to each query
+builder.Services.AddDbContext<MvcMovieContext>();
+
+var app = builder.Build();
+
+// Seed data into DB
+SeedData.Init();
+// ...
+```
+
+---
+
+## Création d'API web
+
+---
+
+### La notion d'API
+
+- Une **API** (_Application Programming Interface_) est un point d'entrée programmatique dans un système.
+- Elle fournit un moyen d'interagir avec ce système.
+- Les API permettent aux développeurs d'intégrer des services externes dans leurs applications.
+
+---
+
+### Spécificités des API web
+
+- Une **API web** (appelée parfois service web) est une API accessible via les technologies du web : HTTP ou HTTPS.
+- Les API web utilisent le plus souvent le format de donnée **JSON**.
+- Certaines sont librement utilisables mais la plupart nécessitent une authentification du client.
+
+---
+
+{{% section %}}
+
+### Le format JSON
+
+- JSON = JavaScript Object Notation.
+- Format de description de données structurées inspiré de la syntaxe des objets JavaScript.
+- Contenu JSON = ensemble de paires champ/valeur.
+- Types de valeur possibles : nombres, chaînes, booléens, tableaux, objets.
+- A supplanté XML comme format standard pour les échanges de données via des API web.
+
+---
+
+### Exemple de contenu JSON
+
+```json
+{
+  "cars": [
+    {
+      "model": "Peugeot",
+      "color": "blue",
+      "checkups": [2015, 2017]
+    },
+    {
+      "model": "Citroën",
+      "color": "white",
+      "checkups": [2003, 2005, 2007, 2009, 2011, 2013]
+    }
+  ]
+}
+```
 
 {{% /section %}}
 
 ---
 
-### Scaffolding
+### Exemples d'API web
 
-`> dotnet-aspnet-codegenerator [arguments]`
-
-- Permet de générer le code source pour les opérations élémentaires **CRUD** (_Create, Read, Update, Delete_) liées à une classe du Modèle.
-- [Plus d'informations](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/tools/dotnet-aspnet-codegenerator?view=aspnetcore-5.0).
-- [Exemple de résultat](https://github.com/ensc-glog/MvcMovie/commit/f5c4ec45033f5509ec736bc1bebf010f200921f0).
+- [PokéAPI](https://pokeapi.co/)
+- [Star Wars API](https://swapi.dev/)
+- [Wikipedia](https://en.wikipedia.org/w/api.php?)
+- [Spotify](https://developer.spotify.com/documentation/web-api/)
+- [OMDb API](https://www.omdbapi.com/)
+- ...
 
 ---
 
-### Database context
+### Outils pour la gestion des API web
 
-- Hérite de la classe abstraite `DbContext`.
-- Spécifie les classes du modèle à sauvegarder dans la base de données.
+- N'importe quel navigateur pour les tests basiques.
+- Extension [RESTClient](https://addons.mozilla.org/fr/firefox/addon/restclient/) pour Firefox.
+- [Postman](https://www.getpostman.com/).
+- ...
+
+---
+
+### Les API RESTful
+
+- **REST** (_REpresentational State Transfer_) est un ensemble de principes pour créer des API : client/serveur, pas de gestion d'état, etc.
+- Une API web _RESTful_ (conforme au standard REST) expose une interface basée sur les commandes HTTP. Exemples :
+  - `GET /<ResourceName>/<id>` pour accéder à une ressource.
+  - `POST /<ResourceName>` (avec les informations nécessaires dans le corps de la requête) pour la créer.
+
+---
+
+### Fonctionnement d'une API web avec ASP.NET Core MVC
+
+![API call with ASP.NET Core](images/aspnetcore_api.png)
+
+---
+
+### Création d'un contrôleur d'API
+
+- Dans le répertoire `Controllers/`.
+- Hérite de la classe `ControllerBase`.
+- Associé aux routes du type `api/{ApiControllerName}/`.
+
+---
+
+### Exemple de contrôleur d'API
+
+- Dans le fichier `Controllers/MovieApiController.cs`.
+- La conversion au format JSON est implicite.
 
 ```csharp
-public class MvcMovieContext : DbContext
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Data;
+using MvcMovie.Models;
+
+namespace MvcMovie.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class MovieApiController : ControllerBase
 {
-    public MvcMovieContext(DbContextOptions<MvcMovieContext> options)
-        : base(options)
-    {}
-    public DbSet<MvcMovie.Models.Movie> Movie { get; set; }
+    private readonly MvcMovieContext _context;
+
+    public MovieApiController(MvcMovieContext context)
+    {
+        _context = context;
+    }
+
+    // GET: api/MovieApi
+    public async Task<ActionResult<IEnumerable<Movie>>> GetMovies()
+    {
+        return await _context.Movies.ToListAsync();
+    }
 }
 ```
 
+---
+
+### Requêtes synchrones
+
+[![Synchronous requests](images/sync-request-asp.net-core.png)](https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/)
+
+---
+
+### Requêtes asynchrones
+
+[![Asynchronous requests](images/async-request-asp.net-core.png)](https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/)
+
+---
+
+### Résultat de l'appel à l'API
+
+![Movie API](images/movieapi.png)
+
+---
+
+### Accès à un élément
+
 ```csharp
-public void ConfigureServices(IServiceCollection services)
+// ...
+[Route("api/[controller]")]
+[ApiController]
+public class MovieApiController : ControllerBase
 {
     // ...
-    services.AddDbContext<MvcMovieContext>(options =>
-            options.UseSqlite(Configuration.GetConnectionString("MvcMovieContext")));
+    // GET: api/MovieApi/5
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Movie>> GetMovie(int id)
+    {
+        var movie = await _context.Movies.FindAsync(id);
+        if (movie == null)
+            return NotFound();
+        return movie;
+    }
 }
 ```
 
 ---
 
-### Migrations
+### Test d'accès
 
-`> dotnet ef migrations add InitialCreate`
+Envoyer une requête HTTP GET vers l'URL <https://localhost:{port}/api/movieapi/{movieId}>.
 
-`> dotnet ef database update`
+![Get one movie](images/movieapi-getone.png)
 
-- Permettent à la base de données d'être synchronisée avec les évolutions du Modèle, sans perte de données.
-- Migration = évolution incrémentale depuis la migration précédente.
+---
+
+### Création d'un élément
+
+```csharp
+// ...
+[Route("api/[controller]")]
+[ApiController]
+public class MovieApiController : ControllerBase
+{
+    // ...
+    // POST: api/MovieApi
+    // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+    [HttpPost]
+    public async Task<ActionResult<Movie>> PostMovie(Movie movie)
+    {
+        _context.Movies.Add(movie);
+        await _context.SaveChangesAsync();
+
+        return CreatedAtAction("GetTodo", new { id = movie.Id }, movie);
+    }
+}
+```
+
+---
+
+### Test de création
+
+- Envoyer une requête HTTP POST en spécifiant la valeur du champ `Content-type` à `application/json`.
+- Le contenu JSON de la requête doit inclure les propriétés obligatoires du nouvel élément.
+- Exemple avec l'outil [curl](https://curl.se/):
+
+```bash
+curl -X POST -k -H 'Content-Type: application/json' -i https://localhost:{port}/api/movieapi/ --data '{
+    "Title": "1941",
+    "ReleaseDate": "1979-12-14T00:00:00",
+    "Genre": "Comedy"
+}'
+```
+
+---
+
+### Mise à jour d'un élément existant
+
+```csharp
+// ...
+[Route("api/[controller]")]
+[ApiController]
+public class MovieApiController : ControllerBase
+{
+    // ...
+    // PUT: api/MovieApi/5
+    // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+    [HttpPut("{id}")]
+    public async Task<IActionResult> PutMovie(int id, Movie movie)
+    {
+        if (id != movie.Id)
+            return BadRequest();
+
+        _context.Entry(movie).State = EntityState.Modified;
+        try
+        {
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!MovieExists(id))
+                return NotFound();
+            else
+                throw;
+        }
+        return NoContent();
+    }
+
+    // Returns true if a movie with specified id already exists
+    private bool MovieExists(int id)
+    {
+        return _context.Movies.Any(m => m.Id == id);
+    }
+}
+```
+
+---
+
+### Test de mise à jour
+
+- Envoyer une requête HTTP PUT vers l'élément à modifier, en spécifiant la valeur du champ `Content-type` à `application/json`.
+- Le contenu JSON de la requête doit inclure toutes les propriétés de l'élément modifié.
+- Exemple avec l'outil [curl](https://curl.se/):
+
+```bash
+curl -X PUT -k -H 'Content-Type: application/json' -i https://localhost:7294/api/movieapi/5 --data '{
+    "Id": 5,
+    "Title": "1941 (movie)",
+    "ReleaseDate": "1979-12-14T00:00:00",
+    "Genre": "Comedy"
+}'
+```
+
+---
+
+### Suppression d'un élément
+
+```csharp
+// ...
+[Route("api/[controller]")]
+[ApiController]
+public class MovieApiController : ControllerBase
+{
+    // ...
+    // DELETE: api/MovieApi/5
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteMovie(int id)
+    {
+        var movie = await _context.Movies.FindAsync(id);
+        if (movie == null)
+            return NotFound();
+
+        _context.Movies.Remove(movie);
+        await _context.SaveChangesAsync();
+
+        return NoContent();
+    }
+    // ...
+```
+
+---
+
+### Test de suppression
+
+Envoyer une requête HTTP DELETE vers l'URL <https://localhost:{port}/api/movieapi/{movieId}>.
+
+---
+
+### Récapitulatif : API créée
+
+| Route                       | Description            |
+| --------------------------- | ---------------------- |
+| `GET /api/MovieApi`         | Renvoie tous les films |
+| `GET /api/MovieApi/{id}`    | Renvoie un film        |
+| `POST /api/MovieApi`        | Ajoute un nouvel film  |
+| `PUT /api/MovieApi/{id}`    | Met à jour un film     |
+| `DELETE /api/MovieApi/{id}` | Supprime un film       |
+
+---
+
+## Création de vues HTML
 
 ---
 
@@ -504,8 +1086,6 @@ public IActionResult Contact()
 
 ---
 
-{{% section %}}
-
 ### Validation des données
 
 L'annotation des classes du Modèle permet de définir des **règles de validation** qui seront automatiquement vérifiées à la fois côté serveur et côté client.
@@ -541,269 +1121,6 @@ public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = 
     }
     // At this point, something failed: redisplay form
     return View(model);
-}
-```
-
-{{% /section %}}
-
----
-
-{{% section %}}
-
-### Environnements
-
-- Permettent d'adapter la configuration de l'application au contexte (développement, test ou production).
-- Définis par la variable d'environnement `ASPNETCORE_ENVIRONMENT`. En l'absence de cette variable, l'environnement est de type Production.
-- [Plus d'informations](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-5.0).
-
----
-
-### Définition de l'environnement avec Visual Studio Code
-
-Fichier `./vscode/launch.json`
-
-```json
-{
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": ".NET Core Launch (web)",
-      # ...
-      "env": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      # ...
-    }
-  ]
-}
-
-```
-
----
-
-### Configuration de l'application selon l'environnement détecté
-
-```csharp
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
-    if (env.IsDevelopment())
-    {
-        app.UseDeveloperExceptionPage();
-    }
-    if (env.IsProduction() || env.IsStaging())
-    {
-        app.UseExceptionHandler("/Error");
-    }
-    // ...
-```
-
-{{% /section %}}
-
----
-
-## Création d'API web
-
----
-
-### La notion d'API
-
-Une **API** (_Application Programming Interface_) est un point d'entrée programmatique dans un système.
-
-Elle fournit un moyen d'interagir avec ce système.
-
-Les API permettent aux développeurs d'intégrer des services externes dans leurs applications.
-
----
-
-### Spécificités des API web
-
-Une **API web** (appelée parfois service web) est une API accessible via les technologies du web : HTTP ou HTTPS.
-
-Les API web utilisent le plus souvent le format de donnée **JSON**.
-
-Certaines sont librement utilisables, d'autres nécessitent une authentification du client.
-
----
-
-### Exemples d'API web
-
-- [PokéAPI](https://pokeapi.co/)
-- [Star Wars API](https://swapi.dev/)
-- [Wikipedia](https://en.wikipedia.org/w/api.php?)
-- [Spotify](https://developer.spotify.com/documentation/web-api/)
-- [OMDb API](https://www.omdbapi.com/)
-
-([Source](https://shkspr.mobi/blog/2016/05/easy-apis-without-authentication/))
-
----
-
-### Outils pour la gestion des API web
-
-- N'importe quel navigateur pour les tests basiques.
-- Extension [RESTClient](https://addons.mozilla.org/fr/firefox/addon/restclient/) pour Firefox.
-- [Postman](https://www.getpostman.com/).
-
----
-
-### Les API RESTful
-
-- **REST** (_REpresentational State Transfer_) est un ensemble de principes pour créer des API : client/serveur, pas de gestion d'état, etc.
-- Une API web _RESTful_ (conforme au standard REST) expose une interface basée sur les commandes HTTP. Exemples :
-  - `GET /<ResourceName>/<id>` pour accéder à une ressource.
-  - `POST /<ResourceName>` (avec les informations nécessaires dans le corps de la requête) pour la créer.
-
----
-
-{{% section %}}
-
-### Le format JSON
-
-- JSON = JavaScript Object Notation.
-- Format de description de données structurées inspiré de la syntaxe des objets JavaScript.
-- Contenu JSON = ensemble de paires champ/valeur.
-- Types de valeur possibles : nombres, chaînes, booléens, tableaux, objets.
-- A supplanté XML comme format standard pour les échanges de données via des API web.
-
----
-
-### Exemple de contenu JSON
-
-```json
-{
-  "cars": [
-    {
-      "model": "Peugeot",
-      "color": "blue",
-      "checkups": [2015, 2017]
-    },
-    {
-      "model": "Citroën",
-      "color": "white",
-      "checkups": [2003, 2005, 2007, 2009, 2011, 2013]
-    }
-  ]
-}
-```
-
-{{% /section %}}
-
----
-
-### Création d'une API web avec ASP.NET Core
-
-`> dotnet-aspnet-codegenerator controller -name <ControllerName> -m <ModelName> -async -api [other arguments]`
-
-Crée un contrôleur `<ControllerName>` qui :
-
-- expose une API web pour la classe `<ModelName>` du Modèle ;
-- renvoie des données au format JSON et non des vues HTML.
-
----
-
-### Principe de fonctionnement
-
-![API call with ASP.NET Core](images/aspnetcore_api.png)
-
----
-
-### Exemple de contrôleur d'API
-
-```csharp
-[Route("api/[controller]")]
-[ApiController]
-public class TodosApiController : ControllerBase
-{
-  // ...
-}
-```
-
-- Hérite de la classe `ControllerBase` et non pas de `Controller` comme les contrôleurs "classiques".
-- Associé aux routes du type `api/TodosApi/<Argument?>`.
-
----
-
-### API générée
-
-| Route                     | Description               |
-| ------------------------- | ------------------------- |
-| GET /api/TodosApi         | Renvoie tous les éléments |
-| GET /api/TodosApi/{id}    | Renvoie un élément        |
-| POST /api/TodosApi        | Ajoute un nouvel élément  |
-| PUT /api/TodosApi/{id}    | Met à jour un élément     |
-| DELETE /api/TodosApi/{id} | Supprime un élément       |
-
----
-
-### Exemple de méthode d'API
-
-```csharp
-// GET: api/TodosApi/5
-[HttpGet("{id}")]
-public async Task<ActionResult<Todo>> GetTodo(int id)
-{
-    var todo = await _context.Todo.FindAsync(id);
-
-    if (todo == null)
-    {
-        return NotFound();
-    }
-
-    return todo;
-}
-```
-
----
-
-### Appels synchrones
-
-[![Synchronous requests](images/sync-request-asp.net-core.png)](https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/)
-
----
-
-### Appels asynchrones
-
-[![Asynchronous requests](images/async-request-asp.net-core.png)](https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/)
-
----
-
-## Interactions avec une base de données
-
----
-
-### EF Core et ASP.NET Core
-
-- Un contexte BD est [associé](https://docs.microsoft.com/en-us/ef/core/dbcontext-configuration/) à chaque requête HTTP entrante dans le fichier `Startup.cs`.
-- Il est ensuite utilisé par les contrôleurs pour interagir avec la base de données.
-
-```csharp
-public class Startup
-{
-    //...
-
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddControllersWithViews();
-
-        services.AddDbContext<MvcMovieContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("MvcMovieContext")));
-    }
-```
-
----
-
-### Affichage des requêtes SQL exécutées par EF Core
-
-Ajout de la ligne ci-dessous dans le fichier `appsettings.json`.
-
-```json
-{
-  "Logging": {
-    "LogLevel": {
-      # ...
-      "Microsoft.EntityFrameworkCore.Database.Command": "Information"
-    }
-  },
-  # ...
 }
 ```
 
