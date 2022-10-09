@@ -219,6 +219,7 @@
 &lt;/h3>&lt;ul>
 &lt;li>Approche &lt;em>&lt;strong>code first&lt;/strong>&lt;/em> : le modèle objet constitue la modélisation de référence. La base de données est automatiquement synchronisée avec lui.&lt;/li>
 &lt;li>&lt;a href="https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli">Migrations&lt;/a> : modifications incrémentales du schéma relationnel reflétant les évolutions du modèle.&lt;/li>
+&lt;li>Permettent à la BD d&amp;rsquo;être synchronisée avec les évolutions du modèle, sans perte de données.&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h3 id="commandes-liées-aux-migrations" >Commandes liées aux migrations
@@ -271,8 +272,8 @@
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>dotnet new console -o {AppName}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd {AppName}
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>dotnet new console -o EFBlog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd EFBlog
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotnet new gitignore
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotnet add package Microsoft.EntityFrameworkCore.Design
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotnet add package Microsoft.EntityFrameworkCore.Sqlite
@@ -282,7 +283,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;OutputType&amp;gt;&lt;/span>Exe&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/OutputType&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;TargetFramework&amp;gt;&lt;/span>net6.0&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/TargetFramework&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;ImplicitUsings&amp;gt;&lt;/span>enable&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/ImplicitUsings&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;Nullable&amp;gt;&lt;/span>disable&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/Nullable&amp;gt;&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">&amp;lt;!-- A MODIFIER --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;Nullable&amp;gt;&lt;/span>enable&lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/Nullable&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;/PropertyGroup&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;lt;ItemGroup&amp;gt;&lt;/span>
@@ -305,18 +306,34 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Blog
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Url { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Url { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>!;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> List&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> List&amp;lt;Post&amp;gt;();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Post
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Title { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Content { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Title { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>!;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Content { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>!;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> BlogId { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> Blog Blog { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> Blog Blog { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>!;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="lopérateur-de-null-suppression" >L&amp;rsquo;opérateur de null-suppression
+&lt;span>
+&lt;a href="#lop%c3%a9rateur-de-null-suppression">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Appelée aussi &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-forgiving">null-forgiving operator&lt;/a>.&lt;/li>
+&lt;li>Précise au compilateur qu&amp;rsquo;une expression de type référence ne vaudra jamais &lt;code>null&lt;/code> (donc qu&amp;rsquo;elle pourra être déréférencée sans risque).&lt;/li>
+&lt;li>&lt;code>= null!&lt;/code> permet d&amp;rsquo;&lt;a href="https://learn.microsoft.com/en-us/ef/core/miscellaneous/nullable-reference-types">initialiser les propriétés C# gérées par EF Core&lt;/a> dans le contexte &lt;em>null-aware&lt;/em> de .NET 6+.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;a href="https://youtu.be/g25G1M4EXrQ?t=93">&lt;img src="images/we-choose.png" alt="JKK &amp;amp;lsquo;62 speech">&lt;/a>&lt;/p>
+&lt;/section>
+&lt;hr>
 &lt;h3 id="création-du-contexte-bd" >Création du contexte BD
 &lt;span>
 &lt;a href="#cr%c3%a9ation-du-contexte-bd">
@@ -329,15 +346,15 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> BloggingContext : DbContext
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;Blog&amp;gt; Blogs { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;Blog&amp;gt; Blogs { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>!;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;Post&amp;gt; Posts { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>!;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> DbPath { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> BloggingContext()
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Path to SQLite database file&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DbPath = &lt;span style="color:#0086d2">&amp;#34;EFGetStarted.db&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DbPath = &lt;span style="color:#0086d2">&amp;#34;EFBlog.db&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// The following configures EF to create a SQLite database file locally&lt;/span>
@@ -372,7 +389,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Id = table.Column&amp;lt;&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>&amp;gt;(type: &lt;span style="color:#0086d2">&amp;#34;INTEGER&amp;#34;&lt;/span>, nullable: &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .Annotation(&lt;span style="color:#0086d2">&amp;#34;Sqlite:Autoincrement&amp;#34;&lt;/span>, &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>),
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Url = table.Column&amp;lt;&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>&amp;gt;(type: &lt;span style="color:#0086d2">&amp;#34;TEXT&amp;#34;&lt;/span>, nullable: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Url = table.Column&amp;lt;&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>&amp;gt;(type: &lt;span style="color:#0086d2">&amp;#34;TEXT&amp;#34;&lt;/span>, nullable: &lt;span style="color:#fb660a;font-weight:bold">false&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> constraints: table =&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
@@ -395,8 +412,8 @@
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>&lt;a href="https://github.com/ensc-glog/EFGetStarted">https://github.com/ensc-glog/EFGetStarted&lt;/a>&lt;/p>
-&lt;p>&lt;img src="images/efcore-efgetstarted.png" alt="Structure de l&amp;amp;rsquo;application d&amp;amp;rsquo;exemple">&lt;/p>
+&lt;/h3>&lt;p>&lt;a href="https://github.com/ensc-glog/EFBlog">https://github.com/ensc-glog/EFBlog&lt;/a>&lt;/p>
+&lt;p>&lt;img src="images/efcore-efblog.png" alt="Structure de l&amp;amp;rsquo;application d&amp;amp;rsquo;exemple">&lt;/p>
 &lt;hr>
 &lt;h3 id="opérations-crud" >Opérations CRUD
 &lt;span>
@@ -5238,9 +5255,10 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/h2>&lt;ul>
 &lt;li>Présentation de ASP.NET Core&lt;/li>
 &lt;li>Le framework ASP.NET Core MVC&lt;/li>
-&lt;li>Mécanismes fondamentaux&lt;/li>
-&lt;li>Création d&amp;rsquo;API web&lt;/li>
+&lt;li>Routage et environnement&lt;/li>
 &lt;li>Interactions avec une base de données&lt;/li>
+&lt;li>Création d&amp;rsquo;API web&lt;/li>
+&lt;li>Création de vues HTML&lt;/li>
 &lt;li>Tests&lt;/li>
 &lt;/ul>
 &lt;hr>
@@ -5277,9 +5295,39 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;li>Multi-plateformes et &lt;a href="https://github.com/dotnet/aspnetcore">open source&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="ui-générée-côté-serveur" >UI générée côté serveur
+&lt;section data-shortcode-section>
+&lt;h3 id="rappel--le-fonctionnement-du-web" >Rappel : le fonctionnement du web
 &lt;span>
-&lt;a href="#ui-g%c3%a9n%c3%a9r%c3%a9e-c%c3%b4t%c3%a9-serveur">
+&lt;a href="#rappel--le-fonctionnement-du-web">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Le web est basé sur un modèle &lt;strong>client/serveur&lt;/strong> :&lt;/p>
+&lt;ul>
+&lt;li>Le client (navigateur, application mobile, robot d&amp;rsquo;indexation, etc) envoie une demande (&lt;strong>requête&lt;/strong>) au serveur.&lt;/li>
+&lt;li>Le serveur prépare sa &lt;strong>réponse&lt;/strong> à la requête du client, puis la lui renvoie.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/web_request_response.png" alt="Modèle requête/réponse du web">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="rappel--le-protocole-http" >Rappel : le protocole HTTP
+&lt;span>
+&lt;a href="#rappel--le-protocole-http">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;em>HyperText Transfer Protocol&lt;/em>.&lt;/li>
+&lt;li>Socle technique du web.&lt;/li>
+&lt;li>Equivalent sécurisé : &lt;strong>HTTPS&lt;/strong>.&lt;/li>
+&lt;li>Basé sur des &lt;strong>commandes&lt;/strong> textuelles exprimant les différentes actions possibles : &lt;em>GET&lt;/em>, &lt;em>PUT&lt;/em>, &lt;em>POST&lt;/em>, etc).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="ui-web-générée-côté-serveur" >UI web générée côté serveur
+&lt;span>
+&lt;a href="#ui-web-g%c3%a9n%c3%a9r%c3%a9e-c%c3%b4t%c3%a9-serveur">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -5287,12 +5335,16 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;ul>
 &lt;li>Peu d&amp;rsquo;exigences techniques côté client (navigateur simple, trafic réseau limité).&lt;/li>
 &lt;li>Accès BD et contrôles centralisés.&lt;/li>
-&lt;li>Exemples d&amp;rsquo;usages : sites dynamiques, blogs, CMS.&lt;/li>
+&lt;li>Exemples d&amp;rsquo;usages : sites dynamiques, blogs, CMS&amp;hellip;&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="ui-générée-côté-client" >UI générée côté client
+&lt;p>&lt;a href="https://www.growth-rocket.com/blog/a-closer-look-at-client-side-server-side-rendering/">&lt;img src="images/Server-Side-Rendering-Flowchart.jpg" alt="SSR">&lt;/a>&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="ui-web-générée-côté-client" >UI web générée côté client
 &lt;span>
-&lt;a href="#ui-g%c3%a9n%c3%a9r%c3%a9e-c%c3%b4t%c3%a9-client">
+&lt;a href="#ui-web-g%c3%a9n%c3%a9r%c3%a9e-c%c3%b4t%c3%a9-client">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -5300,8 +5352,11 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;ul>
 &lt;li>Interactions riches avec l&amp;rsquo;utilisateur.&lt;/li>
 &lt;li>Capacités matérielles et logicielles du client utilisables.&lt;/li>
-&lt;li>Exemples d&amp;rsquo;usages : tableau de bord interactif, applications collaboratives.&lt;/li>
+&lt;li>Exemples d&amp;rsquo;usages : tableau de bord interactif, applications collaboratives&amp;hellip;&lt;/li>
 &lt;/ul>
+&lt;hr>
+&lt;p>&lt;a href="https://www.growth-rocket.com/blog/a-closer-look-at-client-side-server-side-rendering/">&lt;img src="images/Client-Side-Rendering-Flowchart.jpg" alt="CSR">&lt;/a>&lt;/p>
+&lt;/section>
 &lt;hr>
 &lt;h3 id="loffre-technique-aspnet-core" >L&amp;rsquo;offre technique ASP.NET Core
 &lt;span>
@@ -5322,35 +5377,6 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;hr>
-&lt;section data-shortcode-section>
-&lt;h3 id="rappel--le-fonctionnement-du-web" >Rappel : le fonctionnement du web
-&lt;span>
-&lt;a href="#rappel--le-fonctionnement-du-web">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>Le web est basé sur un modèle &lt;strong>client/serveur&lt;/strong> :&lt;/p>
-&lt;ul>
-&lt;li>Le client (navigateur, application mobile, robot d&amp;rsquo;indexation, etc) envoie une demande (&lt;strong>requête&lt;/strong>) au serveur.&lt;/li>
-&lt;li>Le serveur prépare sa &lt;strong>réponse&lt;/strong> à la requête du client, puis la lui renvoie.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;img src="images/web_request_response.png" alt="Modèle requête/réponse du web">&lt;/p>
-&lt;/section>
-&lt;hr>
-&lt;h3 id="le-protocole-http" >Le protocole HTTP
-&lt;span>
-&lt;a href="#le-protocole-http">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;em>HyperText Transfer Protocol&lt;/em>.&lt;/li>
-&lt;li>Socle technique du web.&lt;/li>
-&lt;li>Equivalent sécurisé : &lt;strong>HTTPS&lt;/strong>.&lt;/li>
-&lt;li>Basé sur des &lt;strong>commandes&lt;/strong> textuelles exprimant les différentes actions possibles : &lt;em>GET&lt;/em>, &lt;em>PUT&lt;/em>, &lt;em>POST&lt;/em>, etc).&lt;/li>
-&lt;/ul>
-&lt;hr>
 &lt;h3 id="larchitecture-mvc" >L&amp;rsquo;architecture MVC
 &lt;span>
 &lt;a href="#larchitecture-mvc">
@@ -5398,8 +5424,8 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;li>
 &lt;p>Avantages :&lt;/p>
 &lt;ul>
-&lt;li>Clarification de l’architecture.&lt;/li>
 &lt;li>Séparation nette des responsabilités =&amp;gt; couplage faible, cohésion forte, maintenance et évolutions facilitées.&lt;/li>
+&lt;li>Standard connu et bien établi.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
@@ -5431,13 +5457,24 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="structure-dune-application-aspnet-core-mvc" >Structure d&amp;rsquo;une application ASP.NET Core MVC
+&lt;h3 id="creation-dune-application-aspnet-core-mvc" >Creation d&amp;rsquo;une application ASP.NET Core MVC
 &lt;span>
-&lt;a href="#structure-dune-application-aspnet-core-mvc">
+&lt;a href="#creation-dune-application-aspnet-core-mvc">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>&lt;img src="images/aspnetcoremvc_structure.png" alt="Structure d&amp;amp;rsquo;une application ASP.NET Core MVC">&lt;/p>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>dotnet new mvc -o {AppName}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd {AppName}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotnet new gitignore
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="structure-de-lapplication-créée" >Structure de l&amp;rsquo;application créée
+&lt;span>
+&lt;a href="#structure-de-lapplication-cr%c3%a9%c3%a9e">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://github.com/ensc-glog/MvcMovie">https://github.com/ensc-glog/MvcMovie&lt;/a>&lt;/p>
+&lt;p>&lt;img src="images/aspnetcoremvc_structure.png" alt="Structure d&amp;amp;rsquo;une application ASP.NET Core MVC">&lt;/p>
 &lt;hr>
 &lt;h3 id="les-contrôleurs" >Les contrôleurs
 &lt;span>
@@ -5447,24 +5484,32 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>Créés dans le répertoire &lt;code>Controllers/&lt;/code>.&lt;/li>
-&lt;li>Héritent de la classe abstraite &lt;code>Controller&lt;/code>.&lt;/li>
+&lt;li>Définis dans l&amp;rsquo;espace de noms &lt;code>{AppName}/Controllers&lt;/code>.&lt;/li>
+&lt;li>Héritent des classes abstraites &lt;code>Controller&lt;/code> (vues HTML) ou &lt;code>ControllerBase&lt;/code> (API web).&lt;/li>
 &lt;li>Définissent les points d&amp;rsquo;entrée dans l&amp;rsquo;application sous la forme de méthodes d&amp;rsquo;action annotables.&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MoviesController : Controller
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: Movies/Details/5&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Details(&lt;span style="color:#cdcaa9;font-weight:bold">int?&lt;/span> id)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">//...&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;hr>
+&lt;h3 id="exemple-de-contrôleur" >Exemple de contrôleur
+&lt;span>
+&lt;a href="#exemple-de-contr%c3%b4leur">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// POST: Movies/Delete/5&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [HttpPost, ActionName(&amp;#34;Delete&amp;#34;)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [ValidateAntiForgeryToken]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; DeleteConfirmed(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> id)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> HomeController : Controller
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> IActionResult Index()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> IActionResult Privacy()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="les-modèles" >Les modèles
 &lt;span>
@@ -5474,19 +5519,10 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>Créés dans le répertoire &lt;code>Models/&lt;/code>.&lt;/li>
+&lt;li>Définis dans l&amp;rsquo;espace de noms &lt;code>{AppName}/Models&lt;/code>.&lt;/li>
 &lt;li>Implémentent la logique métier de l&amp;rsquo;application sous la forme de classes &lt;strong>POCO&lt;/strong> (&lt;em>Plain Old CLR Objects&lt;/em>) souvent associées à des tables BD.&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Movie
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [StringLength(60, MinimumLength = 3)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Title { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Display(Name = &amp;#34;Release Date&amp;#34;), DataType(DataType.Date)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DateTime ReleaseDate { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;hr>
 &lt;h3 id="les-vues" >Les vues
 &lt;span>
 &lt;a href="#les-vues">
@@ -5494,16 +5530,17 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>Créés dans le répertoire &lt;code>Views/[Controller]&lt;/code> sous la forme de fichiers Razor (&lt;code>.cshtml&lt;/code>).&lt;/li>
+&lt;li>Créées dans le répertoire &lt;code>Views/{ControllerName}&lt;/code> sous la forme de fichiers &lt;a href="https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-6.0&amp;amp;tabs=visual-studio">Razor&lt;/a> (&lt;code>.cshtml&lt;/code>).&lt;/li>
 &lt;li>Représentent l&amp;rsquo;interface utilisateur (UI) de l&amp;rsquo;application.&lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>@{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span>] = &lt;span style="color:#0086d2">&amp;#34;About&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span>] = &lt;span style="color:#0086d2">&amp;#34;Home Page&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;h2&amp;gt;@ViewData[&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span>].&amp;lt;/h2&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;h3&amp;gt;@ViewData[&lt;span style="color:#0086d2">&amp;#34;Message&amp;#34;&lt;/span>]&amp;lt;/h3&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;p&amp;gt;Use &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span> area to provide additional information.&amp;lt;/p&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;div class=&lt;span style="color:#0086d2">&amp;#34;text-center&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;h1 class=&lt;span style="color:#0086d2">&amp;#34;display-4&amp;#34;&lt;/span>&amp;gt;Welcome&amp;lt;/h1&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;p&amp;gt;Learn about &amp;lt;a href=&lt;span style="color:#0086d2">&amp;#34;https://docs.microsoft.com/aspnet/core&amp;#34;&lt;/span>&amp;gt;building Web apps with ASP.NET Core&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/div&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="code-et-librairies-client" >Code et librairies client
 &lt;span>
@@ -5514,8 +5551,9 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/h3>&lt;ul>
 &lt;li>Regroupés dans le répertoire &lt;code>wwwroot/&lt;/code>.&lt;/li>
 &lt;li>Rassemblent les fichiers CSS et JavaScript utilisés côté client.&lt;/li>
-&lt;li>Incluent par défaut Bootstrap et jQuery.&lt;/li>
+&lt;li>Intègrent par défaut Bootstrap et jQuery.&lt;/li>
 &lt;/ul>
+&lt;p>&lt;img src="images/aspnetcoremvc_wwwroot.png" alt="wwwroot folder structure">&lt;/p>
 &lt;hr>
 &lt;h3 id="le-fichier-appsettingsjson" >Le fichier appsettings.json
 &lt;span>
@@ -5528,67 +5566,58 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Logging&amp;#34;&lt;/span>: {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;LogLevel&amp;#34;&lt;/span>: {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Default&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Information&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Microsoft&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Warning&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Microsoft.Hosting.Lifetime&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Information&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Microsoft.AspNetCore&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Warning&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Microsoft.EntityFrameworkCore.Database.Command&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Information&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;AllowedHosts&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;*&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;ConnectionStrings&amp;#34;&lt;/span>: {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;MvcMovieContext&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Data Source=MvcMovieContext-8719dcdb-c317-48bf-9cd8-a4c4167ce370.db&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;section data-shortcode-section>
-&lt;h3 id="le-fichier-startupcs" >Le fichier Startup.cs
+&lt;h3 id="le-fichier-programcs" >Le fichier Program.cs
 &lt;span>
-&lt;a href="#le-fichier-startupcs">
+&lt;a href="#le-fichier-programcs">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Contient la classe &lt;code>Startup&lt;/code> qui permet :&lt;/p>
-&lt;ul>
-&lt;li>la configuration des services utilisés par l&amp;rsquo;application ;&lt;/li>
-&lt;li>la définition du &lt;em>pipeline&lt;/em> de gestion des requêtes HTTP entrantes.&lt;/li>
+&lt;/h3>&lt;ul>
+&lt;li>Configure les services utilisés et le &lt;em>pipeline&lt;/em> de gestion des requêtes HTTP entrantes.&lt;/li>
+&lt;li>Démarre l&amp;rsquo;application.&lt;/li>
 &lt;/ul>
-&lt;hr>
-&lt;h3 id="exemple-de-classe-startup" >Exemple de classe Startup
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> builder = WebApplication.CreateBuilder(args);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Add services to the container.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder.Services.AddControllersWithViews();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> app = builder.Build();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.UseHttpsRedirection();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.UseStaticFiles();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.UseRouting();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.UseAuthorization();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.MapControllerRoute(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: &lt;span style="color:#0086d2">&amp;#34;default&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pattern: &lt;span style="color:#0086d2">&amp;#34;{controller=Home}/{action=Index}/{id?}&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.Run();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="lancement-de-lapplication" >Lancement de l&amp;rsquo;application
 &lt;span>
-&lt;a href="#exemple-de-classe-startup">
+&lt;a href="#lancement-de-lapplication">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Startup
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Use this method to add services to the container.&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> ConfigureServices(IServiceCollection services)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> services.AddControllersWithViews();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Use this method to configure the HTTP request pipeline.&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseHttpsRedirection();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseStaticFiles();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseRouting();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseAuthorization();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseEndpoints(endpoints =&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> endpoints.MapDefaultControllerRoute();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/section>
+&lt;/h3>&lt;ul>
+&lt;li>En ligne de commande avec &lt;code>dotnet run&lt;/code> ou depuis VS Code, après avoir généré les &lt;em>assets&lt;/em>.&lt;/li>
+&lt;li>Compile le code puis écoute un port aléatoire &amp;gt; 1000 pour attendre les requêtes HTTP entrantes sur la machine locale.&lt;/li>
+&lt;li>Recompilation nécessaire après tout changement.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/dotnet-run.png" alt="dotnet run">&lt;/p>
 &lt;hr>
-&lt;h2 id="mécanismes-fondamentaux" >Mécanismes fondamentaux
+&lt;h2 id="routage-et-environnement" >Routage et environnement
 &lt;span>
-&lt;a href="#m%c3%a9canismes-fondamentaux">
+&lt;a href="#routage-et-environnement">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;hr>
-&lt;section data-shortcode-section>
 &lt;h3 id="routage-des-requêtes" >Routage des requêtes
 &lt;span>
 &lt;a href="#routage-des-requ%c3%aates">
@@ -5596,7 +5625,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>Associe les requêtes HTTP entrantes au code à éxécuter (méthodes des contrôleurs).&lt;/li>
+&lt;li>Associe les requêtes HTTP entrantes au code à exécuter (méthodes des contrôleurs).&lt;/li>
 &lt;li>Permet à l&amp;rsquo;application web d&amp;rsquo;utiliser des URL propres et &lt;em>SEO-friendly&lt;/em>, plutôt que des noms de fichiers.&lt;/li>
 &lt;li>&lt;a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0">Plus d&amp;rsquo;informations&lt;/a>.&lt;/li>
 &lt;/ul>
@@ -5609,79 +5638,725 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>Permet de définir globalement la correspondance entre le format de l&amp;rsquo;URL et la méthode d&amp;rsquo;action d&amp;rsquo;un contrôleur à exécuter.&lt;/li>
-&lt;li>Format par défaut : &lt;code>/[Controller]/[ActionName]/[Parameters]&lt;/code>.&lt;/li>
-&lt;li>Exemple : &lt;code>https://myapp/Student/Details/Code=137&lt;/code> appelle la méthode &lt;code>Details&lt;/code> du contrôleur &lt;code>StudentController&lt;/code>, en lui passant un paramètre nommé &lt;code>Code&lt;/code> ayant la valeur 137.&lt;/li>
+&lt;li>Format par défaut : &lt;code>/{ControllerName}/{ActionName}?{Parameters}&lt;/code>.&lt;/li>
+&lt;li>Exemple : &lt;code>https://myapp/Student/Details?code=137&lt;/code> appelle la méthode &lt;code>Details&lt;/code> du contrôleur &lt;code>StudentController&lt;/code>, en lui passant un paramètre nommé &lt;code>code&lt;/code> ayant la valeur 137.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="configuration-du-routage-par-convention-dans-startup" >Configuration du routage par convention dans Startup
+&lt;h3 id="configuration-du-routage-par-convention-dans-programcs" >Configuration du routage par convention dans Program.cs
 &lt;span>
-&lt;a href="#configuration-du-routage-par-convention-dans-startup">
+&lt;a href="#configuration-du-routage-par-convention-dans-programcs">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseEndpoints(endpoints =&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> endpoints.MapControllerRoute(
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>app.MapControllerRoute(
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: &lt;span style="color:#0086d2">&amp;#34;default&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pattern: &lt;span style="color:#0086d2">&amp;#34;{controller=Home}/{action=Index}/{id?}&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>Home&lt;/code>, &lt;code>Index&lt;/code> et &lt;code>id&lt;/code> sont resp. les noms par défaut du contrôleur, de l&amp;rsquo;action et du paramètre (optionnel).&lt;/p>
-&lt;/section>
 &lt;hr>
-&lt;h3 id="scaffolding" >Scaffolding
+&lt;h3 id="exemple--ajout-dun-contrôleur" >Exemple : ajout d&amp;rsquo;un contrôleur
 &lt;span>
-&lt;a href="#scaffolding">
+&lt;a href="#exemple--ajout-dun-contr%c3%b4leur">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet-aspnet-codegenerator [arguments]&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>Permet de générer le code source pour les opérations élémentaires &lt;strong>CRUD&lt;/strong> (&lt;em>Create, Read, Update, Delete&lt;/em>) liées à une classe du Modèle.&lt;/li>
-&lt;li>&lt;a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/tools/dotnet-aspnet-codegenerator?view=aspnetcore-5.0">Plus d&amp;rsquo;informations&lt;/a>.&lt;/li>
-&lt;li>&lt;a href="https://github.com/ensc-glog/MvcMovie/commit/f5c4ec45033f5509ec736bc1bebf010f200921f0">Exemple de résultat&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="database-context" >Database context
+&lt;/h3>&lt;p>Dans le fichier &lt;code>Controllers/HelloController.cs&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> HelloController : ControllerBase
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: /Hello/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Index()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086d2">&amp;#34;Hello World!&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="utilisation-du-contrôleur-créé" >Utilisation du contrôleur créé
 &lt;span>
-&lt;a href="#database-context">
+&lt;a href="#utilisation-du-contr%c3%b4leur-cr%c3%a9%c3%a9">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>Hérite de la classe abstraite &lt;code>DbContext&lt;/code>.&lt;/li>
-&lt;li>Spécifie les classes du modèle à sauvegarder dans la base de données.&lt;/li>
+&lt;li>L&amp;rsquo;URL &lt;a href="https://localhost:%7Bport%7D/hello">https://localhost:{port}/hello&lt;/a> est automatiquement routée vers la méthode &lt;code>Index&lt;/code> de la classe &lt;code>HelloController&lt;/code>.&lt;/li>
+&lt;li>Même résultat avec &lt;a href="https://localhost:%7Bport%7D/hello/index">https://localhost:{port}/hello/index&lt;/a>, &lt;code>Index&lt;/code> étant le nom de l&amp;rsquo;action par défaut.&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MvcMovieContext : DbContext
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> MvcMovieContext(DbContextOptions&amp;lt;MvcMovieContext&amp;gt; options)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> : &lt;span style="color:#fb660a;font-weight:bold">base&lt;/span>(options)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;MvcMovie.Models.Movie&amp;gt; Movie { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> ConfigureServices(IServiceCollection services)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> services.AddDbContext&amp;lt;MvcMovieContext&amp;gt;(options =&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.UseSqlite(Configuration.GetConnectionString(&lt;span style="color:#0086d2">&amp;#34;MvcMovieContext&amp;#34;&lt;/span>)));
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="migrations" >Migrations
+&lt;p>&lt;img src="images/helloworldcontroller.png" alt="Hello World!">&lt;/p>
+&lt;hr>
+&lt;h3 id="passage-de-paramètres-à-un-contrôleur" >Passage de paramètres à un contrôleur
 &lt;span>
-&lt;a href="#migrations">
+&lt;a href="#passage-de-param%c3%a8tres-%c3%a0-un-contr%c3%b4leur">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet ef migrations add InitialCreate&lt;/code>&lt;/p>
-&lt;p>&lt;code>&amp;gt; dotnet ef database update&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>Permettent à la base de données d&amp;rsquo;être synchronisée avec les évolutions du Modèle, sans perte de données.&lt;/li>
-&lt;li>Migration = évolution incrémentale depuis la migration précédente.&lt;/li>
+&lt;/h3>&lt;ul>
+&lt;li>On définit des paramètres dans l&amp;rsquo;URL via la syntaxe &lt;code>?{name1}={value1}&amp;amp;{name2}=...&lt;/code>&lt;/li>
+&lt;li>Leurs valeurs sont passées aux méthodes d&amp;rsquo;actions des contrôleurs.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> System.Text.Encodings.Web;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> HelloController : ControllerBase
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: /Hello/Welcome/ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Welcome(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> name, &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> numTimes = &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Prevents injection attacks&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> HtmlEncoder.Default.Encode(&lt;span style="color:#0086d2">$&amp;#34;Hello {name}, NumTimes is: {numTimes}&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--passage-de-paramètres-au-contrôleur-créé" >Exemple : passage de paramètres au contrôleur créé
+&lt;span>
+&lt;a href="#exemple--passage-de-param%c3%a8tres-au-contr%c3%b4leur-cr%c3%a9%c3%a9">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>L&amp;rsquo;URL &lt;a href="https://localhost:%7Bport%7D/hello/welcome">https://localhost:{port}/hello/welcome&lt;/a> est automatiquement routée vers la méthode &lt;code>Welcome&lt;/code> de la classe &lt;code>HelloController&lt;/code>.&lt;/li>
+&lt;li>On peut définir (ou pas) les valeurs des paramètres &lt;code>name&lt;/code> et &lt;code>numTimes&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/welcomecontroller.png" alt="Welcome">&lt;/p>
+&lt;hr>
+&lt;h3 id="environnements" >Environnements
+&lt;span>
+&lt;a href="#environnements">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Permettent d&amp;rsquo;adapter la configuration de l&amp;rsquo;application au contexte (développement, test ou production).&lt;/li>
+&lt;li>Définis par la variable d&amp;rsquo;environnement &lt;code>ASPNETCORE_ENVIRONMENT&lt;/code>. En l&amp;rsquo;absence de cette variable, l&amp;rsquo;environnement est de type Production.&lt;/li>
+&lt;li>&lt;a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-5.0">Plus d&amp;rsquo;informations&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;hr>
+&lt;h3 id="définition-de-lenvironnement-avec-visual-studio-code" >Définition de l&amp;rsquo;environnement avec Visual Studio Code
+&lt;span>
+&lt;a href="#d%c3%a9finition-de-lenvironnement-avec-visual-studio-code">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Dans le fichier &lt;code>./vscode/launch.json&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;version&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;0.2.0&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;configurations&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;.NET Core Launch (web)&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;env&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;ASPNETCORE_ENVIRONMENT&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Development&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="configuration-de-lapplication-selon-lenvironnement-détecté" >Configuration de l&amp;rsquo;application selon l&amp;rsquo;environnement détecté
+&lt;span>
+&lt;a href="#configuration-de-lapplication-selon-lenvironnement-d%c3%a9tect%c3%a9">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Dans le fichier &lt;code>Program.cs&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Configure the HTTP request pipeline.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (!app.Environment.IsDevelopment())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseExceptionHandler(&lt;span style="color:#0086d2">&amp;#34;/Home/Error&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseHsts();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseDeveloperExceptionPage();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="interactions-avec-une-base-de-données" >Interactions avec une base de données
+&lt;span>
+&lt;a href="#interactions-avec-une-base-de-donn%c3%a9es">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="ef-core-et-aspnet-core" >EF Core et ASP.NET Core
+&lt;span>
+&lt;a href="#ef-core-et-aspnet-core">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Entity Framework Core est la solution de persistance par défaut sous ASP.NET Core.&lt;/li>
+&lt;li>Après son installation, on configure l&amp;rsquo;application pour &lt;a href="https://docs.microsoft.com/en-us/ef/core/dbcontext-configuration/">associer&lt;/a> un contexte BD à chaque requête HTTP entrante.&lt;/li>
+&lt;li>Il est ensuite utilisé par les contrôleurs pour interagir avec la base de données.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exemple--ajout-dune-classe-métier" >Exemple : ajout d&amp;rsquo;une classe métier
+&lt;span>
+&lt;a href="#exemple--ajout-dune-classe-m%c3%a9tier">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Dans le fichier &lt;code>Models/Movie.cs&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> System.ComponentModel.DataAnnotations;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Models;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Movie
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Title { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>!;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Display(Name = &amp;#34;Release Date&amp;#34;), DataType(DataType.Date)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DateTime ReleaseDate { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Genre { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>!;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="création-du-contexte-bd" >Création du contexte BD
+&lt;span>
+&lt;a href="#cr%c3%a9ation-du-contexte-bd">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Dans le fichier &lt;code>Data/MvcMovieContext.cs&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.EntityFrameworkCore;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Models;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MvcMovieContext : DbContext
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DbSet&amp;lt;Movie&amp;gt; Movies { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>!;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> DbPath { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> MvcMovieContext()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Path to SQLite database file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DbPath = &lt;span style="color:#0086d2">&amp;#34;MvcMovie.db&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// The following configures EF to create a SQLite database file locally&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">protected&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">override&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> OnConfiguring(DbContextOptionsBuilder options)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Use SQLite as database&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.UseSqlite(&lt;span style="color:#0086d2">$&amp;#34;Data Source={DbPath}&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Optional: log SQL queries to console&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.LogTo(Console.WriteLine, &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span>[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="synchronisation-de-la-base-de-données-avec-le-modèle" >Synchronisation de la base de données avec le modèle
+&lt;span>
+&lt;a href="#synchronisation-de-la-base-de-donn%c3%a9es-avec-le-mod%c3%a8le">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Réalisée via des migrations.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Create a new migration&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotnet ef migrations add {MigratioName}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Sync DB with most recent migrations&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dotnet ef database update
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="configuration-de-lapplication-pour-ef-core" >Configuration de l&amp;rsquo;application pour EF Core
+&lt;span>
+&lt;a href="#configuration-de-lapplication-pour-ef-core">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Dans le fichier &lt;code>Program.cs&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> builder = WebApplication.CreateBuilder(args);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Add services to the container.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder.Services.AddControllersWithViews();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Attach an EF Core database context to each query&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder.Services.AddDbContext&amp;lt;MvcMovieContext&amp;gt;();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="gestion-des-fichiers-temporaires-sqlite" >Gestion des fichiers temporaires SQLite
+&lt;span>
+&lt;a href="#gestion-des-fichiers-temporaires-sqlite">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Edition du fichier &lt;code>.gitignore&lt;/code> pour ignorer ces fichiers.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Ignore SQLite temp files&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.db-shm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.db-wal
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># ...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="remplissage-de-la-base-de-données" >Remplissage de la base de données
+&lt;span>
+&lt;a href="#remplissage-de-la-base-de-donn%c3%a9es">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Classe &lt;code>SeedData&lt;/code> créée dans le répertoire &lt;code>Models/&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Models;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> SeedData
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">static&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Init()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> context = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> MvcMovieContext())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Look for existing content&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (context.Movies.Any())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// DB already filled&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Add several movies&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Movies.AddRange(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Movie
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Title = &lt;span style="color:#0086d2">&amp;#34;When Harry Met Sally&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ReleaseDate = DateTime.Parse(&lt;span style="color:#0086d2">&amp;#34;1989-2-12&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Genre = &lt;span style="color:#0086d2">&amp;#34;Romantic Comedy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Commit changes into DB&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.SaveChanges();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exécution-du-code-de-remplissage" >Exécution du code de remplissage
+&lt;span>
+&lt;a href="#ex%c3%a9cution-du-code-de-remplissage">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Dans le fichier &lt;code>Program.cs&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Models;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> builder = WebApplication.CreateBuilder(args);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Add services to the container.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder.Services.AddControllersWithViews();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Attach an EF Core database context to each query&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder.Services.AddDbContext&amp;lt;MvcMovieContext&amp;gt;();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> app = builder.Build();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Seed data into DB&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SeedData.Init();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="création-dapi-web" >Création d&amp;rsquo;API web
+&lt;span>
+&lt;a href="#cr%c3%a9ation-dapi-web">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="la-notion-dapi" >La notion d&amp;rsquo;API
+&lt;span>
+&lt;a href="#la-notion-dapi">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Une &lt;strong>API&lt;/strong> (&lt;em>Application Programming Interface&lt;/em>) est un point d&amp;rsquo;entrée programmatique dans un système.&lt;/li>
+&lt;li>Elle fournit un moyen d&amp;rsquo;interagir avec ce système.&lt;/li>
+&lt;li>Les API permettent aux développeurs d&amp;rsquo;intégrer des services externes dans leurs applications.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="spécificités-des-api-web" >Spécificités des API web
+&lt;span>
+&lt;a href="#sp%c3%a9cificit%c3%a9s-des-api-web">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Une &lt;strong>API web&lt;/strong> (appelée parfois service web) est une API accessible via les technologies du web : HTTP ou HTTPS.&lt;/li>
+&lt;li>Les API web utilisent le plus souvent le format de donnée &lt;strong>JSON&lt;/strong>.&lt;/li>
+&lt;li>Certaines sont librement utilisables mais la plupart nécessitent une authentification du client.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="le-format-json" >Le format JSON
+&lt;span>
+&lt;a href="#le-format-json">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>JSON = JavaScript Object Notation.&lt;/li>
+&lt;li>Format de description de données structurées inspiré de la syntaxe des objets JavaScript.&lt;/li>
+&lt;li>Contenu JSON = ensemble de paires champ/valeur.&lt;/li>
+&lt;li>Types de valeur possibles : nombres, chaînes, booléens, tableaux, objets.&lt;/li>
+&lt;li>A supplanté XML comme format standard pour les échanges de données via des API web.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exemple-de-contenu-json" >Exemple de contenu JSON
+&lt;span>
+&lt;a href="#exemple-de-contenu-json">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;cars&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;model&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Peugeot&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;color&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;blue&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;checkups&amp;#34;&lt;/span>: [&lt;span style="color:#0086f7;font-weight:bold">2015&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2017&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;model&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Citroën&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;color&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;white&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;checkups&amp;#34;&lt;/span>: [&lt;span style="color:#0086f7;font-weight:bold">2003&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2005&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2007&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2009&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2011&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2013&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section>
+&lt;hr>
+&lt;h3 id="exemples-dapi-web" >Exemples d&amp;rsquo;API web
+&lt;span>
+&lt;a href="#exemples-dapi-web">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://pokeapi.co/">PokéAPI&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://swapi.dev/">Star Wars API&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://en.wikipedia.org/w/api.php?">Wikipedia&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://developer.spotify.com/documentation/web-api/">Spotify&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.omdbapi.com/">OMDb API&lt;/a>&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="outils-pour-la-gestion-des-api-web" >Outils pour la gestion des API web
+&lt;span>
+&lt;a href="#outils-pour-la-gestion-des-api-web">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>N&amp;rsquo;importe quel navigateur pour les tests basiques.&lt;/li>
+&lt;li>Extension &lt;a href="https://addons.mozilla.org/fr/firefox/addon/restclient/">RESTClient&lt;/a> pour Firefox.&lt;/li>
+&lt;li>&lt;a href="https://www.getpostman.com/">Postman&lt;/a>.&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="les-api-restful" >Les API RESTful
+&lt;span>
+&lt;a href="#les-api-restful">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>REST&lt;/strong> (&lt;em>REpresentational State Transfer&lt;/em>) est un ensemble de principes pour créer des API : client/serveur, pas de gestion d&amp;rsquo;état, etc.&lt;/li>
+&lt;li>Une API web &lt;em>RESTful&lt;/em> (conforme au standard REST) expose une interface basée sur les commandes HTTP. Exemples :
+&lt;ul>
+&lt;li>&lt;code>GET /&amp;lt;ResourceName&amp;gt;/&amp;lt;id&amp;gt;&lt;/code> pour accéder à une ressource.&lt;/li>
+&lt;li>&lt;code>POST /&amp;lt;ResourceName&amp;gt;&lt;/code> (avec les informations nécessaires dans le corps de la requête) pour la créer.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="fonctionnement-dune-api-web-avec-aspnet-core-mvc" >Fonctionnement d&amp;rsquo;une API web avec ASP.NET Core MVC
+&lt;span>
+&lt;a href="#fonctionnement-dune-api-web-avec-aspnet-core-mvc">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/aspnetcore_api.png" alt="API call with ASP.NET Core">&lt;/p>
+&lt;hr>
+&lt;h3 id="création-dun-contrôleur-dapi" >Création d&amp;rsquo;un contrôleur d&amp;rsquo;API
+&lt;span>
+&lt;a href="#cr%c3%a9ation-dun-contr%c3%b4leur-dapi">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Dans le répertoire &lt;code>Controllers/&lt;/code>.&lt;/li>
+&lt;li>Hérite de la classe &lt;code>ControllerBase&lt;/code>.&lt;/li>
+&lt;li>Associé aux routes du type &lt;code>api/{ApiControllerName}/&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exemple-de-contrôleur-dapi" >Exemple de contrôleur d&amp;rsquo;API
+&lt;span>
+&lt;a href="#exemple-de-contr%c3%b4leur-dapi">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Dans le fichier &lt;code>Controllers/MovieApiController.cs&lt;/code>.&lt;/li>
+&lt;li>La conversion au format JSON est implicite.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.EntityFrameworkCore;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Models;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">[Route(&amp;#34;api/[controller]&lt;/span>&lt;span style="color:#0086d2">&amp;#34;)]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold">[ApiController]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieApiController : ControllerBase
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">readonly&lt;/span> MvcMovieContext _context;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> MovieApiController(MvcMovieContext context)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _context = context;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: api/MovieApi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;ActionResult&amp;lt;IEnumerable&amp;lt;Movie&amp;gt;&amp;gt;&amp;gt; GetMovies()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.Movies.ToListAsync();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="requêtes-synchrones" >Requêtes synchrones
+&lt;span>
+&lt;a href="#requ%c3%aates-synchrones">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/">&lt;img src="images/sync-request-asp.net-core.png" alt="Synchronous requests">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="requêtes-asynchrones" >Requêtes asynchrones
+&lt;span>
+&lt;a href="#requ%c3%aates-asynchrones">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/">&lt;img src="images/async-request-asp.net-core.png" alt="Asynchronous requests">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="résultat-de-lappel-à-lapi" >Résultat de l&amp;rsquo;appel à l&amp;rsquo;API
+&lt;span>
+&lt;a href="#r%c3%a9sultat-de-lappel-%c3%a0-lapi">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/movieapi.png" alt="Movie API">&lt;/p>
+&lt;hr>
+&lt;h3 id="accès-à-un-élément" >Accès à un élément
+&lt;span>
+&lt;a href="#acc%c3%a8s-%c3%a0-un-%c3%a9l%c3%a9ment">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">[Route(&amp;#34;api/[controller]&lt;/span>&lt;span style="color:#0086d2">&amp;#34;)]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold">[ApiController]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieApiController : ControllerBase
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: api/MovieApi/5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [HttpGet(&amp;#34;{id}&amp;#34;)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;ActionResult&amp;lt;Movie&amp;gt;&amp;gt; GetMovie(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> id)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> movie = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.Movies.FindAsync(id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (movie == &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NotFound();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> movie;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="test-daccès" >Test d&amp;rsquo;accès
+&lt;span>
+&lt;a href="#test-dacc%c3%a8s">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Envoyer une requête HTTP GET vers l&amp;rsquo;URL &lt;a href="https://localhost:%7Bport%7D/api/movieapi/%7BmovieId%7D">https://localhost:{port}/api/movieapi/{movieId}&lt;/a>.&lt;/p>
+&lt;p>&lt;img src="images/movieapi-getone.png" alt="Get one movie">&lt;/p>
+&lt;hr>
+&lt;h3 id="création-dun-élément" >Création d&amp;rsquo;un élément
+&lt;span>
+&lt;a href="#cr%c3%a9ation-dun-%c3%a9l%c3%a9ment">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">[Route(&amp;#34;api/[controller]&lt;/span>&lt;span style="color:#0086d2">&amp;#34;)]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold">[ApiController]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieApiController : ControllerBase
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// POST: api/MovieApi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [HttpPost]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;ActionResult&amp;lt;Movie&amp;gt;&amp;gt; PostMovie(Movie movie)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _context.Movies.Add(movie);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.SaveChangesAsync();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> CreatedAtAction(&lt;span style="color:#0086d2">&amp;#34;GetTodo&amp;#34;&lt;/span>, &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> { id = movie.Id }, movie);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="test-de-création" >Test de création
+&lt;span>
+&lt;a href="#test-de-cr%c3%a9ation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Envoyer une requête HTTP POST en spécifiant la valeur du champ &lt;code>Content-type&lt;/code> à &lt;code>application/json&lt;/code>.&lt;/li>
+&lt;li>Le contenu JSON de la requête doit inclure les propriétés obligatoires du nouvel élément.&lt;/li>
+&lt;li>Exemple avec l&amp;rsquo;outil &lt;a href="https://curl.se/">curl&lt;/a>:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -X POST -k -H &lt;span style="color:#0086d2">&amp;#39;Content-Type: application/json&amp;#39;&lt;/span> -i https://localhost:{port}/api/movieapi/ --data &lt;span style="color:#0086d2">&amp;#39;{
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2"> &amp;#34;Title&amp;#34;: &amp;#34;1941&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2"> &amp;#34;ReleaseDate&amp;#34;: &amp;#34;1979-12-14T00:00:00&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2"> &amp;#34;Genre&amp;#34;: &amp;#34;Comedy&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2">}&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="mise-à-jour-dun-élément-existant" >Mise à jour d&amp;rsquo;un élément existant
+&lt;span>
+&lt;a href="#mise-%c3%a0-jour-dun-%c3%a9l%c3%a9ment-existant">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">[Route(&amp;#34;api/[controller]&lt;/span>&lt;span style="color:#0086d2">&amp;#34;)]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold">[ApiController]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieApiController : ControllerBase
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// PUT: api/MovieApi/5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [HttpPut(&amp;#34;{id}&amp;#34;)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; PutMovie(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> id, Movie movie)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (id != movie.Id)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> BadRequest();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _context.Entry(movie).State = EntityState.Modified;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">try&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.SaveChangesAsync();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">catch&lt;/span> (DbUpdateConcurrencyException)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (!MovieExists(id))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NotFound();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">throw&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NoContent();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Returns true if a movie with specified id already exists&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">bool&lt;/span> MovieExists(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> id)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> _context.Movies.Any(m =&amp;gt; m.Id == id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="test-de-mise-à-jour" >Test de mise à jour
+&lt;span>
+&lt;a href="#test-de-mise-%c3%a0-jour">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Envoyer une requête HTTP PUT vers l&amp;rsquo;élément à modifier, en spécifiant la valeur du champ &lt;code>Content-type&lt;/code> à &lt;code>application/json&lt;/code>.&lt;/li>
+&lt;li>Le contenu JSON de la requête doit inclure toutes les propriétés de l&amp;rsquo;élément modifié.&lt;/li>
+&lt;li>Exemple avec l&amp;rsquo;outil &lt;a href="https://curl.se/">curl&lt;/a>:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -X PUT -k -H &lt;span style="color:#0086d2">&amp;#39;Content-Type: application/json&amp;#39;&lt;/span> -i https://localhost:7294/api/movieapi/5 --data &lt;span style="color:#0086d2">&amp;#39;{
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2"> &amp;#34;Id&amp;#34;: 5,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2"> &amp;#34;Title&amp;#34;: &amp;#34;1941 (movie)&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2"> &amp;#34;ReleaseDate&amp;#34;: &amp;#34;1979-12-14T00:00:00&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2"> &amp;#34;Genre&amp;#34;: &amp;#34;Comedy&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2">}&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="suppression-dun-élément" >Suppression d&amp;rsquo;un élément
+&lt;span>
+&lt;a href="#suppression-dun-%c3%a9l%c3%a9ment">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">[Route(&amp;#34;api/[controller]&lt;/span>&lt;span style="color:#0086d2">&amp;#34;)]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold">[ApiController]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieApiController : ControllerBase
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// DELETE: api/MovieApi/5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [HttpDelete(&amp;#34;{id}&amp;#34;)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; DeleteMovie(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> id)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> movie = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.Movies.FindAsync(id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (movie == &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NotFound();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _context.Movies.Remove(movie);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.SaveChangesAsync();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NoContent();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="test-de-suppression" >Test de suppression
+&lt;span>
+&lt;a href="#test-de-suppression">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Envoyer une requête HTTP DELETE vers l&amp;rsquo;URL &lt;a href="https://localhost:%7Bport%7D/api/movieapi/%7BmovieId%7D">https://localhost:{port}/api/movieapi/{movieId}&lt;/a>.&lt;/p>
+&lt;hr>
+&lt;h3 id="récapitulatif--api-créée" >Récapitulatif : API créée
+&lt;span>
+&lt;a href="#r%c3%a9capitulatif--api-cr%c3%a9%c3%a9e">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Route&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>GET /api/MovieApi&lt;/code>&lt;/td>
+&lt;td>Renvoie tous les films&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>GET /api/MovieApi/{id}&lt;/code>&lt;/td>
+&lt;td>Renvoie un film&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>POST /api/MovieApi&lt;/code>&lt;/td>
+&lt;td>Ajoute un nouvel film&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>PUT /api/MovieApi/{id}&lt;/code>&lt;/td>
+&lt;td>Met à jour un film&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>DELETE /api/MovieApi/{id}&lt;/code>&lt;/td>
+&lt;td>Supprime un film&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="création-de-vues-html" >Création de vues HTML
+&lt;span>
+&lt;a href="#cr%c3%a9ation-de-vues-html">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
 &lt;section data-shortcode-section>
 &lt;h3 id="envoi-de-données-aux-vues--viewdata" >Envoi de données aux vues : ViewData
 &lt;span>
@@ -5809,7 +6484,6 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/section>
 &lt;hr>
-&lt;section data-shortcode-section>
 &lt;h3 id="validation-des-données" >Validation des données
 &lt;span>
 &lt;a href="#validation-des-donn%c3%a9es">
@@ -5847,327 +6521,6 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// At this point, something failed: redisplay form&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View(model);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/section>
-&lt;hr>
-&lt;section data-shortcode-section>
-&lt;h3 id="environnements" >Environnements
-&lt;span>
-&lt;a href="#environnements">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Permettent d&amp;rsquo;adapter la configuration de l&amp;rsquo;application au contexte (développement, test ou production).&lt;/li>
-&lt;li>Définis par la variable d&amp;rsquo;environnement &lt;code>ASPNETCORE_ENVIRONMENT&lt;/code>. En l&amp;rsquo;absence de cette variable, l&amp;rsquo;environnement est de type Production.&lt;/li>
-&lt;li>&lt;a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-5.0">Plus d&amp;rsquo;informations&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="définition-de-lenvironnement-avec-visual-studio-code" >Définition de l&amp;rsquo;environnement avec Visual Studio Code
-&lt;span>
-&lt;a href="#d%c3%a9finition-de-lenvironnement-avec-visual-studio-code">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>Fichier &lt;code>./vscode/launch.json&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;version&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;0.2.0&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;configurations&amp;#34;&lt;/span>: [
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;.NET Core Launch (web)&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # ...
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;env&amp;#34;&lt;/span>: {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;ASPNETCORE_ENVIRONMENT&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Development&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # ...
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="configuration-de-lapplication-selon-lenvironnement-détecté" >Configuration de l&amp;rsquo;application selon l&amp;rsquo;environnement détecté
-&lt;span>
-&lt;a href="#configuration-de-lapplication-selon-lenvironnement-d%c3%a9tect%c3%a9">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (env.IsDevelopment())
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseDeveloperExceptionPage();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (env.IsProduction() || env.IsStaging())
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseExceptionHandler(&lt;span style="color:#0086d2">&amp;#34;/Error&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/section>
-&lt;hr>
-&lt;h2 id="création-dapi-web" >Création d&amp;rsquo;API web
-&lt;span>
-&lt;a href="#cr%c3%a9ation-dapi-web">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;hr>
-&lt;h3 id="la-notion-dapi" >La notion d&amp;rsquo;API
-&lt;span>
-&lt;a href="#la-notion-dapi">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>Une &lt;strong>API&lt;/strong> (&lt;em>Application Programming Interface&lt;/em>) est un point d&amp;rsquo;entrée programmatique dans un système.&lt;/p>
-&lt;p>Elle fournit un moyen d&amp;rsquo;interagir avec ce système.&lt;/p>
-&lt;p>Les API permettent aux développeurs d&amp;rsquo;intégrer des services externes dans leurs applications.&lt;/p>
-&lt;hr>
-&lt;h3 id="spécificités-des-api-web" >Spécificités des API web
-&lt;span>
-&lt;a href="#sp%c3%a9cificit%c3%a9s-des-api-web">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>Une &lt;strong>API web&lt;/strong> (appelée parfois service web) est une API accessible via les technologies du web : HTTP ou HTTPS.&lt;/p>
-&lt;p>Les API web utilisent le plus souvent le format de donnée &lt;strong>JSON&lt;/strong>.&lt;/p>
-&lt;p>Certaines sont librement utilisables, d&amp;rsquo;autres nécessitent une authentification du client.&lt;/p>
-&lt;hr>
-&lt;h3 id="exemples-dapi-web" >Exemples d&amp;rsquo;API web
-&lt;span>
-&lt;a href="#exemples-dapi-web">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;a href="https://pokeapi.co/">PokéAPI&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://swapi.dev/">Star Wars API&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://en.wikipedia.org/w/api.php?">Wikipedia&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://developer.spotify.com/documentation/web-api/">Spotify&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.omdbapi.com/">OMDb API&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>(&lt;a href="https://shkspr.mobi/blog/2016/05/easy-apis-without-authentication/">Source&lt;/a>)&lt;/p>
-&lt;hr>
-&lt;h3 id="outils-pour-la-gestion-des-api-web" >Outils pour la gestion des API web
-&lt;span>
-&lt;a href="#outils-pour-la-gestion-des-api-web">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>N&amp;rsquo;importe quel navigateur pour les tests basiques.&lt;/li>
-&lt;li>Extension &lt;a href="https://addons.mozilla.org/fr/firefox/addon/restclient/">RESTClient&lt;/a> pour Firefox.&lt;/li>
-&lt;li>&lt;a href="https://www.getpostman.com/">Postman&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="les-api-restful" >Les API RESTful
-&lt;span>
-&lt;a href="#les-api-restful">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>REST&lt;/strong> (&lt;em>REpresentational State Transfer&lt;/em>) est un ensemble de principes pour créer des API : client/serveur, pas de gestion d&amp;rsquo;état, etc.&lt;/li>
-&lt;li>Une API web &lt;em>RESTful&lt;/em> (conforme au standard REST) expose une interface basée sur les commandes HTTP. Exemples :
-&lt;ul>
-&lt;li>&lt;code>GET /&amp;lt;ResourceName&amp;gt;/&amp;lt;id&amp;gt;&lt;/code> pour accéder à une ressource.&lt;/li>
-&lt;li>&lt;code>POST /&amp;lt;ResourceName&amp;gt;&lt;/code> (avec les informations nécessaires dans le corps de la requête) pour la créer.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;section data-shortcode-section>
-&lt;h3 id="le-format-json" >Le format JSON
-&lt;span>
-&lt;a href="#le-format-json">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>JSON = JavaScript Object Notation.&lt;/li>
-&lt;li>Format de description de données structurées inspiré de la syntaxe des objets JavaScript.&lt;/li>
-&lt;li>Contenu JSON = ensemble de paires champ/valeur.&lt;/li>
-&lt;li>Types de valeur possibles : nombres, chaînes, booléens, tableaux, objets.&lt;/li>
-&lt;li>A supplanté XML comme format standard pour les échanges de données via des API web.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="exemple-de-contenu-json" >Exemple de contenu JSON
-&lt;span>
-&lt;a href="#exemple-de-contenu-json">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;cars&amp;#34;&lt;/span>: [
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;model&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Peugeot&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;color&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;blue&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;checkups&amp;#34;&lt;/span>: [&lt;span style="color:#0086f7;font-weight:bold">2015&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2017&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;model&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Citroën&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;color&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;white&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;checkups&amp;#34;&lt;/span>: [&lt;span style="color:#0086f7;font-weight:bold">2003&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2005&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2007&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2009&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2011&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2013&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/section>
-&lt;hr>
-&lt;h3 id="création-dune-api-web-avec-aspnet-core" >Création d&amp;rsquo;une API web avec ASP.NET Core
-&lt;span>
-&lt;a href="#cr%c3%a9ation-dune-api-web-avec-aspnet-core">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet-aspnet-codegenerator controller -name &amp;lt;ControllerName&amp;gt; -m &amp;lt;ModelName&amp;gt; -async -api [other arguments]&lt;/code>&lt;/p>
-&lt;p>Crée un contrôleur &lt;code>&amp;lt;ControllerName&amp;gt;&lt;/code> qui :&lt;/p>
-&lt;ul>
-&lt;li>expose une API web pour la classe &lt;code>&amp;lt;ModelName&amp;gt;&lt;/code> du Modèle ;&lt;/li>
-&lt;li>renvoie des données au format JSON et non des vues HTML.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="principe-de-fonctionnement" >Principe de fonctionnement
-&lt;span>
-&lt;a href="#principe-de-fonctionnement">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;img src="images/aspnetcore_api.png" alt="API call with ASP.NET Core">&lt;/p>
-&lt;hr>
-&lt;h3 id="exemple-de-contrôleur-dapi" >Exemple de contrôleur d&amp;rsquo;API
-&lt;span>
-&lt;a href="#exemple-de-contr%c3%b4leur-dapi">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">[Route(&amp;#34;api/[controller]&lt;/span>&lt;span style="color:#0086d2">&amp;#34;)]
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2">&lt;/span>&lt;span style="color:#ff0086;font-weight:bold">[ApiController]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> TodosApiController : ControllerBase
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>Hérite de la classe &lt;code>ControllerBase&lt;/code> et non pas de &lt;code>Controller&lt;/code> comme les contrôleurs &amp;ldquo;classiques&amp;rdquo;.&lt;/li>
-&lt;li>Associé aux routes du type &lt;code>api/TodosApi/&amp;lt;Argument?&amp;gt;&lt;/code>.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="api-générée" >API générée
-&lt;span>
-&lt;a href="#api-g%c3%a9n%c3%a9r%c3%a9e">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Route&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>GET /api/TodosApi&lt;/td>
-&lt;td>Renvoie tous les éléments&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>GET /api/TodosApi/{id}&lt;/td>
-&lt;td>Renvoie un élément&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>POST /api/TodosApi&lt;/td>
-&lt;td>Ajoute un nouvel élément&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>PUT /api/TodosApi/{id}&lt;/td>
-&lt;td>Met à jour un élément&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>DELETE /api/TodosApi/{id}&lt;/td>
-&lt;td>Supprime un élément&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;hr>
-&lt;h3 id="exemple-de-méthode-dapi" >Exemple de méthode d&amp;rsquo;API
-&lt;span>
-&lt;a href="#exemple-de-m%c3%a9thode-dapi">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: api/TodosApi/5&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">[HttpGet(&amp;#34;{id}&amp;#34;)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;ActionResult&amp;lt;Todo&amp;gt;&amp;gt; GetTodo(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> id)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> todo = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.Todo.FindAsync(id);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (todo == &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NotFound();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> todo;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="appels-synchrones" >Appels synchrones
-&lt;span>
-&lt;a href="#appels-synchrones">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;a href="https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/">&lt;img src="images/sync-request-asp.net-core.png" alt="Synchronous requests">&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h3 id="appels-asynchrones" >Appels asynchrones
-&lt;span>
-&lt;a href="#appels-asynchrones">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;a href="https://code-maze.com/asynchronous-programming-with-async-and-await-in-asp-net-core/">&lt;img src="images/async-request-asp.net-core.png" alt="Asynchronous requests">&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h2 id="interactions-avec-une-base-de-données" >Interactions avec une base de données
-&lt;span>
-&lt;a href="#interactions-avec-une-base-de-donn%c3%a9es">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;hr>
-&lt;h3 id="ef-core-et-aspnet-core" >EF Core et ASP.NET Core
-&lt;span>
-&lt;a href="#ef-core-et-aspnet-core">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Un contexte BD est &lt;a href="https://docs.microsoft.com/en-us/ef/core/dbcontext-configuration/">associé&lt;/a> à chaque requête HTTP entrante dans le fichier &lt;code>Startup.cs&lt;/code>.&lt;/li>
-&lt;li>Il est ensuite utilisé par les contrôleurs pour interagir avec la base de données.&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Startup
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">//...&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> ConfigureServices(IServiceCollection services)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> services.AddControllersWithViews();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> services.AddDbContext&amp;lt;MvcMovieContext&amp;gt;(options =&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.UseSqlite(Configuration.GetConnectionString(&lt;span style="color:#0086d2">&amp;#34;MvcMovieContext&amp;#34;&lt;/span>)));
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="affichage-des-requêtes-sql-exécutées-par-ef-core" >Affichage des requêtes SQL exécutées par EF Core
-&lt;span>
-&lt;a href="#affichage-des-requ%c3%aates-sql-ex%c3%a9cut%c3%a9es-par-ef-core">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>Ajout de la ligne ci-dessous dans le fichier &lt;code>appsettings.json&lt;/code>.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Logging&amp;#34;&lt;/span>: {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;LogLevel&amp;#34;&lt;/span>: {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # ...
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;Microsoft.EntityFrameworkCore.Database.Command&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;Information&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # ...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h2 id="tests" >Tests
