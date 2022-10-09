@@ -68,7 +68,7 @@ Le web est basé sur un modèle **client/serveur** :
 
 ### UI web générée côté serveur
 
-Code HTML et CSS généré côté serveur, puis renvoyée au client.
+Structure HTML contenant les données générée côté serveur, puis renvoyée au client.
 
 - Peu d'exigences techniques côté client (navigateur simple, trafic réseau limité).
 - Accès BD et contrôles centralisés.
@@ -86,7 +86,7 @@ Code HTML et CSS généré côté serveur, puis renvoyée au client.
 
 ### UI web générée côté client
 
-Structure HTML (DOM) mise à jour dynamiquement côté client grâce à des appels asynchrones au serveur.
+Squelette HTML (sans données) initialement renvoyé au client. Ensuite, DOM mis à jour dynamiquement grâce à des appels asynchrones du client vers le serveur.
 
 - Interactions riches avec l'utilisateur.
 - Capacités matérielles et logicielles du client utilisables.
