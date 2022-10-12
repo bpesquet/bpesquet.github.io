@@ -219,14 +219,14 @@
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>            <span style=color:#080;background-color:#0f140f;font-style:italic>// Add several movies</span>
 </span></span><span style=display:flex><span>            context.Movies.AddRange(
-</span></span><span style=display:flex><span>                                <span style=color:#fb660a;font-weight:700>new</span> Movie
-</span></span><span style=display:flex><span>                                {
-</span></span><span style=display:flex><span>                                    Title = <span style=color:#0086d2>&#34;When Harry Met Sally&#34;</span>,
-</span></span><span style=display:flex><span>                                    ReleaseDate = DateTime.Parse(<span style=color:#0086d2>&#34;1989-2-12&#34;</span>),
-</span></span><span style=display:flex><span>                                    Genre = <span style=color:#0086d2>&#34;Romantic Comedy&#34;</span>,
-</span></span><span style=display:flex><span>                                },
-</span></span><span style=display:flex><span>                                <span style=color:#080;background-color:#0f140f;font-style:italic>// ...</span>
-</span></span><span style=display:flex><span>                            );
+</span></span><span style=display:flex><span>                <span style=color:#fb660a;font-weight:700>new</span> Movie
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    Title = <span style=color:#0086d2>&#34;When Harry Met Sally&#34;</span>,
+</span></span><span style=display:flex><span>                    ReleaseDate = DateTime.Parse(<span style=color:#0086d2>&#34;1989-2-12&#34;</span>),
+</span></span><span style=display:flex><span>                    Genre = <span style=color:#0086d2>&#34;Romantic Comedy&#34;</span>,
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                <span style=color:#080;background-color:#0f140f;font-style:italic>// ...</span>
+</span></span><span style=display:flex><span>            );
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>            <span style=color:#080;background-color:#0f140f;font-style:italic>// Commit changes into DB</span>
 </span></span><span style=display:flex><span>            context.SaveChanges();
@@ -410,57 +410,8 @@
 </span></span></code></pre></div></section><section><h3 id=test-de-suppression>Test de suppression
 <span><a href=#test-de-suppression><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p>Envoyer une requête HTTP DELETE vers l&rsquo;URL <a href=https://localhost:%7Bport%7D/api/movieapi/%7BmovieId%7D>https://localhost:{port}/api/movieapi/{movieId}</a>.</p></section><section><h3 id=récapitulatif--api-créée>Récapitulatif : API créée
 <span><a href=#r%c3%a9capitulatif--api-cr%c3%a9%c3%a9e><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><table><thead><tr><th>Route</th><th>Description</th></tr></thead><tbody><tr><td><code>GET /api/MovieApi</code></td><td>Renvoie tous les films</td></tr><tr><td><code>GET /api/MovieApi/{id}</code></td><td>Renvoie un film</td></tr><tr><td><code>POST /api/MovieApi</code></td><td>Ajoute un nouvel film</td></tr><tr><td><code>PUT /api/MovieApi/{id}</code></td><td>Met à jour un film</td></tr><tr><td><code>DELETE /api/MovieApi/{id}</code></td><td>Supprime un film</td></tr></tbody></table></section><section><h2 id=création-de-vues-html>Création de vues HTML
-<span><a href=#cr%c3%a9ation-de-vues-html><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2></section><section><section data-shortcode-section><h3 id=envoi-de-données-aux-vues--viewdata>Envoi de données aux vues : ViewData
-<span><a href=#envoi-de-donn%c3%a9es-aux-vues--viewdata><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p>Approche <em>faiblement typée</em> : on utilie un dictionnaire standard.</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#fb660a;font-weight:700>public</span> IActionResult Welcome(<span style=color:#cdcaa9;font-weight:700>string</span> name, <span style=color:#cdcaa9;font-weight:700>int</span> numTimes = <span style=color:#0086f7;font-weight:700>1</span>)
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    ViewData[<span style=color:#0086d2>&#34;Message&#34;</span>] = <span style=color:#0086d2>&#34;Hello &#34;</span> + name;
-</span></span><span style=display:flex><span>    ViewData[<span style=color:#0086d2>&#34;NumTimes&#34;</span>] = numTimes;
-</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>return</span> View();
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div></section><section><h3 id=utilisation-dans-la-vue>Utilisation dans la vue
-<span><a href=#utilisation-dans-la-vue><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>@{
-</span></span><span style=display:flex><span>    ViewData[<span style=color:#0086d2>&#34;Title&#34;</span>] = <span style=color:#0086d2>&#34;Welcome&#34;</span>;
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>&lt;h2&gt;Welcome&lt;/h2&gt;
-</span></span><span style=display:flex><span>&lt;ul&gt;
-</span></span><span style=display:flex><span>    @for (<span style=color:#cdcaa9;font-weight:700>int</span> i = <span style=color:#0086f7;font-weight:700>0</span>; i &lt; (<span style=color:#cdcaa9;font-weight:700>int</span>)ViewData[<span style=color:#0086d2>&#34;NumTimes&#34;</span>]; i++)
-</span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>        &lt;li&gt;@ViewData[<span style=color:#0086d2>&#34;Message&#34;</span>]&lt;/li&gt;
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>&lt;/ul&gt;
-</span></span></code></pre></div></section></section><section><section data-shortcode-section><h3 id=envoi-de-données-aux-vues--viewmodel>Envoi de données aux vues : ViewModel
-<span><a href=#envoi-de-donn%c3%a9es-aux-vues--viewmodel><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p>Approche <em>fortement typée</em> : on définit une classe pour porter les données de la vue.</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#fb660a;font-weight:700>public</span> <span style=color:#fb660a;font-weight:700>class</span> Address
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>public</span> <span style=color:#cdcaa9;font-weight:700>string</span> Name { <span style=color:#fb660a;font-weight:700>get</span>; <span style=color:#fb660a;font-weight:700>set</span>; }
-</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>public</span> <span style=color:#cdcaa9;font-weight:700>string</span> Street { <span style=color:#fb660a;font-weight:700>get</span>; <span style=color:#fb660a;font-weight:700>set</span>; }
-</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>public</span> <span style=color:#cdcaa9;font-weight:700>string</span> City { <span style=color:#fb660a;font-weight:700>get</span>; <span style=color:#fb660a;font-weight:700>set</span>; }
-</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>public</span> <span style=color:#cdcaa9;font-weight:700>string</span> State { <span style=color:#fb660a;font-weight:700>get</span>; <span style=color:#fb660a;font-weight:700>set</span>; }
-</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>public</span> <span style=color:#cdcaa9;font-weight:700>string</span> PostalCode { <span style=color:#fb660a;font-weight:700>get</span>; <span style=color:#fb660a;font-weight:700>set</span>; }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div></section><section><h3 id=utilisation-dans-le-contrôleur>Utilisation dans le contrôleur
-<span><a href=#utilisation-dans-le-contr%c3%b4leur><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#fb660a;font-weight:700>public</span> IActionResult Contact()
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    <span style=color:#cdcaa9;font-weight:700>var</span> viewModel = <span style=color:#fb660a;font-weight:700>new</span> Address()
-</span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>        Name = <span style=color:#0086d2>&#34;Microsoft&#34;</span>,
-</span></span><span style=display:flex><span>        Street = <span style=color:#0086d2>&#34;One Microsoft Way&#34;</span>,
-</span></span><span style=display:flex><span>        City = <span style=color:#0086d2>&#34;Redmond&#34;</span>,
-</span></span><span style=display:flex><span>        State = <span style=color:#0086d2>&#34;WA&#34;</span>,
-</span></span><span style=display:flex><span>        PostalCode = <span style=color:#0086d2>&#34;98052-6399&#34;</span>
-</span></span><span style=display:flex><span>    };
-</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>return</span> View(viewModel);
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div></section><section><h3 id=utilisation-dans-la-vue>Utilisation dans la vue
-<span><a href=#utilisation-dans-la-vue><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>@model WebApplication1.ViewModels.Address
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>&lt;<span style=color:#fb660a;font-weight:700>h2</span>&gt;Contact&lt;/<span style=color:#fb660a;font-weight:700>h2</span>&gt;
-</span></span><span style=display:flex><span>&lt;<span style=color:#fb660a;font-weight:700>address</span>&gt;
-</span></span><span style=display:flex><span>  @Model.Street&lt;<span style=color:#fb660a;font-weight:700>br</span> /&gt;
-</span></span><span style=display:flex><span>  @Model.City, @Model.State @Model.PostalCode&lt;<span style=color:#fb660a;font-weight:700>br</span> /&gt;
-</span></span><span style=display:flex><span>  &lt;<span style=color:#fb660a;font-weight:700>abbr</span> <span style=color:#ff0086;font-weight:700>title</span>=<span style=color:#0086d2>&#34;Phone&#34;</span>&gt;P:&lt;/<span style=color:#fb660a;font-weight:700>abbr</span>&gt; 425.555.0100
-</span></span><span style=display:flex><span>&lt;/<span style=color:#fb660a;font-weight:700>address</span>&gt;
-</span></span></code></pre></div></section></section><section><section data-shortcode-section><h3 id=view-layout>View layout
-<span><a href=#view-layout><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><ul><li>Par défaut, toutes les vues partagent une structure commune définie dans le fichier <code>Views/Shared/_Layout.cshtml</code>.</li><li>Dans ce layout, la fonction <code>@RenderBody()</code> permet de générer le contenu spécifique de la vue à afficher.</li><li>Les éléments spécifiques à une vue (exemples : inclusions CSS ou JavaScript) peuvent être rassemblés dans des <strong>sections</strong> affichées par le layout.</li></ul></section><section><h3 id=exemple-de-layout>Exemple de layout
+<span><a href=#cr%c3%a9ation-de-vues-html><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2></section><section><h3 id=view-layout>View layout
+<span><a href=#view-layout><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><ul><li>Par défaut, toutes les vues partagent une structure commune définie dans le fichier <code>Views/Shared/_Layout.cshtml</code>.</li><li>Dans ce layout, la fonction <code>@RenderBody()</code> permet de générer le contenu spécifique de la vue à afficher.</li><li>Les éléments externes (exemples : inclusions CSS ou JavaScript) peuvent être rassemblés dans des <strong>sections</strong> affichées par le layout.</li></ul></section><section><h3 id=exemple-de-layout>Exemple de layout
 <span><a href=#exemple-de-layout><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span><span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>&lt;!DOCTYPE html&gt;</span>
 </span></span><span style=display:flex><span>&lt;<span style=color:#fb660a;font-weight:700>html</span> <span style=color:#ff0086;font-weight:700>lang</span>=<span style=color:#0086d2>&#34;en&#34;</span>&gt;
 </span></span><span style=display:flex><span>  &lt;<span style=color:#fb660a;font-weight:700>head</span>&gt;
@@ -479,7 +430,182 @@
 </span></span><span style=display:flex><span>    @await RenderSectionAsync(&#34;Scripts&#34;, required: false)
 </span></span><span style=display:flex><span>  &lt;/<span style=color:#fb660a;font-weight:700>body</span>&gt;
 </span></span><span style=display:flex><span>&lt;/<span style=color:#fb660a;font-weight:700>html</span>&gt;
-</span></span></code></pre></div></section></section><section><h3 id=validation-des-données>Validation des données
+</span></span></code></pre></div></section><section><h3 id=correspondance-entre-contrôleurs-et-vues>Correspondance entre contrôleurs et vues
+<span><a href=#correspondance-entre-contr%c3%b4leurs-et-vues><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><ul><li>Dans une méthode d&rsquo;action <code>{ActionName}</code> d&rsquo;un contrôleur <code>Controllers/{CtrlName}Controller</code>, l&rsquo;appel de <code>View()</code>déclenche le rendu de la vue <code>Views/{CtrlName}/{ActionName}.cshtml</code>.</li><li>Le résultat HTML de ce rendu constitue la réponse HTTP renvoyée par le serveur au client.</li><li>Nécessite que le contrôleur hérite de <code>Controller</code> et non <code>ControllerBase</code>.</li></ul></section><section><h3 id=exemple--rendu-dune-vue>Exemple : rendu d&rsquo;une vue
+<span><a href=#exemple--rendu-dune-vue><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p>Dans le fichier <code>Controllers/HelloController.cs</code>.</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#fb660a;font-weight:700>using</span> Microsoft.AspNetCore.Mvc;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#fb660a;font-weight:700>namespace</span> MvcMovie.Controllers;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#fb660a;font-weight:700>public</span> <span style=color:#fb660a;font-weight:700>class</span> HelloController : Controller <span style=color:#080;background-color:#0f140f;font-style:italic>// not ControllerBase!</span>
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#080;background-color:#0f140f;font-style:italic>// </span>
+</span></span><span style=display:flex><span>    <span style=color:#080;background-color:#0f140f;font-style:italic>// GET: /Hello/</span>
+</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>public</span> IActionResult Index()
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#080;background-color:#0f140f;font-style:italic>// Renders Views/Hello/Index.cshtml</span>
+</span></span><span style=display:flex><span>        <span style=color:#fb660a;font-weight:700>return</span> View();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#080;background-color:#0f140f;font-style:italic>// ...</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></section><section><h3 id=la-syntaxe-razor>La syntaxe Razor
+<span><a href=#la-syntaxe-razor><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><ul><li><a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0">Razor</a> est un langage de balisage permettant d&rsquo;inclure du code C# dans des pages web.</li><li>Le symbole <code>@</code> permet de basculer du HTML au C# dans la page. Il peut être suivi :<ul><li>d&rsquo;une expression implicite sans espaces <code>@maVariable</code></li><li>d&rsquo;une expression explicite entre parenthèses <code>@(nb1 + nb2)</code></li><li>d&rsquo;un <a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0#razor-reserved-keywords">mot-clé Razor</a>.</li><li>d&rsquo;un bloc de code C# entre accolades <code>@{...}</code></li></ul></li></ul></section><section><h3 id=possibilités-de-base>Possibilités de base
+<span><a href=#possibilit%c3%a9s-de-base><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p>Fichier <code>Views/Hello/Index.cshtml</code>.</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>@*
+</span></span><span style=display:flex><span>    This view demonstrates some possibilities of the Razor syntax.
+</span></span><span style=display:flex><span>    (This is a server-side comment, by the way).
+</span></span><span style=display:flex><span>*@
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#fb660a;font-weight:700>h2</span>&gt;Hello ASP.NET Core MVC!&lt;/<span style=color:#fb660a;font-weight:700>h2</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>@{
+</span></span><span style=display:flex><span>    @* Some info about a famous monument. *@
+</span></span><span style=display:flex><span>    string monument = &#34;Eiffel Tower&#34;;
+</span></span><span style=display:flex><span>    int year = 1889;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#fb660a;font-weight:700>p</span>&gt;The @monument was inaugurated in @year. It is @(DateTime.Now.Year - year) years old!&lt;/<span style=color:#fb660a;font-weight:700>p</span>&gt;
+</span></span></code></pre></div></section><section><h3 id=structures-de-contrôle-et-tableaux>Structures de contrôle et tableaux
+<span><a href=#structures-de-contr%c3%b4le-et-tableaux><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>@{
+</span></span><span style=display:flex><span>    string[] colors = { &#34;blue&#34;, &#34;brown&#34;, &#34;black&#34; };
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>@if (colors.Length &gt; 0)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    &lt;<span style=color:#fb660a;font-weight:700>p</span>&gt;A few colors:&lt;/<span style=color:#fb660a;font-weight:700>p</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#fb660a;font-weight:700>ul</span>&gt;
+</span></span><span style=display:flex><span>    @foreach (string color in colors)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            &lt;<span style=color:#fb660a;font-weight:700>li</span>&gt;Color: @color&lt;/<span style=color:#fb660a;font-weight:700>li</span>&gt;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#fb660a;font-weight:700>ul</span>&gt;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>(<a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0#control-structures">Plus de détails</a>)</p></section><section><h3 id=blocs-de-code-razor>Blocs de code Razor
+<span><a href=#blocs-de-code-razor><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><ul><li>Définis par la syntaxe <code>@{...}</code>.</li><li>Le code C# contenu n&rsquo;est pas rendu (= pas ajouté au résultat HTML renvoyé).</li><li>A l&rsquo;intérieur d&rsquo;un bloc,<ul><li>les balises HTML permettent de basculer du C# au HTML.</li><li>la balise <code>&lt;text></code> permet de demander explicitement le rendu HTML d&rsquo;un contenu C# sans balises.</li></ul></li></ul></section><section><h3 id=blocs-razor-et-fonctions>Blocs Razor et fonctions
+<span><a href=#blocs-razor-et-fonctions><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#fb660a;font-weight:700>p</span>&gt;
+</span></span><span style=display:flex><span>    @{
+</span></span><span style=display:flex><span>        void RenderStrong(string value)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            &lt;<span style=color:#fb660a;font-weight:700>strong</span>&gt;@value&lt;/<span style=color:#fb660a;font-weight:700>strong</span>&gt;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        int count = 5;
+</span></span><span style=display:flex><span>        while (count &gt; 0)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            &lt;<span style=color:#fb660a;font-weight:700>text</span>&gt;@count... &lt;/<span style=color:#fb660a;font-weight:700>text</span>&gt;
+</span></span><span style=display:flex><span>            count--;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        RenderStrong(&#34;BOOM!&#34;);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>&lt;/<span style=color:#fb660a;font-weight:700>p</span>&gt;
+</span></span></code></pre></div></section><section><h3 id=liens>Liens
+<span><a href=#liens><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><ul><li>Comme en HTML, les balises <code>&lt;a></code> sont utilisés pour les créer.</li><li>Les attributs <code>asp-controller</code>, <code>asp-action</code>, <code>asp-route-id</code> et <code>asp-route-{paramName}</code> permettent la navigation entre actions.</li></ul><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>@{
+</span></span><span style=display:flex><span>    string visitorName = &#34;Garance&#34;;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>&lt;<span style=color:#fb660a;font-weight:700>p</span>&gt;
+</span></span><span style=display:flex><span>    Here&#39;s an &lt;<span style=color:#fb660a;font-weight:700>a</span> <span style=color:#ff0086;font-weight:700>href</span>=<span style=color:#0086d2>&#34;https://fr.wikipedia.org/wiki/Tour_Eiffel&#34;</span>&gt;external link&lt;/<span style=color:#fb660a;font-weight:700>a</span>&gt;,
+</span></span><span style=display:flex><span>    a &lt;<span style=color:#fb660a;font-weight:700>a</span> <span style=color:#ff0086;font-weight:700>asp-controller</span>=<span style=color:#0086d2>&#34;Home&#34;</span> <span style=color:#ff0086;font-weight:700>asp-action</span>=<span style=color:#0086d2>&#34;Index&#34;</span>&gt;link to the home page&lt;/<span style=color:#fb660a;font-weight:700>a</span>&gt;
+</span></span><span style=display:flex><span>    and a &lt;<span style=color:#fb660a;font-weight:700>a</span> <span style=color:#ff0086;font-weight:700>asp-action</span>=<span style=color:#0086d2>&#34;Welcome&#34;</span> <span style=color:#ff0086;font-weight:700>asp-route-name</span>=<span style=color:#0086d2>&#34;@visitorName&#34;</span> <span style=color:#ff0086;font-weight:700>asp-route-numtimes</span>=<span style=color:#0086d2>&#34;5&#34;</span>&gt;link with parameters&lt;/<span style=color:#fb660a;font-weight:700>a</span>&gt;.
+</span></span><span style=display:flex><span>&lt;/<span style=color:#fb660a;font-weight:700>p</span>&gt;
+</span></span></code></pre></div></section><section><h3 id=affichage-de-la-vue-dexemple>Affichage de la vue d&rsquo;exemple
+<span><a href=#affichage-de-la-vue-dexemple><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p><img src=images/helloview.png alt="Hello View"></p></section><section><h3 id=envoi-de-données-aux-vues--viewdata>Envoi de données aux vues : ViewData
+<span><a href=#envoi-de-donn%c3%a9es-aux-vues--viewdata><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p>Approche <em>faiblement typée</em> : on rassemble les paramètres de la vue dans un dictionnaire nommé <a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/overview?view=aspnetcore-6.0#weakly-typed-data-viewdata-viewdata-attribute-and-viewbag">ViewData</a>.</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#fb660a;font-weight:700>using</span> Microsoft.AspNetCore.Mvc;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#fb660a;font-weight:700>namespace</span> MvcMovie.Controllers;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#fb660a;font-weight:700>public</span> <span style=color:#fb660a;font-weight:700>class</span> HelloController : Controller
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#080;background-color:#0f140f;font-style:italic>// ...</span>
+</span></span><span style=display:flex><span>    <span style=color:#080;background-color:#0f140f;font-style:italic>// GET: /Hello/Welcome/ </span>
+</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>public</span> IActionResult Welcome(<span style=color:#cdcaa9;font-weight:700>string</span> name, <span style=color:#cdcaa9;font-weight:700>int</span> numTimes = <span style=color:#0086f7;font-weight:700>0</span>)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        ViewData[<span style=color:#0086d2>&#34;Message&#34;</span>] = <span style=color:#0086d2>&#34;Hello &#34;</span> + name;
+</span></span><span style=display:flex><span>        ViewData[<span style=color:#0086d2>&#34;NumTimes&#34;</span>] = numTimes;
+</span></span><span style=display:flex><span>        <span style=color:#fb660a;font-weight:700>return</span> View();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></section><section><h3 id=exemple-dutilisation-de-viewdata>Exemple d&rsquo;utilisation de ViewData
+<span><a href=#exemple-dutilisation-de-viewdata><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p>Dans le fichier <code>Views/Hello/Welcome.cshtml</code>.</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>@{
+</span></span><span style=display:flex><span>    ViewData[<span style=color:#0086d2>&#34;Title&#34;</span>] = <span style=color:#0086d2>&#34;Welcome&#34;</span>;
+</span></span><span style=display:flex><span>    <span style=color:#cdcaa9;font-weight:700>int</span> numTimes = (<span style=color:#cdcaa9;font-weight:700>int</span>)ViewData[<span style=color:#0086d2>&#34;NumTimes&#34;</span>]!;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;h2&gt;Welcome!&lt;/h2&gt;
+</span></span><span style=display:flex><span>&lt;ul&gt;
+</span></span><span style=display:flex><span>    @for (<span style=color:#cdcaa9;font-weight:700>int</span> i = <span style=color:#0086f7;font-weight:700>0</span>; i &lt; numTimes; i++)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        &lt;li&gt;@ViewData[<span style=color:#0086d2>&#34;Message&#34;</span>]&lt;/li&gt;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>&lt;/ul&gt;
+</span></span></code></pre></div></section><section><h3 id=résultat-obtenu>Résultat obtenu
+<span><a href=#r%c3%a9sultat-obtenu><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p><img src=images/welcomeview.png alt="Hello View"></p></section><section><h3 id=envoi-de-données-aux-vues--model>Envoi de données aux vues : @model
+<span><a href=#envoi-de-donn%c3%a9es-aux-vues--model><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><ul><li>Approche <em>fortement typée</em> : dans une vue, la directive <a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0#model">@model</a> définit le type du modèle (= la source de données) passé à la vue.</li><li>Dans cette vue :<ul><li>l&rsquo;instance associée est accessible via la propriété (typée) <code>Model</code> ;</li><li><code>@Html.DisplayNameFor</code> renvoie le nom d&rsquo;une propriété du modèle (<a href=https://stackoverflow.com/questions/61925486/html-displaynamefor-list-vs-ienumerable-in-razor>explication</a>).</li><li><code>@Html.DisplayFor</code> renvoie la valeur d&rsquo;une propriété du modèle.</li></ul></li></ul></section><section><h3 id=exemple--liste-des-films-contrôleur>Exemple : liste des films (contrôleur)
+<span><a href=#exemple--liste-des-films-contr%c3%b4leur><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p>Fichier <code>Controllers/MovieController.cs</code>.</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#fb660a;font-weight:700>using</span> Microsoft.AspNetCore.Mvc;
+</span></span><span style=display:flex><span><span style=color:#fb660a;font-weight:700>using</span> Microsoft.EntityFrameworkCore;
+</span></span><span style=display:flex><span><span style=color:#fb660a;font-weight:700>using</span> MvcMovie.Data;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#fb660a;font-weight:700>namespace</span> MvcMovie.Controllers;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#fb660a;font-weight:700>public</span> <span style=color:#fb660a;font-weight:700>class</span> MovieController : Controller
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>private</span> <span style=color:#fb660a;font-weight:700>readonly</span> MvcMovieContext _context;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>public</span> MovieController(MvcMovieContext context)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        _context = context;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>public</span> <span style=color:#fb660a;font-weight:700>async</span> Task&lt;IActionResult&gt; Index()
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#cdcaa9;font-weight:700>var</span> movies = <span style=color:#fb660a;font-weight:700>await</span> _context.Movies.OrderBy(m =&gt; m.Title).ToListAsync();
+</span></span><span style=display:flex><span>        <span style=color:#fb660a;font-weight:700>return</span> View(movies);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></section><section><h3 id=exemple--liste-des-films-vue>Exemple : liste des films (vue)
+<span><a href=#exemple--liste-des-films-vue><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p>Fichier <code>Views/Movie/Index.cshtml</code>.</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>@model IEnumerable&lt;<span style=color:#fb660a;font-weight:700>MvcMovie.Models.Movie</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>@{
+</span></span><span style=display:flex><span>    ViewData[&#34;Title&#34;] = &#34;Movies&#34;;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#fb660a;font-weight:700>h2</span>&gt;Movie list&lt;/<span style=color:#fb660a;font-weight:700>h2</span>&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#fb660a;font-weight:700>table</span> <span style=color:#ff0086;font-weight:700>class</span>=<span style=color:#0086d2>&#34;table&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#fb660a;font-weight:700>thead</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#fb660a;font-weight:700>tr</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#fb660a;font-weight:700>th</span>&gt;
+</span></span><span style=display:flex><span>                @Html.DisplayNameFor(model =&gt; model.Title)
+</span></span><span style=display:flex><span>            &lt;/<span style=color:#fb660a;font-weight:700>th</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#fb660a;font-weight:700>th</span>&gt;
+</span></span><span style=display:flex><span>                @Html.DisplayNameFor(model =&gt; model.ReleaseDate)
+</span></span><span style=display:flex><span>            &lt;/<span style=color:#fb660a;font-weight:700>th</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#fb660a;font-weight:700>th</span>&gt;
+</span></span><span style=display:flex><span>                @Html.DisplayNameFor(model =&gt; model.Genre)
+</span></span><span style=display:flex><span>            &lt;/<span style=color:#fb660a;font-weight:700>th</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#fb660a;font-weight:700>th</span>&gt;&lt;/<span style=color:#fb660a;font-weight:700>th</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#fb660a;font-weight:700>tr</span>&gt;
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#fb660a;font-weight:700>thead</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#fb660a;font-weight:700>tbody</span>&gt;
+</span></span><span style=display:flex><span>        @foreach (var item in Model)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            &lt;<span style=color:#fb660a;font-weight:700>tr</span>&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#fb660a;font-weight:700>td</span>&gt;
+</span></span><span style=display:flex><span>                    @Html.DisplayFor(modelItem =&gt; item.Title)
+</span></span><span style=display:flex><span>                &lt;/<span style=color:#fb660a;font-weight:700>td</span>&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#fb660a;font-weight:700>td</span>&gt;
+</span></span><span style=display:flex><span>                    @Html.DisplayFor(modelItem =&gt; item.ReleaseDate)
+</span></span><span style=display:flex><span>                &lt;/<span style=color:#fb660a;font-weight:700>td</span>&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#fb660a;font-weight:700>td</span>&gt;
+</span></span><span style=display:flex><span>                    @Html.DisplayFor(modelItem =&gt; item.Genre)
+</span></span><span style=display:flex><span>                &lt;/<span style=color:#fb660a;font-weight:700>td</span>&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#fb660a;font-weight:700>td</span>&gt;
+</span></span><span style=display:flex><span>                    &lt;<span style=color:#fb660a;font-weight:700>a</span> <span style=color:#ff0086;font-weight:700>asp-action</span>=<span style=color:#0086d2>&#34;Edit&#34;</span> <span style=color:#ff0086;font-weight:700>asp-route-id</span>=<span style=color:#0086d2>&#34;@item.Id&#34;</span>&gt;Edit&lt;/<span style=color:#fb660a;font-weight:700>a</span>&gt; |
+</span></span><span style=display:flex><span>                    &lt;<span style=color:#fb660a;font-weight:700>a</span> <span style=color:#ff0086;font-weight:700>asp-action</span>=<span style=color:#0086d2>&#34;Details&#34;</span> <span style=color:#ff0086;font-weight:700>asp-route-id</span>=<span style=color:#0086d2>&#34;@item.Id&#34;</span>&gt;Details&lt;/<span style=color:#fb660a;font-weight:700>a</span>&gt; |
+</span></span><span style=display:flex><span>                    &lt;<span style=color:#fb660a;font-weight:700>a</span> <span style=color:#ff0086;font-weight:700>asp-action</span>=<span style=color:#0086d2>&#34;Delete&#34;</span> <span style=color:#ff0086;font-weight:700>asp-route-id</span>=<span style=color:#0086d2>&#34;@item.Id&#34;</span>&gt;Delete&lt;/<span style=color:#fb660a;font-weight:700>a</span>&gt;
+</span></span><span style=display:flex><span>                &lt;/<span style=color:#fb660a;font-weight:700>td</span>&gt;
+</span></span><span style=display:flex><span>            &lt;/<span style=color:#fb660a;font-weight:700>tr</span>&gt;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#fb660a;font-weight:700>tbody</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#fb660a;font-weight:700>table</span>&gt;
+</span></span></code></pre></div></section><section><h3 id=exemple--liste-des-films-résultat>Exemple : liste des films (résultat)
+<span><a href=#exemple--liste-des-films-r%c3%a9sultat><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p><img src=images/movielist.png alt="Hello View"></p></section><section><h3 id=envoi-de-données-aux-vues--viewmodel>Envoi de données aux vues : ViewModel
+<span><a href=#envoi-de-donn%c3%a9es-aux-vues--viewmodel><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><ul><li>Approche <em>fortement typée</em> : on définit une classe spécifique pour porter les données de la vue.</li><li>Utile quand les données nécessaires à la vue sont issues de différentes classes métier.</li><li>Principe du patron <a href=https://learn.microsoft.com/en-us/dotnet/architecture/maui/mvvm>MVVM</a> (<em>Model-View-ViewModel</em>).</li><li><a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/overview?view=aspnetcore-6.0#strongly-typed-data-viewmodel">Plus de détails</a>.</li></ul></section><section><h3 id=validation-des-données>Validation des données
 <span><a href=#validation-des-donn%c3%a9es><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><p>L&rsquo;annotation des classes du Modèle permet de définir des <strong>règles de validation</strong> qui seront automatiquement vérifiées à la fois côté serveur et côté client.</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#fb660a;font-weight:700>using</span> System.ComponentModel.DataAnnotations;
 </span></span><span style=display:flex><span><span style=color:#fb660a;font-weight:700>public</span> <span style=color:#fb660a;font-weight:700>class</span> LoginViewModel
 </span></span><span style=display:flex><span>{

@@ -6153,94 +6153,6 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;hr>
-&lt;section data-shortcode-section>
-&lt;h3 id="envoi-de-données-aux-vues--viewdata" >Envoi de données aux vues : ViewData
-&lt;span>
-&lt;a href="#envoi-de-donn%c3%a9es-aux-vues--viewdata">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>Approche &lt;em>faiblement typée&lt;/em> : on utilie un dictionnaire standard.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> IActionResult Welcome(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> name, &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> numTimes = &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&lt;span style="color:#0086d2">&amp;#34;Message&amp;#34;&lt;/span>] = &lt;span style="color:#0086d2">&amp;#34;Hello &amp;#34;&lt;/span> + name;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&lt;span style="color:#0086d2">&amp;#34;NumTimes&amp;#34;&lt;/span>] = numTimes;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="utilisation-dans-la-vue" >Utilisation dans la vue
-&lt;span>
-&lt;a href="#utilisation-dans-la-vue">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>@{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span>] = &lt;span style="color:#0086d2">&amp;#34;Welcome&amp;#34;&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;h2&amp;gt;Welcome&amp;lt;/h2&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;ul&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @for (&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> i = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>; i &amp;lt; (&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>)ViewData[&lt;span style="color:#0086d2">&amp;#34;NumTimes&amp;#34;&lt;/span>]; i++)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;li&amp;gt;@ViewData[&lt;span style="color:#0086d2">&amp;#34;Message&amp;#34;&lt;/span>]&amp;lt;/li&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/ul&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/section>
-&lt;hr>
-&lt;section data-shortcode-section>
-&lt;h3 id="envoi-de-données-aux-vues--viewmodel" >Envoi de données aux vues : ViewModel
-&lt;span>
-&lt;a href="#envoi-de-donn%c3%a9es-aux-vues--viewmodel">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>Approche &lt;em>fortement typée&lt;/em> : on définit une classe pour porter les données de la vue.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Address
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Name { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Street { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> City { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> State { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> PostalCode { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="utilisation-dans-le-contrôleur" >Utilisation dans le contrôleur
-&lt;span>
-&lt;a href="#utilisation-dans-le-contr%c3%b4leur">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> IActionResult Contact()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> viewModel = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Address()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Name = &lt;span style="color:#0086d2">&amp;#34;Microsoft&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Street = &lt;span style="color:#0086d2">&amp;#34;One Microsoft Way&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> City = &lt;span style="color:#0086d2">&amp;#34;Redmond&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> State = &lt;span style="color:#0086d2">&amp;#34;WA&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PostalCode = &lt;span style="color:#0086d2">&amp;#34;98052-6399&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View(viewModel);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="utilisation-dans-la-vue" >Utilisation dans la vue
-&lt;span>
-&lt;a href="#utilisation-dans-la-vue">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>@model WebApplication1.ViewModels.Address
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;Contact&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">address&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Model.Street&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">br&lt;/span> /&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Model.City, @Model.State @Model.PostalCode&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">br&lt;/span> /&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">abbr&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">title&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Phone&amp;#34;&lt;/span>&amp;gt;P:&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">abbr&lt;/span>&amp;gt; 425.555.0100
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">address&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/section>
-&lt;hr>
-&lt;section data-shortcode-section>
 &lt;h3 id="view-layout" >View layout
 &lt;span>
 &lt;a href="#view-layout">
@@ -6250,7 +6162,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/h3>&lt;ul>
 &lt;li>Par défaut, toutes les vues partagent une structure commune définie dans le fichier &lt;code>Views/Shared/_Layout.cshtml&lt;/code>.&lt;/li>
 &lt;li>Dans ce layout, la fonction &lt;code>@RenderBody()&lt;/code> permet de générer le contenu spécifique de la vue à afficher.&lt;/li>
-&lt;li>Les éléments spécifiques à une vue (exemples : inclusions CSS ou JavaScript) peuvent être rassemblés dans des &lt;strong>sections&lt;/strong> affichées par le layout.&lt;/li>
+&lt;li>Les éléments externes (exemples : inclusions CSS ou JavaScript) peuvent être rassemblés dans des &lt;strong>sections&lt;/strong> affichées par le layout.&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h3 id="exemple-de-layout" >Exemple de layout
@@ -6277,8 +6189,339 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @await RenderSectionAsync(&amp;#34;Scripts&amp;#34;, required: false)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">body&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">html&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/section>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="correspondance-entre-contrôleurs-et-vues" >Correspondance entre contrôleurs et vues
+&lt;span>
+&lt;a href="#correspondance-entre-contr%c3%b4leurs-et-vues">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Dans une méthode d&amp;rsquo;action &lt;code>{ActionName}&lt;/code> d&amp;rsquo;un contrôleur &lt;code>Controllers/{CtrlName}Controller&lt;/code>, l&amp;rsquo;appel de &lt;code>View()&lt;/code>déclenche le rendu de la vue &lt;code>Views/{CtrlName}/{ActionName}.cshtml&lt;/code>.&lt;/li>
+&lt;li>Le résultat HTML de ce rendu constitue la réponse HTTP renvoyée par le serveur au client.&lt;/li>
+&lt;li>Nécessite que le contrôleur hérite de &lt;code>Controller&lt;/code> et non &lt;code>ControllerBase&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exemple--rendu-dune-vue" >Exemple : rendu d&amp;rsquo;une vue
+&lt;span>
+&lt;a href="#exemple--rendu-dune-vue">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Dans le fichier &lt;code>Controllers/HelloController.cs&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> HelloController : Controller &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// not ControllerBase!&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: /Hello/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> IActionResult Index()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Renders Views/Hello/Index.cshtml&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="la-syntaxe-razor" >La syntaxe Razor
+&lt;span>
+&lt;a href="#la-syntaxe-razor">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0">Razor&lt;/a> est un langage de balisage permettant d&amp;rsquo;inclure du code C# dans des pages web.&lt;/li>
+&lt;li>Le symbole &lt;code>@&lt;/code> permet de basculer du HTML au C# dans la page. Il peut être suivi :
+&lt;ul>
+&lt;li>d&amp;rsquo;une expression implicite sans espaces &lt;code>@maVariable&lt;/code>&lt;/li>
+&lt;li>d&amp;rsquo;une expression explicite entre parenthèses &lt;code>@(nb1 + nb2)&lt;/code>&lt;/li>
+&lt;li>d&amp;rsquo;un &lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0#razor-reserved-keywords">mot-clé Razor&lt;/a>.&lt;/li>
+&lt;li>d&amp;rsquo;un bloc de code C# entre accolades &lt;code>@{...}&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="possibilités-de-base" >Possibilités de base
+&lt;span>
+&lt;a href="#possibilit%c3%a9s-de-base">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Fichier &lt;code>Views/Hello/Index.cshtml&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>@*
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> This view demonstrates some possibilities of the Razor syntax.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (This is a server-side comment, by the way).
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*@
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;Hello ASP.NET Core MVC!&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @* Some info about a famous monument. *@
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> string monument = &amp;#34;Eiffel Tower&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> int year = 1889;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;The @monument was inaugurated in @year. It is @(DateTime.Now.Year - year) years old!&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="structures-de-contrôle-et-tableaux" >Structures de contrôle et tableaux
+&lt;span>
+&lt;a href="#structures-de-contr%c3%b4le-et-tableaux">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>@{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> string[] colors = { &amp;#34;blue&amp;#34;, &amp;#34;brown&amp;#34;, &amp;#34;black&amp;#34; };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@if (colors.Length &amp;gt; 0)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;A few colors:&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">ul&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @foreach (string color in colors)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">li&lt;/span>&amp;gt;Color: @color&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">li&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">ul&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>(&lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0#control-structures">Plus de détails&lt;/a>)&lt;/p>
+&lt;hr>
+&lt;h3 id="blocs-de-code-razor" >Blocs de code Razor
+&lt;span>
+&lt;a href="#blocs-de-code-razor">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Définis par la syntaxe &lt;code>@{...}&lt;/code>.&lt;/li>
+&lt;li>Le code C# contenu n&amp;rsquo;est pas rendu (= pas ajouté au résultat HTML renvoyé).&lt;/li>
+&lt;li>A l&amp;rsquo;intérieur d&amp;rsquo;un bloc,
+&lt;ul>
+&lt;li>les balises HTML permettent de basculer du C# au HTML.&lt;/li>
+&lt;li>la balise &lt;code>&amp;lt;text&amp;gt;&lt;/code> permet de demander explicitement le rendu HTML d&amp;rsquo;un contenu C# sans balises.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="blocs-razor-et-fonctions" >Blocs Razor et fonctions
+&lt;span>
+&lt;a href="#blocs-razor-et-fonctions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> void RenderStrong(string value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">strong&lt;/span>&amp;gt;@value&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">strong&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> int count = 5;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> while (count &amp;gt; 0)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">text&lt;/span>&amp;gt;@count... &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">text&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count--;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> RenderStrong(&amp;#34;BOOM!&amp;#34;);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="liens" >Liens
+&lt;span>
+&lt;a href="#liens">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Comme en HTML, les balises &lt;code>&amp;lt;a&amp;gt;&lt;/code> sont utilisés pour les créer.&lt;/li>
+&lt;li>Les attributs &lt;code>asp-controller&lt;/code>, &lt;code>asp-action&lt;/code>, &lt;code>asp-route-id&lt;/code> et &lt;code>asp-route-{paramName}&lt;/code> permettent la navigation entre actions.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>@{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> string visitorName = &amp;#34;Garance&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Here&amp;#39;s an &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">href&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;https://fr.wikipedia.org/wiki/Tour_Eiffel&amp;#34;&lt;/span>&amp;gt;external link&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-controller&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Home&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Index&amp;#34;&lt;/span>&amp;gt;link to the home page&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> and a &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Welcome&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-route-name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;@visitorName&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-route-numtimes&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;5&amp;#34;&lt;/span>&amp;gt;link with parameters&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt;.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="affichage-de-la-vue-dexemple" >Affichage de la vue d&amp;rsquo;exemple
+&lt;span>
+&lt;a href="#affichage-de-la-vue-dexemple">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/helloview.png" alt="Hello View">&lt;/p>
+&lt;hr>
+&lt;h3 id="envoi-de-données-aux-vues--viewdata" >Envoi de données aux vues : ViewData
+&lt;span>
+&lt;a href="#envoi-de-donn%c3%a9es-aux-vues--viewdata">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Approche &lt;em>faiblement typée&lt;/em> : on rassemble les paramètres de la vue dans un dictionnaire nommé &lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/overview?view=aspnetcore-6.0#weakly-typed-data-viewdata-viewdata-attribute-and-viewbag">ViewData&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> HelloController : Controller
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: /Hello/Welcome/ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> IActionResult Welcome(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> name, &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> numTimes = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&lt;span style="color:#0086d2">&amp;#34;Message&amp;#34;&lt;/span>] = &lt;span style="color:#0086d2">&amp;#34;Hello &amp;#34;&lt;/span> + name;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&lt;span style="color:#0086d2">&amp;#34;NumTimes&amp;#34;&lt;/span>] = numTimes;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple-dutilisation-de-viewdata" >Exemple d&amp;rsquo;utilisation de ViewData
+&lt;span>
+&lt;a href="#exemple-dutilisation-de-viewdata">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Dans le fichier &lt;code>Views/Hello/Welcome.cshtml&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>@{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span>] = &lt;span style="color:#0086d2">&amp;#34;Welcome&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> numTimes = (&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>)ViewData[&lt;span style="color:#0086d2">&amp;#34;NumTimes&amp;#34;&lt;/span>]!;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;h2&amp;gt;Welcome!&amp;lt;/h2&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;ul&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @for (&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> i = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>; i &amp;lt; numTimes; i++)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;li&amp;gt;@ViewData[&lt;span style="color:#0086d2">&amp;#34;Message&amp;#34;&lt;/span>]&amp;lt;/li&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/ul&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="résultat-obtenu" >Résultat obtenu
+&lt;span>
+&lt;a href="#r%c3%a9sultat-obtenu">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/welcomeview.png" alt="Hello View">&lt;/p>
+&lt;hr>
+&lt;h3 id="envoi-de-données-aux-vues--model" >Envoi de données aux vues : @model
+&lt;span>
+&lt;a href="#envoi-de-donn%c3%a9es-aux-vues--model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Approche &lt;em>fortement typée&lt;/em> : dans une vue, la directive &lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0#model">@model&lt;/a> définit le type du modèle (= la source de données) passé à la vue.&lt;/li>
+&lt;li>Dans cette vue :
+&lt;ul>
+&lt;li>l&amp;rsquo;instance associée est accessible via la propriété (typée) &lt;code>Model&lt;/code> ;&lt;/li>
+&lt;li>&lt;code>@Html.DisplayNameFor&lt;/code> renvoie le nom d&amp;rsquo;une propriété du modèle (&lt;a href="https://stackoverflow.com/questions/61925486/html-displaynamefor-list-vs-ienumerable-in-razor">explication&lt;/a>).&lt;/li>
+&lt;li>&lt;code>@Html.DisplayFor&lt;/code> renvoie la valeur d&amp;rsquo;une propriété du modèle.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exemple--liste-des-films-contrôleur" >Exemple : liste des films (contrôleur)
+&lt;span>
+&lt;a href="#exemple--liste-des-films-contr%c3%b4leur">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Fichier &lt;code>Controllers/MovieController.cs&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.EntityFrameworkCore;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieController : Controller
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">readonly&lt;/span> MvcMovieContext _context;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> MovieController(MvcMovieContext context)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _context = context;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Index()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> movies = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.Movies.OrderBy(m =&amp;gt; m.Title).ToListAsync();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View(movies);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--liste-des-films-vue" >Exemple : liste des films (vue)
+&lt;span>
+&lt;a href="#exemple--liste-des-films-vue">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Fichier &lt;code>Views/Movie/Index.cshtml&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>@model IEnumerable&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">MvcMovie.Models.Movie&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&amp;#34;Title&amp;#34;] = &amp;#34;Movies&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;Movie list&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">table&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;table&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">thead&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">tr&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">th&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayNameFor(model =&amp;gt; model.Title)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">th&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">th&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayNameFor(model =&amp;gt; model.ReleaseDate)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">th&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">th&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayNameFor(model =&amp;gt; model.Genre)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">th&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">th&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">th&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">tr&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">thead&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">tbody&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @foreach (var item in Model)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">tr&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">td&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayFor(modelItem =&amp;gt; item.Title)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">td&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">td&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayFor(modelItem =&amp;gt; item.ReleaseDate)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">td&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">td&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayFor(modelItem =&amp;gt; item.Genre)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">td&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">td&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Edit&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-route-id&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;@item.Id&amp;#34;&lt;/span>&amp;gt;Edit&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt; |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Details&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-route-id&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;@item.Id&amp;#34;&lt;/span>&amp;gt;Details&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt; |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Delete&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-route-id&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;@item.Id&amp;#34;&lt;/span>&amp;gt;Delete&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">td&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">tr&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">tbody&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">table&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--liste-des-films-résultat" >Exemple : liste des films (résultat)
+&lt;span>
+&lt;a href="#exemple--liste-des-films-r%c3%a9sultat">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/movielist.png" alt="Hello View">&lt;/p>
+&lt;hr>
+&lt;h3 id="envoi-de-données-aux-vues--viewmodel" >Envoi de données aux vues : ViewModel
+&lt;span>
+&lt;a href="#envoi-de-donn%c3%a9es-aux-vues--viewmodel">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Approche &lt;em>fortement typée&lt;/em> : on définit une classe spécifique pour porter les données de la vue.&lt;/li>
+&lt;li>Utile quand les données nécessaires à la vue sont issues de différentes classes métier.&lt;/li>
+&lt;li>Principe du patron &lt;a href="https://learn.microsoft.com/en-us/dotnet/architecture/maui/mvvm">MVVM&lt;/a> (&lt;em>Model-View-ViewModel&lt;/em>).&lt;/li>
+&lt;li>&lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/overview?view=aspnetcore-6.0#strongly-typed-data-viewmodel">Plus de détails&lt;/a>.&lt;/li>
+&lt;/ul>
 &lt;hr>
 &lt;h3 id="validation-des-données" >Validation des données
 &lt;span>
