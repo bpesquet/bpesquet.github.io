@@ -587,14 +587,14 @@ public class SeedData
 
             // Add several movies
             context.Movies.AddRange(
-                                new Movie
-                                {
-                                    Title = "When Harry Met Sally",
-                                    ReleaseDate = DateTime.Parse("1989-2-12"),
-                                    Genre = "Romantic Comedy",
-                                },
-                                // ...
-                            );
+                new Movie
+                {
+                    Title = "When Harry Met Sally",
+                    ReleaseDate = DateTime.Parse("1989-2-12"),
+                    Genre = "Romantic Comedy",
+                },
+                // ...
+            );
 
             // Commit changes into DB
             context.SaveChanges();
@@ -958,104 +958,11 @@ Envoyer une requête HTTP DELETE vers l'URL <https://localhost:{port}/api/moviea
 
 ---
 
-{{% section %}}
-
-### Envoi de données aux vues : ViewData
-
-Approche _faiblement typée_ : on utilie un dictionnaire standard.
-
-```csharp
-public IActionResult Welcome(string name, int numTimes = 1)
-{
-    ViewData["Message"] = "Hello " + name;
-    ViewData["NumTimes"] = numTimes;
-    return View();
-}
-```
-
----
-
-### Utilisation dans la vue
-
-```csharp
-@{
-    ViewData["Title"] = "Welcome";
-}
-<h2>Welcome</h2>
-<ul>
-    @for (int i = 0; i < (int)ViewData["NumTimes"]; i++)
-    {
-        <li>@ViewData["Message"]</li>
-    }
-</ul>
-```
-
-{{% /section %}}
-
----
-
-{{% section %}}
-
-### Envoi de données aux vues : ViewModel
-
-Approche _fortement typée_ : on définit une classe pour porter les données de la vue.
-
-```csharp
-public class Address
-{
-    public string Name { get; set; }
-    public string Street { get; set; }
-    public string City { get; set; }
-    public string State { get; set; }
-    public string PostalCode { get; set; }
-}
-```
-
----
-
-### Utilisation dans le contrôleur
-
-```csharp
-public IActionResult Contact()
-{
-    var viewModel = new Address()
-    {
-        Name = "Microsoft",
-        Street = "One Microsoft Way",
-        City = "Redmond",
-        State = "WA",
-        PostalCode = "98052-6399"
-    };
-    return View(viewModel);
-}
-```
-
----
-
-### Utilisation dans la vue
-
-```html
-@model WebApplication1.ViewModels.Address
-
-<h2>Contact</h2>
-<address>
-  @Model.Street<br />
-  @Model.City, @Model.State @Model.PostalCode<br />
-  <abbr title="Phone">P:</abbr> 425.555.0100
-</address>
-```
-
-{{% /section %}}
-
----
-
-{{% section %}}
-
 ### View layout
 
 - Par défaut, toutes les vues partagent une structure commune définie dans le fichier `Views/Shared/_Layout.cshtml`.
 - Dans ce layout, la fonction `@RenderBody()` permet de générer le contenu spécifique de la vue à afficher.
-- Les éléments spécifiques à une vue (exemples : inclusions CSS ou JavaScript) peuvent être rassemblés dans des **sections** affichées par le layout.
+- Les éléments externes (exemples : inclusions CSS ou JavaScript) peuvent être rassemblés dans des **sections** affichées par le layout.
 
 ---
 
@@ -1082,7 +989,309 @@ public IActionResult Contact()
 </html>
 ```
 
-{{% /section %}}
+---
+
+### Correspondance entre contrôleurs et vues
+
+- Dans une méthode d'action `{ActionName}` d'un contrôleur `Controllers/{CtrlName}Controller`, l'appel de `View()`déclenche le rendu de la vue `Views/{CtrlName}/{ActionName}.cshtml`.
+- Le résultat HTML de ce rendu constitue la réponse HTTP renvoyée par le serveur au client.
+- Nécessite que le contrôleur hérite de `Controller` et non `ControllerBase`.
+
+---
+
+### Exemple : rendu d'une vue
+
+Dans le fichier `Controllers/HelloController.cs`.
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+
+namespace MvcMovie.Controllers;
+
+public class HelloController : Controller // not ControllerBase!
+{
+    // 
+    // GET: /Hello/
+    public IActionResult Index()
+    {
+        // Renders Views/Hello/Index.cshtml
+        return View();
+    }
+    // ...
+}
+```
+
+---
+
+### La syntaxe Razor
+
+- [Razor](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0) est un langage de balisage permettant d'inclure du code C# dans des pages web.
+- Le symbole `@` permet de basculer du HTML au C# dans la page. Il peut être suivi :
+  - d'une expression implicite sans espaces `@maVariable`
+  - d'une expression explicite entre parenthèses `@(nb1 + nb2)`
+  - d'un [mot-clé Razor](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0#razor-reserved-keywords).
+  - d'un bloc de code C# entre accolades `@{...}`
+
+---
+
+### Possibilités de base
+
+Fichier `Views/Hello/Index.cshtml`.
+
+```html
+@*
+    This view demonstrates some possibilities of the Razor syntax.
+    (This is a server-side comment, by the way).
+*@
+
+<h2>Hello ASP.NET Core MVC!</h2>
+
+@{
+    @* Some info about a famous monument. *@
+    string monument = "Eiffel Tower";
+    int year = 1889;
+}
+
+<p>The @monument was inaugurated in @year. It is @(DateTime.Now.Year - year) years old!</p>
+```
+
+---
+
+### Structures de contrôle et tableaux
+
+```html
+@{
+    string[] colors = { "blue", "brown", "black" };
+}
+@if (colors.Length > 0)
+{
+    <p>A few colors:</p>
+    <ul>
+    @foreach (string color in colors)
+        {
+            <li>Color: @color</li>
+        }
+    </ul>
+}
+```
+
+([Plus de détails](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0#control-structures))
+
+---
+
+### Blocs de code Razor
+
+- Définis par la syntaxe `@{...}`.
+- Le code C# contenu n'est pas rendu (= pas ajouté au résultat HTML renvoyé).
+- A l'intérieur d'un bloc,
+  - les balises HTML permettent de basculer du C# au HTML.
+  - la balise `<text>` permet de demander explicitement le rendu HTML d'un contenu C# sans balises.
+
+---
+
+### Blocs Razor et fonctions
+
+```html
+<p>
+    @{
+        void RenderStrong(string value)
+        {
+            <strong>@value</strong>
+        }
+
+        int count = 5;
+        while (count > 0)
+        {
+            <text>@count... </text>
+            count--;
+        }
+        RenderStrong("BOOM!");
+    }
+</p>
+```
+
+---
+
+### Liens
+
+- Comme en HTML, les balises `<a>` sont utilisés pour les créer.
+- Les attributs `asp-controller`, `asp-action`, `asp-route-id` et `asp-route-{paramName}` permettent la navigation entre actions.
+
+```html
+@{
+    string visitorName = "Garance";
+}
+<p>
+    Here's an <a href="https://fr.wikipedia.org/wiki/Tour_Eiffel">external link</a>,
+    a <a asp-controller="Home" asp-action="Index">link to the home page</a>
+    and a <a asp-action="Welcome" asp-route-name="@visitorName" asp-route-numtimes="5">link with parameters</a>.
+</p>
+```
+
+---
+
+### Affichage de la vue d'exemple
+
+![Hello View](images/helloview.png)
+
+---
+
+### Envoi de données aux vues : ViewData
+
+Approche _faiblement typée_ : on rassemble les paramètres de la vue dans un dictionnaire nommé [ViewData](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/overview?view=aspnetcore-6.0#weakly-typed-data-viewdata-viewdata-attribute-and-viewbag).
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+
+namespace MvcMovie.Controllers;
+
+public class HelloController : Controller
+{
+    // ...
+    // GET: /Hello/Welcome/ 
+    public IActionResult Welcome(string name, int numTimes = 0)
+    {
+        ViewData["Message"] = "Hello " + name;
+        ViewData["NumTimes"] = numTimes;
+        return View();
+    }
+}
+```
+
+---
+
+### Exemple d'utilisation de ViewData
+
+Dans le fichier `Views/Hello/Welcome.cshtml`.
+
+```csharp
+@{
+    ViewData["Title"] = "Welcome";
+    int numTimes = (int)ViewData["NumTimes"]!;
+}
+
+<h2>Welcome!</h2>
+<ul>
+    @for (int i = 0; i < numTimes; i++)
+    {
+        <li>@ViewData["Message"]</li>
+    }
+</ul>
+```
+
+---
+
+### Résultat obtenu
+
+![Hello View](images/welcomeview.png)
+
+---
+
+### Envoi de données aux vues : @model
+
+- Approche _fortement typée_ : dans une vue, la directive [@model](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0#model) définit le type du modèle (= la source de données) passé à la vue.
+- Dans cette vue :
+  - l'instance associée est accessible via la propriété (typée) `Model` ;
+  - `@Html.DisplayNameFor` renvoie le nom d'une propriété du modèle ([explication](https://stackoverflow.com/questions/61925486/html-displaynamefor-list-vs-ienumerable-in-razor)).
+  - `@Html.DisplayFor` renvoie la valeur d'une propriété du modèle.
+
+---
+
+### Exemple : liste des films (contrôleur)
+
+Fichier `Controllers/MovieController.cs`.
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Data;
+
+namespace MvcMovie.Controllers;
+
+public class MovieController : Controller
+{
+    private readonly MvcMovieContext _context;
+
+    public MovieController(MvcMovieContext context)
+    {
+        _context = context;
+    }
+
+    public async Task<IActionResult> Index()
+    {
+        var movies = await _context.Movies.OrderBy(m => m.Title).ToListAsync();
+        return View(movies);
+    }
+}
+```
+
+---
+
+### Exemple : liste des films (vue)
+
+Fichier `Views/Movie/Index.cshtml`.
+
+```html
+@model IEnumerable<MvcMovie.Models.Movie>
+
+@{
+    ViewData["Title"] = "Movies";
+}
+
+<h2>Movie list</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleaseDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+```
+
+---
+
+### Exemple : liste des films (résultat)
+
+![Hello View](images/movielist.png)
+
+---
+
+### Envoi de données aux vues : ViewModel
+
+- Approche _fortement typée_ : on définit une classe spécifique pour porter les données de la vue.
+- Utile quand les données nécessaires à la vue sont issues de différentes classes métier.
+- Principe du patron [MVVM](https://learn.microsoft.com/en-us/dotnet/architecture/maui/mvvm) (_Model-View-ViewModel_).
+- [Plus de détails](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/overview?view=aspnetcore-6.0#strongly-typed-data-viewmodel).
 
 ---
 
