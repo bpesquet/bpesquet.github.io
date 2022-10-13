@@ -5055,7 +5055,6 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;li>Interactions avec une base de données&lt;/li>
 &lt;li>Création d&amp;rsquo;API web&lt;/li>
 &lt;li>Création de vues HTML&lt;/li>
-&lt;li>Tests&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="présentation-daspnet-core" >Présentation d&amp;rsquo;ASP.NET Core
@@ -5601,12 +5600,14 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Movie
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [StringLength(100, MinimumLength = 3)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Title { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>!;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Display(Name = &amp;#34;Release Date&amp;#34;), DataType(DataType.Date)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DateTime ReleaseDate { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [StringLength(30)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Genre { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>!;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
@@ -5718,6 +5719,12 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Genre = &lt;span style="color:#0086d2">&amp;#34;Romantic Comedy&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Movie
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Title = &lt;span style="color:#0086d2">&amp;#34;Rio Bravo&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ReleaseDate = DateTime.Parse(&lt;span style="color:#0086d2">&amp;#34;1959-4-15&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Genre = &lt;span style="color:#0086d2">&amp;#34;Western&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Commit changes into DB&lt;/span>
@@ -6153,9 +6160,39 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;hr>
-&lt;h3 id="view-layout" >View layout
+&lt;h3 id="correspondance-entre-contrôleurs-et-vues" >Correspondance entre contrôleurs et vues
 &lt;span>
-&lt;a href="#view-layout">
+&lt;a href="#correspondance-entre-contr%c3%b4leurs-et-vues">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Dans une méthode d&amp;rsquo;action &lt;code>{ActionName}&lt;/code> d&amp;rsquo;un contrôleur &lt;code>Controllers/{CtrlName}Controller&lt;/code>, l&amp;rsquo;appel de &lt;code>View()&lt;/code>déclenche le rendu de la vue &lt;code>Views/{CtrlName}/{ActionName}.cshtml&lt;/code>.&lt;/li>
+&lt;li>Le résultat HTML de ce rendu constitue la réponse HTTP renvoyée par le serveur au client.&lt;/li>
+&lt;li>Nécessite que le contrôleur hérite de &lt;code>Controller&lt;/code> et non &lt;code>ControllerBase&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="la-syntaxe-des-vues" >La syntaxe des vues
+&lt;span>
+&lt;a href="#la-syntaxe-des-vues">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0">Razor&lt;/a> est un langage de balisage permettant d&amp;rsquo;inclure du code C# dans des pages web.&lt;/li>
+&lt;li>Le symbole &lt;code>@&lt;/code> permet de basculer du HTML au C# dans la page. Il peut être suivi :
+&lt;ul>
+&lt;li>d&amp;rsquo;une expression implicite sans espaces &lt;code>@maVariable&lt;/code>&lt;/li>
+&lt;li>d&amp;rsquo;une expression explicite entre parenthèses &lt;code>@(nb1 + nb2)&lt;/code>&lt;/li>
+&lt;li>d&amp;rsquo;un &lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0#razor-reserved-keywords">mot-clé Razor&lt;/a>.&lt;/li>
+&lt;li>d&amp;rsquo;un bloc de code C# entre accolades &lt;code>@{...}&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="structure-commune-des-vues" >Structure commune des vues
+&lt;span>
+&lt;a href="#structure-commune-des-vues">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -6190,25 +6227,13 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">body&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">html&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="correspondance-entre-contrôleurs-et-vues" >Correspondance entre contrôleurs et vues
-&lt;span>
-&lt;a href="#correspondance-entre-contr%c3%b4leurs-et-vues">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Dans une méthode d&amp;rsquo;action &lt;code>{ActionName}&lt;/code> d&amp;rsquo;un contrôleur &lt;code>Controllers/{CtrlName}Controller&lt;/code>, l&amp;rsquo;appel de &lt;code>View()&lt;/code>déclenche le rendu de la vue &lt;code>Views/{CtrlName}/{ActionName}.cshtml&lt;/code>.&lt;/li>
-&lt;li>Le résultat HTML de ce rendu constitue la réponse HTTP renvoyée par le serveur au client.&lt;/li>
-&lt;li>Nécessite que le contrôleur hérite de &lt;code>Controller&lt;/code> et non &lt;code>ControllerBase&lt;/code>.&lt;/li>
-&lt;/ul>
-&lt;hr>
 &lt;h3 id="exemple--rendu-dune-vue" >Exemple : rendu d&amp;rsquo;une vue
 &lt;span>
 &lt;a href="#exemple--rendu-dune-vue">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Dans le fichier &lt;code>Controllers/HelloController.cs&lt;/code>.&lt;/p>
+&lt;/h3>&lt;p>Méthode d&amp;rsquo;action associée à la route &lt;code>/Hello&lt;/code> dans le fichier &lt;code>Controllers/HelloController.cs&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
@@ -6225,27 +6250,9 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="la-syntaxe-razor" >La syntaxe Razor
+&lt;h3 id="exemple--possibilités-de-base" >Exemple : possibilités de base
 &lt;span>
-&lt;a href="#la-syntaxe-razor">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0">Razor&lt;/a> est un langage de balisage permettant d&amp;rsquo;inclure du code C# dans des pages web.&lt;/li>
-&lt;li>Le symbole &lt;code>@&lt;/code> permet de basculer du HTML au C# dans la page. Il peut être suivi :
-&lt;ul>
-&lt;li>d&amp;rsquo;une expression implicite sans espaces &lt;code>@maVariable&lt;/code>&lt;/li>
-&lt;li>d&amp;rsquo;une expression explicite entre parenthèses &lt;code>@(nb1 + nb2)&lt;/code>&lt;/li>
-&lt;li>d&amp;rsquo;un &lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0#razor-reserved-keywords">mot-clé Razor&lt;/a>.&lt;/li>
-&lt;li>d&amp;rsquo;un bloc de code C# entre accolades &lt;code>@{...}&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="possibilités-de-base" >Possibilités de base
-&lt;span>
-&lt;a href="#possibilit%c3%a9s-de-base">
+&lt;a href="#exemple--possibilit%c3%a9s-de-base">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -6265,9 +6272,9 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;The @monument was inaugurated in @year. It is @(DateTime.Now.Year - year) years old!&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="structures-de-contrôle-et-tableaux" >Structures de contrôle et tableaux
+&lt;h3 id="exemple--structures-de-contrôle-et-tableaux" >Exemple : structures de contrôle et tableaux
 &lt;span>
-&lt;a href="#structures-de-contr%c3%b4le-et-tableaux">
+&lt;a href="#exemple--structures-de-contr%c3%b4le-et-tableaux">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -6303,9 +6310,9 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="blocs-razor-et-fonctions" >Blocs Razor et fonctions
+&lt;h3 id="exemple--blocs-razor-et-fonctions" >Exemple : blocs Razor et fonctions
 &lt;span>
-&lt;a href="#blocs-razor-et-fonctions">
+&lt;a href="#exemple--blocs-razor-et-fonctions">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -6333,7 +6340,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>Comme en HTML, les balises &lt;code>&amp;lt;a&amp;gt;&lt;/code> sont utilisés pour les créer.&lt;/li>
+&lt;li>Comme en HTML, les balises &lt;code>&amp;lt;a&amp;gt;&lt;/code> sont utilisées pour les créer.&lt;/li>
 &lt;li>Les attributs &lt;code>asp-controller&lt;/code>, &lt;code>asp-action&lt;/code>, &lt;code>asp-route-id&lt;/code> et &lt;code>asp-route-{paramName}&lt;/code> permettent la navigation entre actions.&lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>@{
@@ -6345,9 +6352,9 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> and a &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Welcome&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-route-name&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;@visitorName&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-route-numtimes&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;5&amp;#34;&lt;/span>&amp;gt;link with parameters&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt;.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="affichage-de-la-vue-dexemple" >Affichage de la vue d&amp;rsquo;exemple
+&lt;h3 id="exemple--vue-générée" >Exemple : vue générée
 &lt;span>
-&lt;a href="#affichage-de-la-vue-dexemple">
+&lt;a href="#exemple--vue-g%c3%a9n%c3%a9r%c3%a9e">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -6443,6 +6450,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _context = context;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: Movie&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Index()
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> movies = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.Movies.OrderBy(m =&amp;gt; m.Title).ToListAsync();
@@ -6463,7 +6471,10 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&amp;#34;Title&amp;#34;] = &amp;#34;Movies&amp;#34;;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;Movie list&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;Movies&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Create&amp;#34;&lt;/span>&amp;gt;Create New&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">p&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">table&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;table&amp;#34;&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">thead&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">tr&lt;/span>&amp;gt;
@@ -6523,246 +6534,537 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;li>&lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/overview?view=aspnetcore-6.0#strongly-typed-data-viewmodel">Plus de détails&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="validation-des-données" >Validation des données
+&lt;h3 id="exemple--détails-sur-un-film-contrôleur" >Exemple : détails sur un film (contrôleur)
 &lt;span>
-&lt;a href="#validation-des-donn%c3%a9es">
+&lt;a href="#exemple--d%c3%a9tails-sur-un-film-contr%c3%b4leur">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>L&amp;rsquo;annotation des classes du Modèle permet de définir des &lt;strong>règles de validation&lt;/strong> qui seront automatiquement vérifiées à la fois côté serveur et côté client.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> System.ComponentModel.DataAnnotations;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> LoginViewModel
+&lt;/h3>&lt;p>Méthode d&amp;rsquo;action associée à la route &lt;code>/Movie/Details/{Id}&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.EntityFrameworkCore;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieController : Controller
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Required]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [EmailAddress]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Email { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Required]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [DataType(DataType.Password)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Password { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Display(Name = &amp;#34;Remember me?&amp;#34;)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">bool&lt;/span> RememberMe { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: Movies/Details/5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Details(&lt;span style="color:#cdcaa9;font-weight:bold">int?&lt;/span> id)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (id == &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NotFound();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> movie = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.Movies
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .FirstOrDefaultAsync(m =&amp;gt; m.Id == id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (movie == &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NotFound();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View(movie);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="validation-dans-le-contrôleur" >Validation dans le contrôleur
+&lt;h3 id="exemple--détails-sur-un-film-vue" >Exemple : détails sur un film (vue)
 &lt;span>
-&lt;a href="#validation-dans-le-contr%c3%b4leur">
+&lt;a href="#exemple--d%c3%a9tails-sur-un-film-vue">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Login(LoginViewModel model, &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> returnUrl = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>)
+&lt;/h3>&lt;p>Fichier &lt;code>Views/Movie/Details.cshtml&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>@model MvcMovie.Models.Movie
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&amp;#34;Title&amp;#34;] = &amp;#34;Details&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;@Html.DisplayFor(model =&amp;gt; model.Title)&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">hr&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">dl&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;row&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">dt&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;col-sm-3&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayNameFor(model =&amp;gt; model.ReleaseDate)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">dt&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">dd&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;col-sm-9&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayFor(model =&amp;gt; model.ReleaseDate)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">dd&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">dt&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;col-sm-3&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayNameFor(model =&amp;gt; model.Genre)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">dt&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">dd&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;col-sm-9&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayFor(model =&amp;gt; model.Genre)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">dd&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">dl&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Edit&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-route-id&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;@Model.Id&amp;#34;&lt;/span>&amp;gt;Edit&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt; |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Index&amp;#34;&lt;/span>&amp;gt;Back to List&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--détails-sur-un-film-résultat" >Exemple : détails sur un film (résultat)
+&lt;span>
+&lt;a href="#exemple--d%c3%a9tails-sur-un-film-r%c3%a9sultat">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/moviedetails.png" alt="Movie details">&lt;/p>
+&lt;hr>
+&lt;h3 id="envoi-de-données-depuis-une-vue" >Envoi de données depuis une vue
+&lt;span>
+&lt;a href="#envoi-de-donn%c3%a9es-depuis-une-vue">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>S&amp;rsquo;effectue via un &lt;strong>formulaire&lt;/strong> dont la soumission déclenche l&amp;rsquo;envoi au serveur d&amp;rsquo;une requête HTTP POST.&lt;/li>
+&lt;li>Les champs du formulaire sont implicitement associés aux paramètres de l&amp;rsquo;action du contrôleur qui reçoit la requête POST.&lt;/li>
+&lt;li>Les &lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-6.0#built-in-attributes">annotations du modèle&lt;/a> définissent des &lt;a href="https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/validation?view=aspnetcore-6.0">règles de validation&lt;/a> automatiquement vérifiées côté client et utilisables côté serveur.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exemple--classe-métier-annotée" >Exemple : classe métier annotée
+&lt;span>
+&lt;a href="#exemple--classe-m%c3%a9tier-annot%c3%a9e">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Fichier &lt;code>Models/Movie.cs&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> System.ComponentModel.DataAnnotations;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Models;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Movie
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Check model validation rules&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> Id { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [StringLength(100, MinimumLength = 3)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Title { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>!;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Display(Name = &amp;#34;Release Date&amp;#34;), DataType(DataType.Date)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> DateTime ReleaseDate { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [StringLength(30)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> Genre { &lt;span style="color:#fb660a;font-weight:bold">get&lt;/span>; &lt;span style="color:#fb660a;font-weight:bold">set&lt;/span>; } = &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>!;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--formulaire-dajout-dun-film-contrôleur" >Exemple : formulaire d&amp;rsquo;ajout d&amp;rsquo;un film (contrôleur)
+&lt;span>
+&lt;a href="#exemple--formulaire-dajout-dun-film-contr%c3%b4leur">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Méthode d&amp;rsquo;action associée à une requête HTTP GET vers la route &lt;code>/Movie/Create&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.EntityFrameworkCore;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieController : Controller
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: Movie/Create&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> IActionResult Create()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--formulaire-dajout-dun-film-vue" >Exemple : formulaire d&amp;rsquo;ajout d&amp;rsquo;un film (vue)
+&lt;span>
+&lt;a href="#exemple--formulaire-dajout-dun-film-vue">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Fichier &lt;code>Views/Movie/Create.cshtml&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>@model MvcMovie.Models.Movie
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&amp;#34;Title&amp;#34;] = &amp;#34;Create&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;Create a Movie&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">hr&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;row&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;col-md-4&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">form&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Create&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-validation-summary&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;ModelOnly&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;text-danger&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-group&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;control-label&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-control&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-validation-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;text-danger&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-group&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;ReleaseDate&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;control-label&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;ReleaseDate&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-control&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-validation-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;ReleaseDate&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;text-danger&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-group&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Genre&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;control-label&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Genre&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-control&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-validation-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Genre&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;text-danger&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-group&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">type&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;submit&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">value&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Create&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;btn btn-primary&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">form&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Index&amp;#34;&lt;/span>&amp;gt;Back to List&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@section Scripts {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@{await Html.RenderPartialAsync(&amp;#34;_ValidationScriptsPartial&amp;#34;);}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--formulaire-dajout-dun-film-résultat" >Exemple : formulaire d&amp;rsquo;ajout d&amp;rsquo;un film (résultat)
+&lt;span>
+&lt;a href="#exemple--formulaire-dajout-dun-film-r%c3%a9sultat">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/moviecreate.png" alt="Movie add">&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple--ajout-dun-film-contrôleur" >Exemple : ajout d&amp;rsquo;un film (contrôleur)
+&lt;span>
+&lt;a href="#exemple--ajout-dun-film-contr%c3%b4leur">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Méthode d&amp;rsquo;action associée à une requête HTTP POST vers la route &lt;code>/Movie/Create&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.EntityFrameworkCore;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Models;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieController : Controller
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// POST: Movie/Create&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// To protect from overposting attacks, enable the specific properties you want to bind to.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [HttpPost]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [ValidateAntiForgeryToken]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Create([Bind(&lt;span style="color:#0086d2">&amp;#34;Id,Title,ReleaseDate,Genre&amp;#34;&lt;/span>)] Movie movie)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Apply model validation rules&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (ModelState.IsValid)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ... (nominal case: work with the model)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _context.Add(movie);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.SaveChangesAsync();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> RedirectToAction(nameof(Index));
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// At this point, something failed: redisplay form&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View(model);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="tests" >Tests
-&lt;span>
-&lt;a href="#tests">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;hr>
-&lt;h3 id="typologie-des-tests" >Typologie des tests
-&lt;span>
-&lt;a href="#typologie-des-tests">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Test unitaire&lt;/strong> (TU) : vérifie un composant individuel de l&amp;rsquo;application.&lt;/li>
-&lt;li>&lt;strong>Test d&amp;rsquo;intégration&lt;/strong> : vérifie les interactions entre différents composants de l&amp;rsquo;application, y compris des composants externes comme une base de données ou un service web.&lt;/li>
-&lt;li>&lt;strong>Test fonctionnel (ou test de validation)&lt;/strong> : vérifie que l&amp;rsquo;application fonctionne comme prévu du point de vue de l&amp;rsquo;utilisateur.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="tests-unitaires-vs-tests-dintégration" >Tests unitaires Vs tests d&amp;rsquo;intégration
-&lt;span>
-&lt;a href="#tests-unitaires-vs-tests-dint%c3%a9gration">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Ils sont tous deux automatisés.&lt;/li>
-&lt;li>Les TU isolent le composant à tester du reste de l&amp;rsquo;application à l&amp;rsquo;aide de &lt;em>test doubles&lt;/em> (parfois appelés &lt;em>dummies&lt;/em>, &lt;em>stubs&lt;/em> ou encore &lt;em>mocks&lt;/em>) qui simulent le comportement des autres composants. Leur exécution est rapide.&lt;/li>
-&lt;li>Les tests d&amp;rsquo;intégration se basent sur les véritables composants de l&amp;rsquo;application. Leur mise en place est souvent plus complexe et leur exécution plus lente.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="quelle-stratégie-adopter-" >Quelle stratégie adopter ?
-&lt;span>
-&lt;a href="#quelle-strat%c3%a9gie-adopter-">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Vouloir tester tous les scénarios et configurations possibles est coûteux et pas forcément efficace.&lt;/li>
-&lt;li>Il est préférable de se concentrer sur les éléments-clés offrant le meilleur rapport coût/bénéfices : composants essentiels, opérations élémentaires (CRUD), principaux services de l&amp;rsquo;application&amp;hellip;&lt;/li>
-&lt;li>Des &lt;em>smoke tests&lt;/em> vérifiant uniquement le renvoi d&amp;rsquo;un code HTTP de succès pour chaque route peuvent constituer un premier filet de sécurité.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="etapes-dun-test--le-patron-aaa" >Etapes d&amp;rsquo;un test : le patron AAA
-&lt;span>
-&lt;a href="#etapes-dun-test--le-patron-aaa">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;em>Arrange&lt;/em> : préparation du test.
-&lt;ul>
-&lt;li>Lancement de l&amp;rsquo;application ;&lt;/li>
-&lt;li>Préparation de la base de données ;&lt;/li>
-&lt;li>&amp;hellip;&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;em>Act&lt;/em> : réalisation des opérations à tester.&lt;/li>
-&lt;li>&lt;em>Assert&lt;/em> : vérification des résultats des actions précédentes au moyen d&amp;rsquo;&lt;a href="https://en.wikipedia.org/wiki/Assertion_(software_development)">assertions&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="création-dun-projet-de-test-net" >Création d&amp;rsquo;un projet de test .NET
-&lt;span>
-&lt;a href="#cr%c3%a9ation-dun-projet-de-test-net">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet new xunit -o &amp;lt;TestProjectName&amp;gt;&lt;/code>&lt;/p>
-&lt;p>&lt;a href="https://xunit.net/">xUnit&lt;/a> est un framework de tests unitaires &lt;em>open source&lt;/em> pour la plate-forme .NET.&lt;/p>
-&lt;p>&lt;code>&amp;gt; dotnet add ./&amp;lt;TestProjectName&amp;gt;/&amp;lt;TestProjectName&amp;gt;.csproj reference ./&amp;lt;ProjectName&amp;gt;/&amp;lt;ProjectName&amp;gt;.csproj&lt;/code>&lt;/p>
-&lt;p>Ajoute au projet de test une référence vers le projet à tester (les deux étant situés dans le même répertoire parent).&lt;/p>
-&lt;hr>
-&lt;h3 id="exemple-de-classe-de-test" >Exemple de classe de test
-&lt;span>
-&lt;a href="#exemple-de-classe-de-test">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;code>[Fact]&lt;/code> indique une méthode de test.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Xunit;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> Prime.UnitTests.Services
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> PrimeService_IsPrimeShould
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Fact]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> IsPrime_InputIs1_ReturnFalse()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Arrange&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> primeService = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> PrimeService();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Act&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">bool&lt;/span> result = primeService.IsPrime(&lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Assert&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assert.False(result, &lt;span style="color:#0086d2">&amp;#34;1 should not be prime&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View(movie);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="initialisation-du-test" >Initialisation du test
+&lt;h3 id="exemple--ajout-dun-film-résultat" >Exemple : ajout d&amp;rsquo;un film (résultat)
 &lt;span>
-&lt;a href="#initialisation-du-test">
+&lt;a href="#exemple--ajout-dun-film-r%c3%a9sultat">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Permet d&amp;rsquo;éviter la duplication de code.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>ppublic &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> PrimeService_IsPrimeShould
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">readonly&lt;/span> PrimeService _primeService;
+&lt;/h3>&lt;p>&lt;img src="images/moviecreateresult.png" alt="Movie add result">&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple--formulaire-de-mise-à-jour-dun-film-contrôleur" >Exemple : formulaire de mise à jour d&amp;rsquo;un film (contrôleur)
+&lt;span>
+&lt;a href="#exemple--formulaire-de-mise-%c3%a0-jour-dun-film-contr%c3%b4leur">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Méthode d&amp;rsquo;action associée à une requête HTTP GET vers la route &lt;code>/Movie/Edit/{Id}&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.EntityFrameworkCore;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Models;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> PrimeService_IsPrimeShould()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Create instance of tested class&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _primeService = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> PrimeService();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieController : Controller
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="paramétrage-des-méthodes-de-test" >Paramétrage des méthodes de test
-&lt;span>
-&lt;a href="#param%c3%a9trage-des-m%c3%a9thodes-de-test">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Theory]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(2)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(3)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(5)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(7)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> IsPrime_PrimesLessThan10_ReturnTrue(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">value&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: Movies/Edit/5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Edit(&lt;span style="color:#cdcaa9;font-weight:bold">int?&lt;/span> id)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> result = _primeService.IsPrime(&lt;span style="color:#fb660a;font-weight:bold">value&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (id == &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NotFound();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assert.True(result, &lt;span style="color:#0086d2">$&amp;#34;{value} should be prime&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> movie = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.Movies.FindAsync(id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (movie == &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NotFound();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View(movie);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="exécution-des-tests" >Exécution des tests
+&lt;h3 id="exemple--formulaire-de-mise-à-jour-dun-film-vue" >Exemple : formulaire de mise à jour d&amp;rsquo;un film (vue)
 &lt;span>
-&lt;a href="#ex%c3%a9cution-des-tests">
+&lt;a href="#exemple--formulaire-de-mise-%c3%a0-jour-dun-film-vue">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet test&lt;/code>&lt;/p>
-&lt;p>&lt;img src="images/dotnet_test_result.png" alt="dotnet test result">&lt;/p>
-&lt;hr>
-&lt;h3 id="configuration-dun-projet-de-test-pour-aspnet-core" >Configuration d&amp;rsquo;un projet de test pour ASP.NET Core
-&lt;span>
-&lt;a href="#configuration-dun-projet-de-test-pour-aspnet-core">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;code>&amp;gt; dotnet add package Microsoft.AspNetCore.Mvc.Testing -v 5.0.12&lt;/code>&lt;/p>
-&lt;p>Ajoute un package dédié aux tests dans cet environnement, ici dans une version adaptée à .NET 5.&lt;/p>
-&lt;hr>
-&lt;h3 id="exemple-de-classe-de-test-1" >Exemple de classe de test
-&lt;span>
-&lt;a href="#exemple-de-classe-de-test-1">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> System.Threading.Tasks;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc.Testing;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Xunit;
+&lt;/h3>&lt;p>Fichier &lt;code>Views/Movie/Edit.cshtml&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>@model MvcMovie.Models.Movie
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Tests
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&amp;#34;Title&amp;#34;] = &amp;#34;Edit&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;Edit a Movie&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">hr&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;row&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;col-md-4&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">form&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Edit&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-validation-summary&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;ModelOnly&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;text-danger&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">type&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;hidden&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Id&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-group&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;control-label&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-control&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-validation-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Title&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;text-danger&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-group&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;ReleaseDate&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;control-label&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;ReleaseDate&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-control&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-validation-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;ReleaseDate&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;text-danger&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-group&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Genre&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;control-label&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">label&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Genre&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-control&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-validation-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Genre&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;text-danger&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">span&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;form-group&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">type&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;submit&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">value&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Save&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;btn btn-primary&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">form&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Index&amp;#34;&lt;/span>&amp;gt;Back to List&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@section Scripts {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@{await Html.RenderPartialAsync(&amp;#34;_ValidationScriptsPartial&amp;#34;);}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--formulaire-de-mise-à-jour-dun-film-résultat" >Exemple : formulaire de mise à jour d&amp;rsquo;un film (résultat)
+&lt;span>
+&lt;a href="#exemple--formulaire-de-mise-%c3%a0-jour-dun-film-r%c3%a9sultat">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/movieedit.png" alt="Movie edit">&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple--mise-à-jour-dun-film-contrôleur" >Exemple : mise à jour d&amp;rsquo;un film (contrôleur)
+&lt;span>
+&lt;a href="#exemple--mise-%c3%a0-jour-dun-film-contr%c3%b4leur">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Méthode d&amp;rsquo;action associée à une requête HTTP POST vers la route &lt;code>/Movie/Edit&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.EntityFrameworkCore;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Models;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieController : Controller
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> HomeControllerTests
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> : IClassFixture&amp;lt;WebApplicationFactory&amp;lt;MvcMovie.Startup&amp;gt;&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">readonly&lt;/span> WebApplicationFactory&amp;lt;MvcMovie.Startup&amp;gt; _factory;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> HomeControllerTests(WebApplicationFactory&amp;lt;MvcMovie.Startup&amp;gt; factory)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _factory = factory;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// POST: Movies/Edit/5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// To protect from overposting attacks, enable the specific properties you want to bind to.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [HttpPost]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [ValidateAntiForgeryToken]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Edit(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> id, [Bind(&lt;span style="color:#0086d2">&amp;#34;Id,Title,ReleaseDate,Genre&amp;#34;&lt;/span>)] Movie movie)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (id != movie.Id)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NotFound();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (ModelState.IsValid)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">try&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _context.Update(movie);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.SaveChangesAsync();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">catch&lt;/span> (DbUpdateConcurrencyException)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (!MovieExists(movie.Id))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NotFound();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">throw&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> RedirectToAction(nameof(Index));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View(movie);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">private&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">bool&lt;/span> MovieExists(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> id)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> _context.Movies.Any(e =&amp;gt; e.Id == id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="smoke-testing-dun-contrôleur" >Smoke testing d&amp;rsquo;un contrôleur
+&lt;h3 id="exemple--mise-à-jour-dun-film-résultat" >Exemple : mise à jour d&amp;rsquo;un film (résultat)
 &lt;span>
-&lt;a href="#smoke-testing-dun-contr%c3%b4leur">
+&lt;a href="#exemple--mise-%c3%a0-jour-dun-film-r%c3%a9sultat">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [Theory]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(&amp;#34;/&amp;#34;)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(&amp;#34;/Home/Index&amp;#34;)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [InlineData(&amp;#34;/Home/Privacy&amp;#34;)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task Get_EndpointsReturnSuccessAndCorrectContentType(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> url)
+&lt;/h3>&lt;p>&lt;img src="images/movieeditresult.png" alt="Movie edit result">&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple--avertissement-avant-suppression-dun-film-contrôleur" >Exemple : avertissement avant suppression d&amp;rsquo;un film (contrôleur)
+&lt;span>
+&lt;a href="#exemple--avertissement-avant-suppression-dun-film-contr%c3%b4leur">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Méthode d&amp;rsquo;action associée à la route &lt;code>Movie/Delete/{Id}&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.EntityFrameworkCore;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Models;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieController : Controller
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// GET: Movies/Delete/5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; Delete(&lt;span style="color:#cdcaa9;font-weight:bold">int?&lt;/span> id)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Arrange&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> client = _factory.CreateClient();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Act&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> response = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> client.GetAsync(url);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Assert&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> response.EnsureSuccessStatusCode(); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Status Code 200-299&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assert.Equal(&lt;span style="color:#0086d2">&amp;#34;text/html; charset=utf-8&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> response.Content.Headers.ContentType.ToString());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (id == &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NotFound();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> movie = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.Movies
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .FirstOrDefaultAsync(m =&amp;gt; m.Id == id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (movie == &lt;span style="color:#fb660a;font-weight:bold">null&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> NotFound();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> View(movie);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire" >Sommaire
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--avertissement-avant-suppression-dun-film-vue" >Exemple : avertissement avant suppression d&amp;rsquo;un film (vue)
+&lt;span>
+&lt;a href="#exemple--avertissement-avant-suppression-dun-film-vue">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>@model MvcMovie.Models.Movie
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ViewData[&amp;#34;Title&amp;#34;] = &amp;#34;Delete&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;Delete a Movie&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">h2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">h4&lt;/span>&amp;gt;Are you sure?&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">h4&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">hr&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">dl&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;row&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">dt&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;col-sm-3&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayNameFor(model =&amp;gt; model.Title)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">dt&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">dd&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;col-sm-9&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayFor(model =&amp;gt; model.Title)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">dd&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">dt&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;col-sm-3&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayNameFor(model =&amp;gt; model.ReleaseDate)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">dt&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">dd&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;col-sm-9&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayFor(model =&amp;gt; model.ReleaseDate)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">dd&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">dt&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;col-sm-3&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayNameFor(model =&amp;gt; model.Genre)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">dt&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">dd&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;col-sm-9&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @Html.DisplayFor(model =&amp;gt; model.Genre)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">dd&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">dd&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">dl&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">form&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Delete&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">type&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;hidden&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-for&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Id&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">input&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">type&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;submit&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">value&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Delete&amp;#34;&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">class&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;btn btn-danger&amp;#34;&lt;/span> /&amp;gt; |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span> &lt;span style="color:#ff0086;font-weight:bold">asp-action&lt;/span>=&lt;span style="color:#0086d2">&amp;#34;Index&amp;#34;&lt;/span>&amp;gt;Back to List&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">a&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">form&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--avertissement-avant-suppression-dun-film-résultat" >Exemple : avertissement avant suppression d&amp;rsquo;un film (résultat)
+&lt;span>
+&lt;a href="#exemple--avertissement-avant-suppression-dun-film-r%c3%a9sultat">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/moviedelete.png" alt="Movie deletion">&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple--suppression-dun-film-contrôleur" >Exemple : suppression d&amp;rsquo;un film (contrôleur)
+&lt;span>
+&lt;a href="#exemple--suppression-dun-film-contr%c3%b4leur">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Méthode d&amp;rsquo;action associée à une requête HTTP POST vers la route &lt;code>Movie/Delete&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.AspNetCore.Mvc;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> Microsoft.EntityFrameworkCore;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Data;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> MvcMovie.Models;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">namespace&lt;/span> MvcMovie.Controllers;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MovieController : Controller
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// POST: Movies/Delete/5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [HttpPost, ActionName(&amp;#34;Delete&amp;#34;)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ff0086;font-weight:bold"> [ValidateAntiForgeryToken]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> Task&amp;lt;IActionResult&amp;gt; DeleteConfirmed(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> id)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> movie = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.Movies.FindAsync(id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _context.Movies.Remove(movie!);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.SaveChangesAsync();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> RedirectToAction(nameof(Index));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--suppression-dun-film-résultat" >Exemple : suppression d&amp;rsquo;un film (résultat)
+&lt;span>
+&lt;a href="#exemple--suppression-dun-film-r%c3%a9sultat">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/moviedeleteresult.png" alt="Movie deletion result">&lt;/p>
+&lt;hr>
+&lt;h2 id="to-be-continued" >To be continued
+&lt;span>
+&lt;a href="#to-be-continued">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;img src="images/late-work-oh-you-have-a-good-reason-meme.jpg" alt="Late">&lt;/p></description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/slides/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/slides/csharp/</guid><description>&lt;h2 id="sommaire" >Sommaire
 &lt;span>
 &lt;a href="#sommaire">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
