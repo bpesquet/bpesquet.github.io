@@ -12,7 +12,6 @@ draft: false
 - Interactions avec une base de données
 - Création d'API web
 - Création de vues HTML
-- Tests
 
 ---
 
