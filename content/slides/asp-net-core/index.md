@@ -473,6 +473,7 @@ public class Movie
 {
     public int Id { get; set; }
 
+    [StringLength(100, MinimumLength = 3)]
     public string Title { get; set; } = null!;
 
     [Display(Name = "Release Date"), DataType(DataType.Date)]
@@ -1019,7 +1020,7 @@ Envoyer une requête HTTP DELETE vers l'URL <https://localhost:{port}/api/moviea
 
 ### Exemple : rendu d'une vue
 
-Dans le fichier `Controllers/HelloController.cs`.
+Méthode d'action associée à la route `/Hello` dans le fichier `Controllers/HelloController.cs`.
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -1388,11 +1389,13 @@ Fichier `Views/Movie/Details.cshtml`.
 
 - S'effectue via un **formulaire** dont la soumission déclenche l'envoi au serveur d'une requête HTTP POST.
 - Les champs du formulaire sont implicitement associés aux paramètres de l'action du contrôleur qui reçoit la requête POST.
-- Les [annotations du modèle](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-6.0#built-in-attributes) définissent des **règles de validation** automatiquement vérifiées côté client et utilisables côté serveur.
+- Les [annotations du modèle](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-6.0#built-in-attributes) définissent des [règles de validation](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/validation?view=aspnetcore-6.0) automatiquement vérifiées côté client et utilisables côté serveur.
 
 ---
 
 ### Exemple : classe métier annotée
+
+Fichier `Models/Movie.cs`.
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
@@ -1403,6 +1406,7 @@ public class Movie
 {
     public int Id { get; set; }
 
+    [StringLength(100, MinimumLength = 3)]
     public string Title { get; set; } = null!;
 
     [Display(Name = "Release Date"), DataType(DataType.Date)]
@@ -1416,6 +1420,8 @@ public class Movie
 ---
 
 ### Exemple : formulaire d'ajout d'un film (contrôleur)
+
+Méthode d'action associée à une requête HTTP GET vers la route `/Movie/Create`.
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -1438,6 +1444,8 @@ public class MovieController : Controller
 ---
 
 ### Exemple : formulaire d'ajout d'un film (vue)
+
+Fichier `Views/Movie/Create.cshtml`.
 
 ```html
 @model MvcMovie.Models.Movie
@@ -1493,6 +1501,8 @@ public class MovieController : Controller
 
 ### Exemple : ajout d'un film (contrôleur)
 
+Méthode d'action associée à une requête HTTP POST vers la route `/Movie/Create`.
+
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -1526,180 +1536,294 @@ public class MovieController : Controller
 
 ---
 
-## Tests
+### Exemple : ajout d'un film (résultat)
+
+![Movie add result](images/moviecreateresult.png)
 
 ---
 
-### Typologie des tests
+### Exemple : formulaire de mise à jour d'un film (contrôleur)
 
-- **Test unitaire** (TU) : vérifie un composant individuel de l'application.
-- **Test d'intégration** : vérifie les interactions entre différents composants de l'application, y compris des composants externes comme une base de données ou un service web.
-- **Test fonctionnel (ou test de validation)** : vérifie que l'application fonctionne comme prévu du point de vue de l'utilisateur.
-
----
-
-### Tests unitaires Vs tests d'intégration
-
-- Ils sont tous deux automatisés.
-- Les TU isolent le composant à tester du reste de l'application à l'aide de _test doubles_ (parfois appelés _dummies_, _stubs_ ou encore _mocks_) qui simulent le comportement des autres composants. Leur exécution est rapide.
-- Les tests d'intégration se basent sur les véritables composants de l'application. Leur mise en place est souvent plus complexe et leur exécution plus lente.
-
----
-
-### Quelle stratégie adopter ?
-
-- Vouloir tester tous les scénarios et configurations possibles est coûteux et pas forcément efficace.
-- Il est préférable de se concentrer sur les éléments-clés offrant le meilleur rapport coût/bénéfices : composants essentiels, opérations élémentaires (CRUD), principaux services de l'application...
-- Des _smoke tests_ vérifiant uniquement le renvoi d'un code HTTP de succès pour chaque route peuvent constituer un premier filet de sécurité.
-
----
-
-### Etapes d'un test : le patron AAA
-
-- _Arrange_ : préparation du test.
-  - Lancement de l'application ;
-  - Préparation de la base de données ;
-  - ...
-- _Act_ : réalisation des opérations à tester.
-- _Assert_ : vérification des résultats des actions précédentes au moyen d'[assertions](<https://en.wikipedia.org/wiki/Assertion_(software_development)>).
-
----
-
-### Création d'un projet de test .NET
-
-`> dotnet new xunit -o <TestProjectName>`
-
-[xUnit](https://xunit.net/) est un framework de tests unitaires _open source_ pour la plate-forme .NET.
-
-`> dotnet add ./<TestProjectName>/<TestProjectName>.csproj reference ./<ProjectName>/<ProjectName>.csproj`
-
-Ajoute au projet de test une référence vers le projet à tester (les deux étant situés dans le même répertoire parent).
-
----
-
-### Exemple de classe de test
-
-`[Fact]` indique une méthode de test.
+Méthode d'action associée à une requête HTTP GET vers la route `/Movie/Edit/{Id}`.
 
 ```csharp
-using Xunit;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Data;
+using MvcMovie.Models;
 
-namespace Prime.UnitTests.Services
+namespace MvcMovie.Controllers;
+
+public class MovieController : Controller
 {
-    public class PrimeService_IsPrimeShould
+    // ...
+    // GET: Movies/Edit/5
+    public async Task<IActionResult> Edit(int? id)
     {
-        [Fact]
-        public void IsPrime_InputIs1_ReturnFalse()
+        if (id == null)
         {
-            // Arrange
-            var primeService = new PrimeService();
-            // Act
-            bool result = primeService.IsPrime(1);
-            // Assert
-            Assert.False(result, "1 should not be prime");
+            return NotFound();
         }
-    }
-}
-```
 
----
-
-### Initialisation du test
-
-Permet d'éviter la duplication de code.
-
-```csharp
-ppublic class PrimeService_IsPrimeShould
-{
-    private readonly PrimeService _primeService;
-
-    public PrimeService_IsPrimeShould()
-    {
-        // Create instance of tested class
-        _primeService = new PrimeService();
-    }
-    // ...
-```
-
----
-
-### Paramétrage des méthodes de test
-
-```csharp
-    // ...
-    [Theory]
-    [InlineData(2)]
-    [InlineData(3)]
-    [InlineData(5)]
-    [InlineData(7)]
-    public void IsPrime_PrimesLessThan10_ReturnTrue(int value)
-    {
-        var result = _primeService.IsPrime(value);
-
-        Assert.True(result, $"{value} should be prime");
-    }
-}
-```
-
----
-
-### Exécution des tests
-
-`> dotnet test`
-
-![dotnet test result](images/dotnet_test_result.png)
-
----
-
-### Configuration d'un projet de test pour ASP.NET Core
-
-`> dotnet add package Microsoft.AspNetCore.Mvc.Testing -v 5.0.12`
-
-Ajoute un package dédié aux tests dans cet environnement, ici dans une version adaptée à .NET 5.
-
----
-
-### Exemple de classe de test
-
-```csharp
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Xunit;
-
-namespace MvcMovie.Tests
-{
-    public class HomeControllerTests
-    : IClassFixture<WebApplicationFactory<MvcMovie.Startup>>
-    {
-        private readonly WebApplicationFactory<MvcMovie.Startup> _factory;
-
-        public HomeControllerTests(WebApplicationFactory<MvcMovie.Startup> factory)
+        var movie = await _context.Movies.FindAsync(id);
+        if (movie == null)
         {
-            _factory = factory;
+            return NotFound();
         }
-        // ...
+        return View(movie);
+    }
+}
 ```
 
 ---
 
-### Smoke testing d'un contrôleur
+### Exemple : formulaire de mise à jour d'un film (vue)
+
+Fichier `Views/Movie/Edit.cshtml`.
+
+```html
+@model MvcMovie.Models.Movie
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit a Movie</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReleaseDate" class="control-label"></label>
+                <input asp-for="ReleaseDate" class="form-control" />
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+```
+
+---
+
+### Exemple : formulaire de mise à jour d'un film (résultat)
+
+![Movie edit](images/movieedit.png)
+
+---
+
+### Exemple : mise à jour d'un film (contrôleur)
+
+Méthode d'action associée à une requête HTTP POST vers la route `/Movie/Edit`.
 
 ```csharp
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Data;
+using MvcMovie.Models;
+
+namespace MvcMovie.Controllers;
+
+public class MovieController : Controller
+{
     // ...
-    [Theory]
-    [InlineData("/")]
-    [InlineData("/Home/Index")]
-    [InlineData("/Home/Privacy")]
-    public async Task Get_EndpointsReturnSuccessAndCorrectContentType(string url)
+    // POST: Movies/Edit/5
+    // To protect from overposting attacks, enable the specific properties you want to bind to.
+    // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,Genre")] Movie movie)
     {
-        // Arrange
-        var client = _factory.CreateClient();
-        // Act
-        var response = await client.GetAsync(url);
-        // Assert
-        response.EnsureSuccessStatusCode(); // Status Code 200-299
-        Assert.Equal("text/html; charset=utf-8",
-            response.Content.Headers.ContentType.ToString());
+        if (id != movie.Id)
+        {
+            return NotFound();
+        }
+
+        if (ModelState.IsValid)
+        {
+            try
+            {
+                _context.Update(movie);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!MovieExists(movie.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return RedirectToAction(nameof(Index));
+        }
+        return View(movie);
+    }
+
+    private bool MovieExists(int id)
+    {
+        return _context.Movies.Any(e => e.Id == id);
     }
 }
 ```
+
+---
+
+### Exemple : mise à jour d'un film (résultat)
+
+![Movie edit result](images/movieeditresult.png)
+
+---
+
+### Exemple : avertissement avant suppression d'un film (contrôleur)
+
+Méthode d'action associée à la route `Movie/Delete/{Id}`.
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Data;
+using MvcMovie.Models;
+
+namespace MvcMovie.Controllers;
+
+public class MovieController : Controller
+{
+    // ...
+    // GET: Movies/Delete/5
+    public async Task<IActionResult> Delete(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
+
+        var movie = await _context.Movies
+            .FirstOrDefaultAsync(m => m.Id == id);
+        if (movie == null)
+        {
+            return NotFound();
+        }
+
+        return View(movie);
+    }
+}
+```
+
+---
+
+### Exemple : avertissement avant suppression d'un film (vue)
+
+```html
+@model MvcMovie.Models.Movie
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete a Movie</h2>
+
+<h4>Are you sure?</h4>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+```
+
+---
+
+### Exemple : avertissement avant suppression d'un film (résultat)
+
+![Movie deletion](images/moviedelete.png)
+
+---
+
+### Exemple : suppression d'un film (contrôleur)
+
+Méthode d'action associée à une requête HTTP POST vers la route `Movie/Delete`.
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Data;
+using MvcMovie.Models;
+
+namespace MvcMovie.Controllers;
+
+public class MovieController : Controller
+{
+    // ...
+    // POST: Movies/Delete/5
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        var movie = await _context.Movies.FindAsync(id);
+        _context.Movies.Remove(movie!);
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(Index));
+    }
+}
+```
+
+---
+
+### Exemple : suppression d'un film (résultat)
+
+![Movie deletion result](images/moviedeleteresult.png)
+
+---
+
+## To be continued
+
+![Late](images/late-work-oh-you-have-a-good-reason-meme.jpg)
