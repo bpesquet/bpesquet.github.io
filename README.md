@@ -21,3 +21,9 @@ Use [pandoc](https://pandoc.org/) in the Markdown source file directory (`conten
 ```bash
 pandoc index.md -o <PDF file name>.pdf --toc
 ```
+
+Fix image sizes in PDF output with the following syntax (which doesn't work well in slideshow mode):
+
+```md
+ ![large image](landscape.jpg){width=1024 height=768}
+ ```
