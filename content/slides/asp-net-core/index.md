@@ -478,6 +478,7 @@ public class Movie
     [Display(Name = "Release Date"), DataType(DataType.Date)]
     public DateTime ReleaseDate { get; set; }
 
+    [StringLength(30)]
     public string Genre { get; set; } = null!;
 }
 ````
@@ -594,6 +595,12 @@ public class SeedData
                     Genre = "Romantic Comedy",
                 },
                 // ...
+                new Movie
+                {
+                    Title = "Rio Bravo",
+                    ReleaseDate = DateTime.Parse("1959-4-15"),
+                    Genre = "Western"
+                }
             );
 
             // Commit changes into DB
@@ -958,7 +965,26 @@ Envoyer une requête HTTP DELETE vers l'URL <https://localhost:{port}/api/moviea
 
 ---
 
-### View layout
+### Correspondance entre contrôleurs et vues
+
+- Dans une méthode d'action `{ActionName}` d'un contrôleur `Controllers/{CtrlName}Controller`, l'appel de `View()`déclenche le rendu de la vue `Views/{CtrlName}/{ActionName}.cshtml`.
+- Le résultat HTML de ce rendu constitue la réponse HTTP renvoyée par le serveur au client.
+- Nécessite que le contrôleur hérite de `Controller` et non `ControllerBase`.
+
+---
+
+### La syntaxe des vues
+
+- [Razor](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0) est un langage de balisage permettant d'inclure du code C# dans des pages web.
+- Le symbole `@` permet de basculer du HTML au C# dans la page. Il peut être suivi :
+  - d'une expression implicite sans espaces `@maVariable`
+  - d'une expression explicite entre parenthèses `@(nb1 + nb2)`
+  - d'un [mot-clé Razor](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0#razor-reserved-keywords).
+  - d'un bloc de code C# entre accolades `@{...}`.
+
+---
+
+### Structure commune des vues
 
 - Par défaut, toutes les vues partagent une structure commune définie dans le fichier `Views/Shared/_Layout.cshtml`.
 - Dans ce layout, la fonction `@RenderBody()` permet de générer le contenu spécifique de la vue à afficher.
@@ -991,14 +1017,6 @@ Envoyer une requête HTTP DELETE vers l'URL <https://localhost:{port}/api/moviea
 
 ---
 
-### Correspondance entre contrôleurs et vues
-
-- Dans une méthode d'action `{ActionName}` d'un contrôleur `Controllers/{CtrlName}Controller`, l'appel de `View()`déclenche le rendu de la vue `Views/{CtrlName}/{ActionName}.cshtml`.
-- Le résultat HTML de ce rendu constitue la réponse HTTP renvoyée par le serveur au client.
-- Nécessite que le contrôleur hérite de `Controller` et non `ControllerBase`.
-
----
-
 ### Exemple : rendu d'une vue
 
 Dans le fichier `Controllers/HelloController.cs`.
@@ -1023,18 +1041,7 @@ public class HelloController : Controller // not ControllerBase!
 
 ---
 
-### La syntaxe Razor
-
-- [Razor](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0) est un langage de balisage permettant d'inclure du code C# dans des pages web.
-- Le symbole `@` permet de basculer du HTML au C# dans la page. Il peut être suivi :
-  - d'une expression implicite sans espaces `@maVariable`
-  - d'une expression explicite entre parenthèses `@(nb1 + nb2)`
-  - d'un [mot-clé Razor](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-6.0#razor-reserved-keywords).
-  - d'un bloc de code C# entre accolades `@{...}`
-
----
-
-### Possibilités de base
+### Exemple : possibilités de base
 
 Fichier `Views/Hello/Index.cshtml`.
 
@@ -1057,7 +1064,7 @@ Fichier `Views/Hello/Index.cshtml`.
 
 ---
 
-### Structures de contrôle et tableaux
+### Exemple : structures de contrôle et tableaux
 
 ```html
 @{
@@ -1089,7 +1096,7 @@ Fichier `Views/Hello/Index.cshtml`.
 
 ---
 
-### Blocs Razor et fonctions
+### Exemple : blocs Razor et fonctions
 
 ```html
 <p>
@@ -1114,7 +1121,7 @@ Fichier `Views/Hello/Index.cshtml`.
 
 ### Liens
 
-- Comme en HTML, les balises `<a>` sont utilisés pour les créer.
+- Comme en HTML, les balises `<a>` sont utilisées pour les créer.
 - Les attributs `asp-controller`, `asp-action`, `asp-route-id` et `asp-route-{paramName}` permettent la navigation entre actions.
 
 ```html
@@ -1130,7 +1137,7 @@ Fichier `Views/Hello/Index.cshtml`.
 
 ---
 
-### Affichage de la vue d'exemple
+### Exemple : vue générée
 
 ![Hello View](images/helloview.png)
 
@@ -1217,6 +1224,7 @@ public class MovieController : Controller
         _context = context;
     }
 
+    // GET: Movie
     public async Task<IActionResult> Index()
     {
         var movies = await _context.Movies.OrderBy(m => m.Title).ToListAsync();
@@ -1238,7 +1246,10 @@ Fichier `Views/Movie/Index.cshtml`.
     ViewData["Title"] = "Movies";
 }
 
-<h2>Movie list</h2>
+<h2>Movies</h2>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -1295,41 +1306,221 @@ Fichier `Views/Movie/Index.cshtml`.
 
 ---
 
-### Validation des données
+### Exemple : détails sur un film (contrôleur)
 
-L'annotation des classes du Modèle permet de définir des **règles de validation** qui seront automatiquement vérifiées à la fois côté serveur et côté client.
+Méthode d'action associée à la route `/Movie/Details/{Id}`.
 
 ```csharp
-using System.ComponentModel.DataAnnotations;
-public class LoginViewModel
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Data;
+
+namespace MvcMovie.Controllers;
+
+public class MovieController : Controller
 {
-    [Required]
-    [EmailAddress]
-    public string Email { get; set; }
+    // ...
+    // GET: Movies/Details/5
+    public async Task<IActionResult> Details(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
 
-    [Required]
-    [DataType(DataType.Password)]
-    public string Password { get; set; }
-
-    [Display(Name = "Remember me?")]
-    public bool RememberMe { get; set; }
+        var movie = await _context.Movies
+            .FirstOrDefaultAsync(m => m.Id == id);
+        if (movie == null)
+        {
+            return NotFound();
+        }
+        return View(movie);
+    }
 }
 ```
 
 ---
 
-### Validation dans le contrôleur
+### Exemple : détails sur un film (vue)
+
+Fichier `Views/Movie/Details.cshtml`.
+
+```html
+@model MvcMovie.Models.Movie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@Html.DisplayFor(model => model.Title)</h2>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+```
+
+---
+
+### Exemple : détails sur un film (résultat)
+
+![Movie details](images/moviedetails.png)
+
+---
+
+### Envoi de données depuis une vue
+
+- S'effectue via un **formulaire** dont la soumission déclenche l'envoi au serveur d'une requête HTTP POST.
+- Les champs du formulaire sont implicitement associés aux paramètres de l'action du contrôleur qui reçoit la requête POST.
+- Les [annotations du modèle](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-6.0#built-in-attributes) définissent des **règles de validation** automatiquement vérifiées côté client et utilisables côté serveur.
+
+---
+
+### Exemple : classe métier annotée
 
 ```csharp
-public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
+using System.ComponentModel.DataAnnotations;
+
+namespace MvcMovie.Models;
+
+public class Movie
 {
-    // Check model validation rules
-    if (ModelState.IsValid)
+    public int Id { get; set; }
+
+    public string Title { get; set; } = null!;
+
+    [Display(Name = "Release Date"), DataType(DataType.Date)]
+    public DateTime ReleaseDate { get; set; }
+
+    [StringLength(30)]
+    public string Genre { get; set; } = null!;
+}
+```
+
+---
+
+### Exemple : formulaire d'ajout d'un film (contrôleur)
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Data;
+
+namespace MvcMovie.Controllers;
+
+public class MovieController : Controller
+{
+    // ...
+    // GET: Movie/Create
+    public IActionResult Create()
     {
-      // ... (nominal case: work with the model)
+        return View();
     }
-    // At this point, something failed: redisplay form
-    return View(model);
+}
+```
+
+---
+
+### Exemple : formulaire d'ajout d'un film (vue)
+
+```html
+@model MvcMovie.Models.Movie
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create a Movie</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReleaseDate" class="control-label"></label>
+                <input asp-for="ReleaseDate" class="form-control" />
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+```
+
+---
+
+### Exemple : formulaire d'ajout d'un film (résultat)
+
+![Movie add](images/moviecreate.png)
+
+---
+
+### Exemple : ajout d'un film (contrôleur)
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Data;
+using MvcMovie.Models;
+
+namespace MvcMovie.Controllers;
+
+public class MovieController : Controller
+{
+    // ...
+    // POST: Movie/Create
+    // To protect from overposting attacks, enable the specific properties you want to bind to.
+    // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre")] Movie movie)
+    {
+        // Apply model validation rules
+        if (ModelState.IsValid)
+        {
+            _context.Add(movie);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+        // At this point, something failed: redisplay form
+        return View(movie);
+    }
 }
 ```
 
