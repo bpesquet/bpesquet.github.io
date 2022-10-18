@@ -14,6 +14,7 @@ draft: false
 - Expressions
 - Conditions et alternatives
 - Structures répétitives
+- Sous-programmes
 
 ---
 
@@ -1215,3 +1216,266 @@ do
 }
 while (condition);
 ```
+
+---
+
+## Sous-programmes
+
+---
+
+### Exemple d'algorithme monobloc
+
+```txt
+Début
+    Sortir une casserole
+    Mettre de l'eau dans la casserole
+    Ajouter du sel
+    Mettre la casserole sur le feu
+    Tant que l'eau ne bout pas
+    Attendre
+    Sortir les pâtes du placard
+    Verser les pâtes dans la casserole
+    Tant que les pâtes ne sont pas cuites
+        Attendre
+    Verser les pâtes dans une passoire
+    Egoutter les pâtes
+    Verser les pâtes dans un plat
+    Goûter
+    Tant que les pâtes sont trop fades
+        Ajouter du sel
+        Goûter
+    Si on préfère le beurre à l'huile
+        Ajouter du beurre
+    Sinon
+        Ajouter de l'huile
+Fin
+```
+
+---
+
+### Exemple d'algorithme modularisé
+
+```text
+Début
+    Faire bouillir de l'eau
+    Cuire les pâtes dans l'eau
+    Egoutter les pâtes
+    Assaisonner les pâtes
+Fin
+```
+
+La recette est décomposée en sous-étapes :
+
+- Gain en concision et en facilité d'interprétation
+- Apparition de tâches plus élémentaires (_Cuire_, _Egoutter_, etc) qu'on peut envisager de réutiliser dans d'autres recettes.
+
+---
+
+### Qu'est-ce qu'un sous-programme ?
+
+- Regroupement d'instructions qui réalise une tâche donnée.
+- Identifié par un nom (PascalCase en C#).
+  - Comporte souvent un verbe à l'infinitif pour exprimer une action.
+- Appelé parfois **procédure** ou **fonction** (voir plus loin).
+
+```csharp
+// Définition du sous-programme DireBonjour
+void DireBonjour()
+{
+    Console.WriteLine("Bonjour !");
+}
+
+Console.WriteLine("Début du programme");
+DireBonjour(); // Appel du sous-programme DireBonjour
+Console.WriteLine("Fin du programme");
+```
+
+---
+
+### Ordre de définition
+
+Sauf cas particulier (voir plus loin), l'utilisation peut précéder la définition dans le code.
+
+```csharp
+Console.WriteLine("Début du programme");
+DireBonjour(); // "Bonjour !"
+Console.WriteLine("Fin du programme");
+
+void DireBonjour()
+{
+    Console.WriteLine("Bonjour !");
+}
+```
+
+---
+
+### Dynamique d'utilisation d'un sous-programme
+
+![Mécanisme d'utilisation d'un sous-programme](images/chapter05-02.png)
+
+---
+
+### Avantages des sous-programmes
+
+- Permettent de décomposer un problème complexe en sous-parties plus élémentaires.
+- Facilitent la maintenance, la réutilisation et les évolutions ultérieures.
+- Evitent la duplication de code.
+
+---
+
+### Type de retour
+
+- Le mot-clé `return` provoque la fin de l'exécution d'un sous-programme et définit l'expression associée comme sa **valeur de retour**.
+- Le type de cette expression doit être précisé dans la définition de la fonction.
+- Un sous-programme C# ne peut avoir qu'une seule valeur de retour.
+
+```csharp
+string DireBonjour2()
+{
+    return "Bonjour !";
+}
+
+Console.WriteLine("Début du programme");
+string message = DireBonjour2();
+Console.WriteLine(message); // "Bonjour !"
+Console.WriteLine("Fin du programme");
+```
+
+---
+
+### Procédure Vs fonction
+
+- Un sous-programme sans valeur de retour est parfois appelé une **procédure**.
+- Un sous-programme avec une valeur de retour est parfois appelé une **fonction**.
+
+```csharp
+// Procédure
+void DireBonjour()
+{
+    Console.WriteLine("Bonjour !");
+}
+
+/// Fonction
+string DireBonjour2()
+{
+    return "Bonjour !";
+}
+```
+
+---
+
+### Nécessité d'une valeur de retour pour les fonctions
+
+Dans le cas contraire : erreur à la compilation.
+
+```csharp
+// NOK : aucune valeur de retour (pas de return)
+int CalculerUnTruc()
+{
+    Console.WriteLine("Je calcule...");
+}
+
+// NOK : tous les chemins de code ne retournent pas une valeur
+int CalculerUnTruc2()
+{
+    if (2 > 3)
+        return 1;
+}
+```
+
+---
+
+### Non-utilisation de la valeur de retour d'une fonction
+
+Ne provoque pas d'erreur, mais risque de perte d'information.
+
+```csharp
+Console.WriteLine("Début du programme");
+DireBonjour2(); // N'affiche rien !
+Console.WriteLine("Fin du programme");
+```
+
+---
+
+### Variables locales
+
+- On peut déclarer des variables dans le corps d'une fonction.
+- Elle sont dites _locales_ : leur portée se limite à la fonction.
+
+```csharp
+string DireBonjour3()
+{
+    string message = "Bonjour !";
+    return message;
+}
+
+Console.WriteLine(DireBonjour3()); "Bonjour !"
+Console.WriteLine(message); // NOK : message n'existe pas ici
+```
+
+---
+
+### Variables locales et nommage
+
+Il est possible de déclarer des variables portant des noms identiques mais ayant des portées différentes.
+
+```csharp
+string DireBonjour4()
+{
+    // Déclaration d'une variable locale message
+    string message = "Bonjour";
+    return message + " !";
+}
+
+// Déclaration d'une variable message dans le programme principal
+string message = DireBonjour4();
+Console.WriteLine(message); // "Bonjour !"
+```
+
+---
+
+### Variables globales
+
+Visibles dans tous les sous-programmes si elles sont déclarées avant.
+
+```csharp
+string message = "Bonjour";
+
+string DireBonjour5()
+{
+    return message + " !";
+}
+
+Console.WriteLine(DireBonjour5()); // "Bonjour !"
+```
+
+---
+
+### Masquage d'une variable globale par une variable locale
+
+- La déclaration locale masque la déclaration globale dans le corps du sous-programme.
+- Pas d'erreur de compilation.
+
+```csharp
+string message = "Bonjour";
+
+string DireBonjour6()
+{
+    // La variable locale message masque la variable globale du même nom
+    string message = "Hello";
+    return message + " !";
+}
+
+Console.WriteLine(DireBonjour6()); // "Hello !"
+```
+
+---
+
+### Variables locales Vs variables globales
+
+- On favorise l'utilisation de variables locales pour :
+  - concevoir les sous-programmes comme des entités autonomes et réutilisables ;
+  - limiter le risque d'**effet de bord** (modification inattendue d'une variable globale dans un sous-programme).
+- De manière générale, on essaie de :
+  - déclarer les variables au plus près de leur utilisation ;
+  - limiter au strict nécessaire la portée des variables.
