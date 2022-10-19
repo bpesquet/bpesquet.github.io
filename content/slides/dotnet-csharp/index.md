@@ -1366,7 +1366,8 @@ string DireBonjour2()
 
 ### Nécessité d'une valeur de retour pour les fonctions
 
-Dans le cas contraire : erreur à la compilation.
+- La valeur doit également être compatible avec le type de retour précisé dans la définition.
+- Dans les cas contraires : erreur à la compilation.
 
 ```csharp
 // NOK : aucune valeur de retour (pas de return)
@@ -1374,12 +1375,16 @@ int CalculerUnTruc()
 {
     Console.WriteLine("Je calcule...");
 }
-
 // NOK : tous les chemins de code ne retournent pas une valeur
 int CalculerUnTruc2()
 {
     if (2 > 3)
         return 1;
+}
+// NOK : conversion implicite impossible d'une chaîne vers un entier
+int CalculerUnTruc3()
+{
+    return "1";
 }
 ```
 
@@ -1479,3 +1484,210 @@ Console.WriteLine(DireBonjour6()); // "Hello !"
 - De manière générale, on essaie de :
   - déclarer les variables au plus près de leur utilisation ;
   - limiter au strict nécessaire la portée des variables.
+
+---
+
+### Passage de paramètres
+
+- Paramètre = information dont le sous-programme a besoin pour jouer son rôle.
+- Leur liste (types + noms) est définie juste après le nom du sous-programme.
+- La **signature** d'une fonction se compose de son nom et de la liste de ses paramètres.
+
+```csharp
+string DireBonjour7(string prenom)
+{
+    return $"Bonjour, {prenom} !";
+}
+
+Console.WriteLine(DireBonjour7("Alex")); // "Bonjour, Alex !"
+```
+
+---
+
+### Paramètres Vs arguments
+
+- La valeur de ses paramètres est fournie au moment de chaque appel du sous-programme.
+- Si nécessaires, des conversion de type implicites sont parfois effectués.
+- On appelle **argument** (ou parfois _paramètre effectif_) la valeur donnée à un paramètre lors d'un appel.
+
+```csharp
+// Ici l'argument est "Alex"
+Console.WriteLine(DireBonjour7("Alex")); // "Bonjour, Alex !"
+
+// Ici l'argument est "Marco"
+Console.WriteLine(DireBonjour7("Marco")); // "Bonjour, Marco !"
+```
+
+---
+
+### Paramètres positionnels
+
+- Les arguments doivent être compatibles en nombre et en type avec les paramètres.
+- Comme dans d'autres langages, il est possible de préciser les noms des arguments afin de s'affranchir de l'ordre utilisé dans la définition du sous-programme.
+
+```csharp
+void Presenter(string prenom, int age)
+{
+    Console.WriteLine($"Tu es {prenom} et tu as {age} ans");
+}
+
+Presenter("Garance", 14); // "Tu es Garance et tu as 14 ans"
+Presenter("Gaëlle"); // NOK : pas de valeur pour le paramètre age
+Presenter(10, "Prosper"); // NOK : types des arguments incompatibles avec ceux des paramètres
+Presenter(age: 10, prenom: "Prosper"); // "Tu es Prosper et tu as 10 ans"
+```
+
+---
+
+### Valeurs par défaut
+
+Comme d'autres langages, C# permet de définir des valeurs par défaut pour les paramètres non définis lors d'un appel.
+
+```csharp
+void Presenter2(string prenom = "inconnu", int age = 0)
+{
+    Console.WriteLine($"Tu es {prenom} et tu as {age} ans");
+}
+
+Presenter2("Garance", 14); // "Tu es Garance et tu as 14 ans"
+Presenter2("Gaëlle"); // "Tu es Gaëlle et tu as 0 ans"
+Presenter2(age: 10); // "Tu es inconnu et tu as 10 ans"
+```
+
+---
+
+### Mode de passage des paramètres
+
+- Le mode par défaut en C# est le **passage par valeur** : la valeur de chaque argument est copiée dans le paramètre correspondant.
+  - Types valeur : valeur copiée de l’argument vers le paramètre => zones mémoire distinctes.
+  - Types référence : référence copiée de l’argument vers le paramètre => même zone mémoire.
+- Possibilité de modifier ce comportement avec les mots-clés `ref` et `out`.
+
+---
+
+### Exemple : affectation entre types valeur
+
+`int` est un type valeur : les valeurs sont directement stockées dans les variables.
+
+```csharp
+int nombre1;
+nombre1 = 5;
+
+int nombre2 = 3;
+nombre2 = nombre1;
+
+nombre1 = 10;
+
+Console.WriteLine(nombre1); // 10
+Console.WriteLine(nombre2); // ?
+```
+
+---
+
+![Dynamique de l'affectation entre entiers](images/value_types.png)
+
+---
+
+### Exemple : affectation entre types référence
+
+`int[]` est un type référence : les variables stockent des _références_ ($\approx$ adresses mémoire) vers les valeurs.
+
+```csharp
+int[] tab1;
+tab1 = new int[] { 1, 2, 3 };
+
+int[] tab2 = { 4, 5, 6 };
+tab2 = tab1;
+
+tab1[0] = 0;
+
+Console.WriteLine(string.Join(" ", tab1)); // 0 2 3
+Console.WriteLine(string.Join(" ", tab2)); // ?
+```
+
+---
+
+![Résultat de l'affectation entre tableaux](images/arrayaffectation.png)
+
+<img class="fragment" src="images/omg.png">
+
+---
+
+![Dynamique de l'affectation entre tableaux](images/arrayaffectdynamic.png)
+
+---
+
+### Exemple : passage d'un type valeur en paramètre
+
+```csharp
+void Augmenter(int unNombre)
+{
+    Console.WriteLine($"Avant l'augmentation, unNombre = {unNombre}");
+    unNombre = unNombre + 1;
+    Console.WriteLine($"Après l'augmentation, unNombre = {unNombre}");
+}
+
+int nombre = 5;
+Console.WriteLine($"Avant l'appel, nombre = {nombre}"); // 5
+Augmenter(nombre);
+Console.WriteLine($"Après l'appel, nombre = {nombre}"); // ?
+```
+
+---
+
+- La valeur de l’argument (un nombre entier) est copiée dans le paramètre.
+- Argument et paramètre correspondent à des zones mémoire différentes.
+
+![Dynamique du passage d'un entier en paramètre](images/value_types_parameter_passing_diagram.png)
+
+---
+
+### Exemple : passage d'un type référence en paramètre
+
+```csharp
+void AugmenterTab(int[] unTab)
+{
+    Console.WriteLine($"Avant l'augmentation, unTab = {string.Join(" ", unTab)}");
+    for (int i = 0; i < unTab.Length; i++)
+        unTab[i]++;
+    Console.WriteLine($"Après l'augmentation, unTab = {string.Join(" ", unTab)}");
+}
+
+int[] tab = { 1, 2, 3 };
+Console.WriteLine($"Avant l'appel, tab = {string.Join(" ", tab)}"); // 1 2 3
+AugmenterTab(tab);
+Console.WriteLine($"Après l'appel, tab = {string.Join(" ", tab)}"); // ?
+```
+
+---
+
+- La valeur de l’argument (une **référence**) est copiée dans le paramètre.
+- Argument et paramètre pointent vers la même zone mémoire.
+
+![Dynamique du passage en paramète d'un tableau](images/arrayparampassing.png)
+
+---
+
+### Passage de paramètres par référence
+
+---
+
+### Exemple : passage d'un type valeur par référence
+
+```csharp
+void Permuter(ref int a, ref int b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int nombre1 = 5;
+int nombre2 = 3;
+Permuter(ref nombre1, ref nombre2);
+Console.WriteLine($"{nombre1} {nombre2}"); // ?
+```
+
+---
+
+### Exemple : passage d'un type référence par référence
