@@ -1623,7 +1623,7 @@ Console.WriteLine(string.Join(" ", tab2)); // ?
 void Augmenter(int unNombre)
 {
     Console.WriteLine($"Avant l'augmentation, unNombre = {unNombre}");
-    unNombre = unNombre + 1;
+    unNombre++;
     Console.WriteLine($"Après l'augmentation, unNombre = {unNombre}");
 }
 
@@ -1670,6 +1670,11 @@ Console.WriteLine($"Après l'appel, tab = {string.Join(" ", tab)}"); // ?
 
 ### Passage de paramètres par référence
 
+- Associé à un paramètre dans la signature d'un sous-programme, le mot-clé `ref` indique que ce paramètre est [passé par référence](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/ref#passing-an-argument-by-reference).
+- Dans ce cas, argument et paramètre pointent vers la même zone mémoire.
+- Le mot-clé `ref` doit également être utilisé lors de l'appel du sous-programme.
+- Le mot-clé `out` est similaire à `ref` mais n'oblige pas à initialiser la valeur de l'argument avant l'appel.
+
 ---
 
 ### Exemple : passage d'un type valeur par référence
@@ -1691,3 +1696,55 @@ Console.WriteLine($"{nombre1} {nombre2}"); // ?
 ---
 
 ### Exemple : passage d'un type référence par référence
+
+```csharp
+void ResetTab(int[] unTab)
+{
+    unTab = new int[] { 0, 0, 0 };
+}
+void ResetTabRef(ref int[] unTab)
+{
+    unTab = new int[] { 0, 0, 0 };
+}
+
+int[] tab = { 1, 2, 3 };
+ResetTab(tab);
+Console.WriteLine(string.Join(" ", tab)); // ?
+ResetTabRef(ref tab);
+Console.WriteLine(string.Join(" ", tab)); // ?
+```
+
+---
+
+### Exemple : passage d'un type valeur par référence avec out
+
+```csharp
+void Init(out int a)
+{
+    a = 10;
+}
+
+void Init2(out int a)
+{
+    // NOK : le paramètre doit être modifié
+}
+
+int nombre;
+Init(out nombre);
+Console.WriteLine(nombre); // ?
+```
+
+---
+
+### Exemple : passage d'un type référence par référence avec out
+
+```csharp
+void InitTab(out int[] unTab)
+{
+    unTab = new int[] { 1, 2, 3 };
+}
+
+int[] tab;
+InitTab(out tab);
+Console.WriteLine(string.Join(" ", tab)); // ?
+```
