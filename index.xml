@@ -733,6 +733,7 @@
 &lt;li>Expressions&lt;/li>
 &lt;li>Conditions et alternatives&lt;/li>
 &lt;li>Structures répétitives&lt;/li>
+&lt;li>Sous-programmes&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="introduction-à-net" >Introduction à .NET
@@ -2296,6 +2297,564 @@ while&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Instructions exécutées tant que la condition est vérifiée&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">while&lt;/span> (condition);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="sous-programmes" >Sous-programmes
+&lt;span>
+&lt;a href="#sous-programmes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="exemple-dalgorithme-monobloc" >Exemple d&amp;rsquo;algorithme monobloc
+&lt;span>
+&lt;a href="#exemple-dalgorithme-monobloc">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span>Début
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Sortir une casserole
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Mettre de l&amp;#39;eau dans la casserole
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ajouter du sel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Mettre la casserole sur le feu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Tant que l&amp;#39;eau ne bout pas
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Attendre
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Sortir les pâtes du placard
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Verser les pâtes dans la casserole
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Tant que les pâtes ne sont pas cuites
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Attendre
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Verser les pâtes dans une passoire
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Egoutter les pâtes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Verser les pâtes dans un plat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Goûter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Tant que les pâtes sont trop fades
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ajouter du sel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Goûter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Si on préfère le beurre à l&amp;#39;huile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ajouter du beurre
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Sinon
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ajouter de l&amp;#39;huile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Fin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple-dalgorithme-modularisé" >Exemple d&amp;rsquo;algorithme modularisé
+&lt;span>
+&lt;a href="#exemple-dalgorithme-modularis%c3%a9">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Début
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Faire bouillir de l&amp;#39;eau
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Cuire les pâtes dans l&amp;#39;eau
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Egoutter les pâtes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assaisonner les pâtes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Fin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>La recette est décomposée en sous-étapes :&lt;/p>
+&lt;ul>
+&lt;li>Gain en concision et en facilité d&amp;rsquo;interprétation&lt;/li>
+&lt;li>Apparition de tâches plus élémentaires (&lt;em>Cuire&lt;/em>, &lt;em>Egoutter&lt;/em>, etc) qu&amp;rsquo;on peut envisager de réutiliser dans d&amp;rsquo;autres recettes.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="quest-ce-quun-sous-programme-" >Qu&amp;rsquo;est-ce qu&amp;rsquo;un sous-programme ?
+&lt;span>
+&lt;a href="#quest-ce-quun-sous-programme-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Regroupement d&amp;rsquo;instructions qui réalise une tâche donnée.&lt;/li>
+&lt;li>Identifié par un nom (PascalCase en C#).
+&lt;ul>
+&lt;li>Comporte souvent un verbe à l&amp;rsquo;infinitif pour exprimer une action.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Appelé parfois &lt;strong>procédure&lt;/strong> ou &lt;strong>fonction&lt;/strong> (voir plus loin).&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Définition du sous-programme DireBonjour&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> DireBonjour()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Bonjour !&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Début du programme&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>DireBonjour(); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Appel du sous-programme DireBonjour&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Fin du programme&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="ordre-de-définition" >Ordre de définition
+&lt;span>
+&lt;a href="#ordre-de-d%c3%a9finition">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Sauf cas particulier (voir plus loin), l&amp;rsquo;utilisation peut précéder la définition dans le code.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Début du programme&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>DireBonjour(); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bonjour !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Fin du programme&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> DireBonjour()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Bonjour !&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="dynamique-dutilisation-dun-sous-programme" >Dynamique d&amp;rsquo;utilisation d&amp;rsquo;un sous-programme
+&lt;span>
+&lt;a href="#dynamique-dutilisation-dun-sous-programme">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/chapter05-02.png" alt="Mécanisme d&amp;amp;rsquo;utilisation d&amp;amp;rsquo;un sous-programme">&lt;/p>
+&lt;hr>
+&lt;h3 id="avantages-des-sous-programmes" >Avantages des sous-programmes
+&lt;span>
+&lt;a href="#avantages-des-sous-programmes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Permettent de décomposer un problème complexe en sous-parties plus élémentaires.&lt;/li>
+&lt;li>Facilitent la maintenance, la réutilisation et les évolutions ultérieures.&lt;/li>
+&lt;li>Evitent la duplication de code.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="type-de-retour" >Type de retour
+&lt;span>
+&lt;a href="#type-de-retour">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Le mot-clé &lt;code>return&lt;/code> provoque la fin de l&amp;rsquo;exécution d&amp;rsquo;un sous-programme et définit l&amp;rsquo;expression associée comme sa &lt;strong>valeur de retour&lt;/strong>.&lt;/li>
+&lt;li>Le type de cette expression doit être précisé dans la définition de la fonction.&lt;/li>
+&lt;li>Un sous-programme C# ne peut avoir qu&amp;rsquo;une seule valeur de retour.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> DireBonjour2()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086d2">&amp;#34;Bonjour !&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Début du programme&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> message = DireBonjour2();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(message); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bonjour !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Fin du programme&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="procédure-vs-fonction" >Procédure Vs fonction
+&lt;span>
+&lt;a href="#proc%c3%a9dure-vs-fonction">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Un sous-programme sans valeur de retour est parfois appelé une &lt;strong>procédure&lt;/strong>.&lt;/li>
+&lt;li>Un sous-programme avec une valeur de retour est parfois appelé une &lt;strong>fonction&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Procédure&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> DireBonjour()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Bonjour !&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">/// Fonction&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> DireBonjour2()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086d2">&amp;#34;Bonjour !&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="nécessité-dune-valeur-de-retour-pour-les-fonctions" >Nécessité d&amp;rsquo;une valeur de retour pour les fonctions
+&lt;span>
+&lt;a href="#n%c3%a9cessit%c3%a9-dune-valeur-de-retour-pour-les-fonctions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>La valeur doit également être compatible avec le type de retour précisé dans la définition.&lt;/li>
+&lt;li>Dans les cas contraires : erreur à la compilation.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK : aucune valeur de retour (pas de return)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> CalculerUnTruc()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Je calcule...&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK : tous les chemins de code ne retournent pas une valeur&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> CalculerUnTruc2()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">if&lt;/span> (&lt;span style="color:#0086f7;font-weight:bold">2&lt;/span> &amp;gt; &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK : conversion implicite impossible d&amp;#39;une chaîne vers un entier&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> CalculerUnTruc3()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086d2">&amp;#34;1&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="non-utilisation-de-la-valeur-de-retour-dune-fonction" >Non-utilisation de la valeur de retour d&amp;rsquo;une fonction
+&lt;span>
+&lt;a href="#non-utilisation-de-la-valeur-de-retour-dune-fonction">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Ne provoque pas d&amp;rsquo;erreur, mais risque de perte d&amp;rsquo;information.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Début du programme&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>DireBonjour2(); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// N&amp;#39;affiche rien !&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Fin du programme&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="variables-locales" >Variables locales
+&lt;span>
+&lt;a href="#variables-locales">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>On peut déclarer des variables dans le corps d&amp;rsquo;une fonction.&lt;/li>
+&lt;li>Elle sont dites &lt;em>locales&lt;/em> : leur portée se limite à la fonction.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> DireBonjour3()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> message = &lt;span style="color:#0086d2">&amp;#34;Bonjour !&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(DireBonjour3()); &lt;span style="color:#0086d2">&amp;#34;Bonjour !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(message); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK : message n&amp;#39;existe pas ici&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="variables-locales-et-nommage" >Variables locales et nommage
+&lt;span>
+&lt;a href="#variables-locales-et-nommage">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Il est possible de déclarer des variables portant des noms identiques mais ayant des portées différentes.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> DireBonjour4()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Déclaration d&amp;#39;une variable locale message&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> message = &lt;span style="color:#0086d2">&amp;#34;Bonjour&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message + &lt;span style="color:#0086d2">&amp;#34; !&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Déclaration d&amp;#39;une variable message dans le programme principal&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> message = DireBonjour4();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(message); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bonjour !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="variables-globales" >Variables globales
+&lt;span>
+&lt;a href="#variables-globales">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Visibles dans tous les sous-programmes si elles sont déclarées avant.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> message = &lt;span style="color:#0086d2">&amp;#34;Bonjour&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> DireBonjour5()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message + &lt;span style="color:#0086d2">&amp;#34; !&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(DireBonjour5()); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bonjour !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="masquage-dune-variable-globale-par-une-variable-locale" >Masquage d&amp;rsquo;une variable globale par une variable locale
+&lt;span>
+&lt;a href="#masquage-dune-variable-globale-par-une-variable-locale">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>La déclaration locale masque la déclaration globale dans le corps du sous-programme.&lt;/li>
+&lt;li>Pas d&amp;rsquo;erreur de compilation.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> message = &lt;span style="color:#0086d2">&amp;#34;Bonjour&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> DireBonjour6()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// La variable locale message masque la variable globale du même nom&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> message = &lt;span style="color:#0086d2">&amp;#34;Hello&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message + &lt;span style="color:#0086d2">&amp;#34; !&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(DireBonjour6()); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="variables-locales-vs-variables-globales" >Variables locales Vs variables globales
+&lt;span>
+&lt;a href="#variables-locales-vs-variables-globales">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>On favorise l&amp;rsquo;utilisation de variables locales pour :
+&lt;ul>
+&lt;li>concevoir les sous-programmes comme des entités autonomes et réutilisables ;&lt;/li>
+&lt;li>limiter le risque d&amp;rsquo;&lt;strong>effet de bord&lt;/strong> (modification inattendue d&amp;rsquo;une variable globale dans un sous-programme).&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>De manière générale, on essaie de :
+&lt;ul>
+&lt;li>déclarer les variables au plus près de leur utilisation ;&lt;/li>
+&lt;li>limiter au strict nécessaire la portée des variables.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="passage-de-paramètres" >Passage de paramètres
+&lt;span>
+&lt;a href="#passage-de-param%c3%a8tres">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Paramètre = information dont le sous-programme a besoin pour jouer son rôle.&lt;/li>
+&lt;li>Leur liste (types + noms) est définie juste après le nom du sous-programme.&lt;/li>
+&lt;li>La &lt;strong>signature&lt;/strong> d&amp;rsquo;une fonction se compose de son nom et de la liste de ses paramètres.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> DireBonjour7(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> prenom)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086d2">$&amp;#34;Bonjour, {prenom} !&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(DireBonjour7(&lt;span style="color:#0086d2">&amp;#34;Alex&amp;#34;&lt;/span>)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bonjour, Alex !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="paramètres-vs-arguments" >Paramètres Vs arguments
+&lt;span>
+&lt;a href="#param%c3%a8tres-vs-arguments">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>La valeur de ses paramètres est fournie au moment de chaque appel du sous-programme.&lt;/li>
+&lt;li>Si nécessaires, des conversion de type implicites sont parfois effectués.&lt;/li>
+&lt;li>On appelle &lt;strong>argument&lt;/strong> (ou parfois &lt;em>paramètre effectif&lt;/em>) la valeur donnée à un paramètre lors d&amp;rsquo;un appel.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Ici l&amp;#39;argument est &amp;#34;Alex&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(DireBonjour7(&lt;span style="color:#0086d2">&amp;#34;Alex&amp;#34;&lt;/span>)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bonjour, Alex !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Ici l&amp;#39;argument est &amp;#34;Marco&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(DireBonjour7(&lt;span style="color:#0086d2">&amp;#34;Marco&amp;#34;&lt;/span>)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bonjour, Marco !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="paramètres-positionnels" >Paramètres positionnels
+&lt;span>
+&lt;a href="#param%c3%a8tres-positionnels">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Les arguments doivent être compatibles en nombre et en type avec les paramètres.&lt;/li>
+&lt;li>Comme dans d&amp;rsquo;autres langages, il est possible de préciser les noms des arguments afin de s&amp;rsquo;affranchir de l&amp;rsquo;ordre utilisé dans la définition du sous-programme.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Presenter(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> prenom, &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> age)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;Tu es {prenom} et tu as {age} ans&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Presenter(&lt;span style="color:#0086d2">&amp;#34;Garance&amp;#34;&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">14&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Tu es Garance et tu as 14 ans&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Presenter(&lt;span style="color:#0086d2">&amp;#34;Gaëlle&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK : pas de valeur pour le paramètre age&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Presenter(&lt;span style="color:#0086f7;font-weight:bold">10&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;Prosper&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK : types des arguments incompatibles avec ceux des paramètres&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Presenter(age: &lt;span style="color:#0086f7;font-weight:bold">10&lt;/span>, prenom: &lt;span style="color:#0086d2">&amp;#34;Prosper&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Tu es Prosper et tu as 10 ans&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="valeurs-par-défaut" >Valeurs par défaut
+&lt;span>
+&lt;a href="#valeurs-par-d%c3%a9faut">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Comme d&amp;rsquo;autres langages, C# permet de définir des valeurs par défaut pour les paramètres non définis lors d&amp;rsquo;un appel.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Presenter2(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> prenom = &lt;span style="color:#0086d2">&amp;#34;inconnu&amp;#34;&lt;/span>, &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> age = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;Tu es {prenom} et tu as {age} ans&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Presenter2(&lt;span style="color:#0086d2">&amp;#34;Garance&amp;#34;&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">14&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Tu es Garance et tu as 14 ans&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Presenter2(&lt;span style="color:#0086d2">&amp;#34;Gaëlle&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Tu es Gaëlle et tu as 0 ans&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Presenter2(age: &lt;span style="color:#0086f7;font-weight:bold">10&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Tu es inconnu et tu as 10 ans&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="mode-de-passage-des-paramètres" >Mode de passage des paramètres
+&lt;span>
+&lt;a href="#mode-de-passage-des-param%c3%a8tres">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Le mode par défaut en C# est le &lt;strong>passage par valeur&lt;/strong> : la valeur de chaque argument est copiée dans le paramètre correspondant.
+&lt;ul>
+&lt;li>Types valeur : valeur copiée de l’argument vers le paramètre =&amp;gt; zones mémoire distinctes.&lt;/li>
+&lt;li>Types référence : référence copiée de l’argument vers le paramètre =&amp;gt; même zone mémoire.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Possibilité de modifier ce comportement avec les mots-clés &lt;code>ref&lt;/code> et &lt;code>out&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exemple--affectation-entre-types-valeur" >Exemple : affectation entre types valeur
+&lt;span>
+&lt;a href="#exemple--affectation-entre-types-valeur">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;code>int&lt;/code> est un type valeur : les valeurs sont directement stockées dans les variables.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nombre1;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nombre1 = &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nombre2 = &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nombre2 = nombre1;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nombre1 = &lt;span style="color:#0086f7;font-weight:bold">10&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(nombre1); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(nombre2); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;p>&lt;img src="images/value_types.png" alt="Dynamique de l&amp;amp;rsquo;affectation entre entiers">&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple--affectation-entre-types-référence" >Exemple : affectation entre types référence
+&lt;span>
+&lt;a href="#exemple--affectation-entre-types-r%c3%a9f%c3%a9rence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;code>int[]&lt;/code> est un type référence : les variables stockent des &lt;em>références&lt;/em> ($\approx$ adresses mémoire) vers les valeurs.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] tab1;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tab1 = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] { &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] tab2 = { &lt;span style="color:#0086f7;font-weight:bold">4&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">6&lt;/span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tab2 = tab1;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tab1[&lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>] = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>.Join(&lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span>, tab1)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 0 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>.Join(&lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span>, tab2)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;p>&lt;img src="images/arrayaffectation.png" alt="Résultat de l&amp;amp;rsquo;affectation entre tableaux">&lt;/p>
+&lt;img class="fragment" src="images/omg.png">
+&lt;hr>
+&lt;p>&lt;img src="images/arrayaffectdynamic.png" alt="Dynamique de l&amp;amp;rsquo;affectation entre tableaux">&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple--passage-dun-type-valeur-en-paramètre" >Exemple : passage d&amp;rsquo;un type valeur en paramètre
+&lt;span>
+&lt;a href="#exemple--passage-dun-type-valeur-en-param%c3%a8tre">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Augmenter(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> unNombre)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;Avant l&amp;#39;augmentation, unNombre = {unNombre}&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> unNombre++;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;Après l&amp;#39;augmentation, unNombre = {unNombre}&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nombre = &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;Avant l&amp;#39;appel, nombre = {nombre}&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Augmenter(nombre);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;Après l&amp;#39;appel, nombre = {nombre}&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;ul>
+&lt;li>La valeur de l’argument (un nombre entier) est copiée dans le paramètre.&lt;/li>
+&lt;li>Argument et paramètre correspondent à des zones mémoire différentes.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/value_types_parameter_passing_diagram.png" alt="Dynamique du passage d&amp;amp;rsquo;un entier en paramètre">&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple--passage-dun-type-référence-en-paramètre" >Exemple : passage d&amp;rsquo;un type référence en paramètre
+&lt;span>
+&lt;a href="#exemple--passage-dun-type-r%c3%a9f%c3%a9rence-en-param%c3%a8tre">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> AugmenterTab(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] unTab)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;Avant l&amp;#39;augmentation, unTab = {string.Join(&amp;#34;&lt;/span> &lt;span style="color:#0086d2">&amp;#34;, unTab)}&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">for&lt;/span> (&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> i = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>; i &amp;lt; unTab.Length; i++)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> unTab[i]++;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;Après l&amp;#39;augmentation, unTab = {string.Join(&amp;#34;&lt;/span> &lt;span style="color:#0086d2">&amp;#34;, unTab)}&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] tab = { &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;Avant l&amp;#39;appel, tab = {string.Join(&amp;#34;&lt;/span> &lt;span style="color:#0086d2">&amp;#34;, tab)}&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 1 2 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>AugmenterTab(tab);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;Après l&amp;#39;appel, tab = {string.Join(&amp;#34;&lt;/span> &lt;span style="color:#0086d2">&amp;#34;, tab)}&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;ul>
+&lt;li>La valeur de l’argument (une &lt;strong>référence&lt;/strong>) est copiée dans le paramètre.&lt;/li>
+&lt;li>Argument et paramètre pointent vers la même zone mémoire.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/arrayparampassing.png" alt="Dynamique du passage en paramète d&amp;amp;rsquo;un tableau">&lt;/p>
+&lt;hr>
+&lt;h3 id="passage-de-paramètres-par-référence" >Passage de paramètres par référence
+&lt;span>
+&lt;a href="#passage-de-param%c3%a8tres-par-r%c3%a9f%c3%a9rence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Associé à un paramètre dans la signature d&amp;rsquo;un sous-programme, le mot-clé &lt;code>ref&lt;/code> indique que ce paramètre est &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/ref#passing-an-argument-by-reference">passé par référence&lt;/a>.&lt;/li>
+&lt;li>Dans ce cas, argument et paramètre pointent vers la même zone mémoire.&lt;/li>
+&lt;li>Le mot-clé &lt;code>ref&lt;/code> doit également être utilisé lors de l&amp;rsquo;appel du sous-programme.&lt;/li>
+&lt;li>Le mot-clé &lt;code>out&lt;/code> est similaire à &lt;code>ref&lt;/code> mais n&amp;rsquo;oblige pas à initialiser la valeur de l&amp;rsquo;argument avant l&amp;rsquo;appel.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="exemple--passage-dun-type-valeur-par-référence" >Exemple : passage d&amp;rsquo;un type valeur par référence
+&lt;span>
+&lt;a href="#exemple--passage-dun-type-valeur-par-r%c3%a9f%c3%a9rence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Permuter(&lt;span style="color:#fb660a;font-weight:bold">ref&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> a, &lt;span style="color:#fb660a;font-weight:bold">ref&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> b)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> temp = a;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a = b;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b = temp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nombre1 = &lt;span style="color:#0086f7;font-weight:bold">5&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nombre2 = &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Permuter(&lt;span style="color:#fb660a;font-weight:bold">ref&lt;/span> nombre1, &lt;span style="color:#fb660a;font-weight:bold">ref&lt;/span> nombre2);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">$&amp;#34;{nombre1} {nombre2}&amp;#34;&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--passage-dun-type-référence-par-référence" >Exemple : passage d&amp;rsquo;un type référence par référence
+&lt;span>
+&lt;a href="#exemple--passage-dun-type-r%c3%a9f%c3%a9rence-par-r%c3%a9f%c3%a9rence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> ResetTab(&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] unTab)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> unTab = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] { &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> ResetTabRef(&lt;span style="color:#fb660a;font-weight:bold">ref&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] unTab)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> unTab = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] { &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] tab = { &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ResetTab(tab);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>.Join(&lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span>, tab)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ResetTabRef(&lt;span style="color:#fb660a;font-weight:bold">ref&lt;/span> tab);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>.Join(&lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span>, tab)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--passage-dun-type-valeur-par-référence-avec-out" >Exemple : passage d&amp;rsquo;un type valeur par référence avec out
+&lt;span>
+&lt;a href="#exemple--passage-dun-type-valeur-par-r%c3%a9f%c3%a9rence-avec-out">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Init(&lt;span style="color:#fb660a;font-weight:bold">out&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> a)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a = &lt;span style="color:#0086f7;font-weight:bold">10&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Init2(&lt;span style="color:#fb660a;font-weight:bold">out&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> a)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK : le paramètre doit être modifié&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span> nombre;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Init(&lt;span style="color:#fb660a;font-weight:bold">out&lt;/span> nombre);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(nombre); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="exemple--passage-dun-type-référence-par-référence-avec-out" >Exemple : passage d&amp;rsquo;un type référence par référence avec out
+&lt;span>
+&lt;a href="#exemple--passage-dun-type-r%c3%a9f%c3%a9rence-par-r%c3%a9f%c3%a9rence-avec-out">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> InitTab(&lt;span style="color:#fb660a;font-weight:bold">out&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] unTab)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> unTab = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> &lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] { &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">2&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">3&lt;/span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] tab;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>InitTab(&lt;span style="color:#fb660a;font-weight:bold">out&lt;/span> tab);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>.Join(&lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span>, tab)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>My M1 Mac setup for Python development</title><link>https://www.bpesquet.fr/posts/my-mac-setup-for-python/</link><pubDate>Wed, 14 Sep 2022 12:15:28 +0200</pubDate><guid>https://www.bpesquet.fr/posts/my-mac-setup-for-python/</guid><description>&lt;p>I recently got my lucky hands on a brand new M1 MacBook Pro as my new work machine. As an teacher, I maintain several &lt;a href="https://www.bpesquet.fr/en/resources/">pedagogical resources&lt;/a> written in Python and thus needed to quickly set up an efficient work environment on this machine.&lt;/p>
 &lt;p>For all its qualities as a language, Python is notoriously hard to configure in a robust and efficient way. Along the years, many tools have been created to handle interpreter versions, virtual environments, project dependencies and the many chores associated with Python development. This is an ever evolving field, and the solutions listed below might very well become obsolete rather soon.&lt;/p>
 &lt;p>&lt;a href="https://xkcd.com/1987/">&lt;img src="images/python_environment.png" alt="There&amp;amp;rsquo;s an xkcd for that, too!">&lt;/a>&lt;/p>
