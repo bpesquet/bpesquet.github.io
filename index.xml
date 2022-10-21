@@ -2378,6 +2378,14 @@ while&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>DireBonjour(); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Appel du sous-programme DireBonjour&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Fin du programme&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="dynamique-dutilisation-dun-sous-programme" >Dynamique d&amp;rsquo;utilisation d&amp;rsquo;un sous-programme
+&lt;span>
+&lt;a href="#dynamique-dutilisation-dun-sous-programme">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/chapter05-02.png" alt="Mécanisme d&amp;amp;rsquo;utilisation d&amp;amp;rsquo;un sous-programme">&lt;/p>
+&lt;hr>
 &lt;h3 id="ordre-de-définition" >Ordre de définition
 &lt;span>
 &lt;a href="#ordre-de-d%c3%a9finition">
@@ -2394,14 +2402,6 @@ while&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Bonjour !&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="dynamique-dutilisation-dun-sous-programme" >Dynamique d&amp;rsquo;utilisation d&amp;rsquo;un sous-programme
-&lt;span>
-&lt;a href="#dynamique-dutilisation-dun-sous-programme">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>&lt;img src="images/chapter05-02.png" alt="Mécanisme d&amp;amp;rsquo;utilisation d&amp;amp;rsquo;un sous-programme">&lt;/p>
-&lt;hr>
 &lt;h3 id="avantages-des-sous-programmes" >Avantages des sous-programmes
 &lt;span>
 &lt;a href="#avantages-des-sous-programmes">
@@ -2451,7 +2451,7 @@ while&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;Bonjour !&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">/// Fonction&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Fonction&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> DireBonjour2()
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086d2">&amp;#34;Bonjour !&amp;#34;&lt;/span>;
@@ -2511,7 +2511,7 @@ while&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(DireBonjour3()); &lt;span style="color:#0086d2">&amp;#34;Bonjour !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(DireBonjour3()); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bonjour !&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(message); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// NOK : message n&amp;#39;existe pas ici&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="variables-locales-et-nommage" >Variables locales et nommage
@@ -2530,7 +2530,7 @@ while&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Déclaration d&amp;#39;une variable message dans le programme principal&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span> message = DireBonjour4();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(message); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bonjour !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(message); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="variables-globales" >Variables globales
 &lt;span>
@@ -2546,7 +2546,7 @@ while&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message + &lt;span style="color:#0086d2">&amp;#34; !&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(DireBonjour5()); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bonjour !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(DireBonjour5()); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="masquage-dune-variable-globale-par-une-variable-locale" >Masquage d&amp;rsquo;une variable globale par une variable locale
 &lt;span>
@@ -2567,7 +2567,8 @@ while&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message + &lt;span style="color:#0086d2">&amp;#34; !&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(DireBonjour6()); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(message); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(DireBonjour6()); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="variables-locales-vs-variables-globales" >Variables locales Vs variables globales
 &lt;span>
