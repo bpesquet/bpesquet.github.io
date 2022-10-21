@@ -1292,6 +1292,12 @@ Console.WriteLine("Fin du programme");
 
 ---
 
+### Dynamique d'utilisation d'un sous-programme
+
+![Mécanisme d'utilisation d'un sous-programme](images/chapter05-02.png)
+
+---
+
 ### Ordre de définition
 
 Sauf cas particulier (voir plus loin), l'utilisation peut précéder la définition dans le code.
@@ -1306,12 +1312,6 @@ void DireBonjour()
     Console.WriteLine("Bonjour !");
 }
 ```
-
----
-
-### Dynamique d'utilisation d'un sous-programme
-
-![Mécanisme d'utilisation d'un sous-programme](images/chapter05-02.png)
 
 ---
 
@@ -1355,7 +1355,7 @@ void DireBonjour()
     Console.WriteLine("Bonjour !");
 }
 
-/// Fonction
+// Fonction
 string DireBonjour2()
 {
     return "Bonjour !";
@@ -1414,7 +1414,7 @@ string DireBonjour3()
     return message;
 }
 
-Console.WriteLine(DireBonjour3()); "Bonjour !"
+Console.WriteLine(DireBonjour3()); // "Bonjour !"
 Console.WriteLine(message); // NOK : message n'existe pas ici
 ```
 
@@ -1434,7 +1434,7 @@ string DireBonjour4()
 
 // Déclaration d'une variable message dans le programme principal
 string message = DireBonjour4();
-Console.WriteLine(message); // "Bonjour !"
+Console.WriteLine(message); // ?
 ```
 
 ---
@@ -1451,7 +1451,7 @@ string DireBonjour5()
     return message + " !";
 }
 
-Console.WriteLine(DireBonjour5()); // "Bonjour !"
+Console.WriteLine(DireBonjour5()); // ?
 ```
 
 ---
@@ -1471,7 +1471,8 @@ string DireBonjour6()
     return message + " !";
 }
 
-Console.WriteLine(DireBonjour6()); // "Hello !"
+Console.WriteLine(message); // ?
+Console.WriteLine(DireBonjour6()); // ?
 ```
 
 ---
