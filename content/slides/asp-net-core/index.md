@@ -722,7 +722,7 @@ SeedData.Init();
 
 ### Fonctionnement d'une API web avec ASP.NET Core MVC
 
-![API call with ASP.NET Core](images/aspnetcore_api.png)
+[![API call with ASP.NET Core](images/aspnetcore_api.png)](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio)
 
 ---
 
@@ -817,6 +817,23 @@ Envoyer une requête HTTP GET vers l'URL <https://localhost:{port}/api/movieapi/
 
 ---
 
+### Gestion des références circulaires
+
+- La sérialisation JSON d'objets métier peut être compliquée par la présence d'associations bidirectionnelles.
+- Dans ces cas, il faut configurer l'application (fichier `Program.cs`) pour [ignorer ou préserver les références circulaires](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/preserve-references?pivots=dotnet-6-0).
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+// Ignore circular references when serializing objects into JSON
+builder.Services.AddControllersWithViews().AddJsonOptions(x =>
+    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+// ...
+```
+
+---
+
 ### Création d'un élément
 
 ```csharp
@@ -834,7 +851,7 @@ public class MovieApiController : ControllerBase
         _context.Movies.Add(movie);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction("GetTodo", new { id = movie.Id }, movie);
+        return CreatedAtAction(nameof(GetMovie), new { id = movie.Id }, movie);
     }
 }
 ```
