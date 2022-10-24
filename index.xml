@@ -6639,7 +6639,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>&lt;img src="images/aspnetcore_api.png" alt="API call with ASP.NET Core">&lt;/p>
+&lt;/h3>&lt;p>&lt;a href="https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&amp;amp;tabs=visual-studio">&lt;img src="images/aspnetcore_api.png" alt="API call with ASP.NET Core">&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h3 id="création-dun-contrôleur-dapi" >Création d&amp;rsquo;un contrôleur d&amp;rsquo;API
 &lt;span>
@@ -6744,6 +6744,24 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/h3>&lt;p>Envoyer une requête HTTP GET vers l&amp;rsquo;URL &lt;a href="https://localhost:%7Bport%7D/api/movieapi/%7BmovieId%7D">https://localhost:{port}/api/movieapi/{movieId}&lt;/a>.&lt;/p>
 &lt;p>&lt;img src="images/movieapi-getone.png" alt="Get one movie">&lt;/p>
 &lt;hr>
+&lt;h3 id="gestion-des-références-circulaires" >Gestion des références circulaires
+&lt;span>
+&lt;a href="#gestion-des-r%c3%a9f%c3%a9rences-circulaires">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>La sérialisation JSON d&amp;rsquo;objets métier peut être compliquée par la présence d&amp;rsquo;associations bidirectionnelles.&lt;/li>
+&lt;li>Dans ces cas, il faut configurer l&amp;rsquo;application (fichier &lt;code>Program.cs&lt;/code>) pour &lt;a href="https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/preserve-references?pivots=dotnet-6-0">ignorer ou préserver les références circulaires&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> builder = WebApplication.CreateBuilder(args);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Add services to the container.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Ignore circular references when serializing objects into JSON&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder.Services.AddControllersWithViews().AddJsonOptions(x =&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="création-dun-élément" >Création d&amp;rsquo;un élément
 &lt;span>
 &lt;a href="#cr%c3%a9ation-dun-%c3%a9l%c3%a9ment">
@@ -6764,7 +6782,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _context.Movies.Add(movie);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> _context.SaveChangesAsync();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> CreatedAtAction(&lt;span style="color:#0086d2">&amp;#34;GetTodo&amp;#34;&lt;/span>, &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> { id = movie.Id }, movie);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> CreatedAtAction(nameof(GetMovie), &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> { id = movie.Id }, movie);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
