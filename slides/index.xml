@@ -3730,16 +3730,16 @@ while&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;ul>
-&lt;li>Version Control Systems&lt;/li>
+&lt;li>Introduction to software version control&lt;/li>
 &lt;li>Git fundamentals&lt;/li>
 &lt;li>Collaborating with Git&lt;/li>
 &lt;li>Git from the command line&lt;/li>
 &lt;li>GitHub&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="version-control-systems" >Version Control Systems
+&lt;h2 id="introduction-to-software-version-control" >Introduction to software version control
 &lt;span>
-&lt;a href="#version-control-systems">
+&lt;a href="#introduction-to-software-version-control">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -3767,9 +3767,9 @@ while&lt;/p>
 &lt;li>Highly impractical: no individual history of files, no release management, no handling of conflicts (simultaneous updates of a file)&amp;hellip;&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="version-control-systems-1" >Version Control Systems
+&lt;h3 id="version-control-systems" >Version Control Systems
 &lt;span>
-&lt;a href="#version-control-systems-1">
+&lt;a href="#version-control-systems">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -3843,7 +3843,7 @@ while&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>&lt;img src="images/git-spongebob.jpg" alt="">&lt;/p>
+&lt;/h3>&lt;p>&lt;img src="images/git-spongebob.jpg" alt="Git Bob">&lt;/p>
 &lt;hr>
 &lt;h3 id="the-git-repository" >The Git repository
 &lt;span>
@@ -4275,6 +4275,14 @@ while&lt;/p>
 &lt;li>GitHub is the central hub for open source projects.&lt;/li>
 &lt;li>Main alternatives are &lt;a href="https://bitbucket.org">BitBucket&lt;/a> and &lt;a href="https://about.gitlab.com/">GitLab&lt;/a>.&lt;/li>
 &lt;/ul>
+&lt;hr>
+&lt;h3 id="github-repo-example" >GitHub repo example
+&lt;span>
+&lt;a href="#github-repo-example">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/github-repo-example.png" alt="GitHub repo example">&lt;/p>
 &lt;hr>
 &lt;h3 id="the-shared-repository-model" >The shared repository model
 &lt;span>
