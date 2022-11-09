@@ -6,7 +6,7 @@ draft: false
 
 ## Summary
 
-- Version Control Systems
+- Introduction to software version control
 - Git fundamentals
 - Collaborating with Git
 - Git from the command line
@@ -14,7 +14,7 @@ draft: false
 
 ---
 
-## Version Control Systems
+## Introduction to software version control
 
 ---
 
@@ -96,7 +96,7 @@ Dedicated source code management tools, often called **Version Control Systems**
 
 ### Git is not (that) hard
 
-![](images/git-spongebob.jpg)
+![Git Bob](images/git-spongebob.jpg)
 
 ---
 
@@ -337,6 +337,12 @@ _HEAD_ is an alias to the most recent commit of the active branch.
 - As of December 2021, it has approx. 73 million users worldwide.
 - GitHub is the central hub for open source projects.
 - Main alternatives are [BitBucket](https://bitbucket.org) and [GitLab](https://about.gitlab.com/).
+
+---
+
+### GitHub repo example
+
+![GitHub repo example](images/github-repo-example.png)
 
 ---
 
