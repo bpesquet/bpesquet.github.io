@@ -6558,7 +6558,10 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;li>La sérialisation JSON d&amp;rsquo;objets métier peut être compliquée par la présence d&amp;rsquo;associations bidirectionnelles.&lt;/li>
 &lt;li>Dans ces cas, il faut configurer l&amp;rsquo;application (fichier &lt;code>Program.cs&lt;/code>) pour &lt;a href="https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/preserve-references?pivots=dotnet-6-0">ignorer ou préserver les références circulaires&lt;/a>.&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> builder = WebApplication.CreateBuilder(args);
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">using&lt;/span> System.Text.Json.Serialization;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">var&lt;/span> builder = WebApplication.CreateBuilder(args);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Add services to the container.&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Ignore circular references when serializing objects into JSON&lt;/span>
