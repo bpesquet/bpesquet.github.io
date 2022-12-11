@@ -823,6 +823,9 @@ Envoyer une requête HTTP GET vers l'URL <https://localhost:{port}/api/movieapi/
 - Dans ces cas, il faut configurer l'application (fichier `Program.cs`) pour [ignorer ou préserver les références circulaires](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/preserve-references?pivots=dotnet-6-0).
 
 ```csharp
+using System.Text.Json.Serialization;
+// ...
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
