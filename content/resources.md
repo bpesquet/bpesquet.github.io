@@ -16,7 +16,7 @@ Les ressources suivantes sont récentes ou utilisées dans certains de mes cours
 - Livres
   - [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook/)
   - [Machine Learning Katas](https://bpesquet.github.io/mlkatas/)
-  - [The JavaScript Way](https://github.com/thejsway/thejsway) | [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
+  - [The JavaScript Way](https://thejsway.net) | [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
   - [Programmation orientée objet en C#](https://ensc.gitbook.io/programmation-objet-csharp/)
   - [Génie logiciel](https://ensc.gitbook.io/genie-logiciel/)
 - Projets
