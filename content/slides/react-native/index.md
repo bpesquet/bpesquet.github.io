@@ -105,7 +105,7 @@ Création d'applications mobiles compatibles avec plusieurs OS mobiles grâce à
 
 Le framework encapsule les véritables composants natifs de l'OS.
 
-Exemples : [React Native](https://facebook.github.io/react-native/), [Weex](https://weex.apache.org/), [Xamarin](https://www.visualstudio.com/fr/xamarin/)
+Exemples : [React Native](https://facebook.github.io/react-native/), [Weex](https://weexapp.com/), [Xamarin](https://dotnet.microsoft.com/en-us/apps/xamarin)
 
 ---
 
@@ -125,7 +125,7 @@ Framework créé par Facebook, open source depuis 2015.
 
 Déclinaison mobile du framework JavaScript [React](https://reactjs.org/).
 
-![React logo](images/reactjs.png)
+[![React logo](images/reactjs.png)](https://reactnative.dev/)
 
 ---
 
@@ -135,8 +135,8 @@ Framework pour faciliter la création et le déploiement d'applications React Na
 
 [![Expo logo](images/expo_logo.png)](https://expo.dev/)
 
-- [Expo CLI](https://github.com/expo/expo-cli) : outil en ligne de commande pour le développement local.
-- [Expo Go](https://expo.io) : application mobile à installer sur le terminal cible pour le déploiement.
+- [Expo CLI](https://docs.expo.dev/workflow/expo-cli/) : outil en ligne de commande pour le développement local.
+- [Expo Go](https://expo.dev/expo-go) : application mobile à installer sur le terminal cible pour le déploiement.
 
 ---
 
@@ -145,11 +145,14 @@ Framework pour faciliter la création et le déploiement d'applications React Na
 ```bash
 # Install expo-cli globally
 # (Node.js and Git are prerequisites)
-npm install -g expo-cli
+npm i -g expo-cli
 
-# Create a new app in the my-new-project subfolder
-# Use managed TypeScript template
-expo init my-new-project -t expo-template-blank-typescript
+# Create a new app named {appname} in its own subfolder
+# Created files are automatically versioned into a Git repository
+# The optional -t flag is used to select an Expo app template
+# Run npx create-expo-app --template to see the list of available templates.
+npx create-expo-app {appname} -t {expo-template}
+# Alternative: expo init {appname} -t {expo-template}
 ```
 
 - Workflow _managé_ : projet entièrement géré par Expo (plus simple).
@@ -158,16 +161,10 @@ expo init my-new-project -t expo-template-blank-typescript
 
 ---
 
-### Contenu du répertoire créé
-
-![Arborescence React Native](images/rn-app-structure.png)
-
----
-
 ### Déploiement de l'application
 
 ```bash
-cd my-new-project # move into project directory
+cd {appname} # Move into project directory
 npm start # Or 'expo start'
 ```
 
@@ -195,7 +192,7 @@ Ensuite, scan du QR Code depuis l'application Expo Go (Android) ou l'appareil ph
 
 ### Connexion au serveur Expo
 
-L'application mobile Expo client doit accéder au serveur web de la machine de développement pour pouvoir lancer l'application RN.
+L'application mobile Expo Go doit accéder au serveur web de la machine de développement pour pouvoir lancer l'application RN.
 
 Il existe plusieurs modes de connexion :
 
@@ -214,16 +211,23 @@ Il existe plusieurs modes de connexion :
 
 ---
 
+### Contenu du répertoire créé
+
+![Arborescence React Native](images/rn-app-structure.png)
+
+---
+
 ### Le fichier de configuration app.json
 
 ```json
 {
   "expo": {
-    "name": "My New Project",
-    "slug": "my-new-project",
+    "name": "HelloReactNative",
+    "slug": "HelloReactNative",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -232,7 +236,9 @@ Il existe plusieurs modes de connexion :
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -255,28 +261,23 @@ Il existe plusieurs modes de connexion :
 
 ```json
 {
+  "name": "helloreactnative",
+  "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
+    "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~40.0.0",
-    "expo-status-bar": "~1.0.3",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
-    "react-native-web": "~0.13.12"
+    "expo": "~47.0.9",
+    "expo-status-bar": "~1.4.2",
+    "react": "18.1.0",
+    "react-native": "0.70.5"
   },
   "devDependencies": {
-    "@babel/core": "~7.9.0",
-    "@types/react": "~16.9.35",
-    "@types/react-dom": "~16.9.8",
-    "@types/react-native": "~0.63.2",
-    "typescript": "~4.0.0"
+    "@babel/core": "^7.12.9"
   },
   "private": true
 }
@@ -284,17 +285,16 @@ Il existe plusieurs modes de connexion :
 
 ---
 
-### Le fichier principal App.tsx
+### Le fichier principal App.js
 
-```tsx
+```jsx
 import { StatusBar } from "expo-status-bar";
-import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -316,22 +316,19 @@ const styles = StyleSheet.create({
 
 - Syntaxe introduite pour le framework web [React](https://reactjs.org/).
 - Permet de décrire une UI en intégrant balisage et logique applicative.
-- TSX : équivalent de JSX avec support de TypeScript.
+- Les accolades `{...}` permettent d'inclure du code JavaScript dans le code JSX.
+- TSX : équivalent de JSX pour TypeScript.
 
 ```jsx
 // JSX for React (web)
 const name = "Clarisse Agbegnenou";
-const element = <h1>Hello, {name}</h1>;
+const element = <p>Hello, {name}</p>;
 ```
 
 ```jsx
 // JSX for React Native (mobile)
-const a = <View />;
-const b = (
-  <View foo="hello" bar={baz}>
-    <Text>42</Text>
-  </View>
-);
+const name = "Clarisse Agbegnenou";
+const element = <Text>Hello, {name}</Text>;
 ```
 
 ---
@@ -344,97 +341,211 @@ const b = (
 
 - Les **composants** sont les blocs de base d'une application React (Native).
 
-- Ils permettent de créer une UI sous forme **déclarative** par assemblage de composants.
+- Ils permettent de créer une UI sous forme **déclarative** par assemblage de composants inclus les uns dans les autres.
 
 - Ils doivent comporter une fonction qui définit leur rendu visuel.
+
+- Le fichier principal `App.js` d'une application RN doit exporter un composant par défaut.
 
 ---
 
 ### Composants fonctions
 
-- La valeur de retour de la fonction définit le rendu.
-- Syntaxe la plus concise, pratique pour les composants simples.
+- La valeur de retour de la fonction définit leur rendu.
+- Syntaxe standard, la plus concise.
 
-```tsx
-import React from "react";
-import { Text } from "react-native";
+```jsx
+import React from 'react';
+import { Text, View } from "react-native";
 
-const Cat = () => {
-  const name = "Maru";
-  return <Text>Hello, I am {name}!</Text>;
+// HelloWorldApp is a function component
+const HelloWorldApp = () => {
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Text style={{ fontSize: 24 }}>Hello from a function component!</Text>
+    </View>
+  );
 };
 
-export default Cat;
+export default HelloWorldApp;
 ```
 
 ---
 
 ### Composants classes
 
-- La méthode `render()` définit le rendu.
-- Syntaxe à privilégier pour les composants complexes.
+- La méthode obligatoire `render()` définit leur rendu.
+- Syntaxe à privilégier pour les composants les plus complexes.
 
-```tsx
-import React from "react";
-import { Text } from "react-native";
-
-class Cat extends React.Component {
-  render() {
-    const name = "Maru";
-    return <Text>Hello, I am {name}!</Text>;
-  }
-}
-
-export default Cat;
-```
-
----
-
-### Propriétés (_props_) d'un composant
-
-Caractéristiques définies au moment de la création, modifiables uniquement par le composant parent ([démo](https://snack.expo.io/@bpesquet/greeting)).
-
-```tsx
+```jsx
 import React, { Component } from "react";
 import { Text, View } from "react-native";
 
-// Function component
-// Component has a name property, which is of type string
-const GreetingFun = (props: { name: string }) => {
-  return <Text>Hello {props.name}!</Text>;
-};
-
-// Class component
-class GreetingClass extends Component {
-  // Component has a name property, which is of type string
-  constructor(public props: { name: string }) {
-    super(props);
-  }
-  render() {
-    return <Text>Hello {this.props.name}!</Text>;
-  }
-}
-
-export default class LotsOfGreetings extends Component {
+// HelloWorldApp is a class component
+class HelloWorldApp extends Component {
   render() {
     return (
-      <View style={{ alignItems: "center" }}>
-        <GreetingFun name="John" />
-        <GreetingClass name="Paul" />
-        <GreetingFun name="Jones" />
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Text style={{ fontSize: 24 }}>Hello from a class component!</Text>
       </View>
     );
   }
 }
+
+export default HelloWorldApp;
+```
+
+---
+
+### Composants de base
+
+Implémentés de manière native par RN sous Android et iOS afin d'obtenir un _look'n'feel_ et des performances optimaux.
+
+![React Native core components](images/basic_components.png)
+
+---
+
+### Composants d'interface utilisateur
+
+![React native UI components](images/ui_components.png)
+
+---
+
+### Gestion du style
+
+- Propriété `style` disponible pour les composants de base.
+- Semblable à CSS avec nommage _camelCase_.
+- En ligne ou externalisé sous forme d'un objet créé par la fonction `StyleSheet.create`.
+
+```jsx
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+
+export default LotsOfStyles = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.red}>just red</Text>
+      <Text style={styles.bigblue}>just bigblue</Text>
+      {/* Using an array of styles:  last element has precedence */}
+      <Text style={[styles.bigblue, styles.red]}>bigblue, then red</Text>
+      <Text style={[styles.red, styles.bigblue]}>red, then bigblue</Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  bigblue: {
+    color: "blue",
+    fontWeight: "bold",
+    fontSize: 30,
+  },
+  red: {
+    color: "red",
+  },
+});
+
+```
+
+---
+
+### Composants personnalisés
+
+Ils forment les briques de base d'une application React (Native).
+
+```jsx
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+
+const Cat = () => {
+  return (
+    <View>
+      <Text>I am a cat!</Text>
+    </View>
+  );
+};
+
+export default App = () => {
+  return (
+    <View style={styles.container}>
+      <Text>Welcome!</Text>
+      <Cat />
+      <Cat />
+      <Cat />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
+```
+
+---
+
+### Props d'un composant
+
+Caractéristiques définies au moment de la création, modifiables uniquement par le composant parent.
+
+```jsx
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+
+const Cat = (props) => {
+  return (
+    <View>
+      <Text>I am {props.name} the cat!</Text>
+    </View>
+  );
+};
+
+export default App = () => {
+  return (
+    <View style={styles.container}>
+      <Text>Welcome!</Text>
+      <Cat name="Madchat" />
+      <Cat name="Félicette" />
+      <Cat name="Fritz" />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
 ```
 
 ---
 
 ### Etat (_state_) d'un composant
 
-Etat interne (données) d'un composant, susceptible de changer au cours du temps (mutable). Modifié uniquement via `setState()` ([démo](https://snack.expo.dev/@bpesquet/state-2)).
+Etat interne (mémoire) d'un composant, susceptible de changer au cours du temps (mutable).
 
-```tsx
+```jsx
 import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 
@@ -492,18 +603,6 @@ export default App;
 
 ---
 
-### Composants de base
-
-![React Native core components](images/basic_components.png)
-
----
-
-### Composants d'interface utilisateur
-
-![React native UI components](images/ui_components.png)
-
----
-
 ### Cycle de vie d'un composant
 
 Les composants RN suivent un cycle de vie bien défini composé d'étapes : **montage**, **rendu**, **mise à jour**, **démontage** et **suppression**.
@@ -525,43 +624,6 @@ Les redéfinir permet d'exécuter du code spécifique.
 ---
 
 ## Gestion de l'UI
-
----
-
-### Gestion du style
-
-Propriété `style` pour les composants de base.
-
-Semblable à CSS avec nommage _camelCase_.
-
-```jsx
-import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
-
-const styles = StyleSheet.create({
-  bigblue: {
-    color: "blue",
-    fontWeight: "bold",
-    fontSize: 30,
-  },
-  red: {
-    color: "red",
-  },
-});
-
-export default class LotsOfStyles extends Component {
-  render() {
-    return (
-      <View>
-        <Text style={styles.red}>just red</Text>
-        <Text style={styles.bigblue}>just bigblue</Text>
-        <Text style={[styles.bigblue, styles.red]}>bigblue, then red</Text>
-        <Text style={[styles.red, styles.bigblue]}>red, then bigblue</Text>
-      </View>
-    );
-  }
-}
-```
 
 ---
 
@@ -710,7 +772,7 @@ Nécessité de partager un état commun entre certains composants.
 
 ### Utilisation de props dans les composants enfants
 
-```tsx
+```jsx
 interface TemperatureInputProps {
   temperature: string;
   scale: Scale;
@@ -744,7 +806,7 @@ class TemperatureInput extends React.Component<TemperatureInputProps, {}> {
 
 ### Remontée de l'état dans le composant parent
 
-```tsx
+```jsx
 class Calculator extends React.Component<{}, CalculatorState> {
   // Common state is lifted here, the closest parent of TemperatureInput components
   // Temperature can be set either in Celsius or in Fahrenheit
@@ -764,7 +826,7 @@ class Calculator extends React.Component<{}, CalculatorState> {
 
 ### Appel aux actions définies dans le parent
 
-```tsx
+```jsx
   // ...
   render() {
     const scale = this.state.scale;
@@ -836,7 +898,7 @@ expo install @react-navigation/drawer
 
 Principe similaire au web : gestion d'une pile de vues.
 
-```tsx
+```jsx
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -889,7 +951,7 @@ const { param1 } = this.props.route.params;
 
 ### En-tête des vues
 
-```tsx
+```jsx
 <MainStack.Navigator
   screenOptions={{
     headerStyle: {
@@ -908,7 +970,7 @@ const { param1 } = this.props.route.params;
 
 ### Vue modale
 
-```tsx
+```jsx
 <RootStack.Navigator mode="modal" headerMode="none">
   <RootStack.Screen
     name="Main"
@@ -933,7 +995,7 @@ const { param1 } = this.props.route.params;
 
 Affichage d'onglets en bas de l'écran.
 
-```tsx
+```jsx
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -954,7 +1016,7 @@ export default function App() {
 
 Fonctionnement identique à celui de la navigation entre les vues d'un `StackNavigator`.
 
-```tsx
+```jsx
 <Button
   title="Go to Settings"
   onPress={() => navigation.navigate("Settings")}
@@ -965,7 +1027,7 @@ Fonctionnement identique à celui de la navigation entre les vues d'un `StackNav
 
 ### Affichage de piles (_stacks_) dans les onglets
 
-```tsx
+```jsx
 const HomeStack = createStackNavigator();
 function HomeStackScreen() {
   // Define home stack
@@ -1142,7 +1204,7 @@ export const getRandomBrewdog = () =>
 
 ### Mise à jour de l'application
 
-```tsx
+```jsx
 interface AppState {
   isLoading: boolean; // Is a beer request pending?
   name: string; // Beer name
