@@ -343,6 +343,7 @@ Le mot-clé `await` interrompt l'exécution (sans bloquer le _thread_ courant) j
 `async` et `await` constituent une syntaxe alternative pour les appels asynchrones en JavaScript.
 
 ```js
+// Wait for the result to be available, then output it
 async function asyncCall() {
   const result = await resolveAfter2Seconds();
   console.log(result); // "Success!"
@@ -355,11 +356,11 @@ asyncCall();
 
 ### Plus de détails sur JavaScript
 
-<https://developer.mozilla.org/fr/docs/Web/JavaScript>
+[Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/JavaScript)
 
-<https://github.com/thejsway/thejsway/>
+[The JavaScript Way](https://thejsway.net)
 
-<https://github.com/getify/You-Dont-Know-JS>
+[You Don't Know JS Yet](https://github.com/getify/You-Dont-Know-JS)
 
 ---
 
@@ -384,8 +385,9 @@ Le standard historique est [npm](https://www.npmjs.com/).
 ```bash
 npm init # Create a minimal package.json file
 
-npm install <package name> # Install <package name> locally
-npm install -g <package name> # Install <package name> globally
+# Shorter version: npm i {package name}
+npm install {package name} # Install {package name} locally
+npm install -g {package name} # Install {package name} globally
 npm install # Install all packages listed in package.json
 
 npm update    # Update local packages to latest version
@@ -394,8 +396,8 @@ npm update -g # Update global packages to latest version
 npm list    # List locally installed packages
 npm list -g # List globally installed packages
 
-# Search the package index for <package name>
-npm search <package name>
+# Execute a command from a package
+npx {command} {command-arg}...
 ```
 
 Autre possibilité : [yarn](https://yarnpkg.com/lang/en/) (plus récent).
@@ -404,24 +406,28 @@ Autre possibilité : [yarn](https://yarnpkg.com/lang/en/) (plus récent).
 
 ### Le fichier package.json
 
-Associé à un fichier verrou `package-lock.json`.
+- Associé à un fichier verrou `package-lock.json`.
+- Utilisé par **npm/yarn** pour télécharger et installer les dépendances dans le sous-répertoire `node_modules/` du projet.
 
 ```json
 {
+  "name": "helloreactnative",
+  "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "web": "expo start --web"
   },
   "dependencies": {
-    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
-    "expo": "~35.0.0",
-    "react": "16.8.3"
+    "expo": "~47.0.9",
+    "expo-status-bar": "~1.4.2",
+    "react": "18.1.0",
+    "react-native": "0.70.5"
   },
   "devDependencies": {
-    "babel-preset-expo": "~8.0.0"
+    "@babel/core": "^7.12.9"
   },
   "private": true
 }
@@ -447,7 +453,7 @@ Versionnage sémantique **X.Y.Z**
 
 ### Formatage automatique du code
 
-[Prettier](https://prettier.io/) est un outil indispensable.
+[Prettier](https://prettier.io/) est un outil extrêmement utile.
 
 [![Prettier logo](images/prettier-logo-light.png)](https://prettier.io/)
 
@@ -455,31 +461,29 @@ Versionnage sémantique **X.Y.Z**
 
 ### Analyse du code
 
-[ESLint](https://eslint.org/) est l'outil le plus utilisé. Sa configuration se fait via un fichier `.eslintrc.json`.
+[ESLint](https://eslint.org/) est l'outil le plus utilisé. Sa configuration se fait via un fichier `.eslintrc.json` stocké à la racine du projet.
 
 ```json
 {
-  "extends": ["airbnb", "prettier"],
+  "root": true,
   "env": {
+    "node": true,
+    "es2016": true,
     "browser": true
   },
-  "plugins": ["prettier"],
   "rules": {
-    "no-console": "off",
-    "no-alert": "off",
-    "no-plusplus": "off",
-    "default-case": "off",
-    "no-param-reassign": [
-      "error",
-      {
-        "props": false
-      }
-    ],
-    "arrow-body-style": [
-      "error",
-      "as-needed",
-      { "requireReturnForObjectLiteral": true }
-    ]
+    "no-console": 0,
+    "eqeqeq": "warn",
+    "no-cond-assign": 0,
+    "no-unused-vars": 1,
+    "no-extra-semi": "warn",
+    "semi": "warn"
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
   }
 }
 ```
@@ -490,6 +494,7 @@ Versionnage sémantique **X.Y.Z**
 
 - [Babel](https://babeljs.io/) transforme le code JavaScript ES2015+ en code ES5 compatible avec tous les environnements d'exécution JS.
 - Il permet d'utiliser sereinement les dernières évolutions du langage.
+- Il est utilisé en arrière-plan par de nombreux outils de l'écosystème JS.
 
 [![Babel logo](images/Babel-Javascript-compiler.png)](https://babeljs.io/)
 
@@ -515,7 +520,7 @@ TS est supporté par la plupart des éditeurs de code.
 
 ```bash
 # Install TypeScript globally
-npm install -g typescript
+npm i -g typescript
 ```
 
 ```bash
