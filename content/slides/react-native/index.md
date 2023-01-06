@@ -433,7 +433,7 @@ Implémentés de manière native par RN sous Android et iOS afin d'obtenir un _l
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-export default LotsOfStyles = () => {
+export default App = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.red}>just red</Text>
@@ -467,18 +467,14 @@ const styles = StyleSheet.create({
 
 ### Composants personnalisés
 
-Ils forment les briques de base d'une application React (Native).
+Ils permettent de créer une application par assemblage de composants élémentaires.
 
 ```jsx
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 const Cat = () => {
-  return (
-    <View>
-      <Text>I am a cat!</Text>
-    </View>
-  );
+  return <Text>I am a cat!</Text>;
 };
 
 export default App = () => {
@@ -503,19 +499,21 @@ const styles = StyleSheet.create({
 
 ---
 
-### Props d'un composant
+### _Props_ d'un composant
 
-Caractéristiques définies au moment de la création, modifiables uniquement par le composant parent.
+- Caractéristiques définies au moment de la création, modifiables uniquement par le composant parent.
+- Objet composé de propriétés (paires nom/valeur).
 
 ```jsx
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const Cat = (props) => {
+// This component has two props: "name" and "age"
+const Cat = ({ name, age }) => {
   return (
-    <View>
-      <Text>I am {props.name} the cat!</Text>
-    </View>
+    <Text>
+      I am {name} the {age} years old cat!
+    </Text>
   );
 };
 
@@ -523,9 +521,10 @@ export default App = () => {
   return (
     <View style={styles.container}>
       <Text>Welcome!</Text>
-      <Cat name="Madchat" />
-      <Cat name="Félicette" />
-      <Cat name="Fritz" />
+      {/* We define the values of the props for each cat */}
+      <Cat name="Madchat" age="5" />
+      <Cat name="Félicette" age="3" />
+      <Cat name="Fritz" age="7" />
     </View>
   );
 };
@@ -537,68 +536,68 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
+```
+
+---
+
+### Les hooks
+
+- Introduits dans une version récente de React, les [hooks](https://reactjs.org/docs/hooks-overview.html) permettent d'écrire du code lié au cycle de vie des composants fonction.
+- Exemple : le hook [useState](https://reactjs.org/docs/hooks-state.html) permet d'ajouter une variable d'état à un composant fonction.
+
+```js
+const [<getter>, <setter>] = useState(<initialValue>);
 ```
 
 ---
 
 ### Etat (_state_) d'un composant
 
-Etat interne (mémoire) d'un composant, susceptible de changer au cours du temps (mutable).
+- Etat interne (mémoire), susceptible de changer au cours du temps (_mutable_).
+- Sa modification entraine une mise à jour de l'affichage du composant.
 
 ```jsx
-import React, { Component } from "react";
-import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Button, Text, View } from "react-native";
 
-// State shape: a "count" property of type number
-interface AppState {
-  count: number;
-}
+const Counter = () => {
+  // Add a variable named "count" to the component state.
+  // Its initial value is zero.
+  // The setCount function is used to update its value.
+  const [count, setCount] = useState(0);
 
-// React.Component is a generic type: Component<PropType, StateType>
-// We can provide it with optionale prop and state shapes
-// {} means an empty shape (no props or state)
-class App extends Component<{}, AppState> {
-  // Init state
-  state: AppState = {
-    count: 0,
-  };
+  return {
+    // Adjacent JSX elements must be wrapped in an enclosing tag.
+    // Fragments <> and </> let you do that without using an unnecessary wrapping element like View.
+    <>
+      <Button
+        title="Click me!"
+        onPress={() => {
+          // Update the state variable
+          setCount(count + 1);
+        }}
+      ></Button>
+      {/* Show the current value of the state variable */}
+      <Text>You clicked {count} times</Text>
+    </>
+  );
+};
 
-  // Function that updates state, triggering component re-rendering
-  onPress = () => {
-    this.setState({
-      count: this.state.count + 1,
-    });
-  };
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <TouchableOpacity style={styles.button} onPress={this.onPress}>
-          <Text>Click me</Text>
-        </TouchableOpacity>
-        <View>
-          <Text>You clicked {this.state.count} times</Text>
-        </View>
-      </View>
-    );
-  }
-}
+export default App = () => {
+  return (
+    <View style={styles.container}>
+      <Counter />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
     justifyContent: "center",
-    alignItems: "center",
-  },
-  button: {
-    alignItems: "center",
-    backgroundColor: "#DDDDDD",
-    padding: 10,
-    marginBottom: 10,
   },
 });
-
-export default App;
 ```
 
 ---
@@ -611,25 +610,13 @@ Les composants RN suivent un cycle de vie bien défini composé d'étapes : **mo
 
 ---
 
-### Méthodes liées au cycle de vie
-
-Les redéfinir permet d'exécuter du code spécifique.
-
-1. `constructor(props)` : initialisation des propriétés et de l'état.
-1. `render()` : renvoi d'un élément React Native.
-1. `componentDidMount()` : appels asynchrones.
-1. `shouldComponentUpdate()` : renvoi d'un booléen pour annuler la mise à jour.
-1. `componentDidUpdate()` : actions après la mise à jour du rendu.
-
----
-
 ## Gestion de l'UI
 
 ---
 
 ### Gestion des dimensions
 
-Deux possibilités :
+Deux possibilités pour définir la taille des composants :
 
 - Dimensions fixes
 - Dimensions flexibles
@@ -641,24 +628,18 @@ Deux possibilités :
 Utile pour les composants qui doivent toujours être affichés à la même taille.
 
 ```jsx
-import React, { Component } from "react";
+import React from "react";
 import { View } from "react-native";
 
-export default class FixedDimensionsBasics extends Component {
-  render() {
-    return (
-      <View>
-        <View
-          style={{ width: 50, height: 50, backgroundColor: "powderblue" }}
-        />
-        <View style={{ width: 100, height: 100, backgroundColor: "skyblue" }} />
-        <View
-          style={{ width: 150, height: 150, backgroundColor: "steelblue" }}
-        />
-      </View>
-    );
-  }
-}
+export default App = () => {
+  return (
+    <>
+      <View style={{ width: 50, height: 50, backgroundColor: "powderblue" }} />
+      <View style={{ width: 100, height: 100, backgroundColor: "skyblue" }} />
+      <View style={{ width: 150, height: 150, backgroundColor: "steelblue" }} />
+    </>
+  );
+};
 ```
 
 ---
@@ -667,26 +648,25 @@ export default class FixedDimensionsBasics extends Component {
 
 Les dimensions s'adaptent à l'espace disponible.
 
-`flex:1` => espace partagé équitablement entre tous les composants d'un même parent ([démo](https://snack.expo.io/@bpesquet/dimensions)).
+`flex:1` => espace partagé équitablement entre tous les composants d'un même parent.
 
 ```jsx
-import React, { Component } from "react";
+import React from "react";
 import { View } from "react-native";
 
-export default class FlexDimensionsBasics extends Component {
-  render() {
-    return (
-      // Try removing the `flex: 1` on the parent View.
-      // The parent will not have dimensions, so the children can't expand.
-      // What if you add `height: 300` instead of `flex: 1`?
-      <View style={{ flex: 1 }}>
-        <View style={{ flex: 1, backgroundColor: "powderblue" }} />
-        <View style={{ flex: 2, backgroundColor: "skyblue" }} />
-        <View style={{ flex: 3, backgroundColor: "steelblue" }} />
-      </View>
-    );
-  }
-}
+export default App = () => {
+  return (
+    // Try removing the `flex: 1` on the parent View.
+    // The parent will not have dimensions, so the children can't expand.
+    // What if you add `height: 300` instead of `flex: 1`?
+    <View style={{ flex: 1 }}>
+      {/* Try changing the flex values to see how children views share the screen space */}
+      <View style={{ flex: 1, backgroundColor: "powderblue" }} />
+      <View style={{ flex: 2, backgroundColor: "skyblue" }} />
+      <View style={{ flex: 3, backgroundColor: "steelblue" }} />
+    </View>
+  );
+};
 ```
 
 ---
