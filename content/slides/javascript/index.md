@@ -151,7 +151,9 @@ for (const movie of movies) {
 
 ### Objets
 
-Un objet JavaScript regroupe un ensemble de **propriétés** (paire clé/valeur).
+- JavaScript permet de créer des objets sans classe!
+- Un **objet litéral** JavaScript est défini grâce à des accolades `{...}`.
+- Il regroupe un ensemble de **propriétés** (paires nom/valeur).
 
 ```js
 // Création d'un objet litéral
