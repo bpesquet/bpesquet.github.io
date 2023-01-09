@@ -147,12 +147,12 @@ Framework pour faciliter la création et le déploiement d'applications React Na
 # (Node.js and Git are prerequisites)
 npm i -g expo-cli
 
-# Create a new app named {appname} in its own subfolder
+# Create a new app named "appname" in its own subfolder
 # Created files are automatically versioned into a Git repository
 # The optional -t flag is used to select an Expo app template
 # Run npx create-expo-app --template to see the list of available templates.
-npx create-expo-app {appname} -t {expo-template}
-# Alternative: expo init {appname} -t {expo-template}
+npx create-expo-app <appname> -t <expo-template>
+# Alternative: expo init <appname> -t <expo-template>
 ```
 
 - Workflow _managé_ : projet entièrement géré par Expo (plus simple).
@@ -164,7 +164,7 @@ npx create-expo-app {appname} -t {expo-template}
 ### Déploiement de l'application
 
 ```bash
-cd {appname} # Move into project directory
+cd <appname> # Move into project directory
 npm start # Or 'expo start'
 ```
 
@@ -646,9 +646,9 @@ export default App = () => {
 
 ### Dimensions flexibles
 
-Les dimensions s'adaptent à l'espace disponible.
+- `flex:1` => le composant prend tout l'espace disponible, partagé équitablement entre les autres composants d'un même parent.
 
-`flex:1` => espace partagé équitablement entre tous les composants d'un même parent.
+- Une valeur de `flex` plus élevée donne plus d'espace à un composant par rapport aux autres.
 
 ```jsx
 import React from "react";
@@ -671,7 +671,7 @@ export default App = () => {
 
 ---
 
-### Flexbox
+### Positionnement avec Flexbox
 
 - Mode de mise en page pour les éléments situés à l'intérieur d'un conteneur.
 - Objectif : répartir au mieux l'espace disponible.
@@ -697,6 +697,50 @@ export default App = () => {
 ### `alignItems` : axe secondaire
 
 [![Flexbox: align Items](images/flexbox_align_items.png)](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+---
+
+### Flexbox en action
+
+```jsx
+import React from "react";
+import { View, StyleSheet } from "react-native";
+
+export default App = () => {
+  return (
+    <View style={styles.container}>
+      {/* Individual styles can be combined into an array */}
+      {/* Thus, common style properties can be factorized */}
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box2]} />
+      <View style={[styles.box, styles.box3]} />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // Used to take into account the phone status bar at the top of the screen
+    // marginTop: 48,
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+  box: {
+    width: 100,
+    height: 100,
+  },
+  box1: {
+    backgroundColor: "powderblue",
+  },
+  box2: {
+    backgroundColor: "skyblue",
+  },
+  box3: {
+    backgroundColor: "steelblue",
+  },
+});
+```
 
 ---
 
