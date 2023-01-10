@@ -748,29 +748,29 @@ const styles = StyleSheet.create({
 
 ---
 
-### Rappels sur les propriétés
+### Rappels sur les props
 
-**Propriétés (_props_)** = caractéristiques définies au moment de la création du composant.
+- **Props** = caractéristiques définies au moment de la création du composant.
 
-Les propriétés sont modifiables uniquement par le composant parent.
+- Les props d'un composant sont modifiables uniquement par son composant parent.
 
 ---
 
 ### Rappels sur l'état
 
-**Etat (_state_)** = ensemble des données susceptibles d'être modifiées pendant l'exécution de l'application.
+- **Etat (_state_)** = ensemble des données susceptibles d'être modifiées pendant l'exécution de l'application.
 
-Chaque composant React Native possède un état interne, géré avec `this.state` et `this.setState()`.
+- Chaque composant fonction React Native possède un état interne, géré via le hook `useState`.
 
-Toute modification de l'état déclenche un nouveau rendu du composant.
+- Toute modification de l'état déclenche un nouveau rendu du composant.
 
 ---
 
 ### Problématique
 
-La gestion locale de l'état devient insuffisante lorsqu'un composant doit **accéder à** ou **modifier** l'état d'un autre composant.
+- La gestion locale de l'état devient insuffisante lorsqu'un composant doit **accéder à** ou **modifier** l'état d'un autre composant.
 
-Nécessité de partager un état commun entre certains composants.
+- Nécessité de partager un **état commun** entre certains composants.
 
 ---
 
@@ -794,36 +794,73 @@ Nécessité de partager un état commun entre certains composants.
 
 ---
 
+### Fonctions de conversion
+
+```js
+// Scale names used for display
+const scaleNames = { c: "Celsius", f: "Fahrenheit" };
+
+// Celsius/Fahrenheit conversion functions
+function toCelsius(fahrenheit) {
+  return ((fahrenheit - 32) * 5) / 9;
+}
+function toFahrenheit(celsius) {
+  return (celsius * 9) / 5 + 32;
+}
+
+// Convert a temperature using a given conversion function
+function tryConvert(temperature, convert) {
+  const input = parseFloat(temperature);
+  if (Number.isNaN(input)) {
+    return "";
+  }
+  // Call the conversion function on input
+  const output = convert(input);
+  // Keep the output rounded to the third decimal place
+  const rounded = Math.round(output * 1000) / 1000;
+  return rounded.toString();
+}
+```
+
+---
+
+### Affichage de l'ébullition
+
+```jsx
+// Component displaying if the water would boil or not, depending on the temperature
+// We choose the Celsius scale for easier comparison with the boiling temperature
+const BoilingResult = ({ tempCelsius }) => {
+  let message = "";
+  if (!Number.isNaN(tempCelsius)) {
+    message =
+      tempCelsius >= 100 ? "The water would boil" : "The water would not boil";
+  }
+  return <Text style={styles.text}>{message}</Text>;
+};
+```
+
+---
+
 ### Utilisation de props dans les composants enfants
 
 ```jsx
-interface TemperatureInputProps {
-  temperature: string;
-  scale: Scale;
-  onTemperatureChange: (text: string) => void;
-}
-
 // Component for displaying and inputting a temperature in a specific scale
-class TemperatureInput extends React.Component<TemperatureInputProps, {}> {
-  _onChangeText = (text: string) => {
-    // Call callback passed as component prop
-    this.props.onTemperatureChange(text);
-  };
-
-  render() {
-    const temperature = this.props.temperature;
-    const scale = this.props.scale;
-    const placeholder = `Enter temperature in ${scale}`;
-    return (
-      <TextInput
-        style={styles.text}
-        placeholder={placeholder}
-        onChangeText={this._onChangeText}
-        value={temperature}
-      />
-    );
-  }
-}
+const TemperatureInput = ({ value, scale, onChange }) => {
+  // Accessing scaleNames properties through bracket notation
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors
+  const placeholder = `Enter temperature in ${scaleNames[scale]}`;
+  return (
+    <TextInput
+      style={styles.text}
+      placeholder={placeholder}
+      onChangeText={(text) => {
+        // Call callback passed as component prop when input text changes
+        onChange(text);
+      }}
+      value={value}
+    />
+  );
+};
 ```
 
 ---
@@ -831,56 +868,52 @@ class TemperatureInput extends React.Component<TemperatureInputProps, {}> {
 ### Remontée de l'état dans le composant parent
 
 ```jsx
-class Calculator extends React.Component<{}, CalculatorState> {
-  // Common state is lifted here, the closest parent of TemperatureInput components
-  // Temperature can be set either in Celsius or in Fahrenheit
-  state = { temperature: "", scale: Scale.Celsius };
+// Main component
+export default App = () => {
+  // Common state is lifted here because this component is the closest parent of TemperatureInput components.
+  // We store only the most recently changed input with its scale.
+  // Temperature is stored as a string to handle missing values.
+  const [temperature, setTemperature] = useState("");
+  const [scale, setScale] = useState("c");
 
-  _onCelsiusChange = (temperature: string) => {
-    this.setState({ scale: Scale.Celsius, temperature });
-  };
-
-  _onFahrenheitChange = (temperature: string) => {
-    this.setState({ scale: Scale.Fahrenheit, temperature });
-  };
+  // Compute temperatures in both scales
+  const tempCelsius =
+    scale === "f" ? tryConvert(temperature, toCelsius) : temperature;
+  const tempFahrenheit =
+    scale === "c" ? tryConvert(temperature, toFahrenheit) : temperature;
   // ...
 ```
 
 ---
 
-### Appel aux actions définies dans le parent
+### Appel aux actions définies dans le composant parent
 
 ```jsx
   // ...
-  render() {
-    const scale = this.state.scale;
-    const temperature = this.state.temperature;
-    const tempCelsius =
-      scale === Scale.Fahrenheit
-        ? tryConvert(temperature, toCelsius)
-        : temperature;
-    const tempFahrenheit =
-      scale === Scale.Celsius
-        ? tryConvert(temperature, toFahrenheit)
-        : temperature;
-
-    return (
-      <View>
-        <TemperatureInput
-          scale={Scale.Celsius}
-          temperature={tempCelsius}
-          onTemperatureChange={this._onCelsiusChange}
-        />
-        <TemperatureInput
-          scale={Scale.Fahrenheit}
-          temperature={tempFahrenheit}
-          onTemperatureChange={this._onFahrenheitChange}
-        />
-        <BoilingResult tempCelsius={parseFloat(tempCelsius)} />
-      </View>
-    );
-  }
-  }
+  return (
+    <View style={styles.container}>
+      {/* Display and input in Celsius degrees */}
+      <TemperatureInput
+        value={tempCelsius}
+        scale="c"
+        onChange={(newTemp) => {
+          setTemperature(newTemp);
+          setScale("c");
+        }}
+      />
+      {/* Display and input in Fahrenheit degrees */}
+      <TemperatureInput
+        value={tempFahrenheit}
+        scale="f"
+        onChange={(newTemp) => {
+          setTemperature(newTemp);
+          setScale("f");
+        }}
+      />
+      <BoilingResult tempCelsius={parseFloat(tempCelsius)} />
+    </View>
+  };
+};
 ```
 
 ---
