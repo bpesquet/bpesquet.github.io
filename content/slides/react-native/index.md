@@ -10,7 +10,7 @@ draft: false
 - Composants React Native
 - Gestion de l'UI
 - Gestion de l'état
-- Navigation
+- Applications multi-écrans
 - Utilisation d'API web
 
 ---
@@ -460,7 +460,6 @@ const styles = StyleSheet.create({
     color: "red",
   },
 });
-
 ```
 
 ---
@@ -744,6 +743,48 @@ const styles = StyleSheet.create({
 
 ---
 
+### Saisies utilisateur
+
+Le composant [TextInput](https://reactnative.dev/docs/textinput) permet la saisie de texte.
+
+```jsx
+import React, { useState } from "react";
+import { StyleSheet, Text, View, TextInput } from "react-native";
+
+export default App = () => {
+  // Add character count to state
+  const [charCount, setCharCount] = useState(0);
+
+  return (
+    <View style={styles.container}>
+      <TextInput
+        style={styles.text}
+        placeholder="Enter some text"
+        onChangeText={(text) => {
+          // Update character count after input changes
+          setCharCount(text.length);
+        }}
+      />
+      <Text>Character count: {charCount}</Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontSize: 22,
+    paddingBottom: 10,
+  },
+});
+```
+
+---
+
 ## Gestion de l'état
 
 ---
@@ -786,17 +827,22 @@ const styles = StyleSheet.create({
 
 ---
 
-### Application
+### Exemple : le besoin
 
-<https://github.com/ensc-mobi/TempConverter>
+Saisie et affichage synchronisés d'une température en degrés Celsius et Fahrenheit.
 
-![TempConverter demo](images/temp-converter.png)
+![TempConverter demo](images/tempconverter-demo.gif)
 
 ---
 
-### Fonctions de conversion
+### Exemple : l'application
 
-```js
+L'état (température et échelle) commun aux deux composants de saisie est remonté dans `App`, leur parent commun.
+
+```jsx
+import React, { useState } from "react";
+import { StyleSheet, View, Text, TextInput } from "react-native";
+
 // Scale names used for display
 const scaleNames = { c: "Celsius", f: "Fahrenheit" };
 
@@ -808,25 +854,6 @@ function toFahrenheit(celsius) {
   return (celsius * 9) / 5 + 32;
 }
 
-// Convert a temperature using a given conversion function
-function tryConvert(temperature, convert) {
-  const input = parseFloat(temperature);
-  if (Number.isNaN(input)) {
-    return "";
-  }
-  // Call the conversion function on input
-  const output = convert(input);
-  // Keep the output rounded to the third decimal place
-  const rounded = Math.round(output * 1000) / 1000;
-  return rounded.toString();
-}
-```
-
----
-
-### Affichage de l'ébullition
-
-```jsx
 // Component displaying if the water would boil or not, depending on the temperature
 // We choose the Celsius scale for easier comparison with the boiling temperature
 const BoilingResult = ({ tempCelsius }) => {
@@ -837,13 +864,7 @@ const BoilingResult = ({ tempCelsius }) => {
   }
   return <Text style={styles.text}>{message}</Text>;
 };
-```
 
----
-
-### Utilisation de props dans les composants enfants
-
-```jsx
 // Component for displaying and inputting a temperature in a specific scale
 const TemperatureInput = ({ value, scale, onChange }) => {
   // Accessing scaleNames properties through bracket notation
@@ -861,13 +882,20 @@ const TemperatureInput = ({ value, scale, onChange }) => {
     />
   );
 };
-```
 
----
+// Convert a temperature using a given conversion function
+function tryConvert(temperature, convert) {
+  const input = parseFloat(temperature);
+  if (Number.isNaN(input)) {
+    return "";
+  }
+  // Call the conversion function on input
+  const output = convert(input);
+  // Keep the output rounded to the third decimal place
+  const rounded = Math.round(output * 1000) / 1000;
+  return rounded.toString();
+}
 
-### Remontée de l'état dans le composant parent
-
-```jsx
 // Main component
 export default App = () => {
   // Common state is lifted here because this component is the closest parent of TemperatureInput components.
@@ -881,15 +909,7 @@ export default App = () => {
     scale === "f" ? tryConvert(temperature, toCelsius) : temperature;
   const tempFahrenheit =
     scale === "c" ? tryConvert(temperature, toFahrenheit) : temperature;
-  // ...
-```
 
----
-
-### Appel aux actions définies dans le composant parent
-
-```jsx
-  // ...
   return (
     <View style={styles.container}>
       {/* Display and input in Celsius degrees */}
@@ -912,20 +932,130 @@ export default App = () => {
       />
       <BoilingResult tempCelsius={parseFloat(tempCelsius)} />
     </View>
-  };
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontSize: 22,
+    paddingBottom: 10,
+  },
+});
+```
+
+---
+
+### Restructuration du projet
+
+- `components/` rassemble les définitions des composants élémentaires.
+- Ils sont importés par le composant racine défini dans `App.js`.
+- `utils/` et `theme/` factorisent les fonctions de conversion et les styles React Native communs.
+
+```txt
+MyApp/
+├── components/
+│   ├── BoilingResult.js
+│   ├── TemperatureInput.js
+├── utils/
+│   ├── temperatureUtils.js
+├── theme/
+│   ├── styles.js
+└── App.js
+```
+
+---
+
+### Définition et export des fonctions de conversion
+
+Dans le fichier `utils/temperatureUtils.js`.
+
+```js
+// Scale names used for display
+export const scaleNames = { c: "Celsius", f: "Fahrenheit" };
+
+// Celsius/Fahrenheit conversion functions
+export function toCelsius(fahrenheit) {
+  return ((fahrenheit - 32) * 5) / 9;
+}
+export function toFahrenheit(celsius) {
+  return (celsius * 9) / 5 + 32;
+}
+
+// Convert a temperature using a given conversion function
+export function tryConvert(temperature, convert) {
+  const input = parseFloat(temperature);
+  if (Number.isNaN(input)) {
+    return "";
+  }
+  // Call the conversion function on input
+  const output = convert(input);
+  // Keep the output rounded to the third decimal place:
+  const rounded = Math.round(output * 1000) / 1000;
+  return rounded.toString();
+}
+```
+
+---
+
+### Définition et export du composant de saisie de température
+
+Dans le fichier `components/TemperatureInput.js`.
+
+```jsx
+import React from "react";
+import { TextInput } from "react-native";
+import { scaleNames } from "../utils/temperatureUtils";
+import styles from "../theme/styles";
+
+// Component for displaying and inputting a temperature in a specific scale
+export default TemperatureInput = ({ value, scale, onChange }) => {
+  // ...
 };
 ```
 
 ---
 
-## Navigation
+### Définition du composant racine
+
+Dans le fichier `App.js`.
+
+```jsx
+import React, { useState } from "react";
+import { View } from "react-native";
+import BoilingResult from "./components/BoilingResult";
+import TemperatureInput from "./components/TemperatureInput";
+import { toCelsius, toFahrenheit, tryConvert } from "./utils/temperatureUtils";
+import styles from "./theme/styles";
+
+// Main component
+export default App = () => {
+  // ...
+};
+```
 
 ---
 
-### Gestion de la navigation avec React Navigation
+### Exemple : l'application restructurée
+
+<https://github.com/ensc-mobi/TempConverter>
+
+![TempConverter demo](images/temp-converter.png)
+
+---
+
+## Applications multi-écrans
+
+---
+
+### React Navigation
 
 - Composant issu de la communauté des développeurs React Native.
-- Devenu le standard pour les applications multi-vues.
+- Devenu le standard pour les applications RN multi-vues.
 
 [![React Navigation logo](images/react_navigation_logo.png)](https://reactnavigation.org)
 
@@ -933,32 +1063,64 @@ export default App = () => {
 
 ### Installation de react-navigation
 
-Utiliser `expo install` au lieu de `npm install` assure l'installation de versions compatibles avec celle d'Expo.
+Utiliser `npx expo install` au lieu de `npm install` assure l'installation de versions compatibles avec celle d'Expo.
 
 ```bash
-# Core components and dependencies
-expo install @react-navigation/native react-native-screens react-native-safe-area-context
+# Core components and common dependencies
+npm install @react-navigation/native
+npx expo install react-native-screens react-native-safe-area-context
 
-# StackNavigator dependencies
-expo install @react-navigation/native-stack
+# If StackNavigator is used
+npm install @react-navigation/native-stack
 
-# BottomTabNavigator dependencies
+# If BottomTabNavigator is used
 expo install @react-navigation/bottom-tabs
 
-# DrawerNavigator dependencies
+# If DrawerNavigator is used
 expo install @react-navigation/drawer
+```
+
+---
+
+### NavigationContainer
+
+- Composant racine nécessaire pour utiliser React Navigation.
+- Ses descendants directs (composants enfants) sont appelés des **écrans** (_screens_).
+
+```jsx
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+
+export default App = () => {
+  return (
+    <NavigationContainer>{/* Rest of your app code */}</NavigationContainer>
+  );
+};
 ```
 
 ---
 
 ### StackNavigator
 
-Principe similaire au web : gestion d'une pile de vues.
+Principe similaire au web : gestion d'une pile d'écrans avec possibilité de naviguer de l'un à l'autre.
 
 ```jsx
-const Stack = createStackNavigator();
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function App() {
+const HomeScreen = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>This is the home screen</Text>
+    </View>
+  );
+};
+
+const Stack = createNativeStackNavigator();
+
+export default App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -966,76 +1128,232 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
-```
+};
 
----
-
-### Navigation entre vues
-
-- Un objet `navigation` est automatiquement ajouté aux _props_ des vues gérées par React Navigation.
-- Son API permet de naviguer entre les vues.
-
-```ts
-// Navigue vers une vue
-this.props.navigation.navigate("RouteName");
-
-// Permet d'aller plusieurs fois vers la même vue
-this.props.navigation.push("RouteName");
-
-// Revient à la vue précédente
-this.props.navigation.goBack();
-```
-
----
-
-### Passage de paramètres entre vues
-
-```ts
-// Côté vue appelante
-this.props.navigation.navigate("RouteName", {
-  /* Objet dont les propriétés constituent les paramètres passés à la nouvelle vue */
-  param1: "value1",
-  // ...
+const styles = StyleSheet.create({
+  container: { flex: 1, alignItems: "center", justifyContent: "center" },
+  text: { fontSize: 18, paddingBottom: 10 },
 });
-
-// Côté vue appelée
-// La propriété route.params permet de récupérer les paramètres passés à la vue
-const { param1 } = this.props.route.params;
 ```
 
 ---
 
-### En-tête des vues
+### API de navigation
+
+Passé comme _prop_ d'un composant écran, l'objet `navigation` permet la gestion de la navigation:
+
+- `navigation.navigate("RouteName")` navigue vers un nouvel écran, sauf s'il est déjà l'écran actuel.
+- `navigation.push("RouteName")` navigue vers un nouvel écran même s'il est déjà l'écran actuel.
+- `navigation.goBack()` permet de revenir en arrière dans la navigation.
+
+---
+
+### Exemple de navigation
 
 ```jsx
-<MainStack.Navigator
-  screenOptions={{
-    headerStyle: {
-      backgroundColor: "#f4511e",
-    },
-    headerTintColor: "#fff",
-    headerTitleStyle: {
-      fontWeight: "bold",
-    },
-  }}
->
-// ...
+import React from "react";
+import { StyleSheet, View, Text, Button } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const HomeScreen = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>This is the home screen</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate("Details")}
+      />
+    </View>
+  );
+};
+
+const DetailsScreen = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>This is the details screen</Text>
+      <Button
+        title="Go to Details... again"
+        onPress={() => navigation.push("Details")}
+      />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
+      <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
+    </View>
+  );
+};
+
+const Stack = createNativeStackNavigator();
+
+export default App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: { flex: 1, alignItems: "center", justifyContent: "center" },
+  text: { fontSize: 18, paddingBottom: 10 },
+});
 ```
 
 ---
 
-### Vue modale
+### Passage de paramètres entre écrans
+
+`navigation.navigate` permet de transmettre des données d'un écran à l'autre sous la forme d'un objet JavaScript.
+
+```js
+// Navigate to "RouteName", passing some parameters
+navigation.navigate("RouteName", { /* params go here */ })
+```
+
+L'écran d'arrivée peut lire les paramètres grâce à la propriété `params` du _prop_ `route`.
+
+Ces paramètres sont équivalents à ceux d'une URL. Ils ne doivent pas contenir les données métiers de l'application (plutôt gérés via l'état).
+
+---
+
+### Exemple de passage de paramètres
 
 ```jsx
-<RootStack.Navigator mode="modal" headerMode="none">
-  <RootStack.Screen
-    name="Main"
-    component={MainStackScreen}
-    options={{ headerShown: false }}
-  />
-  <RootStack.Screen name="MyModal" component={ModalScreen} />
-</RootStack.Navigator>
+import React from "react";
+import { StyleSheet, View, Text, Button } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const HomeScreen = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>This is the home screen</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => {
+          // Navigate to the Details route with 2 params
+          navigation.navigate("Details", {
+            itemId: 86,
+            otherParam: "anything you want here",
+          });
+        }}
+      />
+    </View>
+  );
+};
+
+const DetailsScreen = ({ navigation, route }) => {
+  // Get the params
+  const { itemId, otherParam } = route.params;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>This is the details screen</Text>
+      {/* Convert params to JSON strings before display */}
+      <Text>itemId: {JSON.stringify(itemId)}</Text>
+      <Text>otherParam: {JSON.stringify(otherParam)}</Text>
+      <Button
+        title="Go to Details... again"
+        onPress={() => {
+          // Navigate to Details again with one param
+          navigation.push("Details", {
+            itemId: Math.floor(Math.random() * 100),
+          });
+        }}
+      />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
+      <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
+    </View>
+  );
+};
+
+const Stack = createNativeStackNavigator();
+
+export default App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: { flex: 1, alignItems: "center", justifyContent: "center" },
+  text: { fontSize: 18, paddingBottom: 10 },
+});
+```
+
+---
+
+### En-tête des écrans
+
+La _prop_ `screenOptions` de `StackNavigator` permet de configurer l'en-tête commun à tous les écrans. La couleur de la barre de statut du téléphone peut être harmonisée grâce au composant [StatusBar](https://reactnavigation.org/docs/status-bar/).
+
+```jsx
+import React from "react";
+import { StyleSheet, View, Text, Button, StatusBar } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+// [...]
+
+const Stack = createNativeStackNavigator();
+
+export default App = () => {
+  return (
+    <NavigationContainer>
+      <StatusBar barStyle="light-content" backgroundColor="#f4511e" />
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      >
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "My home" }}
+        />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: { flex: 1, alignItems: "center", justifyContent: "center" },
+  text: { fontSize: 18, paddingBottom: 10 },
+});
+```
+
+---
+
+### Restructuration du projet
+
+- `screens/` stocke les composants définissant chaque écran de l'application.
+- `navigation/` stocke les composants qui organisent la navigation entre les écrans.
+
+```txt
+MyApp/
+├── screens/
+│   ├── DetailsScreen.js
+│   ├── HomeScreen.js
+├── navigation/
+│   ├── RootStackNavigator.js
+├── theme/
+│   ├── colors.js
+│   ├── styles.js
+└── App.js
 ```
 
 ---
