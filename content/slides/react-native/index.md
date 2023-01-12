@@ -1013,9 +1013,11 @@ import { scaleNames } from "../utils/temperatureUtils";
 import styles from "../theme/styles";
 
 // Component for displaying and inputting a temperature in a specific scale
-export default TemperatureInput = ({ value, scale, onChange }) => {
+const TemperatureInput = ({ value, scale, onChange }) => {
   // ...
 };
+
+export default TemperatureInput;
 ```
 
 ---
@@ -1074,10 +1076,7 @@ npx expo install react-native-screens react-native-safe-area-context
 npm install @react-navigation/native-stack
 
 # If BottomTabNavigator is used
-expo install @react-navigation/bottom-tabs
-
-# If DrawerNavigator is used
-expo install @react-navigation/drawer
+npm install @react-navigation/bottom-tabs
 ```
 
 ---
@@ -1371,9 +1370,31 @@ MyApp/
 Affichage d'onglets en bas de l'écran.
 
 ```jsx
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+const HomeScreen = () => {
+  return (
+    <View style={styles.container}>
+      <Text>This is the home screen</Text>
+    </View>
+  );
+};
+
+const SettingsScreen = () => {
+  return (
+    <View style={styles.container}>
+      <Text>This is the settings screen</Text>
+    </View>
+  );
+};
+
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+export default App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator>
@@ -1382,20 +1403,142 @@ export default function App() {
       </Tab.Navigator>
     </NavigationContainer>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: "center", alignItems: "center" },
+});
+```
+
+---
+
+### Paramétrage de l'apparence
+
+Réalisé grâce à la _prop_ `screenOptions` de `TabNavigator`.
+
+```jsx
+import React from "react";
+import { StyleSheet, Text, View, Button, StatusBar } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+// [...]
+
+const Tab = createBottomTabNavigator();
+
+export default App = () => {
+  return (
+    <NavigationContainer>
+      <StatusBar barStyle="light-content" backgroundColor="#f4511e" />
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          // Icons will be different if the tab is focused
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            if (route.name === "Home") {
+              iconName = focused
+                ? "ios-information-circle"
+                : "ios-information-circle-outline";
+            } else if (route.name === "Settings") {
+              iconName = focused ? "ios-list" : "ios-list-outline";
+            }
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: "tomato",
+          tabBarInactiveTintColor: "gray",
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        })}
+      >
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: "center", alignItems: "center" },
+  text: { fontSize: 18, paddingBottom: 10 },
+});
 ```
 
 ---
 
 ### Navigation entre onglets
 
-Fonctionnement identique à celui de la navigation entre les vues d'un `StackNavigator`.
+- API identique à la navigation entre les écrans d'un `StackNavigator`.
+- L'objet `navigation` doit être passé comme _prop_ de l'écran.
 
 ```jsx
-<Button
-  title="Go to Settings"
-  onPress={() => navigation.navigate("Settings")}
-/>
+import React from "react";
+import { StyleSheet, Text, View, Button } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+const HomeScreen = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>This is the home screen</Text>
+      <Button
+        title="Go to Settings"
+        onPress={() => navigation.navigate("Settings")}
+      />
+    </View>
+  );
+};
+
+const SettingsScreen = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>This is the settings screen</Text>
+      <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
+    </View>
+  );
+};
+
+const Tab = createBottomTabNavigator();
+
+export default App = () => {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            if (route.name === "Home") {
+              iconName = focused
+                ? "ios-information-circle"
+                : "ios-information-circle-outline";
+            } else if (route.name === "Settings") {
+              iconName = focused ? "ios-list" : "ios-list-outline";
+            }
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: "tomato",
+          tabBarInactiveTintColor: "gray",
+        })}
+      >
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: "center", alignItems: "center" },
+  text: { fontSize: 18, paddingBottom: 10 },
+});
 ```
 
 ---
@@ -1403,25 +1546,140 @@ Fonctionnement identique à celui de la navigation entre les vues d'un `StackNav
 ### Affichage de piles (_stacks_) dans les onglets
 
 ```jsx
-const HomeStack = createStackNavigator();
-function HomeStackScreen() {
-  // Define home stack
-}
+import React from "react";
+import { StyleSheet, Text, View, Button, StatusBar } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-const SettingsStack = createStackNavigator();
-function SettingsStackScreen() {
-  // Define settings stack
-}
+const HomeScreen = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>This is the home screen</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate("Details")}
+      />
+    </View>
+  );
+};
+
+const DetailsScreen = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>This is the details screen</Text>
+    </View>
+  );
+};
+
+const SettingsScreen = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>This is the settings screen</Text>
+    </View>
+  );
+};
+
+// Screen stack for home tab
+const HomeStack = createNativeStackNavigator();
+
+const HomeStackNavigator = () => {
+  return (
+    <HomeStack.Navigator initialRouteName="Home" screenOptions={screenOptions}>
+      <HomeStack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ title: "My home" }}
+      />
+      <HomeStack.Screen name="Details" component={DetailsScreen} />
+    </HomeStack.Navigator>
+  );
+};
+
+// Screen stack for settings tab
+const SettingsStack = createNativeStackNavigator();
+
+const SettingsStackNavigator = () => {
+  return (
+    <SettingsStack.Navigator
+      initialRouteName="Home"
+      screenOptions={screenOptions}
+    >
+      <SettingsStack.Screen name="Settings" component={SettingsScreen} />
+    </SettingsStack.Navigator>
+  );
+};
 
 const Tab = createBottomTabNavigator();
-function TabScreen() {
+
+export default App = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeStackScreen} />
-      <Tab.Screen name="Settings" component={SettingsStackScreen} />
-    </Tab.Navigator>
+    <NavigationContainer>
+      <StatusBar barStyle="light-content" backgroundColor="#f4511e" />
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          // Icons will be different if the tab is focused
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            if (route.name === "HomeStack") {
+              iconName = focused
+                ? "ios-information-circle"
+                : "ios-information-circle-outline";
+            } else if (route.name === "SettingsStack") {
+              iconName = focused ? "ios-list" : "ios-list-outline";
+            }
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: "tomato",
+          tabBarInactiveTintColor: "gray",
+          // Hiding tab navigator header to show only stack header
+          headerShown: false,
+        })}
+      >
+        <Tab.Screen name="HomeStack" component={HomeStackNavigator} />
+        <Tab.Screen name="SettingsStack" component={SettingsStackNavigator} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: "center", alignItems: "center" },
+  text: { fontSize: 18, paddingBottom: 10 },
+});
+
+// Common stack header options
+const screenOptions = {
+  headerStyle: {
+    backgroundColor: "#f4511e",
+  },
+  headerTintColor: "#fff",
+  headerTitleStyle: {
+    fontWeight: "bold",
+  },
+};
+```
+
+---
+
+### Restructuration du projet
+
+```txt
+MyApp/
+├── screens/
+│   ├── DetailsScreen.js
+│   ├── HomeScreen.js
+│   ├── SettingsScreen.js
+├── navigation/
+│   ├── HomeStackNavigator.js
+│   ├── SettingsStackNavigator.js
+│   ├── RootTabNavigator.js
+├── theme/
+│   ├── colors.js
+│   ├── styles.js
+└── App.js
 ```
 
 ---
@@ -1437,6 +1695,7 @@ function TabScreen() {
 ### Autres possibilités de react-navigation
 
 - [Navigation par menu accordéon](https://reactnavigation.org/docs/drawer-based-navigation)
+- [Ecran modal](https://reactnavigation.org/docs/modal)
 - [Gestion de l'authentification](https://reactnavigation.org/docs/auth-flow)
 - ...
 
