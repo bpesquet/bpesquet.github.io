@@ -12,6 +12,7 @@ draft: false
 - Gestion de l'état
 - Applications multi-écrans
 - Utilisation d'API web
+- Persistance locale
 
 ---
 
@@ -316,7 +317,7 @@ const styles = StyleSheet.create({
 
 - Syntaxe introduite pour le framework web [React](https://reactjs.org/).
 - Permet de décrire une UI en intégrant balisage et logique applicative.
-- Les accolades `{...}` permettent d'inclure du code JavaScript dans le code JSX.
+- Les accolades `{...}` permettent d'inclure du code JavaScript dans le code JSX ([plus de détails](https://beta.reactjs.org/learn/javascript-in-jsx-with-curly-braces)).
 - TSX : équivalent de JSX pour TypeScript.
 
 ```jsx
@@ -413,13 +414,7 @@ export default HelloWorldApp;
 
 Implémentés de manière native par RN sous Android et iOS afin d'obtenir un _look'n'feel_ et des performances optimaux.
 
-![React Native core components](images/basic_components.png)
-
----
-
-### Composants d'interface utilisateur
-
-![React native UI components](images/ui_components.png)
+[![React Native core components](images/basic_components.png)](https://reactnative.dev/docs/components-and-apis)
 
 ---
 
@@ -535,6 +530,25 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
+```
+
+---
+
+### _Props_ et déstructuration
+
+- Les _props_ peuvent être passées de deux manières équivalentes à un composant function.
+- La seconde, plus concise et explicite, est un exemple de [déstructuration d'objet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
+
+```jsx
+const Cat1 = (props) => {
+  const name = props.name;
+  const age = props.age;
+  // ...
+};
+
+const Cat2 = ({ name, age }) => {
+  // ...
+};
 ```
 
 ---
@@ -827,15 +841,15 @@ const styles = StyleSheet.create({
 
 ---
 
-### Exemple : le besoin
+### Exemple de remontée de l'état
 
-Saisie et affichage synchronisés d'une température en degrés Celsius et Fahrenheit.
+<https://github.com/ensc-mobi/TempConverter>
 
-![TempConverter demo](images/tempconverter-demo.gif)
+![TempConverter demo](images/temp-converter.gif)
 
 ---
 
-### Exemple : l'application
+### Mise en oeuvre
 
 L'état (température et échelle) commun aux deux composants de saisie est remonté dans `App`, leur parent commun.
 
@@ -1042,14 +1056,6 @@ export default App = () => {
 
 ---
 
-### Exemple : l'application restructurée
-
-<https://github.com/ensc-mobi/TempConverter>
-
-![TempConverter demo](images/temp-converter.png)
-
----
-
 ## Applications multi-écrans
 
 ---
@@ -1078,6 +1084,14 @@ npm install @react-navigation/native-stack
 # If BottomTabNavigator is used
 npm install @react-navigation/bottom-tabs
 ```
+
+---
+
+### Exemple : navigation par piles (_stacks_)
+
+<https://github.com/ensc-mobi/StackNavigatorDemo>
+
+![StackNavigator demo](images/stack-navigator-demo.png)
 
 ---
 
@@ -1357,11 +1371,11 @@ MyApp/
 
 ---
 
-### Exemple récapitulatif
+### Exemple : navigation par onglets
 
-<https://github.com/ensc-mobi/StackNavigatorDemo>
+<https://github.com/ensc-mobi/TabNavigatorDemo>
 
-![StackNavigator demo](images/stack-navigator-demo.png)
+![BottomTabNavigator demo](images/tab-navigator-demo.png)
 
 ---
 
@@ -1543,7 +1557,7 @@ const styles = StyleSheet.create({
 
 ---
 
-### Affichage de piles (_stacks_) dans les onglets
+### Affichage de piles dans les onglets
 
 ```jsx
 import React from "react";
@@ -1684,14 +1698,6 @@ MyApp/
 
 ---
 
-### Exemple récapitulatif
-
-<https://github.com/ensc-mobi/TabNavigatorDemo>
-
-![BottomTabNavigator demo](images/tab-navigator-demo.png)
-
----
-
 ### Autres possibilités de react-navigation
 
 - [Navigation par menu accordéon](https://reactnavigation.org/docs/drawer-based-navigation)
@@ -1732,8 +1738,7 @@ Certaines sont librement utilisables, d'autres nécessitent une authentification
 - [Wikipedia](https://en.wikipedia.org/w/api.php?)
 - [Spotify](https://developer.spotify.com/documentation/web-api/)
 - [OMDb API](https://www.omdbapi.com/)
-
-([Source](https://shkspr.mobi/blog/2016/05/easy-apis-without-authentication/))
+- ...
 
 ---
 
@@ -1742,10 +1747,19 @@ Certaines sont librement utilisables, d'autres nécessitent une authentification
 - [Postman](https://www.getpostman.com/)
 - Extension [RESTClient](https://addons.mozilla.org/fr/firefox/addon/restclient/) pour Firefox
 - [Insomnia](https://insomnia.rest/)
+- ...
 
 ---
 
-### Appels réseau asynchrones avec JavaScript
+### Exemple d'utilisation d'une API
+
+<https://github.com/ensc-mobi/RandomBeer>
+
+![Random Beer app](images/random_beer.png)
+
+---
+
+### Appels réseau asynchrones avec `fetch`
 
 Une [promesse](https://web.dev/promises/) (_promise_) est un objet qui encapsule une opération dont le résultat n'est pas encore connu.
 
@@ -1775,6 +1789,7 @@ fetch("http://my-api-url")
   .then((content) => {
     // Utilisation du contenu de la réponse
     // `content` est un objet ou un tableau JavaScript
+    // ...
   })
   .catch((error) => {
     console.error(error);
@@ -1801,97 +1816,404 @@ fetch("https://mywebsite.com/endpoint/", {
 
 ---
 
-### Application
+### Appels réseau asynchrones avec `async/await`
 
-<https://github.com/ensc-mobi/RandomBeer>
+Les fonctions utilisant `await` doivent être déclarées avec le mot-clé `async`.
 
-![Random Beer app](images/random_beer.png)
-
----
-
-### Consommation d'une API web
-
-```ts
-const rootEndpoint = "https://api.punkapi.com/v2";
-
-export interface Beer {
-  name: string;
-  description: string;
-}
-
-const headers = {
-  "Content-Type": "application/json",
-  Accept: "application/json",
+```js
+// Cette fonction renvoie une promesse
+const fetchRemoteApi = async () => {
+  try {
+    // Envoi d'une requête HTTP asynchrone vers l'URL spécifiée
+    // La réponse reçue ici contient des données JSON
+    const response = await fetch("http://my-api-url");
+    // Accès au contenu JSON de la réponse
+    const content = await response.json();
+    // Utilisation du contenu de la réponse
+    // `content` est un objet ou un tableau JavaScript
+    // ...
+  } catch (e) {
+    // Gestion de l'erreur
+    // ...
+  }
 };
 
-// Return a random beer from API
-export const getRandomBrewdog = () =>
-  fetch(`${rootEndpoint}/beers/random`, { headers })
-    .then((response) => response.json())
-    .then((beers) => beers[0]) // Access first element of returned array
-    .catch((error) => {
-      console.error(error);
-    });
+fetchRemoteApi();
 ```
 
 ---
 
-### Mise à jour de l'application
+### Exécution de code à l'initialisation d'un composant
+
+- Le hook [useEffect](https://reactjs.org/docs/hooks-effect.html) permet de déclencher des traitements à certains moments du cycle de vie d'un composant.
+- Par défaut, le code associé est appelé à chaque réaffichage du composant. On peut définir une liste des variables dont le changement déclenche une nouvelle exécution du code du `hook`.
+
+```js
+useEffect(() => {
+  // Code exécuté uniquement au chargement (mounting) du composant
+  // ...
+}, []);
+```
+
+---
+
+### Affichage pendant le chargement
+
+- Le composant [ActivityIndicator](https://reactnative.dev/docs/activityindicator) permet d'afficher un _spinner_ pendant les actions potentiellement longues (chargements réseau, etc).
+- Il est souvent associé à un booléen `loading` ajouté à l'état du composant.
+
+![ActivityIndicator spinner](images/spinner.gif)
+
+---
+
+### Mise en oeuvre
 
 ```jsx
-interface AppState {
-  isLoading: boolean; // Is a beer request pending?
-  name: string; // Beer name
-  description: string; // Beer description
+import React, { useEffect } from "react";
+import { useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ActivityIndicator,
+  TouchableOpacity,
+} from "react-native";
+
+// API endpoint
+const rootEndpoint = "https://api.punkapi.com/v2";
+
+// fetch API for a random beer
+const fetchRandomBeer = async () => {
+  const response = await fetch(`${rootEndpoint}/beers/random`);
+  const beers = await response.json();
+  // Access first element of returned beer array
+  return beers[0];
+};
+
+export default App = () => {
+  // Define state
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [beerName, setBeerName] = useState("");
+  const [beerDescription, setBeerDescription] = useState("");
+
+  // Load a new beer
+  const loadBeer = async () => {
+    setLoading(true);
+    setError(false);
+
+    try {
+      const beer = await fetchRandomBeer();
+
+      // Update state
+      setBeerName(beer.name);
+      setBeerDescription(beer.description);
+    } catch (e) {
+      setError(true);
+    }
+
+    setLoading(false);
+  };
+
+  // The empty array [] prevents the effect from running at each re-render
+  useEffect(() => {
+    // More details; https://www.robinwieruch.de/react-hooks-fetch-data/
+    loadBeer();
+  }, []);
+
+  if (loading) {
+    return (
+      <View style={styles.container}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={styles.container}>
+        <Text>Something went wrong :\</Text>
+      </View>
+    );
+  }
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.name}>{beerName}</Text>
+      <Text style={styles.description}>{beerDescription}</Text>
+      {/* Add a button to fetch another beer */}
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          loadBeer();
+        }}
+      >
+        <Text>Grab a new beer!</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    margin: 30,
+  },
+  name: {
+    fontSize: 18,
+    fontWeight: "700",
+    marginBottom: 10,
+  },
+  description: {
+    marginBottom: 10,
+  },
+  button: {
+    borderWidth: 1,
+    borderColor: "black",
+    borderRadius: 3,
+    padding: 5,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
+```
+
+---
+
+### Restructuration du projet
+
+`api/` rassemble les définitions des appels réseau asynchrones.
+
+```txt
+MyApp/
+├── api/
+│   ├── punkapi.js
+├── theme/
+│   ├── styles.js
+└── App.js
+```
+
+---
+
+## Persistance locale
+
+---
+
+### Besoin
+
+- Les applications mobiles doivent souvent enregistrer une partie de leurs données (préférences utilisateurs, dernières informations consultées, etc) dans la mémoire de stockage du téléphone/tablette.
+- Plusieurs solutions existent pour cela.
+
+---
+
+### Exemple de stockage local
+
+<https://github.com/ensc-mobi/ShowerThoughts>
+
+![Show thoughts](images/showerthoughts.png)
+
+---
+
+### Stockage local avec `AsyncStorage`
+
+- Le composant [AsyncStorage](https://react-native-async-storage.github.io/async-storage/) permet de stocker localement des données sous forme de paires nom/valeur.
+- Il gère des valeurs de type chaîne, ou objet après sérialisation JSON.
+- Son API est basée sur les promesses et donc asynchrone.
+- Il doit être ajouté au projet :
+
+```bash
+npx expo install @react-native-async-storage/async-storage
+```
+
+---
+
+### Ecriture de données
+
+`setItem` permet à la fois d'ajouter de nouveaux éléments et de modifier des éléments existants.
+
+```js
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+const storeString = async (value) => {
+  try {
+    await AsyncStorage.setItem("my_storage_key", value);
+  } catch (e) {
+    // Saving error
+  }
+};
+
+const storeObject = async (value) => {
+  try {
+    const jsonValue = JSON.stringify(value)
+    await AsyncStorage.setItem("my_storage_key", jsonValue)
+  } catch (e) {
+    // Saving error
+  }
+}
+```
+
+---
+
+### Lecture de données
+
+`getItem` renvoie une promesse qui réussit si la valeur associée à la clé est trouvée, ou renvoie `null` dans le cas contraire.
+
+```js
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+const getString = async () => {
+  try {
+    const value = await AsyncStorage.getItem("my_storage_key");
+    if (value !== null) {
+      // value previously stored
+    }
+  } catch (e) {
+    // Error reading value
+  }
+};
+
+const getObject = async () => {
+  try {
+    const jsonValue = await AsyncStorage.getItem("my_storage_key");
+    return jsonValue != null ? JSON.parse(jsonValue) : null;
+  } catch (e) {
+    // Error reading value
+  }
+};
+```
+
+---
+
+### Mise en oeuvre
+
+- Les données sont chargées depuis le stockage local uniquement au démarrage de l'application.
+- La validation de la saisie déclenche la sauvegarde locale, puis la mise à jour de l'état.
+
+```jsx
+import React, { useEffect, useState } from "react";
+import { StyleSheet, Text, View, TextInput, FlatList } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+// AsyncStorage key used for storing ideas
+const STORAGE_KEY = "ASYNC_STORAGE_IDEAS";
+
+export default function App() {
+  // Value of the text input
+  const [input, setInput] = useState("");
+  // Ideas list, initially empty
+  const [ideas, setIdeas] = useState([]);
+
+  // Clear local storage
+  const resetIdeas = async () => {
+    console.log("Removing ideas from local storage...");
+    try {
+      await AsyncStorage.multiRemove([STORAGE_KEY]);
+    } catch (e) {
+      console.error("Failed to clear ideas");
+    }
+  };
+
+  // Save ideas array parameter to local storage
+  const saveIdeas = async (newIdeas) => {
+    console.log(`Saving ideas [${newIdeas}] to local storage...`);
+    try {
+      // Turn ideas array into a JSON string
+      const jsonIdeas = JSON.stringify(newIdeas);
+      // Store ideas string
+      await AsyncStorage.setItem(STORAGE_KEY, jsonIdeas);
+    } catch (e) {
+      console.error("Failed to save ideas");
+    }
+  };
+
+  // Load ideas from local storage
+  const loadIdeas = async () => {
+    console.log("Loading ideas from local storage...");
+    try {
+      // Load ideas string
+      const jsonIdeas = await AsyncStorage.getItem(STORAGE_KEY);
+      if (jsonIdeas !== null) {
+        // Turn stored JSON string into an array, and set it as ideas array
+        setIdeas(JSON.parse(jsonIdeas));
+      }
+    } catch (e) {
+      console.error("Failed to load ideas");
+    }
+  };
+
+  // Load ideas only during initial component mounting
+  useEffect(() => {
+    // Uncomment to clear ideas from local storage
+    // resetIdeas();
+    loadIdeas();
+  }, []);
+
+  return (
+    <View style={styles.container}>
+      <TextInput
+        style={styles.input}
+        placeholder="Enter your newest brilliant idea"
+        // Display input value
+        value={input}
+        onChangeText={(text) => {
+          // Update input value
+          setInput(text);
+        }}
+        onSubmitEditing={() => {
+          if (!input) return; // Don't submit if empty
+
+          // Creating a new ideas array with input (new idea) at the end
+          const newIdeas = [...ideas, input];
+          saveIdeas(newIdeas);
+          // Update state
+          setIdeas(newIdeas);
+
+          // Reset input value
+          setInput("");
+        }}
+      />
+      <FlatList
+        style={styles.list}
+        data={ideas}
+        renderItem={({ item }) => <Text style={styles.item}>- {item}</Text>}
+        keyExtractor={(item) => item}
+      ></FlatList>
+    </View>
+  );
 }
 
-export default class App extends Component<{}, AppState> {
-  // Initial state
-  state: AppState = {
-    name: "",
-    description: "",
-    isLoading: false,
-  };
-
-  // Function called when user want to search for another beer
-  _getRandomBrewdogWithFeedback = () => {
-    // Begin a new request for a beer
-    this.setState({ isLoading: true });
-
-    getRandomBrewdog().then((beer: Beer) =>
-      this.setState({
-        name: beer.name,
-        description: beer.description,
-        isLoading: false, // Request is finished
-      })
-    );
-  };
-  // ...
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 30,
+  },
+  input: {
+    backgroundColor: "whitesmoke",
+    padding: 10,
+    marginBottom: 10,
+  },
+  list: {
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  item: {
+    padding: 5,
+  },
+});
 ```
 
 ---
 
-### Interactions avec un SGBDR via une API web
+### Restructuration du projet
 
-<https://github.com/mevdschee/php-crud-api>
-
-Fichier `api.php` à publier sur un serveur web PHP. Fournit une API web pour accéder aux données d'un SGBDR.
-
-```php
-// Update to reflect your local settings
-$config = new Config([
-  'username' => 'xxx',
-  'password' => 'xxx',
-  'database' => 'xxx',
-]);
+```txt
+MyApp/
+├── components/
+│   ├── Input.js
+├── utils/
+│   ├── localStorage.js
+├── theme/
+│   ├── styles.js
+└── App.js
 ```
-
----
-
-### Utilisation de PHP-CRUD-API
-
-`http://my-server-url/api.php/records/...`
-
-- `GET my-table` : renvoie la liste des enregistrements de la table `my-table`.
-- `GET my-table/id` : renvoie l'enregistrement identifié par `id`.
-- `POST my-table` : création d'un nouvel enregistrement avec les données contenues dans le corps de la requête.
