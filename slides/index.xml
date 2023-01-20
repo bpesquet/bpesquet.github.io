@@ -4952,7 +4952,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// The setCount function is used to update its value.
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> [count, setCount] = useState(&lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> (
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Adjacent JSX elements must be wrapped in an enclosing tag.
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Fragments &amp;lt;&amp;gt; and &amp;lt;/&amp;gt; let you do that without using an unnecessary wrapping element like View.
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &amp;lt;&amp;gt;
