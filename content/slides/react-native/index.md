@@ -579,7 +579,7 @@ const Counter = () => {
   // The setCount function is used to update its value.
   const [count, setCount] = useState(0);
 
-  return {
+  return (
     // Adjacent JSX elements must be wrapped in an enclosing tag.
     // Fragments <> and </> let you do that without using an unnecessary wrapping element like View.
     <>
