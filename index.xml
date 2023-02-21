@@ -5731,7 +5731,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;li>Composant racine nécessaire pour utiliser React Navigation.&lt;/li>
 &lt;li>Ses descendants directs (composants enfants) sont appelés des &lt;strong>écrans&lt;/strong> (&lt;em>screens&lt;/em>).&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> * as React from &lt;span style="color:#0086d2">&amp;#34;react&amp;#34;&lt;/span>;
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> React from &lt;span style="color:#0086d2">&amp;#34;react&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> { NavigationContainer } from &lt;span style="color:#0086d2">&amp;#34;@react-navigation/native&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">export&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">default&lt;/span> App = () =&amp;gt; {
