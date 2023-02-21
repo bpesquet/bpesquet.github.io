@@ -1101,7 +1101,7 @@ npm install @react-navigation/bottom-tabs
 - Ses descendants directs (composants enfants) sont appelés des **écrans** (_screens_).
 
 ```jsx
-import * as React from "react";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 
 export default App = () => {
