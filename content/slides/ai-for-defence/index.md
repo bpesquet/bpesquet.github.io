@@ -10,7 +10,7 @@ draft: false
 
 ### Impacts of AI on Defence
 
-- Like with all highly technical fields, AI has a growing impact on AI.
+- Like with all highly technical fields, AI has a growing impact on Defence.
 - Main areas:
   - Decision and planning support
   - Collaborative combat
@@ -24,9 +24,9 @@ draft: false
 ### A fastly moving ecosystem
 
 - In all countries, traditional defence behemoths (Lockeed Martin, Thales Group, Leonardo...) have embraced AI as a key tool for improving their systems.
-- Many startups enter the field with specialized offerings.
+- Many startups are entering the field with specialized offerings.
 - Some new, state-promoted national sectors emerge (example: Israel for cybersecurity).
-- Recent conflicts, most notably the Ukraine war, have been catalysts for AI adoption.
+- Recent conflicts, most notably the Ukraine war, are catalysts for AI adoption.
 
 ---
 
@@ -59,13 +59,13 @@ draft: false
 
 - Several (5-20) missiles used simultaneously as a pack.
 - AI is used to optimize their guidance and help the pilot.
-- PhD in progress in Bordeaux.
+- (PhD in progress in Bordeaux)
 
 ---
 
 ### Pilot assistance
 
-- Single pilot planes (with unchanged cockpits sometimes).
+- Single pilot planes are heavily studied for both civilian and military contexts (with sometimes an unchanged cockpit).
 - AI is needed for assistance and decision making.
 
 ---
@@ -73,7 +73,7 @@ draft: false
 ### Object recognition in combat zones
 
 - [Project Maven](https://www.defense.gov/News/News-Stories/Article/Article/1254719/project-maven-to-deploy-computer-algorithms-to-war-zone-by-years-end/): a US initiative aiming at categorizing and identifying surveillance footage by low altitude devices.
-- Uses sophiticated computer vision algorithms and models.
+- Uses sophisticated computer vision algorithms and models.
 
 ---
 
@@ -81,7 +81,7 @@ draft: false
 
 - Predictive analytics (identifying trends and patterns within a dataset to then predict the likelihood of, and when, that trend will occur again) can be used to correlate signs of preparation for unlawful activities.
 - Such services make heavy use of Machine Learning and are offered by companies like [Palantir](https://en.wikipedia.org/wiki/Palantir_Technologies).
-- There are, of course, many ethical issues.
+- There are, of course, many associated ethical issues.
 
 ---
 
@@ -89,7 +89,7 @@ draft: false
 
 - Protecting defence networks by identifying and neutralizing threats (viruses, malware, cybreattacks...).
 - Detection of unusual patterns in network usage.
-- Associated software leverages various supervised and unsupervised learning algorithms
+- Associated software leverages various supervised and unsupervised learning algorithms.
 
 ---
 
