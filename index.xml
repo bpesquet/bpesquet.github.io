@@ -1,4 +1,165 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Accueil on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/</link><description>👨‍💻 Baptiste Pesquet (Accueil)</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>Entity Framework Core</title><link>https://www.bpesquet.fr/slides/efcore/</link><pubDate>Mon, 26 Sep 2022 15:12:20 +0200</pubDate><guid>https://www.bpesquet.fr/slides/efcore/</guid><description>&lt;h2 id="sommaire" >Sommaire
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Accueil on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/</link><description>👨‍💻 Baptiste Pesquet (Accueil)</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>AI for Defence</title><link>https://www.bpesquet.fr/slides/ai-for-defence/</link><pubDate>Fri, 09 Jun 2023 08:37:58 +0200</pubDate><guid>https://www.bpesquet.fr/slides/ai-for-defence/</guid><description>&lt;h2 id="context" >Context
+&lt;span>
+&lt;a href="#context">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="impacts-of-ai-on-defence" >Impacts of AI on Defence
+&lt;span>
+&lt;a href="#impacts-of-ai-on-defence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Like with all highly technical fields, AI has a growing impact on AI.&lt;/li>
+&lt;li>Main areas:
+&lt;ul>
+&lt;li>Decision and planning support&lt;/li>
+&lt;li>Collaborative combat&lt;/li>
+&lt;li>Cybersecurity and digital influence&lt;/li>
+&lt;li>Logistics and operational readiness&lt;/li>
+&lt;li>Intelligence&lt;/li>
+&lt;li>Robotics and autonomy&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="a-fastly-moving-ecosystem" >A fastly moving ecosystem
+&lt;span>
+&lt;a href="#a-fastly-moving-ecosystem">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>In all countries, traditional defence behemoths (Lockeed Martin, Thales Group, Leonardo&amp;hellip;) have embraced AI as a key tool for improving their systems.&lt;/li>
+&lt;li>Many startups enter the field with specialized offerings.&lt;/li>
+&lt;li>Some new, state-promoted national sectors emerge (example: Israel for cybersecurity).&lt;/li>
+&lt;li>Recent conflicts, most notably the Ukraine war, have been catalysts for AI adoption.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="national-and-international-initiatives" >National and international initiatives
+&lt;span>
+&lt;a href="#national-and-international-initiatives">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>(US) &lt;a href="https://media.defense.gov/2019/Feb/12/2002088963/-1/-1/1/SUMMARY-OF-DOD-AI-STRATEGY.PDF">DOD Artificial Intelligence Strategy&lt;/a>&lt;/li>
+&lt;li>(France) &lt;a href="https://www.defense.gouv.fr/sites/default/files/aid/Report%20of%20the%20AI%20Task%20Force%20September%202019.pdf">AI in support of Defence&lt;/a>&lt;/li>
+&lt;li>(EU) &lt;a href="https://www.europarl.europa.eu/news/en/press-room/20210114IPR95627/guidelines-for-military-and-non-military-use-of-artificial-intelligence">Guidelines for military and non-military use of AI&lt;/a>&lt;/li>
+&lt;li>(NATO) &lt;a href="https://www.nato.int/docu/review/articles/2021/10/25/an-artificial-intelligence-strategy-for-nato/index.html">An Artificial Intelligence Strategy&lt;/a>&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="main-issue" >Main issue
+&lt;span>
+&lt;a href="#main-issue">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>AI is used to assist humans in multiple ways.&lt;/li>
+&lt;li>Role and task breakdown is the key question: what&amp;rsquo;s assigned to AI, what&amp;rsquo;s left for humans?&lt;/li>
+&lt;li>This decision has huge ramifications:
+&lt;ul>
+&lt;li>Should AI decide to shoot a target autonomously?&lt;/li>
+&lt;li>Who&amp;rsquo;s responsible for what?&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="use-cases" >Use cases
+&lt;span>
+&lt;a href="#use-cases">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="missile-pack-guidance" >Missile pack guidance
+&lt;span>
+&lt;a href="#missile-pack-guidance">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Several (5-20) missiles used simultaneously as a pack.&lt;/li>
+&lt;li>AI is used to optimize their guidance and help the pilot.&lt;/li>
+&lt;li>PhD in progress in Bordeaux.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="pilot-assistance" >Pilot assistance
+&lt;span>
+&lt;a href="#pilot-assistance">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Single pilot planes (with unchanged cockpits sometimes).&lt;/li>
+&lt;li>AI is needed for assistance and decision making.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="object-recognition-in-combat-zones" >Object recognition in combat zones
+&lt;span>
+&lt;a href="#object-recognition-in-combat-zones">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://www.defense.gov/News/News-Stories/Article/Article/1254719/project-maven-to-deploy-computer-algorithms-to-war-zone-by-years-end/">Project Maven&lt;/a>: a US initiative aiming at categorizing and identifying surveillance footage by low altitude devices.&lt;/li>
+&lt;li>Uses sophiticated computer vision algorithms and models.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="homeland-security" >Homeland security
+&lt;span>
+&lt;a href="#homeland-security">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Predictive analytics (identifying trends and patterns within a dataset to then predict the likelihood of, and when, that trend will occur again) can be used to correlate signs of preparation for unlawful activities.&lt;/li>
+&lt;li>Such services make heavy use of Machine Learning and are offered by companies like &lt;a href="https://en.wikipedia.org/wiki/Palantir_Technologies">Palantir&lt;/a>.&lt;/li>
+&lt;li>There are, of course, many ethical issues.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="prevention-of-cyberterrorism" >Prevention of cyberterrorism
+&lt;span>
+&lt;a href="#prevention-of-cyberterrorism">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Protecting defence networks by identifying and neutralizing threats (viruses, malware, cybreattacks&amp;hellip;).&lt;/li>
+&lt;li>Detection of unusual patterns in network usage.&lt;/li>
+&lt;li>Associated software leverages various supervised and unsupervised learning algorithms&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="autonomous-combat-units" >Autonomous combat units
+&lt;span>
+&lt;a href="#autonomous-combat-units">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&amp;ldquo;A tank is a car with tracks and a gun&amp;rdquo;.&lt;/li>
+&lt;li>Drones and drone swarms.&lt;/li>
+&lt;li>(Not there yet) battle robots.&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="battlefield-of-the-future" >Battlefield of the future
+&lt;span>
+&lt;a href="#battlefield-of-the-future">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>A highly complex and dynamic system with multiple human and non-human units interacting in real time.&lt;/li>
+&lt;li>Huge flow of information to process.&lt;/li>
+&lt;li>AI is used to collect, process and synthesize data for easier and better decision making.&lt;/li>
+&lt;li>Dual aspect: same principles can apply to many non-military fields.&lt;/li>
+&lt;/ul></description></item><item><title>Entity Framework Core</title><link>https://www.bpesquet.fr/slides/efcore/</link><pubDate>Mon, 26 Sep 2022 15:12:20 +0200</pubDate><guid>https://www.bpesquet.fr/slides/efcore/</guid><description>&lt;h2 id="sommaire" >Sommaire
 &lt;span>
 &lt;a href="#sommaire">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
