@@ -1,18 +1,11 @@
 ---
-title: "Formation"
+title: "Training"
 date: 2022-06-17T15:55:09+02:00
 draft: false
 ---
 
-J'anime régulièrement des formations à destination d'un public professionnel.
+I regularly host training sessions for professionals or external partners.
 
-Il peut s'agir de sessions liées à l'activité de **formation continue** à l'ENSC. A ce sujet, vous pouvez consulter le catalogue des [diplômes d'établissement](https://ensc.bordeaux-inp.fr/fr/autres-diplomes-ensc) et celui des [formations courtes](https://ensc.bordeaux-inp.fr/fr/les-formations-courtes-lensc) de l'école.
+Some of them are linked to the continuing education program at [ENSC](https://ensc.bordeaux-inp.fr). More precisely, I recently took part in the [Artificial Intelligence](https://ensc.bordeaux-inp.fr/fr/formation-courte-intelligence-artificielle) short course (in 2021 and 2022) and the [Big Data and Statistics for Engineers](https://ensc.bordeaux-inp.fr/fr/du-big-data-et-statistique-pour-lingenieur) university diploma (since 2019).
 
-J'ai récemment été en charge des contenus suivants :
-
-- _Machine Learning_, _Deep Learning_ et _MLOps_, dans le cadre de la formation courte [Intelligence artificielle](https://ensc.bordeaux-inp.fr/fr/formation-courte-intelligence-artificielle) (sessions de juin 2020, juin 2021 et novembre 2021) ;
-- _Initiation au Deep Learning_, dans le cadre du DU [Big Data et Statistique pour l'Ingénieur](https://ensc.bordeaux-inp.fr/fr/du-big-data-et-statistique-pour-lingenieur) (tous les ans depuis 2019).
-
-J'ai également une activité de **formateur indépendant**. A partir d'un contexte et de besoins métiers précis, je m'attache à construire une offre pédagogique sur mesure sur la base de mes compétences techniques et de mon expérience d'enseignant. La session ainsi conçue peut se dérouler dans vos locaux ou à distance, selon vos préférences et contraintes.
-
-N'hésitez pas à [prendre contact avec moi](mailto:bpesquet%20[at]%20gmail%20[dot]%20com?subject=Projet%20de%20formation) afin de concevoir ensemble la formation qui saura répondre au mieux à vos attentes.
+From 2021 to 2023, I have been involved in the [Machine Learning for Defence](https://assets-plus.eu/education-training/machine-learning-for-defence/) and [AI for Defence](https://year-of-skills.europa.eu/events-and-activities/assets-education-training-programme-ai-defence-2023-05-22_en) training programs, created as part of the [ASSETs+](https://assets-plus.eu/) european project.

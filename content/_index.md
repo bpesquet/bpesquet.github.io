@@ -4,12 +4,12 @@ date: 2020-10-13T11:49:25+02:00
 draft: false
 ---
 
-👋 Bienvenue ! Ingénieur et professeur agrégé, j'habite actuellement près de Bordeaux.
+👋 Hi there! I am a software engineer, teacher and would-be researcher currently living near Bordeaux, France.
 
-🏫 J'[enseigne]({{< ref "teaching" >}}) l'informatique et l'intelligence artificielle aux futurs diplômés de l'[Ecole Nationale Supérieure de Cognitique](https://ensc.bordeaux-inp.fr).
+🏫 I [teach]({{< ref "teaching" >}}) computer science and artificial intelligence to graduate students at the [Ecole Nationale Supérieure de Cognitique](https://ensc.bordeaux-inp.fr).
 
-🤝 Je réalise également des [missions de formation]({{< ref "training" >}}) auprès d'entreprises ou de partenaires externes.
+🤔  I recently engaged in [research]({{< ref "research" >}}) on artificial intelligence.
 
-📚 Une partie de mes [ressources pédagogiques]({{< ref "resources" >}}) est disponible en ligne.
+🤝 [Training]({{< ref "training" >}}) is also a part of my professional activity.
 
-✍️ Vous pouvez consulter mon [CV](/CV_BaptistePesquet.pdf) ainsi que l'archive de mon [blog]({{< ref "posts" >}}).
+✍️ You can check out my resume in [English](/BaptistePesquet_Resume.pdf) or [French](/CV_BaptistePesquet.pdf), as well as my [blog archive]({{< ref "posts" >}}).

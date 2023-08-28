@@ -6,38 +6,24 @@ disqusShortname:
 googleAnalytics: "G-4DNVMNCRYK"
 enableRobotsTXT: true
 enableGitInfo: true
-defaultContentLanguage: fr
+defaultContentLanguage: en
 
 languages:
-  fr:
-    languageName: Français
-    weight: 1
-    menu:
-      main:
-        - name: Enseignement
-          url: /teaching
-          weight: 1
-        - name: Formation
-          url: /training
-          weight: 2
-        - name: Ressources
-          url: /resources
-          weight: 3
-
   en:
     languageName: English
-    weight: 2
+    weight: 1
     menu:
       main:
         - name: Teaching
           url: /teaching
           weight: 1
+        - name: Research
+          url: /research
+          weight: 2
         - name: Training
           url: /training
-          weight: 2
-        - name: Resources
-          url: /resources
           weight: 3
+        
 
 params:
   author: "Baptiste Pesquet"
