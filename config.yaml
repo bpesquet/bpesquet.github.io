@@ -20,23 +20,20 @@ languages:
         - name: Research
           url: /research
           weight: 2
-        - name: Training
-          url: /training
-          weight: 3
-        
 
 params:
   author: "Baptiste Pesquet"
   email: bpesquet [at] gmail [dot] com # used for microformats
   description: "Baptiste Pesquet's personal website"
   dateFormat: "January 2, 2006"
-  customCSS:
-    - css/my.css
+  # customCSS:
+  #  - css/my.css
   mainSections:
     - posts
   paginationSinglePost: true
   style: auto # light-without-switcher
   readMore: false
+  toc: true # display Table of Contents
   social:
     - id: email
       name: bpesquet [at] gmail [dot] com

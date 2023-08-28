@@ -6,10 +6,12 @@ draft: false
 
 👋 Hi there! I am a software engineer, teacher and would-be researcher currently living near Bordeaux, France.
 
-🏫 I [teach]({{< ref "teaching" >}}) computer science and artificial intelligence to graduate students at the [Ecole Nationale Supérieure de Cognitique](https://ensc.bordeaux-inp.fr).
+🖥 After graduating in 1999, I worked for 7 years in the software industry.
 
-🤔  I recently engaged in [research]({{< ref "research" >}}) on artificial intelligence.
+🏫 Since 2006, I [teach]({{< ref "teaching" >}}) computer science and artificial intelligence to students and professionals.
 
-🤝 [Training]({{< ref "training" >}}) is also a part of my professional activity.
+🤔 In 2023, I started doing [research]({{< ref "research" >}}) on AI through a PhD.
 
-✍️ You can check out my resume in [English](/BaptistePesquet_Resume.pdf) or [French](/CV_BaptistePesquet.pdf), as well as my [blog archive]({{< ref "posts" >}}).
+ For more details, see my resume in [English](/BaptistePesquet_Resume.pdf) or [French](/CV_BaptistePesquet.pdf).
+
+✍️ You might also check out my [blog archive]({{< ref "posts" >}}).

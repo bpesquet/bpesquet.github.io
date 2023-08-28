@@ -2,9 +2,11 @@
 title: "My M1 Mac setup for Python development"
 date: 2022-09-14T12:15:28+02:00
 draft: false
+tags:
+- python
 ---
 
-I recently got my lucky hands on a brand new M1 MacBook Pro as my new work machine. As an teacher, I maintain several [pedagogical resources]({{< relref path="/resources" lang="en" >}}) written in Python and thus needed to quickly set up an efficient work environment on this machine.
+I recently got my lucky hands on a brand new M1 MacBook Pro as my new work machine. As an [teacher]({{< ref "teaching" >}}), I maintain several pedagogical resources written in Python and thus needed to quickly set up an efficient work environment on this machine.
 
 For all its qualities as a language, Python is notoriously hard to configure in a robust and efficient way. Along the years, many tools have been created to handle interpreter versions, virtual environments, project dependencies and the many chores associated with Python development. This is an ever evolving field, and the solutions listed below might very well become obsolete rather soon.
 
