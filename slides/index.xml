@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/slides/</link><description>👨‍💻 Baptiste Pesquet (Slides)</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 09 Jun 2023 08:37:58 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>AI for Defence</title><link>https://www.bpesquet.fr/slides/ai-for-defence/</link><pubDate>Fri, 09 Jun 2023 08:37:58 +0200</pubDate><guid>https://www.bpesquet.fr/slides/ai-for-defence/</guid><description>&lt;h2 id="context" >Context
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/slides/</link><description>👨‍💻 Baptiste Pesquet (Slides)</description><generator>Hugo -- gohugo.io</generator><language>fr</language><lastBuildDate>Fri, 09 Jun 2023 08:37:58 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/slides/index.xml" rel="self" type="application/rss+xml"/><item><title>AI for Defence</title><link>https://www.bpesquet.fr/slides/ai-for-defence/</link><pubDate>Fri, 09 Jun 2023 08:37:58 +0200</pubDate><guid>https://www.bpesquet.fr/slides/ai-for-defence/</guid><description>&lt;h2 id="context" >Context
 &lt;span>
 &lt;a href="#context">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -492,7 +492,7 @@
 &lt;li>&lt;code>= null!&lt;/code> permet d&amp;rsquo;&lt;a href="https://learn.microsoft.com/en-us/ef/core/miscellaneous/nullable-reference-types">initialiser les propriétés C# gérées par EF Core&lt;/a> dans le contexte &lt;em>null-aware&lt;/em> de .NET 6+.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>&lt;a href="https://youtu.be/g25G1M4EXrQ?t=93">&lt;img src="images/we-choose.png" alt="JKK &amp;amp;lsquo;62 speech">&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://youtu.be/g25G1M4EXrQ?t=93">&lt;img src="images/we-choose.png" alt="JKK &amp;lsquo;62 speech">&lt;/a>&lt;/p>
 &lt;/section>
 &lt;hr>
 &lt;h3 id="création-du-contexte-bd" >Création du contexte BD
@@ -574,7 +574,7 @@
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;p>&lt;a href="https://github.com/ensc-glog/EFBlog">https://github.com/ensc-glog/EFBlog&lt;/a>&lt;/p>
-&lt;p>&lt;img src="images/efcore-efblog.png" alt="Structure de l&amp;amp;rsquo;application d&amp;amp;rsquo;exemple">&lt;/p>
+&lt;p>&lt;img src="images/efcore-efblog.png" alt="Structure de l&amp;rsquo;application d&amp;rsquo;exemple">&lt;/p>
 &lt;hr>
 &lt;h3 id="opérations-crud" >Opérations CRUD
 &lt;span>
@@ -2275,7 +2275,7 @@ while&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>&lt;img src="images/chapter03-01.png" alt="Flux d&amp;amp;rsquo;exécution if/else">&lt;/p>
+&lt;/h3>&lt;p>&lt;img src="images/chapter03-01.png" alt="Flux d&amp;rsquo;exécution if/else">&lt;/p>
 &lt;hr>
 &lt;h3 id="version-abrégée-de-lexemple-précédent" >Version abrégée de l&amp;rsquo;exemple précédent
 &lt;span>
@@ -2545,7 +2545,7 @@ while&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>&lt;img src="images/chapter05-02.png" alt="Mécanisme d&amp;amp;rsquo;utilisation d&amp;amp;rsquo;un sous-programme">&lt;/p>
+&lt;/h3>&lt;p>&lt;img src="images/chapter05-02.png" alt="Mécanisme d&amp;rsquo;utilisation d&amp;rsquo;un sous-programme">&lt;/p>
 &lt;hr>
 &lt;h3 id="ordre-de-définition" >Ordre de définition
 &lt;span>
@@ -2857,7 +2857,7 @@ while&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(nombre1); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 10&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(nombre2); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;p>&lt;img src="images/value_types.png" alt="Dynamique de l&amp;amp;rsquo;affectation entre entiers">&lt;/p>
+&lt;p>&lt;img src="images/value_types.png" alt="Dynamique de l&amp;rsquo;affectation entre entiers">&lt;/p>
 &lt;hr>
 &lt;h3 id="exemple--affectation-entre-types-référence" >Exemple : affectation entre types référence
 &lt;span>
@@ -2877,10 +2877,10 @@ while&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>.Join(&lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span>, tab1)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 0 2 3&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>.Join(&lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span>, tab2)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;p>&lt;img src="images/arrayaffectation.png" alt="Résultat de l&amp;amp;rsquo;affectation entre tableaux">&lt;/p>
+&lt;p>&lt;img src="images/arrayaffectation.png" alt="Résultat de l&amp;rsquo;affectation entre tableaux">&lt;/p>
 &lt;img class="fragment" src="images/omg.png">
 &lt;hr>
-&lt;p>&lt;img src="images/arrayaffectdynamic.png" alt="Dynamique de l&amp;amp;rsquo;affectation entre tableaux">&lt;/p>
+&lt;p>&lt;img src="images/arrayaffectdynamic.png" alt="Dynamique de l&amp;rsquo;affectation entre tableaux">&lt;/p>
 &lt;hr>
 &lt;h3 id="exemple--passage-dun-type-valeur-en-paramètre" >Exemple : passage d&amp;rsquo;un type valeur en paramètre
 &lt;span>
@@ -2904,7 +2904,7 @@ while&lt;/p>
 &lt;li>La valeur de l’argument (un nombre entier) est copiée dans le paramètre.&lt;/li>
 &lt;li>Argument et paramètre correspondent à des zones mémoire différentes.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="images/value_types_parameter_passing_diagram.png" alt="Dynamique du passage d&amp;amp;rsquo;un entier en paramètre">&lt;/p>
+&lt;p>&lt;img src="images/value_types_parameter_passing_diagram.png" alt="Dynamique du passage d&amp;rsquo;un entier en paramètre">&lt;/p>
 &lt;hr>
 &lt;h3 id="exemple--passage-dun-type-référence-en-paramètre" >Exemple : passage d&amp;rsquo;un type référence en paramètre
 &lt;span>
@@ -2929,7 +2929,7 @@ while&lt;/p>
 &lt;li>La valeur de l’argument (une &lt;strong>référence&lt;/strong>) est copiée dans le paramètre.&lt;/li>
 &lt;li>Argument et paramètre pointent vers la même zone mémoire.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="images/arrayparampassing.png" alt="Dynamique du passage en paramète d&amp;amp;rsquo;un tableau">&lt;/p>
+&lt;p>&lt;img src="images/arrayparampassing.png" alt="Dynamique du passage en paramète d&amp;rsquo;un tableau">&lt;/p>
 &lt;hr>
 &lt;h3 id="passage-de-paramètres-par-référence" >Passage de paramètres par référence
 &lt;span>
@@ -3061,7 +3061,7 @@ while&lt;/p>
 &lt;li>La version la plus récente est la 2.5, normalisée en 2017.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>&lt;a href="https://fr.wikipedia.org/wiki/UML_(informatique)">&lt;img src="images/1024px-OO-historie.jpg" alt="Historisque d&amp;amp;rsquo;UML">&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://fr.wikipedia.org/wiki/UML_(informatique)">&lt;img src="images/1024px-OO-historie.jpg" alt="Historisque d&amp;rsquo;UML">&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h3 id="rôle-duml" >Rôle d&amp;rsquo;UML
 &lt;span>
@@ -3120,7 +3120,7 @@ while&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;p>Diagramme structurel qui permet de modéliser un ensemble de classes ainsi que leurs interactions.&lt;/p>
-&lt;p>&lt;img src="images/uml_analysis_example.png" alt="Extrait du livre &amp;amp;ldquo;Applying UML and patterns&amp;amp;rdquo;">&lt;/p>
+&lt;p>&lt;img src="images/uml_analysis_example.png" alt="Extrait du livre &amp;ldquo;Applying UML and patterns&amp;rdquo;">&lt;/p>
 &lt;hr>
 &lt;h3 id="exemple-de-représentation-dune-classe" >Exemple de représentation d&amp;rsquo;une classe
 &lt;span>
@@ -3243,7 +3243,7 @@ while&lt;/p>
 &lt;li>Type particulier d&amp;rsquo;association qui modélise une relation de subordination entre classes.&lt;/li>
 &lt;li>Indiqué par un losange vide du côté &amp;ldquo;tout&amp;rdquo; de la relation.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="images/uml_agregation.jpg" alt="Exemple d&amp;amp;rsquo;agrégation UML">&lt;/p>
+&lt;p>&lt;img src="images/uml_agregation.jpg" alt="Exemple d&amp;rsquo;agrégation UML">&lt;/p>
 &lt;hr>
 &lt;h3 id="composition" >Composition
 &lt;span>
@@ -3268,7 +3268,7 @@ while&lt;/p>
 &lt;li>Relation entre classes de type &amp;ldquo;&lt;strong>est un&lt;/strong>&amp;rdquo;.&lt;/li>
 &lt;li>Représentée en UML par une flêche pleine allant de la classe dérivée (fille) vers la classe parente (classe mère ou superclasse).&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="images/uml_heritage.png" alt="Exemple d&amp;amp;rsquo;héritage UML">&lt;/p>
+&lt;p>&lt;img src="images/uml_heritage.png" alt="Exemple d&amp;rsquo;héritage UML">&lt;/p>
 &lt;hr>
 &lt;h3 id="exemple-récapitulatif" >Exemple récapitulatif
 &lt;span>
@@ -3304,7 +3304,7 @@ while&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;p>Représente un scénario d&amp;rsquo;utilisation du système.&lt;/p>
-&lt;p>&lt;img src="images/UML_use_case_example1-750x731.png" alt="Exemple de diagramme de cas d&amp;amp;rsquo;utilisation">&lt;/p>
+&lt;p>&lt;img src="images/UML_use_case_example1-750x731.png" alt="Exemple de diagramme de cas d&amp;rsquo;utilisation">&lt;/p>
 &lt;hr>
 &lt;h3 id="diagramme-détats-transitions" >Diagramme d&amp;rsquo;états-transitions
 &lt;span>
@@ -3313,7 +3313,7 @@ while&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;p>Décrit le comportement d&amp;rsquo;un élément du système à l&amp;rsquo;aide d&amp;rsquo;un automate à états finis.&lt;/p>
-&lt;p>&lt;img src="images/uml_diag_et.svg" alt="Exemple de diagramme d&amp;amp;rsquo;états-transitions">&lt;/p>
+&lt;p>&lt;img src="images/uml_diag_et.svg" alt="Exemple de diagramme d&amp;rsquo;états-transitions">&lt;/p>
 &lt;hr>
 &lt;h2 id="uml-en-pratique" >UML en pratique
 &lt;span>
@@ -6991,7 +6991,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>&lt;a href="https://symfony.com/doc/current/index.html">&lt;img src="images/symfony_mvc.png" alt="Dynamique d&amp;amp;rsquo;un serveur web MVC">&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://symfony.com/doc/current/index.html">&lt;img src="images/symfony_mvc.png" alt="Dynamique d&amp;rsquo;un serveur web MVC">&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h3 id="avantages-et-inconvénients" >Avantages et inconvénients
 &lt;span>
@@ -7053,7 +7053,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;p>&lt;a href="https://github.com/ensc-glog/MvcMovie">https://github.com/ensc-glog/MvcMovie&lt;/a>&lt;/p>
-&lt;p>&lt;img src="images/aspnetcoremvc_structure.png" alt="Structure d&amp;amp;rsquo;une application ASP.NET Core MVC">&lt;/p>
+&lt;p>&lt;img src="images/aspnetcoremvc_structure.png" alt="Structure d&amp;rsquo;une application ASP.NET Core MVC">&lt;/p>
 &lt;hr>
 &lt;h3 id="les-contrôleurs" >Les contrôleurs
 &lt;span>
@@ -8979,7 +8979,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>&lt;img src="images/example_class.png" alt="Classe d&amp;amp;rsquo;exemple">&lt;/p>
+&lt;/h3>&lt;p>&lt;img src="images/example_class.png" alt="Classe d&amp;rsquo;exemple">&lt;/p>
 &lt;hr>
 &lt;h3 id="affectation-entre-entiers" >Affectation entre entiers
 &lt;span>
@@ -9016,7 +9016,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;cercle1.Rayon = &amp;#34;&lt;/span> + cercle1.Rayon); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 10&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#0086d2">&amp;#34;cercle2.Rayon = &amp;#34;&lt;/span> + cercle2.Rayon); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;p>&lt;img src="images/object_result.png" alt="Réssultat de l&amp;amp;rsquo;exécution">&lt;/p>
+&lt;p>&lt;img src="images/object_result.png" alt="Réssultat de l&amp;rsquo;exécution">&lt;/p>
 &lt;p>&lt;img src="images/omg.png" alt="OMG">&lt;/p>
 &lt;/section>
 &lt;hr>
@@ -9063,7 +9063,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;li>Les deux variables &lt;em>pointent&lt;/em> vers la même zone mémoire&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>&lt;img src="images/reference_types_assignment.png" alt="Diagramme d&amp;amp;rsquo;exécution">&lt;/p>
+&lt;p>&lt;img src="images/reference_types_assignment.png" alt="Diagramme d&amp;rsquo;exécution">&lt;/p>
 &lt;/section>
 &lt;hr>
 &lt;section data-shortcode-section>
@@ -9091,13 +9091,13 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>&lt;img src="images/value_types_parameter_passing.png" alt="Résultat de l&amp;amp;rsquo;exécution">&lt;/p>
+&lt;/h3>&lt;p>&lt;img src="images/value_types_parameter_passing.png" alt="Résultat de l&amp;rsquo;exécution">&lt;/p>
 &lt;ul>
 &lt;li>La valeur de l’argument (un nombre entier) est copiée dans le paramètre.&lt;/li>
 &lt;li>Argument et paramètre correspondent à des zones mémoire différentes.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>&lt;img src="images/value_types_parameter_passing_diagram.png" alt="Diagramme d&amp;amp;rsquo;exécution">&lt;/p>
+&lt;p>&lt;img src="images/value_types_parameter_passing_diagram.png" alt="Diagramme d&amp;rsquo;exécution">&lt;/p>
 &lt;/section>
 &lt;hr>
 &lt;section data-shortcode-section>
@@ -9125,13 +9125,13 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>&lt;img src="images/object_parameter_passing.png" alt="Résultat de l&amp;amp;rsquo;exécution">&lt;/p>
+&lt;/h3>&lt;p>&lt;img src="images/object_parameter_passing.png" alt="Résultat de l&amp;rsquo;exécution">&lt;/p>
 &lt;ul>
 &lt;li>La valeur de l’argument (une &lt;strong>référence&lt;/strong>) est copiée dans le paramètre.&lt;/li>
 &lt;li>Argument et paramètre pointent vers la même zone mémoire.&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>&lt;img src="images/object_parameter_passing_diagram.png" alt="Diagramme d&amp;amp;rsquo;exécution">&lt;/p>
+&lt;p>&lt;img src="images/object_parameter_passing_diagram.png" alt="Diagramme d&amp;rsquo;exécution">&lt;/p>
 &lt;/section>
 &lt;hr>
 &lt;h3 id="mode-de-passage-des-paramètres-en-c" >Mode de passage des paramètres en C#
@@ -9223,7 +9223,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;p>Potentiellement utile pour distinguer différentes catégories d&amp;rsquo;erreur, avec des données spécifiques.&lt;/p>
-&lt;p>&lt;img src="images/exceptions_classes.png" alt="Classes d&amp;amp;rsquo;exceptions">&lt;/p>
+&lt;p>&lt;img src="images/exceptions_classes.png" alt="Classes d&amp;rsquo;exceptions">&lt;/p>
 &lt;hr>
 &lt;h3 id="exceptions-et-bonnes-pratiques-13" >Exceptions et bonnes pratiques (1/3)
 &lt;span>
@@ -10470,7 +10470,7 @@ Ces technologies sont &lt;strong>incompatibles&lt;/strong>.
 &lt;li>Ressource utilisable dans un projet.&lt;/li>
 &lt;li>Nombreux types possibles : image, modèle 3D, texture, fichier audio, script, etc.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="images/AssetWorkflowImportingFiles.png" alt="Import d&amp;amp;rsquo;un Asset">&lt;/p>
+&lt;p>&lt;img src="images/AssetWorkflowImportingFiles.png" alt="Import d&amp;rsquo;un Asset">&lt;/p>
 &lt;hr>
 &lt;h2 id="packages" >Packages
 &lt;span>
