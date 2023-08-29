@@ -14,7 +14,7 @@ Published to [www.bpesquet.fr](https://www.bpesquet.fr) on [GitHub Pages](https:
 hugo server -D
 ```
 
-### Generating a PDF version of slides
+### Generating a PDF version of a slideshow
 
 Use [pandoc](https://pandoc.org/) in the Markdown source file directory (`content/slides/<title>`):
 
