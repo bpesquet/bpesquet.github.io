@@ -1,4 +1,523 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ai on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/tags/ai/</link><description>👨‍💻 Baptiste Pesquet (ai)</description><generator>Hugo -- gohugo.io</generator><language>fr</language><lastBuildDate>Mon, 09 Jul 2018 08:48:56 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>PAISS 2018 : le debrief</title><link>https://www.bpesquet.fr/posts/paiss-2018-debrief/</link><pubDate>Mon, 09 Jul 2018 08:48:56 +0200</pubDate><guid>https://www.bpesquet.fr/posts/paiss-2018-debrief/</guid><description>&lt;p>La session 2018 de la &lt;em>summer school&lt;/em> de l&amp;rsquo;INRIA consacrée à l&amp;rsquo;IA, nommée &lt;a href="https://project.inria.fr/paiss/">PAISS&lt;/a>, s&amp;rsquo;est déroulée à Grenoble du 2 au 6 juillet 2018. Voici un petit compte-rendu de ce qui s&amp;rsquo;y est dit et fait.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ai on Baptiste Pesquet</title><link>https://www.bpesquet.fr/tags/ai/</link><description>Baptiste Pesquet (ai)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 09 Jun 2023 08:37:58 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>AI for Defence</title><link>https://www.bpesquet.fr/slides/ai-for-defence/</link><pubDate>Fri, 09 Jun 2023 08:37:58 +0200</pubDate><guid>https://www.bpesquet.fr/slides/ai-for-defence/</guid><description>&lt;h2 id="context" >Context
+&lt;span>
+&lt;a href="#context">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="impacts-of-ai-on-defence" >Impacts of AI on Defence
+&lt;span>
+&lt;a href="#impacts-of-ai-on-defence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Like with all highly technical fields, AI has a growing impact on Defence.&lt;/li>
+&lt;li>Main areas:
+&lt;ul>
+&lt;li>Decision and planning support&lt;/li>
+&lt;li>Collaborative combat&lt;/li>
+&lt;li>Cybersecurity and digital influence&lt;/li>
+&lt;li>Logistics and operational readiness&lt;/li>
+&lt;li>Intelligence&lt;/li>
+&lt;li>Robotics and autonomy&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="a-fastly-moving-ecosystem" >A fastly moving ecosystem
+&lt;span>
+&lt;a href="#a-fastly-moving-ecosystem">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>In all countries, traditional defence behemoths (Lockeed Martin, Thales Group, Leonardo&amp;hellip;) have embraced AI as a key tool for improving their systems.&lt;/li>
+&lt;li>Many startups are entering the field with specialized offerings.&lt;/li>
+&lt;li>Some new, state-promoted national sectors emerge (example: Israel for cybersecurity).&lt;/li>
+&lt;li>Recent conflicts, most notably the Ukraine war, are catalysts for AI adoption.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="national-and-international-initiatives" >National and international initiatives
+&lt;span>
+&lt;a href="#national-and-international-initiatives">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>(US) &lt;a href="https://media.defense.gov/2019/Feb/12/2002088963/-1/-1/1/SUMMARY-OF-DOD-AI-STRATEGY.PDF">DOD Artificial Intelligence Strategy&lt;/a>&lt;/li>
+&lt;li>(France) &lt;a href="https://www.defense.gouv.fr/sites/default/files/aid/Report%20of%20the%20AI%20Task%20Force%20September%202019.pdf">AI in support of Defence&lt;/a>&lt;/li>
+&lt;li>(EU) &lt;a href="https://www.europarl.europa.eu/news/en/press-room/20210114IPR95627/guidelines-for-military-and-non-military-use-of-artificial-intelligence">Guidelines for military and non-military use of AI&lt;/a>&lt;/li>
+&lt;li>(NATO) &lt;a href="https://www.nato.int/docu/review/articles/2021/10/25/an-artificial-intelligence-strategy-for-nato/index.html">An Artificial Intelligence Strategy&lt;/a>&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="main-issue" >Main issue
+&lt;span>
+&lt;a href="#main-issue">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>AI is used to assist humans in multiple ways.&lt;/li>
+&lt;li>Role and task breakdown is the key question: what&amp;rsquo;s assigned to AI, what&amp;rsquo;s left for humans?&lt;/li>
+&lt;li>This decision has huge ramifications:
+&lt;ul>
+&lt;li>Should AI decide to shoot a target autonomously?&lt;/li>
+&lt;li>Who&amp;rsquo;s responsible for what?&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="use-cases" >Use cases
+&lt;span>
+&lt;a href="#use-cases">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="missile-pack-guidance" >Missile pack guidance
+&lt;span>
+&lt;a href="#missile-pack-guidance">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Several (5-20) missiles used simultaneously as a pack.&lt;/li>
+&lt;li>AI is used to optimize their guidance and help the pilot.&lt;/li>
+&lt;li>(PhD in progress in Bordeaux)&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="pilot-assistance" >Pilot assistance
+&lt;span>
+&lt;a href="#pilot-assistance">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Single pilot planes are heavily studied for both civilian and military contexts (with sometimes an unchanged cockpit).&lt;/li>
+&lt;li>AI is needed for assistance and decision making.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="object-recognition-in-combat-zones" >Object recognition in combat zones
+&lt;span>
+&lt;a href="#object-recognition-in-combat-zones">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://www.defense.gov/News/News-Stories/Article/Article/1254719/project-maven-to-deploy-computer-algorithms-to-war-zone-by-years-end/">Project Maven&lt;/a>: a US initiative aiming at categorizing and identifying surveillance footage by low altitude devices.&lt;/li>
+&lt;li>Uses sophisticated computer vision algorithms and models.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="homeland-security" >Homeland security
+&lt;span>
+&lt;a href="#homeland-security">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Predictive analytics (identifying trends and patterns within a dataset to then predict the likelihood of, and when, that trend will occur again) can be used to correlate signs of preparation for unlawful activities.&lt;/li>
+&lt;li>Such services make heavy use of Machine Learning and are offered by companies like &lt;a href="https://en.wikipedia.org/wiki/Palantir_Technologies">Palantir&lt;/a>.&lt;/li>
+&lt;li>There are, of course, many associated ethical issues.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="prevention-of-cyberterrorism" >Prevention of cyberterrorism
+&lt;span>
+&lt;a href="#prevention-of-cyberterrorism">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Protecting defence networks by identifying and neutralizing threats (viruses, malware, cybreattacks&amp;hellip;).&lt;/li>
+&lt;li>Detection of unusual patterns in network usage.&lt;/li>
+&lt;li>Associated software leverages various supervised and unsupervised learning algorithms.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="autonomous-combat-units" >Autonomous combat units
+&lt;span>
+&lt;a href="#autonomous-combat-units">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&amp;ldquo;A tank is a car with tracks and a gun&amp;rdquo;.&lt;/li>
+&lt;li>Drones and drone swarms.&lt;/li>
+&lt;li>(Not there yet) battle robots.&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="battlefield-of-the-future" >Battlefield of the future
+&lt;span>
+&lt;a href="#battlefield-of-the-future">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>A highly complex and dynamic system with multiple human and non-human units interacting in real time.&lt;/li>
+&lt;li>Huge flow of information to process.&lt;/li>
+&lt;li>AI is used to collect, process and synthesize data for easier and better decision making.&lt;/li>
+&lt;li>Dual aspect: same principles can apply to many non-military fields.&lt;/li>
+&lt;/ul></description></item><item><title>Deconstructing AI</title><link>https://www.bpesquet.fr/slides/deconstructing-ai/</link><pubDate>Mon, 09 Dec 2019 10:47:12 +0100</pubDate><guid>https://www.bpesquet.fr/slides/deconstructing-ai/</guid><description>&lt;h2 id="table-of-contents" >Table of contents
+&lt;span>
+&lt;a href="#table-of-contents">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>What Is AI, Actually?&lt;/li>
+&lt;li>How Do Machines Learn?&lt;/li>
+&lt;li>Should We Be Scared Of AI?&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="what-is-ai-actually" >What Is AI, Actually?
+&lt;span>
+&lt;a href="#what-is-ai-actually">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="the-original-ambition-of-ai" >The original ambition of AI
+&lt;span>
+&lt;a href="#the-original-ambition-of-ai">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;blockquote>
+&lt;p>&amp;ldquo;AI is the science and engineering of making intelligent machines.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)">John McCarthy&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Dartmouth_workshop">Dartmouth Workshop&lt;/a>, 1956)&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;ldquo;AI is the science of making machines do things that would require intelligence if done by men.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Marvin_Minsky">Marvin Minsky&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h3 id="a-technical-definition-of-ai" >A technical definition of AI
+&lt;span>
+&lt;a href="#a-technical-definition-of-ai">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;blockquote>
+&lt;p>&amp;ldquo;AI refers to systems that &lt;strong>display&lt;/strong> intelligent behavior by analysing their &lt;strong>environment&lt;/strong> and taking &lt;strong>actions&lt;/strong> - with some degree of &lt;strong>autonomy&lt;/strong> - to achieve specific &lt;strong>goals&lt;/strong>.&amp;rdquo; (&lt;a href="https://ec.europa.eu/newsroom/dae/document.cfm?doc_id=51625">EC, 2018&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;p>AI systems can be either:&lt;/p>
+&lt;ul>
+&lt;li>Purely &lt;strong>software&lt;/strong>-based (e.g. voice assistants, search engines, face recognition systems).&lt;/li>
+&lt;li>Embedded in &lt;strong>hardware&lt;/strong> devices (e.g. robots, autonomous cars, drones).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="main-areas-of-research" >Main areas of research
+&lt;span>
+&lt;a href="#main-areas-of-research">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Problem solving&lt;/strong> (e.g. search algorithms, constraint solving).&lt;/li>
+&lt;li>&lt;strong>Reasoning&lt;/strong> and &lt;strong>decision making&lt;/strong> (e.g. logic, knowledge representation).&lt;/li>
+&lt;li>&lt;strong>Machine Learning&lt;/strong>.&lt;/li>
+&lt;li>&lt;strong>Real-world interactions&lt;/strong> (e.g. computer vision, natural language understanding, robotics).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="ai-is-a-moving-target" >AI is a moving target
+&lt;span>
+&lt;a href="#ai-is-a-moving-target">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>As soon as AI successfully solves a problem, the problem is no longer considered a part of AI.&lt;/p>
+&lt;blockquote>
+&lt;p>&amp;ldquo;&lt;a href="https://en.wikipedia.org/wiki/AI_effect">AI is whatever hasn&amp;rsquo;t been done yet&lt;/a>.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h3 id="the-tumultuous-history-of-ai" >The tumultuous history of AI
+&lt;span>
+&lt;a href="#the-tumultuous-history-of-ai">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://www.slideshare.net/dlavenda/ai-and-productivity">&lt;img src="images/ai_timeline.png" alt="The AI timeline">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="ai-is-a-highly-interdisciplinary-field" >AI is a highly interdisciplinary field
+&lt;span>
+&lt;a href="#ai-is-a-highly-interdisciplinary-field">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/ai_fields.png" alt="AI fields">&lt;/p>
+&lt;hr>
+&lt;h3 id="ai-is-a-social-science" >AI is a social science
+&lt;span>
+&lt;a href="#ai-is-a-social-science">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>AI has many social and societal implications:&lt;/p>
+&lt;ul>
+&lt;li>Job market transformation.&lt;/li>
+&lt;li>Human/machine interactions.&lt;/li>
+&lt;li>Trust and acceptability.&lt;/li>
+&lt;li>Legal aspects and regulation.&lt;/li>
+&lt;li>Fairness.&lt;/li>
+&lt;li>Ethical use.&lt;/li>
+&lt;li>Personal data.&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="ai-comes-in-different-flavours" >AI comes in different flavours
+&lt;span>
+&lt;a href="#ai-comes-in-different-flavours">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Substitutive intelligence&lt;/strong>: replacement of men by machines.&lt;/li>
+&lt;li>&lt;strong>Augmented intelligence&lt;/strong>: human-centered AI for performance augmentation &amp;amp; autonomy enhancement.&lt;/li>
+&lt;li>&lt;strong>Hybrid intelligence&lt;/strong>: human-machine collaboration on complex tasks.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="a-broader-definition-of-ai" >A broader definition of AI
+&lt;span>
+&lt;a href="#a-broader-definition-of-ai">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;blockquote>
+&lt;p>&amp;ldquo;AI is an &lt;strong>interdisciplinary&lt;/strong> field aiming at &lt;strong>understanding&lt;/strong> and &lt;strong>imitating&lt;/strong> the mechanisms of &lt;strong>cognition&lt;/strong> and &lt;strong>reasoning&lt;/strong>, in order to &lt;strong>assist&lt;/strong> or &lt;strong>substitute&lt;/strong> humans in their activities.&amp;rdquo; (&lt;a href="https://fr.wikipedia.org/wiki/Commission_d%27enrichissement_de_la_langue_fran%C3%A7aise">Commission d&amp;rsquo;enrichissement de la langue française&lt;/a>, 2018)&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="how-do-machines-learn" >How Do Machines Learn?
+&lt;span>
+&lt;a href="#how-do-machines-learn">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="machine-learning-in-a-nutshell" >Machine Learning in a nutshell
+&lt;span>
+&lt;a href="#machine-learning-in-a-nutshell">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Set of techniques for giving machines the ability to find &lt;strong>patterns&lt;/strong> and extract &lt;strong>rules&lt;/strong> from data, in order to:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Identify&lt;/strong> or &lt;strong>classify&lt;/strong> elements.&lt;/li>
+&lt;li>Detect &lt;strong>tendencies&lt;/strong>.&lt;/li>
+&lt;li>Make &lt;strong>predictions&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;p>As more data is fed into the system, results get better: performance improves with experience.&lt;/p>
+&lt;p>a.k.a. &lt;strong>Statistical Learning&lt;/strong>.&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/ai_ml_dl.png" alt="AI/ML/DL Venn diagram">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/machine_learning_tree.png" alt="ML category tree">&lt;/p>
+&lt;hr>
+&lt;h3 id="a-new-paradigm" >A new paradigm
+&lt;span>
+&lt;a href="#a-new-paradigm">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/programming_paradigm.png" alt="Programming paradigm">&lt;/p>
+&lt;p>&lt;img src="images/training_paradigm.png" alt="Training paradigm">&lt;/p>
+&lt;hr>
+&lt;h3 id="the-machine-learning-workflow" >The Machine Learning workflow
+&lt;span>
+&lt;a href="#the-machine-learning-workflow">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>Frame&lt;/strong> the problem.&lt;/li>
+&lt;li>Collect, analyze and prepare &lt;strong>data&lt;/strong>.&lt;/li>
+&lt;li>Select and train several &lt;strong>models&lt;/strong> on data.&lt;/li>
+&lt;li>&lt;strong>Tune&lt;/strong> the most promising model.&lt;/li>
+&lt;li>&lt;strong>Deploy&lt;/strong> the model to production.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="ml-is-not-a-silver-bullet" >ML is not a silver bullet!
+&lt;span>
+&lt;a href="#ml-is-not-a-silver-bullet">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Some use cases are a better fit for ML than others:
+&lt;ul>
+&lt;li>Difficulty to express the actions as rules.&lt;/li>
+&lt;li>Data too complex for traditional analytical methods.&lt;/li>
+&lt;li>Performance &amp;gt; interpretability.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Data quality is paramount.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="algorithm-1-k-nearest-neighbors" >Algorithm #1: K-Nearest Neighbors
+&lt;span>
+&lt;a href="#algorithm-1-k-nearest-neighbors">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Prediction is based on the &lt;code>k&lt;/code> nearest neighbors of a data sample.&lt;/p>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">&lt;img src="images/knn.png" alt="K-NN">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="algorithm-2-decision-trees" >Algorithm #2: Decision Trees
+&lt;span>
+&lt;a href="#algorithm-2-decision-trees">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Build a tree-like structure based on a series of discovered questions on the data.&lt;/p>
+&lt;p>&lt;img src="images/dt_iris.png" alt="Decision Tree for Iris dataset">&lt;/p>
+&lt;hr>
+&lt;h3 id="algorithm-3-neural-networks" >Algorithm #3: Neural Networks
+&lt;span>
+&lt;a href="#algorithm-3-neural-networks">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Layers of loosely neuron-inpired computation units.&lt;/li>
+&lt;li>Can approximate any continuous function.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/neuron_output.png" alt="Neuron output">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/neural_net.gif" alt="Dog or Cat?">&lt;/p>
+&lt;hr>
+&lt;h3 id="training-a-network" >Training a network
+&lt;span>
+&lt;a href="#training-a-network">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/training_inference1.png" alt="Training and inference">&lt;/p>
+&lt;hr>
+&lt;h3 id="the-deep-learning-tsunami" >The Deep Learning tsunami
+&lt;span>
+&lt;a href="#the-deep-learning-tsunami">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Multilayered neural networks trained on (generally) vast amounts of data.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">&lt;img src="images/alexnet.png" alt="AlexNet'12 (simplified)">&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Since 2010, outperformed previous state-of-the-art techniques in many fields (language translation, image and scene recognition&amp;hellip;).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/big_data_universe.png" alt="Big data universe">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/infographic2-intel-past-present.gif" alt="Computer power sheet">&lt;/p>
+&lt;hr>
+&lt;h3 id="from-labs-to-everyday-life" >From labs to everyday life
+&lt;span>
+&lt;a href="#from-labs-to-everyday-life">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="http://yann.lecun.com/exdb/lenet/">&lt;img src="images/lecun_lenet.gif" alt="LeCun - LeNet">&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://twitter.com/mbrennanchina/status/1203687857849716736">&lt;img src="images/china_school_facial_reco.gif" alt="Facial recognition in Chinese elementary school">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="should-we-be-scared-of-ai" >Should We Be Scared Of AI?
+&lt;span>
+&lt;a href="#should-we-be-scared-of-ai">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;hr>
+&lt;h3 id="ai-is-altering-the-job-market" >AI is altering the job market&amp;hellip;
+&lt;span>
+&lt;a href="#ai-is-altering-the-job-market">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Machines outperform humans in a growing list of cognitive tasks.&lt;/li>
+&lt;li>Repetitive tasks are most exposed (even complex ones, like medical diagnosis or financial analysis).&lt;/li>
+&lt;li>Entire industries are on the verge of disruption (example: truck-based transportation, first employer in the U.S.).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-for-better-or-worse" >&amp;hellip; For better or worse
+&lt;span>
+&lt;a href="#-for-better-or-worse">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Net impact of AI on job quantity is unknown.&lt;/li>
+&lt;li>Most jobs will be &lt;strong>transformed&lt;/strong>, not replaced by AI.
+&lt;ul>
+&lt;li>Boring and repetitive stuff will be automated.&lt;/li>
+&lt;li>AI will add new insight to help human decision.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Human/machine interactions will multiply.&lt;/li>
+&lt;li>Their quality will be a key factor of performance for organizations.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="real-or-fake" >Real or fake?
+&lt;span>
+&lt;a href="#real-or-fake">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://twitter.com/goodfellow_ian/status/1084973596236144640">&lt;img src="images/gan_2014_2018.jpg" alt="GAN progress from 2014 to 2018">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="agi-is-very-far-away" >AGI is very far away
+&lt;span>
+&lt;a href="#agi-is-very-far-away">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Current AI systems are &lt;strong>weak&lt;/strong>: highly tuned to perform well in one task.&lt;/li>
+&lt;li>&lt;strong>Artificial General Intelligence&lt;/strong> a.k.a. &lt;strong>strong AI&lt;/strong>, the ability to perform any task as well as a human, is out of reach.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://twitter.com/ylecun/status/1204013978210320384">&lt;img src="images/ylecun_tweet_agi.png" alt="Y. LeCun tweet on AGI, Déc. 2019">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="the-intelligence-debate" >The intelligence debate
+&lt;span>
+&lt;a href="#the-intelligence-debate">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Despite their complexity, ML and DL algorithms can be viewed as merely &lt;a href="https://diginomica.com/ai-curve-fitting-not-intelligence">curve fitting&lt;/a>.&lt;/li>
+&lt;li>On the contrary, some AI researchers envision DL as a new form of &lt;strong>algorithmic reasoning&lt;/strong>, somehow mimicking the human brain.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="the-human-brain-is-a-masterpiece" >The human brain is a masterpiece
+&lt;span>
+&lt;a href="#the-human-brain-is-a-masterpiece">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Approx. 86 billions neurons in 1.4 kg.&lt;/li>
+&lt;li>Typical energy consumption: 20 W (!)&lt;/li>
+&lt;li>So much of it is still unknown.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/human_brain.jpg" alt="The human brain">&lt;/p>
+&lt;hr>
+&lt;h3 id="babies-are-outstanding-learners" >Babies are outstanding learners
+&lt;span>
+&lt;a href="#babies-are-outstanding-learners">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="http://www.lscp.net/persons/dupoux/">&lt;img src="images/conceptual_acquisition_infants.png" alt="Conceptuals acquisitions by babies">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="any-questions" >Any questions?
+&lt;span>
+&lt;a href="#any-questions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/cutest_baby_ever.png" alt="The cutest baby ever">&lt;/p></description></item><item><title>PAISS 2018 : le debrief</title><link>https://www.bpesquet.fr/posts/paiss-2018-debrief/</link><pubDate>Mon, 09 Jul 2018 08:48:56 +0200</pubDate><guid>https://www.bpesquet.fr/posts/paiss-2018-debrief/</guid><description>&lt;p>La session 2018 de la &lt;em>summer school&lt;/em> de l&amp;rsquo;INRIA consacrée à l&amp;rsquo;IA, nommée &lt;a href="https://project.inria.fr/paiss/">PAISS&lt;/a>, s&amp;rsquo;est déroulée à Grenoble du 2 au 6 juillet 2018. Voici un petit compte-rendu de ce qui s&amp;rsquo;y est dit et fait.&lt;/p>
 &lt;p>&lt;img src="https://project.inria.fr/paiss/files/2018/04/te%CC%82tie%CC%80re-3.jpg" alt="Logo PAISS">&lt;/p>
 &lt;p>Le P de PAISS correspond à l&amp;rsquo;institut &lt;a href="https://inria.fr/actualite/actualites-inria/creation-de-l-institut-prairie">PRAIRIE&lt;/a>, le centre français d&amp;rsquo;excellence en IA dont la création a été annoncée lors du sommet &lt;a href="https://www.aiforhumanity.fr/">AI for Humanity&lt;/a> en mars 2018.&lt;/p>
 &lt;h2 id="quelques-chiffres" >Quelques chiffres

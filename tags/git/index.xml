@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>git on Baptiste Pesquet</title><link>https://www.bpesquet.fr/tags/git/</link><description>Baptiste Pesquet (git)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 23 Nov 2021 19:01:29 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Git &amp; Github</title><link>https://www.bpesquet.fr/slides/git-github/</link><pubDate>Tue, 23 Nov 2021 19:01:29 +0100</pubDate><guid>https://www.bpesquet.fr/slides/git-github/</guid><description>&lt;h2 id="summary" >Summary
+&lt;span>
+&lt;a href="#summary">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Introduction to software version control&lt;/li>
+&lt;li>Git fundamentals&lt;/li>
+&lt;li>Collaborating with Git&lt;/li>
+&lt;li>Git from the command line&lt;/li>
+&lt;li>GitHub&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="introduction-to-software-version-control" >Introduction to software version control
+&lt;span>
+&lt;a href="#introduction-to-software-version-control">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="the-need-for-source-code-management" >The need for source code management
+&lt;span>
+&lt;a href="#the-need-for-source-code-management">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Source code is the core of any software project.&lt;/li>
+&lt;li>These projects have a long lifespan, with numerous releases containing new functionalities and bug fixes.&lt;/li>
+&lt;li>Throughout this lifespan, the development team needs a way to work in parallel while sharing a common code base.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="manual-source-code-management" >Manual source code management
+&lt;span>
+&lt;a href="#manual-source-code-management">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Relies on shared places (local or cloud-based) where snapshots of the code base are regularly pushed by developers.&lt;/li>
+&lt;li>Highly impractical: no individual history of files, no release management, no handling of conflicts (simultaneous updates of a file)&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="version-control-systems" >Version Control Systems
+&lt;span>
+&lt;a href="#version-control-systems">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Dedicated source code management tools, often called &lt;strong>Version Control Systems&lt;/strong>, offer developers the ability to:&lt;/p>
+&lt;ul>
+&lt;li>share and update a common code base;&lt;/li>
+&lt;li>work on new features and fixes without breaking current versions;&lt;/li>
+&lt;li>track who did what;&lt;/li>
+&lt;li>handle conflicts;&lt;/li>
+&lt;li>and more!&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="centralized-vcs" >Centralized VCS
+&lt;span>
+&lt;a href="#centralized-vcs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Uses only one repository, accessed by developers in a client/server way.&lt;/li>
+&lt;li>Repo administration (security, backups&amp;hellip;) is easy.&lt;/li>
+&lt;li>Synchronization is impossible in a disconnected scenario.&lt;/li>
+&lt;li>Examples: CVS, SVN, ClearCase.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/scm_centralized.png" alt="Centralized SCM">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h3 id="decentralized-vcs" >Decentralized VCS
+&lt;span>
+&lt;a href="#decentralized-vcs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Each developer has its own code repository, including history and all other metadata.&lt;/li>
+&lt;li>Repositories are frequently synchronized in a peer-to-peer way.&lt;/li>
+&lt;li>Disconnected workflows become possible.&lt;/li>
+&lt;li>Examples: Git, Mercurial.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/scm_decentralized.png" alt="Decentralized SCM">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="git-fundamentals" >Git fundamentals
+&lt;span>
+&lt;a href="#git-fundamentals">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="git-in-a-nutshell" >Git in a nutshell
+&lt;span>
+&lt;a href="#git-in-a-nutshell">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Free and open source DVCS published in 2005 to manage the Linux kernel source code.&lt;/li>
+&lt;li>Has become the standard tool for versioning software.&lt;/li>
+&lt;li>Can handle any text-based project: knowledge bases, books, etc.&lt;/li>
+&lt;li>Designed as a command line tool.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://git-scm.com/">&lt;img src="images/git-logo.png" alt="Git logo">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="git-is-not-that-hard" >Git is not (that) hard
+&lt;span>
+&lt;a href="#git-is-not-that-hard">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/git-spongebob.jpg" alt="Git Bob">&lt;/p>
+&lt;hr>
+&lt;h3 id="the-git-repository" >The Git repository
+&lt;span>
+&lt;a href="#the-git-repository">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Storage place for all versioning data: source code, history, versions, remote addresses&amp;hellip;&lt;/li>
+&lt;li>Corresponds physically to a &lt;code>.git/&lt;/code> subdirectory in the project folder, with a &lt;a href="https://git-scm.com/docs/gitrepository-layout">complex internal structure&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/git-structure.png" alt=".git/ directory structure">&lt;/p>
+&lt;hr>
+&lt;h3 id="the-gitignore-file" >The .gitignore file
+&lt;span>
+&lt;a href="#the-gitignore-file">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Some project files don&amp;rsquo;t need to be versioned:
+&lt;ul>
+&lt;li>generation output;&lt;/li>
+&lt;li>local settings;&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Added in the root folder, the &lt;code>.gitignore&lt;/code> file defines files and folders excluded from the repository.&lt;/li>
+&lt;li>&lt;a href="https://github.com/github/gitignore">This repository&lt;/a> contains standard &lt;code>.gitignore&lt;/code> files for many environments: Python, .NET, JavaScript&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="the-git-workflow" >The Git workflow
+&lt;span>
+&lt;a href="#the-git-workflow">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
+&lt;li>Update files in project folder, aka &lt;em>working directory&lt;/em>.&lt;/li>
+&lt;li>Add files to index, aka &lt;em>staging area&lt;/em>.&lt;/li>
+&lt;li>Commit indexed files into the current branch, aka &lt;em>HEAD&lt;/em>.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="images/git-workflow.png" alt="Git workflow">&lt;/p>
+&lt;hr>
+&lt;h3 id="branches" >Branches
+&lt;span>
+&lt;a href="#branches">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Branches allow parallel work in isolated contexts, for:&lt;/p>
+&lt;ul>
+&lt;li>new features;&lt;/li>
+&lt;li>bug fixes;&lt;/li>
+&lt;li>experimentations;&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/git-branches.png" alt="Git branches">&lt;/p>
+&lt;hr>
+&lt;h3 id="working-with-branches" >Working with branches
+&lt;span>
+&lt;a href="#working-with-branches">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Only one branch can be active at a time.&lt;/li>
+&lt;li>The content of a branch can be &lt;em>merged&lt;/em> into another. Once merged, a temporary branch should be destroyed.&lt;/li>
+&lt;li>The default branch is named &lt;code>master&lt;/code> (sometimes renamed &lt;code>main&lt;/code>). In general, it is considered the &amp;ldquo;production&amp;rdquo; branch and must be kept stable: commits or merges on this branch must not introduce generation errors or regressions.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="head" >HEAD
+&lt;span>
+&lt;a href="#head">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;em>HEAD&lt;/em> is an alias to the most recent commit of the active branch.&lt;/p>
+&lt;p>&lt;a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting">&lt;img src="images/git-head.png" alt="Git HEAD">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="under-the-hood" >Under the hood
+&lt;span>
+&lt;a href="#under-the-hood">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Git uses the &lt;a href="https://en.wikipedia.org/wiki/SHA-1">SHA-1&lt;/a> hash of content to create references to commits.&lt;/li>
+&lt;li>A commit object stores the metadata about a commit, such as the parent, the author, timestamps and references to the file tree of this commit.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="git-lfs" >Git LFS
+&lt;span>
+&lt;a href="#git-lfs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://git-lfs.github.com/">Large File System&lt;/a>: Git extension for versioning large files.&lt;/li>
+&lt;li>The files live on an external server. Only references to them are stored in the Git repository.&lt;/li>
+&lt;li>Usage examples: audio and graphical assets, datasets&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="collaborating-with-git" >Collaborating with Git
+&lt;span>
+&lt;a href="#collaborating-with-git">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="collaboration-workflow" >Collaboration workflow
+&lt;span>
+&lt;a href="#collaboration-workflow">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Developers work locally, regularly commiting their code into their local repo.&lt;/li>
+&lt;li>Repos are kept in sync through specific commands.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/git-sync-repos.png" alt="Syncing Git repos">&lt;/p>
+&lt;hr>
+&lt;h3 id="remote-repositories" >Remote repositories
+&lt;span>
+&lt;a href="#remote-repositories">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>Git repos that are hosted somewhere on the Internet or local network.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Can be:&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>cloned&lt;/em> to create a local copy;&lt;/li>
+&lt;li>&lt;em>fetched&lt;/em> to obtain remote updates, that can be &lt;em>merged&lt;/em> into a local branch thereafter;&lt;/li>
+&lt;li>&lt;em>pushed to&lt;/em> to send local updates.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Identified by a &lt;strong>remote alias&lt;/strong> (named &lt;em>origin&lt;/em> after cloning a repo).&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="remote-git-workflow" >Remote Git workflow
+&lt;span>
+&lt;a href="#remote-git-workflow">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/git_workflow.png" alt="Remote Git workflow">&lt;/p>
+&lt;hr>
+&lt;h3 id="pulling-changes" >Pulling changes
+&lt;span>
+&lt;a href="#pulling-changes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Pulling = fetching &amp;amp; merging.&lt;/li>
+&lt;li>Creates a new &lt;em>merge commit&lt;/em>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://www.atlassian.com/git/tutorials/syncing/git-pull">&lt;img src="images/git-pulling.png" alt="Git pulling example">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="conflicts" >Conflicts
+&lt;span>
+&lt;a href="#conflicts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Simultaneous file updates on different machines can result in &lt;em>conflicts&lt;/em> during repos syncing.&lt;/li>
+&lt;li>Git can resolve some of them by automerging files&amp;hellip; But not all!&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/human-request.jpg" alt="I request your assistance">&lt;/p>
+&lt;hr>
+&lt;h3 id="manual-conflict-management" >Manual conflict management
+&lt;span>
+&lt;a href="#manual-conflict-management">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Typically, the second developer trying to push his/her updates receives a &amp;ldquo;non fast-forward&amp;rdquo; error.&lt;/li>
+&lt;li>He/she has to &lt;em>pull&lt;/em> remote updates first.&lt;/li>
+&lt;li>Files Git cannot automerge contain &lt;a href="https://wincent.com/wiki/Understanding_Git_conflict_markers">conflict markers&lt;/a>. A manual merging is needed before commiting and pushing again.&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-git" data-lang="git">&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
+# My Git project
+=======
+# My git project
+&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; c1129dfbbe585fc94978be38625b5ae7f63474bf
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h2 id="git-from-the-command-line" >Git from the command line
+&lt;span>
+&lt;a href="#git-from-the-command-line">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="configuration" >Configuration
+&lt;span>
+&lt;a href="#configuration">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Role&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>git config --global user.email &amp;quot;{email}&amp;quot;&lt;/code>&lt;/td>
+&lt;td>Set user email&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git config --global user.name &amp;quot;{firstname lastname}&amp;quot;&lt;/code>&lt;/td>
+&lt;td>Set user name&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="setup" >Setup
+&lt;span>
+&lt;a href="#setup">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Role&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>git init&lt;/code>&lt;/td>
+&lt;td>Create an empty repository in the current folder&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git clone {url}&lt;/code>&lt;/td>
+&lt;td>Clone an existing repository located at &lt;code>{url}&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="working-locally" >Working locally
+&lt;span>
+&lt;a href="#working-locally">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Role&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>git status&lt;/code>&lt;/td>
+&lt;td>Show status of working directory and index&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git add {file}&lt;/code>&lt;/td>
+&lt;td>Add &lt;code>{file}&lt;/code> to index&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git add -A&lt;/code>&lt;/td>
+&lt;td>Add all new or modified files to index&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git commit -m &amp;quot;{message}&amp;quot;&lt;/code>&lt;/td>
+&lt;td>Commit indexed files to current branch&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git log&lt;/code>&lt;/td>
+&lt;td>Show commit history&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="managing-branches" >Managing branches
+&lt;span>
+&lt;a href="#managing-branches">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Role&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>git branch&lt;/code>&lt;/td>
+&lt;td>List existing branches&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git branch {branch}&lt;/code>&lt;/td>
+&lt;td>Create a new branch named &lt;code>{branch}&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git checkout {branch}&lt;/code>&lt;/td>
+&lt;td>Switch to &lt;code>{branch}&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git merge {branch}&lt;/code>&lt;/td>
+&lt;td>Merge &lt;code>{branch}&lt;/code> commits into the current one&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git branch -d {branch}&lt;/code>&lt;/td>
+&lt;td>Delete &lt;code>{branch}&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="undoing-things" >Undoing things
+&lt;span>
+&lt;a href="#undoing-things">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Role&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>git checkout {file}&lt;/code>&lt;/td>
+&lt;td>Overwrite &lt;code>{file}&lt;/code> with latest committed version&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git reset {file}&lt;/code>&lt;/td>
+&lt;td>Remove &lt;code>{file}&lt;/code> from index&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git reset&lt;/code>&lt;/td>
+&lt;td>Empty index&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git reset --hard HEAD~{n}&lt;/code>&lt;/td>
+&lt;td>Return to &lt;code>{n}&lt;/code>-to-last commit, losing all updates&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>(More details and options &lt;a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting">here&lt;/a> and &lt;a href="https://stackoverflow.com/a/6866485">here&lt;/a>)&lt;/p>
+&lt;hr>
+&lt;h3 id="collaborating" >Collaborating
+&lt;span>
+&lt;a href="#collaborating">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Role&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>git remote add {alias} {url}&lt;/code>&lt;/td>
+&lt;td>Add a remote repository&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git remote -v&lt;/code>&lt;/td>
+&lt;td>List remote repositories&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git pull {alias} {branch}&lt;/code>&lt;/td>
+&lt;td>Fetch &amp;amp; merge remote commits into &lt;code>{branch}&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>git push {alias} {branch}&lt;/code>&lt;/td>
+&lt;td>Push &lt;code>{branch}&lt;/code> commits to a remote repo&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="additional-resources" >Additional resources
+&lt;span>
+&lt;a href="#additional-resources">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://www.atlassian.com/git/tutorials/what-is-version-control">What is version control?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://rogerdudler.github.io/git-guide/">Git - the simple guide&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://learngitbranching.js.org">Learn Git branching&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/mikeizbicki/ucr-cs100/blob/2015winter/textbook/cheatsheets/git-cheatsheet.md">Git cheat sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://education.github.com/git-cheat-sheet-education.pdf">Another Git cheat sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ndpsoftware.com/git-cheatsheet.html">Yet another Git cheat sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/git-game/git-game">The Git game&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ohshitgit.com/">Oh sh.t, Git!?!&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="github" >GitHub
+&lt;span>
+&lt;a href="#github">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="github-in-a-nutshell" >GitHub in a nutshell
+&lt;span>
+&lt;a href="#github-in-a-nutshell">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://github.com/">GitHub&lt;/a> is a code hosting platform for version control and collaboration.&lt;/li>
+&lt;li>Its main purpose is the hosting of Git repositories.&lt;/li>
+&lt;li>Launched in 2008, it has been acquired by Microsoft in 2018 for $7.5 billion.&lt;/li>
+&lt;li>As of December 2021, it has approx. 73 million users worldwide.&lt;/li>
+&lt;li>GitHub is the central hub for open source projects.&lt;/li>
+&lt;li>Main alternatives are &lt;a href="https://bitbucket.org">BitBucket&lt;/a> and &lt;a href="https://about.gitlab.com/">GitLab&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="github-repo-example" >GitHub repo example
+&lt;span>
+&lt;a href="#github-repo-example">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/github-repo-example.png" alt="GitHub repo example">&lt;/p>
+&lt;hr>
+&lt;h3 id="the-shared-repository-model" >The shared repository model
+&lt;span>
+&lt;a href="#the-shared-repository-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>A GitHub repo centralizes team updates.&lt;/li>
+&lt;li>Efficient for small teams and small-to-average-sized projects.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/github-shared-repo.png" alt="Shared repository model">&lt;/p>
+&lt;hr>
+&lt;h3 id="the-fork--pull-model" >The &amp;ldquo;fork &amp;amp; pull&amp;rdquo; model
+&lt;span>
+&lt;a href="#the-fork--pull-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Each developer &lt;em>forks&lt;/em> ($\approx$ clone on GitHub) the original repository.&lt;/li>
+&lt;li>Updates are pushed to the forks, then proposed to the original repo through &lt;a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">Pull Requests&lt;/a>.&lt;/li>
+&lt;li>Efficient for large organizations or public projects.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/github-fork-pull.png" alt="Fork &amp;amp; pull model">&lt;/p>
+&lt;hr>
+&lt;h3 id="other-features-and-services" >Other features and services
+&lt;span>
+&lt;a href="#other-features-and-services">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues">Issues&lt;/a> are used to track ideas, feedback, tasks, or bugs.&lt;/li>
+&lt;li>&lt;a href="https://docs.github.com/en/github/writing-on-github/editing-and-sharing-content-with-gists/creating-gists">Gists&lt;/a> are single pieces of code that can be forked and cloned like repositories.&lt;/li>
+&lt;li>&lt;a href="https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards">Project boards&lt;/a> offer a Kanban-like interface for organizing and prioritizing work.&lt;/li>
+&lt;li>&lt;a href="https://github.com/features/codespaces">Codespaces&lt;/a> is a cloud-based development environment mimicking Visual Studio Code.&lt;/li>
+&lt;li>&lt;a href="https://copilot.github.com/">Copilot&lt;/a> is an AI-based code suggestion service.&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul></description></item></channel></rss>

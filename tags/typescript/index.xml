@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>typescript on Baptiste Pesquet</title><link>https://www.bpesquet.fr/tags/typescript/</link><description>Baptiste Pesquet (typescript)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 16 Dec 2019 21:50:46 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/tags/typescript/index.xml" rel="self" type="application/rss+xml"/><item><title>Le langage JavaScript</title><link>https://www.bpesquet.fr/slides/javascript/</link><pubDate>Mon, 16 Dec 2019 21:50:46 +0100</pubDate><guid>https://www.bpesquet.fr/slides/javascript/</guid><description>&lt;h2 id="sommaire" >Sommaire
+&lt;span>
+&lt;a href="#sommaire">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Pourquoi JavaScript ?&lt;/li>
+&lt;li>Syntaxe du langage&lt;/li>
+&lt;li>Environnement de travail&lt;/li>
+&lt;li>TypeScript&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="pourquoi-javascript-" >Pourquoi JavaScript ?
+&lt;span>
+&lt;a href="#pourquoi-javascript-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="javascript-is-eating-the-world" >JavaScript is eating the world
+&lt;span>
+&lt;a href="#javascript-is-eating-the-world">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/thus-javascript-is-eating-the-world.jpg" alt="JS is eating the world">&lt;/p>
+&lt;hr>
+&lt;h3 id="un-pré-requis-essentiel" >Un pré-requis essentiel
+&lt;span>
+&lt;a href="#un-pr%c3%a9-requis-essentiel">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>La majorité des solutions mobiles multi-plateformes est basée sur JavaScript.&lt;/p>
+&lt;p>&lt;img src="images/mobile_logos.png" alt="Frameworks multi-plateformes">&lt;/p>
+&lt;hr>
+&lt;h3 id="un-langage-modernisé" >Un langage modernisé
+&lt;span>
+&lt;a href="#un-langage-modernis%c3%a9">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>JavaScript est normalisé sous le nom &lt;strong>ECMAScript&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="images/js_history.png" alt="ECMAScript releases">&lt;/p>
+&lt;p>La norme &lt;strong>ES2015&lt;/strong> (ou ES6) a apporté de très nombreuses améliorations au langage.&lt;/p>
+&lt;hr>
+&lt;h2 id="syntaxe-du-langage" >Syntaxe du langage
+&lt;span>
+&lt;a href="#syntaxe-du-langage">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="déclaration-de-variables" >Déclaration de variables
+&lt;span>
+&lt;a href="#d%c3%a9claration-de-variables">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>JavaScript est un langage à typage &lt;strong>dynamique&lt;/strong>.&lt;/p>
+&lt;p>&lt;code>let&lt;/code> et &lt;code>const&lt;/code> remplacent avantageusement &lt;code>var&lt;/code> pour la déclaration des variables.&lt;/p>
+&lt;p>La valeur d&amp;rsquo;une variable déclarée avec &lt;code>const&lt;/code> ne peut plus être modifiée.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">let&lt;/span> a = &lt;span style="color:#0086f7;font-weight:bold">3.14&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a = &lt;span style="color:#0086f7;font-weight:bold">6.28&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// OK
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> b = &lt;span style="color:#0086f7;font-weight:bold">3.14&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>b = &lt;span style="color:#0086f7;font-weight:bold">6.28&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Erreur!
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="chaînes-de-caractères" >Chaînes de caractères
+&lt;span>
+&lt;a href="#cha%c3%aenes-de-caract%c3%a8res">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Créées avec des guillemets simples (&lt;code>'...'&lt;/code>) ou doubles (&lt;code>&amp;quot;...&amp;quot;&lt;/code>).&lt;/p>
+&lt;p>&lt;strong>Litéraux de modèle&lt;/strong>: chaînes créées entre &lt;em>backticks&lt;/em> (`) et permettant d&amp;rsquo;intégrer des expressions.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> country = &lt;span style="color:#0086d2">&amp;#34;France&amp;#34;&lt;/span>; &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// or &amp;#39;France&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(&lt;span style="color:#0086d2">`I live in &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>country&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">`&lt;/span>); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;I live in France&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="déclaration-de-fonctions" >Déclaration de fonctions
+&lt;span>
+&lt;a href="#d%c3%a9claration-de-fonctions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> sayHello(name) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> message = &lt;span style="color:#0086d2">`Hello, &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>name&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">!`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(sayHello(&lt;span style="color:#0086d2">&amp;#34;Richard&amp;#34;&lt;/span>)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello, Richard!&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="expressions-fonction" >Expressions fonction
+&lt;span>
+&lt;a href="#expressions-fonction">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Permettent de créer des fonctions anonymes.&lt;/p>
+&lt;p>La valeur d&amp;rsquo;une variable JavaScript peut être une fonction.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> hello = &lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> (name) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> message = &lt;span style="color:#0086d2">`Hello, &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>name&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">!`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(hello(&lt;span style="color:#0086d2">&amp;#34;Richard&amp;#34;&lt;/span>)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello, Richard!&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="fonctions-fléchées" >Fonctions fléchées
+&lt;span>
+&lt;a href="#fonctions-fl%c3%a9ch%c3%a9es">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&amp;ldquo;&lt;em>Fat arrow functions&lt;/em>&amp;rdquo;.&lt;/p>
+&lt;p>Syntaxe plus concise pour créer des fonctions anonymes.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> hello = (name) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> message = &lt;span style="color:#0086d2">`Hello, &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>name&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2">!`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> message;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Syntaxe alternative encore plus concise
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// const hello = name =&amp;gt; `Hello, ${name}!`;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(hello(&lt;span style="color:#0086d2">&amp;#34;Richard&amp;#34;&lt;/span>)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello, Richard!&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="tableaux" >Tableaux
+&lt;span>
+&lt;a href="#tableaux">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Plusieurs syntaxes existent pour les parcourir.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> movies = [&lt;span style="color:#0086d2">&amp;#34;The Wolf of Wall Street&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;Zootopia&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;Babysitting&amp;#34;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(movies.length); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// 3
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">for&lt;/span> (&lt;span style="color:#fb660a;font-weight:bold">let&lt;/span> i = &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>; i &amp;lt; movies.length; i++) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Use movies[i] to access each array element one by one
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>movies.forEach((movie) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Use movie to access each array element one by one
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>});
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">for&lt;/span> (&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> movie &lt;span style="color:#fb660a;font-weight:bold">of&lt;/span> movies) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Use movie to access each array element one by one
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="objets" >Objets
+&lt;span>
+&lt;a href="#objets">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>JavaScript permet de créer des objets sans classe!&lt;/li>
+&lt;li>Un &lt;strong>objet litéral&lt;/strong> JavaScript est défini grâce à des accolades &lt;code>{...}&lt;/code>.&lt;/li>
+&lt;li>Il regroupe un ensemble de &lt;strong>propriétés&lt;/strong> (paires nom/valeur).&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Création d&amp;#39;un objet litéral
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> pen = {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type: &lt;span style="color:#0086d2">&amp;#34;ballpoint&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> color: &lt;span style="color:#0086d2">&amp;#34;blue&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> brand: &lt;span style="color:#0086d2">&amp;#34;Bic&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Modifcation de la valeur d&amp;#39;une propriété
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>pen.color = &lt;span style="color:#0086d2">&amp;#34;red&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(pen.type); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;ballpoint&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(pen.color); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;red&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(pen.brand); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bic&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="création-dobjets-à-partir-de-variables" >Création d&amp;rsquo;objets à partir de variables
+&lt;span>
+&lt;a href="#cr%c3%a9ation-dobjets-%c3%a0-partir-de-variables">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> firstName = &lt;span style="color:#0086d2">&amp;#34;Baptiste&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> lastName = &lt;span style="color:#0086d2">&amp;#34;Pesquet&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> twitterHandle = &lt;span style="color:#0086d2">&amp;#34;@bpesquet&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> teacher = { firstName, lastName, twitterHandle };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(teacher.firstName); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Baptiste&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(teacher.lastName); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Pesquet&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(teacher.twitterHandle); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;@bpesquet&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="déstructuration-dobjets" >Déstructuration d&amp;rsquo;objets
+&lt;span>
+&lt;a href="#d%c3%a9structuration-dobjets">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> pen = {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type: &lt;span style="color:#0086d2">&amp;#34;ballpoint&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> color: &lt;span style="color:#0086d2">&amp;#34;blue&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> brand: &lt;span style="color:#0086d2">&amp;#34;Bic&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Accès à 2 des propriétés de l&amp;#39;objet
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> { color, brand } = pen;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(color); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;blue&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(brand); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Bic&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="déstructuration-de-tableaux" >Déstructuration de tableaux
+&lt;span>
+&lt;a href="#d%c3%a9structuration-de-tableaux">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> primaryColors = [&lt;span style="color:#0086d2">&amp;#34;red&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;green&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;blue&amp;#34;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> [red, green, blue] = primaryColors;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(red); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;red&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(green); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;red&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(blue); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;blue&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="opérateur-de-décomposition-_spread_" >Opérateur de décomposition (&amp;quot;&lt;em>spread&lt;/em>&amp;quot;)
+&lt;span>
+&lt;a href="#op%c3%a9rateur-de-d%c3%a9composition-_spread_">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Permet de développer une valeur itérable (chaîne, tableau&amp;hellip;).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> chaine = &lt;span style="color:#0086d2">&amp;#34;foo bar&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(chaine); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;foo bar&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log([...chaine]); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// [&amp;#34;f&amp;#34;, &amp;#34;o&amp;#34;, &amp;#34;o&amp;#34;, &amp;#34; &amp;#34;, &amp;#34;b&amp;#34;, &amp;#34;a&amp;#34;, &amp;#34;r&amp;#34;]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> numbers = [&lt;span style="color:#0086d2">&amp;#34;one&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;two&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;three&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;four&amp;#34;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> [one, two, ...rest] = numbers;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(one); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;one&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(two); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;two&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(rest); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// [&amp;#34;three&amp;#34;, &amp;#34;four&amp;#34;]
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="notion-de-méthode" >Notion de méthode
+&lt;span>
+&lt;a href="#notion-de-m%c3%a9thode">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>La valeur d&amp;rsquo;une propriété peut être une donnée ou une fonction. Dans le second cas, la propriété est une &lt;strong>méthode&lt;/strong>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> aurora = {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: &lt;span style="color:#0086d2">&amp;#34;Aurora&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> health: &lt;span style="color:#0086f7;font-weight:bold">150&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> strength: &lt;span style="color:#0086f7;font-weight:bold">25&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Renvoie la description du personnage
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> describe() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086d2">`&lt;/span>&lt;span style="color:#0086d2">${&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.name&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2"> has &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.health&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2"> health points
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2"> and &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.strength&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2"> as strength`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="classes" >Classes
+&lt;span>
+&lt;a href="#classes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Character {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> constructor(name, health, strength) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.name = name;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.health = health;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.strength = strength;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> describe() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086d2">`&lt;/span>&lt;span style="color:#0086d2">${&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.name&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2"> has &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.health&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2"> health points
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0086d2"> and &lt;/span>&lt;span style="color:#0086d2">${&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.strength&lt;span style="color:#0086d2">}&lt;/span>&lt;span style="color:#0086d2"> as strength`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> aurora = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Character(&lt;span style="color:#0086d2">&amp;#34;Aurora&amp;#34;&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">150&lt;/span>, &lt;span style="color:#0086f7;font-weight:bold">25&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(aurora.describe());
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="modules-et-imports" >Modules et imports
+&lt;span>
+&lt;a href="#modules-et-imports">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>JavaScript supporte la notion de &lt;strong>module&lt;/strong> pour factoriser des éléments réutilisables.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Importe l&amp;#39;élément exporté par défaut par le module
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> React from &lt;span style="color:#0086d2">&amp;#34;react-native&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Importe d&amp;#39;autres éléments exportés grâce à leur nom
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> { View, Text, Image } from &lt;span style="color:#0086d2">&amp;#34;react-native&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Importe à la fois l&amp;#39;élément par défaut et d&amp;#39;autres éléments
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">import&lt;/span> React, { View, Text, Image } from &lt;span style="color:#0086d2">&amp;#34;react-native&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="programmation-asynchrone" >Programmation asynchrone
+&lt;span>
+&lt;a href="#programmation-asynchrone">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>JavaScript supporte la programmation asynchrone basée sur des &lt;strong>promesses&lt;/strong> (&lt;em>promises&lt;/em>). Une promesse représente une opération dont le résultat n&amp;rsquo;est pas encore disponible.&lt;/p>
+&lt;p>La programmation asynchrone évite de bloquer le &lt;em>thread&lt;/em> courant en cas d&amp;rsquo;opération longue ou incertaine, comme par exemple un appel réseau.&lt;/p>
+&lt;hr>
+&lt;h3 id="fonctionnement-dune-promesse" >Fonctionnement d&amp;rsquo;une promesse
+&lt;span>
+&lt;a href="#fonctionnement-dune-promesse">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://javascript.info/promise-basics">&lt;img src="images/promise.png" alt="Promise">&lt;/a>&lt;/p>
+&lt;p>Le mot-clé &lt;code>then()&lt;/code> permet de définir le traitement de la promesse sous la forme d&amp;rsquo;une fonction.&lt;/p>
+&lt;hr>
+&lt;h3 id="exemple-dutilisation-dune-promessehttpscodepeniobpesquetpenvyepwjreditors0012" >&lt;a href="https://codepen.io/bpesquet/pen/vYePWjr?editors=0012">Exemple d&amp;rsquo;utilisation d&amp;rsquo;une promesse&lt;/a>
+&lt;span>
+&lt;a href="#exemple-dutilisation-dune-promessehttpscodepeniobpesquetpenvyepwjreditors0012">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> resolveAfter2Seconds() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Promise((resolve) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Wait for 2 seconds before resolving promise
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> setTimeout(() =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> resolve(&lt;span style="color:#0086d2">&amp;#34;Success!&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }, &lt;span style="color:#0086f7;font-weight:bold">2000&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Doesn&amp;#39;t work: result is not yet available!
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>console.log(resolveAfter2Seconds());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Wait for the result to be available, then output it
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>resolveAfter2Seconds().then((result) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(result); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Success!&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>});
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="async-et-await" >async et await
+&lt;span>
+&lt;a href="#async-et-await">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Le mot-clé &lt;code>await&lt;/code> interrompt l&amp;rsquo;exécution (sans bloquer le &lt;em>thread&lt;/em> courant) jusqu&amp;rsquo;à ce que le résultat d&amp;rsquo;une promesse soit disponible. Les fonctions utilisant &lt;code>await&lt;/code> doivent être déclarées avec le mot-clé &lt;code>async&lt;/code>.&lt;/p>
+&lt;p>&lt;code>async&lt;/code> et &lt;code>await&lt;/code> constituent une syntaxe alternative pour les appels asynchrones en JavaScript.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Wait for the result to be available, then output it
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">async&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> asyncCall() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> result = &lt;span style="color:#fb660a;font-weight:bold">await&lt;/span> resolveAfter2Seconds();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(result); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Success!&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>asyncCall();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="plus-de-détails-sur-javascript" >Plus de détails sur JavaScript
+&lt;span>
+&lt;a href="#plus-de-d%c3%a9tails-sur-javascript">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://developer.mozilla.org/fr/docs/Web/JavaScript">Mozilla Developer Network&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://thejsway.net">The JavaScript Way&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/getify/You-Dont-Know-JS">You Don&amp;rsquo;t Know JS Yet&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="environnement-de-travail" >Environnement de travail
+&lt;span>
+&lt;a href="#environnement-de-travail">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;p>&lt;img src="images/node-logo.png" alt="Node logo">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Plate-forme JavaScript basée sur le moteur d&amp;rsquo;exécution V8 de Chrome.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Permet de créer des applications JS hors du navigateur (serveur, mobile, etc).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Supporte un riche écosystème de librairies en tout genre installables sous forme de &lt;strong>packages&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="gestion-des-dépendances" >Gestion des dépendances
+&lt;span>
+&lt;a href="#gestion-des-d%c3%a9pendances">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Le standard historique est &lt;a href="https://www.npmjs.com/">npm&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>npm init &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Create a minimal package.json file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Shorter version: npm i {package name}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install {package name} &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Install {package name} locally&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install -g {package name} &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Install {package name} globally&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Install all packages listed in package.json&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm update &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Update local packages to latest version&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm update -g &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Update global packages to latest version&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm list &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># List locally installed packages&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm list -g &lt;span style="color:#080;background-color:#0f140f;font-style:italic"># List globally installed packages&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Execute a command from a package&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npx {command} {command-arg}...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Autre possibilité : &lt;a href="https://yarnpkg.com/lang/en/">yarn&lt;/a> (plus récent).&lt;/p>
+&lt;hr>
+&lt;h3 id="le-fichier-packagejson" >Le fichier package.json
+&lt;span>
+&lt;a href="#le-fichier-packagejson">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Associé à un fichier verrou &lt;code>package-lock.json&lt;/code>.&lt;/li>
+&lt;li>Utilisé par &lt;strong>npm/yarn&lt;/strong> pour télécharger et installer les dépendances dans le sous-répertoire &lt;code>node_modules/&lt;/code> du projet.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;helloreactnative&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;version&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;1.0.0&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;main&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;node_modules/expo/AppEntry.js&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;scripts&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;start&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;expo start&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;android&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;expo start --android&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;ios&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;expo start --ios&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;web&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;expo start --web&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;dependencies&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;expo&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;~47.0.9&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;expo-status-bar&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;~1.4.2&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;react&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;18.1.0&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;react-native&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;0.70.5&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;devDependencies&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;@babel/core&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;^7.12.9&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;private&amp;#34;&lt;/span>: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="versionnage-des-dépendances" >Versionnage des dépendances
+&lt;span>
+&lt;a href="#versionnage-des-d%c3%a9pendances">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Versionnage sémantique &lt;strong>X.Y.Z&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>X = version majeure (changements potentiellement non rétrocompatibles).&lt;/li>
+&lt;li>Y = version mineure.&lt;/li>
+&lt;li>Z = patch.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>^1.1.1&lt;/strong> équivaut à $\geq$ 1.1.1 et $&amp;lt;$ 2.0.0&lt;/p>
+&lt;p>&lt;strong>~1.1.1&lt;/strong> équivaut à $\geq$ 1.1.1 et $&amp;lt;$ 1.2.0&lt;/p>
+&lt;p>&lt;strong>1.1.1&lt;/strong> cible une version exacte.&lt;/p>
+&lt;hr>
+&lt;h3 id="formatage-automatique-du-code" >Formatage automatique du code
+&lt;span>
+&lt;a href="#formatage-automatique-du-code">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://prettier.io/">Prettier&lt;/a> est un outil extrêmement utile.&lt;/p>
+&lt;p>&lt;a href="https://prettier.io/">&lt;img src="images/prettier-logo-light.png" alt="Prettier logo">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="analyse-du-code" >Analyse du code
+&lt;span>
+&lt;a href="#analyse-du-code">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://eslint.org/">ESLint&lt;/a> est l&amp;rsquo;outil le plus utilisé. Sa configuration se fait via un fichier &lt;code>.eslintrc.json&lt;/code> stocké à la racine du projet.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;root&amp;#34;&lt;/span>: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;env&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;node&amp;#34;&lt;/span>: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;es2016&amp;#34;&lt;/span>: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;browser&amp;#34;&lt;/span>: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;rules&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;no-console&amp;#34;&lt;/span>: &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;eqeqeq&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;warn&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;no-cond-assign&amp;#34;&lt;/span>: &lt;span style="color:#0086f7;font-weight:bold">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;no-unused-vars&amp;#34;&lt;/span>: &lt;span style="color:#0086f7;font-weight:bold">1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;no-extra-semi&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;warn&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;semi&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;warn&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;extends&amp;#34;&lt;/span>: &lt;span style="color:#0086d2">&amp;#34;eslint:recommended&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;parserOptions&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;ecmaFeatures&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">&amp;#34;experimentalObjectRestSpread&amp;#34;&lt;/span>: &lt;span style="color:#fb660a;font-weight:bold">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="transpilation-du-code" >Transpilation du code
+&lt;span>
+&lt;a href="#transpilation-du-code">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://babeljs.io/">Babel&lt;/a> transforme le code JavaScript ES2015+ en code ES5 compatible avec tous les environnements d&amp;rsquo;exécution JS.&lt;/li>
+&lt;li>Il permet d&amp;rsquo;utiliser sereinement les dernières évolutions du langage.&lt;/li>
+&lt;li>Il est utilisé en arrière-plan par de nombreux outils de l&amp;rsquo;écosystème JS.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://babeljs.io/">&lt;img src="images/Babel-Javascript-compiler.png" alt="Babel logo">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="typescript" >TypeScript
+&lt;span>
+&lt;a href="#typescript">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h3 id="des-types-pour-javascript" >Des types pour JavaScript
+&lt;span>
+&lt;a href="#des-types-pour-javascript">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://www.typescriptlang.org/">TypeScript&lt;/a> est un sur-ensemble syntaxique de JavaScript qui permet un typage statique optionnel du code.&lt;/p>
+&lt;p>Créé à l&amp;rsquo;origine par Microsoft, il est libre et open source.&lt;/p>
+&lt;p>&lt;img src="images/typescript.png" alt="TypeScript logo">&lt;/p>
+&lt;hr>
+&lt;h3 id="installation-et-utilisation" >Installation et utilisation
+&lt;span>
+&lt;a href="#installation-et-utilisation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>TS est supporté par la plupart des éditeurs de code.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Install TypeScript globally&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm i -g typescript
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># The TS compiler produces a pure JS version of the TS file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tsc my_typescript_file.ts
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="annotations-de-type" >Annotations de type
+&lt;span>
+&lt;a href="#annotations-de-type">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Elles permettent de préciser les &lt;em>contrats&lt;/em> des fonctions ou des méthodes.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ts" data-lang="ts">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// This function is meant to receive an input of type string
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> hello(person: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086d2">&amp;#34;Hello, &amp;#34;&lt;/span> + person;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> user = &lt;span style="color:#0086d2">&amp;#34;Jane Doe&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Uncomment to see TS error checking in action
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">//const user = [0, 1, 2];
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(hello(user)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello, Jane Doe&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="interfaces" >Interfaces
+&lt;span>
+&lt;a href="#interfaces">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Elles permettent de définir des structures de données complexes.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ts" data-lang="ts">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Describes objects that have a firstName and lastName field
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">interface&lt;/span> Person {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> firstName: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lastName: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">function&lt;/span> hello(person: &lt;span style="color:#cdcaa9;font-weight:bold">Person&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">return&lt;/span> &lt;span style="color:#0086d2">&amp;#34;Hello, &amp;#34;&lt;/span> + person.firstName + &lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span> + person.lastName;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ... (see next slides)
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="duck-typing" >Duck typing
+&lt;span>
+&lt;a href="#duck-typing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;blockquote>
+&lt;p>&amp;ldquo;If it walks like a duck and quacks like a duck, then it must be a duck.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;p>TS se base sur la structure concrète des objets, et non sur l&amp;rsquo;implémentation explicite d&amp;rsquo;une interface.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ts" data-lang="ts">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// This object is structurally compatible with the Person interface
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> user = { firstName: &lt;span style="color:#0086d2">&amp;#34;Jane&amp;#34;&lt;/span>, lastName: &lt;span style="color:#0086d2">&amp;#34;Doe&amp;#34;&lt;/span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(hello(user)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello, Jane Doe&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="définition-de-classes" >Définition de classes
+&lt;span>
+&lt;a href="#d%c3%a9finition-de-classes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>TS supporte les définitions de classes apportées par les versions ES2015+ de JS.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ts" data-lang="ts">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> Student {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fullName: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// The public argument implicitly creates properties
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">constructor&lt;/span>(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> firstName: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> middleInitial: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> lastName: &lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">this&lt;/span>.fullName = firstName + &lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span> + middleInitial + &lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span> + lastName;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="utilisation-de-classes" >Utilisation de classes
+&lt;span>
+&lt;a href="#utilisation-de-classes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Classes et interfaces TS sont compatibles. Le développeur peut ainsi choisir le bon niveau d&amp;rsquo;abstraction.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ts" data-lang="ts">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">const&lt;/span> user = &lt;span style="color:#fb660a;font-weight:bold">new&lt;/span> Student(&lt;span style="color:#0086d2">&amp;#34;Jane&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;M.&amp;#34;&lt;/span>, &lt;span style="color:#0086d2">&amp;#34;Doe&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>console.log(hello(user)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;#34;Hello, Jane Doe&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

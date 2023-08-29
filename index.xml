@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Accueil on 👨‍💻 Baptiste Pesquet</title><link>https://www.bpesquet.fr/</link><description>👨‍💻 Baptiste Pesquet (Accueil)</description><generator>Hugo -- gohugo.io</generator><language>fr</language><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>AI for Defence</title><link>https://www.bpesquet.fr/slides/ai-for-defence/</link><pubDate>Fri, 09 Jun 2023 08:37:58 +0200</pubDate><guid>https://www.bpesquet.fr/slides/ai-for-defence/</guid><description>&lt;h2 id="context" >Context
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Baptiste Pesquet</title><link>https://www.bpesquet.fr/</link><description>Baptiste Pesquet (Home)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>Research</title><link>https://www.bpesquet.fr/research/</link><pubDate>Mon, 28 Aug 2023 23:05:25 +0200</pubDate><guid>https://www.bpesquet.fr/research/</guid><description>&lt;h2 id="phd" >PhD
+&lt;span>
+&lt;a href="#phd">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>A growing interest in artificial intelligence, coupled with the frustration of not finding enough time to dedicate to its study, led me to start an AI-centered PhD with &lt;a href="https://www.inria.fr">INRIA&lt;/a>.&lt;/p>
+&lt;p>More precisely, I will be working under the supervision of &lt;a href="https://www.labri.fr//perso//falexand//">Frédéric Alexandre&lt;/a>, head of the &lt;a href="https://www.inria.fr/fr/mnemosyne">Mnemosyne&lt;/a> team. Many things are still up in the air, but my work should deal with adding some level of trustworthiness to AI models.&lt;/p>
+&lt;h2 id="publications" >Publications
+&lt;span>
+&lt;a href="#publications">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>E. Grivel, B. Pesquet, T.-B. Airimitoaie and A. Zemmari, &amp;ldquo;&lt;a href="https://ieeexplore.ieee.org/abstract/document/10125126">Artificial Intelligence for Defence in an EQF6 Training and Education Program, from the Design to the Execution&lt;/a>&amp;rdquo; 2023 IEEE Global Engineering Education Conference (EDUCON), Kuwait, Kuwait, 2023.&lt;/li>
+&lt;/ul></description></item><item><title>AI for Defence</title><link>https://www.bpesquet.fr/slides/ai-for-defence/</link><pubDate>Fri, 09 Jun 2023 08:37:58 +0200</pubDate><guid>https://www.bpesquet.fr/slides/ai-for-defence/</guid><description>&lt;h2 id="context" >Context
 &lt;span>
 &lt;a href="#context">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -3017,7 +3033,7 @@ while&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cdcaa9;font-weight:bold">int&lt;/span>[] tab;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>InitTab(&lt;span style="color:#fb660a;font-weight:bold">out&lt;/span> tab);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Console.WriteLine(&lt;span style="color:#cdcaa9;font-weight:bold">string&lt;/span>.Join(&lt;span style="color:#0086d2">&amp;#34; &amp;#34;&lt;/span>, tab)); &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ?&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>My M1 Mac setup for Python development</title><link>https://www.bpesquet.fr/posts/my-mac-setup-for-python/</link><pubDate>Wed, 14 Sep 2022 12:15:28 +0200</pubDate><guid>https://www.bpesquet.fr/posts/my-mac-setup-for-python/</guid><description>&lt;p>I recently got my lucky hands on a brand new M1 MacBook Pro as my new work machine. As an teacher, I maintain several &lt;a href="https://www.bpesquet.fr/en/resources/">pedagogical resources&lt;/a> written in Python and thus needed to quickly set up an efficient work environment on this machine.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>My M1 Mac setup for Python development</title><link>https://www.bpesquet.fr/posts/my-mac-setup-for-python/</link><pubDate>Wed, 14 Sep 2022 12:15:28 +0200</pubDate><guid>https://www.bpesquet.fr/posts/my-mac-setup-for-python/</guid><description>&lt;p>I recently got my lucky hands on a brand new M1 MacBook Pro as my new work machine. As an &lt;a href="https://www.bpesquet.fr/teaching/">teacher&lt;/a>, I maintain several pedagogical resources written in Python and thus needed to quickly set up an efficient work environment on this machine.&lt;/p>
 &lt;p>For all its qualities as a language, Python is notoriously hard to configure in a robust and efficient way. Along the years, many tools have been created to handle interpreter versions, virtual environments, project dependencies and the many chores associated with Python development. This is an ever evolving field, and the solutions listed below might very well become obsolete rather soon.&lt;/p>
 &lt;p>&lt;a href="https://xkcd.com/1987/">&lt;img src="images/python_environment.png" alt="There&amp;rsquo;s an xkcd for that, too!">&lt;/a>&lt;/p>
 &lt;p>This post is a chronological overview of the choices I made to create a functional Python development environment on an M1/M2 Mac. Useful external resources are linked as references for further research.&lt;/p>
@@ -3133,8 +3149,13 @@ while&lt;/p>
 &lt;/span>
 &lt;/h2>&lt;p>This is of course an imperfect work in progress, and things might change in the future. Meanwhile, I&amp;rsquo;m pretty happy with the current result.&lt;/p>
 &lt;p>I hope some of this has been useful to you. Happy Python setup ;)&lt;/p>
-&lt;p>&lt;strong>References&lt;/strong>:&lt;/p>
-&lt;ul>
+&lt;h2 id="references" >References
+&lt;span>
+&lt;a href="#references">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
 &lt;li>&lt;a href="https://blog.jayway.com/2019/12/28/pyenv-poetry-saviours-in-the-python-chaos/">https://blog.jayway.com/2019/12/28/pyenv-poetry-saviours-in-the-python-chaos/&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://drgabrielharris.medium.com/python-how-farewell-anaconda-take-full-control-of-your-development-environment-6c4f8103980f">https://drgabrielharris.medium.com/python-how-farewell-anaconda-take-full-control-of-your-development-environment-6c4f8103980f&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.ethanrosenthal.com/2022/02/01/everything-gets-a-package/">https://www.ethanrosenthal.com/2022/02/01/everything-gets-a-package/&lt;/a>&lt;/li>
@@ -3469,74 +3490,7 @@ while&lt;/p>
 &lt;li>Comme langage universel permettant la génération directe d&amp;rsquo;applications à partir de diagrammes les modélisant, UML a échoué.&lt;/li>
 &lt;li>Le travail itératif en mode agile a supplanté l&amp;rsquo;analyse métier exhaustive qui avait auparavant lieu au début des projets logiciels.&lt;/li>
 &lt;li>Certains diagrammes restent utiles et très employés.&lt;/li>
-&lt;/ul></description></item><item><title>Ressources pédagogiques</title><link>https://www.bpesquet.fr/resources/</link><pubDate>Sat, 18 Jun 2022 08:16:44 +0200</pubDate><guid>https://www.bpesquet.fr/resources/</guid><description>&lt;p>Je m&amp;rsquo;efforce de rendre accessibles au plus grand nombre les ressources pédagogiques créées dans le cadre de mon activité professionnelle.&lt;/p>
-&lt;p>Sauf mention contraire, elles sont librement réutilisables dans le cadre d&amp;rsquo;une licence &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA&lt;/a> pour les textes et &lt;a href="https://opensource.org/licenses/MIT">MIT&lt;/a> pour le code source. La plupart d&amp;rsquo;entre elles sont publiées sur &lt;a href="https://github.com/bpesquet?tab=repositories">GitHub&lt;/a>.&lt;/p>
-&lt;h2 id="resources-maintenues" >Resources maintenues
-&lt;span>
-&lt;a href="#resources-maintenues">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;p>Les ressources suivantes sont récentes ou utilisées dans certains de mes cours actuels. Je tâche de les maintenir à jour sur une base régulière.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://www.bpesquet.fr/slides/">Liste des diaporamas&lt;/a>&lt;/li>
-&lt;li>Livres
-&lt;ul>
-&lt;li>&lt;a href="https://bpesquet.github.io/mlhandbook/">Machine Learning Handbook&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.github.io/mlkatas/">Machine Learning Katas&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://thejsway.net">The JavaScript Way&lt;/a> | &lt;a href="https://github.com/thejsway/thejsway_fr">La voie du JavaScript&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ensc.gitbook.io/programmation-objet-csharp/">Programmation orientée objet en C#&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ensc.gitbook.io/genie-logiciel/">Génie logiciel&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Projets
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/bpesquet/pyfit">pyfit&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/bpesquet/pyai">pyai&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="resources-non-maintenues" >Resources non maintenues
-&lt;span>
-&lt;a href="#resources-non-maintenues">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;p>Les ressources suivantes ont été créées pour d&amp;rsquo;anciens cours. Non maintenues, elles sont potentiellement dépassées mais peuvent encore avoir leur utilité dans certaines contextes.&lt;/p>
-&lt;ul>
-&lt;li>Livres
-&lt;ul>
-&lt;li>&lt;a href="https://ensc.gitbook.io/programmation-evenementielle-winforms/">Programmation évènementielle avec les WinForms&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bpesquet.gitbooks.io/guide-developpeur-php/">Guide du développeur PHP&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Tutoriels
-&lt;ul>
-&lt;li>&lt;a href="https://bpesquet.developpez.com/tutoriels/php/evoluer-architecture-mvc/">Evoluez vers une architecture MVC en PHP&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Projets
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/bpesquet/winforms-architecture-patterns">WinForms architecture patterns&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/bpesquet/MonBlog">MonBlog&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Archives PDF
-&lt;ul>
-&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_sql.zip">Le langage SQL&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_sgbd.zip">Les bases de données&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_reseaux.zip">Les réseaux&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item><item><title>Formation</title><link>https://www.bpesquet.fr/training/</link><pubDate>Fri, 17 Jun 2022 15:55:09 +0200</pubDate><guid>https://www.bpesquet.fr/training/</guid><description>&lt;p>J&amp;rsquo;anime régulièrement des formations à destination d&amp;rsquo;un public professionnel.&lt;/p>
-&lt;p>Il peut s&amp;rsquo;agir de sessions liées à l&amp;rsquo;activité de &lt;strong>formation continue&lt;/strong> à l&amp;rsquo;ENSC. A ce sujet, vous pouvez consulter le catalogue des &lt;a href="https://ensc.bordeaux-inp.fr/fr/autres-diplomes-ensc">diplômes d&amp;rsquo;établissement&lt;/a> et celui des &lt;a href="https://ensc.bordeaux-inp.fr/fr/les-formations-courtes-lensc">formations courtes&lt;/a> de l&amp;rsquo;école.&lt;/p>
-&lt;p>J&amp;rsquo;ai récemment été en charge des contenus suivants :&lt;/p>
-&lt;ul>
-&lt;li>&lt;em>Machine Learning&lt;/em>, &lt;em>Deep Learning&lt;/em> et &lt;em>MLOps&lt;/em>, dans le cadre de la formation courte &lt;a href="https://ensc.bordeaux-inp.fr/fr/formation-courte-intelligence-artificielle">Intelligence artificielle&lt;/a> (sessions de juin 2020, juin 2021 et novembre 2021) ;&lt;/li>
-&lt;li>&lt;em>Initiation au Deep Learning&lt;/em>, dans le cadre du DU &lt;a href="https://ensc.bordeaux-inp.fr/fr/du-big-data-et-statistique-pour-lingenieur">Big Data et Statistique pour l&amp;rsquo;Ingénieur&lt;/a> (tous les ans depuis 2019).&lt;/li>
-&lt;/ul>
-&lt;p>J&amp;rsquo;ai également une activité de &lt;strong>formateur indépendant&lt;/strong>. A partir d&amp;rsquo;un contexte et de besoins métiers précis, je m&amp;rsquo;attache à construire une offre pédagogique sur mesure sur la base de mes compétences techniques et de mon expérience d&amp;rsquo;enseignant. La session ainsi conçue peut se dérouler dans vos locaux ou à distance, selon vos préférences et contraintes.&lt;/p>
-&lt;p>N&amp;rsquo;hésitez pas à &lt;a href="mailto:bpesquet%20%5Bat%5D%20gmail%20%5Bdot%5D%20com?subject=Projet%20de%20formation">prendre contact avec moi&lt;/a> afin de concevoir ensemble la formation qui saura répondre au mieux à vos attentes.&lt;/p></description></item><item><title>JavaScript pour le web</title><link>https://www.bpesquet.fr/slides/javascript-web/</link><pubDate>Wed, 02 Feb 2022 11:09:39 +0100</pubDate><guid>https://www.bpesquet.fr/slides/javascript-web/</guid><description>&lt;h2 id="sommaire" >Sommaire
+&lt;/ul></description></item><item><title>JavaScript pour le web</title><link>https://www.bpesquet.fr/slides/javascript-web/</link><pubDate>Wed, 02 Feb 2022 11:09:39 +0100</pubDate><guid>https://www.bpesquet.fr/slides/javascript-web/</guid><description>&lt;h2 id="sommaire" >Sommaire
 &lt;span>
 &lt;a href="#sommaire">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -4673,20 +4627,60 @@ while&lt;/p>
 &lt;li>&lt;a href="https://github.com/features/codespaces">Codespaces&lt;/a> is a cloud-based development environment mimicking Visual Studio Code.&lt;/li>
 &lt;li>&lt;a href="https://copilot.github.com/">Copilot&lt;/a> is an AI-based code suggestion service.&lt;/li>
 &lt;li>&amp;hellip;&lt;/li>
-&lt;/ul></description></item><item><title>Enseignement</title><link>https://www.bpesquet.fr/teaching/</link><pubDate>Wed, 27 Oct 2021 14:59:36 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/</guid><description>&lt;p>L&amp;rsquo;essentiel de mon activité à l&amp;rsquo;&lt;a href="https://ensc.bordeaux-inp.fr">ENSC&lt;/a> consiste à concevoir et animer des cours à destination des étudiants de l&amp;rsquo;école. Vous trouverez ci-dessous la description des enseignements dont j&amp;rsquo;ai actuellement la responsabilité. Certains des supports de cours associés sont &lt;a href="https://www.bpesquet.fr/resources/">disponibles en ligne&lt;/a>.&lt;/p>
+&lt;/ul></description></item><item><title>Teaching</title><link>https://www.bpesquet.fr/teaching/</link><pubDate>Wed, 27 Oct 2021 14:59:36 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/</guid><description>&lt;h2 id="school-related-work" >School-related work
+&lt;span>
+&lt;a href="#school-related-work">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>As a teacher, my core activity is creating and presenting courses to students. Since the beginning of my career, I taught a pretty wide variety of computer-related subjects, from programming basics to Deep Learning (see &lt;a href="#online-resources">below&lt;/a> for a list of associated resources).&lt;/p>
+&lt;p>Most of this work is currently taking place at the &lt;a href="https://ensc.bordeaux-inp.fr">Ecole Nationale Supérieure de Cognitique&lt;/a> (ENSC), a French graduate engineering school. Since 2018, I also teach a Machine Learning introductory course at the &lt;a href="https://www.institutoptique.fr">Institut d&amp;rsquo;Optique Graduate School&lt;/a>.&lt;/p>
+&lt;p>From 2019 to 2021, I co-created and co-steered a joint specialization track devoted to artificial intelligence with &lt;a href="https://enseirb-matmeca.bordeaux-inp.fr">ENSEIRB-MATMECA&lt;/a>, another engineering school of &lt;a href="https://www.bordeaux-inp.fr">Bordeaux INP&lt;/a>. Since 2022, each school manages its own version of the track. I&amp;rsquo;m still in charge of the ENSC-specific one.&lt;/p>
+&lt;h2 id="training-programs" >Training programs
+&lt;span>
+&lt;a href="#training-programs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>I host training sessions for professionals or external partners on a regular basis.&lt;/p>
+&lt;p>Some of these are linked to the continuing education program at ENSC. More precisely, I recently took part in the &lt;a href="https://ensc.bordeaux-inp.fr/fr/formation-courte-intelligence-artificielle">Artificial Intelligence&lt;/a> short course (in 2021 and 2022) and the &lt;a href="https://ensc.bordeaux-inp.fr/fr/du-big-data-et-statistique-pour-lingenieur">Big Data and Statistics for Engineers&lt;/a> university diploma (since 2019).&lt;/p>
+&lt;p>From 2021 to 2023, I have been involved in the &lt;a href="https://assets-plus.eu/education-training/machine-learning-for-defence/">Machine Learning for Defence&lt;/a> and &lt;a href="https://year-of-skills.europa.eu/events-and-activities/assets-education-training-programme-ai-defence-2023-05-22_en">AI for Defence&lt;/a> training programs for professionals, created as part of the &lt;a href="https://assets-plus.eu/">ASSETs+&lt;/a> european project.&lt;/p>
+&lt;h2 id="online-resources" >Online resources
+&lt;span>
+&lt;a href="#online-resources">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>I strive to make the pedagogical resources authored through my teaching activity available to everyone.&lt;/p>
+&lt;p>Unless otherwise stated, they are free to reuse under a &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA&lt;/a> license for text and &lt;a href="https://opensource.org/licenses/MIT">MIT&lt;/a> for source code. Most of them are open-sourced on &lt;a href="https://github.com/bpesquet?tab=repositories">GitHub&lt;/a>.&lt;/p>
+&lt;blockquote>
+&lt;p>As almost everything else in the software world, pedagogical resources have the undesirable property of aging &lt;em>fast&lt;/em>. Some of the following material is maintained on a (somewhat) regular basis and should be reasonably up-to-date. On the other hand, older stuff is most certainly outdated but still might be relevant in some contexts.&lt;/p>
+&lt;/blockquote>
 &lt;ul>
-&lt;li>&lt;a href="https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&amp;amp;mode=consultation&amp;amp;chemin=65571_65569_65559_65558_65557_65556&amp;amp;langue=1">Introduction à la programmation&lt;/a> ;&lt;/li>
-&lt;li>&lt;a href="https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&amp;amp;mode=consultation&amp;amp;chemin=65589_65588_65579_65558_65557_65556&amp;amp;langue=1">Communication web&lt;/a> ;&lt;/li>
-&lt;li>&lt;a href="https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&amp;amp;mode=consultation&amp;amp;chemin=65590_65588_65579_65558_65557_65556&amp;amp;langue=1">Programmation avancée&lt;/a> ;&lt;/li>
-&lt;li>&lt;a href="https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&amp;amp;mode=consultation&amp;amp;chemin=65615_65613_65601_65600_65599_65557_65556&amp;amp;langue=1">Génie logiciel&lt;/a> ;&lt;/li>
-&lt;li>&lt;a href="https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&amp;amp;mode=consultation&amp;amp;chemin=65643_65639_65625_65624_65599_65557_65556&amp;amp;langue=1">Développement mobile&lt;/a> ;&lt;/li>
-&lt;li>&lt;a href="https://ccc.bordeaux-inp.fr/syllabus/index.php?annee=2022&amp;amp;mode=consultation&amp;amp;chemin=65635_65632_65625_65624_65599_65557_65556&amp;amp;langue=1">Apprentissage automatique&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/slides/">Slideshows&lt;/a>&lt;/li>
+&lt;li>Book-like content
+&lt;ul>
+&lt;li>&lt;a href="https://bpesquet.github.io/mlhandbook/">Machine Learning Handbook&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.github.io/mlkatas/">Machine Learning Katas&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://thejsway.net">The JavaScript Way&lt;/a> | &lt;a href="https://github.com/thejsway/thejsway_fr">La voie du JavaScript&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ensc.gitbook.io/programmation-objet-csharp/">Programmation orientée objet en C#&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ensc.gitbook.io/genie-logiciel/">Génie logiciel&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ensc.gitbook.io/programmation-evenementielle-winforms/">Programmation évènementielle avec les WinForms&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.gitbooks.io/guide-developpeur-php/">Guide du développeur PHP&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>Depuis 2018, j&amp;rsquo;interviens chaque année à l&amp;rsquo;&lt;a href="https://www.institutoptique.fr">Institut d&amp;rsquo;Optique Graduate School&lt;/a> pour un cours d&amp;rsquo;introduction au &lt;em>Deep Learning&lt;/em>.&lt;/p>
-&lt;p>Plus ponctuellement, j&amp;rsquo;ai l&amp;rsquo;opportunité de m&amp;rsquo;impliquer dans des projets pédagogiques inter-établissements :&lt;/p>
+&lt;/li>
+&lt;li>Articles
 &lt;ul>
-&lt;li>De 2019 à 2021, j&amp;rsquo;ai co-créé et piloté le parcours de troisième année &lt;a href="https://3aia.fr">Intelligence artificielle&lt;/a> commun à l&amp;rsquo;ENSC et l&amp;rsquo;&lt;a href="https://enseirb-matmeca.bordeaux-inp.fr">ENSEIRB-MATMECA&lt;/a>, deux écoles d&amp;rsquo;ingénieurs de &lt;a href="https://www.bordeaux-inp.fr">Bordeaux INP&lt;/a>. Depuis 2022, ce parcours se décline en deux versions, une par école. J&amp;rsquo;ai conservé la responsabilité de celui de l&amp;rsquo;ENSC.&lt;/li>
-&lt;li>En 2021 et 2022, j&amp;rsquo;ai participé à la conception et à l&amp;rsquo;animation de l&amp;rsquo;école d&amp;rsquo;été &lt;em>Machine Learning for Defence&lt;/em> dans le cadre du projet européen &lt;a href="https://assets-plus.eu/">ASSETs+&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="https://bpesquet.developpez.com/tutoriels/php/evoluer-architecture-mvc/">Evoluez vers une architecture MVC en PHP&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>PDF archives
+&lt;ul>
+&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_sql.zip">Le langage SQL&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_sgbd.zip">Les bases de données&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.bpesquet.fr/pub/cours_reseaux.zip">Les réseaux&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul></description></item><item><title>React Native</title><link>https://www.bpesquet.fr/slides/react-native/</link><pubDate>Wed, 27 Oct 2021 13:48:28 +0200</pubDate><guid>https://www.bpesquet.fr/slides/react-native/</guid><description>&lt;h2 id="sommaire" >Sommaire
 &lt;span>
 &lt;a href="#sommaire">

@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>unity on Baptiste Pesquet</title><link>https://www.bpesquet.fr/tags/unity/</link><description>Baptiste Pesquet (unity)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 25 Aug 2018 16:13:52 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/tags/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>Unity</title><link>https://www.bpesquet.fr/slides/unity/</link><pubDate>Sat, 25 Aug 2018 16:13:52 +0200</pubDate><guid>https://www.bpesquet.fr/slides/unity/</guid><description>&lt;h2 id="sommaire" >Sommaire
+&lt;span>
+&lt;a href="#sommaire">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Unity en bref&lt;/li>
+&lt;li>Concepts-clés&lt;/li>
+&lt;li>Versionnage d&amp;rsquo;un projet&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="unity-en-bref" >Unity en bref
+&lt;span>
+&lt;a href="#unity-en-bref">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;p>&lt;img src="images/Unity_Technologies_Logo.svg.png" alt="Logo Unity">&lt;/p>
+&lt;ul>
+&lt;li>Moteur de jeu développé par &lt;a href="https://en.wikipedia.org/wiki/Unity_Technologies">Unity Technologies&lt;/a> depuis 2004.&lt;/li>
+&lt;li>Multiplateformes : PC, Mac, consoles, smartphones, web.&lt;/li>
+&lt;li>&lt;a href="https://store.unity.com/fr/products/unity-personal">Licence personnelle&lt;/a> gratuite.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="made-with-unity" >Made with Unity
+&lt;span>
+&lt;a href="#made-with-unity">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/ctNF6QlLBWo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;hr>
+&lt;p>&lt;img src="images/Editor-Breakdown.jpg" alt="Unity editor 1">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/unity-editor.png" alt="Unity editor 2">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/keep-calm-it-is-demo-time.png" alt="Demo time">&lt;/p>
+&lt;hr>
+&lt;h2 id="concepts-clés" >Concepts-clés
+&lt;span>
+&lt;a href="#concepts-cl%c3%a9s">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h2 id="project" >Project
+&lt;span>
+&lt;a href="#project">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Rassemble tous les éléments constituant le jeu.&lt;/li>
+&lt;li>Peut être de type 2D ou 3D.&lt;/li>
+&lt;li>Correspond physiquement à un répertoire stocké localement ou dans le &lt;em>cloud&lt;/em>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/AssetWorkflowFolderAndProjectWindow.png" alt="Fenêtre Project">&lt;/p>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="asset" >Asset
+&lt;span>
+&lt;a href="#asset">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Ressource utilisable dans un projet.&lt;/li>
+&lt;li>Nombreux types possibles : image, modèle 3D, texture, fichier audio, script, etc.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/AssetWorkflowImportingFiles.png" alt="Import d&amp;rsquo;un Asset">&lt;/p>
+&lt;hr>
+&lt;h2 id="packages" >Packages
+&lt;span>
+&lt;a href="#packages">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Plusieurs Assets peuvent être regroupés dans un &lt;strong>package&lt;/strong>.&lt;/li>
+&lt;li>Unity est livré avec une collections d&amp;rsquo;&lt;strong>Assets standards&lt;/strong> : formes de base, gestion de la caméra, des entrées utilisateur, etc.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="asset-store" >Asset Store
+&lt;span>
+&lt;a href="#asset-store">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Magasin en ligne proposant de nombreux Assets gratuits ou payants.&lt;/li>
+&lt;li>Permet d&amp;rsquo;importer des packages dans un projet.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/AssetStore-download.png" alt="Asset Store">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="scene" >Scene
+&lt;span>
+&lt;a href="#scene">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Correspond à une partie du jeu (un niveau).&lt;/li>
+&lt;li>Sauvegardées parmi les Assets.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/NewEmptyScene.png" alt="Nouvelle scène">&lt;/p>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="gameobject" >GameObject
+&lt;span>
+&lt;a href="#gameobject">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Objet qui représente un élément d&amp;rsquo;une scène.&lt;/li>
+&lt;li>Constitué d&amp;rsquo;un ensemble de &lt;strong>composants&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/GameObjectsExamples.png" alt="Exemples de GameObjects">&lt;/p>
+&lt;hr>
+&lt;h3 id="hiérarchie-des-gameobjects" >Hiérarchie des GameObjects
+&lt;span>
+&lt;a href="#hi%c3%a9rarchie-des-gameobjects">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Création de hiérarchies parent/enfants à plusieurs niveaux en regroupant des GameObjects.&lt;/li>
+&lt;li>Permet de refléter des relations de &lt;strong>dépendance&lt;/strong> ou de &lt;strong>composition&lt;/strong> entre objets.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/HierarchyParenting1.png" alt="Hiérarchie des GO">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="composant" >Composant
+&lt;span>
+&lt;a href="#composant">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Ajoute un comportement à un GameObject.&lt;/p>
+&lt;p>&lt;img src="images/RigidBodyGO.png" alt="Exemples de composants">&lt;/p>
+&lt;hr>
+&lt;h2 id="le-composant-transform" >Le composant Transform
+&lt;span>
+&lt;a href="#le-composant-transform">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Définit la position, la rotation et l&amp;rsquo;échelle d&amp;rsquo;un GameObject.&lt;/p>
+&lt;p>&lt;img src="images/TransformExample2.png" alt="Transform 1">&lt;/p>
+&lt;hr>
+&lt;h2 id="transform-et-hiérarchie" >Transform et hiérarchie
+&lt;span>
+&lt;a href="#transform-et-hi%c3%a9rarchie">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Position, rotation et échelle d&amp;rsquo;un GameObject sont relatives à son parent dans la hiérarchie.&lt;/li>
+&lt;li>Les valeurs de Transform sont relatives à celles du GameObject parent (&lt;strong>coordonnées locales&lt;/strong>) ou absolues en l&amp;rsquo;absence de parent (&lt;strong>coordonnées globales&lt;/strong>).&lt;/li>
+&lt;/ul>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="mesh" >Mesh
+&lt;span>
+&lt;a href="#mesh">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Maillage géométrique d&amp;rsquo;une forme 3D.&lt;/p>
+&lt;p>&lt;img src="images/mesh.png" alt="Mesh">&lt;/p>
+&lt;hr>
+&lt;h2 id="mesh-renderer" >Mesh renderer
+&lt;span>
+&lt;a href="#mesh-renderer">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Composant assurant le rendu d&amp;rsquo;un Mesh à la position définie par le composant Transform du GameObject.&lt;/p>
+&lt;p>&lt;img src="images/class-MeshRenderer-0.png" alt="Mesh renderer">&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="rigidbody" >RigidBody
+&lt;span>
+&lt;a href="#rigidbody">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Composant permettant à un GameObject de réagir selon les lois de la physique :&lt;/p>
+&lt;ul>
+&lt;li>Gestion de la masse, de la gravité, etc.&lt;/li>
+&lt;li>Application de forces.&lt;/li>
+&lt;li>Réaction aux collisions.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/Inspector-Rigidbody.png" alt="RigidBody">&lt;/p>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="collider" >Collider
+&lt;span>
+&lt;a href="#collider">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Composant définissant la forme d&amp;rsquo;un GameObject pour la gestion des collisions :&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Primitive Collider&lt;/strong> : formes géométriques de base (cube, sphère, cylindre, etc).&lt;/li>
+&lt;li>&lt;strong>Mesh Collider&lt;/strong> : forme spécifique définie par un Mesh. Plus coûteux en temps de calcul.&lt;/li>
+&lt;/ul>
+&lt;p>Par défaut, des GameObjects possédant un Collider ne peuvent pas se chevaucher.&lt;/p>
+&lt;hr>
+&lt;h2 id="rigidbody-collider" >RigidBody Collider
+&lt;span>
+&lt;a href="#rigidbody-collider">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>GameObject possédant un Collider et un RigidBody.&lt;/p>
+&lt;ul>
+&lt;li>Soumis aux lois de la physique.&lt;/li>
+&lt;li>Déclenche des collisions avec les autres (non-Trigger) Colliders.&lt;/li>
+&lt;li>Doit être déplacé en lui appliquand des forces.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="static-collider" >Static Collider
+&lt;span>
+&lt;a href="#static-collider">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>GameObject possédant un Collider mais pas de RigidBody.&lt;/p>
+&lt;ul>
+&lt;li>Déclenche des collisions avec les RigidBody Colliders, mais ne bouge pas.&lt;/li>
+&lt;li>Ne doit pas être déplacé.&lt;/li>
+&lt;li>Destiné aux éléments immobiles de la scène (murs, obstacles, etc).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="kinematic-rigidbody-collider" >Kinematic RigidBody Collider
+&lt;span>
+&lt;a href="#kinematic-rigidbody-collider">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>GameObject possédant un Collider et un RigidBody défini comme Kinematic.&lt;/p>
+&lt;ul>
+&lt;li>N&amp;rsquo;est pas soumis aux lois de la physique.&lt;/li>
+&lt;li>Déclenche des collisions avec les RigidBody Colliders, mais ne bouge pas.&lt;/li>
+&lt;li>Peut être déplacé en modifiant son Transform.&lt;/li>
+&lt;li>Destiné aux éléments animés du décor (portes, objets à récupérer, etc).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="trigger-collider" >Trigger Collider
+&lt;span>
+&lt;a href="#trigger-collider">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>GameObject dont le Collider est défini comme Trigger.&lt;/p>
+&lt;p>&lt;img src="images/is-trigger-check-box.jpg" alt="IsTrigger">&lt;/p>
+&lt;ul>
+&lt;li>Autorise le chevauchement sans déclencher de collision.&lt;/li>
+&lt;li>Permet de définir une &lt;strong>zone&lt;/strong> et de réagir lorsque des RigidBody Colliders y pénètrent.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;a href="https://docs.unity3d.com/Manual/CollidersOverview.html">&lt;img src="images/UnityCollisionMatrix.png" alt="Collision Matrix">&lt;/a>&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="prefab" >Prefab
+&lt;span>
+&lt;a href="#prefab">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Type d&amp;rsquo;Asset permettant d&amp;rsquo;instancier des GameObjects à partir d&amp;rsquo;un modèle commun.&lt;/li>
+&lt;li>Changements d&amp;rsquo;un Prefab appliqués à toutes ses instances.&lt;/li>
+&lt;li>Une instance de Prefab peut aussi être modifiée individuellement.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/PrefabWithOverride.png" alt="Prefab">&lt;/p>
+&lt;hr>
+&lt;h2 id="light" >Light
+&lt;span>
+&lt;a href="#light">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Type de GameObject permettant d&amp;rsquo;ajouter une source de lumière à la scène.&lt;/p>
+&lt;p>&lt;img src="images/Light-Spot.png" alt="Lights">&lt;/p>
+&lt;hr>
+&lt;h2 id="camera" >Camera
+&lt;span>
+&lt;a href="#camera">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Type de GameObject qui calcule la vue de la scène affichée au joueur.&lt;/p>
+&lt;p>&lt;img src="images/CameraPerspectiveAndOrtho.jpg" alt="Différentes caméras">&lt;/p>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="script" >Script
+&lt;span>
+&lt;a href="#script">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Type d&amp;rsquo;Asset permettant de coder le comportement d&amp;rsquo;un GameObject en langage C# ou UnityScript.&lt;/li>
+&lt;li>Doit faire partie des composants du GameObject.&lt;/li>
+&lt;li>Peut accéder aux propriétés du GameObject définies par ses autres composants.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="anatomie-dun-script" >Anatomie d&amp;rsquo;un script
+&lt;span>
+&lt;a href="#anatomie-dun-script">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// ... (directives using)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic">// MonoBehaviour : superclasse de tous les scripts Unity&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#fb660a;font-weight:bold">public&lt;/span> &lt;span style="color:#fb660a;font-weight:bold">class&lt;/span> MainPlayer : MonoBehaviour {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Appelée juste avant le rendu de la première image&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Start() { ... }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Appelée à chaque nouvelle image&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// L&amp;#39;intervalle de temps entre deux appels peut varier&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> Update() { ... }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;background-color:#0f140f;font-style:italic">// Appelée à intervalles réguliers (0.02s par défaut)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#fb660a;font-weight:bold">void&lt;/span> FixedUpdate() { ... }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="déplacements-scriptés" >Déplacements scriptés
+&lt;span>
+&lt;a href="#d%c3%a9placements-script%c3%a9s">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://unity3d.com/fr/learn/tutorials/topics/scripting/delta-time">&lt;img src="images/time.deltatime.gif" alt="Time.deltaTtime">&lt;/a>&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="versionnage-dun-projet" >Versionnage d&amp;rsquo;un projet
+&lt;span>
+&lt;a href="#versionnage-dun-projet">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;hr>
+&lt;h2 id="le-problème" >Le problème
+&lt;span>
+&lt;a href="#le-probl%c3%a8me">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Taille de certains Assets.&lt;/li>
+&lt;li>Nombreux fichiers binaires dans un projet : modèles 3D, images, sons, etc.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="les-solutions" >Les solutions
+&lt;span>
+&lt;a href="#les-solutions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Partage manuel (disque commun, Drive, etc).&lt;/li>
+&lt;li>Dépôt Git standard.&lt;/li>
+&lt;li>Git LFS.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="git-large-file-system" >Git Large File System
+&lt;span>
+&lt;a href="#git-large-file-system">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://git-lfs.github.com">&lt;img src="images/git-lfs.gif" alt="Git LFS">&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="fichier-gitattributes" >Fichier .gitattributes
+&lt;span>
+&lt;a href="#fichier-gitattributes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>* &lt;span style="color:#fb660a">text&lt;/span>=auto
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Unity files&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.meta -text -merge=unityamlmerge
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.unity -text -merge=unityamlmerge
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.asset -text -merge=unityamlmerge
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.prefab -text -merge=unityamlmerge
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Image formats&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.psd &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.jpg &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.png &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.gif &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.bmp &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.tga &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.tiff &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.iff &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.pict &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.dds &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.xcf &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Audio formats&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.mp3 &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.ogg &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.wav &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.aiff &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.aif &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.mod &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.it &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.s3m &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.xm &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Video formats&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.mov &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.avi &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.asf &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.mpg &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.mpeg &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.mp4 &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># 3D formats&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.fbx &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.obj &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.max &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.blend &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.dae &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.mb &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.ma &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.3ds &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.dfx &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.c4d &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.lwo &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.lwo2 &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.abc &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.3dm &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Build&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.dll &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.pdb &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.mdb &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;background-color:#0f140f;font-style:italic"># Packaging&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.zip &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.7z &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.gz &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.rar &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*.tar &lt;span style="color:#fb660a">filter&lt;/span>=lfs &lt;span style="color:#fb660a">diff&lt;/span>=lfs &lt;span style="color:#fb660a">merge&lt;/span>=lfs -text
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://gist.github.com/bpesquet/4e28b431b673addef1774d497b614b33">Source&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="github-for-unity" >GitHub For Unity
+&lt;span>
+&lt;a href="#github-for-unity">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://unity.github.com/">https://unity.github.com/&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Extension qui intègre Git et GitHub dans Unity.&lt;/li>
+&lt;li>Authentification GitHub, LFS, etc.&lt;/li>
+&lt;li>Version 1.0 : encore instable.&lt;/li>
+&lt;/ul>
+&lt;/section></description></item></channel></rss>
