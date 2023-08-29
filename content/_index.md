@@ -8,4 +8,4 @@ draft: false
 
 👨‍💻 After graduating in 1999, I worked for 7 years in the software industry. Since 2006, I [teach]({{< ref "teaching" >}}) computer science and artificial intelligence to students and professionals. In 2023, I started a [PhD]({{< ref "research" >}}) on AI.
 
-🧑‍🎓 For more details, you may check out my resume in [English](/BaptistePesquet_Resume.pdf) or [French](/CV_BaptistePesquet.pdf).
+👨‍🎓 For more details, you may check out my resume in [English](/BaptistePesquet_Resume.pdf) or [French](/CV_BaptistePesquet.pdf).
