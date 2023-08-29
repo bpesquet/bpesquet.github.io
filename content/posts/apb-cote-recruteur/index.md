@@ -3,8 +3,6 @@ title: "Admission Post-Bac côté recruteur"
 date: 2016-06-09T20:56:38.045Z
 lastmod: 2020-10-14T22:38:46+02:00
 draft: false
-tags:
-- teaching
 ---
 
 <!--more-->

@@ -6,6 +6,8 @@ tags:
 - python
 ---
 
+<!--more-->
+
 I recently got my lucky hands on a brand new M1 MacBook Pro as my new work machine. As an [teacher]({{< ref "teaching" >}}), I maintain several pedagogical resources written in Python and thus needed to quickly set up an efficient work environment on this machine.
 
 For all its qualities as a language, Python is notoriously hard to configure in a robust and efficient way. Along the years, many tools have been created to handle interpreter versions, virtual environments, project dependencies and the many chores associated with Python development. This is an ever evolving field, and the solutions listed below might very well become obsolete rather soon.
@@ -124,7 +126,7 @@ This is of course an imperfect work in progress, and things might change in the 
 
 I hope some of this has been useful to you. Happy Python setup ;)
 
-**References**:
+## References
 
 - <https://blog.jayway.com/2019/12/28/pyenv-poetry-saviours-in-the-python-chaos/>
 - <https://drgabrielharris.medium.com/python-how-farewell-anaconda-take-full-control-of-your-development-environment-6c4f8103980f>
