@@ -2,7 +2,12 @@
 title: "Entity Framework Core"
 date: 2022-09-26T15:12:20+02:00
 draft: false
+tags:
+- dotnet
+- efcore
 ---
+
+<!--more-->
 
 ## Sommaire
 

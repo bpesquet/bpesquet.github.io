@@ -2,7 +2,11 @@
 title: "Deconstructing AI"
 date: 2019-12-09T10:47:12+01:00
 draft: false
+tags:
+- ai
 ---
+
+<!--more-->
 
 ## Table of contents
 

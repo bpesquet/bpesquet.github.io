@@ -2,7 +2,12 @@
 title: "React Native"
 date: 2021-10-27T13:48:28+02:00
 draft: false
+tags:
+- javascript
+- reactnative
 ---
+
+<!--more-->
 
 ## Sommaire
 

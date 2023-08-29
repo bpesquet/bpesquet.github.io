@@ -2,7 +2,11 @@
 title: "AI for Defence"
 date: 2023-06-09T08:37:58+02:00
 draft: false
+tags:
+- ai
 ---
+
+<!--more-->
 
 ## Context
 

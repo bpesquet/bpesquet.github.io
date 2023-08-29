@@ -2,7 +2,13 @@
 title: "ASP.NET Core"
 date: 2021-09-21T09:40:11+02:00
 draft: false
+tags:
+- dotnet
+- csharp
+- aspnet
 ---
+
+<!--more-->
 
 ## Sommaire
 

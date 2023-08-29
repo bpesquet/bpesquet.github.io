@@ -2,7 +2,12 @@
 title: ".NET et C#"
 date: 2022-09-20T10:27:11+02:00
 draft: false
+tags:
+- dotnet
+- csharp
 ---
+
+<!--more-->
 
 ## Sommaire
 

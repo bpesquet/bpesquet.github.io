@@ -2,7 +2,11 @@
 title: "C# : rappels et compléments"
 date: 2021-09-16T11:15:17+02:00
 draft: false
+tags:
+- csharp
 ---
+
+<!--more-->
 
 ## Sommaire
 

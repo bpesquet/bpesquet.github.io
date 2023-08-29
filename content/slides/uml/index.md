@@ -2,7 +2,11 @@
 title: "UML"
 date: 2022-09-12T14:16:21+02:00
 draft: false
+tags:
+- uml
 ---
+
+<!--more-->
 
 ## Sommaire
 
