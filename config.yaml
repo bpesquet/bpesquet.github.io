@@ -6,30 +6,27 @@ disqusShortname:
 googleAnalytics: "G-4DNVMNCRYK"
 enableRobotsTXT: true
 enableGitInfo: true
-defaultContentLanguage: en
 
-languages:
-  en:
-    languageName: English
-    weight: 1
-    menu:
-      main:
-        - name: Teaching
-          url: /teaching
-          weight: 1
-        - name: Research
-          url: /research
-          weight: 2
+menu:
+  main:
+    - name: Teaching
+      pageRef: /teaching
+      weight: 1
+    - name: Research
+      pageRef: /research
+      weight: 2
+    - name: Blog
+      pageRef: /posts
+      weight: 3
 
 params:
   author: "Baptiste Pesquet"
   email: bpesquet [at] gmail [dot] com # used for microformats
-  description: "Baptiste Pesquet's personal website"
+  description: "Baptiste Pesquet's professional website"
   dateFormat: "January 2, 2006"
   # customCSS:
   #  - css/my.css
-  mainSections:
-    - posts
+  # mainSections: [ "posts" ] # which sections should be on index/main page
   paginationSinglePost: true
   style: auto # light-without-switcher
   readMore: false
