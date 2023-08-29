@@ -29,7 +29,7 @@ Unless otherwise stated, they are free to reuse under a [Creative Commons BY-NC-
 > As almost everything else in the software world, pedagogical resources have the undesirable property of aging *fast*. Some of the following material is maintained on a (somewhat) regular basis and should be reasonably up-to-date. On the other hand, older stuff is most certainly outdated but still might be relevant in some contexts.
 
 - [Slideshows]({{< ref "slides" >}})
-- Book-like content:
+- Book-like content
   - [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook/)
   - [Machine Learning Katas](https://bpesquet.github.io/mlkatas/)
   - [The JavaScript Way](https://thejsway.net) | [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
@@ -37,9 +37,9 @@ Unless otherwise stated, they are free to reuse under a [Creative Commons BY-NC-
   - [Génie logiciel](https://ensc.gitbook.io/genie-logiciel/)
   - [Programmation évènementielle avec les WinForms](https://ensc.gitbook.io/programmation-evenementielle-winforms/)
   - [Guide du développeur PHP](https://bpesquet.gitbooks.io/guide-developpeur-php/)
-- Articles:
+- Articles
   - [Evoluez vers une architecture MVC en PHP](https://bpesquet.developpez.com/tutoriels/php/evoluer-architecture-mvc/)
-- PDF archives:
+- PDF archives
   - [Le langage SQL](/pub/cours_sql.zip)
   - [Les bases de données](/pub/cours_sgbd.zip)
   - [Les réseaux](/pub/cours_reseaux.zip)

@@ -36,13 +36,13 @@ params:
       name: bpesquet [at] gmail [dot] com
     - id: github
       name: bpesquet
+    - id: linkedin
+      name: bpesquet
     - id: twitter
       name: bpesquet
     - id: youtube
       name: ../@bpesquet # workaround since Anubis prepends "c/" to the YouTube channel name (format for renamed channels)
-    - id: linkedin
-      name: bpesquet
-
+    
 taxonomies:
   tag: "tags"
 
