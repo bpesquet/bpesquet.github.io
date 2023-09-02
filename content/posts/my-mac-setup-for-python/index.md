@@ -126,7 +126,7 @@ This is of course an imperfect work in progress, and things might change in the 
 
 I hope some of this has been useful to you. Happy Python setup ;)
 
-## References
+**References**:
 
 - <https://blog.jayway.com/2019/12/28/pyenv-poetry-saviours-in-the-python-chaos/>
 - <https://drgabrielharris.medium.com/python-how-farewell-anaconda-take-full-control-of-your-development-environment-6c4f8103980f>

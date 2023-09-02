@@ -16,7 +16,7 @@ I am the author of [The JavaScript Way](https://github.com/bpesquet/thejsway), a
 
 This is the story of this unexpected success.
 
-### Project inception
+## Project inception
 
 At the beginning of this project, I [explained]({{< ref "posts/walk-this-javascript-way" >}}) why I started it and went over some of my initial choices. In short:
 
@@ -32,7 +32,7 @@ Also, some key factors in the decision were:
 
 What I lacked was an initial audience, something often seen as a critical asset for this kind of project. Since someone has to start somewhere, I went on anyway.
 
-### Choosing a business model
+## Choosing a business model
 
 Every creator faces the same dilemma. How to share your work with the world that would make an impact and also be profitable? There is no definitive answer to this age-old question.
 
@@ -46,7 +46,7 @@ Taking example from [another self-published bestseller](https://leanpub.com/rpro
 
 This “hybrid” business model seemed a reasonable balance between openness and potential profit.
 
-### Building an audience (or not)
+## Building an audience (or not)
 
 Another common marketing advice is building some audience through a mailing list, using some existing content (for example, your own blog) as a magnet.
 
@@ -54,7 +54,7 @@ I don’t like this approach very much and didn’t want to bother my readers wi
 
 I also considered launching a crowdfunding campaign. Without any initial audience, this seemed to me as a lot of work for a very uncertain outcome, so I shied away from it. Maybe next time!
 
-### Tools and process
+## Tools and process
 
 The very best file format for authoring _any_ book (not only technical ones) is **plain text**. No need for a dedicated editor. No interoperability issue. The ability to use a [version control](https://en.wikipedia.org/wiki/Version_control) system like [Git](https://git-scm.com/) to keep track of changes.
 
@@ -68,7 +68,7 @@ I used the free text editor [Visual Studio Code](https://code.visualstudio.com/)
 
 After all tools were chosen, I drafted the book outline (a very important first step) using my previous courses as a basis. Then I dived into the writing process.
 
-### Early publishing
+## Early publishing
 
 Leanpub’s motto is “Publish early, publish often”. The platform empowers you to publish early drafts of your work. Receive feedback and create traction, enabling an [MVP](https://en.wikipedia.org/wiki/Minimum_viable_product)-like approach to book authoring.
 
@@ -82,7 +82,7 @@ A majority of comments were like “Ping me back when it’s finished”. People
 
 But, individual responses from Kyle, Robin and Quincy were hearthwarming. They played a big role in keeping me motivated. I’m very thankful to them.
 
-### The writing phase
+## The writing phase
 
 Even after this underwhelming early launch, I was still convinced that my book was worth something. I didn’t want to give up after having already spent dozens of hours on it. Using an unchanged book outline, I went for a no-feedback route and kept on writing all by myself until the book got finished.
 
@@ -98,7 +98,7 @@ I found a reasonable balance (about 10–15 hours a week) between work, personal
 
 Luckily, I had some existing material to build upon. Some experience writing content on my own… And also a very understanding spouse ;)
 
-### Launch day
+## Launch day!
 
 After eight months of steady work and a few last hours feverishly spent fixing things here and there, my book was ready at last!
 
@@ -126,7 +126,7 @@ Here are a few figures gathered two days after launch:
 
 All in all, far more than what I could dream of.
 
-### Financial outcome
+## Financial outcome
 
 Can an open source book be profitable after all? Of course, it’s too soon to tell. Two days after launch, it became Leanpub’s bestselling book of the week, with more than **$1,000** in royalties.
 
@@ -140,7 +140,7 @@ Most importantly, I have the deep satisfaction of having contributed something m
 
 And that is priceless.
 
-### Conclusion
+## Conclusion
 
 It wasn’t all roses, but self-publishing a successful open source book without any prior audience is definitely possible.
 
