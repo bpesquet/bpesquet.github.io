@@ -114,13 +114,8 @@
 &lt;/span>
 &lt;/h2>&lt;p>This is of course an imperfect work in progress, and things might change in the future. Meanwhile, I&amp;rsquo;m pretty happy with the current result.&lt;/p>
 &lt;p>I hope some of this has been useful to you. Happy Python setup ;)&lt;/p>
-&lt;h2 id="references" >References
-&lt;span>
-&lt;a href="#references">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;ul>
+&lt;p>&lt;strong>References&lt;/strong>:&lt;/p>
+&lt;ul>
 &lt;li>&lt;a href="https://blog.jayway.com/2019/12/28/pyenv-poetry-saviours-in-the-python-chaos/">https://blog.jayway.com/2019/12/28/pyenv-poetry-saviours-in-the-python-chaos/&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://drgabrielharris.medium.com/python-how-farewell-anaconda-take-full-control-of-your-development-environment-6c4f8103980f">https://drgabrielharris.medium.com/python-how-farewell-anaconda-take-full-control-of-your-development-environment-6c4f8103980f&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.ethanrosenthal.com/2022/02/01/everything-gets-a-package/">https://www.ethanrosenthal.com/2022/02/01/everything-gets-a-package/&lt;/a>&lt;/li>
