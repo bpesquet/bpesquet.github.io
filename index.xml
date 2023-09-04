@@ -4646,10 +4646,9 @@ while&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;p>I strive to make the pedagogical resources authored through my teaching activity available to everyone.&lt;/p>
-&lt;p>Unless otherwise stated, they are free to reuse under a &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA&lt;/a> license for text and &lt;a href="https://opensource.org/licenses/MIT">MIT&lt;/a> for source code. Most of them are open-sourced on &lt;a href="https://github.com/bpesquet?tab=repositories">GitHub&lt;/a>.&lt;/p>
+&lt;/h2>&lt;p>I strive to make the pedagogical resources authored through my teaching activity available to everyone. Unless otherwise stated, they are free to reuse under a &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA&lt;/a> license for text and &lt;a href="https://opensource.org/licenses/MIT">MIT&lt;/a> for source code. Most of them are open-sourced on &lt;a href="https://github.com/bpesquet?tab=repositories">GitHub&lt;/a>.&lt;/p>
 &lt;blockquote>
-&lt;p>As almost everything else in the software world, pedagogical resources have the undesirable property of aging &lt;em>fast&lt;/em>. Some of the following material is maintained on a (somewhat) regular basis and should be reasonably up-to-date. On the other hand, older stuff is most certainly outdated but still might be relevant in some contexts.&lt;/p>
+&lt;p>As almost everything else in the software world, pedagogical resources have the undesirable property of aging &lt;em>fast&lt;/em>. Some of the following material is maintained on a (somewhat) regular basis and should be reasonably up-to-date. Older stuff, on the other hand, is most certainly outdated but still might be relevant in some contexts.&lt;/p>
 &lt;/blockquote>
 &lt;ul>
 &lt;li>&lt;a href="https://www.bpesquet.fr/slides/">Slideshows&lt;/a>&lt;/li>
