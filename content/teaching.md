@@ -22,11 +22,9 @@ From 2021 to 2023, I have been involved in the [Machine Learning for Defence](ht
 
 ## Online resources
 
-I strive to make the pedagogical resources authored through my teaching activity available to everyone.
+I strive to make the pedagogical resources authored through my teaching activity available to everyone. Unless otherwise stated, they are free to reuse under a [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) license for text and [MIT](https://opensource.org/licenses/MIT) for source code. Most of them are open-sourced on [GitHub](https://github.com/bpesquet?tab=repositories).
 
-Unless otherwise stated, they are free to reuse under a [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) license for text and [MIT](https://opensource.org/licenses/MIT) for source code. Most of them are open-sourced on [GitHub](https://github.com/bpesquet?tab=repositories).
-
-> As almost everything else in the software world, pedagogical resources have the undesirable property of aging *fast*. Some of the following material is maintained on a (somewhat) regular basis and should be reasonably up-to-date. On the other hand, older stuff is most certainly outdated but still might be relevant in some contexts.
+> As almost everything else in the software world, pedagogical resources have the undesirable property of aging *fast*. Some of the following material is maintained on a (somewhat) regular basis and should be reasonably up-to-date. Older stuff, on the other hand, is most certainly outdated but still might be relevant in some contexts.
 
 - [Slideshows]({{< ref "slides" >}})
 - Book-like content
