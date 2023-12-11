@@ -6,9 +6,9 @@ draft: false
 
 ## PhD
 
-A growing interest in artificial intelligence, coupled with the frustration of not finding enough time to dedicate to its study, led me to start an AI-centered PhD with [INRIA](https://www.inria.fr).
+A growing interest in artificial intelligence, coupled with the frustration of not finding enough time to dedicate to its study, led me to start a PhD in Artificial Intelligence with [INRIA](https://www.inria.fr). So I'm back to being a (part-time) student, while retaining the core of my teaching and administrative duties.
 
-More precisely, I will be working under the supervision of [Frédéric Alexandre](https://www.labri.fr//perso//falexand//), head of the [Mnemosyne](https://www.inria.fr/fr/mnemosyne) team. Many things are still up in the air, but my work should deal with adding some level of trustworthiness to AI models.
+More precisely, I am working under the supervision of [Frédéric Alexandre](https://www.labri.fr//perso//falexand//), head of the [Mnemosyne](https://www.inria.fr/fr/mnemosyne) team. My work deals with understanding the role of confidence (*confiance*) in human decision making, with the long-term goal of augmenting AI models with confidence-based abilities.
 
 ## Publications
 
