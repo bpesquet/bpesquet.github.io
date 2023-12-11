@@ -4,7 +4,7 @@
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;p>A growing interest in artificial intelligence, coupled with the frustration of not finding enough time to dedicate to its study, led me to start a PhD in Artificial Intelligence with &lt;a href="https://www.inria.fr">INRIA&lt;/a>. So I&amp;rsquo;m back to being a (part-time) student, while retaining the core of my teaching and administrative duties.&lt;/p>
+&lt;/h2>&lt;p>A growing interest in artificial intelligence, coupled with the frustration of not finding enough time to dedicate to its study, led me to start a PhD in AI with &lt;a href="https://www.inria.fr">INRIA&lt;/a>. So I&amp;rsquo;m back to being a (part-time) student, while retaining the core of my teaching and administrative duties.&lt;/p>
 &lt;p>More precisely, I am working under the supervision of &lt;a href="https://www.labri.fr//perso//falexand//">Frédéric Alexandre&lt;/a>, head of the &lt;a href="https://www.inria.fr/fr/mnemosyne">Mnemosyne&lt;/a> team. My work deals with understanding the role of confidence (&lt;em>confiance&lt;/em>) in human decision making, with the long-term goal of augmenting AI models with confidence-based abilities.&lt;/p>
 &lt;h2 id="publications" >Publications
 &lt;span>
