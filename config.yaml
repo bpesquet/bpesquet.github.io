@@ -36,6 +36,8 @@ params:
       name: bpesquet [at] gmail [dot] com
     - id: github
       name: bpesquet
+    - id: google-scholar
+      url: "https://scholar.google.fr/citations?hl=fr&user=0KJ7JkMAAAAJ"
     - id: linkedin
       name: bpesquet
     - id: twitter
