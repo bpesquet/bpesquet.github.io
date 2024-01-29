@@ -28,6 +28,7 @@ I strive to make the pedagogical resources authored through my teaching activity
 
 - [Slideshows]({{< ref "slides" >}})
 - Book-like content
+  - [Artificial Intelligence notes](https://bpesquet.github.io/ainotes/)
   - [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook/)
   - [Machine Learning Katas](https://bpesquet.github.io/mlkatas/)
   - [The JavaScript Way](https://thejsway.net) | [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
