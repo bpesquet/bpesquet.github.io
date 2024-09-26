@@ -12,7 +12,9 @@ More precisely, I am working under the supervision of [Frédéric Alexandre](htt
 
 Here is a list of related resources:
 
+- [Modéliser la confiance d'un agent décisionnel](/pub/PFIA2024Pesquet.pdf) ([PFIA 2024](https://pfia2024.univ-lr.fr/))
 - [Rendre l'IA confiante, pour mieux lui faire confiance](/pub/PoS2024Pesquet.pdf) ([Pint of Science 2024](https://pintofscience.fr/))
+- [Confidence in decision-making](https://www.bpesquet.fr/ainotes/decision/confidence.html)
 - [Introduction to the theory of decision-making](https://www.bpesquet.fr/ainotes/decision/introduction.html)
 
 ## Publications
