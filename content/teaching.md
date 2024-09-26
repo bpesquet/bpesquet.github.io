@@ -8,9 +8,9 @@ draft: false
 
 As a teacher, my core activity is authoring and presenting pedagogical content to students and professionals. Over the years, I have taught a pretty large variety of computer-related subjects, from programming basics to Deep Learning. For many years now, I have strived to make most of my teaching resources available online.
 
-The following material spans a 20-ish years long teaching career. Some resources are maintained on a (somewhat) regular basis and should be reasonably up-to-date. Older stuff is most certainly outdated, but still might be relevant in some contexts.
+Unless otherwise stated, they are free to reuse under a [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) license for text and [MIT](https://opensource.org/licenses/MIT) for source code. Most of them are open-sourced on [GitHub](https://github.com/bpesquet?tab=repositories).
 
-> Unless otherwise stated, they are free to reuse under a [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) license for text and [MIT](https://opensource.org/licenses/MIT) for source code. Most of them are open-sourced on [GitHub](https://github.com/bpesquet?tab=repositories).
+> The following material spans a 20-ish years long teaching career. Some resources are maintained on a (somewhat) regular basis and should be reasonably up-to-date. Older stuff is most certainly outdated, but still might be relevant in some contexts.
 
 ### Artificial Intelligence
 
