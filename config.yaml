@@ -43,8 +43,8 @@ params:
       url: "https://scholar.google.fr/citations?hl=fr&user=0KJ7JkMAAAAJ"
     - id: linkedin
       name: bpesquet
-    - id: twitter
-      name: bpesquet
+    - id: bluesky
+      url: "https://bsky.app/profile/bpesquet.bsky.social"
     - id: youtube
       name: ../@bpesquet # workaround since Anubis prepends "c/" to the YouTube channel name (format for renamed channels)
     
