@@ -9,15 +9,18 @@ enableGitInfo: true
 
 menu:
   main:
+    - name: Short bio
+      pageRef: /bio
+      weight: 1
     - name: Teaching
       pageRef: /teaching
-      weight: 1
+      weight: 2
     - name: Research
       pageRef: /research
-      weight: 2
+      weight: 3
     - name: Blog
       pageRef: /posts
-      weight: 3
+      weight: 4
 
 params:
   author: "Baptiste Pesquet"
