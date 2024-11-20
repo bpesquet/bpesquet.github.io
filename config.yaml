@@ -41,7 +41,7 @@ params:
       name: bpesquet
     - id: google-scholar
       url: "https://scholar.google.fr/citations?hl=fr&user=0KJ7JkMAAAAJ"
-    - id: linkedin-white
+    - id: Linkedin
       url: "https://www.linkedin.com/in/bpesquet"
     - id: bluesky
       url: "https://bsky.app/profile/bpesquet.bsky.social"
