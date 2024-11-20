@@ -2,3 +2,13 @@
   /* Lower margin for posts and slides lists */
   margin-bottom: 0.4em;
 }
+
+.profile {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#profile-picture {
+  border-radius: 50%;
+}
