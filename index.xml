@@ -1,15 +1,1081 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello! on Baptiste Pesquet</title><link>https://www.bpesquet.fr/</link><description>Baptiste Pesquet (Hello!)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 13 Oct 2020 11:49:25 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>Short bio</title><link>https://www.bpesquet.fr/bio/</link><pubDate>Wed, 20 Nov 2024 13:24:56 +0100</pubDate><guid>https://www.bpesquet.fr/bio/</guid><description>&lt;p>After graduating as a software engineer in 1999, I worked for several years in the industry before moving on to a teaching career. In 2008, I passed the &lt;em>agrégation&lt;/em> (highest competitive exam for teaching in France).&lt;/p>
-&lt;p>Since 2016, I work as full-time professor at the &lt;a href="https://ensc.bordeaux-inp.fr/">Ecole Nationale Supérieure de Cognitique&lt;/a>, a graduate engineering school where I teach various computer science and AI-related courses.&lt;/p>
-&lt;p>In 2023, I started a PhD in AI with &lt;a href="https://www.inria.fr">INRIA&lt;/a>. My research focuses on artificial metacognition, i.e. how to create autonomous agents able to explicitly evaluate and adapt their behavior.&lt;/p>
-&lt;p>More more details, you may check out my resume in &lt;a href="https://www.bpesquet.fr/BaptistePesquet_Resume.pdf">English&lt;/a> or &lt;a href="https://www.bpesquet.fr/CV_BaptistePesquet.pdf">French&lt;/a>.&lt;/p></description></item><item><title>Research</title><link>https://www.bpesquet.fr/research/</link><pubDate>Mon, 28 Aug 2023 23:05:25 +0200</pubDate><guid>https://www.bpesquet.fr/research/</guid><description>&lt;h2 id="phd" >PhD
+&lt;p>Since 2016, I work as full-time professor at the &lt;a href="https://ensc.bordeaux-inp.fr/">Ecole Nationale Supérieure de Cognitique&lt;/a>, a graduate engineering school where I &lt;a href="../teaching">teach&lt;/a> various computer science and AI-related courses.&lt;/p>
+&lt;p>In 2023, I started a &lt;a href="../research">PhD&lt;/a> in AI with &lt;a href="https://www.inria.fr">INRIA&lt;/a>, with the goal of augmenting artificial agents with metacognitive abilities.&lt;/p>
+&lt;p>More more details, you may check out my resume in &lt;a href="https://www.bpesquet.fr/BaptistePesquet_Resume.pdf">English&lt;/a> or &lt;a href="https://www.bpesquet.fr/CV_BaptistePesquet.pdf">French&lt;/a>.&lt;/p></description></item><item><title/><link>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</link><pubDate>Wed, 16 Oct 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+&lt;!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
+&lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
+&lt;!-- headingDivider: 2 -->
+&lt;h1 id="confidence-as-hyperparameter-tuning-for-sequential-decision-making" >Confidence as hyperparameter tuning for sequential decision-making
 &lt;span>
-&lt;a href="#phd">
+&lt;a href="#confidence-as-hyperparameter-tuning-for-sequential-decision-making">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;p>A growing interest in artificial intelligence, coupled with the frustration of not finding enough time to study it seriously, led me to start a PhD in AI with &lt;a href="https://www.inria.fr">INRIA&lt;/a> in September 2023. So I&amp;rsquo;m currently back to being a (part-time) student, while retaining the core of my teaching and administrative duties.&lt;/p>
-&lt;p>More precisely, I am working under the supervision of &lt;a href="https://www.labri.fr//perso//falexand/">Frédéric Alexandre&lt;/a>, head of the &lt;a href="https://www.inria.fr/fr/mnemosyne">Mnemosyne&lt;/a> team. My work deals with understanding the role of confidence (&lt;em>confiance&lt;/em>) in human decision making, with the long-term goal of augmenting AI models with confidence-based abilities.&lt;/p>
-&lt;p>Resources related to my research are published &lt;a href="https://github.com/bpesquet/artificial_metacognition">here&lt;/a>.&lt;/p>
+&lt;/h1>&lt;!-- Show pagination, starting with second slide -->
+&lt;!-- paginate: true -->
+&lt;h2 id="metacognition" >Metacognition
+&lt;span>
+&lt;a href="#metacognition">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="../confidence/README.md#metacognition">&lt;img src="../confidence/images/metacognition_diagram.png" alt="Metacognition diagram">&lt;/a>&lt;/p>
+&lt;h2 id="sequential-decision-making" >Sequential decision-making
+&lt;span>
+&lt;a href="#sequential-decision-making">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Speed/Accuracy Tradeoff.&lt;/li>
+&lt;li>Canonical model: integration of noisy information until a threshold is reached.&lt;/li>
+&lt;li>Many refinements: multi-alternative choice, impact of learning, change of mind, etc.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="../decision_making/README.md#sequential-sampling">&lt;img src="../decision_making/images/eam_rdk.png" alt="">&lt;/a>&lt;/p>
+&lt;h2 id="confidence-for-decision-making" >Confidence for decision-making
+&lt;span>
+&lt;a href="#confidence-for-decision-making">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Quantifies the degree of certainty associated to a decision.&lt;/li>
+&lt;li>Canonical model: post-decisional computation based on accumulated info.&lt;/li>
+&lt;li>Can be used to alter the subsequent decisions.&lt;/li>
+&lt;/ul>
+&lt;div class="columns">
+&lt;div>
+&lt;p>&lt;img src="../confidence/images/BoE.png" alt="Balance of Evidence example">&lt;/p>
+&lt;/div>
+&lt;div>
+&lt;p>&lt;img src="../confidence/images/2DSD.png" alt="2DSD">&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="proposed-architecture-confidence-as-hyperparameter-tuning-for-sequential-decision-making" >Proposed architecture: confidence as hyperparameter tuning for sequential decision-making
+&lt;span>
+&lt;a href="#proposed-architecture-confidence-as-hyperparameter-tuning-for-sequential-decision-making">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;img src="images/metacognitive_agent.png" alt="Architecture of a confidence-regulated AI">&lt;/p>
+&lt;h2 id="current--next-steps" >Current &amp;amp; next steps
+&lt;span>
+&lt;a href="#current--next-steps">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Article for &lt;a href="https://www.esann.org/">ESANN 2025&lt;/a>.&lt;/li>
+&lt;li>Detailed review of confidence for decision-making (future PhD chapter).&lt;/li>
+&lt;li>First experiment on very basic task.&lt;/li>
+&lt;/ul>
+&lt;h2 id="questions-" >Questions ?
+&lt;span>
+&lt;a href="#questions-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2></description></item><item><title/><link>https://www.bpesquet.fr/talks/confidence/</link><pubDate>Mon, 24 Jun 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/confidence/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+&lt;!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
+&lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
+&lt;!-- headingDivider: 5 -->
+&lt;h1 id="confidence-in-decision-making" >Confidence in decision-making
+&lt;span>
+&lt;a href="#confidence-in-decision-making">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h1>&lt;!-- Show pagination, starting with second slide -->
+&lt;!-- paginate: true -->
+&lt;h2 id="terminology" >Terminology
+&lt;span>
+&lt;a href="#terminology">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="confidence-general-definition" >Confidence: general definition
+&lt;span>
+&lt;a href="#confidence-general-definition">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Everyone knows intuitively what confidence is about, yet it is seldom defined explicitely.&lt;/p>
+&lt;p>In the broadest sense, &lt;strong>confidence quantifies a degree of belief in something or someone&lt;/strong> &lt;a href="https://doi.org/10.1016/j.neuron.2015.09.039">[Meyniel et al., 2015]&lt;/a>.&lt;/p>
+&lt;p>It is fundamentally linked to its object: a thought, a choice, an external actor, etc.&lt;/p>
+&lt;h3 id="belief" >Belief
+&lt;span>
+&lt;a href="#belief">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>A belief is &lt;strong>a feeling of certainty about a proposition&lt;/strong> (i.e. a statement or a decision). It is a subjective, conscious experience.&lt;/p>
+&lt;p>Note: regarding perceptions, our belief usually matches our perceptual experience, but not always &lt;a href="https://journals.sagepub.com/doi/10.1177/0301006620928010">[Mamassian, 2020]&lt;/a>.&lt;/p>
+&lt;p>&lt;img src="images/belief_perception_gap.png" alt="Belief-perception gap">&lt;/p>
+&lt;h3 id="uncertainty" >Uncertainty
+&lt;span>
+&lt;a href="#uncertainty">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Generally speaking, uncertainty (or incertitude) characterizes situations involving &lt;strong>imperfect, noisy or unknown information&lt;/strong>.&lt;/p>
+&lt;p>In decision-making, uncertainty refers to &lt;strong>the variability in the representation of information before a decision is taken&lt;/strong> &lt;a href="https://journals.sagepub.com/doi/10.1177/0301006620928010">[Mamassian, 2021]&lt;/a>.&lt;/p>
+&lt;p>To perform well, the brain needs to be effective at dealing with many uncertainties, some of them external (changes in world state or sensorimotor variability), others internal (cognitive variables, timing or abstract states). Uncertainty is inherent to all stages of neural computation.&lt;/p>
+&lt;h3 id="confidence-updated-definition" >Confidence: updated definition
+&lt;span>
+&lt;a href="#confidence-updated-definition">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>In decision-making, confidence can be seen as &lt;strong>the subjective estimate of decision quality&lt;/strong> &lt;a href="https://www.nature.com/articles/s41467-021-27618-5">[Brus et al., 2021]&lt;/a>.&lt;/p>
+&lt;p>More formally, it can be defined as &lt;strong>the probability that a choice is correct given the evidence&lt;/strong> &lt;a href="https://www.nature.com/articles/nn.4240">[Pouget et al., 2016]&lt;/a>.&lt;/p>
+&lt;p>Confidence is a form of certainty. A key difference is that contrary to confidence, (un)certainties are &lt;em>decision independant&lt;/em>. &lt;strong>Confidence quantifies the degree of certainty associated to a decision&lt;/strong>.&lt;/p>
+&lt;h3 id="trust" >Trust
+&lt;span>
+&lt;a href="#trust">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Trust is a social construct: &lt;strong>the belief that someone or something will behave or perform as expected&lt;/strong>. It implies a relationship between a &lt;em>trustor&lt;/em> and a &lt;em>trustee&lt;/em>.&lt;/p>
+&lt;p>&lt;strong>Self-confidence&lt;/strong> is trust in one&amp;rsquo;s abilities.&lt;/p>
+&lt;h3 id="error-monitoring" >Error monitoring
+&lt;span>
+&lt;a href="#error-monitoring">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>In decision-making, error monitoring (EM) is &lt;strong>the process by which one is able to detect his/her errors as soon as a response has been made&lt;/strong> &lt;a href="https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0416">[Yeung &amp;amp; Summerfield, 2012]&lt;/a>.&lt;/p>
+&lt;p>EM allows adaptation of behavior both in the short and longer terms through gradual learning of actions&amp;rsquo; outcomes.&lt;/p>
+&lt;h3 id="metacognition" >Metacognition
+&lt;span>
+&lt;a href="#metacognition">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Confidence judgments and error monitoring are two related aspects of metacognition (sometimes called &lt;em>higher order thinking&lt;/em>).&lt;/p>
+&lt;p>First described in &lt;a href="https://www.semanticscholar.org/paper/Metacognition-and-Cognitive-Monitoring%3A-A-New-Area-Flavell/ee652f0f63ed5b0cfe0af4cb4ea76b2ecf790c8d">[Flavell, 1979]&lt;/a>, metacognition can be defined as &lt;strong>the ability to consider, understand and regulate one&amp;rsquo;s cognitive processes&lt;/strong>. It is a key skill to adapt to complex problems and changing environments.&lt;/p>
+&lt;hr>
+&lt;p>Metacognition is classicaly divided into two subprocesses: &lt;strong>monitoring&lt;/strong> and &lt;strong>control&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="images/metacognition_diagram.png" alt="Metacognition diagram">&lt;/p>
+&lt;h4 id="example-of-metacognition-metaperception" >Example of metacognition: metaperception
+&lt;span>
+&lt;a href="#example-of-metacognition-metaperception">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>&lt;img src="images/metaperception.png" alt="Metaperception">&lt;/p>
+&lt;p>&lt;a href="https://journals.sagepub.com/doi/10.1177/0301006620928010">[Mamassian, 2020]&lt;/a>&lt;/p>
+&lt;h3 id="cognitive-control" >Cognitive control
+&lt;span>
+&lt;a href="#cognitive-control">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Cognitive control refers to &lt;strong>the intentional selection of thoughts, emotions, and behaviors based on current task demands and social context, and the concomitant suppression of inappropriate habitual actions&lt;/strong> &lt;a href="https://www.annualreviews.org/content/journals/10.1146/annurev.neuro.24.1.167">[Miller and Cohen, 2001]&lt;/a>.&lt;/p>
+&lt;p>In simpler terms, cognitive control allows adapting our behaviour on-the-fly to improve performance.&lt;/p>
+&lt;h2 id="measuring-confidence" >Measuring confidence
+&lt;span>
+&lt;a href="#measuring-confidence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="experimental-tasks" >Experimental tasks
+&lt;span>
+&lt;a href="#experimental-tasks">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Their setup is similar to those used to study &lt;a href="../decision_making/README.md">decision-making&lt;/a>. The major difference is that before or (more frequently) after taking a decision (a &lt;em>type 1&lt;/em> task), subjects express their confidence about it (a &lt;em>type 2&lt;/em> task).&lt;/p>
+&lt;p>Example of type 1 task: is the &lt;a href="http://neuroanatody.com/2016/05/whats-in-a-gabor-patch/">Gabor patch&lt;/a> tilted to the left or to the right?&lt;/p>
+&lt;p>&lt;img src="images/gabor_patch.png" alt="Gabor patch">&lt;/p>
+&lt;h4 id="flow-of-information-for-a-perceptual-task" >Flow of information for a perceptual task
+&lt;span>
+&lt;a href="#flow-of-information-for-a-perceptual-task">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>&lt;img src="images/confidence_information_flow.png" alt="Flow of information for a perceptual task">&lt;/p>
+&lt;p>&lt;a href="https://journals.sagepub.com/doi/10.1177/0301006620928010">[Mamassian, 2020]&lt;/a>&lt;/p>
+&lt;h3 id="measures-of-interest" >Measures of interest
+&lt;span>
+&lt;a href="#measures-of-interest">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Measures of metacognition in experimental tasks seek to estimate the statistical relationship between confidence judgments and objective performance &lt;a href="https://www.annualreviews.org/content/journals/10.1146/annurev-psych-022423-032425">[Fleming, 2024]&lt;/a>.&lt;/p>
+&lt;h4 id="sensitivity" >Sensitivity
+&lt;span>
+&lt;a href="#sensitivity">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Confidence/metacognitive/type 2 sensitivity is &lt;strong>the capacity to correlate confidence judgments and objective task performance&lt;/strong>.&lt;/p>
+&lt;p>For example, being confident when taking correct decisions and less confident otherwise demonstrates a high degree of sensitivity.&lt;/p>
+&lt;p>Sensitivity is often affected by task performance itself: an individual will appear to have greater sensitivity on an easy task compared to a hard task &lt;a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00443/full">[Fleming and Lau, 2014]&lt;/a>.&lt;/p>
+&lt;h4 id="bias" >Bias
+&lt;span>
+&lt;a href="#bias">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Confidence/metacognitive/type 2 bias is &lt;strong>a difference in subjective confidence despite constant task performance&lt;/strong>.&lt;/p>
+&lt;p>Under- and over-confidence are examples of biases.&lt;/p>
+&lt;p>&lt;img src="images/sensitivity_vs_bias.png" alt="Sensitivity Vs bias">&lt;/p>
+&lt;blockquote>
+&lt;p>Real confidence distributions are unlikely to be Gaussian.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00443/full">[Fleming and Lau, 2014]&lt;/a>&lt;/p>
+&lt;h4 id="efficiency" >Efficiency
+&lt;span>
+&lt;a href="#efficiency">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Confidence/metacognitive efficiency (or capacity) is &lt;strong>the level of sensitivity given a certain level of task performance&lt;/strong>.&lt;/p>
+&lt;p>It is measured relative to a particular task performance level.&lt;/p>
+&lt;h3 id="measurement-methods" >Measurement methods
+&lt;span>
+&lt;a href="#measurement-methods">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="confidence-ratings" >Confidence ratings
+&lt;span>
+&lt;a href="#confidence-ratings">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>&lt;img src="images/confidence_ratings.png" alt="Confidence ratings">&lt;/p>
+&lt;p>After a decision, the subject is asked to evaluate its correctness, using a dedicated scale.&lt;/p>
+&lt;p>Simple and frequently used, this method has several drawbacks: intersubject variability regarding bias and scale usage, and possible confusions between type 1 and type 2 judgments &lt;a href="https://journals.sagepub.com/doi/10.1177/0301006620928010">[Mamassian, 2020]&lt;/a>.&lt;/p>
+&lt;h4 id="post-decision-wagering" >Post-decision wagering
+&lt;span>
+&lt;a href="#post-decision-wagering">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>After a decision, subjects are asked to gamble on whether their response was correct. If the decision is correct, the wager amount is kept &lt;a href="https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0417">[Fleming and Dolan, 2012]&lt;/a>.&lt;/p>
+&lt;p>The amount of the bet is assumed to reflect a subject’s confidence in his or her decision.&lt;/p>
+&lt;h4 id="opt-out-paradigm" >Opt-out paradigm
+&lt;span>
+&lt;a href="#opt-out-paradigm">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>&lt;img src="images/confidence_opt_out.png" alt="Confidence opt-out">&lt;/p>
+&lt;p>In most but not all the trials, the subject has the option to decline the decision task and receive a smaller reward.&lt;/p>
+&lt;p>This paradigm is well suited to experiments with animals, which cannot explicitely report their confidence.&lt;/p>
+&lt;p>One challenge is to avoid confounding it with a three-alternative forced choice &lt;a href="https://royalsocietypublishing.org/doi/10.1098/rstb.2012.0037">[Kepecs et al., 2912]&lt;/a>.&lt;/p>
+&lt;h4 id="confidence-forced-choice" >Confidence forced choice
+&lt;span>
+&lt;a href="#confidence-forced-choice">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>&lt;img src="images/confidence_forced_choice.png" alt="Confidence forced choice">&lt;/p>
+&lt;p>After two decisions, the subject has to choose which one is more likely to be correct.&lt;/p>
+&lt;p>One benefit of this paradigm is that it disregards confidence biases to focus on sensitivity &lt;a href="https://journals.sagepub.com/doi/10.1177/0301006620928010">[Mamassian, 2020]&lt;/a>.&lt;/p>
+&lt;h2 id="computing-confidence" >Computing confidence
+&lt;span>
+&lt;a href="#computing-confidence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="context" >Context
+&lt;span>
+&lt;a href="#context">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Let&amp;rsquo;s consider a simple two-alternative forced choice decision task.&lt;/p>
+&lt;p>Assuming that post-decisional confidence was measured on a binary scale (high/low), we can count the number of confidence ratings assigned to each judgment in the following type 2 table.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Type 1 decision&lt;/th>
+&lt;th>Low confidence&lt;/th>
+&lt;th>High confidence&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Incorrect&lt;/td>
+&lt;td>True Negatives ($TN_2$)&lt;/td>
+&lt;td>False Positives ($FP_2$)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Correct&lt;/td>
+&lt;td>False Negatives ($FN_2$)&lt;/td>
+&lt;td>True Positives ($TP_2$)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="statistical-correlation" >Statistical correlation
+&lt;span>
+&lt;a href="#statistical-correlation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>The simplest measure of confidence sensitivity is the &lt;a href="https://en.wikipedia.org/wiki/Phi_coefficient">$\phi$ coefficient&lt;/a> (a.k.a. Pearson $r$ correlation for binary variables) between task performance and confidence measurements.&lt;/p>
+&lt;p>$$\phi = \frac{(TN_2 &lt;em>TP_2 - FN_2&lt;/em>FP_2)}{\sqrt{(TP_2+FP_2)(TP_2+FN_2)(TN_2+FP_2)(TN_2+FN_2)}}$$&lt;/p>
+&lt;blockquote>
+&lt;p>This metric is equivalent to the &lt;em>Matthews Correlation Coefficient&lt;/em> (MCC) used in Machine Learning &lt;a href="https://biodatamining.biomedcentral.com/articles/10.1186/s13040-023-00322-4">[Chicco and Jurman, 2023]&lt;/a>.&lt;/p>
+&lt;/blockquote>
+&lt;p>Another possible way of computing correlation is the &lt;em>Goodman-Kruskal gamma coefficient&lt;/em> $G$.&lt;/p>
+&lt;p>Unfortunately, both $\phi$ and $G$ can be affected by bias.&lt;/p>
+&lt;h3 id="signal-detection-theory" >Signal Detection Theory
+&lt;span>
+&lt;a href="#signal-detection-theory">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>SDT is a framework for analyzing decision making in the presence of uncertainty.&lt;/p>
+&lt;p>Originally developped in the mid-20th century to assess how faithfully a radar operator is able to separate signal from noise, it has applications in many fields (psychology, diagnostics, quality control, etc).&lt;/p>
+&lt;p>SDT&amp;rsquo;s main virtue is its ability to disentangle sensitivity from bias in a decision process.&lt;/p>
+&lt;h4 id="conceptual-overview" >Conceptual overview
+&lt;span>
+&lt;a href="#conceptual-overview">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;h5 id="context-1" >Context
+&lt;span>
+&lt;a href="#context-1">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;p>In an experiment where stimuli or signals were either present or absent, and the subject categorized each trial as having the stimulus/signal present or absent, the trials are sorted into one of four categories in the following type 1 table.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Stimulus or signal&lt;/th>
+&lt;th>Response: &amp;ldquo;absent&amp;rdquo;&lt;/th>
+&lt;th>Response: &amp;ldquo;present&amp;rdquo;&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Absent&lt;/td>
+&lt;td>Correct Rejections ($TN_1$)&lt;/td>
+&lt;td>False Alarms ($FP_1$)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Present&lt;/td>
+&lt;td>Misses ($FN_1$)&lt;/td>
+&lt;td>Hits ($TP_1$)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h5 id="discrimination-metrics" >Discrimination metrics
+&lt;span>
+&lt;a href="#discrimination-metrics">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;p>&lt;em>True Positive Rate (TPR)&lt;/em> a.k.a. &lt;em>hit rate&lt;/em> is the proportion of hits in the presence of stimulus/signal. It quantifies how well a decision maker can identify true positives.&lt;/p>
+&lt;p>&lt;em>False Positive Rate (FPR)&lt;/em> a.k.a. &lt;em>false alarm rate&lt;/em> is the proportion of false alarms in the absence of stimulus/signal.&lt;/p>
+&lt;p>$$\text{TPR}_1 = \frac{TP_1}{TP_1 + FN_1}$$&lt;/p>
+&lt;p>$$\text{FPR}_1 = \frac{FP_1}{TN_1+FP_1}$$&lt;/p>
+&lt;blockquote>
+&lt;p>$\text{TPR}_1$ is equivalent to the &lt;em>recall&lt;/em> metric used in Machine Learning.&lt;/p>
+&lt;/blockquote>
+&lt;h5 id="probability-distributions" >Probability distributions
+&lt;span>
+&lt;a href="#probability-distributions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;p>SDT represents a decision as a comparison between a &lt;em>decision variable&lt;/em> (DV), derived from a single piece of sensory evidence, and a &lt;em>criterion&lt;/em> (the threshold between &amp;ldquo;absent&amp;rdquo; and &amp;ldquo;present&amp;rdquo; responses).&lt;/p>
+&lt;p>Since evidence is affected by perturbations such as neural noise and fluctuation in attention, the DV can be modelized as a random variable described by a probability distribution.&lt;/p>
+&lt;p>More precisely, SDT assumes that the distributions of DV values in the presence or absence of stimulus/signal are Gaussian with equal variance.&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/sdt_standard.png" alt="Standard model of SDT">&lt;/p>
+&lt;p>&lt;a href="https://wires.onlinelibrary.wiley.com/doi/10.1002/wcs.1628">[Michel, 2023]&lt;/a>&lt;/p>
+&lt;h5 id="example" >Example
+&lt;span>
+&lt;a href="#example">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;p>&lt;img src="images/sdt_example.png" alt="Example of criterion choice">&lt;/p>
+&lt;p>With this criterion choice, the TPR (shaded region of the signal distribution) is 0.9332 and the FPR (shaded region of the noise distribution) is 0.3085 &lt;a href="https://link.springer.com/article/10.3758/BF03207704">[Stanislaw and Todorov, 1999]&lt;/a>.&lt;/p>
+&lt;h4 id="type-1-sensitivity-index" >Type 1 sensitivity index
+&lt;span>
+&lt;a href="#type-1-sensitivity-index">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Type 1 sensitivity/discriminability index $d&amp;rsquo;_1$ is a measure of discrimination performance in the task. It quantifies the sensibility of the decision maker to the presence of the stimulus/signal.&lt;/p>
+&lt;p>$d&amp;rsquo;_1$ quantifies the distance between the means of the signal and noise distributions in standard deviation units. It can be obtained using the inverse cumulative distribution function, which computes the &lt;em>standard score&lt;/em> a.k.a. &lt;em>z-score&lt;/em> associated to a probability &lt;a href="https://link.springer.com/article/10.3758/BF03207704">[Stanislaw and Todorov, 1999]&lt;/a>.&lt;/p>
+&lt;p>$$d&amp;rsquo;_1 = z(\text{TPR}_1) - z(\text{FPR}_1)$$&lt;/p>
+&lt;h4 id="roc-curve-and-auroc" >ROC curve and AUROC
+&lt;span>
+&lt;a href="#roc-curve-and-auroc">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>The ROC curve (&amp;ldquo;Receiver Operating Characteristic&amp;rdquo;) plots TPR vs. FPR for each possible value of the decision criterion.&lt;/p>
+&lt;p>AUC, or more precisely AUROC (&amp;ldquo;Area Under the ROC Curve&amp;rdquo;), provides an aggregate measure of performance across all possible decision criterions. It is a way to assess sensitivity independently of bias.&lt;/p>
+&lt;p>This non-parametric approach is free from the equal-variance Gaussian assumption needed for $d&amp;rsquo;$ to be bias-free &lt;a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00443/full">[Fleming and Lau, 2014]&lt;/a>.&lt;/p>
+&lt;h5 id="examples" >Examples
+&lt;span>
+&lt;a href="#examples">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;p>&lt;img src="images/sdt_roc_examples.png" alt="Examples of ROC curves">&lt;/p>
+&lt;p>&lt;a href="https://wires.onlinelibrary.wiley.com/doi/10.1002/wcs.1628">[Michel, 2023]&lt;/a>&lt;/p>
+&lt;h5 id="impact-of-criterion-choice" >Impact of criterion choice
+&lt;span>
+&lt;a href="#impact-of-criterion-choice">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;p>&lt;a href="https://github.com/dariyasydykova/open_projects/tree/master/ROC_animation">&lt;img src="images/auroc_animation.gif" alt="AUROC animation">&lt;/a>&lt;/p>
+&lt;h5 id="impact-of-signal-discriminability" >Impact of signal discriminability
+&lt;span>
+&lt;a href="#impact-of-signal-discriminability">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;p>&lt;a href="https://github.com/dariyasydykova/open_projects/tree/master/ROC_animation">&lt;img src="images/auroc_shape_animation.gif" alt="AUROC shape animation">&lt;/a>&lt;/p>
+&lt;h4 id="type-2-sensitivity-index" >Type 2 sensitivity index
+&lt;span>
+&lt;a href="#type-2-sensitivity-index">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Applying SDT to the type 2 confidence table defined above, we can compute type 2 sensitivity $d&amp;rsquo;_2$ by applying the same formula, using True and False Positive Rates that link accuracy and confidence.&lt;/p>
+&lt;p>$$d&amp;rsquo;_2 = z(\text{TPR}_2) - z(\text{FPR}_2)$$&lt;/p>
+&lt;p>However, the equal-variance Gaussian assumption for distributions is problematic in this case &lt;a href="https://link.springer.com/article/10.3758/BF03196546">[Galvin et al., 2003]&lt;/a>.&lt;/p>
+&lt;h4 id="auroc2" >AUROC2
+&lt;span>
+&lt;a href="#auroc2">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>With multiple confidence ratings, it is possible to construct a type 2 ROC curve by treating each confidence level as a criterion that separates high from low confidence. AUROC2 is then a (theorically) bias-free measure of confidence sensitivity.&lt;/p>
+&lt;p>&lt;img src="images/auroc2.png" alt="Example of ROC curve for confidence">&lt;/p>
+&lt;p>&lt;a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00443/full">[Fleming and Lau, 2014]&lt;/a>&lt;/p>
+&lt;h4 id="meta-d" >Meta-d'
+&lt;span>
+&lt;a href="#meta-d">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>This measure exploits the fact that given Gaussian variance assumptions at the type 1 level, the shapes of the type 2 distributions are known even if they are not themselves Gaussian. More precisely, the type 2 ROC curve is entirely determined by type 1 sensitivity if the subject is metacognitively ideal (perfect in placing their confidence ratings).&lt;/p>
+&lt;p>Using this assumption and given the subject’s type 2 performance data, we can thus obtain the underlying type 1 sensitivity. This measure is called meta-$d&amp;rsquo;$. It estimates the level of type 1 performance ($d′_1$) that would have given rise to the observed type 2 data &lt;a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00443/full">[Fleming and Lau, 2014]&lt;/a> (&lt;a href="https://www.columbia.edu/~bsm2105/type2sdt/">more details&lt;/a>).&lt;/p>
+&lt;h4 id="m-ratio" >M-ratio
+&lt;span>
+&lt;a href="#m-ratio">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Because meta-$d′$ is in the same units as (type 1) $d′$, the two can be directly compared.&lt;/p>
+&lt;p>We can define confidence efficiency as the value of meta-$d′$ relative to $d′$, or meta-$d&amp;rsquo;/d&amp;rsquo;$. This measure is called the M-ratio.&lt;/p>
+&lt;p>An alternative measure is meta-$d&amp;rsquo;-d&amp;rsquo;$, favored when $d&amp;rsquo;$ takes small values &lt;a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00443/full">[Fleming and Lau, 2014]&lt;/a>.&lt;/p>
+&lt;h3 id="evidence-accumulation-models" >Evidence Accumulation Models
+&lt;span>
+&lt;a href="#evidence-accumulation-models">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>In contrast to models inspired by SDT (which is silent on decision time), accumulation of evidence models assume that new sensory evidence becomes available over time until a decision is reached.&lt;/p>
+&lt;p>The number of accumulators may vary from only one (à la Drift Diffusion Model) to several ones, more or less partially correlated (for example, using mutual inhibition).&lt;/p>
+&lt;h4 id="balance-of-evidence" >Balance of Evidence
+&lt;span>
+&lt;a href="#balance-of-evidence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>In a multi-accumulator model, confidence can be seen as the distance between them at the time of decision (i.e. threshold reached). This measure is called the &lt;em>Balance of Evidence&lt;/em> (BoE) &lt;a href="https://www.annualreviews.org/content/journals/10.1146/annurev-vision-111815-114630">[Mamassian, 2016]&lt;/a>.&lt;/p>
+&lt;p>&lt;img src="images/BoE.png" alt="Balance of Evidence example">&lt;/p>
+&lt;p>In a DDM-like model, confidence is taken to be the current position of the accumulated evidence.&lt;/p>
+&lt;h4 id="two-stage-dynamic-signal-detection" >Two-stage Dynamic Signal Detection
+&lt;span>
+&lt;a href="#two-stage-dynamic-signal-detection">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Other approaches like the &lt;em>Two-stage Dynamic Signal Detection&lt;/em> (2DSD) model postulate that the accumulation process continues after a decision has been made. The ultimate location of accumulated evidence serves as a proxy for confidence.&lt;/p>
+&lt;p>These approaches of confidence formation may help explain some experimentaly reported phenomena like post-decisional changes of mind.&lt;/p>
+&lt;p>&lt;img src="images/2DSD.png" alt="2DSD model">&lt;/p>
+&lt;p>&lt;a href="https://psycnet.apa.org/doiLanding?doi=10.1037%2Fa0019737">[Pleskac and Busemeyer, 2010]&lt;/a>&lt;/p>
+&lt;h2 id="whats-next" >What&amp;rsquo;s next?
+&lt;span>
+&lt;a href="#whats-next">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="neural-basis-of-confidence" >Neural basis of confidence
+&lt;span>
+&lt;a href="#neural-basis-of-confidence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Numerous studies demonstrate that the brain tracks uncertainty about a wide range of quantities and that such uncertainty informs metacognitive processes, such as confidence judgments &lt;a href="https://www.annualreviews.org/content/journals/10.1146/annurev-psych-022423-032425">[Fleming, 2024]&lt;/a>.&lt;/p>
+&lt;p>Activity in the parietal cortex seems related to evidence accumulation during decision-making.&lt;/p>
+&lt;p>Convergent findings emphasize the importance of the prefrontal cortex, more precisely the ventromedial prefrontal cortex (vmPFC), in the formation of confidence.&lt;/p>
+&lt;p>Many results suggest that there are separate and perhaps multiple brain areas involved in confidence monitoring and reporting &lt;a href="https://www.sciencedirect.com/science/article/pii/S0149763415001025?via%3Dihub">[Grimaldi et al., 2015]&lt;/a>.&lt;/p>
+&lt;h3 id="usages-of-confidence" >Usages of confidence
+&lt;span>
+&lt;a href="#usages-of-confidence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>As part of metacognitive monitoring, confidence judgments may inform the processes of cognitive control.&lt;/p>
+&lt;p>Having an explicit representation of the confidence of a perceptual decision may help us compute the risk of being wrong ($1 - \text{confidence}$).&lt;/p>
+&lt;p>Having a good confidence sensitivity will also give us the possibility to allocate appropriate resources to a task.&lt;/p>
+&lt;p>Good confidence can also help us appreciate whether and how we can control the environment.&lt;/p></description></item><item><title/><link>https://www.bpesquet.fr/talks/decision-making/</link><pubDate>Mon, 29 Jan 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/decision-making/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+&lt;!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
+&lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
+&lt;!-- headingDivider: 5 -->
+&lt;h1 id="introduction-to-the-theory-of-decision-making" >Introduction to the theory of decision-making
+&lt;span>
+&lt;a href="#introduction-to-the-theory-of-decision-making">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h1>&lt;!-- Show pagination, starting with second slide -->
+&lt;!-- paginate: true -->
+&lt;h2 id="terminology" >Terminology
+&lt;span>
+&lt;a href="#terminology">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="decision-and-decision-making" >Decision and decision-making
+&lt;span>
+&lt;a href="#decision-and-decision-making">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>A &lt;strong>decision&lt;/strong> is &amp;ldquo;a deliberative process that results in the commitment to a categorical proposition.&amp;rdquo; &lt;a href="https://www.annualreviews.org/content/journals/10.1146/annurev.neuro.29.051605.113038">[Gold and Shadlen, 2007]&lt;/a>&lt;/p>
+&lt;p>People make thousands of (big and small) decisions everyday. A few examples:&lt;/p>
+&lt;ul>
+&lt;li>Choosing what pair of socks to wear.&lt;/li>
+&lt;li>Deciding on a TV series to watch.&lt;/li>
+&lt;li>Choosing one&amp;rsquo;s next car/bike.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Decision-making&lt;/strong> designates the cognitive process(es) resulting in a decision.&lt;/p>
+&lt;h3 id="the-sequential-nature-of-decision-making" >The sequential nature of decision-making
+&lt;span>
+&lt;a href="#the-sequential-nature-of-decision-making">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Humans and animals make their decisions after a &lt;strong>deliberation&lt;/strong> phase.&lt;/p>
+&lt;p>Many decisions are based on information that unfolds over time (example: cues for solving an homicide).&lt;/p>
+&lt;p>Even if all informative data is immediately available (example: a chess position), it has to be treated &lt;strong>sequentially&lt;/strong> by our nervous system, reflecting its inability to process information simultaneously.&lt;/p>
+&lt;h3 id="from-stimulus-to-response" >From stimulus to response
+&lt;span>
+&lt;a href="#from-stimulus-to-response">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;strong>Decision-making&lt;/strong> can be formalized as the mapping from a stimulus to a response.&lt;/p>
+&lt;p>Time between stimulus and response execution is called &lt;strong>Reaction Time&lt;/strong> or &lt;strong>Response Time&lt;/strong> (RT) &lt;a href="https://www.annualreviews.org/content/journals/10.1146/annurev-psych-122414-033645">[Forstmann et al., 2016]&lt;/a>, &lt;a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.1039172/full">[Myers et al., 2022]&lt;/a>.&lt;/p>
+&lt;p>$$RT = T_e+T_d+T_r$$&lt;/p>
+&lt;p>$T_{er}= T_e+T_r$ is called &lt;strong>non-decision time&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="images/response_time.png" alt="Response Time">&lt;/p>
+&lt;h3 id="speedaccuracy-tradeoff" >Speed/accuracy tradeoff
+&lt;span>
+&lt;a href="#speedaccuracy-tradeoff">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>All decisions are made under time pressure &lt;a href="https://www.annualreviews.org/content/journals/10.1146/annurev-psych-122414-033645">[Forstmann et al., 2016]&lt;/a>. The balance between response time and accuracy is called the &lt;strong>speed/accuracy trade-off&lt;/strong>.&lt;/p>
+&lt;p>It is at least partially under conscious control: decision-makers can decide to make faster decisions at the expense of an higher error rate, or slower, more accurate decisions &lt;a href="https://www.sciencedirect.com/science/article/pii/S1364661316000255?via%3Dihub">[Ratcliff et al., 2016]&lt;/a>. This complicates the interpretation of behavioral data.&lt;/p>
+&lt;p>Ideally, what is needed is a way to evaluate data that considers not only accuracy and speed, but the interaction between them &lt;a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.1039172/full">[Myers et al., 2022]&lt;/a>.&lt;/p>
+&lt;h2 id="modeling-speeded-decision-making" >Modeling speeded decision-making
+&lt;span>
+&lt;a href="#modeling-speeded-decision-making">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="context" >Context
+&lt;span>
+&lt;a href="#context">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>One approach to understanding decision-making is through &lt;strong>computational models&lt;/strong>.&lt;/p>
+&lt;p>Several models have been developed to account for the speed/accuracy trade-off and explain how people and animals make decisions under time pressure.&lt;/p>
+&lt;p>Historically, most research on the dynamics of decision-making has been focused on simple, repeatable problems involving fast binary-choice decisions with one correct answer.&lt;/p>
+&lt;h4 id="task-examples" >Task examples
+&lt;span>
+&lt;a href="#task-examples">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Lexical decision tasks: pressing one key if the stimulus is a word or another if it is a non-word.&lt;/li>
+&lt;li>&lt;a href="https://en.wikipedia.org/wiki/Stroop_effect">Stroop tasks&lt;/a>.&lt;/li>
+&lt;li>Saccadic flanker tasks: moving the eye in the direction indicated by a central stimulus, ignoring the directionality of flanker stimuli.&lt;/li>
+&lt;li>&lt;em>Random Dot Kinematogram&lt;/em> (RDK): judging whether a subset of dots move to the left or to the right.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/rdk.png" alt="RDK">&lt;/p>
+&lt;h4 id="measures-of-interest" >Measures of interest
+&lt;span>
+&lt;a href="#measures-of-interest">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Response times (RTs) for correct responses and for error responses.&lt;/li>
+&lt;li>Distributions of RTs across trials.&lt;/li>
+&lt;li>Proportion of correct responses (accuracy).&lt;/li>
+&lt;/ul>
+&lt;h3 id="the-cognitive-processes-of-decision-making" >The cognitive processes of decision-making
+&lt;span>
+&lt;a href="#the-cognitive-processes-of-decision-making">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/decision-making_processes.png" alt="Cognitive processes of decision-making">&lt;/p>
+&lt;p>&lt;a href="https://www.sciencedirect.com/science/article/pii/S1364661307000290?via%3Dihub">[Bogacz, 2007]&lt;/a>&lt;/p>
+&lt;h3 id="sequential-sampling" >Sequential sampling
+&lt;span>
+&lt;a href="#sequential-sampling">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>A popular class of models assumes that, on each trial, the decision maker accumulates noisy samples of information from the environment until a &lt;strong>threshold&lt;/strong> of evidence is reached.&lt;/p>
+&lt;p>Such accumulation-to-threshold models are known as &lt;strong>sequential sampling models&lt;/strong>, a.k.a. &lt;strong>evidence accumulation models&lt;/strong>.&lt;/p>
+&lt;p>Different approaches to sequential sampling coexist. A key distinction is the number of &lt;strong>accumulators&lt;/strong> (structures for gathering evidence in favor of one response) and whether they are independent from one another.&lt;/p>
+&lt;p>An accumulator is also called a &lt;strong>Decision Variable&lt;/strong> (DV).&lt;/p>
+&lt;h4 id="example-sequential-sampling-for-rdk" >Example: sequential sampling for RDK
+&lt;span>
+&lt;a href="#example-sequential-sampling-for-rdk">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>&lt;img src="images/eam_rdk.png" alt="Sequential sampling for RDK">&lt;/p>
+&lt;h4 id="the-sequential-sampling-model-family" >The sequential sampling model family
+&lt;span>
+&lt;a href="#the-sequential-sampling-model-family">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>&lt;img src="images/sequential_sampling_models.png" alt="Sequential Sampling model landscape">&lt;/p>
+&lt;h3 id="accumulator-models" >Accumulator models
+&lt;span>
+&lt;a href="#accumulator-models">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>These models, also known as &lt;strong>race models&lt;/strong>, have independent accumulators (typically one per possible choice) and an &lt;strong>absolute&lt;/strong> evidence response rule (two fixed thresholds, once for each accumulator). The process stops once one of the accumulators reaches its threshold.&lt;/p>
+&lt;p>&lt;img src="images/race_model.png" alt="Illustration of an accumulator model">&lt;/p>
+&lt;h3 id="random-walk-models" >Random walk models
+&lt;span>
+&lt;a href="#random-walk-models">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>These models use a &lt;strong>relative&lt;/strong> evidence rule: a response is initiated as soon as the difference in accumulated evidence reaches a predefined threshold, also called a &lt;strong>criterion&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="images/random_walk.png" alt="Illustration of a random walk model">&lt;/p>
+&lt;h4 id="problem-example-the-gamblers-ruin" >Problem example: the gambler&amp;rsquo;s ruin
+&lt;span>
+&lt;a href="#problem-example-the-gamblers-ruin">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Two gamblers A and B have a (possibly different) starting capital and play a series of independant games against each other. Every game has a fixed chance $p$ of being won by gambler A. After each game, the winner obtains one unit of the other player’s capital. The process continues until one of the gamblers is bankrupt.&lt;/p>
+&lt;p>This problem can be modelised as a random walk, with $p$ representing the &lt;strong>drift&lt;/strong> of the process. Depending on the value of $p$, the process will drift towards one of the thresholds (gambler B’s bankruptcy if $p&amp;gt;0.5$).&lt;/p>
+&lt;h4 id="mathematical-formulation" >Mathematical formulation
+&lt;span>
+&lt;a href="#mathematical-formulation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>$K$: number of possible states of the world. For binary choices, $K=2$.&lt;/li>
+&lt;li>$h_k, k \in [1,K]$: hypothesis (state). Examples: dot movement type, presence of a stimulus, etc.&lt;/li>
+&lt;li>$H_k, k \in [1,K]$: choice associated with hypothesis $h_k$.&lt;/li>
+&lt;li>$P(h_k)$: probability that $h_k$ is true before obtaining any evidence about it.&lt;/li>
+&lt;li>$n$: number of evidences received.&lt;/li>
+&lt;li>$e_i, i \in [1,n]$: evidence (noisy information) and guiding commitment to a particular hypothesis $h_k$.&lt;/li>
+&lt;li>$P(e_i|h_k)$: likelihood (values that $e_i$ can attain when $h_k$ is true).&lt;/li>
+&lt;/ul>
+&lt;h4 id="sequential-probability-ratio-test" >Sequential Probability Ratio Test
+&lt;span>
+&lt;a href="#sequential-probability-ratio-test">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Particular form of &lt;strong>sequential analysis&lt;/strong> for binary decisions ($K=2$) where the DV is constructed from multiple, independent pieces of evidence $e_1, e_2, \dots, e_n$ as the logarithm of the likelihood ratio between hypotheses $h_1$ and $h_2$.&lt;/p>
+&lt;p>$$DV_n = \sum_{i=1}^n log_e \frac{P(e_i|h_1)}{P(e_i|h_2)} = \sum_{i=1}^n w_i$$&lt;/p>
+&lt;ul>
+&lt;li>$w_i, i \in [1,n]$: weight of the $i$th evidence.&lt;/li>
+&lt;/ul>
+&lt;p>The DV is updated with new pieces of evidence until reaching a criterion.&lt;/p>
+&lt;p>SPRT is the most efficient statistical test for deciding between two hypotheses on this kind of problem: it achieves a desired error rate with the smallest number of samples, on average [Wald and Wolfowitz, 1948).&lt;/p>
+&lt;h4 id="problem-example-trick-or-fair-coin" >Problem example: trick or fair coin
+&lt;span>
+&lt;a href="#problem-example-trick-or-fair-coin">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Two coins are placed in a bag: one is fair (50% chance of obtaining heads or tails when tossing it), the other not (60/40). One of the coins is drawn from the bag: is it a trick ($h_1$) or a fair ($h_2$) coin? How many tosses are needed for this decision?&lt;/p>
+&lt;p>$$\forall i \in[1,n], w_i=
+\begin{cases}
+\log_e \frac{P(e_{heads}|h_1)}{P(e_{heads}|h_2)} = \log_e \frac{0.6}{0.5} = 0.182 &amp;amp; \text{if toss gives &amp;ldquo;heads&amp;rdquo;} \
+\log_e \frac{P(e_{tails}|h_1)}{P(e_{tails}|h_2)} = \log_e \frac{0.4}{0.5} = -0.223 &amp;amp; \text{if toss gives &amp;ldquo;tails&amp;rdquo;}
+\end{cases}$$&lt;/p>
+&lt;p>$$\text{If}\ DV_n \ge \frac{1-\alpha}{\alpha}, \text{answer &amp;ldquo;trick&amp;rdquo;.}\ \text{If}\ DV_n \le \frac{\alpha}{1-\alpha}, \text{answer &amp;ldquo;fair&amp;rdquo;.}$$&lt;/p>
+&lt;p>With $\alpha = P(H_2|h_1) = P(H_1|h_2)$ the probability of misidentifying a coin.&lt;/p>
+&lt;p>For $\alpha=0.05$, a decision happens when $|DV_n| \ge \log_e(19)$.&lt;/p>
+&lt;h3 id="diffusion-models" >Diffusion models
+&lt;span>
+&lt;a href="#diffusion-models">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>When the evidence is continously sampled from a distribution in infinitesimal time steps, the process is termed &lt;strong>diffusion&lt;/strong> with drift $v$. When $v$ is constant, this process is known as &lt;a href="https://en.wikipedia.org/wiki/Brownian_motion">Brownian motion&lt;/a> or Wiener diffusion process &lt;a href="https://www.annualreviews.org/content/journals/10.1146/annurev.neuro.29.051605.113038">[Gold and Shadlen, 2007]&lt;/a>.&lt;/p>
+&lt;p>&lt;img src="images/diffusion_model.png" alt="Diffusion model">&lt;/p>
+&lt;blockquote>
+&lt;p>The diffusion models for decision-making are not to be confused with the &lt;a href="https://en.wikipedia.org/wiki/Diffusion_model">diffusion models of Machine Learning&lt;/a>.&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="the-diffusion-decision-model" >The Diffusion Decision Model
+&lt;span>
+&lt;a href="#the-diffusion-decision-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>This model, also called &lt;strong>Drift Diffusion Model (DDM)&lt;/strong>, is a sequential sampling model for binary choices in continuous environments &lt;a href="https://direct.mit.edu/neco/article-abstract/20/4/873/7299/The-Diffusion-Decision-Model-Theory-and-Data-for?redirectedFrom=fulltext">[Ratcliff and McKoon, 2008]&lt;/a>.&lt;/p>
+&lt;p>Originally designed in the 1970&amp;rsquo;s [Ratcliff, 1978], it has recently experienced a surge in popularity. A growing body of literature is using the DDM to elucidate the cognitive processes of decision-making.&lt;/p>
+&lt;h5 id="parameters" >Parameters
+&lt;span>
+&lt;a href="#parameters">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Typical range&lt;/th>
+&lt;th>Implements&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>$a$&lt;/td>
+&lt;td>Boundary separation&lt;/td>
+&lt;td>$[0.5,2]$ (in arbitrary units)&lt;/td>
+&lt;td>Speed/accuracy trade-off&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$z$&lt;/td>
+&lt;td>Starting point&lt;/td>
+&lt;td>$[0,1]$ (as proportion of $a$)&lt;/td>
+&lt;td>Response bias&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$v$&lt;/td>
+&lt;td>Drift rate&lt;/td>
+&lt;td>$[-5,5]$&lt;/td>
+&lt;td>Speed of evidence accumulation processing&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$T_{er}$&lt;/td>
+&lt;td>Non-decision time&lt;/td>
+&lt;td>$[0.1,0.5]$ (in seconds)&lt;/td>
+&lt;td>Neurological processes for stimulus encoding and motor response&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;img src="images/ddm.png" alt="DDM">&lt;/p>
+&lt;h5 id="mathematical-formulation-1" >Mathematical formulation
+&lt;span>
+&lt;a href="#mathematical-formulation-1">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;p>The DDM assumes that evidence accumulation is governed by:&lt;/p>
+&lt;p>$$dx = vdt + sW$$&lt;/p>
+&lt;ul>
+&lt;li>$x$: accumulated evidence.&lt;/li>
+&lt;li>$v$: drift rate (speed of evidence accumulation).&lt;/li>
+&lt;li>$dt$: time unit. When $dt = 0$, the integration process is continuous in time.&lt;/li>
+&lt;li>$W$: within-trial accumulation white noise.&lt;/li>
+&lt;li>$s$: standard deviation of $W$.&lt;/li>
+&lt;/ul>
+&lt;h5 id="advantages" >Advantages
+&lt;span>
+&lt;a href="#advantages">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;ul>
+&lt;li>Experimental validation has shown that:
+&lt;ul>
+&lt;li>DDM parameters do capture recognizable, and at least partly separable, cognitive processes.&lt;/li>
+&lt;li>DDM provides an explanation for some of the dynamics of neuronal activity in brains.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Several software packages like &lt;a href="https://hddm.readthedocs.io/en/latest/">HDDM&lt;/a> facilitate fitting the model to experimental data, or generating simulated data.&lt;/li>
+&lt;/ul>
+&lt;h5 id="applications" >Applications
+&lt;span>
+&lt;a href="#applications">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;h6 id="behavioral-analysis" >Behavioral analysis
+&lt;span>
+&lt;a href="#behavioral-analysis">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h6>&lt;ul>
+&lt;li>&lt;strong>Aging&lt;/strong>: DDM-based studies showed that older adults had slower non-decision times and set wider boundaries, but their drift rates were not always lower than those of young adults.&lt;/li>
+&lt;li>&lt;strong>IQ&lt;/strong>: DDM-based analyses showed showed that drift rate varied with IQ, but boundary separation and nondecision time did not.&lt;/li>
+&lt;li>Other studies showed that &lt;strong>sleep deprivation&lt;/strong> and &lt;strong>alcohol consumption&lt;/strong> lower drift rate, but have either small or no effect on boundary separation and non-decision time.&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;h6 id="low-level-neuroscience" >Low-level neuroscience
+&lt;span>
+&lt;a href="#low-level-neuroscience">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h6>&lt;p>Studies &lt;a href="https://www.sciencedirect.com/science/article/pii/S1364661300015679?via%3Dihub">[Gold and Shadlen, 2001]&lt;/a> uses DDM as inspiration to interpret neuron firing rates in monkeys as evidence accumulation until a threshold is reached.&lt;/p>
+&lt;p>&lt;img src="images/ddm_firing_rate.png" alt="Firing rate in monkeys">&lt;/p>
+&lt;h6 id="high-level-neuroscience" >High-level neuroscience
+&lt;span>
+&lt;a href="#high-level-neuroscience">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h6>&lt;p>Studies correlate parameter estimates from DDM models to the blood-oxygen-level dependent signal obtained from fMRI experiments in perceptual decision-making.&lt;/p>
+&lt;p>&lt;img src="images/ddm_brain_activity.png" alt="Brain activity &amp;amp; DDM">&lt;/p>
+&lt;h5 id="extension-to-dynamic-thresholds" >Extension to dynamic thresholds
+&lt;span>
+&lt;a href="#extension-to-dynamic-thresholds">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;p>Collapsing-bound models translate the fact that in some cases, decisions are based on less and less evidence as time passes.&lt;/p>
+&lt;p>&lt;img src="images/ddm_dyn_thresholds.png" alt="DDM extension:dynamic thresholds">&lt;/p>
+&lt;h3 id="hybrid-models" >Hybrid models
+&lt;span>
+&lt;a href="#hybrid-models">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="the-leaky-competing-accumulator-model" >The Leaky Competing Accumulator model
+&lt;span>
+&lt;a href="#the-leaky-competing-accumulator-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>This model [Usher and McClelland, 2001] is based on gradual and stochastic accumulation of information in non-linear decision units with &lt;strong>leakage&lt;/strong> (or decay of activation) and competition through &lt;strong>lateral inhibition&lt;/strong>.&lt;/p>
+&lt;h3 id="relationships-between-models" >Relationships between models
+&lt;span>
+&lt;a href="#relationships-between-models">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Cortical models ([Shadlen and Newsome, 2001], [Usher and McClelland, 2001], &lt;a href="https://www.sciencedirect.com/science/article/pii/S0896627302010929?via%3Dihub">[Wang, 2002]&lt;/a>) can be reduced to the diffusion model for parameter values that optimize their performance &lt;a href="https://www.sciencedirect.com/science/article/pii/S1364661307000290?via%3Dihub">[Bogacz, 2007]&lt;/a>.&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/ddm_cortical_models.png" alt="DDM &amp;amp; cortical models">&lt;/p>
+&lt;h3 id="multiple-choice-decisions" >Multiple-choice decisions
+&lt;span>
+&lt;a href="#multiple-choice-decisions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="multihypothesis-sequential-probability-ratio-test" >Multihypothesis Sequential Probability Ratio Test
+&lt;span>
+&lt;a href="#multihypothesis-sequential-probability-ratio-test">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Extension of SPRT to ternary choices in which the rate of integration depends on the fixation of the visual stimulus, as measured through eye-tracking &lt;a href="https://www.pnas.org/doi/full/10.1073/pnas.1101328108">[Krajbich and Rangel, 2011]&lt;/a>.&lt;/li>
+&lt;li>A DV is computed for each item based on the evidence accumulated for that item compared with the highest accumulated evidence for the other items (&lt;em>best-vs-next&lt;/em> approach).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;img src="images/msprt.png" alt="MSPRT">&lt;/p>
+&lt;h4 id="hicks-law" >Hick&amp;rsquo;s law
+&lt;span>
+&lt;a href="#hicks-law">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Increasing the number of choices will increase the decision time &lt;em>logarithmically&lt;/em>.&lt;/li>
+&lt;li>Race models with one accumulator per possible choice produce the opposite trend (more accumulators $\Rightarrow$ faster RT).&lt;/li>
+&lt;/ul>
+&lt;h4 id="the-advantage-linear-ballistic-accumulator-model" >The Advantage Linear Ballistic Accumulator model
+&lt;span>
+&lt;a href="#the-advantage-linear-ballistic-accumulator-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>In this model &lt;a href="https://psycnet.apa.org/doiLanding?doi=10.1037%2Frev0000166">[Van Ravenzwaaij et al., 2020]&lt;/a>, each of the $n$ possible choices is associated to $n-1$ accumulators, each of them driven by the difference (&amp;ldquo;advantage&amp;rdquo;) in evidence versus another response.&lt;/p>
+&lt;h5 id="alba-model-for-binary-choice" >ALBA model for binary choice
+&lt;span>
+&lt;a href="#alba-model-for-binary-choice">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;p>$$v_{1-2} = v_0 + w_d(S_1 - S_2) + w_s(S_1 + S_2)$$&lt;/p>
+&lt;p>$$v_{2-1} = v_0 + w_d(S_2 - S_1) + w_s(S_1 + S_2)$$&lt;/p>
+&lt;ul>
+&lt;li>$v_{i-j}$: drift rate for the accumulator associated with the advantage of stimulus $i$ over $j$.&lt;/li>
+&lt;li>$S_i$: evidence for stimulus $i$.&lt;/li>
+&lt;li>$v_0$: bias parameter.&lt;/li>
+&lt;li>$w_d \in \mathbb{R}^+$: difference weight.&lt;/li>
+&lt;li>$w_s \in \mathbb{R}^+$: sum weight.&lt;/li>
+&lt;/ul>
+&lt;h5 id="alba-model-for-ternary-choice" >ALBA model for ternary choice
+&lt;span>
+&lt;a href="#alba-model-for-ternary-choice">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;p>&lt;em>Win-all&lt;/em> strategy: all accumulators for a choice need to reach their threshold before commiting to a decision.&lt;/p>
+&lt;p>&lt;img src="images/alba_winall.png" alt="ALBA model: win-all strategy">&lt;/p>
+&lt;h2 id="learning-and-decision-making" >Learning and decision-making
+&lt;span>
+&lt;a href="#learning-and-decision-making">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="intertwined-cognitive-processes" >Intertwined cognitive processes
+&lt;span>
+&lt;a href="#intertwined-cognitive-processes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Learning processes refine the internal preferences and representations that inform decisions.&lt;/li>
+&lt;li>The outcomes of decisions underpin feedback-driven learning.&lt;/li>
+&lt;/ul>
+&lt;h3 id="bridging-the-modeling-gap" >Bridging the modeling gap
+&lt;span>
+&lt;a href="#bridging-the-modeling-gap">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Feedback-driven learning models&lt;/strong>, typically using &lt;em>softmax&lt;/em> to map action values to choices, do not provide a description of the cognitive processes that lead to a specific decision, and disregard RT.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Evidence accumulation models&lt;/strong> like the DDM are typically applied to tasks that minimize the influence of learning. Very few attempts have been made to adapt these models to situations in which decisions are followed by &lt;strong>rewards&lt;/strong>, thereby producing &lt;strong>learning effects&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Recent efforts are trying to combine &lt;a href="https://github.com/bpesquet/mlcourse/blob/main/notes/rl_introduction/README.md">Reinforcement Learning&lt;/a> and EAM into joint models that should be able to:&lt;/p>
+&lt;ul>
+&lt;li>predict choices and RT;&lt;/li>
+&lt;li>describe how learning affects the decision process.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="common-choices" >Common choices
+&lt;span>
+&lt;a href="#common-choices">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="model-design" >Model design
+&lt;span>
+&lt;a href="#model-design">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>The RL-EAM model family has two components:&lt;/p>
+&lt;ul>
+&lt;li>a &lt;strong>learning&lt;/strong> component, using RL to update options&amp;rsquo; value representations (the expected rewards for each choice), known as &lt;em>Q-values&lt;/em>, after each trial;&lt;/li>
+&lt;li>a &lt;strong>decision&lt;/strong> component, relying on a EAM to map value representations to the final choice for a trial.&lt;/li>
+&lt;/ul>
+&lt;h4 id="q-values-update" >Q-values update
+&lt;span>
+&lt;a href="#q-values-update">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>All models update the Q-values of possible choices according to the &lt;em>delta update rule&lt;/em>:&lt;/p>
+&lt;p>$$Q_{i,t+1} = Q_{i,t} + \alpha(r_t - Q_{i,t})$$&lt;/p>
+&lt;ul>
+&lt;li>$Q_{i,t}$: value representation of choice $i$ on trial $t$.&lt;/li>
+&lt;li>$r_t$: reward received on trial $t$.&lt;/li>
+&lt;li>$\alpha \in [0,1]$: learning rate.&lt;/li>
+&lt;/ul>
+&lt;p>The difference $r_t - Q_{i,t}$ between actual reward and value representation is called the &lt;em>reward prediction error&lt;/em>.&lt;/p>
+&lt;h3 id="the-rl-ddm-model" >The RL-DDM model
+&lt;span>
+&lt;a href="#the-rl-ddm-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>This model &lt;a href="https://link.springer.com/article/10.3758/s13423-018-1554-2">[Fontanesi et al., 2019]&lt;/a> assumes that the drift rate depends linearly on the difference of value representations between the two possible choices.&lt;/p>
+&lt;p>$$v_t = w(Q_{1,t}-Q_{2,t})$$&lt;/p>
+&lt;p>$$dx = w(Q_1-Q_2)dt + sW$$&lt;/p>
+&lt;ul>
+&lt;li>$v_t$: drift rate at time step $t$.&lt;/li>
+&lt;li>$w$: weighting factor.&lt;/li>
+&lt;/ul>
+&lt;h3 id="the-rl-racing-diffusion-model" >The RL-Racing Diffusion model
+&lt;span>
+&lt;a href="#the-rl-racing-diffusion-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>This model assumes that accumulators independently accrue evidence for one choice option each, both racing toward a common threshold (assuming no response bias).&lt;/p>
+&lt;p>$$v_t = V_0 + wQ_i$$&lt;/p>
+&lt;p>$$dx_i = (V_0 + wQ_i)dt +sW$$&lt;/p>
+&lt;ul>
+&lt;li>$x_i$: accumulated evidence for choice $i$.&lt;/li>
+&lt;li>$V_0$: drift rate in the absence of any evidence, identical accross accumulators (additive urgency signal).&lt;/li>
+&lt;/ul>
+&lt;h3 id="the-rl-advantage-racing-diffusion-model" >The RL-Advantage Racing Diffusion model
+&lt;span>
+&lt;a href="#the-rl-advantage-racing-diffusion-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>This model &lt;a href="https://elifesciences.org/articles/63055">[Miletić et al., 2021]&lt;/a> uses an ALBA architecture &lt;a href="https://psycnet.apa.org/doiLanding?doi=10.1037%2Frev0000166">[Van Ravenzwaaij et al., 2020]&lt;/a> as its decision component.&lt;/p>
+&lt;p>$$dx_1 = \big(V_0 + w_d(Q_1 - Q_2) + w_s(Q_1 + Q_2)\big)dt + sW$$&lt;/p>
+&lt;p>$$dx_2 = \big(V_0 + w_d(Q_2 - Q_1) + w_s(Q_1 + Q_2)\big)dt + sW$$&lt;/p>
+&lt;h3 id="model-comparison" >Model comparison
+&lt;span>
+&lt;a href="#model-comparison">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/rl-eam.png" alt="Three RL-EAM models">&lt;/p>
+&lt;h3 id="multi-alternative-rl-ard" >Multi-alternative RL-ARD
+&lt;span>
+&lt;a href="#multi-alternative-rl-ard">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Its ALBA decision model extends naturally to multi-alternative choice tasks.&lt;/p>
+&lt;p>&lt;img src="images/rl-ard_multi.png" alt="Multi RL-ARD">&lt;/p></description></item><item><title>Research</title><link>https://www.bpesquet.fr/research/</link><pubDate>Mon, 28 Aug 2023 23:05:25 +0200</pubDate><guid>https://www.bpesquet.fr/research/</guid><description>&lt;p>My research focuses on &lt;em>artificial metacognition&lt;/em>, i.e. how to create autonomous agents able to explicitly evaluate and adapt their behavior.&lt;/p>
+&lt;h2 id="talks-and-presentations" >Talks and presentations
+&lt;span>
+&lt;a href="#talks-and-presentations">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="2024" >2024
+&lt;span>
+&lt;a href="#2024">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="../talks/mnemosyne-team-meeting-2024/">Confidence as hyperparemeter tuning for sequential decision-making&lt;/a> (team talk)&lt;/li>
+&lt;li>📄 &lt;a href="../pub/PFIA2024Pesquet.pdf">Modéliser la confiance d&amp;rsquo;un agent décisionnel&lt;/a> (&lt;a href="https://pfia2024.univ-lr.fr/">PFIA&lt;/a>)&lt;/li>
+&lt;li>📄 &lt;a href="../pub/UBWorkshop_june2024.pdf">Towards confident AI&lt;/a> (&lt;a href="https://sin.u-bordeaux.fr/actualites/journee-des-doctorants-en-intelligence-artificielle">AI PhD students workshop @ Université de Bordeaux&lt;/a>)&lt;/li>
+&lt;li>📄 &lt;a href="../pub/PoS2024Pesquet.pdf">Rendre l&amp;rsquo;IA confiante, pour mieux lui faire confiance&lt;/a> (&lt;a href="https://pintofscience.fr/">Pint of Science&lt;/a>)&lt;/li>
+&lt;li>&lt;a href="../talks/confidence/">Confidence in decision-making&lt;/a> (team talk)&lt;/li>
+&lt;li>&lt;a href="../talks/decision-making/">Introduction to the theory of decision-making&lt;/a> (team talk)&lt;/li>
+&lt;/ul>
 &lt;h2 id="publications" >Publications
 &lt;span>
 &lt;a href="#publications">
