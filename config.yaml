@@ -34,6 +34,7 @@ params:
   style: auto # light-without-switcher
   readMore: false
   toc: true # display Table of Contents
+  mathjax: true
   social:
     - id: email
       name: bpesquet [at] gmail [dot] com

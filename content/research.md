@@ -2,15 +2,21 @@
 title: "Research"
 date: 2023-08-28T23:05:25+02:00
 draft: false
+toc: false
 ---
 
-## PhD
+My research focuses on *artificial metacognition*, i.e. how to create autonomous agents able to explicitly evaluate and adapt their behavior.
 
-A growing interest in artificial intelligence, coupled with the frustration of not finding enough time to study it seriously, led me to start a PhD in AI with [INRIA](https://www.inria.fr) in September 2023. So I'm currently back to being a (part-time) student, while retaining the core of my teaching and administrative duties.
+## Talks and presentations
 
-More precisely, I am working under the supervision of [Frédéric Alexandre](https://www.labri.fr//perso//falexand/), head of the [Mnemosyne](https://www.inria.fr/fr/mnemosyne) team. My work deals with understanding the role of confidence (*confiance*) in human decision making, with the long-term goal of augmenting AI models with confidence-based abilities.
+### 2024
 
-Resources related to my research are published [here](https://github.com/bpesquet/artificial_metacognition).
+- [Confidence as hyperparemeter tuning for sequential decision-making](../talks/mnemosyne-team-meeting-2024/) (team talk)
+- 📄 [Modéliser la confiance d'un agent décisionnel](../pub/PFIA2024Pesquet.pdf) ([PFIA](https://pfia2024.univ-lr.fr/))
+- 📄 [Towards confident AI](../pub/UBWorkshop_june2024.pdf) ([AI PhD students workshop @ Université de Bordeaux](https://sin.u-bordeaux.fr/actualites/journee-des-doctorants-en-intelligence-artificielle))
+- 📄 [Rendre l'IA confiante, pour mieux lui faire confiance](../pub/PoS2024Pesquet.pdf) ([Pint of Science](https://pintofscience.fr/))
+- [Confidence in decision-making](../talks/confidence/) (team talk)
+- [Introduction to the theory of decision-making](../talks/decision-making/) (team talk)
 
 ## Publications
 
