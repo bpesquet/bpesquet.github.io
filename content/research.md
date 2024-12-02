@@ -11,6 +11,7 @@ My research focuses on *artificial metacognition*, i.e. how to create autonomous
 
 ### 2024
 
+- [Papers review: Kepecs' framework for decision confidence](../talks/kepecs-decision-confidence/) (team talk)
 - [Confidence as hyperparemeter tuning for sequential decision-making](../talks/mnemosyne-team-meeting-2024/) (team talk)
 - 📄 [Modéliser la confiance d'un agent décisionnel](../pub/PFIA2024Pesquet.pdf) ([PFIA](https://pfia2024.univ-lr.fr/))
 - 📄 [Towards confident AI](../pub/UBWorkshop_june2024.pdf) ([AI PhD students workshop @ Université de Bordeaux](https://sin.u-bordeaux.fr/actualites/journee-des-doctorants-en-intelligence-artificielle))
