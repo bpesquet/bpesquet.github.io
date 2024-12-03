@@ -25,6 +25,10 @@ Adam Kepecs and Zachary F. Mainen, “A Computational Framework for the Study of
 
 ## Scope
 
+- Humans and other animals must often make decisions on the basis of imperfect evidence.
+- Lttle is/was known about how the brain computes confidence estimates about decisions.
+- Issue is explored combining behavioral analysis, computational modeling and neural recordings.
+
 ## Behavioral study of confidence
 
 ### Behavioral reports of confidence
@@ -39,7 +43,7 @@ Adam Kepecs and Zachary F. Mainen, “A Computational Framework for the Study of
 - Add a third choice, the "uncertain option", to the available responses.
 - Pioneered in experimental psychology nearly a century ago.
 - Has been applied to monkeys, dolphins, rats and pigeons.
-- Can be interpreted as a three-choice task solved by learning stimuls-response categories, without necessitating confidence estimations.
+- Can be interpreted as a three-choice task solved by learning stimulus-response categories, without necessitating confidence estimations.
 
 ![Uncertain option](images/kepecs_confidence_4.png)
 
@@ -155,7 +159,7 @@ $$\delta_i = f({BoE}_i) = \frac{2}{1+ e^{\frac{1}{3}{\Delta e}_i / \theta_i}}$$
 ### Experimental setup
 
 - Single neuron activity was recorded in rats' OFC during the olfactory mixture categorization task.
-- The analysis was focused on the reward-anticipation period.
+- The analysis was focused on the reward-anticipation period, assumed to be associated with confidence estimations.
 
 ![Anatomical location of recording sites](images/kepecs_confidence_10.png)
 
@@ -173,4 +177,4 @@ $$\delta_i = f({BoE}_i) = \frac{2}{1+ e^{\frac{1}{3}{\Delta e}_i / \theta_i}}$$
 
 - Behavioral findings, computational modeling and neural correlates were integrated into a coherent framework for decision confidence.
 - Confidence estimations may be a fundamental and ubiquitous component of decision-making in the brain.
-- Estimating the confidence in a choice is little more complex than calculating the choice itself and within reach of non-humans.
+- Estimating the confidence in a choice is little more complex than calculating the choice itself, and within reach of non-humans.
