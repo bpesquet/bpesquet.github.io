@@ -24,7 +24,12 @@
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;h2 id="behavioral-study-of-confidence" >Behavioral study of confidence
+&lt;/h2>&lt;ul>
+&lt;li>Humans and other animals must often make decisions on the basis of imperfect evidence.&lt;/li>
+&lt;li>Lttle is/was known about how the brain computes confidence estimates about decisions.&lt;/li>
+&lt;li>Issue is explored combining behavioral analysis, computational modeling and neural recordings.&lt;/li>
+&lt;/ul>
+&lt;h2 id="behavioral-study-of-confidence" >Behavioral study of confidence
 &lt;span>
 &lt;a href="#behavioral-study-of-confidence">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -56,7 +61,7 @@
 &lt;li>Add a third choice, the &amp;ldquo;uncertain option&amp;rdquo;, to the available responses.&lt;/li>
 &lt;li>Pioneered in experimental psychology nearly a century ago.&lt;/li>
 &lt;li>Has been applied to monkeys, dolphins, rats and pigeons.&lt;/li>
-&lt;li>Can be interpreted as a three-choice task solved by learning stimuls-response categories, without necessitating confidence estimations.&lt;/li>
+&lt;li>Can be interpreted as a three-choice task solved by learning stimulus-response categories, without necessitating confidence estimations.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="images/kepecs_confidence_4.png" alt="Uncertain option">&lt;/p>
 &lt;hr>
@@ -226,7 +231,7 @@
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>Single neuron activity was recorded in rats&amp;rsquo; OFC during the olfactory mixture categorization task.&lt;/li>
-&lt;li>The analysis was focused on the reward-anticipation period.&lt;/li>
+&lt;li>The analysis was focused on the reward-anticipation period, assumed to be associated with confidence estimations.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="images/kepecs_confidence_10.png" alt="Anatomical location of recording sites">&lt;/p>
 &lt;h3 id="results-3" >Results
@@ -256,7 +261,7 @@
 &lt;/h2>&lt;ul>
 &lt;li>Behavioral findings, computational modeling and neural correlates were integrated into a coherent framework for decision confidence.&lt;/li>
 &lt;li>Confidence estimations may be a fundamental and ubiquitous component of decision-making in the brain.&lt;/li>
-&lt;li>Estimating the confidence in a choice is little more complex than calculating the choice itself and within reach of non-humans.&lt;/li>
+&lt;li>Estimating the confidence in a choice is little more complex than calculating the choice itself, and within reach of non-humans.&lt;/li>
 &lt;/ul></description></item><item><title>Short bio</title><link>https://www.bpesquet.fr/bio/</link><pubDate>Wed, 20 Nov 2024 13:24:56 +0100</pubDate><guid>https://www.bpesquet.fr/bio/</guid><description>&lt;p>After graduating as a software engineer in 1999, I worked for several years in the industry before moving on to a teaching career. In 2008, I passed the &lt;em>agrégation&lt;/em> (highest competitive exam for teaching in France).&lt;/p>
 &lt;p>Since 2016, I work as full-time professor at the &lt;a href="https://ensc.bordeaux-inp.fr/">Ecole Nationale Supérieure de Cognitique&lt;/a>, a graduate engineering school where I &lt;a href="../teaching">teach&lt;/a> various computer science and AI-related courses.&lt;/p>
 &lt;p>In 2023, I started a &lt;a href="../research">PhD&lt;/a> in AI with &lt;a href="https://www.inria.fr">INRIA&lt;/a>, with the goal of augmenting artificial agents with metacognitive abilities.&lt;/p>
