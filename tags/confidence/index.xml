@@ -1,4 +1,268 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>confidence on Baptiste Pesquet</title><link>https://www.bpesquet.fr/tags/confidence/</link><description>Baptiste Pesquet (confidence)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 16 Oct 2024 10:13:06 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/tags/confidence/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</link><pubDate>Wed, 16 Oct 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>confidence on Baptiste Pesquet</title><link>https://www.bpesquet.fr/tags/confidence/</link><description>Baptiste Pesquet (confidence)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 02 Dec 2024 13:40:27 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/tags/confidence/index.xml" rel="self" type="application/rss+xml"/><item><title>Papers review: Kepecs' framework for decision confidence</title><link>https://www.bpesquet.fr/talks/kepecs-decision-confidence/</link><pubDate>Mon, 02 Dec 2024 13:40:27 +0100</pubDate><guid>https://www.bpesquet.fr/talks/kepecs-decision-confidence/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+&lt;!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
+&lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
+&lt;!-- headingDivider: 3 -->
+&lt;h1 id="papers-review-kepecs-framework-for-decision-confidence" >Papers review: Kepecs&amp;rsquo; framework for decision confidence
+&lt;span>
+&lt;a href="#papers-review-kepecs-framework-for-decision-confidence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h1>&lt;!-- Show pagination, starting with second slide -->
+&lt;!-- paginate: true -->
+&lt;h2 id="papers" >Papers
+&lt;span>
+&lt;a href="#papers">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Adam Kepecs et al., “Neural Correlates, Computation and Behavioural Impact of Decision Confidence,” Nature 455, no. 7210 (September 2008): 227–31, &lt;a href="https://doi.org/10.1038/nature07200">https://doi.org/10.1038/nature07200&lt;/a>.&lt;/p>
+&lt;p>Adam Kepecs and Zachary F. Mainen, “A Computational Framework for the Study of Confidence in Humans and Animals,” Philosophical Transactions of the Royal Society B: Biological Sciences 367, no. 1594 (May 19, 2012): 1322–37, &lt;a href="https://doi.org/10.1098/rstb.2012.0037">https://doi.org/10.1098/rstb.2012.0037&lt;/a>.&lt;/p>
+&lt;h2 id="scope" >Scope
+&lt;span>
+&lt;a href="#scope">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Humans and other animals must often make decisions on the basis of imperfect evidence.&lt;/li>
+&lt;li>Lttle is/was known about how the brain computes confidence estimates about decisions.&lt;/li>
+&lt;li>Issue is explored combining behavioral analysis, computational modeling and neural recordings.&lt;/li>
+&lt;/ul>
+&lt;h2 id="behavioral-study-of-confidence" >Behavioral study of confidence
+&lt;span>
+&lt;a href="#behavioral-study-of-confidence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="behavioral-reports-of-confidence" >Behavioral reports of confidence
+&lt;span>
+&lt;a href="#behavioral-reports-of-confidence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Explicit reports (via textual or numerical ratings) are only accessible to humans.&lt;/li>
+&lt;li>Only implicit reports are possible for non-humans.&lt;/li>
+&lt;/ul>
+&lt;h3 id="confidence-report-protocols" >Confidence report protocols
+&lt;span>
+&lt;a href="#confidence-report-protocols">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="uncertain-option" >Uncertain option
+&lt;span>
+&lt;a href="#uncertain-option">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Add a third choice, the &amp;ldquo;uncertain option&amp;rdquo;, to the available responses.&lt;/li>
+&lt;li>Pioneered in experimental psychology nearly a century ago.&lt;/li>
+&lt;li>Has been applied to monkeys, dolphins, rats and pigeons.&lt;/li>
+&lt;li>Can be interpreted as a three-choice task solved by learning stimulus-response categories, without necessitating confidence estimations.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/kepecs_confidence_4.png" alt="Uncertain option">&lt;/p>
+&lt;hr>
+&lt;h4 id="decline-opt-out-option" >Decline (opt-out) option
+&lt;span>
+&lt;a href="#decline-opt-out-option">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Add option of accepting or declining the test.&lt;/li>
+&lt;li>Has been applied to monkeys, pigeons and rats.&lt;/li>
+&lt;li>Rather than confidence, attention or motivation could explain the choice to answer or not.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/kepecs_confidence_5.png" alt="Decline option">&lt;/p>
+&lt;hr>
+&lt;h4 id="post-decision-wagering" >Post-decision wagering
+&lt;span>
+&lt;a href="#post-decision-wagering">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>The binary choice is followed by a bet on the reward. If the decision is correct, the wager amount is kept.&lt;/li>
+&lt;li>Contrary to previous protocols, both choice and confidence are obtained on each trial.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/kepecs_confidence_6.png" alt="Post-decision wagering">&lt;/p>
+&lt;hr>
+&lt;h4 id="decision-restart" >Decision restart
+&lt;span>
+&lt;a href="#decision-restart">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>After choice, subjects are given the option to either wait for their (potential) reward or abort the trial and start again.&lt;/li>
+&lt;li>Form of post-decision wagering suitable to animals.&lt;/li>
+&lt;/ul>
+&lt;h3 id="experimental-task" >Experimental task
+&lt;span>
+&lt;a href="#experimental-task">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Rats were trained to perform an odour categorization task, with water as a reward.&lt;/li>
+&lt;li>On each trial, a binary mixture of two pure odorants was delivered.&lt;/li>
+&lt;li>The decision difficulty was defined by the mixture ratio (50/50 = hardest).&lt;/li>
+&lt;li>A variable reward delay was introduced.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/kepecs_confidence_1.png" alt="Experimental task">&lt;/p>
+&lt;h3 id="task-variation" >Task variation
+&lt;span>
+&lt;a href="#task-variation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>To assess confidence, reward delay was increased and decision restart was added.&lt;/p>
+&lt;p>&lt;img src="images/kepecs_confidence_2.png" alt="Task variation">&lt;/p>
+&lt;h3 id="results" >Results
+&lt;span>
+&lt;a href="#results">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/kepecs_confidence_9.png" alt="Behavioral results">&lt;/p>
+&lt;h2 id="computational-modeling-of-confidence" >Computational modeling of confidence
+&lt;span>
+&lt;a href="#computational-modeling-of-confidence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="defining-confidence" >Defining confidence
+&lt;span>
+&lt;a href="#defining-confidence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Confidence = estimate by the decision-maker of the probability that the decision is correct.&lt;/li>
+&lt;li>Confidence is a form of uncertainty.&lt;/li>
+&lt;/ul>
+&lt;h3 id="simple-confidence-model" >Simple confidence model
+&lt;span>
+&lt;a href="#simple-confidence-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="formulation" >Formulation
+&lt;span>
+&lt;a href="#formulation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Stimulus $s_i$ for the $i$th trial is defined as the log ratio of the odour mixture with Gaussian additive noise $\eta_{stim} \sim \mathcal{N}(0, \sigma_{stim})$.&lt;/li>
+&lt;li>Choice boundary $b_i$ is fixed at 0 with additive noise $\eta_{bound} \sim \mathcal{N}(0, \sigma_{bound})$.&lt;/li>
+&lt;li>Choice is computed by comparing stimulus and boundary.&lt;/li>
+&lt;li>Distance between them provides an estimate of decision confidence.&lt;/li>
+&lt;/ul>
+&lt;p>$$s_i = log \frac{[A]}{[B]} + \eta_{stim}$$&lt;/p>
+&lt;p>$$b_i = \eta_{bound}$$&lt;/p>
+&lt;p>$$c_i = { \text{left}|s_i&amp;lt; b_i; \text{right}|s_i \geq b_i\ }$$&lt;/p>
+&lt;p>$$d_i = |s_i-b_i|$$&lt;/p>
+&lt;hr>
+&lt;h4 id="confidence-calibration" >Confidence calibration
+&lt;span>
+&lt;a href="#confidence-calibration">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>The distance $d_i$ must be calibrated and normalized to become a veridical estimator of decision outcome (linear relationship with accuracy).&lt;/li>
+&lt;li>Sigmoid-like functions provide a good solution to this problem.&lt;/li>
+&lt;li>Decision confidence $\delta_i$ is defined as the result of the calibration process.&lt;/li>
+&lt;li>Decision uncertainty $\sigma_i$ is defined as its contrary.&lt;/li>
+&lt;/ul>
+&lt;p>$$\delta_i = f(d_i) = \text{tan}(|s_i-b_i|)$$&lt;/p>
+&lt;p>$$\sigma_i = 1 - \delta_i$$&lt;/p>
+&lt;hr>
+&lt;h4 id="results-1" >Results
+&lt;span>
+&lt;a href="#results-1">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>&lt;img src="images/kepecs_confidence_7.png" alt="Simple model results">&lt;/p>
+&lt;h3 id="evidence-accumulation-model" >Evidence accumulation model
+&lt;span>
+&lt;a href="#evidence-accumulation-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="formulation-1" >Formulation
+&lt;span>
+&lt;a href="#formulation-1">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>This class of models is able to account for other features of behavior, such as decision time (&lt;a href="../decision-making/">more details&lt;/a>).&lt;/li>
+&lt;li>In a race model, decision confidence can be estimated as the distance ${\Delta e}_i$ between the accumulators once an accumulator reaches the threshold $\theta_i$.&lt;/li>
+&lt;li>The balance of evidence $BoE$ results from the normalization of this distance.&lt;/li>
+&lt;li>Calibration is necessary to turn confidence into a veridical estimator of decision outcome.&lt;/li>
+&lt;/ul>
+&lt;p>$${BoE}_i = {\Delta e}_i/\theta_i$$&lt;/p>
+&lt;p>$$\delta_i = f({BoE}_i) = \frac{2}{1+ e^{\frac{1}{3}{\Delta e}_i / \theta_i}}$$&lt;/p>
+&lt;hr>
+&lt;h4 id="results-2" >Results
+&lt;span>
+&lt;a href="#results-2">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>&lt;img src="images/kepecs_confidence_8.png" alt="EAM model results">&lt;/p>
+&lt;h2 id="neural-correlates-of-confidence" >Neural correlates of confidence
+&lt;span>
+&lt;a href="#neural-correlates-of-confidence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="experimental-setup" >Experimental setup
+&lt;span>
+&lt;a href="#experimental-setup">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Single neuron activity was recorded in rats&amp;rsquo; OFC during the olfactory mixture categorization task.&lt;/li>
+&lt;li>The analysis was focused on the reward-anticipation period, assumed to be associated with confidence estimations.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/kepecs_confidence_10.png" alt="Anatomical location of recording sites">&lt;/p>
+&lt;h3 id="results-3" >Results
+&lt;span>
+&lt;a href="#results-3">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/kepecs_confidence_11.png" alt="Neural results">&lt;/p>
+&lt;h3 id="interpretation" >Interpretation
+&lt;span>
+&lt;a href="#interpretation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>The firing rates of many single neurons in the OFC of rats match closely to the predictions of confidence models.&lt;/li>
+&lt;li>These cannot be readily explained by alternative mechanisms, such as learning stimulus–outcome associations.&lt;/li>
+&lt;li>Rats not only show a neural correlate of decision confidence, but they can use such information in subsequent decisions to guide adaptive behaviour.&lt;/li>
+&lt;/ul>
+&lt;h2 id="takeaways" >Takeaways
+&lt;span>
+&lt;a href="#takeaways">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Behavioral findings, computational modeling and neural correlates were integrated into a coherent framework for decision confidence.&lt;/li>
+&lt;li>Confidence estimations may be a fundamental and ubiquitous component of decision-making in the brain.&lt;/li>
+&lt;li>Estimating the confidence in a choice is little more complex than calculating the choice itself, and within reach of non-humans.&lt;/li>
+&lt;/ul></description></item><item><title>Confidence as hyperparameter tuning for sequential decision-making</title><link>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</link><pubDate>Wed, 16 Oct 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</guid><description>&lt;!-- Apply header and footer to first slide only -->
 &lt;!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
 &lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
 &lt;!-- headingDivider: 2 -->
@@ -72,7 +336,7 @@
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2></description></item><item><title/><link>https://www.bpesquet.fr/talks/confidence/</link><pubDate>Mon, 24 Jun 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/confidence/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+&lt;/h2></description></item><item><title>Confidence in decision-making</title><link>https://www.bpesquet.fr/talks/confidence/</link><pubDate>Mon, 24 Jun 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/confidence/</guid><description>&lt;!-- Apply header and footer to first slide only -->
 &lt;!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
 &lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
 &lt;!-- headingDivider: 5 -->

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Talks on Baptiste Pesquet</title><link>https://www.bpesquet.fr/talks/</link><description>Baptiste Pesquet (Talks)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 02 Dec 2024 13:40:27 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/talks/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://www.bpesquet.fr/talks/kepecs-decision-confidence/</link><pubDate>Mon, 02 Dec 2024 13:40:27 +0100</pubDate><guid>https://www.bpesquet.fr/talks/kepecs-decision-confidence/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Talks on Baptiste Pesquet</title><link>https://www.bpesquet.fr/talks/</link><description>Baptiste Pesquet (Talks)</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://www.bpesquet.fr/talks/index.xml" rel="self" type="application/rss+xml"/><item><title>Papers review: Kepecs' framework for decision confidence</title><link>https://www.bpesquet.fr/talks/kepecs-decision-confidence/</link><pubDate>Mon, 02 Dec 2024 13:40:27 +0100</pubDate><guid>https://www.bpesquet.fr/talks/kepecs-decision-confidence/</guid><description>&lt;!-- Apply header and footer to first slide only -->
 &lt;!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
 &lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
 &lt;!-- headingDivider: 3 -->
@@ -262,7 +262,7 @@
 &lt;li>Behavioral findings, computational modeling and neural correlates were integrated into a coherent framework for decision confidence.&lt;/li>
 &lt;li>Confidence estimations may be a fundamental and ubiquitous component of decision-making in the brain.&lt;/li>
 &lt;li>Estimating the confidence in a choice is little more complex than calculating the choice itself, and within reach of non-humans.&lt;/li>
-&lt;/ul></description></item><item><title/><link>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</link><pubDate>Wed, 16 Oct 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+&lt;/ul></description></item><item><title>Confidence as hyperparameter tuning for sequential decision-making</title><link>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</link><pubDate>Wed, 16 Oct 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</guid><description>&lt;!-- Apply header and footer to first slide only -->
 &lt;!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
 &lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
 &lt;!-- headingDivider: 2 -->
@@ -336,7 +336,7 @@
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2></description></item><item><title/><link>https://www.bpesquet.fr/talks/confidence/</link><pubDate>Mon, 24 Jun 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/confidence/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+&lt;/h2></description></item><item><title>Confidence in decision-making</title><link>https://www.bpesquet.fr/talks/confidence/</link><pubDate>Mon, 24 Jun 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/confidence/</guid><description>&lt;!-- Apply header and footer to first slide only -->
 &lt;!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
 &lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
 &lt;!-- headingDivider: 5 -->
@@ -786,7 +786,7 @@
 &lt;/h3>&lt;p>As part of metacognitive monitoring, confidence judgments may inform the processes of cognitive control.&lt;/p>
 &lt;p>Having an explicit representation of the confidence of a perceptual decision may help us compute the risk of being wrong ($1 - \text{confidence}$).&lt;/p>
 &lt;p>Having a good confidence sensitivity will also give us the possibility to allocate appropriate resources to a task.&lt;/p>
-&lt;p>Good confidence can also help us appreciate whether and how we can control the environment.&lt;/p></description></item><item><title/><link>https://www.bpesquet.fr/talks/decision-making/</link><pubDate>Mon, 29 Jan 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/decision-making/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+&lt;p>Good confidence can also help us appreciate whether and how we can control the environment.&lt;/p></description></item><item><title>Introduction to the theory of decision-making</title><link>https://www.bpesquet.fr/talks/decision-making/</link><pubDate>Mon, 29 Jan 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/decision-making/</guid><description>&lt;!-- Apply header and footer to first slide only -->
 &lt;!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
 &lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
 &lt;!-- headingDivider: 5 -->
