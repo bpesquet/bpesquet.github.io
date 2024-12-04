@@ -1,10 +1,12 @@
 ---
 marp: true
 math: true  # Use default Marp engin for math rendering
+title: "Papers review: Kepecs' framework for decision confidence"
 date: 2024-12-02T13:40:27+01:00
 draft: false
 tags:
 - decision-making
+- confidence
 ---
 
 <!-- Apply header and footer to first slide only -->

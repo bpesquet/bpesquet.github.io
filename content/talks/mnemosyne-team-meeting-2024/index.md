@@ -8,6 +8,7 @@ style: |
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
+title: "Confidence as hyperparameter tuning for sequential decision-making"
 date: 2024-10-16T10:13:06+01:00
 draft: false
 tags:

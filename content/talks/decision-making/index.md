@@ -2,6 +2,7 @@
 marp: true
 math: true  # Use default Marp engin for math rendering
 date: 2024-01-29T10:13:06+01:00
+title: "Introduction to the theory of decision-making"
 draft: false
 tags:
 - decision-making
