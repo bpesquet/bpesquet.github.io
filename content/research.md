@@ -20,4 +20,10 @@ My research focuses on *artificial metacognition*, i.e. how to create autonomous
 
 ## Publications
 
-- E. Grivel, B. Pesquet, T.-B. Airimitoaie and A. Zemmari, "[Artificial Intelligence for Defence in an EQF6 Training and Education Program, from the Design to the Execution](https://ieeexplore.ieee.org/abstract/document/10125126)" 2023 IEEE Global Engineering Education Conference (EDUCON), Kuwait, Kuwait, 2023.
+### 2025
+
+- B. Pesquet, F. Alexandre (2025). Towards metacognitive agents: integrating confidence in sequential decision-making, *European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning*, Bruges, Belgium ([📄 Preliminary paper](../pub/ESANN2025_confidence_for_sequential_decision_making.pdf)).
+
+### 2023
+
+- E. Grivel, B. Pesquet, T.-B. Airimitoaie and A. Zemmari (2023). Artificial Intelligence for Defence in an EQF6 Training and Education Program, from the Design to the Execution, *IEEE Global Engineering Education Conference (EDUCON)*, Kuwait City, Kuwait ([📄Paper](../pub/ASSETSpaper.pdf)).
