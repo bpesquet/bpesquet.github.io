@@ -1347,8 +1347,23 @@
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;ul>
-&lt;li>E. Grivel, B. Pesquet, T.-B. Airimitoaie and A. Zemmari, &amp;ldquo;&lt;a href="https://ieeexplore.ieee.org/abstract/document/10125126">Artificial Intelligence for Defence in an EQF6 Training and Education Program, from the Design to the Execution&lt;/a>&amp;rdquo; 2023 IEEE Global Engineering Education Conference (EDUCON), Kuwait, Kuwait, 2023.&lt;/li>
+&lt;/h2>&lt;h3 id="2025" >2025
+&lt;span>
+&lt;a href="#2025">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>B. Pesquet, F. Alexandre (2025). Towards metacognitive agents: integrating confidence in sequential decision-making, &lt;em>European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning&lt;/em>, Bruges, Belgium (&lt;a href="../pub/ESANN2025_confidence_for_sequential_decision_making.pdf">📄 Preliminary paper&lt;/a>).&lt;/li>
+&lt;/ul>
+&lt;h3 id="2023" >2023
+&lt;span>
+&lt;a href="#2023">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>E. Grivel, B. Pesquet, T.-B. Airimitoaie and A. Zemmari (2023). Artificial Intelligence for Defence in an EQF6 Training and Education Program, from the Design to the Execution, &lt;em>IEEE Global Engineering Education Conference (EDUCON)&lt;/em>, Kuwait City, Kuwait (&lt;a href="../pub/ASSETSpaper.pdf">📄Paper&lt;/a>).&lt;/li>
 &lt;/ul></description></item><item><title>AI for Defence</title><link>https://www.bpesquet.fr/slides/ai-for-defence/</link><pubDate>Fri, 09 Jun 2023 08:37:58 +0200</pubDate><guid>https://www.bpesquet.fr/slides/ai-for-defence/</guid><description>&lt;h2 id="context" >Context
 &lt;span>
 &lt;a href="#context">
@@ -12682,7 +12697,7 @@ alt="Extrait de la présentation de Léon Bottou sur l&amp;amp;rsquo;apprentissa
 &lt;p>The upside of writing in a vacuum like I did is that your book launch becomes a pretty big event. After such a huge time investment, it’s a great feeling (and also a huge relief) to show your finished creation to the world.&lt;/p>
 &lt;p>For lack of anything better, I reused my previous launch strategy. &lt;a href="https://twitter.com/bpesquet/status/890564975596630017">Twitter&lt;/a>, &lt;a href="https://www.reddit.com/r/javascript/comments/6poszc/the_javascript_way_a_new_book_for_learning_modern/">Reddit&lt;/a> and &lt;a href="https://news.ycombinator.com/item?id=14865043">Hacker News&lt;/a> (&lt;a href="https://www.quora.com/When-is-the-best-time-to-post-on-Hacker-News-to-get-and-stay-long-on-the-front-page">timing submissions&lt;/a> for most visibility). Also, the same nice people that kept me motivated after the early launch.&lt;/p>
 &lt;p>To my astonishment, the result was this time overwhelmingly positive. Kyle Simpson and Quincy Larson kindly tweeted about the book to their dozens of thousands of followers.&lt;/p>
-&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Pretty excited about this new book by &lt;a href="https://twitter.com/bpesquet?ref_src=twsrc%5Etfw">@bpesquet&lt;/a> called &amp;quot;The JavaScript Way&amp;quot;: &lt;a href="https://t.co/lbbzQNwL4e">https://t.co/lbbzQNwL4e&lt;/a> Looks like a great companion to &lt;a href="https://twitter.com/YDKJS?ref_src=twsrc%5Etfw">@YDKJS&lt;/a>!&lt;/p>&amp;mdash; You Don&amp;#39;t Know JS Yet (@YDKJS) &lt;a href="https://twitter.com/YDKJS/status/890594260226949125?ref_src=twsrc%5Etfw">July 27, 2017&lt;/a>&lt;/blockquote>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Pretty excited about this new book by @bpesquet called &amp;quot;The JavaScript Way&amp;quot;: &lt;a href="https://t.co/lbbzQNwL4e">https://t.co/lbbzQNwL4e&lt;/a> Looks like a great companion to &lt;a href="https://twitter.com/YDKJS?ref_src=twsrc%5Etfw">@YDKJS&lt;/a>!&lt;/p>&amp;mdash; You Don&amp;#39;t Know JS Yet (@YDKJS) &lt;a href="https://twitter.com/YDKJS/status/890594260226949125?ref_src=twsrc%5Etfw">July 27, 2017&lt;/a>&lt;/blockquote>
 &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
 &lt;p>Hour after hour, I watched in awe of disbelief as rave comments and retweets piled into my inbox. I finally knew that my book would have an impact.&lt;/p>
 &lt;p>Launch is also the blissful moment where the magic of open source happens. People can read and share your book for free. Creating traction without any marketing effort. But they can also improve its quality through contributions using GitHub &lt;a href="https://guides.github.com/features/issues/">issues&lt;/a> and &lt;a href="https://help.github.com/articles/about-pull-requests/">pull requests&lt;/a>.&lt;/p>
