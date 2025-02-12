@@ -265,7 +265,7 @@
 &lt;/ul></description></item><item><title>Short bio</title><link>https://www.bpesquet.fr/bio/</link><pubDate>Wed, 20 Nov 2024 13:24:56 +0100</pubDate><guid>https://www.bpesquet.fr/bio/</guid><description>&lt;p>After graduating as a software engineer in 1999, I worked for several years in the industry before moving on to a teaching career. In 2008, I passed the &lt;em>agrégation&lt;/em> (highest competitive exam for teaching in France).&lt;/p>
 &lt;p>Since 2016, I work at the &lt;a href="https://ensc.bordeaux-inp.fr/">Ecole Nationale Supérieure de Cognitique&lt;/a>, a graduate engineering school where I &lt;a href="../teaching">teach&lt;/a> various computer science and AI-related courses.&lt;/p>
 &lt;p>In 2023, I started a PhD in AI with &lt;a href="https://www.inria.fr">INRIA&lt;/a> while keeping the core of my teaching duties. My &lt;a href="../research">research&lt;/a> goal is augmenting artificial agents with metacognitive abilities.&lt;/p>
-&lt;p>More more details, you may check out my resume in &lt;a href="https://www.bpesquet.fr/BaptistePesquet_Resume.pdf">English&lt;/a> or &lt;a href="https://www.bpesquet.fr/CV_BaptistePesquet.pdf">French&lt;/a>.&lt;/p></description></item><item><title>Confidence as hyperparameter tuning for sequential decision-making</title><link>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</link><pubDate>Wed, 16 Oct 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+&lt;p>For more details, you may check out my resume in &lt;a href="https://www.bpesquet.fr/BaptistePesquet_Resume.pdf">English&lt;/a> or &lt;a href="https://www.bpesquet.fr/CV_BaptistePesquet.pdf">French&lt;/a>.&lt;/p></description></item><item><title>Confidence as hyperparameter tuning for sequential decision-making</title><link>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</link><pubDate>Wed, 16 Oct 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/talks/mnemosyne-team-meeting-2024/</guid><description>&lt;!-- Apply header and footer to first slide only -->
 &lt;!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
 &lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
 &lt;!-- headingDivider: 2 -->
@@ -1354,7 +1354,7 @@
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>B. Pesquet, F. Alexandre (2025). Towards metacognitive agents: integrating confidence in sequential decision-making, &lt;em>European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning&lt;/em>, Bruges, Belgium (&lt;a href="../pub/ESANN2025_confidence_for_sequential_decision_making.pdf">📄 Preliminary paper&lt;/a>).&lt;/li>
+&lt;li>B. Pesquet, F. Alexandre (2025). Towards metacognitive agents: integrating confidence in sequential decision-making, &lt;em>European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning&lt;/em>, Bruges, Belgium (&lt;a href="../pub/ESANN2025_confidence_for_sequential_decision_making.pdf">📄 Paper&lt;/a>).&lt;/li>
 &lt;/ul>
 &lt;h3 id="2023" >2023
 &lt;span>
@@ -1363,7 +1363,7 @@
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>E. Grivel, B. Pesquet, T.-B. Airimitoaie and A. Zemmari (2023). Artificial Intelligence for Defence in an EQF6 Training and Education Program, from the Design to the Execution, &lt;em>IEEE Global Engineering Education Conference (EDUCON)&lt;/em>, Kuwait City, Kuwait (&lt;a href="../pub/ASSETSpaper.pdf">📄Paper&lt;/a>).&lt;/li>
+&lt;li>E. Grivel, B. Pesquet, T.-B. Airimitoaie and A. Zemmari (2023). Artificial Intelligence for Defence in an EQF6 Training and Education Program, from the Design to the Execution, &lt;em>IEEE Global Engineering Education Conference (EDUCON)&lt;/em>, Kuwait City, Kuwait (&lt;a href="../pub/ASSETSpaper.pdf">📄 Paper&lt;/a>).&lt;/li>
 &lt;/ul></description></item><item><title>AI for Defence</title><link>https://www.bpesquet.fr/slides/ai-for-defence/</link><pubDate>Fri, 09 Jun 2023 08:37:58 +0200</pubDate><guid>https://www.bpesquet.fr/slides/ai-for-defence/</guid><description>&lt;h2 id="context" >Context
 &lt;span>
 &lt;a href="#context">
