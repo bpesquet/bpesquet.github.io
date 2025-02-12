@@ -10,4 +10,4 @@ Since 2016, I work at the [Ecole Nationale Supérieure de Cognitique](https://en
 
 In 2023, I started a PhD in AI with [INRIA](https://www.inria.fr) while keeping the core of my teaching duties. My [research](../research) goal is augmenting artificial agents with metacognitive abilities.
 
-More more details, you may check out my resume in [English](/BaptistePesquet_Resume.pdf) or [French](/CV_BaptistePesquet.pdf).
+For more details, you may check out my resume in [English](/BaptistePesquet_Resume.pdf) or [French](/CV_BaptistePesquet.pdf).
