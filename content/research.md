@@ -6,17 +6,11 @@ draft: false
 
 My research focuses on *artificial metacognition*, i.e. how to create autonomous agents able to explicitly evaluate and adapt their behavior.
 
-## Talks and presentations
+## PhD
 
-### 2024
+Since 2023, I am working on a PhD in artificial intelligence under the supervision of [Frédéric Alexandre](https://www.labri.fr//perso//falexand/), head of the [Mnemosyne](https://team.inria.fr/mnemosyne/) INRIA team. We try to understand the role of confidence in decision-making.
 
-- [Papers review: Kepecs' framework for decision confidence](../talks/kepecs-decision-confidence/) (team talk)
-- [Confidence as hyperparameter tuning for sequential decision-making](../talks/mnemosyne-team-meeting-2024/) (team talk)
-- 🇫🇷 📄 [Modéliser la confiance d'un agent décisionnel](../pub/PFIA2024Pesquet.pdf) ([PFIA](https://pfia2024.univ-lr.fr/))
-- 📄 [Towards confident AI](../pub/UBWorkshop_june2024.pdf) ([AI PhD students workshop @ Université de Bordeaux](https://sin.u-bordeaux.fr/actualites/journee-des-doctorants-en-intelligence-artificielle))
-- 🇫🇷 📄 [Rendre l'IA confiante, pour mieux lui faire confiance](../pub/PoS2024Pesquet.pdf) ([Pint of Science](https://pintofscience.fr/))
-- [Confidence in decision-making](../talks/confidence/) (team talk)
-- [Introduction to the theory of decision-making](../talks/decision-making/) (team talk)
+The PhD defense is scheduled for Autumn 2026.
 
 ## Publications
 

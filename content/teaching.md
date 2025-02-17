@@ -4,61 +4,59 @@ date: 2021-10-27T14:59:36+02:00
 draft: false
 ---
 
-Below are some of the pedagogical resources created for courses I teach or have taught. Older stuff is most certainly outdated.
+My teaching career encompasses a pretty wide variety of computer-related topics, from networks and programming basics to Deep Learning.
 
-## Books and book-like content
+## Courses
 
-- Artificial intelligence
+Due to my [PhD](../research), I am currently involved in a reduced number of courses. Access to their content is restricted to students and colleagues.
 
-  - [Machine Learning Course](https://github.com/bpesquet/mlcourse)
-  - [Artificial Intelligence notes](https://bpesquet.github.io/ainotes) (phased out)
-  - [Machine Learning Handbook](<<https://bpesquet.github.io/mlhandbook>) (phased out)
-  - [Machine Learning Katas](https://bpesquet.github.io/mlkatas) (phased out)
+### ENSC
 
-- Computer science
+- [Bases de l'IA](https://moodle.bordeaux-inp.fr/course/view.php?id=1563)
+- [Apprentissage automatique](https://moodle.bordeaux-inp.fr/course/view.php?id=2891)
 
-  - JavaScript
-    - [The JavaScript Way](https://thejsway.net)
-    - 🇫🇷 [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
+### IOGS
 
-  - C#
-    - 🇫🇷 [Programmation orientée objet en C#](https://ensc.gitbook.io/programmation-objet-csharp/)
-    - 🇫🇷 [Programmation évènementielle avec les WinForms](https://ensc.gitbook.io/programmation-evenementielle-winforms/)
+- [Initiation au Machine Learning](https://ecampus.paris-saclay.fr/course/view.php?id=162152)
 
-  - Misc
-    - 🇫🇷 [Génie logiciel](https://ensc.gitbook.io/genie-logiciel/)
-    - 🇫🇷 [Guide du développeur PHP](https://bpesquet.gitbooks.io/guide-developpeur-php/)
+## Material
 
-## Talks and presentations
+Below are some educational resources created for courses I teach or have taught. Older stuff is most certainly outdated.
 
-- Artificial intelligence
-  - [AI for Defence](https://www.bpesquet.fr/slides/ai-for-defence/) ([ASSETS+](https://assets-plus.eu/) european project))
-  - [Deconstructing AI](https://www.bpesquet.fr/slides/deconstructing-ai/) ([Knowledge Management club](https://www.clubgc-km.fr) meeting)
+### Machine Learning
 
-- Computer science
+- [PyTorch Tutorial](https://github.com/bpesquet/pytorch-tutorial)
+- [Machine Learning Course](https://github.com/bpesquet/mlcourse)
+- [pyfit](https://github.com/bpesquet/pyfit)
+- [Artificial Intelligence notes](https://bpesquet.github.io/ainotes)
+- [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook)
+- [Machine Learning Katas](https://bpesquet.github.io/mlkatas)
 
-  - C#
+### Computer science
 
-    - 🇫🇷 [.NET et C#](https://www.bpesquet.fr/slides/dotnet-csharp/)
-    - 🇫🇷 [C# : rappels et compléments](https://www.bpesquet.fr/slides/csharp/)
-    - 🇫🇷 [ASP.NET Core](https://www.bpesquet.fr/slides/asp-net-core/)
-    - 🇫🇷 [Entity Framework Core](https://www.bpesquet.fr/slides/efcore/)
+- C#
+  - 🇫🇷 [.NET et C#](https://www.bpesquet.fr/slides/dotnet-csharp/)
+  - 🇫🇷 [C# : rappels et compléments](https://www.bpesquet.fr/slides/csharp/)
+  - 🇫🇷 [ASP.NET Core](https://www.bpesquet.fr/slides/asp-net-core/)
+  - 🇫🇷 [Entity Framework Core](https://www.bpesquet.fr/slides/efcore/)
+  - 🇫🇷 [Programmation orientée objet en C#](https://ensc.gitbook.io/programmation-objet-csharp/)
+  - 🇫🇷 [Programmation évènementielle avec les WinForms](https://ensc.gitbook.io/programmation-evenementielle-winforms/)
 
-  - JavaScript
+- JavaScript
+  - [The JavaScript Way](https://thejsway.net) | 🇫🇷 [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
+  - 🇫🇷 [Le langage JavaScript](https://www.bpesquet.fr/slides/javascript/)
+  - 🇫🇷 [JavaScript pour le web](https://www.bpesquet.fr/slides/javascript-web/)
+  - 🇫🇷 [React Native](https://www.bpesquet.fr/slides/react-native/)
 
-    - 🇫🇷 [Le langage JavaScript](https://www.bpesquet.fr/slides/javascript/)
-    - 🇫🇷 [JavaScript pour le web](https://www.bpesquet.fr/slides/javascript-web/)
-    - 🇫🇷 [React Native](https://www.bpesquet.fr/slides/react-native/)
+- Software engineering
+  - [Git & GitHub](https://www.bpesquet.fr/slides/git-github/)
+  - 🇫🇷 [UML](https://www.bpesquet.fr/slides/uml/)
+  - 🇫🇷 [Génie logiciel](https://ensc.gitbook.io/genie-logiciel/)
 
-  - Misc
-
-    - [Git & GitHub](https://www.bpesquet.fr/slides/git-github/)
-    - 🇫🇷 [UML](https://www.bpesquet.fr/slides/uml/)
-    - 🇫🇷 [Unity](https://www.bpesquet.fr/slides/unity/)
-  
-## Other stuff
-
-- 🇫🇷 [Evoluez vers une architecture MVC en PHP](https://bpesquet.developpez.com/tutoriels/php/evoluer-architecture-mvc/)
-- 🇫🇷 📄 [Les bases de données](/pub/cours_sgbd.zip)
-- 🇫🇷 📄 [Le langage SQL](/pub/cours_sql.zip)
-- 🇫🇷 📄 [Les réseaux](/pub/cours_reseaux.zip)
+- Misc
+  - 🇫🇷 [Unity](https://www.bpesquet.fr/slides/unity/)
+  - 🇫🇷 [Guide du développeur PHP](https://bpesquet.gitbooks.io/guide-developpeur-php/)
+  - 🇫🇷 [Evoluez vers une architecture MVC en PHP](https://bpesquet.developpez.com/tutoriels/php/evoluer-architecture-mvc/)
+  - 🇫🇷 📄 [Les bases de données](/pub/cours_sgbd.zip)
+  - 🇫🇷 📄 [Le langage SQL](/pub/cours_sql.zip)
+  - 🇫🇷 📄 [Les réseaux](/pub/cours_reseaux.zip)
