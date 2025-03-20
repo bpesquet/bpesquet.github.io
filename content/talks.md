@@ -6,6 +6,10 @@ draft: false
 
 Here is a list of my public talks, including research-focused presentations and participations to interdisciplinary events.
 
+## 2025
+
+- [Artificial Intelligence: past, present, future(s)](../presentations/chembiona-2925/) (Congrès [ChemBioNA](https://www.chembiona.cnrs.fr/))
+
 ## 2024
 
 - 🇫🇷 L’IA générative : vers une déshumanisation de la culture ? ([Colloque Droit et Cultures @ Université de Bordeaux](https://irdap.u-bordeaux.fr/application/files/8317/3168/6134/Programme_AdHoc_v7.pdf))
