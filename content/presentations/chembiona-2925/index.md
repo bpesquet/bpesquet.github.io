@@ -3,7 +3,7 @@ marp: true
 math: true  # Use default Marp engin for math rendering
 title: "Artificial Intelligence: past, present, future(s)"
 date: 2025-03-20T11:09:44+01:00
-draft: false
+draft: true
 tags:
 - ai
 style: |
@@ -125,7 +125,7 @@ Build a tree-like structure based on a series of discovered questions on the dat
 
 Layers of loosely neuron-inpired computation units that can approximate any continuous function.
 
-![Dog or Cat?](images/neural_net.gif)
+![MNIST neural network example](images/mnist_nn_3b1b.gif)
 
 ### The Deep Learning tsunami
 
@@ -190,6 +190,11 @@ $$f(inputs) = outputs$$
 <div class="columns">
 <div>
 
+- The next word is predicted via an attention-powered statistical analysis of the other words.
+- This process can be repeated to produce entire texts.
+
+![Autoregressive model animation](images/deepseek.gif)
+
 </div>
 <div>
 
@@ -203,3 +208,16 @@ $$f(inputs) = outputs$$
 ## The uncertain future(s) of AI
 
 ### Negative externalities
+
+### The Chinese room argument
+
+![Chinese room](images/chinese_room.png)
+
+### The technological singularity
+
+![Compared cognitive evolutions](images/singularity.png)
+
+## Credits and resources
+
+- [Elements of AI: What is AI?](https://course.elementsofai.com/1)
+- [Comment fonctionne ChatGPT ? Décrypter son nom pour comprendre les modèles de langage](https://theconversation.com/comment-fonctionne-chatgpt-decrypter-son-nom-pour-comprendre-les-modeles-de-langage-206788)
