@@ -295,13 +295,13 @@ With multiple confidence ratings, it is possible to construct a type 2 ROC curve
 
 This measure exploits the fact that given Gaussian variance assumptions at the type 1 level, the shapes of the type 2 distributions are known even if they are not themselves Gaussian. More precisely, the type 2 ROC curve is entirely determined by type 1 sensitivity if the subject is metacognitively ideal (perfect in placing their confidence ratings).
 
-Using this assumption and given the subject’s type 2 performance data, we can thus obtain the underlying type 1 sensitivity. This measure is called meta-$d'$. It estimates the level of type 1 performance ($d′_1$) that would have given rise to the observed type 2 data [[Fleming and Lau, 2014]](https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00443/full) ([more details](https://www.columbia.edu/~bsm2105/type2sdt/)).
+Using this assumption and given the subject’s type 2 performance data, we can thus obtain the underlying type 1 sensitivity. This measure is called meta-$d'$. It estimates the level of type 1 performance ($d_1'$) that would have given rise to the observed type 2 data [[Fleming and Lau, 2014]](https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00443/full) ([more details](https://www.columbia.edu/~bsm2105/type2sdt/)).
 
 #### M-ratio
 
-Because meta-$d′$ is in the same units as (type 1) $d′$, the two can be directly compared.
+Because meta-$d'$ is in the same units as (type 1) $d'$, the two can be directly compared.
 
-We can define confidence efficiency as the value of meta-$d′$ relative to $d′$, or meta-$d'/d'$. This measure is called the M-ratio.
+We can define confidence efficiency as the value of meta-$d'$ relative to $d'$, or meta-$d'/d'$. This measure is called the M-ratio.
 
 An alternative measure is meta-$d'-d'$, favored when $d'$ takes small values [[Fleming and Lau, 2014]](https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00443/full).
 
