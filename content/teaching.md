@@ -8,16 +8,19 @@ My teaching career encompasses a pretty wide variety of computer-related topics,
 
 ## Courses
 
-Due to my [PhD](../research), I am currently involved in a reduced number of courses. Access to their content is restricted to students and colleagues.
+Due to my [PhD](../research), I am currently involved in a reduced number of courses.
+
+> [!NOTE]
+> Access to their content is restricted to authorized students and colleagues.
 
 ### ENSC
 
-- [Bases de l'IA](https://moodle.bordeaux-inp.fr/course/view.php?id=1563)
-- [Apprentissage automatique](https://moodle.bordeaux-inp.fr/course/view.php?id=2891)
+- 🇫🇷 [Bases de l'IA](https://moodle.bordeaux-inp.fr/course/view.php?id=1563)
+- 🇫🇷 [Apprentissage automatique](https://moodle.bordeaux-inp.fr/course/view.php?id=2891)
 
 ### IOGS
 
-- [Initiation au Machine Learning](https://ecampus.paris-saclay.fr/course/view.php?id=162152)
+- 🇫🇷 [Initiation au Machine Learning](https://ecampus.paris-saclay.fr/course/view.php?id=162152)
 
 ## Material
 
