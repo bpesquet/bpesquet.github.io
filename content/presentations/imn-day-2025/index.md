@@ -82,7 +82,7 @@ In **decisional focus models**, confidence is directly indexed by the state of e
 
 ![2DSD model](images/pleskacTwostageDynamicSignal2010_1.png)
 
-*Image credits: [Kepecs and Busemeyer, 2008](https://doi.apa.org/doi/10.1037/a0019737)*
+*Image credits: [Pleskac and Busemeyer, 2008](https://doi.apa.org/doi/10.1037/a0019737)*
 
 </div>
 </div>
@@ -110,7 +110,7 @@ In **decisional focus models**, confidence is directly indexed by the state of e
 
 Model combining:
 
-- an **evidence accumulation model** for decision-making;
+- a **decision module** based on an evidence accumulation model;
 - a **metacognitive module** in which confidence is used to tune the decision hyperparameters.
 
 Assessed on a classic **perceptual task**: Random Dot Motion discrimination.
