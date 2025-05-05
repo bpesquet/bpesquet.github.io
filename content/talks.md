@@ -9,6 +9,7 @@ Here is a list of my public talks, including research-focused presentations and 
 ## 2025
 
 - [Artificial Intelligence: past, present, future(s)](../presentations/chembiona-2925/) (Congrès [ChemBioNA](https://www.chembiona.cnrs.fr/))
+- [Towards metacognitive agents: integrating confidence in sequential decision-making](../presentations/imn-day-2025/) ([IMN](https://www.imn-bordeaux.org) scientific day)
 
 ## 2024
 
