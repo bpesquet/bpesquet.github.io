@@ -10,9 +10,15 @@ tags:
 ---
 
 <!-- Apply header and footer to first slide only -->
-<!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
+<!-- _header: "[![IMN logo](../../../static/images/imn_logo.png)](https://ensc.bordeaux-inp.fr) [![INRIA logo](../../../static/images/inria_logo.jpg)](https://www.inria.fr) [![ENSC logo](../../../static/images/ENSC_2022.jpg)](https://ensc.bordeaux-inp.fr)" -->
 <!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
 <!-- headingDivider: 5 -->
+
+<style scoped>
+  img {
+    padding-right: 40px
+  }
+</style>
 
 # Confidence in decision-making
 

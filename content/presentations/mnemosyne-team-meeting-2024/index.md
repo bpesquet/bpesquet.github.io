@@ -17,7 +17,7 @@ tags:
 ---
 
 <!-- Apply header and footer to first slide only -->
-<!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
+<!-- _header: "[![INRIA logo](../../../static/images/inria_logo.jpg)](https://www.inria.fr)" -->
 <!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
 <!-- headingDivider: 2 -->
 
