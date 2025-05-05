@@ -35,6 +35,7 @@ style: |
 
 ### Decision-making as a sequential process
 
+- A **decision** is a deliberative process leading to a **choice**.
 - Decision-makers need **time** to collect and process informative cues.
 - Decinion-making is often modeled as an **accumulation-to-threshold** process [[Gold and Shadlen, 2007](https://www.annualreviews.org/doi/10.1146/annurev.neuro.29.051605.113038)].
 - The balance between response time and accuracy (when available) is called the **Speed/Accuracy Trade-off** [[Heitz, 2014](https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2014.00150/full)].
@@ -111,27 +112,20 @@ In **decisional focus models**, confidence is directly indexed by the state of e
 
 ### Agent architecture
 
-<div class="columns">
-<div>
-
 Model combining:
 
 - a **decision module** based on an evidence accumulation model;
-- a **metacognitive module** in which confidence is used to tune the decision hyperparameters.
+- a **metacognitive module** in which confidence is used to tune the decision hyperparameters [[Desender and Verguts, 2024](http://biorxiv.org/lookup/doi/10.1101/2024.10.03.616475)].
 
-Assessed on a classic **perceptual task**: Random Dot Motion discrimination.
+### Experimental validation
 
-</div>
-<div>
+Model was assessed on a classic **perceptual task**: Random Dot Motion discrimination.
 
 ![Confident agent model](images/pesquetAlexandre2025_1.png)
 
-</div>
-</div>
-
 ### Preliminary results
 
-- As expected, confidence and decision time are oppositely correlated with dot motion coherence.
+- As expected, confidence is correlated with dot motion coherence, as is (oppositely) decision time.
 - Model is able to implement the SAT.
 
 ![First model results](images/pesquetAlexandre2025_2.png)
