@@ -1,4 +1,174 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>confidence on Baptiste Pesquet</title><link>https://www.bpesquet.fr/tags/confidence/</link><description>Baptiste Pesquet (confidence)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 02 Dec 2024 13:40:27 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/tags/confidence/index.xml" rel="self" type="application/rss+xml"/><item><title>Papers review: Kepecs' framework for decision confidence</title><link>https://www.bpesquet.fr/presentations/kepecs-decision-confidence/</link><pubDate>Mon, 02 Dec 2024 13:40:27 +0100</pubDate><guid>https://www.bpesquet.fr/presentations/kepecs-decision-confidence/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>confidence on Baptiste Pesquet</title><link>https://www.bpesquet.fr/tags/confidence/</link><description>Baptiste Pesquet (confidence)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 May 2025 10:04:27 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/tags/confidence/index.xml" rel="self" type="application/rss+xml"/><item><title>Towards metacognitive agents: integrating confidence in sequential decision-making</title><link>https://www.bpesquet.fr/presentations/imn-day-2025/</link><pubDate>Mon, 05 May 2025 10:04:27 +0200</pubDate><guid>https://www.bpesquet.fr/presentations/imn-day-2025/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+&lt;!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
+&lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
+&lt;!-- headingDivider: 5 -->
+&lt;h1 id="towards-metacognitive-agents-integrating-confidence-in-sequential-decision-making" >Towards metacognitive agents: integrating confidence in sequential decision-making
+&lt;span>
+&lt;a href="#towards-metacognitive-agents-integrating-confidence-in-sequential-decision-making">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h1>&lt;!-- Show pagination, starting with second slide -->
+&lt;!-- paginate: true -->
+&lt;h2 id="confidence-in-natural-cognition" >Confidence in natural cognition
+&lt;span>
+&lt;a href="#confidence-in-natural-cognition">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="decision-making-as-a-sequential-process" >Decision-making as a sequential process
+&lt;span>
+&lt;a href="#decision-making-as-a-sequential-process">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Decision-makers need &lt;strong>time&lt;/strong> to collect and process informative cues.&lt;/li>
+&lt;li>Decinion-making is often modeled as an &lt;strong>accumulation-to-threshold&lt;/strong> process [&lt;a href="https://www.annualreviews.org/doi/10.1146/annurev.neuro.29.051605.113038">Gold and Shadlen, 2007&lt;/a>].&lt;/li>
+&lt;li>The balance between response time and accuracy (when available) is called the &lt;strong>Speed/Accuracy Trade-off&lt;/strong> [&lt;a href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2014.00150/full">Heitz, 2014&lt;/a>].&lt;/li>
+&lt;/ul>
+&lt;h3 id="models-of-sequential-decision-making" >Models of sequential decision-making
+&lt;span>
+&lt;a href="#models-of-sequential-decision-making">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="columns">
+&lt;div>
+&lt;p>For binary choices, a popular model is the &lt;strong>Diffision Decision Model&lt;/strong> [&lt;a href="https://direct.mit.edu/neco/article/20/4/873-922/7299">Ratcliff and McKoon, 2008&lt;/a>].&lt;/p>
+&lt;p>&lt;img src="images/forstmannSequentialSamplingModels2016_1.png" alt="Illustration of the DDM model">&lt;/p>
+&lt;p>&lt;em>Image credits: [&lt;a href="https://doi.org/10.1146/annurev-psych-122414-033645">Forstmann et al., 2016&lt;/a>]&lt;/em>&lt;/p>
+&lt;/div>
+&lt;div>
+&lt;p>Multi-alternative decisions are often modeled as a &lt;strong>race&lt;/strong> between accumulators for each possible choice.&lt;/p>
+&lt;p>&lt;img src="images/mamassianVisualConfidence2016_1.png" alt="Illustration of a race model">&lt;/p>
+&lt;p>&lt;em>Image credits: [&lt;a href="https://www.annualreviews.org/doi/10.1146/annurev-vision-111815-114630">Mamassian, 2016&lt;/a>]&lt;/em>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="confidence-in-decision-making" >Confidence in decision-making
+&lt;span>
+&lt;a href="#confidence-in-decision-making">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Uncertainty&lt;/strong> is inherent to all stages of neural computation [&lt;a href="https://doi.org/10.1146/annurev-psych-022423-032425">Fleming, 2024&lt;/a>].
+&lt;ul>
+&lt;li>It refers to probabilistic representations of information in the brain.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Confidence&lt;/strong> quantifies the degree of &lt;strong>certainty&lt;/strong> associated with a decision.
+&lt;ul>
+&lt;li>It refers to scalar values derived from those distributions [&lt;a href="https://linkinghub.elsevier.com/retrieve/pii/S0896627315008284">Meyniel et al., 2015&lt;/a>].&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>More formally, confidence can be defined as the &lt;strong>probability&lt;/strong> that a choice is correct given the evidence [&lt;a href="https://www.nature.com/articles/nn.4240">Pouget et al., 2016&lt;/a>].&lt;/li>
+&lt;/ul>
+&lt;h3 id="computing-confidence-in-sequential-decision-making-models" >Computing confidence in sequential decision-making models
+&lt;span>
+&lt;a href="#computing-confidence-in-sequential-decision-making-models">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="columns">
+&lt;div>
+&lt;p>In &lt;strong>decisional focus models&lt;/strong>, confidence is directly indexed by the state of evidence at the time of choice.&lt;/p>
+&lt;p>&lt;img src="images/kepecsNeuralCorrelatesComputation2008_1.png" alt="Race model with BoE">&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://www.nature.com/articles/nature07200">Kepecs et al., 2008&lt;/a>&lt;/em>&lt;/p>
+&lt;/div>
+&lt;div>
+&lt;p>&lt;strong>Post-decisional focus models&lt;/strong> posit that evidence accumulation goes on after decision time to account for confidence.&lt;/p>
+&lt;p>&lt;img src="images/pleskacTwostageDynamicSignal2010_1.png" alt="2DSD model">&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://doi.apa.org/doi/10.1037/a0019737">Kepecs and Busemeyer, 2008&lt;/a>&lt;/em>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="confidence-as-a-doorway-to-metacognition" >Confidence as a doorway to metacognition
+&lt;span>
+&lt;a href="#confidence-as-a-doorway-to-metacognition">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Metacognition&lt;/strong> is the ability to &lt;strong>monitor&lt;/strong> and &lt;strong>regulate&lt;/strong> one&amp;rsquo;s cognitive processes [&lt;a href="https://www.semanticscholar.org/paper/Metacognition-and-Cognitive-Monitoring%3A-A-New-Area-Flavell/ee652f0f63ed5b0cfe0af4cb4ea76b2ecf790c8d">Flavell, 1979&lt;/a>].
+&lt;ul>
+&lt;li>Example: should I study more (or differently) for this exam?&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>As part of metacognitive monitoring, confidence judgments may inform the processes of &lt;strong>cognitive control&lt;/strong> [&lt;a href="http://journal.frontiersin.org/article/10.3389/fnhum.2014.00443/abstract">Fleming and Lau, 2014&lt;/a>].&lt;/li>
+&lt;/ul>
+&lt;h3 id="an-emerging-field-the-neuroscience-of-confidence" >An emerging field: the neuroscience of confidence
+&lt;span>
+&lt;a href="#an-emerging-field-the-neuroscience-of-confidence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>Activity in the &lt;strong>parietal cortex&lt;/strong> seems related to evidence accumulation during decision-making.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Separate&lt;/strong> and perhaps &lt;strong>multiple&lt;/strong> brain areas are involved in confidence monitoring and reporting [&lt;a href="https://linkinghub.elsevier.com/retrieve/pii/S0149763415001025">Grimaldi et al., 2015&lt;/a>]:&lt;/p>
+&lt;ul>
+&lt;li>Importance of the prefrontal cortex, more precisely the &lt;strong>ventromedial prefrontal cortex&lt;/strong> (vmPFC), in the formation of confidence.&lt;/li>
+&lt;li>Firing rates of many single neurons in the &lt;strong>orbitofrontal cortex&lt;/strong> (OFC) of rats match confidence models [&lt;a href="https://www.nature.com/articles/nature07200">Kepecs et al., 2008&lt;/a>].&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="proposed-approach" >Proposed approach
+&lt;span>
+&lt;a href="#proposed-approach">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="agent-architecture" >Agent architecture
+&lt;span>
+&lt;a href="#agent-architecture">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="columns">
+&lt;div>
+&lt;p>Model combining:&lt;/p>
+&lt;ul>
+&lt;li>an &lt;strong>evidence accumulation model&lt;/strong> for decision-making;&lt;/li>
+&lt;li>a &lt;strong>metacognitive module&lt;/strong> in which confidence is used to tune the decision hyperparameters.&lt;/li>
+&lt;/ul>
+&lt;p>Assessed on a classic &lt;strong>perceptual task&lt;/strong>: Random Dot Motion discrimination.&lt;/p>
+&lt;/div>
+&lt;div>
+&lt;p>&lt;img src="images/pesquetAlexandre2025_1.png" alt="Confident agent model">&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="preliminary-results" >Preliminary results
+&lt;span>
+&lt;a href="#preliminary-results">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>As expected, confidence and decision time are oppositely correlated with dot motion coherence.&lt;/li>
+&lt;li>Model is able to implement the SAT.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/pesquetAlexandre2025_2.png" alt="First model results">&lt;/p>
+&lt;h3 id="future-works" >Future works
+&lt;span>
+&lt;a href="#future-works">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Refine the hyperparameters tuning process.&lt;/li>
+&lt;li>Add different metacognitive strategies.&lt;/li>
+&lt;li>Implement model on a human/robot collaborative task.&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;h2 id="thanks-for-your-attention" >Thanks for your attention!
+&lt;span>
+&lt;a href="#thanks-for-your-attention">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Any questions?&lt;/p></description></item><item><title>Papers review: Kepecs' framework for decision confidence</title><link>https://www.bpesquet.fr/presentations/kepecs-decision-confidence/</link><pubDate>Mon, 02 Dec 2024 13:40:27 +0100</pubDate><guid>https://www.bpesquet.fr/presentations/kepecs-decision-confidence/</guid><description>&lt;!-- Apply header and footer to first slide only -->
 &lt;!-- _header: "[![INRIA logo](../inria_logo.jpg)](https://www.inria.fr)" -->
 &lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
 &lt;!-- headingDivider: 3 -->
@@ -724,15 +894,15 @@
 &lt;/a>
 &lt;/span>
 &lt;/h4>&lt;p>This measure exploits the fact that given Gaussian variance assumptions at the type 1 level, the shapes of the type 2 distributions are known even if they are not themselves Gaussian. More precisely, the type 2 ROC curve is entirely determined by type 1 sensitivity if the subject is metacognitively ideal (perfect in placing their confidence ratings).&lt;/p>
-&lt;p>Using this assumption and given the subject’s type 2 performance data, we can thus obtain the underlying type 1 sensitivity. This measure is called meta-$d&amp;rsquo;$. It estimates the level of type 1 performance ($d′_1$) that would have given rise to the observed type 2 data &lt;a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00443/full">[Fleming and Lau, 2014]&lt;/a> (&lt;a href="https://www.columbia.edu/~bsm2105/type2sdt/">more details&lt;/a>).&lt;/p>
+&lt;p>Using this assumption and given the subject’s type 2 performance data, we can thus obtain the underlying type 1 sensitivity. This measure is called meta-$d&amp;rsquo;$. It estimates the level of type 1 performance ($d_1&amp;rsquo;$) that would have given rise to the observed type 2 data &lt;a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00443/full">[Fleming and Lau, 2014]&lt;/a> (&lt;a href="https://www.columbia.edu/~bsm2105/type2sdt/">more details&lt;/a>).&lt;/p>
 &lt;h4 id="m-ratio" >M-ratio
 &lt;span>
 &lt;a href="#m-ratio">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h4>&lt;p>Because meta-$d′$ is in the same units as (type 1) $d′$, the two can be directly compared.&lt;/p>
-&lt;p>We can define confidence efficiency as the value of meta-$d′$ relative to $d′$, or meta-$d&amp;rsquo;/d&amp;rsquo;$. This measure is called the M-ratio.&lt;/p>
+&lt;/h4>&lt;p>Because meta-$d&amp;rsquo;$ is in the same units as (type 1) $d&amp;rsquo;$, the two can be directly compared.&lt;/p>
+&lt;p>We can define confidence efficiency as the value of meta-$d&amp;rsquo;$ relative to $d&amp;rsquo;$, or meta-$d&amp;rsquo;/d&amp;rsquo;$. This measure is called the M-ratio.&lt;/p>
 &lt;p>An alternative measure is meta-$d&amp;rsquo;-d&amp;rsquo;$, favored when $d&amp;rsquo;$ takes small values &lt;a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00443/full">[Fleming and Lau, 2014]&lt;/a>.&lt;/p>
 &lt;h3 id="evidence-accumulation-models" >Evidence Accumulation Models
 &lt;span>
