@@ -174,7 +174,391 @@ padding-right: 40px
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;p>Any questions?&lt;/p></description></item><item><title>Talks and presentations</title><link>https://www.bpesquet.fr/talks/</link><pubDate>Mon, 17 Feb 2025 11:08:22 +0100</pubDate><guid>https://www.bpesquet.fr/talks/</guid><description>&lt;p>Here is a list of my public talks, including research-focused presentations and participations to interdisciplinary events.&lt;/p>
+&lt;/h2>&lt;p>Any questions?&lt;/p></description></item><item><title>Artificial Intelligence: past, present, future(s)</title><link>https://www.bpesquet.fr/presentations/chembiona-2925/</link><pubDate>Thu, 20 Mar 2025 11:09:44 +0100</pubDate><guid>https://www.bpesquet.fr/presentations/chembiona-2925/</guid><description>&lt;!-- Apply header and footer to first slide only -->
+&lt;!-- _header: "[![ENSC logo](../../../static/images/ENSC_2022.jpg)](https://ensc.bordeaux-inp.fr) [![INRIA logo](../../../static/images/inria_logo.jpg)](https://www.inria.fr)" -->
+&lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
+&lt;!-- headingDivider: 5 -->
+&lt;style scoped>
+img {
+padding-right: 40px
+}
+&lt;/style>
+&lt;h1 id="artificial-intelligence-past-present-futures" >Artificial Intelligence: past, present, future(s)
+&lt;span>
+&lt;a href="#artificial-intelligence-past-present-futures">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h1>&lt;!-- Show pagination, starting with second slide -->
+&lt;!-- paginate: true -->
+&lt;h2 id="a-brief-history-of-ai" >A brief history of AI
+&lt;span>
+&lt;a href="#a-brief-history-of-ai">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="a-recent-discipline" >A recent discipline
+&lt;span>
+&lt;a href="#a-recent-discipline">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="columns">
+&lt;div>
+&lt;p>Kickoff: &lt;a href="https://en.wikipedia.org/wiki/Dartmouth_workshop">1956 Dartmouth workshop on Artificial Intelligence&lt;/a>.&lt;/p>
+&lt;blockquote>
+&lt;p>&amp;ldquo;AI is the science and engineering of making intelligent machines.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)">John McCarthy&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;ldquo;AI is the science of making machines do things that would require intelligence if done by men.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Marvin_Minsky">Marvin Minsky&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;/div>
+&lt;div>
+&lt;p>&lt;a href="https://spectrum.ieee.org/dartmouth-ai-workshop">&lt;img src="images/dartmouth_workshop.jpg" alt="Dartmouth workshop">&lt;/a>&lt;/p>
+&lt;p>&lt;em>Image credits: the Marvin Minsky family&lt;/em>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="high-ambitions" >High ambitions
+&lt;span>
+&lt;a href="#high-ambitions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;blockquote>
+&lt;p>&amp;ldquo;Every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.&amp;rdquo; (&lt;a href="http://jmc.stanford.edu/articles/dartmouth/dartmouth.pdf">Dartmouth workshop proposal&lt;/a>, 1956)&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Machines will be capable, within twenty years, of doing any work a man can do.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Herbert_A._Simon">Herbert Simon&lt;/a>, 1965)&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;ldquo;In for three to eight years we will have a machine with the general intelligence of an average human being.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Marvin_Minsky">Marvin Minsky&lt;/a>, 1970)&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="what-is-intelligence-by-the-way" >What is intelligence, by the way?
+&lt;span>
+&lt;a href="#what-is-intelligence-by-the-way">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Controversial definition, varying in what its abilities are and whether or not it is quantifiable.&lt;/p>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Intelligence is the ability to perceive or infer information; and to retain it as knowledge to be applied to adaptive behaviors within an environment or context.&amp;rdquo; (&lt;a href="https://journals.sagepub.com/doi/10.1177/097226290801200108">Radha R. Sharma&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Intelligence is what you use when you don&amp;rsquo;t know what to do.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Jean_Piaget">Jean Piaget&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="the-ai-landscape" >The AI landscape
+&lt;span>
+&lt;a href="#the-ai-landscape">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Main fields of research:
+&lt;ul>
+&lt;li>&lt;strong>Problem solving&lt;/strong> (e.g. search algorithms, constraint solving).&lt;/li>
+&lt;li>&lt;strong>Reasoning&lt;/strong> and &lt;strong>decision making&lt;/strong> (e.g. logic, knowledge representation).&lt;/li>
+&lt;li>&lt;strong>Machine Learning&lt;/strong> (e.g. systems that improve with experience).&lt;/li>
+&lt;li>&lt;strong>Real-world interactions&lt;/strong> (e.g. computer vision, natural language understanding).&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Either purely &lt;strong>software&lt;/strong>-based, or embedded in &lt;strong>hardware&lt;/strong> devices.&lt;/li>
+&lt;/ul>
+&lt;h3 id="a-highly-interdisciplinary-field" >A highly interdisciplinary field
+&lt;span>
+&lt;a href="#a-highly-interdisciplinary-field">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/ai_fields.png" alt="AI fields">&lt;/p>
+&lt;h3 id="a-tumultuous-history" >A tumultuous history
+&lt;span>
+&lt;a href="#a-tumultuous-history">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/ai_timeline.png" alt="AI timeline">&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://fr.slideshare.net/slideshow/ai-and-productivity/76251478">David Lavenda&lt;/a>&lt;/em>&lt;/p>
+&lt;h3 id="two-competing-approaches" >Two competing approaches
+&lt;span>
+&lt;a href="#two-competing-approaches">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://shs.cairn.info/revue-reseaux-2018-5-page-173?lang=fr">&lt;img src="images/ai_approaches.png" alt="AI approaches">&lt;/a>&lt;/p>
+&lt;p>&lt;em>Image credits: [&lt;a href="https://doi.org/10.3917/res.211.0173">Cardon et al., 2018&lt;/a>]&lt;/em>&lt;/p>
+&lt;h3 id="how-to-define-ai" >How to define AI?
+&lt;span>
+&lt;a href="#how-to-define-ai">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;blockquote>
+&lt;p>&amp;ldquo;AI is an &lt;strong>interdisciplinary&lt;/strong> field aiming at &lt;strong>understanding&lt;/strong> and &lt;strong>imitating&lt;/strong> the mechanisms of &lt;strong>cognition&lt;/strong> and &lt;strong>reasoning&lt;/strong>, in order to &lt;strong>assist&lt;/strong> or &lt;strong>substitute&lt;/strong> humans in their activities.&amp;rdquo; (&lt;a href="https://fr.wikipedia.org/wiki/Commission_d%27enrichissement_de_la_langue_fran%C3%A7aise">Commission d&amp;rsquo;enrichissement de la langue française&lt;/a>, 2018)&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;ldquo;&lt;a href="https://en.wikipedia.org/wiki/AI_effect">AI is whatever hasn&amp;rsquo;t been done yet&lt;/a>.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Larry_Tesler">Larry Tesler&lt;/a>)&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="ais-booming-present" >AI&amp;rsquo;s booming present
+&lt;span>
+&lt;a href="#ais-booming-present">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="machine-learning-a-new-paradigm" >Machine Learning: a new paradigm
+&lt;span>
+&lt;a href="#machine-learning-a-new-paradigm">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;blockquote>
+&lt;p>&amp;ldquo;The field of study that gives computers the ability to learn without being explicitly programmed.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Arthur_Samuel_(computer_scientist)">Arthur Samuel&lt;/a>, 1959).&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="images/programming_paradigm.png" alt="Programming paradigm">&lt;/p>
+&lt;p>&lt;img src="images/training_paradigm.png" alt="Training paradigm">&lt;/p>
+&lt;h4 id="algorithm-1-k-nearest-neighbors" >Algorithm #1: K-Nearest Neighbors
+&lt;span>
+&lt;a href="#algorithm-1-k-nearest-neighbors">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Prediction is based on the $k$ nearest neighbors of a data sample.&lt;/p>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">&lt;img src="images/knn.png" alt="K-NN">&lt;/a>&lt;/p>
+&lt;h4 id="algorithm-2-decision-trees" >Algorithm #2: Decision Trees
+&lt;span>
+&lt;a href="#algorithm-2-decision-trees">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Build a &lt;strong>tree-like structure&lt;/strong> based on a series of learned questions on the data.&lt;/p>
+&lt;p>&lt;img src="images/dt_iris.png" alt="Decision Tree for Iris dataset">&lt;/p>
+&lt;h4 id="algorithm-3-artificial-neural-networks" >Algorithm #3: Artificial Neural Networks
+&lt;span>
+&lt;a href="#algorithm-3-artificial-neural-networks">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Layers of &lt;strong>loosely neuron-inpired computation units&lt;/strong> that can approximate any continuous function.&lt;/p>
+&lt;div class="columns">
+&lt;div>
+&lt;p>&lt;img src="images/mnist_nn_3b1b.gif" alt="MNIST neural network example">&lt;/p>
+&lt;/div>
+&lt;div>
+&lt;p>&lt;em>Image credits: &lt;a href="https://www.3blue1brown.com/topics/neural-networks">3Blue1Brown&lt;/a>&lt;/em>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="the-deep-learning-tsunami" >The Deep Learning tsunami
+&lt;span>
+&lt;a href="#the-deep-learning-tsunami">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Subfield of Machine Learning consisting of &lt;strong>multilayered neural networks&lt;/strong> trained on vast amounts of &lt;strong>data&lt;/strong>.&lt;/p>
+&lt;p>&lt;a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">&lt;img src="images/alexnet.png" alt="AlexNet'12 (simplified)">&lt;/a>&lt;/p>
+&lt;p>&lt;em>Image credits: [&lt;a href="https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html">Krizhevsky et al., 2012&lt;/a>]&lt;/em>&lt;/p>
+&lt;p>In a decade, outperformed previous SOTA approaches in many fields (computer vision, language, processing, and much more).&lt;/p>
+&lt;h3 id="from-labs-to-everyday-life-in-25-years" >From labs to everyday life in 25 years
+&lt;span>
+&lt;a href="#from-labs-to-everyday-life-in-25-years">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="columns">
+&lt;div>
+&lt;p>&lt;a href="http://yann.lecun.com/exdb/lenet/">&lt;img src="images/lecun_lenet.gif" alt="LeCun - LeNet">&lt;/a>&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="http://yann.lecun.com/exdb/lenet/">Yann LeCun&lt;/a>&lt;/em>&lt;/p>
+&lt;/div>
+&lt;div>
+&lt;p>&lt;a href="https://twitter.com/mbrennanchina/status/1203687857849716736">&lt;img src="images/china_school_facial_reco.gif" alt="Facial recognition in Chinese elementary school">&lt;/a>&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://x.com/mbrennanchina">Matthew Brennan&lt;/a>&lt;/em>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="reasons-for-success" >Reasons for success
+&lt;span>
+&lt;a href="#reasons-for-success">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/dl_reasons_for_success.png" alt="Reasons for DL success">&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://www.youtube.com/playlist?list=PLqYmG7hTraZCDxZ44o4p3N5Anz3lLRVZF">DeepMind&lt;/a>&lt;/em>&lt;/p>
+&lt;h3 id="case-study-large-language-models" >Case study: Large Language Models
+&lt;span>
+&lt;a href="#case-study-large-language-models">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="columns">
+&lt;div>
+&lt;p>&lt;img src="images/chat_gpt.png" alt="ChatGPT letters">&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://www.shutterstock.com/fr/image-photo/chatgpt-concept-artificial-intelligence-modern-tool-2273533539">Shutterstock&lt;/a>&lt;/em>&lt;/p>
+&lt;/div>
+&lt;div>
+&lt;ul>
+&lt;li>&lt;strong>Model&lt;/strong>: a function $f$ defining the relationship between inputs (data) and outputs (results).&lt;/li>
+&lt;/ul>
+&lt;p>$$f(inputs) = outputs$$&lt;/p>
+&lt;ul>
+&lt;li>LLM: a (very) large model designed for language processing tasks.&lt;/li>
+&lt;li>Kickoff: &lt;a href="https://openai.com/index/chatgpt/">ChatGPT&lt;/a>, November 2022.&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;h4 id="t-for-transformer" >T for &lt;em>Transformer&lt;/em>&amp;hellip;
+&lt;span>
+&lt;a href="#t-for-transformer">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;div class="columns">
+&lt;div>
+&lt;p>&lt;img src="images/transformer.png" alt="Transfomer architecture">&lt;/p>
+&lt;/div>
+&lt;div>
+&lt;ul>
+&lt;li>Neural network architecture designed to handle &lt;strong>sequential data&lt;/strong>.&lt;/li>
+&lt;li>Cheaper to train and easier to parallelize than previous approaches.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>Image credits: [&lt;a href="http://arxiv.org/abs/1706.03762">Vaswani et al., 2017&lt;/a>]&lt;/em>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h4 id="g-for-generative" >G for &lt;em>Generative&lt;/em>&amp;hellip;
+&lt;span>
+&lt;a href="#g-for-generative">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;div class="columns">
+&lt;div>
+&lt;ul>
+&lt;li>The next word is predicted via an &lt;strong>attention&lt;/strong>-powered statistical analysis of the other words.&lt;/li>
+&lt;li>This process can be repeated to produce entire texts.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="images/deepseek.gif" alt="Autoregressive model animation">&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://www.youtube.com/watch?v=0VLAoVGf_74">Welch Labs&lt;/a>&lt;/em>&lt;/p>
+&lt;/div>
+&lt;div>
+&lt;p>&lt;img src="images/smurfs.png" alt="Smurfs extract (in French)">&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://fr.wikipedia.org/wiki/Peyo">Peyo&lt;/a>&lt;/em>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h4 id="p-for-pretrained" >P for &lt;em>Pretrained&lt;/em>
+&lt;span>
+&lt;a href="#p-for-pretrained">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;div class="columns">
+&lt;div>
+&lt;ul>
+&lt;li>Models like ChatGPT contain &lt;strong>billions&lt;/strong> of internal parameters.&lt;/li>
+&lt;li>They are trained on humongous amounts of data (whole parts of the Internet).&lt;/li>
+&lt;li>These processes have &lt;strong>huge energetical costs&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div>
+&lt;p>&lt;img src="images/GettyImages_nuclear_power_plant.webp" alt="A nuclear power plant">&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://www.gettyimages.fr/">Getty&lt;/a>&lt;/em>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="the-uncertain-futures-of-ai" >The uncertain future(s) of AI
+&lt;span>
+&lt;a href="#the-uncertain-futures-of-ai">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="ais-growing-impact-on-individuals-and-society" >AI&amp;rsquo;s growing impact on individuals and society
+&lt;span>
+&lt;a href="#ais-growing-impact-on-individuals-and-society">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>AI has more and more social and societal implications:&lt;/p>
+&lt;ul>
+&lt;li>Job market transformation.&lt;/li>
+&lt;li>Human/machine interactions.&lt;/li>
+&lt;li>Trust and acceptability.&lt;/li>
+&lt;li>Legal aspects and regulation.&lt;/li>
+&lt;li>Fairness.&lt;/li>
+&lt;li>Ethics.&lt;/li>
+&lt;li>Privacy and usage of personal data.&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;h3 id="which-ai-will-prevail" >Which AI will prevail?
+&lt;span>
+&lt;a href="#which-ai-will-prevail">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Substitutive intelligence&lt;/strong>: replacement of men by machines.&lt;/li>
+&lt;li>&lt;strong>Augmented intelligence&lt;/strong>: human-centered AI for performance augmentation &amp;amp; autonomy enhancement.&lt;/li>
+&lt;li>&lt;strong>Hybrid intelligence&lt;/strong>: human-machine collaboration on complex tasks.&lt;/li>
+&lt;/ul>
+&lt;h3 id="the-agi-debate" >The AGI debate
+&lt;span>
+&lt;a href="#the-agi-debate">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>AGI = &lt;strong>Artificial General Intelligence&lt;/strong> a.k.a. &lt;strong>strong AI&lt;/strong>
+&lt;ul>
+&lt;li>The ability to perform any task as well as a human.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Are recent models &lt;em>sparks of AGI&lt;/em> [&lt;a href="https://arxiv.org/abs/2303.12712">Buceck et al., 2023&lt;/a>] or merely &lt;em>stochastic parrots&lt;/em> [&lt;a href="https://dl.acm.org/doi/10.1145/3442188.3445922">Bender et al. 2021&lt;/a>]?&lt;/li>
+&lt;/ul>
+&lt;h3 id="the-technological-singularity" >The technological singularity
+&lt;span>
+&lt;a href="#the-technological-singularity">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://www.youtube.com/watch?v=hxL-FwGPGhM">&lt;img src="images/singularity.png" alt="Compared cognitive evolutions">&lt;/a>&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://www.youtube.com/watch?v=hxL-FwGPGhM">Bernard Claverie&lt;/a>&lt;/em>&lt;/p>
+&lt;h3 id="the-chinese-room-argument" >The Chinese room argument
+&lt;span>
+&lt;a href="#the-chinese-room-argument">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Is showing intelligent behavior the same as being intelligent? [&lt;a href="https://iep.utm.edu/chinese-room-argument/">Searle, 1980s&lt;/a>]&lt;/p>
+&lt;p>&lt;img src="images/chinese_room.png" alt="Chinese room">&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://course.elementsofai.com/1">elementsofai&lt;/a>&lt;/em>&lt;/p>
+&lt;h3 id="the-human-brain-a-masterpiece-of-evolution" >The human brain: a masterpiece of evolution
+&lt;span>
+&lt;a href="#the-human-brain-a-masterpiece-of-evolution">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="columns">
+&lt;div>
+&lt;ul>
+&lt;li>Approx. 86 billions neurons in 1.4 kg.&lt;/li>
+&lt;li>Typical energy consumption: 20 W (!)&lt;/li>
+&lt;li>So much of it is still unknown.&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div>
+&lt;p>&lt;img src="images/human_brain.jpg" alt="The human brain">&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="babies-are-outstanding-learners" >Babies are outstanding learners
+&lt;span>
+&lt;a href="#babies-are-outstanding-learners">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;img src="images/conceptual_acquisition_infants.png" alt="Babies learning roadmap">&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://videolectures.net/videos/icml09_dupoux_hib">Emmanuel Dupoux&lt;/a>&lt;/em>&lt;/p>
+&lt;h2 id="thanks-for-your-attention" >Thanks for your attention!
+&lt;span>
+&lt;a href="#thanks-for-your-attention">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Any questions?&lt;/p>
+&lt;p>&lt;img src="images/friendly_robot.jpg" alt="A freindly robot">&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://stock.adobe.com/ch_fr/images/friendly-ai-chatbot-robot-character-waving-simple-3d-blue-background-illustration-generative-ai/565068563">Adobe Stock&lt;/a>&lt;/em>&lt;/p></description></item><item><title>Talks and presentations</title><link>https://www.bpesquet.fr/talks/</link><pubDate>Mon, 17 Feb 2025 11:08:22 +0100</pubDate><guid>https://www.bpesquet.fr/talks/</guid><description>&lt;p>Here is a list of my public talks, including research-focused presentations and participations to interdisciplinary events.&lt;/p>
 &lt;h2 id="2025" >2025
 &lt;span>
 &lt;a href="#2025">
