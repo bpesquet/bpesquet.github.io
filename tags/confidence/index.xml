@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>confidence on Baptiste Pesquet</title><link>https://www.bpesquet.fr/tags/confidence/</link><description>Baptiste Pesquet (confidence)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 May 2025 10:04:27 +0200</lastBuildDate><atom:link href="https://www.bpesquet.fr/tags/confidence/index.xml" rel="self" type="application/rss+xml"/><item><title>Towards metacognitive agents: integrating confidence in sequential decision-making</title><link>https://www.bpesquet.fr/presentations/imn-day-2025/</link><pubDate>Mon, 05 May 2025 10:04:27 +0200</pubDate><guid>https://www.bpesquet.fr/presentations/imn-day-2025/</guid><description>&lt;!-- Apply header and footer to first slide only -->
-&lt;!-- _header: "[![IMN logo](../../../static/images/imn_logo.png)](https://ensc.bordeaux-inp.fr) [![INRIA logo](../../../static/images/inria_logo.jpg)](https://www.inria.fr) [![ENSC logo](../../../static/images/ENSC_2022.jpg)](https://ensc.bordeaux-inp.fr)" -->
+&lt;!-- _header: "[![IMN logo](../../../static/images/imn_logo.png)](https://ensc.bordeaux-inp.fr) [![IMnemosyne logo](../../../static/images/mnemosyne_logo.png)](https://www.inria.fr/fr/mnemosyne) [![INRIA logo](../../../static/images/inria_logo.jpg)](https://www.inria.fr) [![ENSC logo](../../../static/images/ENSC_2022.jpg)](https://ensc.bordeaux-inp.fr)" -->
 &lt;!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
 &lt;!-- headingDivider: 5 -->
 &lt;style scoped>
@@ -30,7 +30,7 @@ padding-right: 40px
 &lt;/h3>&lt;ul>
 &lt;li>A &lt;strong>decision&lt;/strong> is a deliberative process leading to a &lt;strong>choice&lt;/strong>.&lt;/li>
 &lt;li>Decision-makers need &lt;strong>time&lt;/strong> to collect and process informative cues.&lt;/li>
-&lt;li>Decinion-making is often modeled as an &lt;strong>accumulation-to-threshold&lt;/strong> process [&lt;a href="https://www.annualreviews.org/doi/10.1146/annurev.neuro.29.051605.113038">Gold and Shadlen, 2007&lt;/a>].&lt;/li>
+&lt;li>Decision-making is often modeled as an &lt;strong>accumulation-to-threshold&lt;/strong> process [&lt;a href="https://www.annualreviews.org/doi/10.1146/annurev.neuro.29.051605.113038">Gold and Shadlen, 2007&lt;/a>].&lt;/li>
 &lt;li>The balance between response time and accuracy (when available) is called the &lt;strong>Speed/Accuracy Trade-off&lt;/strong> [&lt;a href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2014.00150/full">Heitz, 2014&lt;/a>].&lt;/li>
 &lt;/ul>
 &lt;h3 id="models-of-sequential-decision-making" >Models of sequential decision-making
@@ -41,7 +41,7 @@ padding-right: 40px
 &lt;/span>
 &lt;/h3>&lt;div class="columns">
 &lt;div>
-&lt;p>For binary choices, a popular model is the &lt;strong>Diffision Decision Model&lt;/strong> [&lt;a href="https://direct.mit.edu/neco/article/20/4/873-922/7299">Ratcliff and McKoon, 2008&lt;/a>].&lt;/p>
+&lt;p>For binary choices, a popular model is the &lt;strong>Diffusion Decision Model&lt;/strong> [&lt;a href="https://direct.mit.edu/neco/article/20/4/873-922/7299">Ratcliff and McKoon, 2008&lt;/a>].&lt;/p>
 &lt;p>&lt;img src="images/forstmannSequentialSamplingModels2016_1.png" alt="Illustration of the DDM model">&lt;/p>
 &lt;p>&lt;em>Image credits: [&lt;a href="https://doi.org/10.1146/annurev-psych-122414-033645">Forstmann et al., 2016&lt;/a>]&lt;/em>&lt;/p>
 &lt;/div>
@@ -135,7 +135,7 @@ padding-right: 40px
 &lt;/h3>&lt;p>Model combining:&lt;/p>
 &lt;ul>
 &lt;li>a &lt;strong>decision module&lt;/strong> based on an evidence accumulation model;&lt;/li>
-&lt;li>a &lt;strong>metacognitive module&lt;/strong> in which confidence is used to tune the decision hyperparameters [&lt;a href="http://biorxiv.org/lookup/doi/10.1101/2024.10.03.616475">Desender and Verguts, 2024&lt;/a>].&lt;/li>
+&lt;li>a &lt;strong>metacognitive module&lt;/strong> in which confidence is used to tune the decision hyperparameters: decision threshold and evidence integration rate [&lt;a href="http://biorxiv.org/lookup/doi/10.1101/2024.10.03.616475">Desender and Verguts, 2024&lt;/a>].&lt;/li>
 &lt;/ul>
 &lt;h3 id="experimental-validation" >Experimental validation
 &lt;span>
@@ -151,11 +151,20 @@ padding-right: 40px
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>As expected, confidence is correlated with dot motion coherence, as is (oppositely) decision time.&lt;/li>
+&lt;/h3>&lt;div class="columns">
+&lt;div>
+&lt;p>High dot motion coherence&lt;/p>
+&lt;p>&lt;img src="images/pesquetAlexandre2025_2.png" alt="First model results">&lt;/p>
+&lt;/div>
+&lt;div>
+&lt;p>Low coherence&lt;/p>
+&lt;p>&lt;img src="images/pesquetAlexandre2025_3.png" alt="First model results">&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;ul>
+&lt;li>Confidence is correlated with dot motion coherence, as is (oppositely) decision time.&lt;/li>
 &lt;li>Model is able to implement the SAT.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="images/pesquetAlexandre2025_2.png" alt="First model results">&lt;/p>
 &lt;h3 id="future-works" >Future works
 &lt;span>
 &lt;a href="#future-works">

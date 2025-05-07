@@ -324,11 +324,12 @@ padding-right: 40px
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>AGI = &lt;strong>Artificial General Intelligence&lt;/strong> a.k.a. &lt;strong>strong AI&lt;/strong>
+&lt;li>AGI = &lt;strong>Artificial General Intelligence&lt;/strong>
 &lt;ul>
 &lt;li>The ability to perform any task as well as a human.&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>Related concept: &lt;strong>strong AI&lt;/strong> (intentionality anc consciousness).&lt;/li>
 &lt;li>Are recent models &lt;em>sparks of AGI&lt;/em> [&lt;a href="https://arxiv.org/abs/2303.12712">Buceck et al., 2023&lt;/a>] or merely &lt;em>stochastic parrots&lt;/em> [&lt;a href="https://dl.acm.org/doi/10.1145/3442188.3445922">Bender et al. 2021&lt;/a>]?&lt;/li>
 &lt;/ul>
 &lt;h3 id="the-technological-singularity" >The technological singularity
@@ -357,8 +358,8 @@ padding-right: 40px
 &lt;/h3>&lt;div class="columns">
 &lt;div>
 &lt;ul>
-&lt;li>Approx. 86 billions neurons in 1.4 kg.&lt;/li>
-&lt;li>Typical energy consumption: 20 W (!)&lt;/li>
+&lt;li>Approx. &lt;strong>86 billions neurons&lt;/strong> in 1.4 kg.&lt;/li>
+&lt;li>Typical energy consumption: &lt;em>20 W (!)&lt;/em>&lt;/li>
 &lt;li>So much of it is still unknown.&lt;/li>
 &lt;/ul>
 &lt;/div>
