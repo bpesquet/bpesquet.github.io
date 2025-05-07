@@ -278,8 +278,9 @@ AI has more and more social and societal implications:
 
 ### The AGI debate
 
-- AGI = **Artificial General Intelligence** a.k.a. **strong AI**
+- AGI = **Artificial General Intelligence**
   - The ability to perform any task as well as a human.
+- Related concept: **strong AI** (intentionality anc consciousness).
 - Are recent models *sparks of AGI* [[Buceck et al., 2023](https://arxiv.org/abs/2303.12712)] or merely *stochastic parrots* [[Bender et al. 2021](https://dl.acm.org/doi/10.1145/3442188.3445922)]?
 
 ### The technological singularity
@@ -301,8 +302,8 @@ Is showing intelligent behavior the same as being intelligent? [[Searle, 1980s](
 <div class="columns">
 <div>
 
-- Approx. 86 billions neurons in 1.4 kg.
-- Typical energy consumption: 20 W (!)
+- Approx. **86 billions neurons** in 1.4 kg.
+- Typical energy consumption: *20 W (!)*
 - So much of it is still unknown.
 
 </div>

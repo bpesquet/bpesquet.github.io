@@ -16,7 +16,7 @@ style: |
 ---
 
 <!-- Apply header and footer to first slide only -->
-<!-- _header: "[![IMN logo](../../../static/images/imn_logo.png)](https://ensc.bordeaux-inp.fr) [![INRIA logo](../../../static/images/inria_logo.jpg)](https://www.inria.fr) [![ENSC logo](../../../static/images/ENSC_2022.jpg)](https://ensc.bordeaux-inp.fr)" -->
+<!-- _header: "[![IMN logo](../../../static/images/imn_logo.png)](https://ensc.bordeaux-inp.fr) [![IMnemosyne logo](../../../static/images/mnemosyne_logo.png)](https://www.inria.fr/fr/mnemosyne) [![INRIA logo](../../../static/images/inria_logo.jpg)](https://www.inria.fr) [![ENSC logo](../../../static/images/ENSC_2022.jpg)](https://ensc.bordeaux-inp.fr)" -->
 <!-- _footer: "[Baptiste Pesquet](https://www.bpesquet.fr)" -->
 <!-- headingDivider: 5 -->
 
@@ -37,7 +37,7 @@ style: |
 
 - A **decision** is a deliberative process leading to a **choice**.
 - Decision-makers need **time** to collect and process informative cues.
-- Decinion-making is often modeled as an **accumulation-to-threshold** process [[Gold and Shadlen, 2007](https://www.annualreviews.org/doi/10.1146/annurev.neuro.29.051605.113038)].
+- Decision-making is often modeled as an **accumulation-to-threshold** process [[Gold and Shadlen, 2007](https://www.annualreviews.org/doi/10.1146/annurev.neuro.29.051605.113038)].
 - The balance between response time and accuracy (when available) is called the **Speed/Accuracy Trade-off** [[Heitz, 2014](https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2014.00150/full)].
 
 ### Models of sequential decision-making
@@ -45,7 +45,7 @@ style: |
 <div class="columns">
 <div>
 
-For binary choices, a popular model is the **Diffision Decision Model** [[Ratcliff and McKoon, 2008](https://direct.mit.edu/neco/article/20/4/873-922/7299)].
+For binary choices, a popular model is the **Diffusion Decision Model** [[Ratcliff and McKoon, 2008](https://direct.mit.edu/neco/article/20/4/873-922/7299)].
 
 ![Illustration of the DDM model](images/forstmannSequentialSamplingModels2016_1.png)
 
@@ -115,7 +115,7 @@ In **decisional focus models**, confidence is directly indexed by the state of e
 Model combining:
 
 - a **decision module** based on an evidence accumulation model;
-- a **metacognitive module** in which confidence is used to tune the decision hyperparameters [[Desender and Verguts, 2024](http://biorxiv.org/lookup/doi/10.1101/2024.10.03.616475)].
+- a **metacognitive module** in which confidence is used to tune the decision hyperparameters: decision threshold and evidence integration rate [[Desender and Verguts, 2024](http://biorxiv.org/lookup/doi/10.1101/2024.10.03.616475)].
 
 ### Experimental validation
 
@@ -125,10 +125,25 @@ Model was assessed on a classic **perceptual task**: Random Dot Motion discrimin
 
 ### Preliminary results
 
-- As expected, confidence is correlated with dot motion coherence, as is (oppositely) decision time.
-- Model is able to implement the SAT.
+<div class="columns">
+<div>
+
+High dot motion coherence
 
 ![First model results](images/pesquetAlexandre2025_2.png)
+
+</div>
+<div>
+
+Low coherence
+
+![First model results](images/pesquetAlexandre2025_3.png)
+
+</div>
+</div>
+
+- Confidence is correlated with dot motion coherence, as is (oppositely) decision time.
+- Model is able to implement the SAT.
 
 ### Future works
 
