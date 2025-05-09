@@ -102,11 +102,26 @@ In **decisional focus models**, confidence is directly indexed by the state of e
 
 ### An emerging field: the neuroscience of confidence
 
-- Activity in the **parietal cortex** seems related to evidence accumulation during decision-making.
-- **Separate** and perhaps **multiple** brain areas are involved in confidence monitoring and reporting [[Grimaldi et al., 2015](https://linkinghub.elsevier.com/retrieve/pii/S0149763415001025)]:
+<div class="columns">
+<div>
 
-  - Importance of the prefrontal cortex, more precisely the **ventromedial prefrontal cortex** (vmPFC), in the formation of confidence.
-  - Firing rates of many single neurons in the **orbitofrontal cortex** (OFC) of rats match confidence models [[Kepecs et al., 2008](https://www.nature.com/articles/nature07200)].
+- **Parietal cortex** is related to evidence accumulation during decision-making.
+- **Multiple brain areas** seem involved in confidence formation and reporting:
+
+  - antero-medial PFC.
+  - anterior PFC and temporal lobe.
+  - Brodmann area 46.
+  - ventral striatum.
+
+</div>
+<div>
+
+![Map of the areas involved in confidence in the human](images/grimaldiThereAreThings2015_1.png)
+
+*Image credits: [[Grimaldi et al., 2015](https://linkinghub.elsevier.com/retrieve/pii/S0149763415001025)]*
+
+</div>
+</div>
 
 ## Proposed approach
 
@@ -125,25 +140,22 @@ Model was assessed on a classic **perceptual task**: Random Dot Motion discrimin
 
 ### Preliminary results
 
+- Confidence is **correlated** with dot motion coherence, as is (oppositely) decision time.
+- Model is able to implement the **SAT**.
+
 <div class="columns">
 <div>
 
-High dot motion coherence
-
-![First model results](images/pesquetAlexandre2025_2.png)
+![Results with low coherence](images/pesquetAlexandre2025_high_coherence.gif)
 
 </div>
+
 <div>
 
-Low coherence
-
-![First model results](images/pesquetAlexandre2025_3.png)
+![Results with low coherence](images/pesquetAlexandre2025_low_coherence.gif)
 
 </div>
 </div>
-
-- Confidence is correlated with dot motion coherence, as is (oppositely) decision time.
-- Model is able to implement the SAT.
 
 ### Future works
 
