@@ -108,18 +108,28 @@ padding-right: 40px
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>
-&lt;p>Activity in the &lt;strong>parietal cortex&lt;/strong> seems related to evidence accumulation during decision-making.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Separate&lt;/strong> and perhaps &lt;strong>multiple&lt;/strong> brain areas are involved in confidence monitoring and reporting [&lt;a href="https://linkinghub.elsevier.com/retrieve/pii/S0149763415001025">Grimaldi et al., 2015&lt;/a>]:&lt;/p>
+&lt;/h3>&lt;div class="columns">
+&lt;div>
 &lt;ul>
-&lt;li>Importance of the prefrontal cortex, more precisely the &lt;strong>ventromedial prefrontal cortex&lt;/strong> (vmPFC), in the formation of confidence.&lt;/li>
-&lt;li>Firing rates of many single neurons in the &lt;strong>orbitofrontal cortex&lt;/strong> (OFC) of rats match confidence models [&lt;a href="https://www.nature.com/articles/nature07200">Kepecs et al., 2008&lt;/a>].&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Parietal cortex&lt;/strong> is related to evidence accumulation during decision-making.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Multiple brain areas&lt;/strong> seem involved in confidence formation and reporting:&lt;/p>
+&lt;ul>
+&lt;li>antero-medial PFC.&lt;/li>
+&lt;li>anterior PFC and temporal lobe.&lt;/li>
+&lt;li>Brodmann area 46.&lt;/li>
+&lt;li>ventral striatum.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
+&lt;/div>
+&lt;div>
+&lt;p>&lt;img src="images/grimaldiThereAreThings2015_1.png" alt="Map of the areas involved in confidence in the human">&lt;/p>
+&lt;p>&lt;em>Image credits: [&lt;a href="https://linkinghub.elsevier.com/retrieve/pii/S0149763415001025">Grimaldi et al., 2015&lt;/a>]&lt;/em>&lt;/p>
+&lt;/div>
+&lt;/div>
 &lt;h2 id="proposed-approach" >Proposed approach
 &lt;span>
 &lt;a href="#proposed-approach">
@@ -151,20 +161,18 @@ padding-right: 40px
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="columns">
-&lt;div>
-&lt;p>High dot motion coherence&lt;/p>
-&lt;p>&lt;img src="images/pesquetAlexandre2025_2.png" alt="First model results">&lt;/p>
-&lt;/div>
-&lt;div>
-&lt;p>Low coherence&lt;/p>
-&lt;p>&lt;img src="images/pesquetAlexandre2025_3.png" alt="First model results">&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;ul>
-&lt;li>Confidence is correlated with dot motion coherence, as is (oppositely) decision time.&lt;/li>
-&lt;li>Model is able to implement the SAT.&lt;/li>
+&lt;/h3>&lt;ul>
+&lt;li>Confidence is &lt;strong>correlated&lt;/strong> with dot motion coherence, as is (oppositely) decision time.&lt;/li>
+&lt;li>Model is able to implement the &lt;strong>SAT&lt;/strong>.&lt;/li>
 &lt;/ul>
+&lt;div class="columns">
+&lt;div>
+&lt;p>&lt;img src="images/pesquetAlexandre2025_high_coherence.gif" alt="Results with low coherence">&lt;/p>
+&lt;/div>
+&lt;div>
+&lt;p>&lt;img src="images/pesquetAlexandre2025_low_coherence.gif" alt="Results with low coherence">&lt;/p>
+&lt;/div>
+&lt;/div>
 &lt;h3 id="future-works" >Future works
 &lt;span>
 &lt;a href="#future-works">
