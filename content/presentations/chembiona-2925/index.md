@@ -63,9 +63,9 @@ Kickoff: [1956 Dartmouth workshop on Artificial Intelligence](https://en.wikiped
 
 ### What is intelligence, by the way?
 
-Controversial definition, varying in what its abilities are and whether or not it is quantifiable.
+Controversial definition, varying in what its abilities are and whether or not it is quantifiable [[Legg and Hutter, 2007](http://dl.acm.org/citation.cfm?id=1565458)].
 
-> "Intelligence is the ability to perceive or infer information; and to retain it as knowledge to be applied to adaptive behaviors within an environment or context." ([Radha R. Sharma](https://journals.sagepub.com/doi/10.1177/097226290801200108))
+> "Intelligence is the ability to perceive or infer information; and to retain it as knowledge to be applied to adaptive behaviors within an environment or context [[Radha R. Sharma, 2008](https://journals.sagepub.com/doi/10.1177/097226290801200108)]."
 
 > "Intelligence is what you use when you don't know what to do." ([Jean Piaget](https://en.wikipedia.org/wiki/Jean_Piaget))
 
