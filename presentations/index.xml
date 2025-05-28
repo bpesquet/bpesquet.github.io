@@ -47,8 +47,8 @@ padding-right: 40px
 &lt;/div>
 &lt;div>
 &lt;p>Multi-alternative decisions are often modeled as a &lt;strong>race&lt;/strong> between accumulators for each possible choice.&lt;/p>
-&lt;p>&lt;img src="images/mamassianVisualConfidence2016_1.png" alt="Illustration of a race model">&lt;/p>
-&lt;p>&lt;em>Image credits: [&lt;a href="https://www.annualreviews.org/doi/10.1146/annurev-vision-111815-114630">Mamassian, 2016&lt;/a>]&lt;/em>&lt;/p>
+&lt;p>&lt;img src="images/krajbichMultialternativeDriftdiffusionModel2011_1.png" alt="Illustration of a race model">&lt;/p>
+&lt;p>&lt;em>Image credits: [&lt;a href="https://www.annualreviews.org/doi/10.1146/annurev-vision-111815-114630">Krajbich and Rangel, 2011&lt;/a>]&lt;/em>&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;h3 id="confidence-in-decision-making" >Confidence in decision-making
@@ -155,6 +155,7 @@ padding-right: 40px
 &lt;/span>
 &lt;/h3>&lt;p>Model was assessed on a classic &lt;strong>perceptual task&lt;/strong>: Random Dot Motion discrimination.&lt;/p>
 &lt;p>&lt;img src="images/pesquetAlexandre2025_1.png" alt="Confident agent model">&lt;/p>
+&lt;p>&lt;em>Included image credits: [&lt;a href="https://www.annualreviews.org/doi/10.1146/annurev-vision-111815-114630">Mamassian, 2016&lt;/a>]&lt;/em>&lt;/p>
 &lt;h3 id="preliminary-results" >Preliminary results
 &lt;span>
 &lt;a href="#preliminary-results">
@@ -493,7 +494,7 @@ padding-right: 40px
 &lt;li>Job market transformation.&lt;/li>
 &lt;li>Human/machine interactions.&lt;/li>
 &lt;li>Trust and acceptability.&lt;/li>
-&lt;li>Legal aspects and regulation.&lt;/li>
+&lt;li>Legal aspects and regulation (&lt;a href="https://www.damiencharlotin.com/hallucinations/">AI hallucination cases&lt;/a>).&lt;/li>
 &lt;li>Fairness.&lt;/li>
 &lt;li>Ethics.&lt;/li>
 &lt;li>Privacy and usage of personal data.&lt;/li>
