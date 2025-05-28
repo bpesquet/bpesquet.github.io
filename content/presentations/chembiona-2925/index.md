@@ -264,7 +264,7 @@ AI has more and more social and societal implications:
 - Job market transformation.
 - Human/machine interactions.
 - Trust and acceptability.
-- Legal aspects and regulation.
+- Legal aspects and regulation ([AI hallucination cases](https://www.damiencharlotin.com/hallucinations/)).
 - Fairness.
 - Ethics.
 - Privacy and usage of personal data.

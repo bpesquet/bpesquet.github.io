@@ -56,9 +56,9 @@ For binary choices, a popular model is the **Diffusion Decision Model** [[Ratcli
 
 Multi-alternative decisions are often modeled as a **race** between accumulators for each possible choice.
 
-![Illustration of a race model](images/mamassianVisualConfidence2016_1.png)
+![Illustration of a race model](images/krajbichMultialternativeDriftdiffusionModel2011_1.png)
 
-*Image credits: [[Mamassian, 2016](https://www.annualreviews.org/doi/10.1146/annurev-vision-111815-114630)]*
+*Image credits: [[Krajbich and Rangel, 2011](https://www.annualreviews.org/doi/10.1146/annurev-vision-111815-114630)]*
 
 </div>
 </div>
@@ -137,6 +137,8 @@ Model combining:
 Model was assessed on a classic **perceptual task**: Random Dot Motion discrimination.
 
 ![Confident agent model](images/pesquetAlexandre2025_1.png)
+
+*Included image credits: [[Mamassian, 2016](https://www.annualreviews.org/doi/10.1146/annurev-vision-111815-114630)]*
 
 ### Preliminary results
 
