@@ -47,8 +47,8 @@ padding-right: 40px
 &lt;/div>
 &lt;div>
 &lt;p>Multi-alternative decisions are often modeled as a &lt;strong>race&lt;/strong> between accumulators for each possible choice.&lt;/p>
-&lt;p>&lt;img src="images/krajbichMultialternativeDriftdiffusionModel2011_1.png" alt="Illustration of a race model">&lt;/p>
-&lt;p>&lt;em>Image credits: [&lt;a href="https://www.annualreviews.org/doi/10.1146/annurev-vision-111815-114630">Krajbich and Rangel, 2011&lt;/a>]&lt;/em>&lt;/p>
+&lt;p>&lt;img src="images/race_model_example.gif" alt="Illustration of a race model">&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://github.com/itsdfish/SequentialSamplingModels.jl">SequentialSamplingModels.jl&lt;/a>&lt;/em>&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;h3 id="confidence-in-decision-making" >Confidence in decision-making
@@ -1133,7 +1133,7 @@ padding-right: 40px
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>These models, also known as &lt;strong>race models&lt;/strong>, have independent accumulators (typically one per possible choice) and an &lt;strong>absolute&lt;/strong> evidence response rule (two fixed thresholds, once for each accumulator). The process stops once one of the accumulators reaches its threshold.&lt;/p>
+&lt;/h3>&lt;p>These models, also known as &lt;strong>race models&lt;/strong>, have independent accumulators (typically one per possible choice) and an &lt;strong>absolute&lt;/strong> evidence response rule (two fixed thresholds, one for each accumulator). The process stops once one of the accumulators reaches its threshold.&lt;/p>
 &lt;p>&lt;img src="images/race_model.png" alt="Illustration of an accumulator model">&lt;/p>
 &lt;h3 id="random-walk-models" >Random walk models
 &lt;span>
@@ -1300,7 +1300,7 @@ padding-right: 40px
 &lt;/span>
 &lt;/h6>&lt;ul>
 &lt;li>&lt;strong>Aging&lt;/strong>: DDM-based studies showed that older adults had slower non-decision times and set wider boundaries, but their drift rates were not always lower than those of young adults.&lt;/li>
-&lt;li>&lt;strong>IQ&lt;/strong>: DDM-based analyses showed showed that drift rate varied with IQ, but boundary separation and nondecision time did not.&lt;/li>
+&lt;li>&lt;strong>IQ&lt;/strong>: DDM-based analyses showed that drift rate varied with IQ, but boundary separation and nondecision time did not.&lt;/li>
 &lt;li>Other studies showed that &lt;strong>sleep deprivation&lt;/strong> and &lt;strong>alcohol consumption&lt;/strong> lower drift rate, but have either small or no effect on boundary separation and non-decision time.&lt;/li>
 &lt;li>&amp;hellip;&lt;/li>
 &lt;/ul>

@@ -47,8 +47,8 @@ padding-right: 40px
 &lt;/div>
 &lt;div>
 &lt;p>Multi-alternative decisions are often modeled as a &lt;strong>race&lt;/strong> between accumulators for each possible choice.&lt;/p>
-&lt;p>&lt;img src="images/krajbichMultialternativeDriftdiffusionModel2011_1.png" alt="Illustration of a race model">&lt;/p>
-&lt;p>&lt;em>Image credits: [&lt;a href="https://www.annualreviews.org/doi/10.1146/annurev-vision-111815-114630">Krajbich and Rangel, 2011&lt;/a>]&lt;/em>&lt;/p>
+&lt;p>&lt;img src="images/race_model_example.gif" alt="Illustration of a race model">&lt;/p>
+&lt;p>&lt;em>Image credits: &lt;a href="https://github.com/itsdfish/SequentialSamplingModels.jl">SequentialSamplingModels.jl&lt;/a>&lt;/em>&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;h3 id="confidence-in-decision-making" >Confidence in decision-making
