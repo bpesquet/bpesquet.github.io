@@ -56,9 +56,9 @@ For binary choices, a popular model is the **Diffusion Decision Model** [[Ratcli
 
 Multi-alternative decisions are often modeled as a **race** between accumulators for each possible choice.
 
-![Illustration of a race model](images/krajbichMultialternativeDriftdiffusionModel2011_1.png)
+![Illustration of a race model](images/race_model_example.gif)
 
-*Image credits: [[Krajbich and Rangel, 2011](https://www.annualreviews.org/doi/10.1146/annurev-vision-111815-114630)]*
+*Image credits: [SequentialSamplingModels.jl](https://github.com/itsdfish/SequentialSamplingModels.jl)*
 
 </div>
 </div>

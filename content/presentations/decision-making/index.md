@@ -117,7 +117,7 @@ An accumulator is also called a **Decision Variable** (DV).
 
 ### Accumulator models
 
-These models, also known as **race models**,  have independent accumulators (typically one per possible choice) and an **absolute** evidence response rule (two fixed thresholds, once for each accumulator). The process stops once one of the accumulators reaches its threshold.
+These models, also known as **race models**,  have independent accumulators (typically one per possible choice) and an **absolute** evidence response rule (two fixed thresholds, one for each accumulator). The process stops once one of the accumulators reaches its threshold.
 
 ![Illustration of an accumulator model](images/race_model.png)
 
@@ -220,7 +220,7 @@ $$dx = vdt + sW$$
 ###### Behavioral analysis
 
 - **Aging**: DDM-based studies showed that older adults had slower non-decision times and set wider boundaries, but their drift rates were not always lower than those of young adults.
-- **IQ**: DDM-based analyses showed showed that drift rate varied with IQ, but boundary separation and nondecision time did not.
+- **IQ**: DDM-based analyses showed that drift rate varied with IQ, but boundary separation and nondecision time did not.
 - Other studies showed that **sleep deprivation** and **alcohol consumption** lower drift rate, but have either small or no effect on boundary separation and non-decision time.
 - ...
 
