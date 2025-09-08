@@ -110,6 +110,10 @@ Controversial definition, varying in what its abilities are and whether or not i
 
 ![Training paradigm](images/training_paradigm.png)
 
+---
+
+![ML category tree](images/ml_tree.png)
+
 #### Algorithm #1: K-Nearest Neighbors
 
 Prediction is based on the $k$ nearest neighbors of a data sample.
