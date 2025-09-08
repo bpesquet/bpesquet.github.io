@@ -139,6 +139,8 @@ padding-right: 40px
 &lt;/blockquote>
 &lt;p>&lt;img src="images/programming_paradigm.png" alt="Programming paradigm">&lt;/p>
 &lt;p>&lt;img src="images/training_paradigm.png" alt="Training paradigm">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="images/ml_tree.png" alt="ML category tree">&lt;/p>
 &lt;h4 id="algorithm-1-k-nearest-neighbors" >Algorithm #1: K-Nearest Neighbors
 &lt;span>
 &lt;a href="#algorithm-1-k-nearest-neighbors">
