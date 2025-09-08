@@ -80,7 +80,7 @@ In **decisional focus models**, confidence is directly indexed by the state of e
 
 ![Race model with BoE](images/kepecsNeuralCorrelatesComputation2008_1.png)
 
-*Image credits: [Kepecs et al., 2008](https://www.nature.com/articles/nature07200)*
+*Image credits: [[Kepecs et al., 2008](https://www.nature.com/articles/nature07200)]*
 
 </div>
 <div>
@@ -89,7 +89,7 @@ In **decisional focus models**, confidence is directly indexed by the state of e
 
 ![2DSD model](images/pleskacTwostageDynamicSignal2010_1.png)
 
-*Image credits: [Pleskac and Busemeyer, 2008](https://doi.apa.org/doi/10.1037/a0019737)*
+*Image credits: [[Pleskac and Busemeyer, 2008](https://doi.apa.org/doi/10.1037/a0019737)]*
 
 </div>
 </div>
