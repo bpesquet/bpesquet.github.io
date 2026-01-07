@@ -1,5 +1,5 @@
 ---
-title: "Blog posts"
+title: "Blog articles"
 ---
 
-This is an archive of my (mostly inactive) professional blog.
+> This is an archive of my (mostly inactive) professional blog.

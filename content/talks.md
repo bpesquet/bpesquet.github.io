@@ -6,6 +6,10 @@ draft: false
 
 Here is a list of my public talks, including research-focused presentations and participations to interdisciplinary events.
 
+## 2026
+
+- [A cognitively plausible architecture for a metacognitive agent](../pub/2026_ensc_research_night.pdf) (Nuit de la recherche ENSC)
+
 ## 2025
 
 - [Artificial Intelligence: past, present, future(s)](../presentations/chembiona-2925/) (Congrès [ChemBioNA](https://www.chembiona.cnrs.fr/))
