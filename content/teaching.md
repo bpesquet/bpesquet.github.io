@@ -4,62 +4,60 @@ date: 2021-10-27T14:59:36+02:00
 draft: false
 ---
 
-My teaching career encompasses a pretty wide variety of computer-related topics, from networks and programming basics to Deep Learning.
+My teaching career encompasses a pretty wide variety of computer-related topics, from networking and programming basics to Deep Learning.
 
-## Courses
+## Current courses
 
-Due to my [PhD](../research), I am currently involved in a reduced number of courses.
+Since the start of my [PhD](../research) in 2023, I am in charge of a reduced number of courses.
 
-> [!NOTE]
-> Access to their content is restricted to authorized students and colleagues.
+- 🇫🇷 [Apprentissage automatique](https://moodle.bordeaux-inp.fr/course/view.php?id=2891) (ENSC)
+- 🇫🇷 [Initiation au Machine Learning](https://ecampus.paris-saclay.fr/course/view.php?id=162152) (IOGS)
 
-### ENSC
+Full access to content is restricted to authorized students and colleagues, but some of the material is available online:
 
-- 🇫🇷 [Bases de l'IA](https://moodle.bordeaux-inp.fr/course/view.php?id=1563)
-- 🇫🇷 [Apprentissage automatique](https://moodle.bordeaux-inp.fr/course/view.php?id=2891)
-
-### IOGS
-
-- 🇫🇷 [Initiation au Machine Learning](https://ecampus.paris-saclay.fr/course/view.php?id=162152)
-
-## Material
-
-Below are some educational resources created for courses I teach or have taught. Older stuff is most certainly outdated.
-
-### Machine Learning
-
-- [PyTorch Tutorial](https://github.com/bpesquet/pytorch-tutorial)
 - [Machine Learning Course](https://github.com/bpesquet/mlcourse)
+- [PyTorch Tutorial](https://github.com/bpesquet/pytorch-tutorial)
 - [pyfit](https://github.com/bpesquet/pyfit)
+
+I also published several related resources that are not maintained anymore:
+
 - [Artificial Intelligence notes](https://bpesquet.github.io/ainotes)
 - [Machine Learning Handbook](https://bpesquet.github.io/mlhandbook)
 - [Machine Learning Katas](https://bpesquet.github.io/mlkatas)
 
-### Computer science
+## Past courses
 
-- C#
+The following resources were authored for courses I have taught in the past. Older stuff is most certainly outdated, but still might be useful in some contexts.
+
+- Programming (last iteration: 2023)
   - 🇫🇷 [.NET et C#](https://www.bpesquet.fr/slides/dotnet-csharp/)
   - 🇫🇷 [C# : rappels et compléments](https://www.bpesquet.fr/slides/csharp/)
-  - 🇫🇷 [ASP.NET Core](https://www.bpesquet.fr/slides/asp-net-core/)
-  - 🇫🇷 [Entity Framework Core](https://www.bpesquet.fr/slides/efcore/)
   - 🇫🇷 [Programmation orientée objet en C#](https://ensc.gitbook.io/programmation-objet-csharp/)
   - 🇫🇷 [Programmation évènementielle avec les WinForms](https://ensc.gitbook.io/programmation-evenementielle-winforms/)
 
-- JavaScript
-  - [The JavaScript Way](https://thejsway.net) | 🇫🇷 [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
-  - 🇫🇷 [Le langage JavaScript](https://www.bpesquet.fr/slides/javascript/)
-  - 🇫🇷 [JavaScript pour le web](https://www.bpesquet.fr/slides/javascript-web/)
-  - 🇫🇷 [React Native](https://www.bpesquet.fr/slides/react-native/)
-
-- Software engineering
+- Software engineering (last iteration: 2023)
   - [Git & GitHub](https://www.bpesquet.fr/slides/git-github/)
+  - 🇫🇷 [ASP.NET Core](https://www.bpesquet.fr/slides/asp-net-core/)
+  - 🇫🇷 [Entity Framework Core](https://www.bpesquet.fr/slides/efcore/)
   - 🇫🇷 [UML](https://www.bpesquet.fr/slides/uml/)
   - 🇫🇷 [Génie logiciel](https://ensc.gitbook.io/genie-logiciel/)
 
-- Misc
-  - 🇫🇷 [Unity](https://www.bpesquet.fr/slides/unity/)
+- Web development (last iteration: 2023)
+  - [The JavaScript Way](https://thejsway.net) | 🇫🇷 [La voie du JavaScript](https://github.com/thejsway/thejsway_fr)
+  - 🇫🇷 [Le langage JavaScript](https://www.bpesquet.fr/slides/javascript/)
+  - 🇫🇷 [JavaScript pour le web](https://www.bpesquet.fr/slides/javascript-web/)
   - 🇫🇷 [Guide du développeur PHP](https://bpesquet.gitbooks.io/guide-developpeur-php/)
   - 🇫🇷 [Evoluez vers une architecture MVC en PHP](https://bpesquet.developpez.com/tutoriels/php/evoluer-architecture-mvc/)
+
+- Mobile development (last iteration: 2023)
+  - 🇫🇷 [React Native](https://www.bpesquet.fr/slides/react-native/)
+
+- Modeling of complex systems (last iteration: 2018)
+  - 🇫🇷 [Unity](https://www.bpesquet.fr/slides/unity/)
+
+- Databases (last iteration: 2016)
   - 🇫🇷 📄 [Les bases de données](/pub/cours_sgbd.zip)
   - 🇫🇷 📄 [Le langage SQL](/pub/cours_sql.zip)
+
+- Networking (last iteration: 2010)
   - 🇫🇷 📄 [Les réseaux](/pub/cours_reseaux.zip)
