@@ -6608,101 +6608,89 @@ while&lt;/p>
 &lt;li>&lt;a href="https://github.com/features/codespaces">Codespaces&lt;/a> is a cloud-based development environment mimicking Visual Studio Code.&lt;/li>
 &lt;li>&lt;a href="https://copilot.github.com/">Copilot&lt;/a> is an AI-based code suggestion service.&lt;/li>
 &lt;li>&amp;hellip;&lt;/li>
-&lt;/ul></description></item><item><title>Teaching</title><link>https://www.bpesquet.fr/teaching/</link><pubDate>Wed, 27 Oct 2021 14:59:36 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/</guid><description>&lt;p>My teaching career encompasses a pretty wide variety of computer-related topics, from networks and programming basics to Deep Learning.&lt;/p>
-&lt;h2 id="courses" >Courses
+&lt;/ul></description></item><item><title>Teaching</title><link>https://www.bpesquet.fr/teaching/</link><pubDate>Wed, 27 Oct 2021 14:59:36 +0200</pubDate><guid>https://www.bpesquet.fr/teaching/</guid><description>&lt;p>My teaching career encompasses a pretty wide variety of computer-related topics, from networking and programming basics to Deep Learning.&lt;/p>
+&lt;h2 id="current-courses" >Current courses
 &lt;span>
-&lt;a href="#courses">
+&lt;a href="#current-courses">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;p>Due to my &lt;a href="../research">PhD&lt;/a>, I am currently involved in a reduced number of courses.&lt;/p>
-&lt;blockquote>
-&lt;p>[!NOTE]
-Access to their content is restricted to authorized students and colleagues.&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="ensc" >ENSC
-&lt;span>
-&lt;a href="#ensc">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>🇫🇷 &lt;a href="https://moodle.bordeaux-inp.fr/course/view.php?id=1563">Bases de l&amp;rsquo;IA&lt;/a>&lt;/li>
-&lt;li>🇫🇷 &lt;a href="https://moodle.bordeaux-inp.fr/course/view.php?id=2891">Apprentissage automatique&lt;/a>&lt;/li>
+&lt;/h2>&lt;p>Since the start of my &lt;a href="../research">PhD&lt;/a> in 2023, I am in charge of a reduced number of courses.&lt;/p>
+&lt;ul>
+&lt;li>🇫🇷 &lt;a href="https://moodle.bordeaux-inp.fr/course/view.php?id=2891">Apprentissage automatique&lt;/a> (ENSC)&lt;/li>
+&lt;li>🇫🇷 &lt;a href="https://ecampus.paris-saclay.fr/course/view.php?id=162152">Initiation au Machine Learning&lt;/a> (IOGS)&lt;/li>
 &lt;/ul>
-&lt;h3 id="iogs" >IOGS
-&lt;span>
-&lt;a href="#iogs">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>🇫🇷 &lt;a href="https://ecampus.paris-saclay.fr/course/view.php?id=162152">Initiation au Machine Learning&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="material" >Material
-&lt;span>
-&lt;a href="#material">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;p>Below are some educational resources created for courses I teach or have taught. Older stuff is most certainly outdated.&lt;/p>
-&lt;h3 id="machine-learning" >Machine Learning
-&lt;span>
-&lt;a href="#machine-learning">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;a href="https://github.com/bpesquet/pytorch-tutorial">PyTorch Tutorial&lt;/a>&lt;/li>
+&lt;p>Full access to content is restricted to authorized students and colleagues, but some of the material is available online:&lt;/p>
+&lt;ul>
 &lt;li>&lt;a href="https://github.com/bpesquet/mlcourse">Machine Learning Course&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/bpesquet/pytorch-tutorial">PyTorch Tutorial&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/bpesquet/pyfit">pyfit&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>I also published several related resources that are not maintained anymore:&lt;/p>
+&lt;ul>
 &lt;li>&lt;a href="https://bpesquet.github.io/ainotes">Artificial Intelligence notes&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://bpesquet.github.io/mlhandbook">Machine Learning Handbook&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://bpesquet.github.io/mlkatas">Machine Learning Katas&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h3 id="computer-science" >Computer science
+&lt;h2 id="past-courses" >Past courses
 &lt;span>
-&lt;a href="#computer-science">
+&lt;a href="#past-courses">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;ul>
+&lt;/h2>&lt;p>The following resources were authored for courses I have taught in the past. Older stuff is most certainly outdated, but still might be useful in some contexts.&lt;/p>
+&lt;ul>
 &lt;li>
-&lt;p>C#&lt;/p>
+&lt;p>Programming (last iteration: 2023)&lt;/p>
 &lt;ul>
 &lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/dotnet-csharp/">.NET et C#&lt;/a>&lt;/li>
 &lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/csharp/">C# : rappels et compléments&lt;/a>&lt;/li>
-&lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/asp-net-core/">ASP.NET Core&lt;/a>&lt;/li>
-&lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/efcore/">Entity Framework Core&lt;/a>&lt;/li>
 &lt;li>🇫🇷 &lt;a href="https://ensc.gitbook.io/programmation-objet-csharp/">Programmation orientée objet en C#&lt;/a>&lt;/li>
 &lt;li>🇫🇷 &lt;a href="https://ensc.gitbook.io/programmation-evenementielle-winforms/">Programmation évènementielle avec les WinForms&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>JavaScript&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://thejsway.net">The JavaScript Way&lt;/a> | 🇫🇷 &lt;a href="https://github.com/thejsway/thejsway_fr">La voie du JavaScript&lt;/a>&lt;/li>
-&lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/javascript/">Le langage JavaScript&lt;/a>&lt;/li>
-&lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/javascript-web/">JavaScript pour le web&lt;/a>&lt;/li>
-&lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/react-native/">React Native&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Software engineering&lt;/p>
+&lt;p>Software engineering (last iteration: 2023)&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://www.bpesquet.fr/slides/git-github/">Git &amp;amp; GitHub&lt;/a>&lt;/li>
+&lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/asp-net-core/">ASP.NET Core&lt;/a>&lt;/li>
+&lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/efcore/">Entity Framework Core&lt;/a>&lt;/li>
 &lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/uml/">UML&lt;/a>&lt;/li>
 &lt;li>🇫🇷 &lt;a href="https://ensc.gitbook.io/genie-logiciel/">Génie logiciel&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>Misc&lt;/p>
+&lt;p>Web development (last iteration: 2023)&lt;/p>
 &lt;ul>
-&lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/unity/">Unity&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://thejsway.net">The JavaScript Way&lt;/a> | 🇫🇷 &lt;a href="https://github.com/thejsway/thejsway_fr">La voie du JavaScript&lt;/a>&lt;/li>
+&lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/javascript/">Le langage JavaScript&lt;/a>&lt;/li>
+&lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/javascript-web/">JavaScript pour le web&lt;/a>&lt;/li>
 &lt;li>🇫🇷 &lt;a href="https://bpesquet.gitbooks.io/guide-developpeur-php/">Guide du développeur PHP&lt;/a>&lt;/li>
 &lt;li>🇫🇷 &lt;a href="https://bpesquet.developpez.com/tutoriels/php/evoluer-architecture-mvc/">Evoluez vers une architecture MVC en PHP&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Mobile development (last iteration: 2023)&lt;/p>
+&lt;ul>
+&lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/react-native/">React Native&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Modeling of complex systems (last iteration: 2018)&lt;/p>
+&lt;ul>
+&lt;li>🇫🇷 &lt;a href="https://www.bpesquet.fr/slides/unity/">Unity&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Databases (last iteration: 2016)&lt;/p>
+&lt;ul>
 &lt;li>🇫🇷 📄 &lt;a href="https://www.bpesquet.fr/pub/cours_sgbd.zip">Les bases de données&lt;/a>&lt;/li>
 &lt;li>🇫🇷 📄 &lt;a href="https://www.bpesquet.fr/pub/cours_sql.zip">Le langage SQL&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Networking (last iteration: 2010)&lt;/p>
+&lt;ul>
 &lt;li>🇫🇷 📄 &lt;a href="https://www.bpesquet.fr/pub/cours_reseaux.zip">Les réseaux&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
