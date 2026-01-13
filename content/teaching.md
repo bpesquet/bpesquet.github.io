@@ -4,7 +4,7 @@ date: 2021-10-27T14:59:36+02:00
 draft: false
 ---
 
-My teaching career encompasses a pretty wide variety of computer-related topics, from networking and programming basics to Deep Learning.
+My teaching career encompasses a pretty wide variety of computer-related topics, from networking and programming basics to artificial intelligence and Deep Learning.
 
 ## Current courses
 
