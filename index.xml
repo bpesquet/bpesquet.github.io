@@ -587,6 +587,7 @@ padding-right: 40px
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;ul>
+&lt;li>&lt;a href="../pub/2026_typst_intro.pdf">Typst, a new tool for writing scientific documents&lt;/a> (&lt;a href="https://team.inria.fr/mnemosyne/">Mnemosyne&lt;/a> team meeting)&lt;/li>
 &lt;li>&lt;a href="../pub/2026_ensc_research_night.pdf">A cognitively plausible architecture for a metacognitive agent&lt;/a> (Nuit de la recherche ENSC)&lt;/li>
 &lt;/ul>
 &lt;h2 id="2025" >2025
