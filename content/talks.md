@@ -8,6 +8,8 @@ Here is a list of my public talks, including research-focused presentations and 
 
 ## 2026
 
+- [Decision-making via evidence accumulation and metacognitive self-
+regulation](../pub/2026_decision-making-self-regulation.pdf) (Journée des doctorants ENSC)
 - [Typst, a new tool for writing scientific documents](../pub/2026_typst_intro.pdf) ([Mnemosyne](https://team.inria.fr/mnemosyne/) team meeting)
 - [A cognitively plausible architecture for a metacognitive agent](../pub/2026_ensc_research_night.pdf) (Nuit de la recherche ENSC)
 
