@@ -2,6 +2,7 @@
 title: "Short bio"
 date: 2024-11-20T13:24:56+01:00
 draft: false
+hidemeta: true
 ---
 
 After graduating as a software engineer in 1999, I worked for several years in the industry before moving on to a teaching career. In 2008, I passed the *agrégation* (highest competitive exam for teaching in France).

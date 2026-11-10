@@ -108,7 +108,7 @@ For lack of anything better, I reused my previous launch strategy. [Twitter](htt
 
 To my astonishment, the result was this time overwhelmingly positive. Kyle Simpson and Quincy Larson kindly tweeted about the book to their dozens of thousands of followers.
 
-{{< tweet 890594260226949125 >}}
+{{< x user="YDKJS" id="890594260226949125" >}}
 
 Hour after hour, I watched in awe of disbelief as rave comments and retweets piled into my inbox. I finally knew that my book would have an impact.
 

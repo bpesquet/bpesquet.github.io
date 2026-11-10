@@ -2,6 +2,7 @@
 title: "Research"
 date: 2023-08-28T23:05:25+02:00
 draft: false
+hidemeta: true
 ---
 
 My research focuses on *artificial metacognition*, i.e. how to create autonomous agents able to explicitly evaluate and adapt their behavior.

@@ -1,0 +1,5 @@
+/* Site-specific tweaks on top of the PaperMod-based theme */
+
+.profile img {
+  border-radius: 50%;
+}

@@ -1,11 +1,14 @@
-baseUrl: "https://www.bpesquet.fr"
+baseURL: "https://www.bpesquet.fr/"
 title: "Baptiste Pesquet"
-theme: "anubis"
-paginate: 10
-disqusShortname:
-googleAnalytics: "G-4DNVMNCRYK"
+theme: PaperMod
+
 enableRobotsTXT: true
 enableGitInfo: true
+pagination:
+  pagerSize: 20
+
+taxonomies:
+  tag: tags
 
 menu:
   main:
@@ -26,41 +29,83 @@ menu:
       weight: 5
 
 params:
-  author: "Baptiste Pesquet"
-  email: bpesquet [at] gmail [dot] com # used for microformats
   description: "Baptiste Pesquet's professional website"
-  dateFormat: "January 2, 2006"
-  customCSS:
-   - css/my.css
-  # mainSections: [ "posts" ] # which sections should be on index/main page
-  paginationSinglePost: true
-  style: auto # light-without-switcher
-  readMore: false
-  toc: true # display Table of Contents
-  mathjax: true
-  social:
-    - id: email
-      name: bpesquet [at] gmail [dot] com
-    - id: github
-      name: bpesquet
-    - id: google-scholar
-      url: "https://scholar.google.fr/citations?hl=fr&user=0KJ7JkMAAAAJ"
-    - id: Linkedin
-      url: "https://www.linkedin.com/in/bpesquet"
-    - id: bluesky
-      url: "https://bsky.app/profile/bpesquet.bsky.social"
-    - id: youtube
-      name: ../@bpesquet # workaround since Anubis prepends "c/" to the YouTube channel name (format for renamed channels)
-    
-taxonomies:
-  tag: "tags"
+  author: "Baptiste Pesquet"
+  GoogleAnalyticsID: "G-4DNVMNCRYK"
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto
+  hideFooter: false
+  disableThemeToggle: false
+  ShowShareButtons: false
+  ShowReadingTime: false
+  disableSpecial1stPost: true
+  disableAnchoredHeadings: true
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  ShowAllPagesInArchive: false
+  MainSections: [posts]
+  ShowToc: false
+  TocOpen: true
+  disableScrollToTop: true
+  ShowWordCount: false
+  UseHugoToc: true
+  comments: false
+  math: true
+
+  profileMode:
+    enabled: true
+    title: "Baptiste Pesquet"
+    subtitle: "I am a computer science and artificiel intelligence professor at the [Ecole Nationale Supérieure de Cognitique (ENSC)](https://ensc.bordeaux-inp.fr/)."
+    imageUrl: images/profile.png
+    imageWidth: 140
+    imageHeight: 140
+    buttons:
+      - name: Short bio
+        url: bio/
+      - name: Teaching
+        url: teaching/
+      - name: Research
+        url: research/
+      - name: Talks
+        url: talks/
+      - name: Blog
+        url: posts/
+
+  socialIcons:
+    - name: CV
+      url: BaptistePesquet_Resume.pdf
+    - name: Email
+      url: mailto:bpesquet@gmail.com
+    - name: Location
+      url: location/
+    - name: GitHub
+      url: https://github.com/bpesquet
+    - name: Google Scholar
+      url: https://scholar.google.fr/citations?hl=fr&user=0KJ7JkMAAAAJ
+    - name: LinkedIn
+      url: https://www.linkedin.com/in/bpesquet
+    - name: Bluesky
+      url: https://bsky.app/profile/bpesquet.bsky.social
+    - name: YouTube
+      url: https://www.youtube.com/@bpesquet
+
+  assets:
+    disableScrollBarStyle: true
+  cover:
+    hiddenInList: false
+    hiddenInSingle: true
+  label:
+    text: "Baptiste Pesquet"
 
 markup:
   goldmark:
     renderer:
       unsafe: true # enable raw HTML in Markdown
-
   highlight:
-    lineNos: false
     style: fruity # https://xyproto.github.io/splash/docs/all.html
     tabWidth: 4
+  tableOfContents:
+    endLevel: 2
+    ordered: false
+    startLevel: 2

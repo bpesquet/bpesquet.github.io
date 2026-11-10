@@ -51,7 +51,7 @@ This is where autodifferentiation comes to the rescue. Frameworks like PyTorch o
 
 Some experts in the field even believe in the advent of a [new paradigm](https://medium.com/@karpathy/software-2-0-a64152b37c35), sometimes called [differentiable programming](https://en.wikipedia.org/wiki/Differentiable_programming), that would create software by assembling dynamic, parameterized modules trained through gradient-based optimization rather than hardcoding rules in an imperative way.
 
-{{< tweet 893576281375219712 >}}
+{{< x user="karpathy" id="893576281375219712" >}}
 
 ## Mathematical aspects
 
