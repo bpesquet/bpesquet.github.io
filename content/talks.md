@@ -32,8 +32,8 @@ regulation](../pub/2026_decision-making-self-regulation.pdf) (Journée des docto
 
 ## 2023
 
-- [AI for Defence](https://www.bpesquet.fr/slides/ai-for-defence/) ([ASSETS+](https://assets-plus.eu/) european project))
+- [AI for Defence](../slides/ai-for-defence/) ([ASSETS+](https://assets-plus.eu/) european project))
 
 ## 2019
 
-- [Deconstructing AI](https://www.bpesquet.fr/slides/deconstructing-ai/) ([Club Gestion des Connaissances](https://www.clubgc-km.fr) meeting)
+- [Deconstructing AI](../slides/deconstructing-ai/) ([Club Gestion des Connaissances](https://www.clubgc-km.fr) meeting)

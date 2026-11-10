@@ -12,12 +12,9 @@ taxonomies:
 
 menu:
   main:
-    - name: Short bio
-      pageRef: /bio
+    - name: Courses
+      pageRef: /courses
       weight: 1
-    - name: Teaching
-      pageRef: /teaching
-      weight: 2
     - name: Research
       pageRef: /research
       weight: 3
@@ -27,12 +24,15 @@ menu:
     - name: Blog
       pageRef: /posts
       weight: 5
+    - name: Tags
+      pageRef: /tags
+      weight: 6
 
 params:
   description: "Baptiste Pesquet's professional website"
   author: "Baptiste Pesquet"
   GoogleAnalyticsID: "G-4DNVMNCRYK"
-  DateFormat: "January 2, 2006"
+  DateFormat: "January 2006"
   defaultTheme: auto
   hideFooter: false
   disableThemeToggle: false
@@ -44,7 +44,7 @@ params:
   ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
   ShowAllPagesInArchive: false
-  MainSections: [posts]
+  MainSections: [courses, teaching, research, slides, presentations, posts]
   ShowToc: false
   TocOpen: true
   disableScrollToTop: true
@@ -56,21 +56,11 @@ params:
   profileMode:
     enabled: true
     title: "Baptiste Pesquet"
-    subtitle: "I am a computer science and artificiel intelligence professor at the [Ecole Nationale Supérieure de Cognitique (ENSC)](https://ensc.bordeaux-inp.fr/)."
+    subtitle: "I am a computer science and artificiel intelligence professor at the [Ecole Nationale Supérieure de Cognitique (ENSC - Bordeaux INP)](https://ensc.bordeaux-inp.fr/)."
     imageUrl: images/profile.png
     imageWidth: 140
     imageHeight: 140
-    buttons:
-      - name: Short bio
-        url: bio/
-      - name: Teaching
-        url: teaching/
-      - name: Research
-        url: research/
-      - name: Talks
-        url: talks/
-      - name: Blog
-        url: posts/
+    # Home page buttons are generated from menu.main (see layouts/partials/index_profile.html)
 
   socialIcons:
     - name: CV

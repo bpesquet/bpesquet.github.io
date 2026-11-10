@@ -11,7 +11,7 @@ My research focuses on *artificial metacognition*, i.e. how to create autonomous
 
 Since 2023, I am working on a PhD in artificial intelligence under the supervision of [Frédéric Alexandre](https://www.labri.fr//perso//falexand/), head of the [Mnemosyne](https://team.inria.fr/mnemosyne/) INRIA team. We try to understand the role of confidence in decision-making.
 
-The PhD defense is scheduled for Autumn 2026.
+The PhD defense is scheduled for Spring 2027.
 
 ## Publications
 

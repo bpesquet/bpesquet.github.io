@@ -6,16 +6,6 @@ tags:
 - ai
 ---
 
-<!--more-->
-
-## Table of contents
-
-- What Is AI, Actually?
-- How Do Machines Learn?
-- Should We Be Scared Of AI?
-
----
-
 ## What Is AI, Actually?
 
 ---
