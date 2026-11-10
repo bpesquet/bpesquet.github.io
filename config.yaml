@@ -12,7 +12,7 @@ taxonomies:
 
 menu:
   main:
-    - name: Courses
+    - name: Teaching
       pageRef: /courses
       weight: 1
     - name: Research
