@@ -9,19 +9,6 @@ tags:
 - ASP.NET
 ---
 
-<!--more-->
-
-## Sommaire
-
-- Présentation de ASP.NET Core
-- Le framework ASP.NET Core MVC
-- Routage et environnement
-- Interactions avec une base de données
-- Création d'API web
-- Création de vues HTML
-
----
-
 ## Présentation d'ASP.NET Core
 
 ---

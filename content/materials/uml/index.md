@@ -1,5 +1,5 @@
 ---
-title: "UML"
+title: "Introduction à UML"
 date: 2022-09-12T14:16:21+02:00
 draft: false
 showToc: true
@@ -7,18 +7,7 @@ tags:
 - uml
 ---
 
-<!--more-->
-
-## Sommaire
-
-- Introduction à UML
-- Le diagramme de classes
-- Principaux autres diagrammes
-- UML en pratique
-
----
-
-## Introduction à UML
+## Présentation d'UML
 
 ---
 

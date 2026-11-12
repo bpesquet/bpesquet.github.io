@@ -8,17 +8,6 @@ tags:
 - EF Core
 ---
 
-<!--more-->
-
-## Sommaire
-
-- Des objets et des tables
-- Présentation d'EF Core
-- Mise en oeuvre d'EF Core
-- Mapping d'un modèle métier
-
----
-
 ## Des objets et des tables
 
 ---

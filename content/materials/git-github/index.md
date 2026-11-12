@@ -4,8 +4,8 @@ date: 2021-11-23T19:01:29+01:00
 draft: false
 showToc: true
 tags:
-- git
-- github
+- Git
+- GitHub
 ---
 
 ## Introduction to software version control

@@ -9,31 +9,31 @@ Here is a list of my public talks, including research-focused presentations and 
 
 ## 2026
 
-- [Decision-making via evidence accumulation and metacognitive self-
+- 📄 [Decision-making via evidence accumulation and metacognitive self-
 regulation](../pub/2026_decision-making-self-regulation.pdf) (Journée des doctorants ENSC)
-- [Typst, a new tool for writing scientific documents](../pub/2026_typst_intro.pdf) ([Mnemosyne](https://team.inria.fr/mnemosyne/) team meeting)
-- [A cognitively plausible architecture for a metacognitive agent](../pub/2026_ensc_research_night.pdf) (Nuit de la recherche ENSC)
+- 📄 [Typst, a new tool for writing scientific documents](../pub/2026_typst_intro.pdf) ([Mnemosyne](https://team.inria.fr/mnemosyne/) team meeting)
+- 📄 [A cognitively plausible architecture for a metacognitive agent](../pub/2026_ensc_research_night.pdf) (Nuit de la recherche ENSC)
 
 ## 2025
 
-- [Artificial Intelligence: past, present, future(s)](../presentations/chembiona-2925/) (Congrès [ChemBioNA](https://www.chembiona.cnrs.fr/))
-- [Towards metacognitive agents: integrating confidence in sequential decision-making](../presentations/imn-day-2025/) ([IMN](https://www.imn-bordeaux.org) scientific day)
+- [Artificial Intelligence: past, present, future(s)](../materials/chembiona-2925/) (Congrès [ChemBioNA](https://www.chembiona.cnrs.fr/))
+- [Towards metacognitive agents: integrating confidence in sequential decision-making](../materials/imn-day-2025/) ([IMN](https://www.imn-bordeaux.org) scientific day)
 
 ## 2024
 
-- 🇫🇷 L’IA générative : vers une déshumanisation de la culture ? ([Colloque Droit et Cultures @ Université de Bordeaux](https://irdap.u-bordeaux.fr/application/files/8317/3168/6134/Programme_AdHoc_v7.pdf))
-- [Papers review: Kepecs' framework for decision confidence](../presentations/kepecs-decision-confidence/) ([Mnemosyne](https://team.inria.fr/mnemosyne/) team meeting)
-- [Confidence as hyperparameter tuning for sequential decision-making](../presentations/mnemosyne-team-meeting-2024/) ([Mnemosyne](https://team.inria.fr/mnemosyne/) team meeting)
-- 🇫🇷 📄 [Modéliser la confiance d'un agent décisionnel](../pub/PFIA2024Pesquet.pdf) ([PFIA](https://pfia2024.univ-lr.fr/))
+- L’IA générative : vers une déshumanisation de la culture ? ([Colloque Droit et Cultures @ Université de Bordeaux](https://irdap.u-bordeaux.fr/application/files/8317/3168/6134/Programme_AdHoc_v7.pdf))
+- [Papers review: Kepecs' framework for decision confidence](../materials/kepecs-decision-confidence/) ([Mnemosyne](https://team.inria.fr/mnemosyne/) team meeting)
+- [Confidence as hyperparameter tuning for sequential decision-making](../materials/mnemosyne-team-meeting-2024/) ([Mnemosyne](https://team.inria.fr/mnemosyne/) team meeting)
+- 📄 [Modéliser la confiance d'un agent décisionnel](../pub/PFIA2024Pesquet.pdf) ([PFIA](https://pfia2024.univ-lr.fr/))
 - 📄 [Towards confident AI](../pub/UBWorkshop_june2024.pdf) ([PhD students workshop @ Université de Bordeaux](https://sin.u-bordeaux.fr/actualites/journee-des-doctorants-en-intelligence-artificielle))
-- 🇫🇷 📄 [Rendre l'IA confiante, pour mieux lui faire confiance](../pub/PoS2024Pesquet.pdf) ([Pint of Science](https://pintofscience.fr/))
-- [Confidence in decision-making](../presentations/confidence/) ([Mnemosyne](https://team.inria.fr/mnemosyne/) team meeting)
-- [Introduction to the theory of decision-making](../presentations/decision-making/) ([Mnemosyne](https://team.inria.fr/mnemosyne/) team meeting)
+- 📄 [Rendre l'IA confiante, pour mieux lui faire confiance](../pub/PoS2024Pesquet.pdf) ([Pint of Science](https://pintofscience.fr/))
+- [Confidence in decision-making](../materials/confidence/) ([Mnemosyne](https://team.inria.fr/mnemosyne/) team meeting)
+- [Introduction to the theory of decision-making](../materials/decision-making/) ([Mnemosyne](https://team.inria.fr/mnemosyne/) team meeting)
 
 ## 2023
 
-- [AI for Defence](../slides/ai-for-defence/) ([ASSETS+](https://assets-plus.eu/) european project))
+- [AI for Defence](../materials/ai-for-defence/) ([ASSETS+](https://assets-plus.eu/) european project))
 
 ## 2019
 
-- [Deconstructing AI](../slides/deconstructing-ai/) ([Club Gestion des Connaissances](https://www.clubgc-km.fr) meeting)
+- [Deconstructing AI](../materials/deconstructing-ai/) ([Club Gestion des Connaissances](https://www.clubgc-km.fr) meeting)

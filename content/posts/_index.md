@@ -4,4 +4,4 @@ cascade:
   hideSummary: true
 ---
 
-> This is an archive of my (mostly inactive) professional blog.
+This is an archive of my (now inactive) professional blog.

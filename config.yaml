@@ -21,12 +21,9 @@ menu:
     - name: Talks
       pageRef: /talks
       weight: 4
-    - name: Blog
-      pageRef: /posts
+    - name: Archive
+      pageRef: /archive
       weight: 5
-    - name: Tags
-      pageRef: /tags
-      weight: 6
 
 params:
   description: "Baptiste Pesquet's professional website"

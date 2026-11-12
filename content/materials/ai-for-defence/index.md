@@ -7,8 +7,6 @@ tags:
 - artificial intelligence
 ---
 
-<!--more-->
-
 ## Context
 
 ---

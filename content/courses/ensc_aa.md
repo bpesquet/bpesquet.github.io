@@ -7,7 +7,7 @@ tags: ["Machine Learning","Artificial Intelligence"]
 draft: true
 ---
 
-Ce cours constitue une découverte de l'apprentissage automatique (Machine Learning).
+Ce cours constitue une introduction à l'apprentissage automatique (Machine Learning).
 
 Il fait partie du tronc commun de 2ème année à l'[ENSC](https://ensc.bordeaux-inp.fr/).
 
