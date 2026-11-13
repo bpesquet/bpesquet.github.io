@@ -27,8 +27,6 @@ showToc: true
 
 ---
 
-{{% section %}}
-
 ### Architecture technique de .NET
 
 - Une application .NET s'exécute dans un environnement contrôlé appelé [CLR](https://github.com/dotnet/runtime/blob/main/docs/design/coreclr/botr/intro-to-clr.md) (_Common Language Runtime_).
@@ -37,8 +35,6 @@ showToc: true
 ---
 
 [![CLI et CLR](images/dotnet_cli_clr.png)](https://en.wikipedia.org/wiki/Common_Language_Infrastructure)
-
-{{% /section %}}
 
 ---
 
@@ -197,8 +193,6 @@ int $0x80
 
 ---
 
-{{% section %}}
-
 ### Exemple d'algorithme
 
 ```txt
@@ -230,8 +224,6 @@ Fin
 ---
 
 ![Miam!](images/P%C3%A2tes-ricotta_69287116.jpeg)
-
-{{% /section %}}
 
 ---
 
@@ -1018,8 +1010,6 @@ else {
 
 ---
 
-{{% section %}}
-
 ### Instructions if/else imbriquées
 
 ```csharp
@@ -1064,8 +1054,6 @@ else if (nombre < 0)
 else
     Console.WriteLine($"{nombre} est nul");
 ```
-
-{{% /section %}}
 
 ---
 
@@ -1600,7 +1588,7 @@ Console.WriteLine(string.Join(" ", tab2)); // ?
 
 ![Résultat de l'affectation entre tableaux](images/arrayaffectation.png)
 
-<img class="fragment" src="images/omg.png">
+![OMG!](images/omg.png)
 
 ---
 

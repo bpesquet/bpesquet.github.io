@@ -234,7 +234,6 @@ document.querySelector("h3").id = "title";
 
 ---
 
-{{% section %}}
 
 ### Ajout d'un nouveau noeud
 
@@ -291,7 +290,6 @@ document
   .insertBefore(pythonElement, document.getElementById("php"));
 ```
 
-{{% /section %}}
 
 ---
 

@@ -31,7 +31,6 @@ tags:
 
 ---
 
-{{% section %}}
 
 ### Rappel : le fonctionnement du web
 
@@ -44,7 +43,6 @@ Le web est basé sur un modèle **client/serveur** :
 
 ![Modèle requête/réponse du web](images/web_request_response.png)
 
-{{% /section %}}
 
 ---
 
@@ -57,7 +55,6 @@ Le web est basé sur un modèle **client/serveur** :
 
 ---
 
-{{% section %}}
 
 ### UI web générée côté serveur
 
@@ -71,11 +68,9 @@ Structure HTML contenant les données générée côté serveur, puis renvoyée 
 
 [![SSR](images/Server-Side-Rendering-Flowchart.jpg)](https://www.growth-rocket.com/blog/a-closer-look-at-client-side-server-side-rendering/)
 
-{{% /section %}}
 
 ---
 
-{{% section %}}
 
 ### UI web générée côté client
 
@@ -89,7 +84,6 @@ Squelette HTML (sans données) initialement renvoyé au client. Ensuite, DOM mis
 
 [![CSR](images/Client-Side-Rendering-Flowchart.jpg)](https://www.growth-rocket.com/blog/a-closer-look-at-client-side-server-side-rendering/)
 
-{{% /section %}}
 
 ---
 
@@ -650,7 +644,6 @@ SeedData.Init();
 
 ---
 
-{{% section %}}
 
 ### Le format JSON
 
@@ -681,7 +674,6 @@ SeedData.Init();
 }
 ```
 
-{{% /section %}}
 
 ---
 

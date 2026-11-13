@@ -100,7 +100,6 @@ Console.WriteLine("nombre2 = " + nombre2); // 5
 
 ---
 
-{{% section %}}
 
 ### Affectation entre objets
 
@@ -123,11 +122,9 @@ Console.WriteLine("cercle2.Rayon = " + cercle2.Rayon); // ?
 
 ![OMG](images/omg.png)
 
-{{% /section %}}
 
 ---
 
-{{% section %}}
 
 ### Types valeur
 
@@ -139,11 +136,9 @@ Console.WriteLine("cercle2.Rayon = " + cercle2.Rayon); // ?
 
 ![Exemple avec types valeur](images/value_types.png)
 
-{{% /section %}}
 
 ---
 
-{{% section %}}
 
 ### Types référence
 
@@ -154,11 +149,9 @@ Console.WriteLine("cercle2.Rayon = " + cercle2.Rayon); // ?
 
 ![Exemple avec types référence](images/reference_types.png)
 
-{{% /section %}}
 
 ---
 
-{{% section %}}
 
 ### Types référence et affectation
 
@@ -169,11 +162,9 @@ Console.WriteLine("cercle2.Rayon = " + cercle2.Rayon); // ?
 
 ![Diagramme d'exécution](images/reference_types_assignment.png)
 
-{{% /section %}}
 
 ---
 
-{{% section %}}
 
 ### Passage d’un type valeur en paramètre
 
@@ -204,11 +195,9 @@ static void Augmenter(int unNombre) {
 
 ![Diagramme d'exécution](images/value_types_parameter_passing_diagram.png)
 
-{{% /section %}}
 
 ---
 
-{{% section %}}
 
 ### Passage d’un objet en paramètre
 
@@ -239,7 +228,6 @@ static void AugmenterRayon(Cercle unCercle) {
 
 ![Diagramme d'exécution](images/object_parameter_passing_diagram.png)
 
-{{% /section %}}
 
 ---
 
@@ -286,7 +274,6 @@ throw new Exception("Message d’erreur");
 
 ---
 
-{{% section %}}
 
 ### Les exceptions : dynamique
 
@@ -299,7 +286,6 @@ throw new Exception("Message d’erreur");
 
 ![Dynamique des exceptions](images/exceptionx_dynamic.png)
 
-{{% /section %}}
 
 ---
 
@@ -335,7 +321,6 @@ while (!trouve) {
 
 ---
 
-{{% section %}}
 
 ### Exceptions et bonnes pratiques (2/3)
 
@@ -362,7 +347,6 @@ catch (Exception) {
 }
 ```
 
-{{% /section %}}
 
 ---
 
@@ -379,7 +363,6 @@ catch (Exception) {
 
 ---
 
-{{% section %}}
 
 ### Variables sans type explicite
 
@@ -414,7 +397,6 @@ foreach (var item in custQuery)
 }
 ```
 
-{{% /section %}}
 
 ---
 
@@ -468,7 +450,6 @@ public DateTime ReleaseDate { get; set; }
 
 ---
 
-{{% section %}}
 
 ### Programmation asynchrone
 
@@ -513,4 +494,3 @@ public async Task DoSomethingAsync()
 }
 ```
 
-{{% /section %}}

@@ -32,7 +32,6 @@ tags:
 
 ---
 
-{{% section %}}
 
 ### Développement mobile natif
 
@@ -41,7 +40,7 @@ Création d'applications en utilisant la technologie prévue par le concepteur d
 - Android : Java
 - IOS : Objective-C ou Swift
 
-{{% fragment %}}Ces technologies sont **incompatibles**.{{% /fragment %}}
+Ces technologies sont **incompatibles**.
 
 ---
 
@@ -56,11 +55,9 @@ Création d'applications en utilisant la technologie prévue par le concepteur d
 
 Nécessité de créer puis de faire évoluer une application pour chaque environnement.
 
-{{% /section %}}
 
 ---
 
-{{% section %}}
 
 ### Solutions hybrides
 
@@ -86,11 +83,9 @@ Exemples : [Apache Cordova](https://cordova.apache.org), [Ionic](https://ionicfr
 - _Look'n'feel_ non natif.
 - Mauvaises performances dans certains scenarii.
 
-{{% /section %}}
 
 ---
 
-{{% section %}}
 
 ### Développement natif multi-plateformes
 
@@ -108,7 +103,6 @@ Combine les avantages du natif (_look'n'feel_, performances) et de l'hybride (un
 
 Limite potentielle : le support de l'OS dépend entièrement du framework.
 
-{{% /section %}}
 
 ---
 

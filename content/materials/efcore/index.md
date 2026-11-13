@@ -59,7 +59,6 @@ tags:
 
 ---
 
-{{% section %}}
 
 ### Object/Relational Mapping (O/RM)
 
@@ -73,7 +72,6 @@ tags:
 
 ![Welcome to the jungle!](images/orm_vietnam.png)
 
-{{% /section %}}
 
 ---
 
@@ -258,7 +256,6 @@ public class Post
 
 ---
 
-{{% section %}}
 
 ### L'opérateur de null-suppression
 
@@ -270,7 +267,6 @@ public class Post
 
 [![JKK '62 speech](images/we-choose.png)](https://youtu.be/g25G1M4EXrQ?t=93)
 
-{{% /section %}}
 
 ---
 

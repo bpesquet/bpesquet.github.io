@@ -39,7 +39,6 @@ Dedicated source code management tools, often called **Version Control Systems**
 
 ---
 
-{{% section %}}
 
 ### Centralized VCS
 
@@ -52,11 +51,9 @@ Dedicated source code management tools, often called **Version Control Systems**
 
 ![Centralized SCM](images/scm_centralized.png)
 
-{{% /section %}}
 
 ---
 
-{{% section %}}
 
 ### Decentralized VCS
 
@@ -69,7 +66,6 @@ Dedicated source code management tools, often called **Version Control Systems**
 
 ![Decentralized SCM](images/scm_decentralized.png)
 
-{{% /section %}}
 
 ---
 

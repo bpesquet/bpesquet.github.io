@@ -52,7 +52,6 @@ tags:
 
 ---
 
-{{% section %}}
 
 ## Asset
 
@@ -77,7 +76,6 @@ tags:
 
 ![Asset Store](images/AssetStore-download.png)
 
-{{% /section %}}
 
 ---
 
@@ -90,7 +88,6 @@ tags:
 
 ---
 
-{{% section %}}
 
 ## GameObject
 
@@ -108,11 +105,9 @@ tags:
 
 ![Hiérarchie des GO](images/HierarchyParenting1.png)
 
-{{% /section %}}
 
 ---
 
-{{% section %}}
 
 ## Composant
 
@@ -135,11 +130,9 @@ Définit la position, la rotation et l'échelle d'un GameObject.
 - Position, rotation et échelle d'un GameObject sont relatives à son parent dans la hiérarchie.
 - Les valeurs de Transform sont relatives à celles du GameObject parent (**coordonnées locales**) ou absolues en l'absence de parent (**coordonnées globales**).
 
-{{% /section %}}
 
 ---
 
-{{% section %}}
 
 ## Mesh
 
@@ -155,7 +148,6 @@ Composant assurant le rendu d'un Mesh à la position définie par le composant T
 
 ![Mesh renderer](images/class-MeshRenderer-0.png)
 
-{{% /section %}}
 
 ---
 
@@ -171,7 +163,6 @@ Composant permettant à un GameObject de réagir selon les lois de la physique :
 
 ---
 
-{{% section %}}
 
 ## Collider
 
@@ -228,7 +219,6 @@ GameObject dont le Collider est défini comme Trigger.
 
 [![Collision Matrix](images/UnityCollisionMatrix.png)](https://docs.unity3d.com/Manual/CollidersOverview.html)
 
-{{% /section %}}
 
 ---
 
@@ -258,7 +248,6 @@ Type de GameObject qui calcule la vue de la scène affichée au joueur.
 
 ---
 
-{{% section %}}
 
 ## Script
 
@@ -293,7 +282,6 @@ public class MainPlayer : MonoBehaviour {
 
 [![Time.deltaTtime](images/time.deltatime.gif)](https://unity3d.com/fr/learn/tutorials/topics/scripting/delta-time)
 
-{{% /section %}}
 
 ---
 
@@ -316,7 +304,6 @@ public class MainPlayer : MonoBehaviour {
 
 ---
 
-{{% section %}}
 
 ## Git Large File System
 
@@ -409,4 +396,3 @@ public class MainPlayer : MonoBehaviour {
 - Authentification GitHub, LFS, etc.
 - Version 1.0 : encore instable.
 
-{{% /section %}}
