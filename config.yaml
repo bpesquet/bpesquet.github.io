@@ -21,9 +21,12 @@ menu:
     - name: Talks
       pageRef: /talks
       weight: 4
+    - name: Materials
+      pageRef: /materials
+      weight: 5
     - name: Archive
       pageRef: /archive
-      weight: 5
+      weight: 6
 
 params:
   description: "Baptiste Pesquet's professional website"
@@ -43,6 +46,7 @@ params:
   ShowAllPagesInArchive: false
   MainSections: [courses, teaching, research, slides, presentations, posts]
   ShowToc: false
+  hideSummary: true
   TocOpen: true
   disableScrollToTop: true
   ShowWordCount: false
