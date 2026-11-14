@@ -16,7 +16,7 @@ menu:
       pageRef: /courses
       weight: 1
     - name: Research
-      pageRef: /research
+      pageRef: /papers
       weight: 3
     - name: Talks
       pageRef: /talks
