@@ -16,5 +16,5 @@ Ce cours vise à découvrir et à acquérir des techniques rigoureuses de modél
 - Supports de cours :
   - [ASP.NET Core](../../materials/asp-net-core/)
   - [Entity Framework Core](../../materials/efcore/)
-  - ↗️ [Génie Logiciel](https://ensc.gitbook.io/genie-logiciel)
-  - ↗️ [Programmation évènementielle avec les WinForms](https://ensc.gitbook.io/programmation-evenementielle-winforms)
+  - [Génie Logiciel](https://ensc.gitbook.io/genie-logiciel)
+  - [Programmation évènementielle avec les WinForms](https://ensc.gitbook.io/programmation-evenementielle-winforms)

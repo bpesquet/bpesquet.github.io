@@ -1,7 +1,7 @@
 ---
 title: "Artificial Intelligence for Defence in an EQF6 Training and Education Program, from the Design to the Execution"
 date: 2023-05-01
-author: ["Baptiste Pesquet", "Frédéric Alexandre"]
+author: ["Eric Grivel", "Baptiste Pesquet", "Tudor-Bogdan Airimitoaie", "Akka Zemmari"]
 place: "[EDUCON](https://educon-conference.org/)"
 draft: true
 ---
@@ -12,7 +12,7 @@ In this paper, we present the main steps of the methodology we followed to desig
 
 ## Resources
 
-- ↗️ [Paper portal](https://ieeexplore.ieee.org/abstract/document/10125126)
+- [Paper portal](https://ieeexplore.ieee.org/abstract/document/10125126)
 - 📄 [Paper](../../pub/ASSETSpaper.pdf)
 
 ## Citation
