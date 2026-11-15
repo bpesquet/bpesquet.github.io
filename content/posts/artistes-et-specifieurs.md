@@ -10,7 +10,7 @@ tags:
 
 Dans le cadre du module de cours Gestion de projet, j'ai testé avec succès un atelier ludique et efficace pour s'initier aux valeurs de l'agilité : le jeu **artistes et spécifieurs**. Imaginé par [Alistair Cockburn](http://alistair.cockburn.us/), l'un des signataires du [manifeste agile](http://agilemanifesto.org/), ce jeu est souvent utilisé par les coachs agiles en entreprise.
 
-Par rapport à d'autres ateliers similiaires comme [lego4scrum](https://www.lego4scrum.com/), il a l'avantage de ne nécessiter presque aucun matériel. En 1h30 environ, il offre une première approche de certains principes agiles dans un cadre propice à la bonne humeur.
+Par rapport à d'autres ateliers similaires comme [lego4scrum](https://www.lego4scrum.com/), il a l'avantage de ne nécessiter presque aucun matériel. En 1h30 environ, il offre une première approche de certains principes agiles dans un cadre propice à la bonne humeur.
 
 ## Principe du jeu
 
@@ -48,7 +48,7 @@ On laisse ensuite quelques minutes à chaque équipe pour trouver des axes d'am�
 Au bout de trois phases de jeu, on observe l'adoption naturelle de plusieurs des grands principes agiles :
 
 * Fonctionnement en boucle courte.
-* Echanges réguliers entre les parties prenantes.
+* Échanges réguliers entre les parties prenantes.
 * Travail incrémental avec priorisation.
 * Amélioration par auto-organisation.
 * ...

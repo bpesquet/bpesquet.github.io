@@ -65,7 +65,7 @@ tags:
 ## Packages
 
 - Plusieurs Assets peuvent être regroupés dans un **package**.
-- Unity est livré avec une collections d'**Assets standards** : formes de base, gestion de la caméra, des entrées utilisateur, etc.
+- Unity est livré avec une collection d'**Assets standards** : formes de base, gestion de la caméra, des entrées utilisateur, etc.
 
 ---
 
@@ -82,7 +82,7 @@ tags:
 ## Scene
 
 - Correspond à une partie du jeu (un niveau).
-- Sauvegardées parmi les Assets.
+- Sauvegardée parmi les Assets.
 
 ![Nouvelle scène](images/NewEmptyScene.png)
 
@@ -168,7 +168,7 @@ Composant permettant à un GameObject de réagir selon les lois de la physique :
 
 Composant définissant la forme d'un GameObject pour la gestion des collisions :
 
-- **Primitive Collider** : formes géométriques de base (cube, sphère, cylindre, etc).
+- **Primitive Collider** : formes géométriques de base (cube, sphère, cylindre, etc.).
 - **Mesh Collider** : forme spécifique définie par un Mesh. Plus coûteux en temps de calcul.
 
 Par défaut, des GameObjects possédant un Collider ne peuvent pas se chevaucher.
@@ -181,7 +181,7 @@ GameObject possédant un Collider et un RigidBody.
 
 - Soumis aux lois de la physique.
 - Déclenche des collisions avec les autres (non-Trigger) Colliders.
-- Doit être déplacé en lui appliquand des forces.
+- Doit être déplacé en lui appliquant des forces.
 
 ---
 
@@ -191,7 +191,7 @@ GameObject possédant un Collider mais pas de RigidBody.
 
 - Déclenche des collisions avec les RigidBody Colliders, mais ne bouge pas.
 - Ne doit pas être déplacé.
-- Destiné aux éléments immobiles de la scène (murs, obstacles, etc).
+- Destiné aux éléments immobiles de la scène (murs, obstacles, etc.).
 
 ---
 
@@ -200,9 +200,9 @@ GameObject possédant un Collider mais pas de RigidBody.
 GameObject possédant un Collider et un RigidBody défini comme Kinematic.
 
 - N'est pas soumis aux lois de la physique.
-- Déclenche des collisions avec les RigidBody Colliders, mais ne bouge pas.
+- Déclenche des collisions avec les RigidBody Colliders, sans être repoussé par eux.
 - Peut être déplacé en modifiant son Transform.
-- Destiné aux éléments animés du décor (portes, objets à récupérer, etc).
+- Destiné aux éléments animés du décor (portes, objets à récupérer, etc.).
 
 ---
 
@@ -280,7 +280,7 @@ public class MainPlayer : MonoBehaviour {
 
 ## Déplacements scriptés
 
-[![Time.deltaTtime](images/time.deltatime.gif)](https://unity3d.com/fr/learn/tutorials/topics/scripting/delta-time)
+[![Time.deltaTime](images/time.deltatime.gif)](https://unity3d.com/fr/learn/tutorials/topics/scripting/delta-time)
 
 
 ---
@@ -298,14 +298,14 @@ public class MainPlayer : MonoBehaviour {
 
 ## Les solutions
 
-- Partage manuel (disque commun, Drive, etc).
+- Partage manuel (disque commun, Drive, etc.).
 - Dépôt Git standard.
 - Git LFS.
 
 ---
 
 
-## Git Large File System
+## Git Large File Storage
 
 [![Git LFS](images/git-lfs.gif)](https://git-lfs.github.com)
 

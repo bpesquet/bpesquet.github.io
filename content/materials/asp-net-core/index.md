@@ -15,7 +15,7 @@ tags:
 
 ### Histoire d'ASP.NET Core
 
-- A l'origine, .NET (Framework) incluait une technologie de création de pages web dynamiques nommée **ASP.NET** (_Active Server Pages_).
+- À l'origine, .NET (Framework) incluait une technologie de création de pages web dynamiques nommée **ASP.NET** (_Active Server Pages_).
 - **ASP.NET Core** est une réécriture d'ASP.NET basée sur .NET (Core).
 - Standard actuel pour le développement web sous .NET.
 
@@ -36,7 +36,7 @@ tags:
 
 Le web est basé sur un modèle **client/serveur** :
 
-- Le client (navigateur, application mobile, robot d'indexation, etc) envoie une demande (**requête**) au serveur.
+- Le client (navigateur, application mobile, robot d'indexation, etc.) envoie une demande (**requête**) au serveur.
 - Le serveur prépare sa **réponse** à la requête du client, puis la lui renvoie.
 
 ---
@@ -50,8 +50,8 @@ Le web est basé sur un modèle **client/serveur** :
 
 - _HyperText Transfer Protocol_.
 - Socle technique du web.
-- Equivalent sécurisé : **HTTPS**.
-- Basé sur des **commandes** textuelles exprimant les différentes actions possibles : _GET_, _PUT_, _POST_, etc).
+- Équivalent sécurisé : **HTTPS**.
+- Basé sur des **commandes** textuelles exprimant les différentes actions possibles : _GET_, _PUT_, _POST_, etc.
 
 ---
 
@@ -150,7 +150,7 @@ Squelette HTML (sans données) initialement renvoyé au client. Ensuite, DOM mis
 
 ---
 
-### Creation d'une application ASP.NET Core MVC
+### Création d'une application ASP.NET Core MVC
 
 ```bash
 dotnet new mvc -o {AppName}
@@ -346,7 +346,7 @@ public class HelloController : ControllerBase
 ### Utilisation du contrôleur créé
 
 - L'URL <https://localhost:{port}/hello> est automatiquement routée vers la méthode `Index` de la classe `HelloController`.
-- Même résultat avec <https://localhost:{port}/hello/index>,  `Index` étant le nom de l'action par défaut.
+- Même résultat avec <https://localhost:{port}/hello/index>, `Index` étant le nom de l'action par défaut.
 
 ![Hello World!](images/helloworldcontroller.png)
 
@@ -394,7 +394,7 @@ public class HelloController : ControllerBase
 
 ### Définition de l'environnement avec Visual Studio Code
 
-Dans le fichier `./vscode/launch.json`
+Dans le fichier `.vscode/launch.json`
 
 ```json
 {
@@ -542,7 +542,7 @@ builder.Services.AddDbContext<MvcMovieContext>();
 
 ### Gestion des fichiers temporaires SQLite
 
-Edition du fichier `.gitignore` pour ignorer ces fichiers.
+Édition du fichier `.gitignore` pour ignorer ces fichiers.
 
 ```bash
 # Ignore SQLite temp files
@@ -639,7 +639,7 @@ SeedData.Init();
 ### Spécificités des API web
 
 - Une **API web** (appelée parfois service web) est une API accessible via les technologies du web : HTTP ou HTTPS.
-- Les API web utilisent le plus souvent le format de donnée **JSON**.
+- Les API web utilisent le plus souvent le format de données **JSON**.
 - Certaines sont librement utilisables mais la plupart nécessitent une authentification du client.
 
 ---
@@ -973,7 +973,7 @@ Envoyer une requête HTTP DELETE vers l'URL <https://localhost:{port}/api/moviea
 
 ### Correspondance entre contrôleurs et vues
 
-- Dans une méthode d'action `{ActionName}` d'un contrôleur `Controllers/{CtrlName}Controller`, l'appel de `View()`déclenche le rendu de la vue `Views/{CtrlName}/{ActionName}.cshtml`.
+- Dans une méthode d'action `{ActionName}` d'un contrôleur `Controllers/{CtrlName}Controller`, l'appel de `View()` déclenche le rendu de la vue `Views/{CtrlName}/{ActionName}.cshtml`.
 - Le résultat HTML de ce rendu constitue la réponse HTTP renvoyée par le serveur au client.
 - Nécessite que le contrôleur hérite de `Controller` et non `ControllerBase`.
 
@@ -1096,7 +1096,7 @@ Fichier `Views/Hello/Index.cshtml`.
 
 - Définis par la syntaxe `@{...}`.
 - Le code C# contenu n'est pas rendu (= pas ajouté au résultat HTML renvoyé).
-- A l'intérieur d'un bloc,
+- À l'intérieur d'un bloc,
   - les balises HTML permettent de basculer du C# au HTML.
   - la balise `<text>` permet de demander explicitement le rendu HTML d'un contenu C# sans balises.
 

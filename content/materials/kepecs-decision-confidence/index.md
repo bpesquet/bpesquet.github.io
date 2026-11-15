@@ -39,7 +39,7 @@ Adam Kepecs and Zachary F. Mainen, “A Computational Framework for the Study of
 ## Scope
 
 - Humans and other animals must often make decisions on the basis of imperfect evidence.
-- Lttle is/was known about how the brain computes confidence estimates about decisions.
+- Little is/was known about how the brain computes confidence estimates about decisions.
 - Issue is explored combining behavioral analysis, computational modeling and neural recordings.
 
 ## Behavioral study of confidence

@@ -5,18 +5,17 @@ draft: false
 hidemeta: true
 ---
 
-Here is a list of my public interventions, including research-focused presentations and participations to interdisciplinary events.
+Here is a list of my public interventions, including research-focused presentations and participation in interdisciplinary events.
 
 ## 2026
 
-- 📄 [Decision-making via evidence accumulation and metacognitive self-
-regulation](../pub/2026_decision-making-self-regulation.pdf) (Journée des doctorants ENSC)
+- 📄 [Decision-making via evidence accumulation and metacognitive self-regulation](../pub/2026_decision-making-self-regulation.pdf) (Journée des doctorants ENSC)
 - 📄 [Typst, a new tool for writing scientific documents](../pub/2026_typst_intro.pdf) ([Mnemosyne](https://team.inria.fr/mnemosyne/) team meeting)
 - 📄 [A cognitively plausible architecture for a metacognitive agent](../pub/2026_ensc_research_night.pdf) (Nuit de la recherche ENSC)
 
 ## 2025
 
-- [Artificial Intelligence: past, present, future(s)](../materials/chembiona-2925/) (Congrès [ChemBioNA](https://www.chembiona.cnrs.fr/))
+- [Artificial Intelligence: past, present, future(s)](../materials/chembiona-2025/) (Congrès [ChemBioNA](https://www.chembiona.cnrs.fr/))
 - [Towards metacognitive agents: integrating confidence in sequential decision-making](../materials/imn-day-2025/) ([IMN](https://www.imn-bordeaux.org) scientific day)
 
 ## 2024
@@ -32,7 +31,7 @@ regulation](../pub/2026_decision-making-self-regulation.pdf) (Journée des docto
 
 ## 2023
 
-- [AI for Defence](../materials/ai-for-defence/) ([ASSETS+](https://assets-plus.eu/) european project))
+- [AI for Defence](../materials/ai-for-defence/) ([ASSETS+](https://assets-plus.eu/) European project)
 
 ## 2019
 

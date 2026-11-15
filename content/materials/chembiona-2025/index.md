@@ -7,6 +7,8 @@ title: "Artificial Intelligence: past, present, future(s)"
 date: 2025-03-20T11:09:44+01:00
 draft: false
 showToc: true
+aliases:
+- /materials/chembiona-2925/
 tags:
 - artificial intelligence
 style: |
@@ -64,7 +66,7 @@ Kickoff: [1956 Dartmouth workshop on Artificial Intelligence](https://en.wikiped
 
 > "Machines will be capable, within twenty years, of doing any work a man can do." ([Herbert Simon](https://en.wikipedia.org/wiki/Herbert_A._Simon), 1965)
 
-> "In for three to eight years we will have a machine with the general intelligence of an average human being." ([Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky), 1970)
+> "In from three to eight years we will have a machine with the general intelligence of an average human being." ([Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky), 1970)
 
 ### What is intelligence, by the way?
 
@@ -133,7 +135,7 @@ Build a **tree-like structure** based on a series of learned questions on the da
 
 #### Algorithm #3: Artificial Neural Networks
 
-Layers of **loosely neuron-inpired computation units** that can approximate any continuous function.
+Layers of **loosely neuron-inspired computation units** that can approximate any continuous function.
 
 <div class="columns">
 <div>
@@ -156,7 +158,7 @@ Subfield of Machine Learning consisting of **multilayered neural networks** trai
 
 *Image credits: [[Krizhevsky et al., 2012](https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)]*
 
-In a decade,  outperformed previous SOTA approaches in many fields (computer vision, language, processing, and much more).
+In a decade, outperformed previous SOTA approaches in many fields (computer vision, language processing, and much more).
 
 ### From labs to everyday life in 25 years
 
@@ -210,7 +212,7 @@ $$f(inputs) = outputs$$
 <div class="columns">
 <div>
 
-![Transfomer architecture](images/transformer.png)
+![Transformer architecture](images/transformer.png)
 
 </div>
 <div>
@@ -252,7 +254,7 @@ $$f(inputs) = outputs$$
 
 - Models like ChatGPT contain **billions** of internal parameters.
 - They are trained on humongous amounts of data (whole parts of the Internet).
-- These processes have **huge energetical costs**.
+- These processes have **huge energy costs**.
 
 </div>
 <div>
@@ -289,8 +291,8 @@ AI has more and more social and societal implications:
 
 - AGI = **Artificial General Intelligence**
   - The ability to perform any task as well as a human.
-- Related concept: **strong AI** (intentionality anc consciousness).
-- Are recent models *sparks of AGI* [[Buceck et al., 2023](https://arxiv.org/abs/2303.12712)] or merely *stochastic parrots* [[Bender et al. 2021](https://dl.acm.org/doi/10.1145/3442188.3445922)]?
+- Related concept: **strong AI** (intentionality and consciousness).
+- Are recent models *sparks of AGI* [[Bubeck et al., 2023](https://arxiv.org/abs/2303.12712)] or merely *stochastic parrots* [[Bender et al., 2021](https://dl.acm.org/doi/10.1145/3442188.3445922)]?
 
 ### The technological singularity
 
@@ -311,7 +313,7 @@ Is showing intelligent behavior the same as being intelligent? [[Searle, 1980s](
 <div class="columns">
 <div>
 
-- Approx. **86 billions neurons** in 1.4 kg.
+- Approx. **86 billion neurons** in 1.4 kg.
 - Typical energy consumption: *20 W (!)*
 - So much of it is still unknown.
 
@@ -333,6 +335,6 @@ Is showing intelligent behavior the same as being intelligent? [[Searle, 1980s](
 
 Any questions?
 
-![A freindly robot](images/friendly_robot.jpg)
+![A friendly robot](images/friendly_robot.jpg)
 
 *Image credits: [Adobe Stock](https://stock.adobe.com/ch_fr/images/friendly-ai-chatbot-robot-character-waving-simple-3d-blue-background-illustration-generative-ai/565068563)*

@@ -38,7 +38,7 @@ tags:
 Création d'applications en utilisant la technologie prévue par le concepteur de l'OS.
 
 - Android : Java
-- IOS : Objective-C ou Swift
+- iOS : Objective-C ou Swift
 
 Ces technologies sont **incompatibles**.
 
@@ -72,7 +72,7 @@ Exemples : [Apache Cordova](https://cordova.apache.org), [Ionic](https://ionicfr
 ### Avantages
 
 - Fonctionnalités et performances proches de celles d'une application native.
-- Economies de ressources pour créer l'application.
+- Économies de ressources pour créer l'application.
 - Une seule base de code : maintenance et évolution facilitées.
 
 ---
@@ -81,7 +81,7 @@ Exemples : [Apache Cordova](https://cordova.apache.org), [Ionic](https://ionicfr
 
 - Impossible d'accéder à certaines fonctionnalités matérielles ou logicielles spécifiques.
 - _Look'n'feel_ non natif.
-- Mauvaises performances dans certains scenarii.
+- Mauvaises performances dans certains scénarios.
 
 
 ---
@@ -191,7 +191,7 @@ Il existe plusieurs modes de connexion :
 ### Utilisation d'un émulateur
 
 - Alternative à l'emploi d'un terminal mobile pour tester l'application RN.
-- Nécessite l'installation de [XCode (iOS)](https://developer.apple.com/xcode/) ou [Android Studio](https://developer.android.com/studio) sur le machine de développement.
+- Nécessite l'installation de [Xcode (iOS)](https://developer.apple.com/xcode/) ou [Android Studio](https://developer.android.com/studio) sur la machine de développement.
 - Documentation : [iOS](https://docs.expo.io/workflow/ios-simulator/) | [Android](https://docs.expo.io/workflow/android-studio-emulator/).
 
 ![Expo emulator](images/expo-emulator.png)
@@ -522,7 +522,7 @@ const styles = StyleSheet.create({
 
 ### _Props_ et déstructuration
 
-- Les _props_ peuvent être passées de deux manières équivalentes à un composant function.
+- Les _props_ peuvent être passées de deux manières équivalentes à un composant fonction.
 - La seconde, plus concise et explicite, est un exemple de [déstructuration d'objet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
 ```jsx
@@ -550,9 +550,9 @@ const [<getter>, <setter>] = useState(<initialValue>);
 
 ---
 
-### Etat (_state_) d'un composant
+### État (_state_) d'un composant
 
-- Etat interne (mémoire), susceptible de changer au cours du temps (_mutable_).
+- État interne (mémoire), susceptible de changer au cours du temps (_mutable_).
 - Sa modification entraine une mise à jour de l'affichage du composant.
 
 ```jsx
@@ -799,7 +799,7 @@ const styles = StyleSheet.create({
 
 ### Rappels sur l'état
 
-- **Etat (_state_)** = ensemble des données susceptibles d'être modifiées pendant l'exécution de l'application.
+- **État (_state_)** = ensemble des données susceptibles d'être modifiées pendant l'exécution de l'application.
 
 - Chaque composant fonction React Native possède un état interne, géré via le hook `useState`.
 
@@ -1213,7 +1213,7 @@ navigation.navigate("RouteName", { /* params go here */ })
 
 L'écran d'arrivée peut lire les paramètres grâce à la propriété `params` du _prop_ `route`.
 
-Ces paramètres sont équivalents à ceux d'une URL. Ils ne doivent pas contenir les données métiers de l'application (plutôt gérés via l'état).
+Ces paramètres sont équivalents à ceux d'une URL. Ils ne doivent pas contenir les données métier de l'application (plutôt gérés via l'état).
 
 ---
 
@@ -1687,7 +1687,7 @@ MyApp/
 ### Autres possibilités de react-navigation
 
 - [Navigation par menu accordéon](https://reactnavigation.org/docs/drawer-based-navigation)
-- [Ecran modal](https://reactnavigation.org/docs/modal)
+- [Écran modal](https://reactnavigation.org/docs/modal)
 - [Gestion de l'authentification](https://reactnavigation.org/docs/auth-flow)
 - ...
 
@@ -1845,7 +1845,7 @@ useEffect(() => {
 
 ### Affichage pendant le chargement
 
-- Le composant [ActivityIndicator](https://reactnative.dev/docs/activityindicator) permet d'afficher un _spinner_ pendant les actions potentiellement longues (chargements réseau, etc).
+- Le composant [ActivityIndicator](https://reactnative.dev/docs/activityindicator) permet d'afficher un _spinner_ pendant les actions potentiellement longues (chargements réseau, etc.).
 - Il est souvent associé à un booléen `loading` ajouté à l'état du composant.
 
 ![ActivityIndicator spinner](images/spinner.gif)
@@ -1988,7 +1988,7 @@ MyApp/
 
 ### Besoin
 
-- Les applications mobiles doivent souvent enregistrer une partie de leurs données (préférences utilisateurs, dernières informations consultées, etc) dans la mémoire de stockage du téléphone/tablette.
+- Les applications mobiles doivent souvent enregistrer une partie de leurs données (préférences utilisateurs, dernières informations consultées, etc.) dans la mémoire de stockage du téléphone/tablette.
 - Plusieurs solutions existent pour cela.
 
 ---
@@ -2014,7 +2014,7 @@ npx expo install @react-native-async-storage/async-storage
 
 ---
 
-### Ecriture de données
+### Écriture de données
 
 `setItem` permet à la fois d'ajouter de nouveaux éléments et de modifier des éléments existants.
 

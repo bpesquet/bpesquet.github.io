@@ -18,7 +18,7 @@ tags:
 
 ---
 
-### Un pré-requis essentiel
+### Un prérequis essentiel
 
 La majorité des solutions mobiles multi-plateformes est basée sur JavaScript.
 
@@ -62,7 +62,7 @@ b = 6.28; // Erreur!
 
 Créées avec des guillemets simples (`'...'`) ou doubles (`"..."`).
 
-**Litéraux de modèle**: chaînes créées entre _backticks_ (\`) et permettant d'intégrer des expressions.
+**Littéraux de modèle** : chaînes créées entre _backticks_ (\`) et permettant d'intégrer des expressions.
 
 ```js
 const country = "France"; // or 'France'
@@ -147,11 +147,11 @@ for (const movie of movies) {
 ### Objets
 
 - JavaScript permet de créer des objets sans classe!
-- Un **objet litéral** JavaScript est défini grâce à des accolades `{...}`.
+- Un **objet littéral** JavaScript est défini grâce à des accolades `{...}`.
 - Il regroupe un ensemble de **propriétés** (paires nom/valeur).
 
 ```js
-// Création d'un objet litéral
+// Création d'un objet littéral
 const pen = {
   type: "ballpoint",
   color: "blue",
@@ -306,7 +306,7 @@ La programmation asynchrone évite de bloquer le _thread_ courant en cas d'opér
 
 [![Promise](images/promise.png)](https://javascript.info/promise-basics)
 
-Le mot-clé `then()` permet de définir le traitement de la promesse sous la forme d'une fonction.
+La méthode `then()` permet de définir le traitement de la promesse sous la forme d'une fonction.
 
 ---
 
@@ -369,7 +369,7 @@ asyncCall();
 
 - Plate-forme JavaScript basée sur le moteur d'exécution V8 de Chrome.
 
-- Permet de créer des applications JS hors du navigateur (serveur, mobile, etc).
+- Permet de créer des applications JS hors du navigateur (serveur, mobile, etc.).
 
 - Supporte un riche écosystème de librairies en tout genre installables sous forme de **packages**.
 

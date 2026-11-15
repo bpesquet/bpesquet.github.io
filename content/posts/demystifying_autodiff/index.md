@@ -39,7 +39,7 @@ During model training, we can treat input data and expected results as constants
 
 This step is repeated until a minimum of the loss function is reached, corresponding to the optimal values for the model parameters. The whole process is called [gradient descent](https://developers.google.com/machine-learning/crash-course/reducing-loss/gradient-descent) (GD).
 
-![Gradeitn descent with two parameters](images/gradient_descent_2parameters.gif)
+![Gradient descent with two parameters](images/gradient_descent_2parameters.gif)
 
 ### Autodiff to the rescue
 
@@ -47,7 +47,7 @@ Training a model through GD requires a hefty amount of gradient computations. Be
 
 Off-the-shelf Machine Learning models like [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression) or [MultiLayer Perceptron](https://en.wikipedia.org/wiki/Multilayer_perceptron) have fairly simple and well-defined ways of computing the loss function gradient. This is not true for more recent, deeper models, which mix a [complex architecture](https://arxiv.org/abs/1512.03385) with [huge amounts of parameters](https://arxiv.org/abs/2005.14165). Computing gradients becomes an algorithmically challenging and resource-hungry task.
 
-This is where autodifferentiation comes to the rescue. Frameworks like PyTorch or TensorFlow provide automatic and efficient computation of gradients for any sequence of operations, including math expressions but also algorithms using branching, loops or recursion. This gives researchers and engineers the freedom to create arbitrary complex models without bothering with the low-level yet critical task of computing gradients.
+This is where autodifferentiation comes to the rescue. Frameworks like PyTorch or TensorFlow provide automatic and efficient computation of gradients for any sequence of operations, including math expressions but also algorithms using branching, loops or recursion. This gives researchers and engineers the freedom to create arbitrarily complex models without bothering with the low-level yet critical task of computing gradients.
 
 Some experts in the field even believe in the advent of a [new paradigm](https://medium.com/@karpathy/software-2-0-a64152b37c35), sometimes called [differentiable programming](https://en.wikipedia.org/wiki/Differentiable_programming), that would create software by assembling dynamic, parameterized modules trained through gradient-based optimization rather than hardcoding rules in an imperative way.
 
@@ -83,7 +83,7 @@ The gradient $\nabla f$ of a function $f$ is a vector of partial derivatives w.r
 
 ## Teardown of existing autodiff engines
 
-Upon researching the topic of automatic differentiation, i came across and studied several interesting, Python-based implementations. Here is a brief synthesis for each of these projects, sorted by ascending order of complexity.
+Upon researching the topic of automatic differentiation, I came across and studied several interesting, Python-based implementations. Here is a brief synthesis for each of these projects, sorted by ascending order of complexity.
 
 ### micrograd
 
@@ -140,7 +140,7 @@ def __mul__(self, other):
     return out
 ```
 
-When it's time to backpropagate, a topogical list of all involved values is recursively built. For each of them (in reverse order), the `_backward()` function is called to apply the chain rule and compute all gradients.
+When it's time to backpropagate, a topological list of all involved values is recursively built. For each of them (in reverse order), the `_backward()` function is called to apply the chain rule and compute all gradients.
 
 ```python
 def backward(self):
@@ -169,7 +169,7 @@ All in all, **micrograd** is a pretty brilliant take on the autodiff subject, al
 
 {{< youtube RxmBukb-Om4 >}}
 
-here is it in action.
+Here it is in action.
 
 ```python
 from autograd.tensor import Tensor
@@ -299,9 +299,9 @@ out.backward()
 print (x.grad)  # [[4.5000, 4.5000], [4.5000, 4.5000]]
 ```
 
-Fine, but what's going on under the hood? To answer this questions, one has to dive into the internals of the framework. This is no small feat, given the sheer volume of PyTorch's code base and the fact that computation-heavy tasks are written as heavily optimized C++ code.
+Fine, but what's going on under the hood? To answer this question, one has to dive into the internals of the framework. This is no small feat, given the sheer volume of PyTorch's code base and the fact that computation-heavy tasks are written as heavily optimized C++ code.
 
-The article [How to understand Pytorch Source Code?](https://jimmy-shen.medium.com/how-to-understand-pytorch-source-code-1fdbdbbf007e) gives many heplful pointers for understanding how PyTorch works. In particular, the following video by [Elliot Waite](https://twitter.com/elliotwaite) clearly explains how the framework maintains a backward graph for computing tensor gradients.
+The article [How to understand Pytorch Source Code?](https://jimmy-shen.medium.com/how-to-understand-pytorch-source-code-1fdbdbbf007e) gives many helpful pointers for understanding how PyTorch works. In particular, the following video by [Elliot Waite](https://twitter.com/elliotwaite) clearly explains how the framework maintains a backward graph for computing tensor gradients.
 
 {{< youtube MswxJw-8PvE >}}
 
@@ -309,9 +309,9 @@ The following schema, borrowed from the previous video, shows how the backward c
 
 > Since this part of PyTorch is implemented in C++, it is a symbolic rather than an exact representation.
 
-![PyTroch autodiff graph](images/pytorch_autodiff_graph.png)
+![PyTorch autodiff graph](images/pytorch_autodiff_graph.png)
 
-Another good advice given in the aforementioned article is to travel back in time to 2016, when PyTorch was still in its infancy. That means it had a simpler architecture and most functions were still coded in Python, rather than in C++.
+Another good piece of advice given in the aforementioned article is to travel back in time to 2016, when PyTorch was still in its infancy. That means it had a simpler architecture and most functions were still coded in Python, rather than in C++.
 
 Here are a few relevant links regarding the early versions of **autograd**:
 

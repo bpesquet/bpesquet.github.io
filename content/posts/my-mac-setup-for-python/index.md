@@ -8,9 +8,9 @@ tags:
 
 <!--more-->
 
-I recently got my lucky hands on a brand new M1 MacBook Pro as my new work machine. As an [teacher]({{< ref "teaching" >}}), I maintain several pedagogical resources written in Python and thus needed to quickly set up an efficient work environment on this machine.
+I recently got my lucky hands on a brand new M1 MacBook Pro as my new work machine. As a [teacher]({{< ref "/courses" >}}), I maintain several pedagogical resources written in Python and thus needed to quickly set up an efficient work environment on this machine.
 
-For all its qualities as a language, Python is notoriously hard to configure in a robust and efficient way. Along the years, many tools have been created to handle interpreter versions, virtual environments, project dependencies and the many chores associated with Python development. This is an ever evolving field, and the solutions listed below might very well become obsolete rather soon.
+For all its qualities as a language, Python is notoriously hard to configure in a robust and efficient way. Over the years, many tools have been created to handle interpreter versions, virtual environments, project dependencies and the many chores associated with Python development. This is an ever evolving field, and the solutions listed below might very well become obsolete rather soon.
 
 [![There's an xkcd for that, too!](images/python_environment.png)](https://xkcd.com/1987/)
 
@@ -46,7 +46,7 @@ References:
 
 ## Code utilities
 
-Development tools like code formatters and linters are typically reused from project to project. It is thefore a good practice to install them globally rather than duplicating them in each project.
+Development tools like code formatters and linters are typically reused from project to project. It is therefore a good practice to install them globally rather than duplicating them in each project.
 
 In order to avoid polluting the global Python directories, I used [pipx](https://github.com/pypa/pipx) which installs command line tools in dedicated virtual environments.
 
@@ -74,7 +74,7 @@ In addition, here are the VS Code settings (`.vscode/settings.json`) I use for c
 
 My workflow includes working with [Jupyter notebooks](https://github.com/jupyter/notebook), either through a web browser or Visual Studio Code. In particular, I use the [RISE](https://rise.readthedocs.io) extension to showcase notebooks as slides when teaching.
 
-After struggling for a while, I gave up on trying to install the Jupyter ecosystem globally while making it available in Visual Studio Code, which uses the local virtual environment of the project. Instead, I use poetry to add jupyter as a dependency for all notebook-based projects. I also add RISE as a developement dependency for projects needing slideshows.
+After struggling for a while, I gave up on trying to install the Jupyter ecosystem globally while making it available in Visual Studio Code, which uses the local virtual environment of the project. Instead, I use poetry to add jupyter as a dependency for all notebook-based projects. I also add RISE as a development dependency for projects needing slideshows.
 
 **References**:
 
@@ -84,7 +84,7 @@ After struggling for a while, I gave up on trying to install the Jupyter ecosyst
 
 ## Deep Learning
 
-As the icing on the cake, I obviously wanted to leverage the power of the M1 architecture in my Deep Learning projects. Fortunately, both [PyTorch](https://pytorch.org/) and [TensorFlow](https://www.tensorflow.org/) now support the M1 family of processors, so the installation process is straighforward: I simply added `torch` (for PyTorch) or `tensorflow-macos` and `tensorflow-metal` (for TF) as project dependencies.
+As the icing on the cake, I obviously wanted to leverage the power of the M1 architecture in my Deep Learning projects. Fortunately, both [PyTorch](https://pytorch.org/) and [TensorFlow](https://www.tensorflow.org/) now support the M1 family of processors, so the installation process is straightforward: I simply added `torch` (for PyTorch) or `tensorflow-macos` and `tensorflow-metal` (for TF) as project dependencies.
 
 The following code subsequently checks if a CUDA (NVIDIA) or Metal (Apple ARM) GPU is available for PyTorch and for TensorFlow. The M1 GPU should be successfully detected in both cases.
 

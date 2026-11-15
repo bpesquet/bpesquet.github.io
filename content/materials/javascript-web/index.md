@@ -45,7 +45,7 @@ Description de la structure d'une page sous forme d'une arborescence de **noeuds
 
 ### Types de noeuds
 
-- **Eléments** : noeuds structurants pouvant contenir des fils. Correspondent aux balises HTML comme `<body>`, `<p>`, etc.
+- **Éléments** : noeuds structurants pouvant contenir des fils. Correspondent aux balises HTML comme `<body>`, `<p>`, etc.
 - **Texte** : noeuds contenant uniquement du texte.
 
 ---
@@ -83,7 +83,7 @@ document.body.childNodes.forEach((node) => {
 });
 ```
 
-A l'inverse, la propriété `parentNode` permet de remonter au noeud parent.
+À l'inverse, la propriété `parentNode` permet de remonter au noeud parent.
 
 ```js
 document.body.childNodes[1].parentNode; // Accès au noeud <body>
@@ -93,7 +93,7 @@ document.body.childNodes[1].parentNode; // Accès au noeud <body>
 
 ### Sélection par type de balise
 
-La méthode `getElementsByTagName()` renvoie la liste des noeuds correspond à une balise HTML.
+La méthode `getElementsByTagName()` renvoie la liste des noeuds correspondant à une balise HTML.
 
 ```js
 // Liste des noeuds h2
@@ -265,7 +265,7 @@ const pythonElement = document.createElement("li");
 
 ### Définition des attributs du noeud
 
-Les propriétés permettant de modifier un noeud (`textContent`, `classList`, etc) permettent de définir les valeurs des attributs du noeud créé.
+Les propriétés permettant de modifier un noeud (`textContent`, `classList`, etc.) permettent de définir les valeurs des attributs du noeud créé.
 
 ```js
 pythonElement.id = "python";
@@ -315,7 +315,7 @@ document
 
 ### Gestion du style
 
-La propriété `style` permet d'accéder à l'attribut `style` du noeud, composé de propriétés CSS (`color`, `fontFamily`, etc) qu'il est possible d'exploiter.
+La propriété `style` permet d'accéder à l'attribut `style` du noeud, composé de propriétés CSS (`color`, `fontFamily`, etc.) qu'il est possible d'exploiter.
 
 ```js
 const paragraphElement = document.querySelector("p");
@@ -324,7 +324,7 @@ paragraphElement.style.fontFamily = "Arial";
 paragraphElement.style.backgroundColor = "black";
 ```
 
-En cas d'utilisation d'une feuile de style CSS, il faut utiliser la fonction `getComputedStyle()` pour accéder à l'intégralité des styles d'un noeud.
+En cas d'utilisation d'une feuille de style CSS, il faut utiliser la fonction `getComputedStyle()` pour accéder à l'intégralité des styles d'un noeud.
 
 ```js
 const paragraphStyle = getComputedStyle(document.getElementById("para"));
@@ -340,7 +340,7 @@ console.log(paragraphStyle.color);
 
 ### Principe de fonctionnement
 
-Un **gestionnaire d'évènement** est une fonction JavaScript qui va d'exécuter lorsqu'un évènement apparaît : clic sur un bouton, soumission d'un formulaire, survol d'une zone avec la souris, etc.
+Un **gestionnaire d'évènement** est une fonction JavaScript qui va s'exécuter lorsqu'un évènement apparaît : clic sur un bouton, soumission d'un formulaire, survol d'une zone avec la souris, etc.
 
 L'ajout de gestionnaires d'évènement va améliorer l'interactivité de la page web.
 
@@ -499,7 +499,7 @@ document.getElementById("nationality").addEventListener("change", (e) => {
 });
 ```
 
-Les boutions radio et les cases à cocher fonctionnent sur le même principe.
+Les boutons radio et les cases à cocher fonctionnent sur le même principe.
 
 ---
 
@@ -527,7 +527,7 @@ document.getElementById("password").addEventListener("input", (e) => {
 
 ### Validation après soumission
 
-Le noeud correspond à un formulaire dispose d'une propriété `elements` qui permet d'accéder aux champs par leur nom.
+Le noeud correspondant à un formulaire dispose d'une propriété `elements` qui permet d'accéder aux champs par leur nom.
 
 La gestion de l'évènement `submit` permet de réagir à la soumission du formulaire par l'utilisateur.
 

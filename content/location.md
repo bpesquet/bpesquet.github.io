@@ -8,7 +8,7 @@ hidemeta: true
 ## Office Address
 
 Baptiste Pesquet  
-Ecole Nationale Supérieure de Cognitique  
+École Nationale Supérieure de Cognitique  
 109 avenue Roul  
 33405 Talence Cedex  
 FRANCE

@@ -5,7 +5,7 @@ author: ["Pierre-Alexandre Favier", "Baptiste Pesquet"]
 place: "[ENSC](https://ensc.bordeaux-inp.fr/)"
 tags:
 - Programming
-- Virtual Reatity
+- Virtual Reality
 draft: false
 ---
 

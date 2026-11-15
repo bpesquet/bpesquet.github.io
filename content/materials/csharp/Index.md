@@ -54,7 +54,7 @@ public string Titulaire {
 monCompte.Titulaire = "Marco";
 ```
 
-Avantage : possibilité de contrôles dans les accesseurs (validation de la novuelle valeur, etc).
+Avantage : possibilité de contrôles dans les accesseurs (validation de la nouvelle valeur, etc.).
 
 ---
 
@@ -129,7 +129,7 @@ Console.WriteLine("cercle2.Rayon = " + cercle2.Rayon); // ?
 ### Types valeur
 
 - Type pour lequel la valeur est directement stockée dans la variable.
-- Types de bases C# : `int`, `float`, `double`...
+- Types de base C# : `int`, `float`, `double`...
 - Création d’une variable => réservation d’une zone mémoire pour stocker sa valeur.
 
 ---
@@ -306,7 +306,7 @@ Potentiellement utile pour distinguer différentes catégories d'erreur, avec de
 ### Exceptions et bonnes pratiques (1/3)
 
 - Lever une exception uniquement pour signaler qu’une exécution normale n’est plus possible.
-- Ne pas utiliser les exceptions pour des situations non exceptionnelles (succès d’une recherche, fin d’une itération, etc).
+- Ne pas utiliser les exceptions pour des situations non exceptionnelles (succès d’une recherche, fin d’une itération, etc.).
 
 ```csharp
 i = 0;
@@ -324,7 +324,7 @@ while (!trouve) {
 
 ### Exceptions et bonnes pratiques (2/3)
 
-- Intercepter les exceptions uniquement si un traitement approprié est possible (message d’erreur, nouvelle tentative, etc)
+- Intercepter les exceptions uniquement si un traitement approprié est possible (message d’erreur, nouvelle tentative, etc.)
 - Sinon, la laisser remonter la chaîne des appels vers un meilleur endroit.
 
 ---
@@ -353,7 +353,7 @@ catch (Exception) {
 ### Exceptions et bonnes pratiques (3/3)
 
 - Bien réfléchir avant de créer ses propres classes d’exception.
-  - En deça d’une certaine complexité, utiliser la classe standard `Exception` suffit souvent.
+  - En deçà d’une certaine complexité, utiliser la classe standard `Exception` suffit souvent.
   - Toujours inclure le mot _Exception_ dans le nom de la classe.
 - Code de gestion des erreurs `<<` code applicatif.
 

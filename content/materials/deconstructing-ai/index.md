@@ -162,7 +162,7 @@ Build a tree-like structure based on a series of discovered questions on the dat
 
 ### Algorithm #3: Neural Networks
 
-- Layers of loosely neuron-inpired computation units.
+- Layers of loosely neuron-inspired computation units.
 - Can approximate any continuous function.
 
 ![Neuron output](images/neuron_output.png)
@@ -239,7 +239,7 @@ Build a tree-like structure based on a series of discovered questions on the dat
 - Current AI systems are **weak**: highly tuned to perform well in one task.
 - **Artificial General Intelligence** a.k.a. **strong AI**, the ability to perform any task as well as a human, is out of reach.
 
-[![Y. LeCun tweet on AGI, Déc. 2019](images/ylecun_tweet_agi.png)](https://twitter.com/ylecun/status/1204013978210320384)
+[![Y. LeCun tweet on AGI, Dec. 2019](images/ylecun_tweet_agi.png)](https://twitter.com/ylecun/status/1204013978210320384)
 
 ---
 
@@ -252,7 +252,7 @@ Build a tree-like structure based on a series of discovered questions on the dat
 
 ### The human brain is a masterpiece
 
-- Approx. 86 billions neurons in 1.4 kg.
+- Approx. 86 billion neurons in 1.4 kg.
 - Typical energy consumption: 20 W (!)
 - So much of it is still unknown.
 
@@ -262,7 +262,7 @@ Build a tree-like structure based on a series of discovered questions on the dat
 
 ### Babies are outstanding learners
 
-[![Conceptuals acquisitions by babies](images/conceptual_acquisition_infants.png)](http://www.lscp.net/persons/dupoux/)
+[![Conceptual acquisition by babies](images/conceptual_acquisition_infants.png)](http://www.lscp.net/persons/dupoux/)
 
 ---
 

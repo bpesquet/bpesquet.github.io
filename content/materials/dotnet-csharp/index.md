@@ -17,7 +17,7 @@ showToc: true
 - Plate-forme de développement d'applications créée par Microsoft en 2002.
 - Réponse à la domination de Java (premier langage multi-plateformes).
 - Inclut plusieurs langages de programmation : C#, VB.NET, F#, PowerShell...
-- A l'origine :
+- À l'origine :
   - Uniquement disponible sous Windows.
   - Licence propriétaire.
 
@@ -41,7 +41,7 @@ showToc: true
 ### .NET Framework et .NET Core
 
 - [2004](https://www.mono-project.com/docs/about-mono/history/) : le projet **Mono**, indépendant de Microsoft, débute le portage de .NET vers Linux.
-- [2014](https://devblogs.microsoft.com/dotnet/net-core-is-open-source/) : Microsoft publie **.NET Core**, la première version open source et multi-plateformes de .NET. La version WIndows-only de .NET est renommée **.NET Framework**.
+- [2014](https://devblogs.microsoft.com/dotnet/net-core-is-open-source/) : Microsoft publie **.NET Core**, la première version open source et multi-plateformes de .NET. La version Windows-only de .NET est renommée **.NET Framework**.
 - [2019](https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/) : la nouvelle version de .NET Core est renommée **.NET**, et .NET Framework passe en mode maintenance.
 
 ---
@@ -80,7 +80,7 @@ La version actuelle est .NET 6 (2021).
 
 `> dotnet new gitignore`
 
-- Le fichier `.gitignore` permet d'exclure certains fichiers/dossiers de la gestion des versions avec [Git](https://git-scm.com/). Il le plus souvent s'agit de fichiers locaux (exemple : configuration de l'environnement de développement) ou de fichiers recréés systématiquement par le processus de génération de l'application.
+- Le fichier `.gitignore` permet d'exclure certains fichiers/dossiers de la gestion des versions avec [Git](https://git-scm.com/). Il s'agit le plus souvent de fichiers locaux (exemple : configuration de l'environnement de développement) ou de fichiers recréés systématiquement par le processus de génération de l'application.
 - Cette commande crée un fichier `.gitignore` adapté aux projets .NET.
 
 ---
@@ -110,7 +110,7 @@ Si nécessaire, effectue la restauration des dépendances du projet (équivalent
 
 `> dotnet watch run`
 
-Pour une application web, jnjecte un script qui met à jour le contenu affiché par le navigateur lorsque des fichiers surveillés sont modifiés.
+Pour une application web, injecte un script qui met à jour le contenu affiché par le navigateur lorsque des fichiers surveillés sont modifiés.
 
 ---
 
@@ -179,9 +179,9 @@ int $0x80
 
 ### Langages pseudo-compilés
 
-- Code source compilé vers un format intermédiaire multi-plaformes ("_Write once, run anywhere_").
+- Code source compilé vers un format intermédiaire multi-plateformes ("_Write once, run anywhere_").
   - Erreurs syntaxiques détectées à la compilation.
-  - Evite les recompilations.
+  - Évite les recompilations.
   - Nécessite que l'environnement soit supporté par la plate-forme d'exécution du code intermédiaire.
   - Exemples : Java, C#.
 
@@ -189,7 +189,7 @@ int $0x80
 
 ### Notion d'algorithme
 
-> "Un algorithme est une méthode de calcul qui indique la démarche à suivre pour résoudre une série de problèmes équivalents en appliquant dans un ordre précis une suite finie de règles." (Académie Française)
+> "Un algorithme est une méthode de calcul qui indique la démarche à suivre pour résoudre une série de problèmes équivalents en appliquant dans un ordre précis une suite finie de règles." (Académie française)
 
 ---
 
@@ -208,7 +208,7 @@ Début
     Tant que les pâtes ne sont pas cuites
         Attendre
     Verser les pâtes dans une passoire
-    Egoutter les pâtes
+    Égoutter les pâtes
     Verser les pâtes dans un plat
     Goûter
     Tant que les pâtes sont trop fades
@@ -245,7 +245,7 @@ Fin
 - Langage de programmation apparu en 2002 avec la première version de .NET (Framework).
 - Syntaxe très inspirée de Java et de C++.
 - Typage statique, orienté objet.
-- Permet de créer une grande variété d'applications (bureau, web, mobile, cloud, etc).
+- Permet de créer une grande variété d'applications (bureau, web, mobile, cloud, etc.).
 - Version associée à .NET 6 : C# 10.
 
 ---
@@ -255,7 +255,7 @@ Fin
 - Environnements de développement intégré (IDE) :
   - [Visual Studio](https://visualstudio.microsoft.com/fr/)
   - [Rider](https://www.jetbrains.com/rider/)
-- Editeurs de code :
+- Éditeurs de code :
   - [Visual Studio Code](https://code.visualstudio.com/)
   - [Atom](https://atom.io/)
   - [Sublime Text](https://www.sublimetext.com/)
@@ -388,7 +388,7 @@ event
 explicit
 extern
 false
-file finally
+finally
 fixed
 float
 for
@@ -587,7 +587,7 @@ double f = double.NegativeInfinity; // −∞
 
 ### Notation suffixée
 
-- Les litéraux réels sont considérés par défaut comme ayant le type `double`.
+- Les littéraux réels sont considérés par défaut comme ayant le type `double`.
 - Dans certaines situations, il est utile de préciser explicitement le type souhaité en utilisant la **notation suffixée**.
 
 ```csharp
@@ -604,7 +604,7 @@ Les types C# se divisent en deux catégories.
 
 - [Types valeur](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types) : la variable contient directement la valeur qu'elle stocke.
 
-- [Types référence](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/reference-types) : la variable contient une référence vers la valeur ($\approx$ son adresse dans la mémoire). Cette _indirection_ permet d'optimiser certaines opérations (comparaison, copie, etc).
+- [Types référence](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/reference-types) : la variable contient une référence vers la valeur ($\approx$ son adresse dans la mémoire). Cette _indirection_ permet d'optimiser certaines opérations (comparaison, copie, etc.).
 
 Tous les exemples précédents sont des types valeur, sauf `string` (mais qui s'utilise comme un type valeur).
 
@@ -620,7 +620,7 @@ Tous les exemples précédents sont des types valeur, sauf `string` (mais qui s'
 
 - Le mot-clé [null](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/null) indique l'absence de référence.
 - C'est la "valeur" par défaut des variables de type référence.
-- Un type valeur est _non-nullable_ par défaut. Il peut devenir [nullable]((https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types)) en le suffixant par `?`.
+- Un type valeur est _non-nullable_ par défaut. Il peut devenir [nullable](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types) en le suffixant par `?`.
 
 ```csharp
 int a = null; // NOK : type valeur non nullable
@@ -681,7 +681,7 @@ int z = int.Parse("12.3"); // NOK : nouvelle valeur non entière
 
 - Le type [bool](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool) représente une valeur booléenne `true` ou `false`.
 - Booléen nullable : `bool?`
-- Un conversion explicite est requise vers/depuis les types entier : toutes les valeurs non-zéro sont converties à `true`.
+- Une conversion explicite est requise vers/depuis les types entier : toutes les valeurs non-zéro sont converties à `true`.
 
 ```csharp
 bool b = true;
@@ -689,7 +689,7 @@ bool b = true;
 bool? n = null; // OK : type nullable
 
 bool p = Convert.ToBoolean(1); // p vaut true
-bool q = Convert.ToBoolean(0); // r vaut false
+bool q = Convert.ToBoolean(0); // q vaut false
 ```
 
 ---
@@ -697,7 +697,7 @@ bool q = Convert.ToBoolean(0); // r vaut false
 ### Caractères
 
 - Le type [char](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/char) représente un caractère alphanumérique [Unicode](https://en.wikipedia.org/wiki/Unicode).
-- On peut lui affecter un caractère litéral délimité par des guillemets simples `''` ou sa [valeur Unicode](https://en.wikipedia.org/wiki/List_of_Unicode_characters#Basic_Latin) transtypée.
+- On peut lui affecter un caractère littéral délimité par des guillemets simples `''` ou sa [valeur Unicode](https://en.wikipedia.org/wiki/List_of_Unicode_characters#Basic_Latin) transtypée.
 - Le caractère d'échappement est `\`.
 - La conversion est implicite vers les principaux types entiers et réels.
 
@@ -786,7 +786,7 @@ Ne pas confondre `==` et `=` (affectation) !
 
 |Opérateur|Rôle|
 |---------|----|
-|`==`|Egal à|
+|`==`|Égal à|
 |`!=`|Différent de|
 |`<`|Inférieur|
 |`<=`|Inférieur ou égal|
@@ -810,7 +810,7 @@ Ne pas confondre `==` et `=` (affectation) !
 Elle est gérée comme en mathématiques à l'aide de parenthèses `()`.
 
 ```csharp
-let e = 3 + 2 * 4; // e contient la valeur 11
+int e = 3 + 2 * 4; // e contient la valeur 11
 int f = (3 + 2) * 4; // f contient la valeur 20
 ```
 
@@ -852,7 +852,7 @@ int c = ++a; // a et c valent 6
 
 ### Opérateurs combinés d'affectation
 
-- De la forme `variable {opérateur}= valeur`, ils équivalent à `variable = variable {operateur} valeur`
+- De la forme `variable {opérateur}= valeur`, ils équivalent à `variable = variable {opérateur} valeur`
 - Ils permettent de raccourcir certaines expressions.
 
 ```csharp
@@ -889,7 +889,7 @@ Console.WriteLine(5.32m + 2.23m); // 7,55
 
 ### Concaténation de chaînes
 
-Elle s'effectue à l'aide de l'opérateur `+` lorsqu'au moins l'une des deux opérandes est une chaîne.
+Elle s'effectue à l'aide de l'opérateur `+` lorsqu'au moins l'un des deux opérandes est une chaîne.
 
 ```csharp
 string s = "I " + "feel " + "good!";
@@ -912,7 +912,7 @@ Console.WriteLine(t); // "Il y a 5 familles à l'ENSC"
 int nbFamilles = 5;
 string ecole = "ENSC";
 string u = $"Il y a {nbFamilles} familles à l'{ecole}";
-Console.WriteLine(u); "Il y a 5 familles à l'ENSC"
+Console.WriteLine(u); // "Il y a 5 familles à l'ENSC"
 ```
 
 ---
@@ -958,7 +958,7 @@ Console.WriteLine(!false); // true
 
 ---
 
-### Evaluation abrégée
+### Évaluation abrégée
 
 Dans une condition composée avec `&&`, la seconde sous-condition n'est évaluée que si la première vaut `true` ([évaluation abrégée](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators#conditional-logical-and-operator-)).
 
@@ -1061,7 +1061,7 @@ else
 
 - L'instruction `?:` renvoie la valeur d'une expression parmi deux, selon la valeur d'une condition booléenne : `(condition) ? valeur_si_vraie : valeur_si_fausse`
 
-- Appelée [instruction conditionnelle ternaire](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator), elle constitue une alternative plus concise au `if/else` dans certains scénarions.
+- Appelée [instruction conditionnelle ternaire](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator), elle constitue une alternative plus concise au `if/else` dans certains scénarios.
 
 ```csharp
 double temperature = 38.5;
@@ -1100,7 +1100,7 @@ switch (meteo)
 ### La boucle while
 
 - L'instruction `while` permet de répéter des instructions tant qu'une condition est vérifiée.
-- Ce type d'instruction est souvent appelée **boucle**.
+- Ce type d'instruction est souvent appelé **boucle**.
 - Avant chaque tour de boucle, la condition du `while` est évaluée :
   - Si elle est vraie, le bloc associé au `while` (appelé _corps de la boucle_) est exécuté, puis la condition est de nouveau évaluée.
   - Sinon, l'exécution de la boucle est terminée.
@@ -1123,7 +1123,7 @@ int nombre = 1;
 while (nombre <= 5)
 {
     Console.WriteLine(nombre);
-    // nombre n'est jamais modifiée => condition toujours vraie
+    // nombre n'est jamais modifié => condition toujours vraie
 }
 ```
 
@@ -1138,7 +1138,7 @@ while (nombre <= 5)
 
 ```csharp
 for (initialisation; condition; étape) {
-    // Instruction executées tant que la condition est vérifiée
+    // Instructions exécutées tant que la condition est vérifiée
 }
 ```
 
@@ -1216,7 +1216,7 @@ Début
     Tant que les pâtes ne sont pas cuites
         Attendre
     Verser les pâtes dans une passoire
-    Egoutter les pâtes
+    Égoutter les pâtes
     Verser les pâtes dans un plat
     Goûter
     Tant que les pâtes sont trop fades
@@ -1237,7 +1237,7 @@ Fin
 Début
     Faire bouillir de l'eau
     Cuire les pâtes dans l'eau
-    Egoutter les pâtes
+    Égoutter les pâtes
     Assaisonner les pâtes
 Fin
 ```
@@ -1245,7 +1245,7 @@ Fin
 La recette est décomposée en sous-étapes :
 
 - Gain en concision et en facilité d'interprétation
-- Apparition de tâches plus élémentaires (_Cuire_, _Egoutter_, etc) qu'on peut envisager de réutiliser dans d'autres recettes.
+- Apparition de tâches plus élémentaires (_Cuire_, _Égoutter_, etc.) qu'on peut envisager de réutiliser dans d'autres recettes.
 
 ---
 
@@ -1297,7 +1297,7 @@ void DireBonjour()
 
 - Permettent de décomposer un problème complexe en sous-parties plus élémentaires.
 - Facilitent la maintenance, la réutilisation et les évolutions ultérieures.
-- Evitent la duplication de code.
+- Évitent la duplication de code.
 
 ---
 
@@ -1383,7 +1383,7 @@ Console.WriteLine("Fin du programme");
 ### Variables locales
 
 - On peut déclarer des variables dans le corps d'une fonction.
-- Elle sont dites _locales_ : leur portée se limite à la fonction.
+- Elles sont dites _locales_ : leur portée se limite à la fonction.
 
 ```csharp
 string DireBonjour3()
@@ -1486,7 +1486,7 @@ Console.WriteLine(DireBonjour7("Alex")); // "Bonjour, Alex !"
 ### Paramètres Vs arguments
 
 - La valeur de ses paramètres est fournie au moment de chaque appel du sous-programme.
-- Si nécessaires, des conversion de type implicites sont parfois effectués.
+- Si nécessaire, des conversions de type implicites sont parfois effectuées.
 - On appelle **argument** (ou parfois _paramètre effectif_) la valeur donnée à un paramètre lors d'un appel.
 
 ```csharp

@@ -35,7 +35,7 @@ paginate: true  -->
 
 A **decision** is "a deliberative process that results in the commitment to a categorical proposition." [[Gold and Shadlen, 2007]](https://www.annualreviews.org/content/journals/10.1146/annurev.neuro.29.051605.113038)
 
-People make thousands of (big and small) decisions everyday. A few examples:
+People make thousands of (big and small) decisions every day. A few examples:
 
 - Choosing what pair of socks to wear.
 - Deciding on a TV series to watch.
@@ -47,7 +47,7 @@ People make thousands of (big and small) decisions everyday. A few examples:
 
 Humans and animals make their decisions after a **deliberation** phase.
 
-Many decisions are based on information that unfolds over time (example: cues for solving an homicide).
+Many decisions are based on information that unfolds over time (example: cues for solving a homicide).
 
 Even if all informative data is immediately available (example: a chess position), it has to be treated **sequentially** by our nervous system, reflecting its inability to process information simultaneously.
 
@@ -67,7 +67,7 @@ $T_{er}= T_e+T_r$ is called **non-decision time**.
 
 All decisions are made under time pressure [[Forstmann et al., 2016]](https://www.annualreviews.org/content/journals/10.1146/annurev-psych-122414-033645). The balance between response time and accuracy is called the **speed/accuracy trade-off**.
 
-It is at least partially under conscious control: decision-makers can decide to make faster decisions at the expense of an higher error rate, or slower, more accurate decisions [[Ratcliff et al., 2016]](https://www.sciencedirect.com/science/article/pii/S1364661316000255?via%3Dihub). This complicates the interpretation of behavioral data.
+It is at least partially under conscious control: decision-makers can decide to make faster decisions at the expense of a higher error rate, or slower, more accurate decisions [[Ratcliff et al., 2016]](https://www.sciencedirect.com/science/article/pii/S1364661316000255?via%3Dihub). This complicates the interpretation of behavioral data.
 
 Ideally, what is needed is a way to evaluate data that considers not only accuracy and speed, but the interaction between them [[Myers et al., 2022]](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.1039172/full).
 
@@ -134,9 +134,9 @@ These models use a **relative** evidence rule: a response is initiated as soon a
 
 #### Problem example: the gambler's ruin
 
-Two gamblers A and B have a (possibly different) starting capital and play a series of independant games against each other. Every game has a fixed chance $p$ of being won by gambler A. After each game, the winner obtains one unit of the other player’s capital. The process continues until one of the gamblers is bankrupt.
+Two gamblers A and B have a (possibly different) starting capital and play a series of independent games against each other. Every game has a fixed chance $p$ of being won by gambler A. After each game, the winner obtains one unit of the other player’s capital. The process continues until one of the gamblers is bankrupt.
 
-This problem can be modelised as a random walk, with $p$ representing the **drift** of the process. Depending on the value of $p$, the process will drift towards one of the thresholds (gambler B’s bankruptcy if $p>0.5$).
+This problem can be modeled as a random walk, with $p$ representing the **drift** of the process. Depending on the value of $p$, the process will drift towards one of the thresholds (gambler B’s bankruptcy if $p>0.5$).
 
 #### Mathematical formulation
 
@@ -158,7 +158,7 @@ $$DV_n = \sum_{i=1}^n log_e \frac{P(e_i|h_1)}{P(e_i|h_2)} = \sum_{i=1}^n w_i$$
 
 The DV is updated with new pieces of evidence until reaching a criterion.
 
-SPRT is the most efficient statistical test for deciding between two hypotheses on this kind of problem: it achieves a desired error rate with the smallest number of samples, on average [Wald and Wolfowitz, 1948).
+SPRT is the most efficient statistical test for deciding between two hypotheses on this kind of problem: it achieves a desired error rate with the smallest number of samples, on average [Wald and Wolfowitz, 1948].
 
 #### Problem example: trick or fair coin
 
@@ -170,7 +170,7 @@ $$\forall i \in[1,n], w_i=
       \log_e \frac{P(e_{tails}|h_1)}{P(e_{tails}|h_2)} = \log_e \frac{0.4}{0.5} = -0.223 & \text{if toss gives "tails"}
     \end{cases}$$
 
-$$\text{If}\ DV_n \ge \frac{1-\alpha}{\alpha}, \text{answer "trick".}\ \text{If}\ DV_n \le \frac{\alpha}{1-\alpha}, \text{answer "fair".}$$
+$$\text{If}\ DV_n \ge \log_e \frac{1-\alpha}{\alpha}, \text{answer "trick".}\ \text{If}\ DV_n \le \log_e \frac{\alpha}{1-\alpha}, \text{answer "fair".}$$
 
 With $\alpha = P(H_2|h_1) = P(H_1|h_2)$ the probability of misidentifying a coin.
 
@@ -178,7 +178,7 @@ For $\alpha=0.05$, a decision happens when $|DV_n| \ge \log_e(19)$.
 
 ### Diffusion models
 
-When the evidence is continously sampled from a distribution in infinitesimal time steps, the process is termed **diffusion** with drift $v$. When $v$ is constant, this process is known as [Brownian motion](https://en.wikipedia.org/wiki/Brownian_motion) or Wiener diffusion process [[Gold and Shadlen, 2007]](https://www.annualreviews.org/content/journals/10.1146/annurev.neuro.29.051605.113038).
+When the evidence is continuously sampled from a distribution in infinitesimal time steps, the process is termed **diffusion** with drift $v$. When $v$ is constant, this process is known as [Brownian motion](https://en.wikipedia.org/wiki/Brownian_motion) or Wiener diffusion process [[Gold and Shadlen, 2007]](https://www.annualreviews.org/content/journals/10.1146/annurev.neuro.29.051605.113038).
 
 ![Diffusion model](images/diffusion_model.png)
 
@@ -188,7 +188,7 @@ When the evidence is continously sampled from a distribution in infinitesimal ti
 
 This model, also called **Drift Diffusion Model (DDM)**, is a sequential sampling model for binary choices in continuous environments [[Ratcliff and McKoon, 2008]](https://direct.mit.edu/neco/article-abstract/20/4/873/7299/The-Diffusion-Decision-Model-Theory-and-Data-for?redirectedFrom=fulltext).
 
-Originally designed in the 1970's [Ratcliff, 1978], it has recently experienced a surge in popularity. A growing body of literature is using the DDM to elucidate the cognitive processes of decision-making.
+Originally designed in the 1970s [Ratcliff, 1978], it has recently experienced a surge in popularity. A growing body of literature is using the DDM to elucidate the cognitive processes of decision-making.
 
 ##### Parameters
 
@@ -205,13 +205,13 @@ Originally designed in the 1970's [Ratcliff, 1978], it has recently experienced 
 
 The DDM assumes that evidence accumulation is governed by:
 
-$$dx = vdt + sW$$
+$$dx = v\,dt + s\,dW$$
 
 - $x$: accumulated evidence.
 - $v$: drift rate (speed of evidence accumulation).
-- $dt$: time unit. When $dt = 0$, the integration process is continuous in time.
-- $W$: within-trial accumulation white noise.
-- $s$: standard deviation of $W$.
+- $dt$: time unit. When $dt \to 0$, the integration process is continuous in time.
+- $dW$: within-trial accumulation white noise (increment of a Wiener process).
+- $s$: noise scale (standard deviation of the noise per unit time).
 
 ##### Advantages
 
@@ -231,7 +231,7 @@ $$dx = vdt + sW$$
 
 ###### Low-level neuroscience
 
-Studies [[Gold and Shadlen, 2001]](https://www.sciencedirect.com/science/article/pii/S1364661300015679?via%3Dihub) uses DDM as inspiration to interpret neuron firing rates in monkeys as evidence accumulation until a threshold is reached.
+Studies [[Gold and Shadlen, 2001]](https://www.sciencedirect.com/science/article/pii/S1364661300015679?via%3Dihub) use DDM as inspiration to interpret neuron firing rates in monkeys as evidence accumulation until a threshold is reached.
 
 ![Firing rate in monkeys](images/ddm_firing_rate.png)
 
@@ -245,7 +245,7 @@ Studies correlate parameter estimates from DDM models to the blood-oxygen-level 
 
 Collapsing-bound models translate the fact that in some cases, decisions are based on less and less evidence as time passes.
 
-![DDM extension:dynamic thresholds](images/ddm_dyn_thresholds.png)
+![DDM extension: dynamic thresholds](images/ddm_dyn_thresholds.png)
 
 ### Hybrid models
 
@@ -279,7 +279,7 @@ Cortical models ([Shadlen and Newsome, 2001], [Usher and McClelland, 2001], [[Wa
 
 #### The Advantage Linear Ballistic Accumulator model
 
-In this model [[Van Ravenzwaaij et al., 2020]](https://psycnet.apa.org/doiLanding?doi=10.1037%2Frev0000166), each of the $n$ possible choices is associated to $n-1$ accumulators, each of them driven by the difference ("advantage") in evidence versus another response.
+In this model [[Van Ravenzwaaij et al., 2020]](https://psycnet.apa.org/doiLanding?doi=10.1037%2Frev0000166), each of the $n$ possible choices is associated with $n-1$ accumulators, each of them driven by the difference ("advantage") in evidence versus another response.
 
 ##### ALBA model for binary choice
 
@@ -295,7 +295,7 @@ $$v_{2-1} = v_0 + w_d(S_2 - S_1) + w_s(S_1 + S_2)$$
 
 ##### ALBA model for ternary choice
 
-*Win-all* strategy: all accumulators for a choice need to reach their threshold before commiting to a decision.
+*Win-all* strategy: all accumulators for a choice need to reach their threshold before committing to a decision.
 
 ![ALBA model: win-all strategy](images/alba_winall.png)
 
@@ -322,7 +322,7 @@ $$v_{2-1} = v_0 + w_d(S_2 - S_1) + w_s(S_1 + S_2)$$
 
 The RL-EAM model family has two components:
 - a **learning** component, using RL to update options' value representations (the expected rewards for each choice), known as *Q-values*,  after each trial;
-- a **decision** component, relying on a EAM to map value representations to the final choice for a trial.
+- a **decision** component, relying on an EAM to map value representations to the final choice for a trial.
 
 #### Q-values update
 
@@ -356,7 +356,7 @@ $$v_t = V_0 + wQ_i$$
 $$dx_i = (V_0 + wQ_i)dt +sW$$
 
 - $x_i$: accumulated evidence for choice $i$.
-- $V_0$: drift rate in the absence of any evidence, identical accross accumulators (additive urgency signal).
+- $V_0$: drift rate in the absence of any evidence, identical across accumulators (additive urgency signal).
 
 ### The RL-Advantage Racing Diffusion model
 

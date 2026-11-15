@@ -17,4 +17,4 @@ In this paper, we present the main steps of the methodology we followed to desig
 
 ## Citation
 
-E. Grivel, B. Pesquet, T. . -B. Airimitoaie and A. Zemmari, "Artificial Intelligence for Defence in an EQF6 Training and Education Program, from the Design to the Execution," 2023 IEEE Global Engineering Education Conference (EDUCON), Kuwait, Kuwait, 2023, pp. 1-5, doi: 10.1109/EDUCON54358.2023.10125126.
+E. Grivel, B. Pesquet, T.-B. Airimitoaie and A. Zemmari, "Artificial Intelligence for Defence in an EQF6 Training and Education Program, from the Design to the Execution," 2023 IEEE Global Engineering Education Conference (EDUCON), Kuwait, Kuwait, 2023, pp. 1-5, doi: 10.1109/EDUCON54358.2023.10125126.

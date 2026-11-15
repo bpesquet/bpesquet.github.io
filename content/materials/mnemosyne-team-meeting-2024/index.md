@@ -39,7 +39,7 @@ paginate: true  -->
 
 ## Metacognition
 
-[![Metacognition diagram](../confidence/images/metacognition_diagram.png)](../confidence/README.md#metacognition)
+[![Metacognition diagram](../confidence/images/metacognition_diagram.png)](../confidence/#metacognition)
 
 ## Sequential decision-making
 
@@ -47,11 +47,11 @@ paginate: true  -->
 - Canonical model: integration of noisy information until a threshold is reached.
 - Many refinements: multi-alternative choice, impact of learning, change of mind, etc.
 
-[![](../decision_making/images/eam_rdk.png)](../decision_making/README.md#sequential-sampling)
+[![](../decision-making/images/eam_rdk.png)](../decision-making/#sequential-sampling)
 
 ## Confidence for decision-making
 
-- Quantifies the degree of certainty associated to a decision.
+- Quantifies the degree of certainty associated with a decision.
 - Canonical model: post-decisional computation based on accumulated info.
 - Can be used to alter the subsequent decisions.
 
@@ -78,4 +78,4 @@ paginate: true  -->
 - Detailed review of confidence for decision-making (future PhD chapter).
 - First experiment on very basic task.
 
-## Questions ?
+## Questions?

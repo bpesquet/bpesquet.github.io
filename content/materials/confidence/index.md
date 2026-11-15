@@ -34,7 +34,7 @@ paginate: true  -->
 
 ### Confidence: general definition
 
-Everyone knows intuitively what confidence is about, yet it is seldom defined explicitely.
+Everyone knows intuitively what confidence is about, yet it is seldom defined explicitly.
 
 In the broadest sense, **confidence quantifies a degree of belief in something or someone** [[Meyniel et al., 2015]](https://doi.org/10.1016/j.neuron.2015.09.039).
 
@@ -62,7 +62,7 @@ In decision-making, confidence can be seen as **the subjective estimate of decis
 
 More formally, it can be defined as **the probability that a choice is correct given the evidence** [[Pouget et al., 2016]](https://www.nature.com/articles/nn.4240).
 
-Confidence is a form of certainty. A key difference is that contrary to confidence, (un)certainties are *decision independant*. **Confidence quantifies the degree of certainty associated to a decision**.
+Confidence is a form of certainty. A key difference is that contrary to confidence, (un)certainties are *decision independent*. **Confidence quantifies the degree of certainty associated with a decision**.
 
 ### Trust
 
@@ -84,7 +84,7 @@ First described in [[Flavell, 1979]](https://www.semanticscholar.org/paper/Metac
 
 ---
 
-Metacognition is classicaly divided into two subprocesses: **monitoring** and **control**.
+Metacognition is classically divided into two subprocesses: **monitoring** and **control**.
 
 ![Metacognition diagram](images/metacognition_diagram.png)
 
@@ -104,7 +104,7 @@ In simpler terms, cognitive control allows adapting our behaviour on-the-fly to 
 
 ### Experimental tasks
 
-Their setup is similar to those used to study [decision-making](../decision_making/README.md). The major difference is that before or (more frequently) after taking a decision (a *type 1* task), subjects express their confidence about it (a *type 2* task).
+Their setup is similar to those used to study [decision-making](../decision-making/). The major difference is that before or (more frequently) after taking a decision (a *type 1* task), subjects express their confidence about it (a *type 2* task).
 
 Example of type 1 task: is the [Gabor patch](http://neuroanatody.com/2016/05/whats-in-a-gabor-patch/) tilted to the left or to the right?
 
@@ -168,9 +168,9 @@ The amount of the bet is assumed to reflect a subject’s confidence in his or h
 
 In most but not all the trials, the subject has the option to decline the decision task and receive a smaller reward.
 
-This paradigm is well suited to experiments with animals, which cannot explicitely report their confidence.
+This paradigm is well suited to experiments with animals, which cannot explicitly report their confidence.
 
-One challenge is to avoid confounding it with a three-alternative forced choice [[Kepecs et al., 2912]](https://royalsocietypublishing.org/doi/10.1098/rstb.2012.0037).
+One challenge is to avoid confounding it with a three-alternative forced choice [[Kepecs et al., 2012]](https://royalsocietypublishing.org/doi/10.1098/rstb.2012.0037).
 
 #### Confidence forced choice
 
@@ -209,7 +209,7 @@ Unfortunately, both $\phi$ and $G$ can be affected by bias.
 
 SDT is a framework for analyzing decision making in the presence of uncertainty.
 
-Originally developped in the mid-20th century to assess how faithfully a radar operator is able to separate signal from noise, it has applications in many fields (psychology, diagnostics, quality control, etc).
+Originally developed in the mid-20th century to assess how faithfully a radar operator is able to separate signal from noise, it has applications in many fields (psychology, diagnostics, quality control, etc.).
 
 SDT's main virtue is its ability to disentangle sensitivity from bias in a decision process.
 
@@ -240,7 +240,7 @@ $$\text{FPR}_1 = \frac{FP_1}{TN_1+FP_1}$$
 
 SDT represents a decision as a comparison between a *decision variable* (DV), derived from a single piece of sensory evidence, and a *criterion* (the threshold between "absent" and "present" responses).
 
-Since evidence is affected by perturbations such as neural noise and fluctuation in attention, the DV can be modelized as a random variable described by a probability distribution.
+Since evidence is affected by perturbations such as neural noise and fluctuation in attention, the DV can be modeled as a random variable described by a probability distribution.
 
 More precisely, SDT assumes that the distributions of DV values in the presence or absence of stimulus/signal are Gaussian with equal variance.
 
@@ -258,9 +258,9 @@ With this criterion choice, the TPR (shaded region of the signal distribution) i
 
 #### Type 1 sensitivity index
 
-Type 1 sensitivity/discriminability index $d'_1$ is a measure of discrimination performance in the task. It quantifies the sensibility of the decision maker to the presence of the stimulus/signal.
+Type 1 sensitivity/discriminability index $d'_1$ is a measure of discrimination performance in the task. It quantifies the sensitivity of the decision maker to the presence of the stimulus/signal.
 
-$d'_1$ quantifies the distance between the means of the signal and noise distributions in standard deviation units. It can be obtained using the inverse cumulative distribution function, which computes the *standard score* a.k.a. *z-score* associated to a probability [[Stanislaw and Todorov, 1999]](https://link.springer.com/article/10.3758/BF03207704).
+$d'_1$ quantifies the distance between the means of the signal and noise distributions in standard deviation units. It can be obtained using the inverse cumulative distribution function, which computes the *standard score* a.k.a. *z-score* associated with a probability [[Stanislaw and Todorov, 1999]](https://link.springer.com/article/10.3758/BF03207704).
 
 $$d'_1 = z(\text{TPR}_1) - z(\text{FPR}_1)$$
 
@@ -268,7 +268,7 @@ $$d'_1 = z(\text{TPR}_1) - z(\text{FPR}_1)$$
 
 The ROC curve ("Receiver Operating Characteristic") plots TPR vs. FPR for each possible value of the decision criterion.
 
-AUC, or more precisely AUROC ("Area Under the ROC Curve"), provides an aggregate measure of performance across all possible decision criterions. It is a way to assess sensitivity independently of bias.
+AUC, or more precisely AUROC ("Area Under the ROC Curve"), provides an aggregate measure of performance across all possible decision criteria. It is a way to assess sensitivity independently of bias.
 
 This non-parametric approach is free from the equal-variance Gaussian assumption needed for $d'$ to be bias-free [[Fleming and Lau, 2014]](https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00443/full).
 
@@ -296,7 +296,7 @@ However, the equal-variance Gaussian assumption for distributions is problematic
 
 #### AUROC2
 
-With multiple confidence ratings, it is possible to construct a type 2 ROC curve by treating each confidence level as a criterion that separates high from low confidence. AUROC2 is then a (theorically) bias-free measure of confidence sensitivity.
+With multiple confidence ratings, it is possible to construct a type 2 ROC curve by treating each confidence level as a criterion that separates high from low confidence. AUROC2 is then a (theoretically) bias-free measure of confidence sensitivity.
 
 ![Example of ROC curve for confidence](images/auroc2.png)
 
@@ -334,7 +334,7 @@ In a DDM-like model, confidence is taken to be the current position of the accum
 
 Other approaches like the *Two-stage Dynamic Signal Detection* (2DSD) model postulate that the accumulation process continues after a decision has been made. The ultimate location of accumulated evidence serves as a proxy for confidence.
 
-These approaches of confidence formation may help explain some experimentaly reported phenomena like post-decisional changes of mind.
+These approaches of confidence formation may help explain some experimentally reported phenomena like post-decisional changes of mind.
 
 ![2DSD model](images/2DSD.png)
 

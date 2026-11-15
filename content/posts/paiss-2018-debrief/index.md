@@ -8,7 +8,7 @@ tags:
 
 <!--more-->
 
-La session 2018 de la _summer school_ de l'INRIA consacrée à l'IA, nommée [PAISS](https://project.inria.fr/paiss/), s'est déroulée à Grenoble du 2 au 6 juillet 2018. Voici un petit compte-rendu de ce qui s'y est dit et fait.
+La session 2018 de la _summer school_ de l'INRIA consacrée à l'IA, nommée [PAISS](https://project.inria.fr/paiss/), s'est déroulée à Grenoble du 2 au 6 juillet 2018. Voici un petit compte rendu de ce qui s'y est dit et fait.
 
 ![Logo PAISS](https://project.inria.fr/paiss/files/2018/04/te%CC%82tie%CC%80re-3.jpg)
 
@@ -57,7 +57,7 @@ La recherche en IA semble plutôt une affaire de mathématiciens que d'informati
 
 Une expérience parfois douloureuse : pas facile de redevenir étudiant et de se sentir largué par le prof. Je tâcherai de m'en souvenir pour mes prochains cours :)
 
-Malgré une variété des thèmes et un niveau des interventions très stimulantes intellectuellement, cette école d'été a parfois ressemblé à un _workshop_ de recherche. L'enseignant que je suis a regretté que les aspects didactiques et pédagogiques aient été, à mon sens, trop négligés par certains intervenants. Avec un meilleur niveau théorique, mon impression aurait probablement été différente.
+Malgré une variété des thèmes et un niveau des interventions très stimulants intellectuellement, cette école d'été a parfois ressemblé à un _workshop_ de recherche. L'enseignant que je suis a regretté que les aspects didactiques et pédagogiques aient été, à mon sens, trop négligés par certains intervenants. Avec un meilleur niveau théorique, mon impression aurait probablement été différente.
 
 Je reste cependant très content d'avoir participé à cette école d'été qui a été l'occasion de cogitations intenses et de rencontres variées et enrichissantes.
 

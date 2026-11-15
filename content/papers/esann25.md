@@ -8,7 +8,7 @@ draft: true
 
 ## Abstract
 
-In natural cognition, confidence is used to evaluate the quality of decisions and adapt one’s behavior to the task at hand. For now, arti- ficial agents lack this kind of metacognitive ability and interact with their environment in a purely reactive way. Inspired by recent findings about the cognitive modeling of confidence, we propose a novel architecture for sequential decision-making. It combines an evidence accumulation model with a metacognitive module that computes and exploits confidence to tune the decision process. The model has been assessed on a perceptual decision-making task, showing promises for more flexible artificial agents and a possible path towards artificial metacognition.
+In natural cognition, confidence is used to evaluate the quality of decisions and adapt one’s behavior to the task at hand. For now, artificial agents lack this kind of metacognitive ability and interact with their environment in a purely reactive way. Inspired by recent findings about the cognitive modeling of confidence, we propose a novel architecture for sequential decision-making. It combines an evidence accumulation model with a metacognitive module that computes and exploits confidence to tune the decision process. The model has been assessed on a perceptual decision-making task, showing promises for more flexible artificial agents and a possible path towards artificial metacognition.
 
 ## Resources
 
@@ -19,4 +19,4 @@ In natural cognition, confidence is used to evaluate the quality of decisions an
 
 ## Citation
 
-> Baptiste Pesquet, Frédéric Alexandre. Towards metacognitive agents: integrating confidence in sequential decision-making. ESANN 2025 - 33th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, Apr 2025, Bruges, Belgium. ⟨hal-05264365⟩
+> Baptiste Pesquet, Frédéric Alexandre. Towards metacognitive agents: integrating confidence in sequential decision-making. ESANN 2025 - 33rd European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, Apr 2025, Bruges, Belgium. ⟨hal-05264365⟩

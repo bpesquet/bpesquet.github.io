@@ -27,14 +27,14 @@ tags:
 
 ---
 
-[![Historisque d'UML](images/1024px-OO-historie.jpg)](https://fr.wikipedia.org/wiki/UML_(informatique))
+[![Historique d'UML](images/1024px-OO-historie.jpg)](https://fr.wikipedia.org/wiki/UML_(informatique))
 
 ---
 
 ### Rôle d'UML
 
 - UML est un langage de modélisation, pas une méthode.
-- Boîte à outils dans laquelle le concepteur peut piocher pour représenter graphiquement certains aspects de son application (structure, comportement, cas d'usage, etc).
+- Boîte à outils dans laquelle le concepteur peut piocher pour représenter graphiquement certains aspects de son application (structure, comportement, cas d'usage, etc.).
 - Avantages :
   - indépendance vis-à-vis de toute implémentation spécifique ;
   - universalité.
@@ -55,7 +55,7 @@ Chacun a son propre formalisme ainsi qu'une sémantique spécifique.
   - Modélisation des concepts manipulés sous la forme d'objets en interaction ;
   - Formalisation des scénarios d'utilisation ;
   - Dynamique des interactions.
-- Les diagrammes créées constituent une forme de documentation précieuse pour la suite du projet (codage, maintenance, évolutions).
+- Les diagrammes créés constituent une forme de documentation précieuse pour la suite du projet (codage, maintenance, évolutions).
 
 ---
 
@@ -99,7 +99,7 @@ Diagramme structurel qui permet de modéliser un ensemble de classes ainsi que l
 
 ### Navigabilité d'une association
 
-- Possibilité de parcourir l'association, cad de passer de l'instance d'une classe aux instances de l'autre classe concernées par la relation.
+- Possibilité de parcourir l'association, c.-à-d. de passer de l'instance d'une classe aux instances de l'autre classe concernées par la relation.
 - Matérialisée par une flèche si unidirectionnelle.
 - Peut comporter le nom du membre de la classe impliqué dans la relation.
 
@@ -166,7 +166,7 @@ public class CompteBancaire
 ### Héritage entre classes
 
 - Relation entre classes de type "**est un**".
-- Représentée en UML par une flêche pleine allant de la classe dérivée (fille) vers la classe parente (classe mère ou superclasse).
+- Représentée en UML par une flèche pleine allant de la classe dérivée (fille) vers la classe parente (classe mère ou superclasse).
 
 ![Exemple d'héritage UML](images/uml_heritage.png)
 
@@ -211,7 +211,7 @@ Décrit le comportement d'un élément du système à l'aide d'un automate à é
 
 ---
 
-### Ecosystème logiciel
+### Écosystème logiciel
 
 - UML est un standard depuis 25 ans.
 - De très nombreux outils de développement logiciel offrent la possibilité de créer des diagrammes UML.

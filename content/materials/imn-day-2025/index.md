@@ -94,7 +94,7 @@ In **decisional focus models**, confidence is directly indexed by the state of e
 
 ![2DSD model](images/pleskacTwostageDynamicSignal2010_1.png)
 
-*Image credits: [[Pleskac and Busemeyer, 2008](https://doi.apa.org/doi/10.1037/a0019737)]*
+*Image credits: [[Pleskac and Busemeyer, 2010](https://doi.apa.org/doi/10.1037/a0019737)]*
 
 </div>
 </div>
@@ -153,7 +153,7 @@ Model was assessed on a classic **perceptual task**: Random Dot Motion discrimin
 <div class="columns">
 <div>
 
-![Results with low coherence](images/pesquetAlexandre2025_high_coherence.gif)
+![Results with high coherence](images/pesquetAlexandre2025_high_coherence.gif)
 
 </div>
 
@@ -164,9 +164,9 @@ Model was assessed on a classic **perceptual task**: Random Dot Motion discrimin
 </div>
 </div>
 
-### Future works
+### Future work
 
-- Refine the hyperparameters tuning process.
+- Refine the hyperparameter tuning process.
 - Add different metacognitive strategies.
 - Implement model on a human/robot collaborative task.
 - ...

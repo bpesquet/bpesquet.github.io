@@ -16,9 +16,9 @@ tags:
 
 - Ne disparaissent pas entre deux utilisations d'une application.
 - Contraire : données _volatiles_.
-- Indispensable pour une très grande majorité des applications (données métier, configuration, etc).
+- Indispensable pour une très grande majorité des applications (données métier, configuration, etc.).
 - Leur stockage nécessite :
-  - un support dédié, appelé parfois mémoire de masse (disque dur, SSD, mémoire Flash, etc) ;
+  - un support dédié, appelé parfois mémoire de masse (disque dur, SSD, mémoire Flash, etc.) ;
   - un format adapté.
 
 ---
@@ -29,9 +29,9 @@ tags:
 - Technologie connue depuis les années 1970.
 - Fiabilité.
 - Capacité à gérer de forts volumes de données.
-- Sécurité (authentification, réplication, etc).
+- Sécurité (authentification, réplication, etc.).
 - Langage d’interrogation (SQL) standard.
-- Offre logicielle riche : de ORACLE à SQLite en passant par PostgreSQL, MySQL/MariaDB ou SQL Server.
+- Offre logicielle riche : d'Oracle à SQLite en passant par PostgreSQL, MySQL/MariaDB ou SQL Server.
 
 ---
 
@@ -40,7 +40,7 @@ tags:
 - Unité de représentation : table.
 - Caractéristiques : colonnes.
 - Entité : tuple (ligne).
-- Types de données : simples (nombres, chaîne, date, etc).
+- Types de données : simples (nombres, chaîne, date, etc.).
 - Identifiant : explicite (clé primaire).
 - Relations entre éléments : jointures SQL.
 - Concepts spécifiques : déclencheurs, procédures stockées...
@@ -105,7 +105,7 @@ tags:
 ### Entity Framework Core
 
 - Outil d'O/RM [open source](https://github.com/dotnet/efcore) maintenu par Microsoft.
-- Supporte de nombreux SGDBR : SQL Server, SQLite, MySQL/MariaDB, PostgreSQL, etc.
+- Supporte de nombreux SGBDR : SQL Server, SQLite, MySQL/MariaDB, PostgreSQL, etc.
 - Standard pour l'accès aux données persistantes dans l'environnement ASP.NET Core.
 
 ---
@@ -265,7 +265,7 @@ public class Post
 
 ---
 
-[![JKK '62 speech](images/we-choose.png)](https://youtu.be/g25G1M4EXrQ?t=93)
+[![JFK '62 speech](images/we-choose.png)](https://youtu.be/g25G1M4EXrQ?t=93)
 
 
 ---
@@ -383,7 +383,7 @@ using (var context = new BloggingContext())
 
 ### Requêtage avec LINQ
 
-[Language Integrated Query (LINQ)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/) est le langage standard pour le requêtage en C#, quelle que soit la source de données (SGBDR, XML, service web, etc).
+[Language Integrated Query (LINQ)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/) est le langage standard pour le requêtage en C#, quelle que soit la source de données (SGBDR, XML, service web, etc.).
 
 ```csharp
 using (var context = new BloggingContext())

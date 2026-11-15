@@ -22,7 +22,7 @@ I’m starting this project because I think there is room for a beginner-centric
 
 ## Design and content
 
-The book is targeted towards JavaScript newcomers: complete beginners with no programming experience whatsoever or “switchers” coming from another language background. It won’t be a in-depth study of JavaScript (which is [already existing](https://github.com/getify/You-Dont-Know-JS), by the way). I’ll try to keep it as beginner-friendly as possible while covering some advanced concepts and good practices.
+The book is targeted towards JavaScript newcomers: complete beginners with no programming experience whatsoever or “switchers” coming from another language background. It won’t be an in-depth study of JavaScript (which [already exists](https://github.com/getify/You-Dont-Know-JS), by the way). I’ll try to keep it as beginner-friendly as possible while covering some advanced concepts and good practices.
 
 It was pretty obvious from the start that the book would be written entirely using the more future-proof and often easier to explain ES6/ES2015 standard. As I want to keep things simple, many tricky and primarily ES5-related topics like [hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting) or [_this_ behavior](http://bjorn.tipling.com/all-this) won’t be covered.
 
@@ -32,11 +32,11 @@ I also know that students don’t like to lose hours configuring their environme
 
 ## Publication
 
-After much afterthought, I’ve decided to self-publish my book through [Leanpub](https://leanpub.com/thejsway) and to make its source code available on [GitHub](https://github.com/bpesquet/thejsway).
+After much thought, I’ve decided to self-publish my book through [Leanpub](https://leanpub.com/thejsway) and to make its source code available on [GitHub](https://github.com/bpesquet/thejsway).
 
 I’d like to reach as many people as possible, regardless of wealth. I also hope to leverage the open source collaborative model to improve and validate the content.
 
-The chosen license, Creative Commons [BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/), lets anyone share or build upon this work for non-commercial purposes, as long as it is properly attributed and using the same license.
+The chosen license, Creative Commons [BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/), lets anyone share or build upon this work for non-commercial purposes, as long as it is properly attributed and shared under the same license.
 
 ## Let’s roll!
 

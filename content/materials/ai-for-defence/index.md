@@ -24,9 +24,9 @@ tags:
 
 ---
 
-### A fastly moving ecosystem
+### A fast-moving ecosystem
 
-- In all countries, traditional defence behemoths (Lockeed Martin, Thales Group, Leonardo...) have embraced AI as a key tool for improving their systems.
+- In all countries, traditional defence behemoths (Lockheed Martin, Thales Group, Leonardo...) have embraced AI as a key tool for improving their systems.
 - Many startups are entering the field with specialized offerings.
 - Some new, state-promoted national sectors emerge (example: Israel for cybersecurity).
 - Recent conflicts, most notably the Ukraine war, are catalysts for AI adoption.
@@ -90,7 +90,7 @@ tags:
 
 ### Prevention of cyberterrorism
 
-- Protecting defence networks by identifying and neutralizing threats (viruses, malware, cybreattacks...).
+- Protecting defence networks by identifying and neutralizing threats (viruses, malware, cyberattacks...).
 - Detection of unusual patterns in network usage.
 - Associated software leverages various supervised and unsupervised learning algorithms.
 

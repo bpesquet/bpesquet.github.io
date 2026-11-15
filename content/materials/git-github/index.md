@@ -1,5 +1,5 @@
 ---
-title: "Git & Github"
+title: "Git & GitHub"
 date: 2021-11-23T19:01:29+01:00
 draft: false
 showToc: true
@@ -57,7 +57,7 @@ Dedicated source code management tools, often called **Version Control Systems**
 
 ### Decentralized VCS
 
-- Each developer has its own code repository, including history and all other metadata.
+- Each developer has their own code repository, including history and all other metadata.
 - Repositories are frequently synchronized in a peer-to-peer way.
 - Disconnected workflows become possible.
 - Examples: Git, Mercurial.
@@ -158,7 +158,7 @@ _HEAD_ is an alias to the most recent commit of the active branch.
 
 ### Git LFS
 
-- [Large File System](https://git-lfs.github.com/): Git extension for versioning large files.
+- [Large File Storage](https://git-lfs.github.com/): Git extension for versioning large files.
 - The files live on an external server. Only references to them are stored in the Git repository.
 - Usage examples: audio and graphical assets, datasets...
 
@@ -170,7 +170,7 @@ _HEAD_ is an alias to the most recent commit of the active branch.
 
 ### Collaboration workflow
 
-- Developers work locally, regularly commiting their code into their local repo.
+- Developers work locally, regularly committing their code into their local repo.
 - Repos are kept in sync through specific commands.
 
 ![Syncing Git repos](images/git-sync-repos.png)
@@ -220,7 +220,7 @@ _HEAD_ is an alias to the most recent commit of the active branch.
 
 - Typically, the second developer trying to push his/her updates receives a "non fast-forward" error.
 - He/she has to _pull_ remote updates first.
-- Files Git cannot automerge contain [conflict markers](https://wincent.com/wiki/Understanding_Git_conflict_markers). A manual merging is needed before commiting and pushing again.
+- Files Git cannot automerge contain [conflict markers](https://wincent.com/wiki/Understanding_Git_conflict_markers). A manual merging is needed before committing and pushing again.
 
 ```git
 <<<<<<< HEAD
@@ -323,7 +323,7 @@ _HEAD_ is an alias to the most recent commit of the active branch.
 
 - [GitHub](https://github.com/) is a code hosting platform for version control and collaboration.
 - Its main purpose is the hosting of Git repositories.
-- Launched in 2008, it has been acquired by Microsoft in 2018 for $7.5 billion.
+- Launched in 2008, it was acquired by Microsoft in 2018 for $7.5 billion.
 - As of December 2021, it has approx. 73 million users worldwide.
 - GitHub is the central hub for open source projects.
 - Main alternatives are [BitBucket](https://bitbucket.org) and [GitLab](https://about.gitlab.com/).
