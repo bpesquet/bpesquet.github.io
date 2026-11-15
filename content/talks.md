@@ -15,8 +15,8 @@ Here is a list of my public interventions, including research-focused presentati
 
 ## 2025
 
-- [Artificial Intelligence: past, present, future(s)](../materials/chembiona-2025/) (Congrès [ChemBioNA](https://www.chembiona.cnrs.fr/))
 - [Towards metacognitive agents: integrating confidence in sequential decision-making](../materials/imn-day-2025/) ([IMN](https://www.imn-bordeaux.org) scientific day)
+- [Artificial Intelligence: past, present, future(s)](../materials/chembiona-2025/) (Congrès [ChemBioNA](https://www.chembiona.cnrs.fr/))
 
 ## 2024
 
