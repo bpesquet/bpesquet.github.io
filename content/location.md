@@ -1,7 +1,7 @@
 ---
 title: "Location"
 date: 2026-11-09T18:55:03+01:00
-draft: true
+draft: false
 hidemeta: true
 ---
 

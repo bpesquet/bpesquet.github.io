@@ -3,7 +3,7 @@ title: "Towards metacognitive agents: integrating confidence in sequential decis
 date: 2025-04-23
 author: ["Baptiste Pesquet", "Frédéric Alexandre"]
 place: "[ESANN](https://www.esann.org/)"
-draft: true
+draft: false
 ---
 
 ## Abstract

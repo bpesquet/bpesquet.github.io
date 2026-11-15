@@ -1,7 +1,7 @@
 ---
 title: "Research"
 date: 2026-11-14T15:03:39+01:00
-draft: true
+draft: false
 ---
 
 My research lies at the intersection of cognitive neuroscience and artificial intelligence.

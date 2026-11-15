@@ -3,7 +3,7 @@ title: "Artificial Intelligence for Defence in an EQF6 Training and Education Pr
 date: 2023-05-01
 author: ["Eric Grivel", "Baptiste Pesquet", "Tudor-Bogdan Airimitoaie", "Akka Zemmari"]
 place: "[EDUCON](https://educon-conference.org/)"
-draft: true
+draft: false
 ---
 
 ## Abstract

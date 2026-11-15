@@ -3,7 +3,7 @@ title: "Apprentissage automatique"
 date: 2026-01-01
 author: ["Baptiste Pesquet", "Jean-Marc Salotti"]
 place: "[ENSC](https://ensc.bordeaux-inp.fr/)"
-draft: true
+draft: false
 ---
 
 Ce cours constitue une introduction à l'apprentissage automatique (Machine Learning).
