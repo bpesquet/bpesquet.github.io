@@ -1,11 +1,11 @@
 ---
-title: "Talks and presentations"
+title: "Talks"
 date: 2025-02-17T11:08:22+01:00
 draft: false
 hidemeta: true
 ---
 
-Here is a list of my public talks, including research-focused presentations and participations to interdisciplinary events.
+Here is a list of my public interventions, including research-focused presentations and participations to interdisciplinary events.
 
 ## 2026
 

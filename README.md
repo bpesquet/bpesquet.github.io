@@ -16,7 +16,7 @@ hugo server -D
 
 ### Generating a PDF version of a slideshow
 
-Use [pandoc](https://pandoc.org/) in the Markdown source file directory (`content/slides/<title>`):
+Use [pandoc](https://pandoc.org/) in the Markdown source file directory (`content/materials/<title>`):
 
 ```bash
 pandoc index.md -o <PDF file name>.pdf --toc

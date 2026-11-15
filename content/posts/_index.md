@@ -1,5 +1,5 @@
 ---
-title: "Blog articles"
+title: "Blog"
 cascade:
   hideSummary: true
 ---

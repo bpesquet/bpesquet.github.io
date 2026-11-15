@@ -24,27 +24,30 @@ menu:
     - name: Materials
       pageRef: /materials
       weight: 5
+    - name: Blog
+      pageRef: /posts
+      weight: 6
     - name: Archive
       pageRef: /archive
-      weight: 6
+      weight: 7
 
 params:
-  description: "Baptiste Pesquet's professional website"
+  description: "This website hosts my teaching and research work in computer science and artificial intelligence."
   author: "Baptiste Pesquet"
   GoogleAnalyticsID: "G-4DNVMNCRYK"
   DateFormat: "January 2006"
   defaultTheme: auto
-  hideFooter: false
+  hideFooter: true
   disableThemeToggle: false
   ShowShareButtons: false
   ShowReadingTime: false
   disableSpecial1stPost: true
   disableAnchoredHeadings: true
   ShowPostNavLinks: false
-  ShowBreadCrumbs: false
+  ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowAllPagesInArchive: false
-  MainSections: [courses, teaching, research, slides, presentations, posts]
+  MainSections: [courses, past_courses, papers, talks, materials, posts]
   ShowToc: false
   hideSummary: true
   TocOpen: true
@@ -57,7 +60,7 @@ params:
   profileMode:
     enabled: true
     title: "Baptiste Pesquet"
-    subtitle: "I am a computer science and artificiel intelligence professor at the [Ecole Nationale Supérieure de Cognitique (ENSC - Bordeaux INP)](https://ensc.bordeaux-inp.fr/)."
+    subtitle: "I am a computer science and artificial intelligence professor at the [Ecole Nationale Supérieure de Cognitique (ENSC - Bordeaux INP)](https://ensc.bordeaux-inp.fr/)."
     imageUrl: images/profile.png
     imageWidth: 140
     imageHeight: 140

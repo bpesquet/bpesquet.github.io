@@ -6,7 +6,7 @@ tags: ["Machine Learning","Artificial Intelligence","Natural Language Processing
 draft: true
 ---
 
-Ce cours est une introduction au traitement du langage naturel (Natural Language Processing).
+Ce cours présente les bases du traitement du langage naturel (Natural Language Processing).
 
 - [Présentation du cours](https://ensc.notion.site/Traitement-du-langage-naturel-485e036293858332900f01d8df06365a)
 - [Code source](https://github.com/bpesquet/mlcourse)
