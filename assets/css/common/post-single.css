@@ -5,7 +5,7 @@
 
 .post-title {
     margin-bottom: 20px;
-    font-size: 36px;
+    font-size: var(--h1size); /* CUSTOM (vs hugo-website): was 36px, now shared with list page titles */
 }
 
 .post-description {

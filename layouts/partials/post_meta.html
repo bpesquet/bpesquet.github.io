@@ -1,5 +1,6 @@
 {{- $scratch := newScratch }}
 
+{{- /* CUSTOM (vs hugo-website): 'place' front matter parameter, emoji before place, date and author */}}
 {{- with .Params.place -}}
 {{- $scratch.Add "meta" (slice (printf "<span class=\"post-place\">📍&nbsp;%s</span>" (. | markdownify))) }}
 {{- end }}

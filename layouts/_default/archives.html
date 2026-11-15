@@ -1,6 +1,9 @@
 {{- define "main" }}
 
 <header class="page-header">
+  {{- /* CUSTOM (vs hugo-website): breadcrumbs and title */}}
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
 </header>
 
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}

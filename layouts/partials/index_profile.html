@@ -34,7 +34,7 @@
         <span>{{ .subtitle | markdownify }}</span>
         {{- partial "social_icons.html" -}}
 
-        {{- /* Override: when profileMode.buttons is not set, build the buttons from the main menu to avoid duplicating it */}}
+        {{- /* CUSTOM (vs hugo-website): when profileMode.buttons is not set, build the buttons from the main menu to avoid duplicating it */}}
         {{- $buttons := .buttons }}
         {{- if not $buttons }}
             {{- $buttons = slice }}

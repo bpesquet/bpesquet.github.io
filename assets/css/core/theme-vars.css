@@ -21,7 +21,7 @@
     --semibold: 500;
     --homesize: 16px;
     --textsize: 18px;
-    --h1size: 25px;
+    --h1size: 36px; /* CUSTOM (vs hugo-website): was 25px */
     --entrysize: 15px;
     --headersize: 16px;
     --footersize: 13px;
