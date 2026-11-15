@@ -3,8 +3,6 @@ title: "Pourquoi JavaScript est devenu essentiel"
 date: 2016-02-17T09:42:35.902Z
 lastmod: 2020-10-14T22:38:44+02:00
 draft: false
-tags:
-- javascript
 ---
 
 <!--more-->

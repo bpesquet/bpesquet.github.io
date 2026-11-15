@@ -3,9 +3,6 @@ title: "How to launch your own open source book that’s popular and profitable"
 date: 2017-10-03T20:29:18.226Z
 lastmod: 2020-10-14T22:38:51+02:00
 draft: false
-tags:
-- javascript
-- authoring
 ---
 
 <!--more-->

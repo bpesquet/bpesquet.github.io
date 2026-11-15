@@ -7,9 +7,6 @@ date: 2024-06-24T10:13:06+01:00
 title: "Confidence in decision-making"
 draft: false
 showToc: true
-tags:
-- decision-making
-- confidence
 ---
 
 <!-- Put each of the following lines into an HTML comment to display the title slide -->

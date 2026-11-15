@@ -3,7 +3,6 @@ title: "Apprentissage automatique"
 date: 2026-01-01
 author: ["Baptiste Pesquet", "Jean-Marc Salotti"]
 place: "[ENSC](https://ensc.bordeaux-inp.fr/)"
-tags: ["Machine Learning","Artificial Intelligence"]
 draft: true
 ---
 

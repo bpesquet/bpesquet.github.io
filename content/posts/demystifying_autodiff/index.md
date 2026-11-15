@@ -2,10 +2,6 @@
 title: "Demystifying autodifferentiation"
 date: 2020-10-28T16:10:03+01:00
 draft: true
-tags: 
-- ai
-- autodiff
-- python
 ---
 
 <!--more-->

@@ -9,8 +9,6 @@ draft: false
 showToc: true
 aliases:
 - /materials/chembiona-2925/
-tags:
-- artificial intelligence
 style: |
   .columns {
     display: grid;

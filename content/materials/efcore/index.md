@@ -3,9 +3,6 @@ title: "Entity Framework Core"
 date: 2022-09-26T15:12:20+02:00
 draft: false
 showToc: true
-tags:
-- .NET
-- EF Core
 ---
 
 ## Des objets et des tables

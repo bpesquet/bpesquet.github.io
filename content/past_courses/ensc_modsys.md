@@ -3,9 +3,6 @@ title: "Réalité virtuelle et systèmes multi-agents"
 date: 2018-09-01
 author: ["Pierre-Alexandre Favier", "Baptiste Pesquet"]
 place: "[ENSC](https://ensc.bordeaux-inp.fr/)"
-tags:
-- Programming
-- Virtual Reality
 draft: false
 ---
 

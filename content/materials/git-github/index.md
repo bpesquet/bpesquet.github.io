@@ -3,9 +3,6 @@ title: "Git & GitHub"
 date: 2021-11-23T19:01:29+01:00
 draft: false
 showToc: true
-tags:
-- Git
-- GitHub
 ---
 
 ## Introduction to software version control

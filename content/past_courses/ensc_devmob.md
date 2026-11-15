@@ -3,8 +3,6 @@ title: "Développement mobile"
 date: 2023-01-01
 author: ["Baptiste Pesquet"]
 place: "[ENSC](https://ensc.bordeaux-inp.fr/)"
-tags:
-- Programming
 draft: false
 ---
 

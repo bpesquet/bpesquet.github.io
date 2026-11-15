@@ -3,8 +3,6 @@ title: "Introduction à UML"
 date: 2022-09-12T14:16:21+02:00
 draft: false
 showToc: true
-tags:
-- uml
 ---
 
 ## Présentation d'UML

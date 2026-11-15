@@ -14,9 +14,6 @@ title: "Confidence as hyperparameter tuning for sequential decision-making"
 date: 2024-10-16T10:13:06+01:00
 draft: false
 showToc: true
-tags:
-- decision-making
-- confidence
 ---
 
 <!-- Put each of the following lines into an HTML comment to display the title slide -->

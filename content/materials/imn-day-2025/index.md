@@ -7,9 +7,6 @@ title: "Towards metacognitive agents: integrating confidence in sequential decis
 date: 2025-05-05T10:04:27+02:00
 draft: false
 showToc: true
-tags:
-- decision-making
-- confidence
 style: |
   .columns {
     display: grid;

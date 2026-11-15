@@ -2,8 +2,6 @@
 title: "My M1 Mac setup for Python development"
 date: 2022-09-14T12:15:28+02:00
 draft: false
-tags:
-- python
 ---
 
 <!--more-->

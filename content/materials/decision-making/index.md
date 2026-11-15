@@ -7,8 +7,6 @@ date: 2024-01-29T10:13:06+01:00
 title: "Introduction to the theory of decision-making"
 draft: false
 showToc: true
-tags:
-- decision-making
 ---
 
 <!-- Put each of the following lines into an HTML comment to display the title slide -->

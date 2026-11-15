@@ -2,7 +2,6 @@
 title: "Traitement du langage naturel"
 date: 2026-11-04
 place: "[ENSC](https://ensc.bordeaux-inp.fr/)"
-tags: ["Machine Learning","Artificial Intelligence","Natural Language Processing"]
 draft: true
 ---
 

@@ -4,11 +4,9 @@ theme: PaperMod
 
 enableRobotsTXT: true
 enableGitInfo: true
+disableKinds: [taxonomy, term]
 pagination:
   pagerSize: 20
-
-taxonomies:
-  tag: tags
 
 menu:
   main:

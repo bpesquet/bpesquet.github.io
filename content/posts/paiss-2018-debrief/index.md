@@ -2,8 +2,6 @@
 title: "PAISS 2018 : le debrief"
 date: 2018-07-09T08:48:56+02:00
 draft: false
-tags:
-- ai
 ---
 
 <!--more-->

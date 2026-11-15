@@ -2,7 +2,6 @@
 title: "Initiation au Machine Learning"
 date: 2026-09-01
 place: "[IOGS](https://www.institutoptique.fr/)"
-tags: ["Machine Learning","Artificial Intelligence"]
 draft: true
 ---
 

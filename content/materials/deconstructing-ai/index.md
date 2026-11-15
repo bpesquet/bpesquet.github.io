@@ -3,8 +3,6 @@ title: "Deconstructing AI"
 date: 2019-12-09T10:47:12+01:00
 draft: false
 showToc: true
-tags:
-- artificial intelligence
 ---
 
 ## What Is AI, Actually?

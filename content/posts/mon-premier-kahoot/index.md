@@ -2,8 +2,6 @@
 title: "Mon premier Kahoot"
 date: 2018-11-29T23:26:45+01:00
 draft: false
-tags:
-- teaching
 ---
 
 <!--more-->

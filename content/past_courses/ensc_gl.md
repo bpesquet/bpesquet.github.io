@@ -3,9 +3,6 @@ title: "Génie logiciel"
 date: 2022-09-01
 author: ["Baptiste Pesquet"]
 place: "[ENSC](https://ensc.bordeaux-inp.fr/)"
-tags:
-- Programming
-- Software Engineering
 draft: false
 ---
 

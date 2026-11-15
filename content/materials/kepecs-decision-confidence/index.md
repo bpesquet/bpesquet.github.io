@@ -7,9 +7,6 @@ title: "Papers review: Kepecs' framework for decision confidence"
 date: 2024-12-02T13:40:27+01:00
 draft: false
 showToc: true
-tags:
-- decision-making
-- confidence
 ---
 
 <!-- Put each of the following lines into an HTML comment to display the title slide -->
