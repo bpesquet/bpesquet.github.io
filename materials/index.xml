@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Materials on Baptiste Pesquet</title><link>https://www.bpesquet.fr/materials/</link><description>Recent content in Materials on Baptiste Pesquet</description><generator>Hugo -- 0.169.0</generator><language>en</language><lastBuildDate>Sun, 15 Nov 2026 20:47:22 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/materials/index.xml" rel="self" type="application/rss+xml"/><item><title>Towards metacognitive agents: integrating confidence in sequential decision-making</title><link>https://www.bpesquet.fr/materials/imn-day-2025/</link><pubDate>Mon, 05 May 2025 10:04:27 +0200</pubDate><guid>https://www.bpesquet.fr/materials/imn-day-2025/</guid><description>&lt;!-- Put each of the following lines into an HTML comment to display the title slide --&gt;
+&lt;!-- Apply header and footer to first slide only
+_header: "[![IMN logo](../../../static/images/imn_logo.png)](https://ensc.bordeaux-inp.fr) [![INRIA logo](../../../static/images/inria_logo.jpg)](https://www.inria.fr) [![ENSC logo](../../../static/images/ENSC_2022.jpg)](https://ensc.bordeaux-inp.fr)"
+_footer: "[Baptiste Pesquet](https://www.bpesquet.fr)"
+headingDivider: 3
+&lt;style scoped&gt;
+img {
+padding-right: 40px
+}
+&lt;/style&gt;
+# Towards metacognitive agents: integrating confidence in sequential decision-making
+Show pagination, starting with second slide
+paginate: true --&gt;
+&lt;h2 id="confidence-in-natural-cognition"&gt;Confidence in natural cognition&lt;/h2&gt;
+&lt;h3 id="decision-making-as-a-sequential-process"&gt;Decision-making as a sequential process&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A &lt;strong&gt;decision&lt;/strong&gt; is a deliberative process leading to a &lt;strong&gt;choice&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Decision-makers need &lt;strong&gt;time&lt;/strong&gt; to collect and process informative cues.&lt;/li&gt;
+&lt;li&gt;Decision-making is often modeled as an &lt;strong&gt;accumulation-to-threshold&lt;/strong&gt; process [&lt;a href="https://www.annualreviews.org/doi/10.1146/annurev.neuro.29.051605.113038" target="_blank"&gt;Gold and Shadlen, 2007&lt;/a&gt;].&lt;/li&gt;
+&lt;li&gt;The balance between response time and accuracy (when available) is called the &lt;strong&gt;Speed/Accuracy Trade-off&lt;/strong&gt; [&lt;a href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2014.00150/full" target="_blank"&gt;Heitz, 2014&lt;/a&gt;].&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="models-of-sequential-decision-making"&gt;Models of sequential decision-making&lt;/h3&gt;
+&lt;div class="columns"&gt;
+&lt;div&gt;
+&lt;p&gt;For binary choices, a popular model is the &lt;strong&gt;Diffusion Decision Model&lt;/strong&gt; [&lt;a href="https://direct.mit.edu/neco/article/20/4/873-922/7299" target="_blank"&gt;Ratcliff and McKoon, 2008&lt;/a&gt;].&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Illustration of the DDM model" loading="lazy" src="https://www.bpesquet.fr/materials/imn-day-2025/images/forstmannSequentialSamplingModels2016_1.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Image credits: [&lt;a href="https://doi.org/10.1146/annurev-psych-122414-033645" target="_blank"&gt;Forstmann et al., 2016&lt;/a&gt;]&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;p&gt;Multi-alternative decisions are often modeled as a &lt;strong&gt;race&lt;/strong&gt; between accumulators for each possible choice.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Illustration of a race model" loading="lazy" src="https://www.bpesquet.fr/materials/imn-day-2025/images/race_model_example.gif"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Image credits: &lt;a href="https://github.com/itsdfish/SequentialSamplingModels.jl" target="_blank"&gt;SequentialSamplingModels.jl&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Artificial Intelligence: past, present, future(s)</title><link>https://www.bpesquet.fr/materials/chembiona-2025/</link><pubDate>Thu, 20 Mar 2025 11:09:44 +0100</pubDate><guid>https://www.bpesquet.fr/materials/chembiona-2025/</guid><description>&lt;!-- Put each of the following lines into an HTML comment to display the title slide
+Apply header and footer to first slide only
+_header: "[![IMN logo](../../../static/images/imn_logo.png)](https://ensc.bordeaux-inp.fr) [![INRIA logo](../../../static/images/inria_logo.jpg)](https://www.inria.fr) [![ENSC logo](../../../static/images/ENSC_2022.jpg)](https://ensc.bordeaux-inp.fr)"
+_footer: "[Baptiste Pesquet](https://www.bpesquet.fr)"
+headingDivider: 3
+&lt;style scoped&gt;
+img {
+padding-right: 40px
+}
+&lt;/style&gt;
+# Artificial Intelligence: past, present, future(s)
+Show pagination, starting with second slide
+paginate: true --&gt;
+&lt;h2 id="a-brief-history-of-ai"&gt;A brief history of AI&lt;/h2&gt;
+&lt;h3 id="a-recent-discipline"&gt;A recent discipline&lt;/h3&gt;
+&lt;div class="columns"&gt;
+&lt;div&gt;
+&lt;p&gt;Kickoff: &lt;a href="https://en.wikipedia.org/wiki/Dartmouth_workshop" target="_blank"&gt;1956 Dartmouth workshop on Artificial Intelligence&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;AI is the science and engineering of making intelligent machines.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/John_McCarthy_%28computer_scientist%29" target="_blank"&gt;John McCarthy&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;AI is the science of making machines do things that would require intelligence if done by men.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Marvin_Minsky" target="_blank"&gt;Marvin Minsky&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;a href="https://spectrum.ieee.org/dartmouth-ai-workshop" target="_blank"&gt;&lt;img alt="Dartmouth workshop" loading="lazy" src="https://www.bpesquet.fr/materials/chembiona-2025/images/dartmouth_workshop.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Image credits: the Marvin Minsky family&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Papers review: Kepecs' framework for decision confidence</title><link>https://www.bpesquet.fr/materials/kepecs-decision-confidence/</link><pubDate>Mon, 02 Dec 2024 13:40:27 +0100</pubDate><guid>https://www.bpesquet.fr/materials/kepecs-decision-confidence/</guid><description>&lt;!-- Put each of the following lines into an HTML comment to display the title slide --&gt;
+&lt;!-- Apply header and footer to first slide only
+_header: "[![IMN logo](../../../static/images/imn_logo.png)](https://ensc.bordeaux-inp.fr) [![INRIA logo](../../../static/images/inria_logo.jpg)](https://www.inria.fr) [![ENSC logo](../../../static/images/ENSC_2022.jpg)](https://ensc.bordeaux-inp.fr)"
+_footer: "[Baptiste Pesquet](https://www.bpesquet.fr)"
+headingDivider: 3
+&lt;style scoped&gt;
+img {
+padding-right: 40px
+}
+&lt;/style&gt;
+# Papers review: Kepecs' framework for decision confidence
+Show pagination, starting with second slide
+paginate: true --&gt;
+&lt;h2 id="papers"&gt;Papers&lt;/h2&gt;
+&lt;p&gt;Adam Kepecs et al., “Neural Correlates, Computation and Behavioural Impact of Decision Confidence,” Nature 455, no. 7210 (September 2008): 227–31, &lt;a href="https://doi.org/10.1038/nature07200" target="_blank"&gt;https://doi.org/10.1038/nature07200&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Confidence as hyperparameter tuning for sequential decision-making</title><link>https://www.bpesquet.fr/materials/mnemosyne-team-meeting-2024/</link><pubDate>Wed, 16 Oct 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/materials/mnemosyne-team-meeting-2024/</guid><description>&lt;!-- Put each of the following lines into an HTML comment to display the title slide --&gt;
+&lt;!-- Apply header and footer to first slide only
+_header: "[![IMN logo](../../../static/images/imn_logo.png)](https://ensc.bordeaux-inp.fr) [![INRIA logo](../../../static/images/inria_logo.jpg)](https://www.inria.fr) [![ENSC logo](../../../static/images/ENSC_2022.jpg)](https://ensc.bordeaux-inp.fr)"
+_footer: "[Baptiste Pesquet](https://www.bpesquet.fr)"
+headingDivider: 3
+&lt;style scoped&gt;
+img {
+padding-right: 40px
+}
+&lt;/style&gt;
+# Confidence as hyperparameter tuning for sequential decision-making
+Show pagination, starting with second slide
+paginate: true --&gt;
+&lt;h2 id="metacognition"&gt;Metacognition&lt;/h2&gt;
+&lt;p&gt;&lt;a href="../confidence/#metacognition"&gt;&lt;img alt="Metacognition diagram" loading="lazy" src="../confidence/images/metacognition_diagram.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="sequential-decision-making"&gt;Sequential decision-making&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Speed/Accuracy Tradeoff.&lt;/li&gt;
+&lt;li&gt;Canonical model: integration of noisy information until a threshold is reached.&lt;/li&gt;
+&lt;li&gt;Many refinements: multi-alternative choice, impact of learning, change of mind, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="../decision-making/#sequential-sampling"&gt;&lt;img loading="lazy" src="../decision-making/images/eam_rdk.png"&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Confidence in decision-making</title><link>https://www.bpesquet.fr/materials/confidence/</link><pubDate>Mon, 24 Jun 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/materials/confidence/</guid><description>&lt;!-- Put each of the following lines into an HTML comment to display the title slide --&gt;
+&lt;!-- Apply header and footer to first slide only
+_header: "[![IMN logo](../../../static/images/imn_logo.png)](https://ensc.bordeaux-inp.fr) [![INRIA logo](../../../static/images/inria_logo.jpg)](https://www.inria.fr) [![ENSC logo](../../../static/images/ENSC_2022.jpg)](https://ensc.bordeaux-inp.fr)"
+_footer: "[Baptiste Pesquet](https://www.bpesquet.fr)"
+headingDivider: 3
+&lt;style scoped&gt;
+img {
+padding-right: 40px
+}
+&lt;/style&gt;
+# Confidence in decision-making
+Show pagination, starting with second slide
+paginate: true --&gt;
+&lt;h2 id="terminology"&gt;Terminology&lt;/h2&gt;
+&lt;h3 id="confidence-general-definition"&gt;Confidence: general definition&lt;/h3&gt;
+&lt;p&gt;Everyone knows intuitively what confidence is about, yet it is seldom defined explicitly.&lt;/p&gt;</description></item><item><title>Introduction to the theory of decision-making</title><link>https://www.bpesquet.fr/materials/decision-making/</link><pubDate>Mon, 29 Jan 2024 10:13:06 +0100</pubDate><guid>https://www.bpesquet.fr/materials/decision-making/</guid><description>&lt;!-- Put each of the following lines into an HTML comment to display the title slide --&gt;
+&lt;!-- Apply header and footer to first slide only
+_header: "[![IMN logo](../../../static/images/imn_logo.png)](https://ensc.bordeaux-inp.fr) [![INRIA logo](../../../static/images/inria_logo.jpg)](https://www.inria.fr) [![ENSC logo](../../../static/images/ENSC_2022.jpg)](https://ensc.bordeaux-inp.fr)"
+_footer: "[Baptiste Pesquet](https://www.bpesquet.fr)"
+headingDivider: 3
+&lt;style scoped&gt;
+img {
+padding-right: 40px
+}
+&lt;/style&gt;
+# Introduction to the theory of decision-making
+Show pagination, starting with second slide
+paginate: true --&gt;
+&lt;h2 id="terminology"&gt;Terminology&lt;/h2&gt;
+&lt;h3 id="decision-and-decision-making"&gt;Decision and decision-making&lt;/h3&gt;
+&lt;p&gt;A &lt;strong&gt;decision&lt;/strong&gt; is &amp;ldquo;a deliberative process that results in the commitment to a categorical proposition.&amp;rdquo; &lt;a href="https://www.annualreviews.org/content/journals/10.1146/annurev.neuro.29.051605.113038" target="_blank"&gt;[Gold and Shadlen, 2007]&lt;/a&gt;&lt;/p&gt;</description></item><item><title>AI for Defence</title><link>https://www.bpesquet.fr/materials/ai-for-defence/</link><pubDate>Fri, 09 Jun 2023 08:37:58 +0200</pubDate><guid>https://www.bpesquet.fr/materials/ai-for-defence/</guid><description>&lt;h2 id="context"&gt;Context&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="impacts-of-ai-on-defence"&gt;Impacts of AI on Defence&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Like with all highly technical fields, AI has a growing impact on Defence.&lt;/li&gt;
+&lt;li&gt;Main areas:
+&lt;ul&gt;
+&lt;li&gt;Decision and planning support&lt;/li&gt;
+&lt;li&gt;Collaborative combat&lt;/li&gt;
+&lt;li&gt;Cybersecurity and digital influence&lt;/li&gt;
+&lt;li&gt;Logistics and operational readiness&lt;/li&gt;
+&lt;li&gt;Intelligence&lt;/li&gt;
+&lt;li&gt;Robotics and autonomy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="a-fast-moving-ecosystem"&gt;A fast-moving ecosystem&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;In all countries, traditional defence behemoths (Lockheed Martin, Thales Group, Leonardo&amp;hellip;) have embraced AI as a key tool for improving their systems.&lt;/li&gt;
+&lt;li&gt;Many startups are entering the field with specialized offerings.&lt;/li&gt;
+&lt;li&gt;Some new, state-promoted national sectors emerge (example: Israel for cybersecurity).&lt;/li&gt;
+&lt;li&gt;Recent conflicts, most notably the Ukraine war, are catalysts for AI adoption.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="national-and-international-initiatives"&gt;National and international initiatives&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;(US) &lt;a href="https://media.defense.gov/2019/Feb/12/2002088963/-1/-1/1/SUMMARY-OF-DOD-AI-STRATEGY.PDF" target="_blank"&gt;DOD Artificial Intelligence Strategy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;(France) &lt;a href="https://www.defense.gouv.fr/sites/default/files/aid/Report%20of%20the%20AI%20Task%20Force%20September%202019.pdf" target="_blank"&gt;AI in support of Defence&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;(EU) &lt;a href="https://www.europarl.europa.eu/news/en/press-room/20210114IPR95627/guidelines-for-military-and-non-military-use-of-artificial-intelligence" target="_blank"&gt;Guidelines for military and non-military use of AI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;(NATO) &lt;a href="https://www.nato.int/docu/review/articles/2021/10/25/an-artificial-intelligence-strategy-for-nato/index.html" target="_blank"&gt;An Artificial Intelligence Strategy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="main-issue"&gt;Main issue&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;AI is used to assist humans in multiple ways.&lt;/li&gt;
+&lt;li&gt;Role and task breakdown is the key question: what&amp;rsquo;s assigned to AI, what&amp;rsquo;s left for humans?&lt;/li&gt;
+&lt;li&gt;This decision has huge ramifications:
+&lt;ul&gt;
+&lt;li&gt;Should AI decide to shoot a target autonomously?&lt;/li&gt;
+&lt;li&gt;Who&amp;rsquo;s responsible for what?&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="use-cases"&gt;Use cases&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="missile-pack-guidance"&gt;Missile pack guidance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Several (5-20) missiles used simultaneously as a pack.&lt;/li&gt;
+&lt;li&gt;AI is used to optimize their guidance and help the pilot.&lt;/li&gt;
+&lt;li&gt;(PhD in progress in Bordeaux)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="pilot-assistance"&gt;Pilot assistance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Single pilot planes are heavily studied for both civilian and military contexts (with sometimes an unchanged cockpit).&lt;/li&gt;
+&lt;li&gt;AI is needed for assistance and decision making.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="object-recognition-in-combat-zones"&gt;Object recognition in combat zones&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.defense.gov/News/News-Stories/Article/Article/1254719/project-maven-to-deploy-computer-algorithms-to-war-zone-by-years-end/" target="_blank"&gt;Project Maven&lt;/a&gt;: a US initiative aiming at categorizing and identifying surveillance footage by low altitude devices.&lt;/li&gt;
+&lt;li&gt;Uses sophisticated computer vision algorithms and models.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="homeland-security"&gt;Homeland security&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Predictive analytics (identifying trends and patterns within a dataset to then predict the likelihood of, and when, that trend will occur again) can be used to correlate signs of preparation for unlawful activities.&lt;/li&gt;
+&lt;li&gt;Such services make heavy use of Machine Learning and are offered by companies like &lt;a href="https://en.wikipedia.org/wiki/Palantir_Technologies" target="_blank"&gt;Palantir&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;There are, of course, many associated ethical issues.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="prevention-of-cyberterrorism"&gt;Prevention of cyberterrorism&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Protecting defence networks by identifying and neutralizing threats (viruses, malware, cyberattacks&amp;hellip;).&lt;/li&gt;
+&lt;li&gt;Detection of unusual patterns in network usage.&lt;/li&gt;
+&lt;li&gt;Associated software leverages various supervised and unsupervised learning algorithms.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="autonomous-combat-units"&gt;Autonomous combat units&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;A tank is a car with tracks and a gun&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Drones and drone swarms.&lt;/li&gt;
+&lt;li&gt;(Not there yet) battle robots.&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="battlefield-of-the-future"&gt;Battlefield of the future&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A highly complex and dynamic system with multiple human and non-human units interacting in real time.&lt;/li&gt;
+&lt;li&gt;Huge flow of information to process.&lt;/li&gt;
+&lt;li&gt;AI is used to collect, process and synthesize data for easier and better decision making.&lt;/li&gt;
+&lt;li&gt;Dual aspect: same principles can apply to many non-military fields.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Entity Framework Core</title><link>https://www.bpesquet.fr/materials/efcore/</link><pubDate>Mon, 26 Sep 2022 15:12:20 +0200</pubDate><guid>https://www.bpesquet.fr/materials/efcore/</guid><description>&lt;h2 id="des-objets-et-des-tables"&gt;Des objets et des tables&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="les-données-persistantes"&gt;Les données persistantes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Ne disparaissent pas entre deux utilisations d&amp;rsquo;une application.&lt;/li&gt;
+&lt;li&gt;Contraire : données &lt;em&gt;volatiles&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Indispensable pour une très grande majorité des applications (données métier, configuration, etc.).&lt;/li&gt;
+&lt;li&gt;Leur stockage nécessite :
+&lt;ul&gt;
+&lt;li&gt;un support dédié, appelé parfois mémoire de masse (disque dur, SSD, mémoire Flash, etc.) ;&lt;/li&gt;
+&lt;li&gt;un format adapté.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="les-sgbdr-et-leurs-avantages"&gt;Les SGBDR et leurs avantages&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Standard actuel pour la gestion de données persistantes.&lt;/li&gt;
+&lt;li&gt;Technologie connue depuis les années 1970.&lt;/li&gt;
+&lt;li&gt;Fiabilité.&lt;/li&gt;
+&lt;li&gt;Capacité à gérer de forts volumes de données.&lt;/li&gt;
+&lt;li&gt;Sécurité (authentification, réplication, etc.).&lt;/li&gt;
+&lt;li&gt;Langage d’interrogation (SQL) standard.&lt;/li&gt;
+&lt;li&gt;Offre logicielle riche : d&amp;rsquo;Oracle à SQLite en passant par PostgreSQL, MySQL/MariaDB ou SQL Server.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="le-modèle-relationnel"&gt;Le modèle relationnel&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Unité de représentation : table.&lt;/li&gt;
+&lt;li&gt;Caractéristiques : colonnes.&lt;/li&gt;
+&lt;li&gt;Entité : tuple (ligne).&lt;/li&gt;
+&lt;li&gt;Types de données : simples (nombres, chaîne, date, etc.).&lt;/li&gt;
+&lt;li&gt;Identifiant : explicite (clé primaire).&lt;/li&gt;
+&lt;li&gt;Relations entre éléments : jointures SQL.&lt;/li&gt;
+&lt;li&gt;Concepts spécifiques : déclencheurs, procédures stockées&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="le-modèle-objet"&gt;Le modèle objet&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Unité de représentation : classe.&lt;/li&gt;
+&lt;li&gt;Caractéristiques : propriétés et méthodes.&lt;/li&gt;
+&lt;li&gt;Entité : objet.&lt;/li&gt;
+&lt;li&gt;Types de données : simples ou complexes.&lt;/li&gt;
+&lt;li&gt;Identifiant : implicite (référence mémoire).&lt;/li&gt;
+&lt;li&gt;Relations entre éléments : navigation des associations.&lt;/li&gt;
+&lt;li&gt;Concepts spécifiques : encapsulation, héritage, interfaces&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="objectrelational-mapping-orm"&gt;Object/Relational Mapping (O/RM)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Lien entre une base de données et les objets manipulés par l’application.&lt;/li&gt;
+&lt;li&gt;Deux modèles très éloignés (&amp;quot;&lt;a href="https://en.wikipedia.org/wiki/Object%E2%80%93relational_impedance_mismatch" target="_blank"&gt;Impedance mismatch&lt;/a&gt;&amp;quot;).&lt;/li&gt;
+&lt;li&gt;Pas de solution idéale.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="orm-is-the-vietnam-of-computer-science"&gt;&lt;a href="https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/" target="_blank"&gt;&amp;ldquo;O/RM is the Vietnam of Computer Science&amp;rdquo;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="Welcome to the jungle!" loading="lazy" src="https://www.bpesquet.fr/materials/efcore/images/orm_vietnam.png"&gt;&lt;/p&gt;</description></item><item><title>.NET et C#</title><link>https://www.bpesquet.fr/materials/dotnet-csharp/</link><pubDate>Tue, 20 Sep 2022 10:27:11 +0200</pubDate><guid>https://www.bpesquet.fr/materials/dotnet-csharp/</guid><description>&lt;h2 id="introduction-à-net"&gt;Introduction à .NET&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="aux-origines-de-net"&gt;Aux origines de .NET&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Plate-forme de développement d&amp;rsquo;applications créée par Microsoft en 2002.&lt;/li&gt;
+&lt;li&gt;Réponse à la domination de Java (premier langage multi-plateformes).&lt;/li&gt;
+&lt;li&gt;Inclut plusieurs langages de programmation : C#, VB.NET, F#, PowerShell&amp;hellip;&lt;/li&gt;
+&lt;li&gt;À l&amp;rsquo;origine :
+&lt;ul&gt;
+&lt;li&gt;Uniquement disponible sous Windows.&lt;/li&gt;
+&lt;li&gt;Licence propriétaire.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/.NET_Framework" target="_blank"&gt;&lt;img alt="Pile .NET" loading="lazy" src="https://www.bpesquet.fr/materials/dotnet-csharp/images/dotnet_stack.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="architecture-technique-de-net"&gt;Architecture technique de .NET&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Une application .NET s&amp;rsquo;exécute dans un environnement contrôlé appelé &lt;a href="https://github.com/dotnet/runtime/blob/main/docs/design/coreclr/botr/intro-to-clr.md" target="_blank"&gt;CLR&lt;/a&gt; (&lt;em&gt;Common Language Runtime&lt;/em&gt;).&lt;/li&gt;
+&lt;li&gt;La compilation du code source produit un résultat indépendant du système d&amp;rsquo;exploitation, conformément à un standard nommé &lt;strong&gt;CIL&lt;/strong&gt; (&lt;em&gt;Common Intermediate Language&lt;/em&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Common_Language_Infrastructure" target="_blank"&gt;&lt;img alt="CLI et CLR" loading="lazy" src="https://www.bpesquet.fr/materials/dotnet-csharp/images/dotnet_cli_clr.png"&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Introduction à UML</title><link>https://www.bpesquet.fr/materials/uml/</link><pubDate>Mon, 12 Sep 2022 14:16:21 +0200</pubDate><guid>https://www.bpesquet.fr/materials/uml/</guid><description>&lt;h2 id="présentation-duml"&gt;Présentation d&amp;rsquo;UML&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="quest-ce-quuml-"&gt;Qu&amp;rsquo;est-ce qu&amp;rsquo;UML ?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;UML = &lt;em&gt;Unified Modeling Language&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Langage unifié (multi-langages, multi-plateformes) pour la conception de logiciels orientés objet.&lt;/li&gt;
+&lt;li&gt;Permet de modéliser les éléments d&amp;rsquo;un logiciel sous la forme de &lt;strong&gt;diagrammes&lt;/strong&gt; indépendants de toute technologie spécifique.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="histoire-duml"&gt;Histoire d&amp;rsquo;UML&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Les premières versions datent des années 1990, période où la POO s&amp;rsquo;impose comme le nouveau standard pour la création de logiciels.&lt;/li&gt;
+&lt;li&gt;Ses &amp;ldquo;papas&amp;rdquo; sont &lt;a href="https://en.wikipedia.org/wiki/Grady_Booch" target="_blank"&gt;Grady Booch&lt;/a&gt;, &lt;a href="https://en.wikipedia.org/wiki/James_Rumbaugh" target="_blank"&gt;James Rumbaugh&lt;/a&gt; et &lt;a href="https://en.wikipedia.org/wiki/Ivar_Jacobson" target="_blank"&gt;Ivar Jacobson&lt;/a&gt;, trois architectes logiciels reconnus de l&amp;rsquo;époque.&lt;/li&gt;
+&lt;li&gt;La version la plus récente est la 2.5, normalisée en 2017.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href="https://fr.wikipedia.org/wiki/UML_%28informatique%29" target="_blank"&gt;&lt;img alt="Historique d&amp;rsquo;UML" loading="lazy" src="https://www.bpesquet.fr/materials/uml/images/1024px-OO-historie.jpg"&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>JavaScript pour le web</title><link>https://www.bpesquet.fr/materials/javascript-web/</link><pubDate>Wed, 02 Feb 2022 11:09:39 +0100</pubDate><guid>https://www.bpesquet.fr/materials/javascript-web/</guid><description>&lt;h2 id="le-dom"&gt;Le DOM&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="exemple-de-page-web"&gt;Exemple de page web&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#fb660a;font-weight:bold"&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#fb660a;font-weight:bold"&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#fb660a;font-weight:bold"&gt;meta&lt;/span&gt; &lt;span style="color:#ff0086;font-weight:bold"&gt;charset&lt;/span&gt;=&lt;span style="color:#0086d2"&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#fb660a;font-weight:bold"&gt;title&lt;/span&gt;&amp;gt;My web page&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold"&gt;title&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold"&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#fb660a;font-weight:bold"&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#fb660a;font-weight:bold"&gt;h1&lt;/span&gt;&amp;gt;My web page&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold"&gt;h1&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#fb660a;font-weight:bold"&gt;p&lt;/span&gt;&amp;gt;Hello! My name&amp;#39;s Baptiste.&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold"&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#fb660a;font-weight:bold"&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; I live in the great city of
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#fb660a;font-weight:bold"&gt;a&lt;/span&gt; &lt;span style="color:#ff0086;font-weight:bold"&gt;href&lt;/span&gt;=&lt;span style="color:#0086d2"&gt;&amp;#34;https://en.wikipedia.org/wiki/Bordeaux&amp;#34;&lt;/span&gt;&amp;gt;Bordeaux&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold"&gt;a&lt;/span&gt;&amp;gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold"&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#fb660a;font-weight:bold"&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/&lt;span style="color:#fb660a;font-weight:bold"&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id="le-document-object-model-dom"&gt;Le Document Object Model (DOM)&lt;/h3&gt;
+&lt;p&gt;Description de la structure d&amp;rsquo;une page sous forme d&amp;rsquo;une arborescence de &lt;strong&gt;noeuds&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="DOM example" loading="lazy" src="https://www.bpesquet.fr/materials/javascript-web/images/chapter13-02.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="types-de-noeuds"&gt;Types de noeuds&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Éléments&lt;/strong&gt; : noeuds structurants pouvant contenir des fils. Correspondent aux balises HTML comme &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;, etc.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Texte&lt;/strong&gt; : noeuds contenant uniquement du texte.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="accès-au-dom-avec-javascript"&gt;Accès au DOM avec JavaScript&lt;/h3&gt;
+&lt;p&gt;Quand le code JavaScript s&amp;rsquo;exécute dans le contexte d&amp;rsquo;une page web, la variable &lt;code&gt;document&lt;/code&gt; permet d&amp;rsquo;accéder à la racine du DOM.&lt;/p&gt;</description></item><item><title>Git &amp; GitHub</title><link>https://www.bpesquet.fr/materials/git-github/</link><pubDate>Tue, 23 Nov 2021 19:01:29 +0100</pubDate><guid>https://www.bpesquet.fr/materials/git-github/</guid><description>&lt;h2 id="introduction-to-software-version-control"&gt;Introduction to software version control&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="the-need-for-source-code-management"&gt;The need for source code management&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Source code is the core of any software project.&lt;/li&gt;
+&lt;li&gt;These projects have a long lifespan, with numerous releases containing new functionalities and bug fixes.&lt;/li&gt;
+&lt;li&gt;Throughout this lifespan, the development team needs a way to work in parallel while sharing a common code base.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="manual-source-code-management"&gt;Manual source code management&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Relies on shared places (local or cloud-based) where snapshots of the code base are regularly pushed by developers.&lt;/li&gt;
+&lt;li&gt;Highly impractical: no individual history of files, no release management, no handling of conflicts (simultaneous updates of a file)&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="version-control-systems"&gt;Version Control Systems&lt;/h3&gt;
+&lt;p&gt;Dedicated source code management tools, often called &lt;strong&gt;Version Control Systems&lt;/strong&gt;, offer developers the ability to:&lt;/p&gt;</description></item><item><title>React Native</title><link>https://www.bpesquet.fr/materials/react-native/</link><pubDate>Wed, 27 Oct 2021 13:48:28 +0200</pubDate><guid>https://www.bpesquet.fr/materials/react-native/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="lécosystème-mobile"&gt;L&amp;rsquo;écosystème mobile&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Absence de monopole.&lt;/li&gt;
+&lt;li&gt;Deux poids lourds : Android et iOS.&lt;/li&gt;
+&lt;li&gt;Parts de marché stables depuis plusieurs années.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img alt="Smartphone platform market share" loading="lazy" src="https://www.bpesquet.fr/materials/react-native/images/smartphone_market_share_2016.jpg"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img alt="Market share evolution 2015-2019" loading="lazy" src="https://www.bpesquet.fr/materials/react-native/images/market-share-2015_2019.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img alt="Mobile OS Fragmentation" loading="lazy" src="https://www.bpesquet.fr/materials/react-native/images/os-fragmentation_2018.jpg"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="développement-mobile-natif"&gt;Développement mobile natif&lt;/h3&gt;
+&lt;p&gt;Création d&amp;rsquo;applications en utilisant la technologie prévue par le concepteur de l&amp;rsquo;OS.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Android : Java&lt;/li&gt;
+&lt;li&gt;iOS : Objective-C ou Swift&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ces technologies sont &lt;strong&gt;incompatibles&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="avantages"&gt;Avantages&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Accès à l&amp;rsquo;intégralité des fonctionnalités matérielles et logicielles du terminal mobile.&lt;/li&gt;
+&lt;li&gt;Performances optimales.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="inconvénient-majeur-"&gt;Inconvénient (majeur !)&lt;/h3&gt;
+&lt;p&gt;Nécessité de créer puis de faire évoluer une application pour chaque environnement.&lt;/p&gt;</description></item><item><title>ASP.NET Core</title><link>https://www.bpesquet.fr/materials/asp-net-core/</link><pubDate>Tue, 21 Sep 2021 09:40:11 +0200</pubDate><guid>https://www.bpesquet.fr/materials/asp-net-core/</guid><description>&lt;h2 id="présentation-daspnet-core"&gt;Présentation d&amp;rsquo;ASP.NET Core&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="histoire-daspnet-core"&gt;Histoire d&amp;rsquo;ASP.NET Core&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;À l&amp;rsquo;origine, .NET (Framework) incluait une technologie de création de pages web dynamiques nommée &lt;strong&gt;ASP.NET&lt;/strong&gt; (&lt;em&gt;Active Server Pages&lt;/em&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ASP.NET Core&lt;/strong&gt; est une réécriture d&amp;rsquo;ASP.NET basée sur .NET (Core).&lt;/li&gt;
+&lt;li&gt;Standard actuel pour le développement web sous .NET.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="points-clés-daspnet-core"&gt;Points-clés d&amp;rsquo;ASP.NET Core&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Permet de créer des applications web et des services web (API) utilisés comme &lt;em&gt;backends&lt;/em&gt; par des clients riches ou des applications mobiles.&lt;/li&gt;
+&lt;li&gt;Léger, moderne et modulaire.&lt;/li&gt;
+&lt;li&gt;Inclut des technologies facilitant la gestion des pages dynamiques, des appels temps réel, des tests, etc.&lt;/li&gt;
+&lt;li&gt;Déployable sur plusieurs serveurs web : Kestrel, Apache, nginx, etc.&lt;/li&gt;
+&lt;li&gt;Multi-plateformes et &lt;a href="https://github.com/dotnet/aspnetcore" target="_blank"&gt;open source&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="rappel--le-fonctionnement-du-web"&gt;Rappel : le fonctionnement du web&lt;/h3&gt;
+&lt;p&gt;Le web est basé sur un modèle &lt;strong&gt;client/serveur&lt;/strong&gt; :&lt;/p&gt;</description></item><item><title>C# : rappels et compléments</title><link>https://www.bpesquet.fr/materials/csharp/</link><pubDate>Thu, 16 Sep 2021 11:15:17 +0200</pubDate><guid>https://www.bpesquet.fr/materials/csharp/</guid><description>&lt;h2 id="rappels-sur-la-poo"&gt;Rappels sur la POO&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="la-poo-en-bref"&gt;La POO en bref&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Objet&lt;/strong&gt; : entité qui modélise (représente) un élément du domaine étudié.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Objet = état + actions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Objet != &lt;strong&gt;classe&lt;/strong&gt; :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Classe : modèle d’objet (type).&lt;/li&gt;
+&lt;li&gt;Objet : exemplaire concret, &lt;strong&gt;instance&lt;/strong&gt; d’une classe.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;POO&lt;/strong&gt; : paradigme d&amp;rsquo;écriture de logiciels sous forme d’objets en interaction&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="représentation-graphique-dune-classe"&gt;Représentation graphique d&amp;rsquo;une classe&lt;/h3&gt;
+&lt;p&gt;Le standard : diagramme de classes &lt;strong&gt;UML&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Exemple de diagramme UML" loading="lazy" src="https://www.bpesquet.fr/materials/csharp/materials/csharp/images/uml_class_diagram.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="notion-de-propriété-en-c"&gt;Notion de propriété en C#&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Propriété au sens de la majorité des langages à objets = &lt;strong&gt;attribut&lt;/strong&gt; ou &lt;strong&gt;champ&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Propriété au sens du C# = &lt;strong&gt;accesseur&lt;/strong&gt; vers un attribut.&lt;/li&gt;
+&lt;li&gt;Les propriétés permettent de concilier accès aux données de l’objet et &lt;strong&gt;encapsulation&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="propriété-avec-attribut-explicite"&gt;Propriété avec attribut explicite&lt;/h3&gt;
+&lt;p&gt;Déclaration explicite de l’attribut (le plus souvent &lt;strong&gt;privé&lt;/strong&gt;).&lt;/p&gt;</description></item><item><title>Le langage JavaScript</title><link>https://www.bpesquet.fr/materials/javascript/</link><pubDate>Mon, 16 Dec 2019 21:50:46 +0100</pubDate><guid>https://www.bpesquet.fr/materials/javascript/</guid><description>&lt;h2 id="pourquoi-javascript-"&gt;Pourquoi JavaScript ?&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="javascript-is-eating-the-world"&gt;JavaScript is eating the world&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="JS is eating the world" loading="lazy" src="https://www.bpesquet.fr/materials/javascript/images/thus-javascript-is-eating-the-world.jpg"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="un-prérequis-essentiel"&gt;Un prérequis essentiel&lt;/h3&gt;
+&lt;p&gt;La majorité des solutions mobiles multi-plateformes est basée sur JavaScript.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Frameworks multi-plateformes" loading="lazy" src="https://www.bpesquet.fr/materials/javascript/images/mobile_logos.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="un-langage-modernisé"&gt;Un langage modernisé&lt;/h3&gt;
+&lt;p&gt;JavaScript est normalisé sous le nom &lt;strong&gt;ECMAScript&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ECMAScript releases" loading="lazy" src="https://www.bpesquet.fr/materials/javascript/images/js_history.png"&gt;&lt;/p&gt;
+&lt;p&gt;La norme &lt;strong&gt;ES2015&lt;/strong&gt; (ou ES6) a apporté de très nombreuses améliorations au langage.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="syntaxe-du-langage"&gt;Syntaxe du langage&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="déclaration-de-variables"&gt;Déclaration de variables&lt;/h3&gt;
+&lt;p&gt;JavaScript est un langage à typage &lt;strong&gt;dynamique&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;let&lt;/code&gt; et &lt;code&gt;const&lt;/code&gt; remplacent avantageusement &lt;code&gt;var&lt;/code&gt; pour la déclaration des variables.&lt;/p&gt;</description></item><item><title>Deconstructing AI</title><link>https://www.bpesquet.fr/materials/deconstructing-ai/</link><pubDate>Mon, 09 Dec 2019 10:47:12 +0100</pubDate><guid>https://www.bpesquet.fr/materials/deconstructing-ai/</guid><description>&lt;h2 id="what-is-ai-actually"&gt;What Is AI, Actually?&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="the-original-ambition-of-ai"&gt;The original ambition of AI&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;AI is the science and engineering of making intelligent machines.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/John_McCarthy_%28computer_scientist%29" target="_blank"&gt;John McCarthy&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Dartmouth_workshop" target="_blank"&gt;Dartmouth Workshop&lt;/a&gt;, 1956)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;AI is the science of making machines do things that would require intelligence if done by men.&amp;rdquo; (&lt;a href="https://en.wikipedia.org/wiki/Marvin_Minsky" target="_blank"&gt;Marvin Minsky&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3 id="a-technical-definition-of-ai"&gt;A technical definition of AI&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;AI refers to systems that &lt;strong&gt;display&lt;/strong&gt; intelligent behavior by analysing their &lt;strong&gt;environment&lt;/strong&gt; and taking &lt;strong&gt;actions&lt;/strong&gt; - with some degree of &lt;strong&gt;autonomy&lt;/strong&gt; - to achieve specific &lt;strong&gt;goals&lt;/strong&gt;.&amp;rdquo; (&lt;a href="https://ec.europa.eu/newsroom/dae/document.cfm?doc_id=51625" target="_blank"&gt;EC, 2018&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Introduction à Unity</title><link>https://www.bpesquet.fr/materials/unity/</link><pubDate>Sat, 25 Aug 2018 16:13:52 +0200</pubDate><guid>https://www.bpesquet.fr/materials/unity/</guid><description>&lt;h2 id="unity-en-bref"&gt;Unity en bref&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img alt="Logo Unity" loading="lazy" src="https://www.bpesquet.fr/materials/unity/images/Unity_Technologies_Logo.svg.png"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Moteur de jeu développé par &lt;a href="https://en.wikipedia.org/wiki/Unity_Technologies" target="_blank"&gt;Unity Technologies&lt;/a&gt; depuis 2004.&lt;/li&gt;
+&lt;li&gt;Multiplateformes : PC, Mac, consoles, smartphones, web.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://store.unity.com/fr/products/unity-personal" target="_blank"&gt;Licence personnelle&lt;/a&gt; gratuite.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="made-with-unity"&gt;Made with Unity&lt;/h2&gt;
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"&gt;
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/ctNF6QlLBWo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img alt="Unity editor 1" loading="lazy" src="https://www.bpesquet.fr/materials/unity/images/Editor-Breakdown.jpg"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img alt="Unity editor 2" loading="lazy" src="https://www.bpesquet.fr/materials/unity/images/unity-editor.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img alt="Demo time" loading="lazy" src="https://www.bpesquet.fr/materials/unity/images/keep-calm-it-is-demo-time.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="concepts-clés"&gt;Concepts-clés&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id="project"&gt;Project&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rassemble tous les éléments constituant le jeu.&lt;/li&gt;
+&lt;li&gt;Peut être de type 2D ou 3D.&lt;/li&gt;
+&lt;li&gt;Correspond physiquement à un répertoire stocké localement ou dans le &lt;em&gt;cloud&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="Fenêtre Project" loading="lazy" src="https://www.bpesquet.fr/materials/unity/images/AssetWorkflowFolderAndProjectWindow.png"&gt;&lt;/p&gt;</description></item></channel></rss>

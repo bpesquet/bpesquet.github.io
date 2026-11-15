@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Past courses on Baptiste Pesquet</title><link>https://www.bpesquet.fr/past_courses/</link><description>Recent content in Past courses on Baptiste Pesquet</description><generator>Hugo -- 0.169.0</generator><language>en</language><lastBuildDate>Sun, 15 Nov 2026 20:47:22 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/past_courses/index.xml" rel="self" type="application/rss+xml"/><item><title>Développement mobile</title><link>https://www.bpesquet.fr/past_courses/ensc_devmob/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://www.bpesquet.fr/past_courses/ensc_devmob/</guid><description>&lt;p&gt;Ce cours présente les bases du développement d&amp;rsquo;applications mobiles multi-plateformes.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://formation.bordeaux-inp.fr/fr/offre-de-formation-2026-2027/titre-d-ingenieur-DING/ingenieur-specialite-cognitique-LUMF0003/semestre-8-cognitique-LUME2829/ue-sciences-fondamentales-LUME3057/developpement-mobile-LUME3056.html" target="_blank"&gt;Présentation du cours&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://moodle.bordeaux-inp.fr/course/view.php?id=1713" target="_blank"&gt;Portail du cours&lt;/a&gt; (accès restreint)&lt;/li&gt;
+&lt;li&gt;Supports de cours :
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../../materials/react-native/"&gt;React Native&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Programmation avancée</title><link>https://www.bpesquet.fr/past_courses/ensc_progav/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://www.bpesquet.fr/past_courses/ensc_progav/</guid><description>&lt;p&gt;Ce cours aborde les concepts fondamentaux de la programmation orientée objet (POO).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://formation.bordeaux-inp.fr/fr/offre-de-formation-2026-2027/titre-d-ingenieur-DING/ingenieur-specialite-cognitique-LUMF0003/ue-sciences-fondamentales-LUME2935/programmation-avancee-LUME2965.html" target="_blank"&gt;Présentation du cours&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://moodle.bordeaux-inp.fr/course/view.php?id=1027" target="_blank"&gt;Portail du cours&lt;/a&gt; (accès restreint)&lt;/li&gt;
+&lt;li&gt;Supports de cours :
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ensc.gitbook.io/programmation-objet-csharp" target="_blank"&gt;Programmation orientée objet en C#&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../../materials/csharp/"&gt;C# : rappels et compléments&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../../materials/uml/"&gt;Introduction à UML&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Génie logiciel</title><link>https://www.bpesquet.fr/past_courses/ensc_gl/</link><pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate><guid>https://www.bpesquet.fr/past_courses/ensc_gl/</guid><description>&lt;p&gt;Ce cours vise à découvrir et à acquérir des techniques rigoureuses de modélisation et de développement logiciel.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://formation.bordeaux-inp.fr/fr/offre-de-formation-2026-2027/titre-d-ingenieur-DING/ingenieur-specialite-cognitique-LUMF0003/semestre-7-cognitique-LUME2863/ue-sciences-fondamentales-LUME3039/genie-logiciel-LUME3037.html" target="_blank"&gt;Présentation du cours&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://moodle.bordeaux-inp.fr/course/view.php?id=1459" target="_blank"&gt;Portail du cours&lt;/a&gt; (accès restreint)&lt;/li&gt;
+&lt;li&gt;Supports de cours :
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../../materials/asp-net-core/"&gt;ASP.NET Core&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../../materials/efcore/"&gt;Entity Framework Core&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ensc.gitbook.io/genie-logiciel" target="_blank"&gt;Génie logiciel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ensc.gitbook.io/programmation-evenementielle-winforms" target="_blank"&gt;Programmation évènementielle avec les WinForms&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Introduction à la programmation</title><link>https://www.bpesquet.fr/past_courses/ensc_iprog/</link><pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate><guid>https://www.bpesquet.fr/past_courses/ensc_iprog/</guid><description>&lt;p&gt;Ce cours présente les notions et techniques fondamentales de la programmation impérative.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://formation.bordeaux-inp.fr/fr/offre-de-formation-2026-2027/titre-d-ingenieur-DING/ingenieur-specialite-cognitique-LUMF0003/ue-sciences-fondamentales-LUME2955/introduction-a-la-programmation-LUME2907.html" target="_blank"&gt;Présentation du cours&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://moodle.bordeaux-inp.fr/course/view.php?id=1146" target="_blank"&gt;Portail du cours&lt;/a&gt; (accès restreint)&lt;/li&gt;
+&lt;li&gt;Supports de cours :
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../../materials/dotnet-csharp/"&gt;.NET et C#&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../../materials/git-github/"&gt;Git &amp;amp; GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Réalité virtuelle et systèmes multi-agents</title><link>https://www.bpesquet.fr/past_courses/ensc_modsys/</link><pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate><guid>https://www.bpesquet.fr/past_courses/ensc_modsys/</guid><description>&lt;p&gt;Ce cours présente les principes fondamentaux de la réalité virtuelle et de la création de systèmes multi-agents.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://moodle.bordeaux-inp.fr/user/index.php?id=1508" target="_blank"&gt;Portail du cours&lt;/a&gt; (accès restreint)&lt;/li&gt;
+&lt;li&gt;Supports de cours :
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../../materials/unity/"&gt;Introduction à Unity&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Teaching on Baptiste Pesquet</title><link>https://www.bpesquet.fr/courses/</link><description>Recent content in Teaching on Baptiste Pesquet</description><generator>Hugo -- 0.169.0</generator><language>en</language><lastBuildDate>Sun, 15 Nov 2026 20:51:08 +0100</lastBuildDate><atom:link href="https://www.bpesquet.fr/courses/index.xml" rel="self" type="application/rss+xml"/><item><title>Traitement du langage naturel</title><link>https://www.bpesquet.fr/courses/ensc_nlp/</link><pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate><guid>https://www.bpesquet.fr/courses/ensc_nlp/</guid><description>&lt;p&gt;Ce cours présente les bases du traitement du langage naturel (Natural Language Processing).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ensc.notion.site/Traitement-du-langage-naturel-485e036293858332900f01d8df06365a" target="_blank"&gt;Présentation du cours&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/bpesquet/mlcourse" target="_blank"&gt;Code source&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Initiation au Machine Learning</title><link>https://www.bpesquet.fr/courses/iogs_iml/</link><pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate><guid>https://www.bpesquet.fr/courses/iogs_iml/</guid><description>&lt;p&gt;Ce cours vise à donner les clés de compréhension de l’apprentissage automatique (Machine Learning).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ecampus.paris-saclay.fr/course/view.php?id=162152" target="_blank"&gt;Portail du cours&lt;/a&gt; (accès restreint)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/bpesquet/mlcourse" target="_blank"&gt;Code source&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Apprentissage automatique</title><link>https://www.bpesquet.fr/courses/ensc_aa/</link><pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate><guid>https://www.bpesquet.fr/courses/ensc_aa/</guid><description>&lt;p&gt;Ce cours constitue une introduction à l&amp;rsquo;apprentissage automatique (Machine Learning).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://formation.bordeaux-inp.fr/fr/offre-de-formation-2026-2027/titre-d-ingenieur-DING/ingenieur-specialite-cognitique-LUMF0003/semestre-8-cognitique-LUME2829/ue-ingenierie-cognitique-LUME2978/apprentissage-automatique-LUME3053.html" target="_blank"&gt;Présentation du cours&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://moodle.bordeaux-inp.fr/course/view.php?id=2891" target="_blank"&gt;Portail du cours&lt;/a&gt; (accès restreint)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/bpesquet/mlcourse" target="_blank"&gt;Code source&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
