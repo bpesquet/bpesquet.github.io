@@ -13,7 +13,7 @@ In this paper, we present the main steps of the methodology we followed to desig
 ## Resources
 
 - [Paper portal](https://ieeexplore.ieee.org/abstract/document/10125126)
-- 📄 [Paper](ASSETSpaper.pdf)
+- 📄 [Paper](ASSETSpaper.pdf) ([source](https://github.com/bpesquet/papers/tree/main/src/educon23))
 - 📄 [Slideshow](1570862517_educon_assetsseasonalschool_novideo.pdf)
 
 ## Citation
