@@ -58,7 +58,7 @@ params:
   profileMode:
     enabled: true
     title: "Baptiste Pesquet"
-    subtitle: "I am a computer science and artificial intelligence professor at the [École Nationale Supérieure de Cognitique (ENSC - Bordeaux INP)](https://ensc.bordeaux-inp.fr/)."
+    subtitle: "I am a professor of computer science and artificial intelligence at the [École Nationale Supérieure de Cognitique (ENSC - Bordeaux INP)](https://ensc.bordeaux-inp.fr/)."
     imageUrl: images/profile.png
     imageWidth: 140
     imageHeight: 140

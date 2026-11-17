@@ -15,7 +15,7 @@ In natural cognition, confidence is used to evaluate the quality of decisions an
 - [Paper portal](https://inria.hal.science/hal-05264365v1)
 - 📄 [Paper](../../pub/ESANN2025_confidence_for_sequential_decision_making.pdf)
 - 📄 [Poster](../../pub/ES2025_FRI_15_32_176_Pesquet_poster.pdf)
-- [Presentation](../../materials/imn-day-2025/)
+- 📄 [Slideshow](../../talks/towards-metacognitive-agents.pdf)
 
 ## Citation
 
